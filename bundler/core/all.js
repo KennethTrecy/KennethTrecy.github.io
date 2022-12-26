@@ -1,5 +1,5 @@
-import { join } from "path"
-import scss from "rollup-plugin-scss";
+import { join, basename } from "path"
+import scss from "rollup-plugin-scss"
 import alias from "@rollup/plugin-alias"
 import svelte from "rollup-plugin-svelte"
 import autoPrepocess from "svelte-preprocess"
@@ -7,12 +7,14 @@ import commonjs from "@rollup/plugin-commonjs"
 import nodeResolve from "@rollup/plugin-node-resolve"
 import esbuild from "rollup-plugin-esbuild-transform"
 
-import { PRODUCTION, DEVELOPMENT, TEST } from "./environments";
+import { PRODUCTION, DEVELOPMENT, TEST } from "./environments"
+
+import listPath from "./list_path"
 
 const ROOT = join(__dirname, "../..")
 const TYPESCRIPT_CONFIGURATION = "tsconfig.json"
 
-export default function(environment = DEVELOPMENT, generalPostPlugins = []) {
+export default async function(environment = DEVELOPMENT, generalPostPlugins = []) {
 	const compileTypescript = esbuild([
 		{
 			"loader": "ts",
@@ -53,23 +55,6 @@ export default function(environment = DEVELOPMENT, generalPostPlugins = []) {
 		}
 	])
 
-	const commonPipeline = [
-		alias({
-			"entries": [
-				{ find: /^page/, replacement: `${ROOT}/src/pages/index.svelte` }
-			]
-		}),
-		compileTypescript,
-		compileSvelte,
-		scss({
-
-		}),
-		resolvePathAliases,
-		resolveNodeModules,
-		supportCommonjs,
-		writeOutput
-	]
-
 	return environment === TEST
 	? [
 		{
@@ -82,24 +67,48 @@ export default function(environment = DEVELOPMENT, generalPostPlugins = []) {
 			},
 			"external": [ "jsdom" ],
 			"plugins": [
-				...commonPipeline,
+				alias({
+					"entries": [
+						{ find: /^page/, replacement: `${ROOT}/src/pages/index.svelte` }
+					]
+				}),
+				compileTypescript,
+				compileSvelte,
+				scss({
+
+				}),
+				resolvePathAliases,
+				resolveNodeModules,
+				supportCommonjs,
+				writeOutput,
 				...generalPostPlugins
 			]
 		}
 	]
-	: [
-		{
-			"input": "src/page_template.ts",
-			"output": {
-				"file": "docs/index.js",
-				"format": "iife",
-				"interop": "auto",
-				"name": "app"
-			},
-			"plugins": [
-				...commonPipeline,
-				...generalPostPlugins
-			]
-		}
-	];
+	: (await listPath(ROOT, "src/pages", "docs")).map(pathInfo => ({
+		"input": "src/page_template.ts",
+		"output": {
+			"file": pathInfo.output.replace(".svelte", ".js"),
+			"format": "iife",
+			"interop": "auto",
+			"name": "app"
+		},
+		"plugins": [
+			alias({
+				"entries": [
+					{ find: /^page/, replacement: join(ROOT, pathInfo.input) }
+				]
+			}),
+			compileTypescript,
+			compileSvelte,
+			scss({
+				"fileName": basename(pathInfo.output).replace(".svelte", ".css")
+			}),
+			resolvePathAliases,
+			resolveNodeModules,
+			supportCommonjs,
+			writeOutput,
+			...generalPostPlugins
+		]
+	}));
 }

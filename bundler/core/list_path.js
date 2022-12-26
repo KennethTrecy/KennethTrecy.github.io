@@ -1,17 +1,22 @@
+import { join } from "path"
 import { readdir } from "node:fs/promises"
 
-export default async function listPath(basePath) {
+export default async function listPath(basePath, inputPath, outputPath) {
 	const paths = []
 
 	try {
 		const pendingLists = []
-		const files = await readdir(basePath, { "withFileTypes": true })
+		const files = await readdir(join(basePath, inputPath), { "withFileTypes": true })
 		for (const file of files) {
-			const completePath = `${basePath}/${file.name}`
+			const relativeInputPath = join(inputPath, file.name)
+			const relativeOutputPath = join(outputPath, file.name)
 			if (file.isFile()) {
-				paths.push(completePath)
+				paths.push({
+					"input": relativeInputPath,
+					"output": relativeOutputPath
+				})
 			} else {
-				pendingLists.push(listPath(completePath))
+				pendingLists.push(listPath(basePath, relativeInputPath, relativeOutputPath))
 			}
 		}
 
