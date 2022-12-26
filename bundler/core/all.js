@@ -14,6 +14,11 @@ const TYPESCRIPT_CONFIGURATION = "tsconfig.json"
 
 export default function(environment = DEVELOPMENT, generalPostPlugins = []) {
 	const commonPipeline = [
+		alias({
+			"entries": [
+				{ find: /^page/, replacement: `${ROOT}/src/pages/index.svelte` }
+			]
+		}),
 		esbuild([
 			{
 				"loader": "ts",
@@ -32,7 +37,7 @@ export default function(environment = DEVELOPMENT, generalPostPlugins = []) {
 			})
 		}),
 		scss({
-			"fileName": "index.css"
+
 		}),
 		alias({
 			"entries": [
@@ -77,9 +82,9 @@ export default function(environment = DEVELOPMENT, generalPostPlugins = []) {
 	]
 	: [
 		{
-			"input": "src/index.ts",
+			"input": "src/page_template.ts",
 			"output": {
-				"file": "dist/index.js",
+				"file": "docs/index.js",
 				"format": "iife",
 				"interop": "auto",
 				"name": "app"
