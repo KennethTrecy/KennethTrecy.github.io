@@ -13,54 +13,61 @@ const ROOT = join(__dirname, "../..")
 const TYPESCRIPT_CONFIGURATION = "tsconfig.json"
 
 export default function(environment = DEVELOPMENT, generalPostPlugins = []) {
+	const compileTypescript = esbuild([
+		{
+			"loader": "ts",
+			"tsconfig": join(ROOT, TYPESCRIPT_CONFIGURATION)
+		}
+	])
+	const compileSvelte = svelte({
+		"compilerOptions": {
+			"dev": environment === DEVELOPMENT || environment === TEST
+		},
+		"preprocess": autoPrepocess({
+			"typescript": {
+				"tsconfigDirectory": ROOT,
+				"tsconfigFile": TYPESCRIPT_CONFIGURATION
+			}
+		})
+	})
+	const resolvePathAliases = alias({
+		"entries": [
+			{ find: /^@(\/|$)/, replacement: `${ROOT}/src/` }
+		]
+	})
+	const resolveNodeModules = nodeResolve({
+		"browser": environment === PRODUCTION || environment === DEVELOPMENT,
+		"exportConditions": [ "svelte" ],
+		"extensions": [ ".svelte" ],
+		"dedupe": [ "svelte" ]
+	})
+	const supportCommonjs = commonjs()
+	const writeOutput = esbuild([
+		{
+			"loader": "ts",
+			"tsconfig": join(ROOT, TYPESCRIPT_CONFIGURATION)
+		},
+		{
+			"loader": "js",
+			"output": true
+		}
+	])
+
 	const commonPipeline = [
 		alias({
 			"entries": [
 				{ find: /^page/, replacement: `${ROOT}/src/pages/index.svelte` }
 			]
 		}),
-		esbuild([
-			{
-				"loader": "ts",
-				"tsconfig": join(ROOT, TYPESCRIPT_CONFIGURATION)
-			}
-		]),
-		svelte({
-			"compilerOptions": {
-				"dev": environment === DEVELOPMENT || environment === TEST
-			},
-			"preprocess": autoPrepocess({
-				"typescript": {
-					"tsconfigDirectory": ROOT,
-					"tsconfigFile": TYPESCRIPT_CONFIGURATION
-				}
-			})
-		}),
+		compileTypescript,
+		compileSvelte,
 		scss({
 
 		}),
-		alias({
-			"entries": [
-				{ find: /^@(\/|$)/, replacement: `${ROOT}/src/` }
-			]
-		}),
-		nodeResolve({
-			"browser": environment === PRODUCTION || environment === DEVELOPMENT,
-			"exportConditions": [ "svelte" ],
-			"extensions": [ ".svelte" ],
-			"dedupe": [ "svelte" ]
-		}),
-		commonjs(),
-		esbuild([
-			{
-				"loader": "ts",
-				"tsconfig": join(ROOT, TYPESCRIPT_CONFIGURATION)
-			},
-			{
-				"loader": "js",
-				"output": true
-			}
-		])
+		resolvePathAliases,
+		resolveNodeModules,
+		supportCommonjs,
+		writeOutput
 	]
 
 	return environment === TEST
