@@ -1,0 +1,12 @@
+.vscode
+!/.vscode
+
+.env
+node_modules
+package-lock.json
+
+*hidden*
+
+package-lock.json
+node_modules
+pnpm-lock.yaml

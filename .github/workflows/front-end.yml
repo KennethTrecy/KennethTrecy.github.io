@@ -1,0 +1,29 @@
+name: Web Front-end Tests
+
+on:
+  push: []
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - review_requested
+    branches:
+      - master
+    paths:
+      - 'src/**'
+
+jobs:
+  web_front-end_tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Testing on Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm run test:unit

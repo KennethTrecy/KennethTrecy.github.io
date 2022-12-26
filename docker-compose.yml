@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  test:
+    build:
+      context: .
+      target: test
+    deploy:
+      resources:
+        limits:
+          cpus: "0.10"
+          memory: 25M
+    restart: on-failure
+    volumes:
+      - .:/var/www/html/app
+      - contained_node_modules:/var/www/html/app/node_modules
+    tty: true
+    stdin_open: false
+    command: npm run test:unit
+
+volumes:
+  contained_node_modules:
