@@ -29,6 +29,7 @@
 		"@tsconfig/recommended": "^1.0.1",
 		"chai": "^4.3.7",
 		"changelogen": "^0.4.0",
+		"comroconbu": "github:KennethTrecy/comroconbu#master",
 		"esbuild": "^0.16.10",
 		"husky": "^8.0.0",
 		"jsdom": "^20.0.3",
