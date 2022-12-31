@@ -6,10 +6,12 @@ import autoPrepocess from "svelte-preprocess"
 import commonjs from "@rollup/plugin-commonjs"
 import nodeResolve from "@rollup/plugin-node-resolve"
 import esbuild from "rollup-plugin-esbuild-transform"
+import { CommonInfoBuilder } from "comroconbu"
 
 import { PRODUCTION, DEVELOPMENT, TEST } from "./environments"
 
 import listPath from "./list_path"
+import RelativePathPairBuilder from "./relative_path_pair_builder"
 
 const ROOT = join(__dirname, "../..")
 const TYPESCRIPT_CONFIGURATION = "tsconfig.json"
@@ -54,6 +56,34 @@ export default async function(environment = DEVELOPMENT, generalPostPlugins = []
 			"output": true
 		}
 	])
+	const commonInfoBuilder = new CommonInfoBuilder("src/pages", "docs", "iife")
+
+	const sourceDirectory = commonInfoBuilder.configureSourceDirectory(
+		pathPair => {
+			return [
+				alias({
+					"entries": [
+						{
+							find: /^page/,
+							replacement: join(ROOT, pathPair.originalCompleteInputPath)
+						}
+					]
+				}),
+				compileTypescript,
+				compileSvelte,
+				scss({
+					"fileName": basename(pathPair.originalRelativeOutputPath).replace(".svelte", ".css")
+				}),
+				resolvePathAliases,
+				resolveNodeModules,
+				supportCommonjs,
+				writeOutput,
+				...generalPostPlugins
+			]
+		},
+		[],
+		new RelativePathPairBuilder(commonInfoBuilder.commonInfo)
+	)
 
 	return environment === TEST
 	? [
@@ -85,30 +115,5 @@ export default async function(environment = DEVELOPMENT, generalPostPlugins = []
 			]
 		}
 	]
-	: (await listPath(ROOT, "src/pages", "docs")).map(pathInfo => ({
-		"input": "src/page_template.ts",
-		"output": {
-			"file": pathInfo.output.replace(".svelte", ".js"),
-			"format": "iife",
-			"interop": "auto",
-			"name": "app"
-		},
-		"plugins": [
-			alias({
-				"entries": [
-					{ find: /^page/, replacement: join(ROOT, pathInfo.input) }
-				]
-			}),
-			compileTypescript,
-			compileSvelte,
-			scss({
-				"fileName": basename(pathInfo.output).replace(".svelte", ".css")
-			}),
-			resolvePathAliases,
-			resolveNodeModules,
-			supportCommonjs,
-			writeOutput,
-			...generalPostPlugins
-		]
-	}));
+	: sourceDirectory.toConfigurationArray()
 }
