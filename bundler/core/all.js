@@ -1,12 +1,13 @@
 import { join, basename } from "path"
 import scss from "rollup-plugin-scss"
+import html from "@rollup/plugin-html"
 import alias from "@rollup/plugin-alias"
 import svelte from "rollup-plugin-svelte"
 import autoPrepocess from "svelte-preprocess"
 import commonjs from "@rollup/plugin-commonjs"
+import { CommonInfoBuilder } from "comroconbu"
 import nodeResolve from "@rollup/plugin-node-resolve"
 import esbuild from "rollup-plugin-esbuild-transform"
-import { CommonInfoBuilder } from "comroconbu"
 
 import { PRODUCTION, DEVELOPMENT, TEST } from "./environments"
 
@@ -78,6 +79,9 @@ export default async function(environment = DEVELOPMENT, generalPostPlugins = []
 				resolveNodeModules,
 				supportCommonjs,
 				writeOutput,
+				html({
+					"fileName": basename(pathPair.originalRelativeOutputPath).replace(".svelte", ".htm")
+				}),
 				...generalPostPlugins
 			]
 		},
