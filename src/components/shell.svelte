@@ -34,7 +34,7 @@
 	<nav class="navbar-end">
 		<div class="block md:hidden">
 			<div class="dropdown dropdown-end">
-				<span tabindex="0" for="navbar_dropdown" class="material-symbols-outlined">menu</span>
+				<label tabindex="0" for="navbar_dropdown" class="material-symbols-outlined">menu</label>
 				<div tabindex="0" id="navbar_dropdown" class="dropdown-content">
 					<Menu/>
 				</div>
@@ -48,22 +48,30 @@
 <main>
 	<slot name="main"></slot>
 </main>
-<footer class="footer">
-	<p>Copyright © 2023 Kenneth Trecy Tobias</p>
-	<p>
-		This website contains third-party frameworks:
-		<a href="https://svelte.dev/">Svelte</a>
-		(<a href="https://github.com/sveltejs/svelte/blob/master/LICENSE.md">MIT</a>)
-	</p>
-
-	<div class="form-control">
-		<label class="label cursor-pointer">
-			<span class="label-text">Current mode: {friendlyCurrentMode}</span>
-			<input
-				type="checkbox"
-				class="toggle toggle-secondary ml-4"
-				bind:checked={mustBeInDarkMode}/>
-		</label>
+<footer class="footer p-4">
+	<div>
+		<p>
+			This website contains third-party frameworks:
+			<a href="https://svelte.dev/">Svelte</a>
+			(<a href="https://github.com/sveltejs/svelte/blob/master/LICENSE.md">MIT</a>)
+		</p>
+	</div>
+</footer>
+<footer class="footer p-4 bg-neutral">
+	<div class="grid-flow-col items-center">
+		<img class="flex-none w-16 h-auto" alt="logo" src={Logo}/>
+		<p>Copyright © 2023 Kenneth Trecy Tobias</p>
+	</div>
+	<div class="md:place-self-center md:justify-self-end">
+		<div class="form-control">
+			<label class="label cursor-pointer">
+				<span class="label-text">Current mode: {friendlyCurrentMode}</span>
+				<input
+					type="checkbox"
+					class="toggle toggle-secondary ml-4"
+					bind:checked={mustBeInDarkMode}/>
+			</label>
+		</div>
 	</div>
 </footer>
 
