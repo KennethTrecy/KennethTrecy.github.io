@@ -1,4 +1,5 @@
 import { join, basename } from "path"
+import url from "@rollup/plugin-url"
 import scss from "rollup-plugin-scss"
 import html from "@rollup/plugin-html"
 import alias from "@rollup/plugin-alias"
@@ -40,6 +41,14 @@ export default async function(environment = DEVELOPMENT, generalPostPlugins = []
 			{ find: /^@(\/|$)/, replacement: `${ROOT}/src/` }
 		]
 	})
+	const handleImages = url({
+		"destDir": `${ROOT}/docs`,
+		"emitFiles": true,
+		"fileName": "[dirname][name][extname]",
+		"include": [
+			"**/*.png"
+		]
+	})
 	const resolveNodeModules = nodeResolve({
 		"browser": environment === PRODUCTION || environment === DEVELOPMENT,
 		"exportConditions": [ "svelte" ],
@@ -76,6 +85,7 @@ export default async function(environment = DEVELOPMENT, generalPostPlugins = []
 					"fileName": basename(pathPair.originalRelativeOutputPath).replace(".svelte", ".css")
 				}),
 				resolvePathAliases,
+				handleImages,
 				resolveNodeModules,
 				supportCommonjs,
 				writeOutput,
