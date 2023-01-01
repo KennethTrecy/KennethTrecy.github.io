@@ -50,6 +50,11 @@
 </main>
 <footer class="footer">
 	<p>Copyright © 2023 Kenneth Trecy Tobias</p>
+	<p>
+		This website contains third-party frameworks:
+		<a href="https://svelte.dev/">Svelte</a>
+		(<a href="https://github.com/sveltejs/svelte/blob/master/LICENSE.md">MIT</a>)
+	</p>
 
 	<div class="form-control">
 		<label class="label cursor-pointer">
