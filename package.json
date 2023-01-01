@@ -46,7 +46,6 @@
 		"typescript": "^4.9.4"
 	},
 	"dependencies": {
-		"agnostic-svelte": "^1.1.27",
 		"attractions": "^3.7.0",
 		"svelte": "^3.55.0"
 	}
