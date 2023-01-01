@@ -1,12 +1,17 @@
 import { join, basename } from "path"
+import tailwind from "tailwindcss"
+import autoprefixer from "autoprefixer"
+import { CommonInfoBuilder } from "comroconbu"
+import purgecss from "@fullhuman/postcss-purgecss"
+
 import url from "@rollup/plugin-url"
 import scss from "rollup-plugin-scss"
 import html from "@rollup/plugin-html"
 import alias from "@rollup/plugin-alias"
 import svelte from "rollup-plugin-svelte"
+import postcss from "rollup-plugin-postcss"
 import autoPrepocess from "svelte-preprocess"
 import commonjs from "@rollup/plugin-commonjs"
-import { CommonInfoBuilder } from "comroconbu"
 import nodeResolve from "@rollup/plugin-node-resolve"
 import esbuild from "rollup-plugin-esbuild-transform"
 
@@ -19,12 +24,19 @@ const ROOT = join(__dirname, "../..")
 const TYPESCRIPT_CONFIGURATION = "tsconfig.json"
 
 export default async function(environment = DEVELOPMENT, generalPostPlugins = []) {
+	const postcssConfigurationPath = join(ROOT, "postcss.config.json")
 	const compileTypescript = esbuild([
 		{
 			"loader": "ts",
 			"tsconfig": join(ROOT, TYPESCRIPT_CONFIGURATION)
 		}
 	])
+	const postcssPlugins = [
+		tailwind({
+			"config": join(ROOT, "tailwindcss.config.cjs")
+		}),
+		autoprefixer()
+	]
 	const compileSvelte = svelte({
 		"compilerOptions": {
 			"dev": environment === DEVELOPMENT || environment === TEST
@@ -33,6 +45,9 @@ export default async function(environment = DEVELOPMENT, generalPostPlugins = []
 			"typescript": {
 				"tsconfigDirectory": ROOT,
 				"tsconfigFile": TYPESCRIPT_CONFIGURATION
+			},
+			"postcss": {
+				"plugins": postcssPlugins
 			}
 		})
 	})
@@ -81,14 +96,22 @@ export default async function(environment = DEVELOPMENT, generalPostPlugins = []
 				}),
 				compileTypescript,
 				compileSvelte,
-				scss({
-					"fileName": basename(pathPair.originalRelativeOutputPath).replace(".svelte", ".css")
-				}),
 				resolvePathAliases,
 				handleImages,
 				resolveNodeModules,
 				supportCommonjs,
 				writeOutput,
+				postcss({
+					"extract": basename(pathPair.originalRelativeOutputPath).replace(".svelte", ".css"),
+					"plugins": [
+						...postcssPlugins,
+						purgecss({
+							"content": [
+								pathPair.completeOutputPath
+							]
+						})
+					]
+				}),
 				html({
 					"fileName": basename(pathPair.originalRelativeOutputPath).replace(".svelte", ".htm")
 				}),
