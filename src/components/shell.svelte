@@ -81,7 +81,8 @@
 			100vh - (
 				4em /** Navbar minimum height **/
 				+ (var(--navbar-padding, 0.5em) * 2)
-				+ 2em /** Footer padding and line height **/
+				+ 1em + 1.25em /** 1st footer's padding and line height **/
+				+ 2em + 4em /** 2nd footer's padding and logo height **/
 			)
 		);
 	}
