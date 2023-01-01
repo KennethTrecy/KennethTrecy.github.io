@@ -1,6 +1,11 @@
 <script lang="ts">
-	import "agnostic-svelte/css/common.min.css"
 	import Shell from "@/components/shell.svelte"
 </script>
 
-<Shell></Shell>
+<svelte:head>
+	<title>KennethTrecy</title>
+	<meta http-equiv="refresh" content="5">
+</svelte:head>
+<Shell>
+	<button slot="main" class="btn">button</button>
+</Shell>
