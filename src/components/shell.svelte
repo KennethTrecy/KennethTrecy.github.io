@@ -8,6 +8,7 @@
 		"data-theme",
 		mustBeInDarkMode ? "dark-logo" : "light-logo"
 	)
+	$: friendlyCurrentMode = mustBeInDarkMode ? "Dark" : "Light"
 </script>
 
 <svelte:head>
@@ -52,8 +53,11 @@
 
 	<div class="form-control">
 		<label class="label cursor-pointer">
-			<span class="label-text">Current mode: Dark</span>
-			<input type="checkbox" class="toggle" bind:checked={mustBeInDarkMode}/>
+			<span class="label-text">Current mode: {friendlyCurrentMode}</span>
+			<input
+				type="checkbox"
+				class="toggle toggle-secondary ml-4"
+				bind:checked={mustBeInDarkMode}/>
 		</label>
 	</div>
 </footer>
