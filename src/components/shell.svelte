@@ -2,6 +2,12 @@
 	import "@/components/general.css"
 	import Logo from "@/multimedia/logo.png"
 	import Menu from "@/components/shell/menu.svelte"
+
+	let mustBeInDarkMode = true
+	$: document.documentElement.setAttribute(
+		"data-theme",
+		mustBeInDarkMode ? "dark-logo" : "light-logo"
+	)
 </script>
 
 <svelte:head>
@@ -41,8 +47,15 @@
 <main>
 	<slot name="main"></slot>
 </main>
-<footer class=".footer">
+<footer class="footer">
 	<p>Copyright © 2023 Kenneth Trecy Tobias</p>
+
+	<div class="form-control">
+		<label class="label cursor-pointer">
+			<span class="label-text">Current mode: Dark</span>
+			<input type="checkbox" class="toggle" bind:checked={mustBeInDarkMode}/>
+		</label>
+	</div>
 </footer>
 
 <style lang="postcss">
@@ -54,9 +67,5 @@
 				+ 2em /** Footer padding and line height **/
 			)
 		);
-	}
-
-	footer {
-		text-align: center;
 	}
 </style>
