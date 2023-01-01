@@ -103,7 +103,7 @@ export default async function(environment = DEVELOPMENT, generalPostPlugins = []
 				writeOutput,
 				postcss({
 					"extract": basename(pathPair.originalRelativeOutputPath).replace(".svelte", ".css"),
-					"plugins": [
+					"plugins": environment === DEVELOPMENT ? postcssPlugins : [
 						...postcssPlugins,
 						purgecss({
 							"content": [
