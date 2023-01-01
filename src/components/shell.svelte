@@ -3,6 +3,16 @@
 	import Logo from "@/multimedia/logo.png"
 </script>
 
+<svelte:head>
+	<link
+		rel="stylesheet"
+		href="hhttps://fonts.googleapis.com/css2?family=Roboto"/>
+	<style>
+		body {
+			font-family: "Roboto", sans-serif;
+		}
+	</style>
+</svelte:head>
 <header class="navbar">
 	<div class="navbar-start flex flex-row items-center">
 		<img class="flex-none w-8 h-auto" alt="logo" src={Logo}/>
