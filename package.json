@@ -36,16 +36,18 @@
 		"husky": "^8.0.0",
 		"jsdom": "^20.0.3",
 		"mocha": "^10.2.0",
+		"postcss": "^8.4.20",
 		"rollup": "^2.67.0",
 		"rollup-plugin-esbuild-transform": "^1.5.0",
 		"rollup-plugin-scss": "^4.0.0",
 		"rollup-plugin-svelte": "^7.1.0",
-		"sass": "^1.49.7",
-		"svelte": "^3.55.0",
-		"svelte-preprocess": "^5.0.0",
+		"sass": "^1.57.1",
+		"svelte-preprocess": "^4.10.7",
 		"typescript": "^4.9.4"
 	},
 	"dependencies": {
-		"agnostic-svelte": "^1.1.27"
+		"agnostic-svelte": "^1.1.27",
+		"attractions": "^3.7.0",
+		"svelte": "^3.55.0"
 	}
 }
