@@ -1,11 +1,11 @@
 import { join, basename } from "path"
+
 import tailwind from "tailwindcss"
 import autoprefixer from "autoprefixer"
 import { CommonInfoBuilder } from "comroconbu"
 import purgecss from "@fullhuman/postcss-purgecss"
 
 import url from "@rollup/plugin-url"
-import scss from "rollup-plugin-scss"
 import html from "@rollup/plugin-html"
 import alias from "@rollup/plugin-alias"
 import svelte from "rollup-plugin-svelte"
@@ -33,7 +33,7 @@ export default async function(environment = DEVELOPMENT, generalPostPlugins = []
 	])
 	const postcssPlugins = [
 		tailwind({
-			"config": join(ROOT, "tailwindcss.config.cjs")
+			"config": join(ROOT, "tailwindcss.config.js")
 		}),
 		autoprefixer()
 	]
@@ -141,9 +141,6 @@ export default async function(environment = DEVELOPMENT, generalPostPlugins = []
 				}),
 				compileTypescript,
 				compileSvelte,
-				scss({
-
-				}),
 				resolvePathAliases,
 				resolveNodeModules,
 				supportCommonjs,
