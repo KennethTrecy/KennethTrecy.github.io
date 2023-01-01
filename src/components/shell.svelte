@@ -1,6 +1,7 @@
 <script lang="ts">
 	import "@/components/general.css"
 	import Logo from "@/multimedia/logo.png"
+	import Menu from "@/components/shell/menu.svelte"
 </script>
 
 <svelte:head>
@@ -24,24 +25,16 @@
 		</p>
 	</div>
 	<nav class="navbar-end">
-		<div class="dropdown dropdown-end">
-			<span tabindex="0" for="navbar_dropdown" class="material-symbols-outlined">menu</span>
-			<ul tabindex="0" id="navbar_dropdown" class="dropdown-content menu bg-primary-100">
-				<li>
-					<a href="/" class="inline-flex flex-row flex-nowrap items-center">
-						<span class="material-symbols-outlined">home</span>
-						<span class="flex-1">Home<span>
-					</a>
-					<a href="/projects" class="inline-flex flex-row flex-nowrap items-center">
-						<span class="material-symbols-outlined">code</span>
-						<span class="flex-1">Projects<span>
-					</a>
-					<a href="/about_myself" class="inline-flex flex-row flex-nowrap items-center">
-						<span class="material-symbols-outlined">contact_page</span>
-						<span class="flex-1">Contacts<span>
-					</a>
-				</li>
-			</ul>
+		<div class="block md:hidden">
+			<div class="dropdown dropdown-end">
+				<span tabindex="0" for="navbar_dropdown" class="material-symbols-outlined">menu</span>
+				<div tabindex="0" id="navbar_dropdown" class="dropdown-content">
+					<Menu/>
+				</div>
+			</div>
+		</div>
+		<div class="hidden md:block">
+			<Menu mustShowHorizontally={true}/>
 		</div>
 	</nav>
 </header>
