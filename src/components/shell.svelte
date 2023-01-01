@@ -24,11 +24,25 @@
 		</p>
 	</div>
 	<nav class="navbar-end">
-		<ul>
-			<li>
-				<a href="/">Home</a>
-			</li>
-		</ul>
+		<div class="dropdown dropdown-end">
+			<span tabindex="0" for="navbar_dropdown" class="material-symbols-outlined">menu</span>
+			<ul tabindex="0" id="navbar_dropdown" class="dropdown-content menu bg-primary-100">
+				<li>
+					<a href="/" class="inline-flex flex-row flex-nowrap items-center">
+						<span class="material-symbols-outlined">home</span>
+						<span class="flex-1">Home<span>
+					</a>
+					<a href="/projects" class="inline-flex flex-row flex-nowrap items-center">
+						<span class="material-symbols-outlined">code</span>
+						<span class="flex-1">Projects<span>
+					</a>
+					<a href="/about_myself" class="inline-flex flex-row flex-nowrap items-center">
+						<span class="material-symbols-outlined">contact_page</span>
+						<span class="flex-1">Contacts<span>
+					</a>
+				</li>
+			</ul>
+		</div>
 	</nav>
 </header>
 <main>
