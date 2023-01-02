@@ -50,7 +50,7 @@
 <footer class="footer p-4">
 	<div>
 		<p>
-			This website contains third-party frameworks:
+			This website contains third-party packages:
 			<ThirdPartyLink
 				packageName="Svelte"
 				homeLink="https://svelte.dev/"
@@ -60,13 +60,17 @@
 				packageName="Tailwind CSS"
 				homeLink="https://tailwindcss.com/"
 				licenseName="MIT"
-				licenseLink="https://github.com/tailwindlabs/tailwindcss/blob/master/LICENSE"/>
-			, and
+				licenseLink="https://github.com/tailwindlabs/tailwindcss/blob/master/LICENSE"/>,
 			<ThirdPartyLink
 				packageName="daisyUI"
 				homeLink="https://daisyui.com/"
 				licenseName="MIT"
-				licenseLink="https://github.com/saadeghi/daisyui/blob/master/LICENSE"/>.
+				licenseLink="https://github.com/saadeghi/daisyui/blob/master/LICENSE"/>, and
+			<ThirdPartyLink
+				packageName="rgb-hex"
+				homeLink="https://github.com/sindresorhus/rgb-hex#readme"
+				licenseName="MIT"
+				licenseLink="https://github.com/sindresorhus/rgb-hex/blob/main/license"/>.
 		</p>
 	</div>
 </footer>
