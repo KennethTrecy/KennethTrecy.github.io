@@ -75,6 +75,16 @@
 		<img class="flex-none w-16 h-auto" alt="logo" src={Logo}/>
 		<p>Copyright © 2023 Kenneth Trecy Tobias</p>
 	</div>
+	<div class="grid-flow-col items-center justify-center">
+		<ProfileLink
+			address="https://www.linkedin.com/in/kenneth-trecy-tobias-4341a825b/"
+			icon="linkedin"
+			name="LinkedIn"/>
+		<ProfileLink
+			address="https://github.com/KennethTrecy/"
+			icon="github"
+			name="GitHub"/>
+	</div>
 	<div class="md:place-self-center md:justify-self-end">
 		<div class="form-control">
 			<label class="label cursor-pointer">
