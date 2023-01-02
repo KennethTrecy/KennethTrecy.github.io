@@ -1,10 +1,11 @@
 <script lang="ts">
-	import Icon from "@/components/general/icon.svelte"
+	import BrandIcon from "@/components/general/brand_icon.svelte"
 
 	export let address
 	export let icon
+	export let name
 </script>
 
-<a href={address} rel="me">
-	<Icon {icon}/>
+<a title={name} href={address} rel="me">
+	<BrandIcon {icon} alternateName={name}/>
 </a>
