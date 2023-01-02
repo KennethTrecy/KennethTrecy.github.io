@@ -4,8 +4,11 @@
 
 <svelte:head>
 	<title>KennethTrecy</title>
-	<meta http-equiv="refresh" content="5">
 </svelte:head>
 <Shell>
-	<button slot="main" class="btn">button</button>
+	<div slot="main" class="h-full w-full flex flex-col justify-center items-center">
+		<p class="my-auto">
+			The initial version of the website will be finished soon.
+		</p>
+	</div>
 </Shell>
