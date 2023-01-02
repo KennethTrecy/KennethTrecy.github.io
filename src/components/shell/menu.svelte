@@ -8,11 +8,11 @@
 			<span class="material-symbols-outlined">home</span>
 			<span class="flex-1">Home<span>
 		</a>
-		<a href="/projects" class="inline-flex flex-row flex-nowrap items-center">
+		<a href="projects.htm" class="inline-flex flex-row flex-nowrap items-center">
 			<span class="material-symbols-outlined">code</span>
 			<span class="flex-1">Projects<span>
 		</a>
-		<a href="/about_myself" class="inline-flex flex-row flex-nowrap items-center">
+		<a href="about_myself.htm" class="inline-flex flex-row flex-nowrap items-center">
 			<span class="material-symbols-outlined">contact_page</span>
 			<span class="flex-1">Contacts<span>
 		</a>
