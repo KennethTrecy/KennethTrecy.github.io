@@ -1,15 +1,16 @@
 <script lang="ts">
 	import "@/components/general.css"
+	import { mustBeInDarkMode } from "@/components/general/theme"
 	import Logo from "@/multimedia/logo.png"
 	import Menu from "@/components/shell/menu.svelte"
+	import ProfileLink from "@/components/shell/profile_link.svelte"
 	import ThirdPartyLink from "@/components/shell/third-party_link.svelte"
 
-	let mustBeInDarkMode = true
 	$: document.documentElement.setAttribute(
 		"data-theme",
-		mustBeInDarkMode ? "dark-logo" : "light-logo"
+		$mustBeInDarkMode ? "dark-logo" : "light-logo"
 	)
-	$: friendlyCurrentMode = mustBeInDarkMode ? "Dark" : "Light"
+	$: friendlyCurrentMode = $mustBeInDarkMode ? "Dark" : "Light"
 </script>
 
 <svelte:head>
@@ -84,7 +85,7 @@
 				<input
 					type="checkbox"
 					class="toggle toggle-secondary ml-4"
-					bind:checked={mustBeInDarkMode}/>
+					bind:checked={$mustBeInDarkMode}/>
 			</label>
 		</div>
 	</div>
