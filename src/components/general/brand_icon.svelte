@@ -1,6 +1,7 @@
 <script lang="ts">
-	export let icon
-	$: link = `https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/${icon}.svg`
+	export let icon: string
+	export let alternateName: string
+	$: link = `https://cdn.simpleicons.org/${icon}/white`
 </script>
 
-<img src={icon}/>
+<img class="h-4 w-auto" alt={alternateName} src={link}/>
