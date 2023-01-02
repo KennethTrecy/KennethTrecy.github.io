@@ -1,15 +1,12 @@
 <script lang="ts">
 	import "@/components/general.css"
-	import { mustBeInDarkMode } from "@/components/general/theme"
+	import { mustBeInDarkMode, themeName } from "@/components/general/theme"
 	import Logo from "@/multimedia/logo.png"
 	import Menu from "@/components/shell/menu.svelte"
 	import ProfileLink from "@/components/shell/profile_link.svelte"
 	import ThirdPartyLink from "@/components/shell/third-party_link.svelte"
 
-	$: document.documentElement.setAttribute(
-		"data-theme",
-		$mustBeInDarkMode ? "dark-logo" : "light-logo"
-	)
+	$: document.documentElement.setAttribute("data-theme", $themeName)
 	$: friendlyCurrentMode = $mustBeInDarkMode ? "Dark" : "Light"
 </script>
 
