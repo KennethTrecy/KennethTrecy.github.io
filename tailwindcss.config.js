@@ -13,7 +13,8 @@ module.exports = {
 					"secondary": "#220055",
 					"accent": "#808080",
 					"neutral": "#3D4451",
-					"base-100": "#FFFFFF"
+					"base-100": "#FFFFFF",
+					"base-200": "#F0F0F0"
 				}
 			},
 			{
@@ -22,7 +23,8 @@ module.exports = {
 					"secondary": "#e5d5ff",
 					"accent": "#808080",
 					"neutral": "#191D24",
-					"base-100": "#2A303C"
+					"base-100": "#2A303C",
+					"base-200": "#1B212D"
 				}
 			}
 		]
