@@ -70,22 +70,25 @@
 		</p>
 	</div>
 </footer>
-<footer class="footer p-4 bg-base-200">
-	<div class="grid-flow-col items-center">
+<footer class="footer justify-around items-center p-4 bg-base-200">
+	<section class="md:grid-flow-col md:items-center">
 		<img class="flex-none w-16 h-auto" alt="logo" src={Logo}/>
 		<p>Copyright © 2023 Kenneth Trecy Tobias</p>
-	</div>
-	<div class="grid-flow-col items-center justify-center">
-		<ProfileLink
-			address="https://www.linkedin.com/in/kenneth-trecy-tobias-4341a825b/"
-			icon="linkedin"
-			name="LinkedIn"/>
-		<ProfileLink
-			address="https://github.com/KennethTrecy/"
-			icon="github"
-			name="GitHub"/>
-	</div>
-	<div class="md:place-self-center md:justify-self-end">
+	</section>
+	<section class="socials justify-center items-center justify-items-center">
+		<span class="footer-title">Socials</span>
+		<p class="grid grid-cols-2 grid-rows-1 gap-x-4">
+			<ProfileLink
+				address="https://www.linkedin.com/in/kenneth-trecy-tobias-4341a825b/"
+				icon="linkedin"
+				name="LinkedIn"/>
+			<ProfileLink
+				address="https://github.com/KennethTrecy/"
+				icon="github"
+				name="GitHub"/>
+		</p>
+	</section>
+	<section class="md:justify-self-end">
 		<div class="form-control">
 			<label class="label cursor-pointer">
 				<span class="label-text">Current mode: {friendlyCurrentMode}</span>
@@ -95,7 +98,7 @@
 					bind:checked={$mustBeInDarkMode}/>
 			</label>
 		</div>
-	</div>
+	</section>
 </footer>
 
 <style lang="postcss">
@@ -105,8 +108,12 @@
 				4em /** Navbar minimum height **/
 				+ (var(--navbar-padding, 0.5em) * 2)
 				+ 1em + 1.25em /** 1st footer's padding and line height **/
-				+ 2em + 4em /** 2nd footer's padding and logo height **/
+				+ 1em + 5.25em /** 2nd footer's padding and socials' section height **/
 			)
 		);
+	}
+
+	footer .socials {
+		grid-area: 1 / 2 / span 1 / span 1;
 	}
 </style>
