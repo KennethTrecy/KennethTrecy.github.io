@@ -57,17 +57,18 @@
 				packageName="Svelte"
 				homeLink="https://svelte.dev/"
 				licenseName="MIT"
-				licenseLink="https://github.com/sveltejs/svelte/blob/master/LICENSE.md"/>
+				licenseLink="https://github.com/sveltejs/svelte/blob/master/LICENSE.md"/>,
 			<ThirdPartyLink
 				packageName="Tailwind CSS"
 				homeLink="https://tailwindcss.com/"
 				licenseName="MIT"
 				licenseLink="https://github.com/tailwindlabs/tailwindcss/blob/master/LICENSE"/>
+			, and
 			<ThirdPartyLink
 				packageName="daisyUI"
 				homeLink="https://daisyui.com/"
 				licenseName="MIT"
-				licenseLink="https://github.com/saadeghi/daisyui/blob/master/LICENSE"/>
+				licenseLink="https://github.com/saadeghi/daisyui/blob/master/LICENSE"/>.
 		</p>
 	</div>
 </footer>
