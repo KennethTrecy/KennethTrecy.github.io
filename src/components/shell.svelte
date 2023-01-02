@@ -2,6 +2,7 @@
 	import "@/components/general.css"
 	import Logo from "@/multimedia/logo.png"
 	import Menu from "@/components/shell/menu.svelte"
+	import ThirdPartyLink from "@/components/shell/third-party_link.svelte"
 
 	let mustBeInDarkMode = true
 	$: document.documentElement.setAttribute(
@@ -52,8 +53,11 @@
 	<div>
 		<p>
 			This website contains third-party frameworks:
-			<a href="https://svelte.dev/">Svelte</a>
-			(<a href="https://github.com/sveltejs/svelte/blob/master/LICENSE.md">MIT</a>)
+			<ThirdPartyLink
+				packageName="Svelte"
+				homeLink="https://svelte.dev/"
+				licenseName="MIT"
+				licenseLink="https://github.com/sveltejs/svelte/blob/master/LICENSE.md"/>
 		</p>
 	</div>
 </footer>
