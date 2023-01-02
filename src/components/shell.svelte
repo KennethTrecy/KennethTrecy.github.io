@@ -61,7 +61,7 @@
 		</p>
 	</div>
 </footer>
-<footer class="footer p-4 bg-neutral">
+<footer class="footer p-4 bg-base-200">
 	<div class="grid-flow-col items-center">
 		<img class="flex-none w-16 h-auto" alt="logo" src={Logo}/>
 		<p>Copyright © 2023 Kenneth Trecy Tobias</p>
