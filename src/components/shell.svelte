@@ -24,12 +24,12 @@
 	</style>
 </svelte:head>
 <header class="navbar">
-	<div class="navbar-start flex flex-row items-center">
+	<a href="/" class="text-color-inherit navbar-start flex flex-row items-center">
 		<img class="flex-none w-8 h-auto" alt="logo" src={Logo}/>
 		<p class="flex-1 ml-4 my-auto">
 			KennethTrecy
 		</p>
-	</div>
+	</a>
 	<nav class="navbar-end">
 		<div class="block md:hidden">
 			<div class="dropdown dropdown-end">
