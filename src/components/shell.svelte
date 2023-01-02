@@ -47,7 +47,7 @@
 <main>
 	<slot name="main"></slot>
 </main>
-<footer class="footer p-4">
+<footer class="footer footer-center p-4">
 	<div>
 		<p>
 			This website contains third-party packages:
@@ -106,15 +106,20 @@
 </footer>
 
 <style lang="postcss">
-	main {
-		min-height: calc(
+	:root {
+		--main-height: calc(
 			100vh - (
 				4em /** Navbar minimum height **/
 				+ (var(--navbar-padding, 0.5em) * 2)
 				+ 1em + 1.25em /** 1st footer's padding and line height **/
 				+ 1em + 5.25em /** 2nd footer's padding and socials' section height **/
 			)
-		);
+		)
+	}
+
+	main {
+		min-height: var(--main-height);
+		height: var(--main-height);
 	}
 
 	footer .socials {
