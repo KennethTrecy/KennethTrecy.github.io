@@ -6,4 +6,4 @@
 	$: link = `https://cdn.simpleicons.org/${icon}/${$textColor}`
 </script>
 
-<img class="h-4 w-auto" alt={alternateName} src={link}/>
+<img class="h-8 w-auto" alt={alternateName} src={link}/>
