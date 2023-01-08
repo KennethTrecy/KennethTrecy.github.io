@@ -3,7 +3,13 @@ module.exports = {
 	"content": ["./src/pages/**/*.svelte", "./src/components/**/*.svelte"],
 	"darkMode": "[data-them='dark-logo']",
 	"theme": {
-		"extend": {}
+		"extend": {
+			"container": {
+				"padding": {
+					"DEFAULT": "4rem"
+				}
+			}
+		}
 	},
 	"daisyui": {
 		"themes": [
@@ -31,6 +37,7 @@ module.exports = {
 	},
 	"variants": {},
 	"plugins": [
-		require("daisyui"),
+		require("@tailwindcss/typography"),
+		require("daisyui")
 	]
 }
