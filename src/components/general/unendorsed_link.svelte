@@ -1,7 +1,7 @@
 <script lang="ts">
-	export let address
+	export let address: string
 </script>
 
-<a href={address} rel="nofollow">
+<a href={address} rel="nofollow" class="link">
 	<slot></slot>
 </a>
