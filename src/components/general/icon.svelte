@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let icon
+	export let name
 </script>
 
-<span class="material-symbols-outlined">{icon}</span>
+<span class="material-symbols-outlined">{name}</span>
