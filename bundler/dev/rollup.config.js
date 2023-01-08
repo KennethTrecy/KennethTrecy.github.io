@@ -1,4 +1,3 @@
-import { DEVELOPMENT } from "../core/environments";
-import all from "../core/all";
+import Pipeline from "./pipeline"
 
-export default all(DEVELOPMENT);
+export default new Pipeline().toConfigurationArray()

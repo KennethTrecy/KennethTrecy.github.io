@@ -1,11 +1,3 @@
-import { PRODUCTION } from "../core/environments";
-import all from "../core/all";
-import { terser } from "rollup-plugin-terser";
+import Pipeline from "./pipeline"
 
-export default all(PRODUCTION, [
-	terser({
-		"format": {
-			"comments": (_n, comment) => (/license/iu).test(comment.value)
-		}
-	})
-]);
+export default new Pipeline().toConfigurationArray()
