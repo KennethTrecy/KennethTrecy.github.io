@@ -88,11 +88,11 @@ export default class PluginArray extends Environment {
 				"loader": "ts",
 				"tsconfig": join(ROOT, TYPESCRIPT_CONFIGURATION)
 			},
-			{
+			this.isInProduction ? undefined : {
 				"loader": "js",
 				"output": true
 			}
-		])
+		].filter(Boolean))
 
 		return [
 			compileTypescript,
