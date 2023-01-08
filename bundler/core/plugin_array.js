@@ -50,6 +50,7 @@ export default class PluginArray extends Environment {
 		const compileSvelte = svelte({
 			"compilerOptions": {
 				"dev": this.isInDevelopment || this.isInTest,
+				"generate": this.isInProduction ? "ssr" : "dom",
 				"hydratable": this.isInProduction
 			},
 			"preprocess": autoPrepocess({
