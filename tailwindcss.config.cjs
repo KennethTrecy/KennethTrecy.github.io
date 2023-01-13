@@ -1,6 +1,10 @@
 /** @type {import("tailwindcss").Config} */
 module.exports = {
-	"content": ["./src/pages/**/*.svelte", "./src/components/**/*.svelte"],
+	"content": [
+		"./src/pages/**/*.svelte",
+		"./src/components/**/*.svelte",
+		"./src/routes/**/*.svelte"
+	],
 	"darkMode": "[data-them='dark-logo']",
 	"theme": {
 		"extend": {
