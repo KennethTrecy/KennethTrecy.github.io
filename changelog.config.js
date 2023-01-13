@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	"types": {
 		"dprct": { "title": "❕ Deprecations", "semver": "minor" },
 		"remove": { "title": "‼️ Removals", "semver": "major" },
