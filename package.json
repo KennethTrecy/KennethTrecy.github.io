@@ -13,10 +13,13 @@
 	"scripts": {
 		"prepare": "husky install",
 		"dev": "npm run development",
-		"development": "npx rollup --bundleConfigAsCjs -c bundler/dev/rollup.config.js",
-		"watch": "npx rollup --bundleConfigAsCjs -c bundler/dev/rollup.config.js --watch",
-		"prod": "npm run production",
-		"production": "npx rollup --bundleConfigAsCjs -c bundler/prod/rollup.config.js",
+		"build": "vite build",
+		"preview": "vite preview",
+		"development": "vite dev",
+		"watch": "npx rollup -c bundler/dev/rollup.config.js --watch",
+		"prod": "vite build",
+		"production:partial": "npx rollup -c bundler/prod/rollup.partial.config.js",
+		"production:full": "npx rollup -c bundler/prod/rollup.full.config.js",
 		"test:unit": "npx rollup -c bundler/test/rollup.config.js && npx mocha hidden/t/**/*.js",
 		"test:watch_unit": "npx mocha hidden/t/**/*.js --watch --watch-files hidden/t/**/*.js"
 	},
