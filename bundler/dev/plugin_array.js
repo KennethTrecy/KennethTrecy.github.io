@@ -69,7 +69,7 @@ export default class PluginArray extends CorePluginArray {
 								return `<link ${linkAttributes}/>`
 							})
 						))
-						.replace("${scripts}", files.js.map(
+						.replace("${scripts}", (files.js ?? files.svelte).map(
 							file => `<script src="${file.fileName}"></script>`
 						).join(NEXT_LINE) + (
 							attributes.script === null

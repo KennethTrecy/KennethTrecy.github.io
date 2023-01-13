@@ -1,4 +1,4 @@
-import { PRODUCTION, DEVELOPMENT, TEST } from "./environments"
+import { PRODUCTION, DEVELOPMENT, TEST, HYDRATED_PRODUCTION } from "./environments"
 
 export default class Environment {
 	constructor(environment) {
@@ -7,6 +7,10 @@ export default class Environment {
 
 	get isInProduction() {
 		return this._environment === PRODUCTION
+	}
+
+	get isInHydratedProduction() {
+		return this._environment === HYDRATED_PRODUCTION
 	}
 
 	get isInDevelopment() {

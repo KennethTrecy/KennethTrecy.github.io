@@ -1,6 +1,7 @@
 import { join, basename } from "node:path"
 
 import { minify } from "html-minifier"
+import tailwind from "tailwindcss"
 import autoprefixer from "autoprefixer"
 import purgecss from "@fullhuman/postcss-purgecss"
 
@@ -8,14 +9,16 @@ import run from "@rollup/plugin-run"
 import alias from "@rollup/plugin-alias"
 import postcss from "rollup-plugin-postcss"
 
-import { ROOT } from "../core/paths"
+import { ROOT, TAILWINDCSS_CONFIGURATION } from "../../core/paths"
 
-import CorePluginArray from "../core/plugin_array"
+import CorePluginArray from "../../core/plugin_array"
 
 export default class PluginArray extends CorePluginArray {
 	get postcssPlugins() {
 		return [
-			...super.postcssPlugins,
+			tailwind({
+				"config": join(ROOT, TAILWINDCSS_CONFIGURATION)
+			}),
 			autoprefixer()
 		]
 	}
@@ -33,17 +36,23 @@ export default class PluginArray extends CorePluginArray {
 		]
 	}
 
+	get postcssOutputPlugins() {
+		return [
+			...super.postcssPlugins,
+			purgecss({
+				"content": [
+					this.pathPair.completeOutputPath
+				]
+			})
+		]
+	}
+
 	get postOutputPlugins() {
 		return [
 			postcss({
 				"extract": basename(this.pathPair.originalRelativeOutputPath)
 					.replace(".svelte", ".css"),
 				"plugins": this.postcssOutputPlugins
-			}),
-			purgecss({
-				"content": [
-					this.pathPair.completeOutputPath
-				]
 			}),
 			run()
 		]

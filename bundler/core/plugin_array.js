@@ -9,7 +9,8 @@ import commonjs from "@rollup/plugin-commonjs"
 import nodeResolve from "@rollup/plugin-node-resolve"
 import esbuild from "rollup-plugin-esbuild-transform"
 
-import { ROOT, TYPESCRIPT_CONFIGURATION } from "./paths"
+import { ROOT, TYPESCRIPT_CONFIGURATION, TAILWINDCSS_CONFIGURATION } from "./paths"
+
 import Environment from "./environment"
 
 export default class PluginArray extends Environment {
@@ -25,7 +26,7 @@ export default class PluginArray extends Environment {
 	get postcssPlugins() {
 		return [
 			tailwind({
-				"config": join(ROOT, "tailwindcss.config.js")
+				"config": join(ROOT, TAILWINDCSS_CONFIGURATION)
 			})
 		]
 	}
@@ -51,7 +52,7 @@ export default class PluginArray extends Environment {
 			"compilerOptions": {
 				"dev": this.isInDevelopment || this.isInTest,
 				"generate": this.isInProduction ? "ssr" : "dom",
-				"hydratable": this.isInProduction
+				"hydratable": this.isInProduction || this.isInHydratedProduction
 			},
 			"preprocess": autoPrepocess({
 				"typescript": {
@@ -77,7 +78,7 @@ export default class PluginArray extends Environment {
 			]
 		})
 		const resolveNodeModules = nodeResolve({
-			"browser": this.isInProduction || this.isInDevelopment,
+			"browser": this.isInProduction || this.isInHydratedProduction || this.isInDevelopment,
 			"exportConditions": [ "svelte" ],
 			"extensions": [ ".svelte" ],
 			"dedupe": [ "svelte" ]
@@ -88,7 +89,7 @@ export default class PluginArray extends Environment {
 				"loader": "ts",
 				"tsconfig": join(ROOT, TYPESCRIPT_CONFIGURATION)
 			},
-			this.isInProduction ? undefined : {
+			this.isInProduction || this.isInHydratedProduction ? undefined : {
 				"loader": "js",
 				"output": true
 			}
