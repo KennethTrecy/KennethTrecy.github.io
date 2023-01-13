@@ -1,10 +1,18 @@
 {
-	"extends": "@tsconfig/recommended/tsconfig.json",
+	"extends": "./.svelte-kit/tsconfig.json",
 	"compilerOptions": {
 		"module": "ES2015",
 		"moduleResolution": "node",
+		"allowJs": true,
+		"checkJs": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
 		"paths": {
-			"@/*": [ "src/*" ]
+			"@": [ "src" ]
 		}
 	}
 }
