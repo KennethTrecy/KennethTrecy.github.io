@@ -1,9 +1,12 @@
-<script lang="typescript">
+<script lang="ts">
 	import { mustBeInDarkMode, themeName } from "@/components/general/theme"
 
-	import Icon from "@/components/general/icon"
+	import Icon from "@/components/general/icon.svelte"
 
-	$: document.documentElement.setAttribute("data-theme", $themeName)
+	$: if (typeof window !== "undefined") document.documentElement.setAttribute(
+		"data-theme",
+		$themeName
+	)
 	$: modeIcon = $mustBeInDarkMode ? "dark_mode" : "light_mode"
 </script>
 

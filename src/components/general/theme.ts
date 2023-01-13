@@ -10,10 +10,12 @@ export const textColor = derived(
 	themeName,
 	($name, set) => {
 		setTimeout(() => {
-			set(rgbToHex(window.getComputedStyle(
-				document.querySelector(`[data-theme=${$name}]`)
-				|| document.documentElement
-			).color))
+			if (typeof window !== "undefined") {
+				set(rgbToHex(window.getComputedStyle(
+					document.querySelector(`[data-theme=${$name}]`)
+					|| document.documentElement
+				).color))
+			}
 		}, 25)
 	}
 )
