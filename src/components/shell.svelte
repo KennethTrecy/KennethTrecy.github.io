@@ -2,7 +2,7 @@
 	import "@/components/general.css"
 	import Logo from "@/multimedia/logo.png"
 
-	import Icon from "@/components/general/icon"
+	import Icon from "@/components/general/icon.svelte"
 	import Menu from "@/components/shell/menu.svelte"
 	import ProfileLink from "@/components/shell/profile_link.svelte"
 	import ThemeToggler from "@/components/shell/theme_toggler.svelte"
@@ -77,6 +77,13 @@
 						homeLink="https://github.com/sindresorhus/rgb-hex#readme"
 						licenseName="MIT"
 						licenseLink="https://github.com/sindresorhus/rgb-hex/blob/main/license"/>.
+
+					The site has been built using
+					<ThirdPartyLink
+						packageName="SvelteKit"
+						homeLink="https://kit.svelte.dev/"
+						licenseName="MIT"
+						licenseLink="https://github.com/sveltejs/kit/blob/master/LICENSE"/>.
 				</p>
 			</div>
 		</footer>
