@@ -1,10 +1,13 @@
 import rgbToHex from "rgb-hex"
 import { writable, derived } from "svelte/store"
 
+export const DARK_MODE = "dark-logo"
+export const LIGHT_MODE = "light-logo"
+
 export const mustBeInDarkMode = writable<boolean>(true)
 export const themeName = derived(
 	mustBeInDarkMode,
-	isInDarkMode => isInDarkMode ? "dark-logo" : "light-logo"
+	isInDarkMode => isInDarkMode ? DARK_MODE : LIGHT_MODE
 )
 export const textColor = derived(
 	themeName,
