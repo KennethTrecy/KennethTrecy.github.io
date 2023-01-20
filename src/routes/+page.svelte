@@ -54,7 +54,7 @@
 					<a href="https://github.com/KennethTrecy?tab=repositories">
 						list of my respositories
 					</a>
-					in <a href="https://github.com/KennethTrecy">my GitHub profile</a>.
+					in <a href="https://github.com/KennethTrecy" rel="me">my GitHub profile</a>.
 				</p>
 			</div>
 		</section>
