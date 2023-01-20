@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
 	import Logo from "@/multimedia/logo.png"
 
-	import TextPreviewCard from "@/components/general/text_preview_card.svelte"
+	import ProjectCard from "@/components/general/project_card.svelte"
 
 	const name = "Kenneth Trecy Tobias"
 </script>
@@ -41,7 +41,7 @@
 			<section>
 				<h3 class="prose">Personal Projects</h3>
 				<div class="flex flex-col md:flex-row flex-wrap">
-					<TextPreviewCard
+					<ProjectCard
 						title="Virdafils"
 						description="A driver for Laravel framework which use a database like file storage system."
 						link="https://github.com/KennethTrecy/virdafils"/>
