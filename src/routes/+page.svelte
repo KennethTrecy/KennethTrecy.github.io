@@ -54,6 +54,13 @@
 						description="Builder for common Rollup configurations"
 						link="https://github.com/KennethTrecy/comroconbu"/>
 				</div>
+				<p class="prose">
+					Some of my projects can be found on the
+					<a href="https://github.com/KennethTrecy?tab=repositories">
+						list of my respositories
+					</a>
+					in <a href="https://github.com/KennethTrecy">my GitHub profile</a>.
+				</p>
 			</section>
 		</section>
 		<section class="container my-4 flex flex-col md:flex-row">
