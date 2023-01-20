@@ -15,7 +15,7 @@
 	<article class="pb-8">
 		<section class="container my-4 flex flex-col justify-center items-center">
 			<div class="prose md:prose-lg">
-				<h2>Contact Details</h2>
+				<h2 id="contact_details">Contact Details</h2>
 				<p>Should you wish to get in touch with me, I can be communicated on different platforms.</p>
 				<ul>
 					<li>
