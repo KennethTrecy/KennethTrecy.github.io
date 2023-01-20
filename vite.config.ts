@@ -7,7 +7,7 @@ const configuration: UserConfig = {
 		sveltekit()
 	],
 	"server": {
-		"port": Number(process.env.PORT || "6000")
+		"port": Number(process.env.PORT || "7000")
 	},
 	"test": {
 		"include": ["src/**/*.{test,spec}.{js,ts}"]
