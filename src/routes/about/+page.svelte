@@ -17,13 +17,27 @@
 			<div class="prose md:prose-lg">
 				<h2 id="contact_details">Contact Details</h2>
 				<p>Should you wish to get in touch with me, I can be communicated on different platforms.</p>
-				<ul>
+				<ul class="list-none not-prose">
 					<li>
 						<ContactLink
 							address="https://www.linkedin.com/in/kenneth-trecy-tobias/"
 							icon="linkedin"
 							platformName="LinkedIn"
 							username="kenneth-trecy-tobias"/>
+					</li>
+					<li>
+						<ContactLink
+							address="https://github.com/KennethTrecy/"
+							icon="github"
+							platformName="GitHub"
+							username="KennethTrecy"/>
+					</li>
+					<li>
+						<ContactLink
+							address="mailto:web.kennethtobias@gmail.com"
+							icon="gmail"
+							platformName="Gmail"
+							username="web.kennethtobias@gmail.com"/>
 					</li>
 				</ul>
 			</div>
