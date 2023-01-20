@@ -9,7 +9,7 @@
 	<GeneralHead
 		title="KennethTrecy"
 		description="Personal website of KennethTrecy"
-		keywords="Kenneth Trecy,portfolio,philippines"
+		keywords={[ "Kenneth Trecy", "portfolio" , "philippines" ]}
 		pageVersion="0.1"/>
 </svelte:head>
 
