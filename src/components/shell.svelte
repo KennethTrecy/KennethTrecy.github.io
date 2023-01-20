@@ -101,7 +101,7 @@
 				<span class="footer-title">Socials</span>
 				<p class="grid grid-cols-2 grid-rows-1 gap-x-4">
 					<ProfileLink
-						address="https://www.linkedin.com/in/kenneth-trecy-tobias-4341a825b/"
+						address="https://www.linkedin.com/in/kenneth-trecy-tobias/"
 						icon="linkedin"
 						name="LinkedIn"/>
 					<ProfileLink
