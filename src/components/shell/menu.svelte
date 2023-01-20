@@ -12,7 +12,7 @@
 			<span class="material-symbols-outlined">code</span>
 			<span class="flex-1">Projects<span>
 		</a>
-		<a href="#" class="inline-flex flex-row flex-nowrap items-center">
+		<a href="/about#contact_details" class="inline-flex flex-row flex-nowrap items-center">
 			<span class="material-symbols-outlined">contact_page</span>
 			<span class="flex-1">Contacts<span>
 		</a>
