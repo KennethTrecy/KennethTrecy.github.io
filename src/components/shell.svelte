@@ -21,7 +21,6 @@
 			font-family: "Roboto", sans-serif;
 		}
 	</style>
-	<meta name="refresh" content="5"/>
 </svelte:head>
 <div class="drawer drawer-mobile">
 	<input type="checkbox" class="drawer-toggle" id="menu_drawer_checkbox"/>
