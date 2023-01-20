@@ -1,20 +1,16 @@
 <script lang="ts">
 	import Logo from "@/multimedia/logo.png"
-	import { WEBSITE_OWNER } from "@/constants/names"
-	import { LICENSE } from "@/constants/miscellaneous_meta"
 
+	import GeneralHead from "@/components/general/general_head.svelte"
 	import ProjectCard from "@/components/general/project_card.svelte"
 </script>
 
 <svelte:head>
-	<title>KennethTrecy</title>
-	<meta name="description" content="Personal website of KennethTrecy"/>
-	<meta name="keywords" content="Kenneth Trecy,portfolio,philippines"/>
-	<meta name="web_author" content={WEBSITE_OWNER}/>
-	<meta name="designer" content={WEBSITE_OWNER}/>
-	<meta name="creator" content={WEBSITE_OWNER}/>
-	<meta name="page-version" content="0.1"/>
-	<meta name="license" content={LICENSE}/>
+	<GeneralHead
+		title="KennethTrecy"
+		description="Personal website of KennethTrecy"
+		keywords="Kenneth Trecy,portfolio,philippines"
+		pageVersion="0.1"/>
 </svelte:head>
 
 <div class="h-full w-full flex flex-col justify-center items-center">
