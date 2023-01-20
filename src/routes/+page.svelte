@@ -42,11 +42,11 @@
 						link="https://github.com/KennethTrecy/virdafils"/>
 					<ProjectCard
 						title="Elomocato"
-						description="Custom cast classes to be used within Laravel"
+						description="Custom cast classes to be used with Laravel framework."
 						link="https://github.com/KennethTrecy/elomocato"/>
 					<ProjectCard
 						title="Comroconbu"
-						description="Builder for common Rollup configurations"
+						description="Builder for common Rollup configurations."
 						link="https://github.com/KennethTrecy/comroconbu"/>
 				</div>
 				<p class="mt-4">
