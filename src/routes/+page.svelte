@@ -1,7 +1,7 @@
 <script>
 	import Logo from "@/multimedia/logo.png"
 
-	import Icon from "@/components/general/icon.svelte"
+	import TextPreviewCard from "@/components/general/text_preview_card.svelte"
 
 	const name = "Kenneth Trecy Tobias"
 </script>
@@ -38,22 +38,13 @@
 				<p>Web development is my expertise. I have tried different technologies too such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
 				<p>During my free time, I apply my skills on my personal projects.</p>
 			</div>
-			<section class="flex flex-col md:flex-row flex-wrap">
+			<section>
 				<h3 class="prose">Personal Projects</h3>
-				<div class="card bg-base-200">
-					<div class="card-body">
-						<h3 class="card-title prose">Virdafils</h3>
-						<p class="prose">
-							A driver for Laravel framework which use a database like file storage system.
-						</p>
-						<div class="card-actions">
-							<a
-								href="https://github.com/KennethTrecy/virdafils"
-								class="flex flex-row flex-nowrap items-center justify-end">
-								<span>Visit</span><Icon name="chevron_right"/>
-							</a>
-						</div>
-					</div>
+				<div class="flex flex-col md:flex-row flex-wrap">
+					<TextPreviewCard
+						title="Virdafils"
+						description="A driver for Laravel framework which use a database like file storage system."
+						link="https://github.com/KennethTrecy/virdafils"/>
 				</div>
 			</section>
 		</section>
