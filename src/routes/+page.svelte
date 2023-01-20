@@ -23,7 +23,7 @@
 					<p class="prose md:prose-lg py-6">
 						I usually develop the back-end of the applications I have handled. I ensure their quality though automated tests through CI.
 					</p>
-					<button class="btn btn-primary">Know more about me</button>
+					<a href="/about" class="btn btn-primary">Know more about me</a>
 				</div>
 			</div>
 		</section>
