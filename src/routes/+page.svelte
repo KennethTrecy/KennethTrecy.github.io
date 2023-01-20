@@ -1,12 +1,12 @@
 <script lang="ts">
 	import Logo from "@/multimedia/logo.png"
 
-	import GeneralHead from "@/components/general/general_head.svelte"
+	import CommonHead from "@/components/general/common_head.svelte"
 	import ProjectCard from "@/components/general/project_card.svelte"
 </script>
 
 <svelte:head>
-	<GeneralHead
+	<CommonHead
 		title="KennethTrecy"
 		description="Personal website of KennethTrecy"
 		keywords={[ "Kenneth Trecy", "portfolio" , "philippines" ]}
