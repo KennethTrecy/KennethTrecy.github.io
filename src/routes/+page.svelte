@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Logo from "@/multimedia/logo.png"
 	import { WEBSITE_OWNER } from "@/constants/names"
+	import { LICENSE } from "@/constants/miscellaneous_meta"
 
 	import ProjectCard from "@/components/general/project_card.svelte"
 </script>
@@ -13,7 +14,7 @@
 	<meta name="designer" content={WEBSITE_OWNER}/>
 	<meta name="creator" content={WEBSITE_OWNER}/>
 	<meta name="page-version" content="0.1"/>
-	<meta name="license" content="MIT"/>
+	<meta name="license" content={LICENSE}/>
 </svelte:head>
 
 <div class="h-full w-full flex flex-col justify-center items-center">
