@@ -7,7 +7,11 @@
 	export let username: string
 </script>
 
-<a title={platformName} href={address} rel="me">
+<a
+	title={platformName}
+	href={address}
+	rel="me"
+	class="inline-flex flex-row flex-nowrap items-center">
 	<BrandIcon {icon} alternateName={platformName}/>
-	<span>{username}</span>
+	<span class="ml-4">{username}</span>
 </a>
