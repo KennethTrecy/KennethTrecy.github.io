@@ -1,18 +1,17 @@
 <script lang="ts">
 	import Logo from "@/multimedia/logo.png"
+	import { WEBSITE_OWNER } from "@/constants/names"
 
 	import ProjectCard from "@/components/general/project_card.svelte"
-
-	const name = "Kenneth Trecy Tobias"
 </script>
 
 <svelte:head>
 	<title>KennethTrecy</title>
 	<meta name="description" content="Personal website of KennethTrecy"/>
 	<meta name="keywords" content="Kenneth Trecy,portfolio,philippines"/>
-	<meta name="web_author" content={name}/>
-	<meta name="designer" content={name}/>
-	<meta name="creator" content={name}/>
+	<meta name="web_author" content={WEBSITE_OWNER}/>
+	<meta name="designer" content={WEBSITE_OWNER}/>
+	<meta name="creator" content={WEBSITE_OWNER}/>
 	<meta name="page-version" content="0.1"/>
 	<meta name="license" content="MIT"/>
 </svelte:head>
