@@ -38,7 +38,8 @@
 				<p>Web development is my expertise. I have tried different technologies too such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
 				<p>During my free time, I apply my skills on my personal projects.</p>
 			</div>
-			<div>
+			<section class="flex flex-col md:flex-row flex-wrap">
+				<h3 class="prose">Personal Projects</h3>
 				<div class="card bg-base-200">
 					<div class="card-body">
 						<h3 class="card-title prose">Virdafils</h3>
@@ -54,7 +55,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</section>
 		</section>
 		<section class="container my-4 flex flex-col md:flex-row">
 			<div class="prose">
