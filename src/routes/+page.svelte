@@ -32,15 +32,15 @@
 			</div>
 		</section>
 		<div class="divider"></div>
-		<section class="container my-4 flex flex-col md:flex-row">
+		<section class="container my-4 flex flex-col">
 			<div class="prose">
 				<h2>Specialty</h2>
 				<p>Web development is my expertise. I have tried different technologies too such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
 				<p>During my free time, I apply my skills on my personal projects.</p>
 			</div>
 			<section>
-				<h3 class="prose">Personal Projects</h3>
-				<div class="flex flex-col md:flex-row flex-wrap">
+				<h3 class="my-4">Personal Projects</h3>
+				<div class="max-w-4xl flex flex-col md:flex-row flex-wrap">
 					<ProjectCard
 						title="Virdafils"
 						description="A driver for Laravel framework which use a database like file storage system."

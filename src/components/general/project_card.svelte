@@ -6,7 +6,7 @@
 	export let link: string
 </script>
 
-<div class="card bg-base-200">
+<div class="card flex-1 bg-base-200 mr-4 mb-4">
 	<div class="card-body">
 		<a class="card-title" href={link}>
 			<h4 class="prose">{title}</h4>
