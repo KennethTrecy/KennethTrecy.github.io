@@ -24,7 +24,7 @@
 				<img src={Logo} alt="Kenneth Trecy's logo" class="max-w-sm"/>
 				<div class="max-w-md text-center md:text-left">
 					<h1 class="text-6xl font-bold">Hi, I am Kenneth Trecy!</h1>
-					<p class="prose py-6">
+					<p class="prose md:prose-lg py-6">
 						I usually develop the back-end of the applications I have handled. I ensure their quality though automated tests through CI.
 					</p>
 					<button class="btn btn-primary">Know more about me</button>
@@ -32,15 +32,14 @@
 			</div>
 		</section>
 		<div class="divider"></div>
-		<section class="container my-4 flex flex-col">
-			<div class="prose">
+		<section class="container my-4 flex flex-col justify-center items-center">
+			<div class="prose md:prose-lg">
 				<h2>Specialty</h2>
 				<p>Web development is my expertise. I have tried different technologies too such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
 				<p>During my free time, I apply my skills on my personal projects.</p>
-			</div>
-			<section>
-				<h3 class="my-4">Personal Projects</h3>
-				<div class="max-w-4xl flex flex-col md:flex-row flex-wrap">
+
+				<h3 class="my-4">Some of my personal projects</h3>
+				<div class="max-w-prose flex flex-col flex-wrap">
 					<ProjectCard
 						title="Virdafils"
 						description="A driver for Laravel framework which use a database like file storage system."
@@ -54,17 +53,17 @@
 						description="Builder for common Rollup configurations"
 						link="https://github.com/KennethTrecy/comroconbu"/>
 				</div>
-				<p class="prose">
-					Some of my projects can be found on the
+				<p class="mt-4">
+					Other projects can be found on the
 					<a href="https://github.com/KennethTrecy?tab=repositories">
 						list of my respositories
 					</a>
 					in <a href="https://github.com/KennethTrecy">my GitHub profile</a>.
 				</p>
-			</section>
+			</div>
 		</section>
-		<section class="container my-4 flex flex-col md:flex-row">
-			<div class="prose">
+		<section class="container my-4 flex flex-col justify-center items-center">
+			<div class="prose md:prose-lg">
 				<h2>Security in mind</h2>
 				<p>I also like reading articles about cybersecurity. For this reason, I build applications with security in mind as much as possible to be resilient from attacks.</p>
 				<p>I have also made my recent commits to be signed with my own cryptographic keys.</p>
