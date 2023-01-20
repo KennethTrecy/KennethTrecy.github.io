@@ -45,6 +45,14 @@
 						title="Virdafils"
 						description="A driver for Laravel framework which use a database like file storage system."
 						link="https://github.com/KennethTrecy/virdafils"/>
+					<ProjectCard
+						title="Elomocato"
+						description="Custom cast classes to be used within Laravel"
+						link="https://github.com/KennethTrecy/elomocato"/>
+					<ProjectCard
+						title="Comroconbu"
+						description="Builder for common Rollup configurations"
+						link="https://github.com/KennethTrecy/comroconbu"/>
 				</div>
 			</section>
 		</section>
