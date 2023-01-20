@@ -71,12 +71,17 @@
 						packageName="daisyUI"
 						homeLink="https://daisyui.com/"
 						licenseName="MIT"
-						licenseLink="https://github.com/saadeghi/daisyui/blob/master/LICENSE"/>, and
+						licenseLink="https://github.com/saadeghi/daisyui/blob/master/LICENSE"/>,
 					<ThirdPartyLink
 						packageName="rgb-hex"
 						homeLink="https://github.com/sindresorhus/rgb-hex#readme"
 						licenseName="MIT"
-						licenseLink="https://github.com/sindresorhus/rgb-hex/blob/main/license"/>.
+						licenseLink="https://github.com/sindresorhus/rgb-hex/blob/main/license"/>, and
+					<ThirdPartyLink
+						packageName="theme-change"
+						homeLink="https://github.com/saadeghi/theme-change#readme"
+						licenseName="MIT"
+						licenseLink="https://github.com/saadeghi/theme-change/blob/master/LICENSE"/>.
 
 					The site has been built using
 					<ThirdPartyLink
