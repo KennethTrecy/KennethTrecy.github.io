@@ -1,1 +1,1 @@
-export type AnchorLinkType = "nofollow" | "external" | "bookmark"
+export type AnchorLinkType = "nofollow" | "external" | "noopener" | "opener" | "bookmark"
