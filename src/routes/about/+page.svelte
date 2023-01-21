@@ -36,6 +36,43 @@
 				</p>
 			</div>
 		</section>
+		<section class="container my-4 flex flex-col justify-center items-center text-justify">
+			<div class="prose md:prose-lg">
+				<h2>Skills</h2>
+				<p>
+					I am specialized my web development skills, particularly back-end programming. The reason was that back-end programming could support most communication technologies in an increasingly interconnected world. Whether it is a e-commerce website, Internet of Things, or games, they need at a server to process and store their data.
+				</p>
+				<p>
+					Some of my web development skills are the following:
+				</p>
+				<ul class="columns-2">
+					<li>
+						<section>
+							<h3>Front-end frameworks</h3>
+							<ul>
+								<li>Vue</li>
+								<li>React</li>
+								<li>Svelte</li>
+							</ul>
+						</section>
+					</li>
+					<li>
+						<section>
+							<h3>Foundation</h3>
+							<ul>
+								<li>HTML</li>
+								<li>Javascript</li>
+								<li>CSS</li>
+								<li>PHP</li>
+							</ul>
+						</section>
+					</li>
+				</ul>
+				<p>
+					Beside programming, I am also good in mathematics and logic. Both fields helps me in validation, troubleshooting, and authorization.
+				</p>
+			</div>
+		</section>
 		<section class="container my-4 flex flex-col justify-center items-center">
 			<div class="prose md:prose-lg">
 				<h2 id="contact_details">Contact Details</h2>
