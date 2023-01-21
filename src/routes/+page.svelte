@@ -1,8 +1,12 @@
 <script lang="ts">
+	import { externalTypes, internalTypes, authorTypes } from "@/components/general/links/constants"
+
 	import Logo from "@/multimedia/logo.png"
 
+	import BaseLink from "@/components/general/links/base.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import ProjectCard from "@/components/general/project_card.svelte"
+	import ExternalLink from "@/components/general/links/external.svelte"
 </script>
 
 <svelte:head>
@@ -23,7 +27,9 @@
 					<p class="prose md:prose-lg py-6">
 						I usually develop the back-end of the applications I have handled. I ensure their quality though automated tests through CI.
 					</p>
-					<a href="/about" class="btn btn-primary">Know more about me</a>
+					<BaseLink address="/about" relationship={[ ...internalTypes, ...authorTypes ]}>
+						<span class="btn btn-primary">Know more about me</span>
+					</BaseLink>
 				</div>
 			</div>
 		</section>
@@ -51,10 +57,14 @@
 				</div>
 				<p class="mt-4">
 					Other projects can be found on the
-					<a href="https://github.com/KennethTrecy?tab=repositories">
+					<ExternalLink address="https://github.com/KennethTrecy?tab=repositories">
 						list of my respositories
-					</a>
-					in <a href="https://github.com/KennethTrecy" rel="me">my GitHub profile</a>.
+					</ExternalLink>
+					in
+					<BaseLink
+						address="https://github.com/KennethTrecy"
+						relationship={[ ...externalTypes, ...authorTypes ]}
+						target="other">my GitHub profile</BaseLink>.
 				</p>
 			</div>
 		</section>
