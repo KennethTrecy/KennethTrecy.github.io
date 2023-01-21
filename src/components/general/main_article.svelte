@@ -16,8 +16,8 @@
 			class="pb-8 text-justify">
 			<slot name="content"></slot>
 		</div>
-		<article class="pb-8">
+		<footer class="pb-8">
 			<slot name="metadata"></slot>
-		</article>
+		</footer>
 	</article>
 </div>
