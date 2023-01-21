@@ -33,7 +33,10 @@
 					<p itemprop="knowsAbout" class="prose md:prose-lg py-6">
 						I usually develop the back-end of the applications I have handled. I ensure their quality though automated tests through CI.
 					</p>
-					<BaseLink address="/about" relationship={[ ...internalTypes, ...authorTypes ]}>
+					<BaseLink
+						itemprop="mainEntityOfPage"
+						address="/about"
+						relationship={[ ...internalTypes, ...authorTypes ]}>
 						<span class="btn btn-primary">Know more about me</span>
 					</BaseLink>
 				</div>
