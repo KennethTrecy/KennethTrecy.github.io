@@ -2,7 +2,7 @@
 	<article
 		itemprop="mainEntity"
 		itemscope
-		itemtype="https://schema.org/WebPageElement"
+		itemtype="https://schema.org/WebContent"
 		class="pb-8">
 		<slot></slot>
 	</article>
