@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { AnchorTarget, AnchorLinkType } from "@/types/links"
+	import type { AnchorTarget, AnchorLinkType } from "@/types/link"
 
 	export let address: string
 	export let context: AnchorTarget = "self"
