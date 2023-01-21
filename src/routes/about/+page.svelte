@@ -13,6 +13,29 @@
 
 <div class="h-full w-full flex flex-col justify-center items-center">
 	<article class="pb-8">
+		<section class="container my-4 flex flex-col justify-center items-center text-justify">
+			<div class="prose md:prose-lg">
+				<h1>Who am I?</h1>
+				<p>
+					I am Kenneth Trecy Tobias. I am Filipino living in Philippines. Some people call me <em>"Tretchi"</em>. I have been into programming for a long time.
+				</p>
+				<p>
+					Initially, I was introduced in web development around 2013. Back then, I study every summer and make some small-scale web projects in a low-end Android phone.
+				</p>
+				<p>
+					As the time passed by, I quickly got interest in back-end programming due to <abbr title="PHP Hypertext Preprocessor">PHP</abbr>. It sparked my interest in cybersecurity, CRUD applications, servers, and others.
+				</p>
+				<p>
+					By the time I got my hands on a computer, I spent some time making personal command-line programs using C++. I may have reinvent the wheel but only for purpose of studying.
+				</p>
+				<p>
+					Using this approach, I faced the issues that other developers have already solved. It made me appreciate the existing solutions and strive to be better. I was like a toddler back then mimicking the adults.
+				</p>
+				<p>
+					That did not stopped me from thinking innovative solutions. Some solutions are better suited for certain situations. As the saying goes, <em>"it depends!"</em>.
+				</p>
+			</div>
+		</section>
 		<section class="container my-4 flex flex-col justify-center items-center">
 			<div class="prose md:prose-lg">
 				<h2 id="contact_details">Contact Details</h2>
