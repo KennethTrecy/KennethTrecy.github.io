@@ -134,6 +134,9 @@
 				}, {
 					"name": "OpenSSL",
 					"homepage": "https://www.openssl.org/"
+				}, {
+					"name": "Technitium DNS Server",
+					"homepage": "https://technitium.com/dns/"
 				}
 			]
 		}, {
@@ -242,9 +245,9 @@
 						<li>
 							<section>
 								<h3>{area.name}</h3>
-								<ul class="columns-2">
+								<ul class="columns-2 leading-loose">
 									{#each area.technologies as technology}
-										<li title={technology.name}>
+										<li title={technology.name} class="my-0">
 											<ExternalLink address={technology.homepage}>
 												{technology.name}
 											</ExternalLink>
@@ -291,3 +294,9 @@
 		</section>
 	</article>
 </div>
+
+<style lang="postcss">
+	.balance {
+		column-fill: balanced-all;
+	}
+</style>
