@@ -1,6 +1,7 @@
 <script lang="ts">
 	import CommonHead from "@/components/general/common_head.svelte"
 	import ContactLink from "@/components/about/contact_link.svelte"
+	import ExternalLink from "@/components/general/external_link.svelte"
 </script>
 
 <svelte:head>
@@ -45,14 +46,51 @@
 				<p>
 					Some of my web development skills are the following:
 				</p>
-				<ul class="columns-2">
+				<ul>
 					<li>
 						<section>
-							<h3>Front-end frameworks</h3>
-							<ul>
-								<li>Vue</li>
-								<li>React</li>
-								<li>Svelte</li>
+							<h3>Front-end</h3>
+							<ul class="columns-2">
+								<li>
+									<ExternalLink address="https://vuejs.org/">
+										Vue.js
+									</ExternalLink>
+								</li>
+								<li>
+									<ExternalLink address="https://reactjs.org/">
+										React
+									</ExternalLink>
+								</li>
+								<li>
+									<ExternalLink address="https://windicss.org/">
+										Windi CSS
+									</ExternalLink>
+								</li>
+								<li>
+									<ExternalLink address="https://getbootstrap.com/">
+										Bootstrap
+									</ExternalLink>
+								</li>
+								<li>
+									<ExternalLink address="https://svelte.dev/">
+										Svelte
+									</ExternalLink>
+								</li>
+								<li>
+									<ExternalLink address="https://kit.svelte.dev/">
+										SvelteKit
+									</ExternalLink>
+								</li>
+								<li>
+									<ExternalLink address="https://daisyui.com/">
+										daisyUi
+									</ExternalLink>
+								</li>
+								<li>
+									<ExternalLink address="https://tailwindcss.com/">
+										Tailwind CSS
+									</ExternalLink>
+								</li>
 							</ul>
 						</section>
 					</li>
