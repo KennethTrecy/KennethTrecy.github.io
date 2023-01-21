@@ -18,11 +18,11 @@
 		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,1"/>
 	<style>
 		body {
-			font-family: "Roboto", sans-serif;
+			font-family: "Roboto", "Heveltica Neue", sans-serif;
 		}
 	</style>
 </svelte:head>
-<div class="drawer drawer-mobile">
+<div itemscope itemtype="https://schema.org/WebSite" class="drawer drawer-mobile">
 	<input type="checkbox" class="drawer-toggle" id="menu_drawer_checkbox"/>
 	<div class="drawer-content">
 		<header class="navbar">
@@ -35,7 +35,7 @@
 			<nav class="navbar-center">
 				<a href="/" class="text-color-inherit flex flex-row items-start">
 					<img class="flex-none w-16 h-auto" alt="logo" src={Logo}/>
-					<p class="flex-1 ml-2 my-auto">
+					<p itemprop="name" class="flex-1 ml-2 my-auto">
 						KennethTrecy
 					</p>
 				</a>
@@ -44,7 +44,7 @@
 				<ThemeToggler/>
 			</div>
 		</header>
-		<main>
+		<main itemprop="mainEntity" itemscope itemtype="https://schema.org/WebPage">
 			<slot name="main"></slot>
 		</main>
 		<footer class="footer footer-center p-4">
@@ -94,7 +94,10 @@
 		<footer class="footer justify-around items-center p-4 bg-base-200">
 			<section class="md:grid-flow-col md:items-center">
 				<img class="flex-none w-16 h-auto" alt="logo" src={Logo}/>
-				<p>Copyright © 2023 Kenneth Trecy Tobias</p>
+				<p itemprop="copyrightNotice">
+					Copyright © <span itemprop="copyrightYear">2023</span>
+					<span itemprop="copyrightHolder">Kenneth Trecy Tobias</span>
+				</p>
 			</section>
 			<section class="socials justify-center items-center justify-items-center">
 				<span class="footer-title">Socials</span>
@@ -114,12 +117,15 @@
 	<div tabindex="0" class="drawer-side">
 		<label for="menu_drawer_checkbox" class="drawer-overlay"></label>
 		<aside class="w-80 bg-primary">
-			<a href="/" class="mb-4 border-b p-4 text-color-inherit flex flex-col items-start">
-				<img class="flex-none w-full h-auto" alt="logo" src={Logo}/>
-				<p class="flex-1 my-auto text-2xl">
+			<a
+				itemprop="creator" itemscope itemtype="https://schema.org/Person"
+				href="/"
+				class="mb-4 border-b p-4 text-color-inherit flex flex-col items-start">
+				<img itemprop="image" class="flex-none w-full h-auto" alt="logo" src={Logo}/>
+				<p itemprop="name" class="flex-1 my-auto text-2xl">
 					KennethTrecy
 				</p>
-				<p class="prose">
+				<p itemprop="description" class="prose">
 					An open-source technology enthusiast, back-end experimentalist, and analytic tester.
 				</p>
 			</a>
