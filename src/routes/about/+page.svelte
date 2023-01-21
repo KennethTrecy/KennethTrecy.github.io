@@ -313,6 +313,22 @@
 			</ul>
 		</div>
 	</section>
+	<section class="container my-4 flex flex-col justify-center items-center">
+		<div class="prose">
+			<h6>Page details</h6>
+			<p itemprop="author" itemscope itemtype="https://schema.org/Person">
+				This page was authored by <span itemprop="name">
+					<span itemprop="givenName">Kenneth Trecy</span>
+					<span itemprop="familyName">Tobias</span>
+				</span>.
+			</p>
+			<p>
+				Published last <time itemprop="datePublished" datetime="2023-02-01">
+					February 1, 2023
+				</time>. It has not been modified since then.
+			</p>
+		</div>
+	</section>
 </MainArticle>
 
 <style lang="postcss">
