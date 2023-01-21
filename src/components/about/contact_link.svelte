@@ -6,12 +6,8 @@
 	export let icon: string
 	export let platformName: string
 	export let username: string
-	export let isExternal: boolean
 
-	$: relationships = [
-		...isExternal ? [ "noopener", "external" ] : [ "opener" ],
-		"author", "me"
-	]
+	$: relationships = [ "noopener", "external", "author", "me" ]
 </script>
 
 <Link {address} relationship={relationships}>
