@@ -8,6 +8,7 @@
 	export let icon: string
 	export let platformName: string
 	export let username: string
+	export let usernameProperty: string
 
 	const relationships = [ ...externalTypes, ...authorTypes ]
 </script>
@@ -18,5 +19,5 @@
 	relationship={relationships}
 	class={[ "inline-flex", "flex-row", "flex-nowrap", "items-center" ]}>
 	<BrandIcon {icon} alternateName={platformName}/>
-	<span class="ml-4">{username}</span>
+	<span itemprop={usernameProperty} class="ml-4">{username}</span>
 </Link>
