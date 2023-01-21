@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { internalTypes, authorTypes } from "@/components/general/links/constants"
+
+	import BaseLink from "@/components/general/links/base.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import ContactLink from "@/components/about/contact_link.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
@@ -208,9 +211,10 @@
 </svelte:head>
 
 <MainArticle itemtype="https://schema.org/Person">
-	<section class="container my-4 flex flex-col justify-center items-center text-justify">
-		<div class="prose md:prose-lg">
-			<h1>Who am I?</h1>
+	<h1 slot="title" itemprop="headline">Who am I?</h1>
+	<svelte:fragment slot="content">
+		<section>
+			<h2>Journey</h2>
 			<p>
 				I am
 				<span itemprop="name">
@@ -242,12 +246,8 @@
 			<p>
 				That did not stopped me from thinking innovative solutions. Some solutions are better suited for certain situations. As the saying goes, <em>"it depends!"</em>.
 			</p>
-		</div>
-	</section>
-	<section
-		itemprop="knowsAbout"
-		class="container my-4 flex flex-col justify-center items-center text-justify">
-		<div class="prose md:prose-lg">
+		</section>
+		<section itemprop="knowsAbout">
 			<h2>Skills</h2>
 			<p>
 				I am specialized my web development skills, particularly back-end programming. The reason was that back-end programming could support most communication technologies in an increasingly interconnected world. Whether it is a e-commerce website, Internet of Things, or games, they need at a server to process and store their data.
@@ -279,10 +279,8 @@
 			<p>
 				Beside programming, I am also good in mathematics and logic. Both fields help me in validation, troubleshooting, and authorization. These skills complement my other interests.
 			</p>
-		</div>
-	</section>
-	<section class="container my-4 flex flex-col justify-center items-center">
-		<div class="prose md:prose-lg">
+		</section>
+		<section>
 			<h2 id="contact_details">Contact Details</h2>
 			<p>Should you wish to get in touch with me, I can be communicated on different platforms.</p>
 			<ul class="list-none not-prose">
@@ -311,23 +309,25 @@
 						usernameProperty="name email"/>
 				</li>
 			</ul>
-		</div>
-	</section>
-	<section class="container my-4 flex flex-col justify-center items-center">
-		<div class="prose">
-			<h6>Page details</h6>
-			<p itemprop="author" itemscope itemtype="https://schema.org/Person">
-				This page was authored by <span itemprop="name">
+		</section>
+	</svelte:fragment>
+	<section slot="metadata" class="not-prose">
+		<h6>Page details</h6>
+		<address itemprop="author" itemscope itemtype="https://schema.org/Person" class="inline">
+			This page was authored by
+			<BaseLink
+				address="/about"
+				relationship={[ ...internalTypes, ...authorTypes ].join(" ")}
+				itemprop="mainEntityOfPage">
+				<span itemprop="name">
 					<span itemprop="givenName">Kenneth Trecy</span>
-					<span itemprop="familyName">Tobias</span>
-				</span>.
-			</p>
-			<p>
-				Published last <time itemprop="datePublished" datetime="2023-02-01">
-					February 1, 2023
-				</time>. It has not been modified since then.
-			</p>
-		</div>
+					<span itemprop="familyName">Tobias</span></span></BaseLink>.
+		</address>
+		<em>
+			Published last
+			<time itemprop="datePublished" datetime="2023-02-01">February 1, 2023</time>.
+			It has not been modified since then.
+		</em>
 	</section>
 </MainArticle>
 
