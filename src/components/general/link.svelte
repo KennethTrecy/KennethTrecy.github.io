@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { AnchorLinkType } from "@/types/links"
+	import type { AnchorLinkType } from "@/types/links"
 
 	export let address: string
-	export let types: AnchorLinkType|AnchorLinkType[]
+	export let type: AnchorLinkType|AnchorLinkType[]
 
-	$: relationship = Array.isArray(types) ? types.join(" ") : types
+	$: relationship = Array.isArray(type) ? type.sort().join(" ") : type
 </script>
 
 <a href={address} class="link" rel={relationship}>
