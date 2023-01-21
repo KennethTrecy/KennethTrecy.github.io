@@ -12,9 +12,11 @@
 	const relationships = [ ...externalTypes, ...authorTypes ]
 </script>
 
-<Link {address} relationship={relationships}>
-	<span title={platformName} class="inline-flex flex-row flex-nowrap items-center">
-		<BrandIcon {icon} alternateName={platformName}/>
-		<span class="ml-4">{username}</span>
-	</span>
+<Link
+	title={platformName}
+	{address}
+	relationship={relationships}
+	class={[ "inline-flex", "flex-row", "flex-nowrap", "items-center" ]}>
+	<BrandIcon {icon} alternateName={platformName}/>
+	<span class="ml-4">{username}</span>
 </Link>

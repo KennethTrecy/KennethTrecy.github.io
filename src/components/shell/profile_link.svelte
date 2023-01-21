@@ -11,8 +11,6 @@
 	const relationships = [ ...externalTypes, ...authorTypes ]
 </script>
 
-<Link {address} relationship={relationships}>
-	<span title={name}>
-		<BrandIcon {icon} alternateName={name}/>
-	</span>
+<Link title={name} {address} relationship={relationships}>
+	<BrandIcon {icon} alternateName={name}/>
 </Link>
