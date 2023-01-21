@@ -1,7 +1,9 @@
 <script lang="ts">
+	import Link from "@/components/general/link.svelte"
+
 	export let address: string
 </script>
 
-<a href={address} rel="nofollow" class="link">
+<Link address={address} type={[ "nofollow", "noopener" ]}>
 	<slot></slot>
-</a>
+</Link>
