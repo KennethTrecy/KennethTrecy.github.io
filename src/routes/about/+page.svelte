@@ -274,7 +274,10 @@
 				{/each}
 			</ul>
 			<p>
-				Beside programming, I am also good in mathematics and logic. Both fields helps me in validation, troubleshooting, and authorization.
+				I have also experienced programming using GameMaker language or GDScript to make small games in the past. I have some basics too on programming Arduino microcontrollers. Beside those, I like reading about cryptography, compilers, and latest technology.
+			</p>
+			<p>
+				Beside programming, I am also good in mathematics and logic. Both fields help me in validation, troubleshooting, and authorization. These skills complement my other interests.
 			</p>
 		</div>
 	</section>
