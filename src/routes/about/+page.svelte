@@ -1,7 +1,7 @@
 <script lang="ts">
 	import CommonHead from "@/components/general/common_head.svelte"
 	import ContactLink from "@/components/about/contact_link.svelte"
-	import ExternalLink from "@/components/general/external_link.svelte"
+	import ExternalLink from "@/components/general/links/external.svelte"
 
 	interface Technology {
 		name: string,

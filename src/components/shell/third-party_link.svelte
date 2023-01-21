@@ -1,5 +1,5 @@
 <script lang="ts">
-	import UnendorsedLink from "@/components/general/unendorsed_link.svelte"
+	import UnendorsedLink from "@/components/general/links/unendorsed.svelte"
 
 	export let packageName: string
 	export let homeLink: string

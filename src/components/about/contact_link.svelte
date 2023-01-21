@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Link from "@/components/general/link.svelte"
+	import Link from "@/components/general/links/base.svelte"
 	import BrandIcon from "@/components/general/brand_icon.svelte"
 
 	export let address: string
