@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { externalTypes, authorTypes } from "@/components/general/links/constants"
+
 	import Link from "@/components/general/links/base.svelte"
 	import BrandIcon from "@/components/general/brand_icon.svelte"
 
@@ -7,7 +9,7 @@
 	export let platformName: string
 	export let username: string
 
-	$: relationships = [ "noopener", "external", "author", "me" ]
+	$: relationships = [ ...externalTypes, ...authorTypes ]
 </script>
 
 <Link {address} relationship={relationships}>
