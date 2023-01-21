@@ -6,3 +6,4 @@ export type AnchorLinkType =
 	| "noopener"
 	| "opener"
 	| "bookmark"
+	| "me"
