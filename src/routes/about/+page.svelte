@@ -330,9 +330,3 @@
 		</em>
 	</section>
 </MainArticle>
-
-<style lang="postcss">
-	.balance {
-		column-fill: balanced-all;
-	}
-</style>
