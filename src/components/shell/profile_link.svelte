@@ -1,11 +1,18 @@
 <script lang="ts">
+	import { externalTypes, authorTypes } from "@/components/general/links/constants"
+
+	import Link from "@/components/general/links/base.svelte"
 	import BrandIcon from "@/components/general/brand_icon.svelte"
 
 	export let address: string
 	export let icon: string
 	export let name: string
+
+	const relationships = [ ...externalTypes, ...authorTypes ]
 </script>
 
-<a title={name} href={address} rel="me">
-	<BrandIcon {icon} alternateName={name}/>
-</a>
+<Link {address} relationship={relationships}>
+	<span title={name}>
+		<BrandIcon {icon} alternateName={name}/>
+	</span>
+</Link>

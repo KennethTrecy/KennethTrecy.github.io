@@ -9,7 +9,7 @@
 	export let platformName: string
 	export let username: string
 
-	$: relationships = [ ...externalTypes, ...authorTypes ]
+	const relationships = [ ...externalTypes, ...authorTypes ]
 </script>
 
 <Link {address} relationship={relationships}>
