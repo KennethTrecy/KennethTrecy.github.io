@@ -18,13 +18,19 @@
 </svelte:head>
 
 <div class="h-full w-full flex flex-col justify-center items-center">
-	<article class="pb-8">
-		<section class="hero">
+	<article
+		itemprop="mainEntity"
+		itemscope
+		itemtype="https://schema.org/WebPageElement"
+		class="pb-8">
+		<section itemprop="mainEntity" itemscope itemtype="https://schema.org/Person" class="hero">
 			<div class="hero-content flex flex-col md:flex-row">
-				<img src={Logo} alt="Kenneth Trecy's logo" class="max-w-sm"/>
+				<img itemprop="image" src={Logo} alt="Kenneth Trecy's logo" class="max-w-sm"/>
 				<div class="max-w-md text-center md:text-left">
-					<h1 class="text-6xl font-bold">Hi, I am Kenneth Trecy!</h1>
-					<p class="prose md:prose-lg py-6">
+					<h1 itemprop="headline" class="text-6xl font-bold">
+						Hi, I am <span itemprop="givenName">Kenneth Trecy</span>!
+					</h1>
+					<p itemprop="knowsAbout" class="prose md:prose-lg py-6">
 						I usually develop the back-end of the applications I have handled. I ensure their quality though automated tests through CI.
 					</p>
 					<BaseLink address="/about" relationship={[ ...internalTypes, ...authorTypes ]}>
@@ -34,10 +40,14 @@
 			</div>
 		</section>
 		<div class="divider"></div>
-		<section class="container my-4 flex flex-col justify-center items-center">
+		<section
+			itemprop="hasPart"
+			itemscope
+			itemtype="https://schema.org/WebContent"
+			class="container my-4 flex flex-col justify-center items-center">
 			<div class="prose md:prose-lg">
-				<h2>Specialty</h2>
-				<p>Web development is my expertise. I have tried different technologies too such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
+				<h2 itemprop="headline">Specialty</h2>
+				<p itemprop="text">Web development is my expertise. I have tried different technologies too such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
 				<p>During my free time, I apply my skills on my personal projects.</p>
 
 				<h3 class="my-4">Some of my personal projects</h3>
@@ -68,11 +78,15 @@
 				</p>
 			</div>
 		</section>
-		<section class="container my-4 flex flex-col justify-center items-center">
+		<section
+			itemprop="hasPart"
+			itemscope
+			itemtype="https://schema.org/WebContent"
+			class="container my-4 flex flex-col justify-center items-center">
 			<div class="prose md:prose-lg">
-				<h2>Security in mind</h2>
-				<p>I also like reading articles about cybersecurity. For this reason, I build applications with security in mind as much as possible to be resilient from attacks.</p>
-				<p>I have also made my recent commits to be signed with my own cryptographic keys.</p>
+				<h2 itemprop="headline">Security in mind</h2>
+				<p itemprop="text">I also like reading articles about cybersecurity. For this reason, I build applications with security in mind as much as possible to be resilient from attacks.</p>
+				<p itemprop="text">I have also made my recent commits to be signed with my own cryptographic keys.</p>
 			</div>
 		</section>
 	</article>
