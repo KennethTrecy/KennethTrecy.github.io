@@ -9,7 +9,7 @@ const configuration = {
 	"kit": {
 		"adapter": adapter(),
 		"alias": {
-			"@/*": resolve("./src/*")
+			"@/*": resolve("./src")
 		}
 	}
 }
