@@ -2,6 +2,50 @@
 	import CommonHead from "@/components/general/common_head.svelte"
 	import ContactLink from "@/components/about/contact_link.svelte"
 	import ExternalLink from "@/components/general/external_link.svelte"
+
+	interface Technology {
+		name: string,
+		homepage: string
+	}
+
+	const frontEnd: Technology[] = [
+		{
+			"name": "Vue.js",
+			"homepage": "https://vuejs.org/"
+		},
+		{
+			"name": "React",
+			"homepage": "https://reactjs.org/"
+		},
+		{
+			"name": "React",
+			"homepage": "https://reactjs.org/"
+		},
+		{
+			"name": "Windi CSS",
+			"homepage": "https://windicss.org/"
+		},
+		{
+			"name": "Bootstrap",
+			"homepage": "https://getbootstrap.com/"
+		},
+		{
+			"name": "Svelte",
+			"homepage": "https://svelte.dev/"
+		},
+		{
+			"name": "SvelteKit",
+			"homepage": "https://kit.svelte.dev/"
+		},
+		{
+			"name": "daisyUi",
+			"homepage": "https://daisyui.com/"
+		},
+		{
+			"name": "Tailwind CSS",
+			"homepage": "https://tailwindcss.com/"
+		}
+	]
 </script>
 
 <svelte:head>
@@ -51,46 +95,13 @@
 						<section>
 							<h3>Front-end</h3>
 							<ul class="columns-2">
-								<li>
-									<ExternalLink address="https://vuejs.org/">
-										Vue.js
-									</ExternalLink>
-								</li>
-								<li>
-									<ExternalLink address="https://reactjs.org/">
-										React
-									</ExternalLink>
-								</li>
-								<li>
-									<ExternalLink address="https://windicss.org/">
-										Windi CSS
-									</ExternalLink>
-								</li>
-								<li>
-									<ExternalLink address="https://getbootstrap.com/">
-										Bootstrap
-									</ExternalLink>
-								</li>
-								<li>
-									<ExternalLink address="https://svelte.dev/">
-										Svelte
-									</ExternalLink>
-								</li>
-								<li>
-									<ExternalLink address="https://kit.svelte.dev/">
-										SvelteKit
-									</ExternalLink>
-								</li>
-								<li>
-									<ExternalLink address="https://daisyui.com/">
-										daisyUi
-									</ExternalLink>
-								</li>
-								<li>
-									<ExternalLink address="https://tailwindcss.com/">
-										Tailwind CSS
-									</ExternalLink>
-								</li>
+								{#each frontEnd as technology}
+									<li title={technology.name}>
+										<ExternalLink address={technology.homepage}>
+											{technology.name}
+										</ExternalLink>
+									</li>
+								{/each}
 							</ul>
 						</section>
 					</li>
