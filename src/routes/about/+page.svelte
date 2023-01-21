@@ -8,42 +8,52 @@
 		homepage: string
 	}
 
-	const frontEnd: Technology[] = [
+	interface TechnologyArea {
+		name: string,
+		technologies: Technology[]
+	}
+
+	const technologies: TechnologyArea[] = [
 		{
-			"name": "Vue.js",
-			"homepage": "https://vuejs.org/"
-		},
-		{
-			"name": "React",
-			"homepage": "https://reactjs.org/"
-		},
-		{
-			"name": "React",
-			"homepage": "https://reactjs.org/"
-		},
-		{
-			"name": "Windi CSS",
-			"homepage": "https://windicss.org/"
-		},
-		{
-			"name": "Bootstrap",
-			"homepage": "https://getbootstrap.com/"
-		},
-		{
-			"name": "Svelte",
-			"homepage": "https://svelte.dev/"
-		},
-		{
-			"name": "SvelteKit",
-			"homepage": "https://kit.svelte.dev/"
-		},
-		{
-			"name": "daisyUi",
-			"homepage": "https://daisyui.com/"
-		},
-		{
-			"name": "Tailwind CSS",
-			"homepage": "https://tailwindcss.com/"
+			"name": "Front-end",
+			"technologies": [
+				{
+					"name": "Vue.js",
+					"homepage": "https://vuejs.org/"
+				},
+				{
+					"name": "React",
+					"homepage": "https://reactjs.org/"
+				},
+				{
+					"name": "React",
+					"homepage": "https://reactjs.org/"
+				},
+				{
+					"name": "Windi CSS",
+					"homepage": "https://windicss.org/"
+				},
+				{
+					"name": "Bootstrap",
+					"homepage": "https://getbootstrap.com/"
+				},
+				{
+					"name": "Svelte",
+					"homepage": "https://svelte.dev/"
+				},
+				{
+					"name": "SvelteKit",
+					"homepage": "https://kit.svelte.dev/"
+				},
+				{
+					"name": "daisyUi",
+					"homepage": "https://daisyui.com/"
+				},
+				{
+					"name": "Tailwind CSS",
+					"homepage": "https://tailwindcss.com/"
+				}
+			]
 		}
 	]
 </script>
@@ -91,31 +101,22 @@
 					Some of my web development skills are the following:
 				</p>
 				<ul>
-					<li>
-						<section>
-							<h3>Front-end</h3>
-							<ul class="columns-2">
-								{#each frontEnd as technology}
-									<li title={technology.name}>
-										<ExternalLink address={technology.homepage}>
-											{technology.name}
-										</ExternalLink>
-									</li>
-								{/each}
-							</ul>
-						</section>
-					</li>
-					<li>
-						<section>
-							<h3>Foundation</h3>
-							<ul>
-								<li>HTML</li>
-								<li>Javascript</li>
-								<li>CSS</li>
-								<li>PHP</li>
-							</ul>
-						</section>
-					</li>
+					{#each technologies as area}
+						<li>
+							<section>
+								<h3>{area.name}</h3>
+								<ul class="columns-2">
+									{#each area.technologies as technology}
+										<li title={technology.name}>
+											<ExternalLink address={technology.homepage}>
+												{technology.name}
+											</ExternalLink>
+										</li>
+									{/each}
+								</ul>
+							</section>
+						</li>
+					{/each}
 				</ul>
 				<p>
 					Beside programming, I am also good in mathematics and logic. Both fields helps me in validation, troubleshooting, and authorization.
