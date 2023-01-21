@@ -4,6 +4,6 @@
 	export let address: string
 </script>
 
-<Link address={address} type={[ "nofollow", "noopener" ]} context="other">
+<Link address={address} relationship={[ "nofollow", "noopener" ]} context="other">
 	<slot></slot>
 </Link>
