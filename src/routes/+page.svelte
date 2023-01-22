@@ -46,12 +46,12 @@
 			</section>
 		</div>
 		<div class="divider"></div>
-		<div
-			itemprop="hasPart"
-			itemscope
-			itemtype="https://schema.org/WebContent"
-			class="flex flex-col justify-center items-center">
-			<section class="container max-w-prose md:px-0">
+		<div class="flex flex-col justify-center items-center">
+			<section
+				itemprop="hasPart"
+				itemscope
+				itemtype="https://schema.org/WebContent"
+				class="container max-w-prose md:px-0">
 				<h2 itemprop="headline">Specialty</h2>
 				<p itemprop="text">Web development is my expertise. I have tried different technologies too such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
 				<p>During my free time, I apply my skills on my personal projects.</p>
@@ -83,13 +83,11 @@
 						target="other">my GitHub profile</BaseLink>.
 				</p>
 			</section>
-		</div>
-		<div
-			itemprop="hasPart"
-			itemscope
-			itemtype="https://schema.org/WebContent"
-			class="flex flex-col justify-center items-center">
-			<section class="container max-w-prose md:px-0">
+			<section
+				itemprop="hasPart"
+				itemscope
+				itemtype="https://schema.org/WebContent"
+				class="container max-w-prose md:px-0">
 				<h2 itemprop="headline">Security in mind</h2>
 				<p itemprop="text">
 					I also like reading articles about cybersecurity. For this reason, I build applications with security in mind as much as possible to be resilient from attacks.
