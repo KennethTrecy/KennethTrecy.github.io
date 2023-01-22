@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { internalTypes, authorTypes } from "@/components/general/links/constants"
+	import { FIRST_PUBLICATION_DATE } from "@/constants/miscellaneous_meta"
 
-	import BaseLink from "@/components/general/links/base.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import ContactLink from "@/components/about/contact_link.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
+	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 
 	interface Technology {
 		name: string,
@@ -311,22 +311,5 @@
 			</ul>
 		</section>
 	</svelte:fragment>
-	<section slot="metadata" class="not-prose">
-		<h6>Page details</h6>
-		<address itemprop="author" itemscope itemtype="https://schema.org/Person" class="inline">
-			This page was authored by
-			<BaseLink
-				address="/about"
-				relationship={[ ...internalTypes, ...authorTypes ].join(" ")}
-				itemprop="mainEntityOfPage">
-				<span itemprop="name">
-					<span itemprop="givenName">Kenneth Trecy</span>
-					<span itemprop="familyName">Tobias</span></span></BaseLink>.
-		</address>
-		<em>
-			Published last
-			<time itemprop="datePublished" datetime="2023-02-01">February 1, 2023</time>.
-			It has not been modified since then.
-		</em>
-	</section>
+	<PageDetailCard slot="metadata" datePublished={FIRST_PUBLICATION_DATE}/>
 </MainArticle>
