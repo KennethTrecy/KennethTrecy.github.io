@@ -18,11 +18,11 @@
 			itemprop="about"
 			itemscope
 			itemtype="https://schema.org/WebContent">
-			<h2 itemprop="headline">
-				Introduction
+			<h2 itemprop="headline name">
+				Rationale
 			</h2>
 			<p itemprop="mainEntity">
-				Over the years, I have built multiple projects to apply my knowledge and gain experience on to build them, to solve their technical issues, and to improve their technical design if possible.
+				Over the years, I have built multiple projects to apply my knowledge. As a consequence, I gain experience to build them, to solve their technical issues, and to improve their technical design if possible. Building them helps me improve my decision-making in future projects and not to take things for granted that look like basic. Indeed, simplicity is hard.
 			</p>
 		</section>
 		<section
