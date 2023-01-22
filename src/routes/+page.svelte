@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { FIRST_PUBLICATION_DATE } from "@/constants/miscellaneous_meta"
 	import { externalTypes, internalTypes, authorTypes } from "@/components/general/links/constants"
 
 	import Logo from "@/multimedia/logo.png"
@@ -8,6 +9,7 @@
 	import MainArticle from "@/components/general/main_article.svelte"
 	import ProjectCard from "@/components/general/project_card.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
+	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 </script>
 
 <svelte:head>
@@ -115,6 +117,7 @@
 			</section>
 		</div>
 	</svelte:fragment>
+	<PageDetailCard slot="metadata" datePublished={FIRST_PUBLICATION_DATE}/>
 </MainArticle>
 
 <style lang="postcss">
