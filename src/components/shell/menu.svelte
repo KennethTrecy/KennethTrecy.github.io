@@ -8,7 +8,7 @@
 			<span class="material-symbols-outlined">home</span>
 			<span class="flex-1">Home<span>
 		</a>
-		<a href="#" class="inline-flex flex-row flex-nowrap items-center">
+		<a href="/projects" class="inline-flex flex-row flex-nowrap items-center">
 			<span class="material-symbols-outlined">code</span>
 			<span class="flex-1">Projects<span>
 		</a>
