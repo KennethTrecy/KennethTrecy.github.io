@@ -1,6 +1,19 @@
 <script lang="ts">
 	import CommonHead from "@/components/general/common_head.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
+	import ProjectCard from "@/components/general/project_card.svelte"
+
+	interface SoftwareProject {
+		name: string
+		description: string
+		link: string
+	}
+
+	interface SoftwareProjectGroup {
+		name: string,
+		description: string,
+		projects: SoftwareProject[]
+	}
 </script>
 
 <svelte:head>
