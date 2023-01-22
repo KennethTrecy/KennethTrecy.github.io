@@ -55,8 +55,13 @@
 				<h2 itemprop="headline">Specialty</h2>
 				<p itemprop="text">Web development is my expertise. I have tried different technologies too such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
 				<p>During my free time, I apply my skills on my personal projects.</p>
-
-				<h3 class="my-4">Some of my personal projects</h3>
+			</section>
+			<section
+				itemprop="hasPart"
+				itemscope
+				itemtype="https://schema.org/WebContent"
+				class="container max-w-prose md:px-0">
+				<h2 class="my-4">Some of my personal projects</h2>
 				<div class="flex flex-col flex-wrap">
 					<ProjectCard
 						title="Virdafils"
