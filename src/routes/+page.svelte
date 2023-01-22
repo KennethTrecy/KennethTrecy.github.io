@@ -91,7 +91,13 @@
 					<BaseLink
 						address="https://github.com/KennethTrecy"
 						relationship={[ ...externalTypes, ...authorTypes ]}
-						target="other">my GitHub profile</BaseLink>.
+						target="other">
+						my GitHub profile
+					</BaseLink>
+					or in this site's <BaseLink
+						address="/projects"
+						relationship={[ ...internalTypes, ...authorTypes ]}>
+						project list</BaseLink>.
 				</p>
 			</section>
 			<section
