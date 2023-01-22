@@ -59,23 +59,29 @@
 			<section
 				itemprop="hasPart"
 				itemscope
-				itemtype="https://schema.org/WebContent"
+				itemtype="https://schema.org/CreativeWorkSeries"
 				class="container max-w-prose md:px-0">
 				<h2 class="my-4">Some of my personal projects</h2>
-				<div class="flex flex-col flex-wrap">
-					<ProjectCard
-						title="Virdafils"
-						description="A driver for Laravel framework which use a database like file storage system."
-						link="https://github.com/KennethTrecy/virdafils"/>
-					<ProjectCard
-						title="Elomocato"
-						description="Custom cast classes to be used with Laravel framework."
-						link="https://github.com/KennethTrecy/elomocato"/>
-					<ProjectCard
-						title="Comroconbu"
-						description="Builder for common Rollup configurations."
-						link="https://github.com/KennethTrecy/comroconbu"/>
-				</div>
+				<ul class="project_list list-none list-outside flex flex-col flex-wrap">
+					<li>
+						<ProjectCard
+							title="Virdafils"
+							description="A driver for Laravel framework which use a database like file storage system."
+							link="https://github.com/KennethTrecy/virdafils"/>
+					</li>
+					<li>
+						<ProjectCard
+							title="Elomocato"
+							description="Custom cast classes to be used with Laravel framework."
+							link="https://github.com/KennethTrecy/elomocato"/>
+					</li>
+					<li>
+						<ProjectCard
+							title="Comroconbu"
+							description="Builder for common Rollup configurations."
+							link="https://github.com/KennethTrecy/comroconbu"/>
+					</li>
+				</ul>
 				<p class="mt-4">
 					Other projects can be found on the
 					<ExternalLink address="https://github.com/KennethTrecy?tab=repositories">
@@ -125,5 +131,9 @@
 
 	section:nth-child(1):hover img {
 		animation-play-state: running;
+	}
+
+	section:nth-child(2) > ul.project_list, section:nth-child(2) > ul.project_list > li {
+		@apply m-0 p-0;
 	}
 </style>
