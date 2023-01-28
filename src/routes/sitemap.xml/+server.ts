@@ -1,4 +1,4 @@
-import { PUBLIC_BASE_URL } from "$env/static/public"
+import { CF_PAGES_URL } from "$env/static/private"
 
 import type PageMeta from "@/components/general/page_meta"
 
@@ -26,7 +26,7 @@ export async function GET() {
 	})
 	const documentURLTags = documentURLInfos.map(info => `
 		<url>
-			<loc>${PUBLIC_BASE_URL}${info.path}</loc>
+			<loc>${CF_PAGES_URL}${info.path}</loc>
 			<lastmod>${info.lastModified.toJSON()}</lastmod>
 		</url>
 	`)
