@@ -93,6 +93,9 @@
 						licenseName="MIT"
 						licenseLink="https://github.com/sveltejs/kit/blob/master/LICENSE"/>.
 				</p>
+				<p>
+					<strong>Disclaimer</strong>: Otherwise noted, the views or interests expressed in this site are my views, and does not necessarily reflect the view or interest of any entity I have a connection to; whether it is an organization, or someone I have worked with.
+				</p>
 			</div>
 		</footer>
 		<footer class="footer justify-around items-center p-4 bg-base-200">
