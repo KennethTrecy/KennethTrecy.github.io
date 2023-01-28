@@ -21,7 +21,7 @@
 		<address itemprop="author" itemscope itemtype="https://schema.org/Person">
 			This page was authored by
 			<BaseLink
-				address="/about"
+				address="/about_myself"
 				relationship={[ ...internalTypes, ...authorTypes ]}
 				itemprop="mainEntityOfPage">
 				<span itemprop="name">

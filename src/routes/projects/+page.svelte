@@ -1,5 +1,5 @@
 <script lang="ts">
-	import pageMeta from "@/routes/about/meta"
+	import pageMeta from "@/routes/about_myself/meta"
 
 	import Heading from "@/components/general/heading.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"

@@ -49,7 +49,7 @@
 					</p>
 					<BaseLink
 						itemprop="mainEntityOfPage"
-						address="/about"
+						address="/about_myself"
 						relationship={[ ...internalTypes, ...authorTypes ]}>
 						<span class="btn btn-primary">Know more about me</span>
 					</BaseLink>

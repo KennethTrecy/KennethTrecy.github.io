@@ -1,9 +1,9 @@
 <script lang="ts">
-	import pageMeta from "@/routes/about/meta"
+	import pageMeta from "@/routes/about_myself/meta"
 
 	import Heading from "@/components/general/heading.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
-	import ContactLink from "@/components/about/contact_link.svelte"
+	import ContactLink from "@/components/about_myself/contact_link.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
