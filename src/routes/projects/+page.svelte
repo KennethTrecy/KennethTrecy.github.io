@@ -15,6 +15,8 @@
 
 	interface SoftwareProjectGroup {
 		name: string,
+		extraListClasses: string[],
+		extraListItemClasses: string[],
 		description: string,
 		projects: SoftwareProject[]
 	}
