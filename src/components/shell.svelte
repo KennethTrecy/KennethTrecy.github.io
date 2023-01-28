@@ -99,14 +99,14 @@
 			</div>
 		</footer>
 		<footer class="footer justify-around items-center p-4 bg-base-200">
-			<section class="md:grid-flow-col md:items-center">
+			<section class="grid-flow-col items-center">
 				<img class="flex-none w-16 h-auto" alt="logo" src={Logo}/>
 				<p itemprop="copyrightNotice">
 					Copyright © <span itemprop="copyrightYear">2023</span>
 					<span itemprop="copyrightHolder">Kenneth Trecy Tobias</span>.
 				</p>
 			</section>
-			<section class="md:items-center">
+			<section class="col-span-2 md:col-span-1 text-center">
 				<p>
 					Website's code (not texts containing my personal information) are under
 					<ExternalLink
