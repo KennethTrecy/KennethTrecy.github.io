@@ -31,14 +31,26 @@
 			itemprop="mainEntity"
 			itemscope
 			itemtype="https://schema.org/Person"
-			class="hero w-screen">
-			<section class="hero-content flex flex-col md:flex-row">
+			class="hero lg:w-[125%] lg:ml-[-20%]">
+			<!--
+				To calculate left margin of hero component, the following method was done:
+				1. Let `self` be the current component
+				2. On large screens, resize the self's width to 125% of the own width.
+				3. To center the contents, self's left margin size should be -25% of the own original
+					width.
+				4. Let 100 units be the original width of the self.
+				5. The width of self on large screens is 100 units × 125% = 125 units.
+				6. The target left margin size of self is 100 units × -25% = -25 units.
+				7. Therefore, target margin size of self on large screens is -25 units / 125 units =
+					20%.
+			 -->
+			<section class="hero-content flex flex-col xl:flex-row">
 				<img itemprop="image" src={Logo} alt="Kenneth Trecy's logo" class="max-w-sm"/>
-				<div class="max-w-md text-center md:text-left">
+				<div class="max-w-sm xl:max-w-md text-center xl:text-left">
 					<h2 itemprop="headline">
 						Hi, I am <span itemprop="givenName">Kenneth Trecy</span>!
 					</h2>
-					<p itemprop="knowsAbout" class="py-6">
+					<p itemprop="knowsAbout" class="py-6 container md:px-0">
 						I usually develop the back-end of the applications I have handled. I ensure their quality though automated tests through CI.
 					</p>
 					<BaseLink
