@@ -44,7 +44,11 @@
 				<ThemeToggler/>
 			</div>
 		</header>
-		<main itemprop="mainEntity" itemscope itemtype="https://schema.org/WebPage">
+		<main
+			itemprop="mainEntity"
+			itemscope
+			itemtype="https://schema.org/WebPage"
+			class="flex flex-col justify-center items-stretch">
 			<slot name="main"></slot>
 		</main>
 		<footer class="footer footer-center p-4">

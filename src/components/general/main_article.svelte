@@ -2,21 +2,28 @@
 	export let itemtype: string = "https://schema.org/WebPageContent"
 </script>
 
-<div class="h-full w-full flex flex-col justify-center items-center container">
+<div class="flex-1 m-0 p-0 h-full w-full flex flex-col justify-center items-stretch container">
 	<article
 		itemprop="mainContentOfPage"
 		itemscope
 		itemtype="https://schema.org/WebPageElement"
-		class="prose md:prose-lg flex flex-col justify-center items-center">
+		class="flex-1 flex flex-col justify-center items-center">
 		<slot name="title"></slot>
-		<div
-			itemprop="mainEntity"
-			itemscope
-			{itemtype}
-			class="pb-8 text-justify">
-			<slot name="content"></slot>
+		<div class="flex flex-col md:flex-row-reverse justify-center items-stretch">
+			{#if $$slots.aside}
+				<aside class="prose md:prose-lg w-96 flex flex-row justify-left items-start">
+					<slot name="aside"></slot>
+				</aside>
+			{/if}
+			<div
+				itemprop="mainEntity"
+				itemscope
+				{itemtype}
+				class="prose md:prose-lg pb-8 text-justify">
+				<slot name="content"></slot>
+			</div>
 		</div>
-		<footer class="pb-8">
+		<footer class="prose md:prose-lg pb-8">
 			<slot name="metadata"></slot>
 		</footer>
 	</article>
