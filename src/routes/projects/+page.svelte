@@ -1,7 +1,11 @@
 <script lang="ts">
+	import { FIRST_PUBLICATION_DATE } from "@/constants/miscellaneous_meta"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
 	import ProjectCard from "@/components/general/project_card.svelte"
+	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
+
+	const pageVersion = "0.1"
 
 	interface SoftwareProject {
 		name: string
@@ -29,7 +33,7 @@
 		title="Projects | KennethTrecy"
 		description="List of personal open-source projects made by Kenneth Trecy"
 		keywords={[ "Kenneth Trecy", "personal", "projects" ]}
-		pageVersion="0.1"/>
+		{pageVersion}/>
 </svelte:head>
 
 <MainArticle itemtype="https://schema.org/CreativeWorkSeries">
@@ -58,4 +62,5 @@
 			</section>
 		{/each}
 	</svelte:fragment>
+	<PageDetailCard slot="metadata" datePublished={FIRST_PUBLICATION_DATE} {pageVersion}/>
 </MainArticle>
