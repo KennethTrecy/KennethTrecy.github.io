@@ -13,7 +13,7 @@ export async function GET() {
 
 	const documentPaths = metas.map(meta => meta.path)
 
-	const allowRules = documentPaths.map(path => `Allow: ${path}`)
+	const allowRules = documentPaths.map(path => `Allow: ${path}$`)
 	const compiledAllowRules = allowRules.join("\n")
 
 	const sitemapRules = [ `Sitemap: ${CF_PAGES_URL}/sitemap.xml` ]
