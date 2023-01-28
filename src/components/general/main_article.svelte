@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let itemtype: string = "https://schema.org/WebPageContent"
+	export let itemtype: string = "https://schema.org/WebContent"
 </script>
 
 <div class="flex-1 m-0 p-0 h-full w-full flex flex-col justify-center items-stretch container">
