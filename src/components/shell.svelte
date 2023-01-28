@@ -107,9 +107,9 @@
 			</section>
 			<section class="md:items-center">
 				<p>
-					Website's code (not texts containing my personal information) has been licensed under
+					Website's code (not texts containing my personal information) are under
 					<ExternalLink
-						address="https://raw.githubusercontent.com/KennethTrecy/kennethtrecy.pages.dev/master/LICENSE">MIT</ExternalLink>, otherwise noted.
+						address="https://raw.githubusercontent.com/KennethTrecy/kennethtrecy.pages.dev/master/LICENSE">MIT license</ExternalLink>.
 				</p>
 			</section>
 			<section class="socials justify-center items-center justify-items-center">
