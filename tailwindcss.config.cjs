@@ -11,7 +11,12 @@ module.exports = {
 		"extend": {
 			"container": {
 				"padding": {
-					"DEFAULT": "4rem"
+					"DEFAULT": "3rem",
+					"sm": "4rem",
+					"md": "4rem",
+					"lg": "4rem",
+					"xl": "4rem",
+					"2xl": "4rem"
 				}
 			}
 		}
