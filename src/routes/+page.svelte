@@ -48,7 +48,7 @@
 				<img itemprop="image" src={Logo} alt="Kenneth Trecy's logo" class="max-w-sm"/>
 				<div class="max-w-sm xl:max-w-md text-center xl:text-left">
 					<h2 itemprop="headline">
-						Hi, I am <span itemprop="givenName">Kenneth Trecy</span>!
+						👋🏽 Hi, I am <span itemprop="givenName">Kenneth Trecy</span>!
 					</h2>
 					<p itemprop="knowsAbout" class="py-6 container md:px-0">
 						I usually develop the back-end of the applications I have handled. I ensure their quality though automated tests through CI.
@@ -69,7 +69,7 @@
 				itemscope
 				itemtype="https://schema.org/WebContent"
 				class="container max-w-prose md:px-0">
-				<h2 itemprop="headline">Specialty</h2>
+				<h2 itemprop="headline">🌟 Specialty</h2>
 				<p itemprop="text">Web development is my expertise. I have tried different technologies too such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
 				<p>During my free time, I apply my skills on my personal projects.</p>
 			</section>
@@ -78,7 +78,7 @@
 				itemscope
 				itemtype="https://schema.org/CreativeWorkSeries"
 				class="container max-w-prose md:px-0">
-				<h2 class="my-4">Some of my personal projects</h2>
+				<h2 class="my-4">⛏️ Some of my personal projects</h2>
 				<ul class="project_list list-none list-outside flex flex-col flex-wrap">
 					<li>
 						<ProjectCard
@@ -122,7 +122,7 @@
 				itemscope
 				itemtype="https://schema.org/WebContent"
 				class="container max-w-prose md:px-0">
-				<h2 itemprop="headline">Security in mind</h2>
+				<h2 itemprop="headline">🔐 Security in mind</h2>
 				<p itemprop="text">
 					I also like reading articles about cybersecurity. For this reason, I build applications with security in mind as much as possible to be resilient from attacks.
 				</p>
