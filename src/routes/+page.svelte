@@ -1,4 +1,5 @@
 <script lang="ts">
+	import pageMeta from "@/routes/about/meta"
 	import { FIRST_PUBLICATION_DATE } from "@/constants/miscellaneous_meta"
 	import { externalTypes, internalTypes, authorTypes } from "@/components/general/links/constants"
 
@@ -16,11 +17,7 @@
 </script>
 
 <svelte:head>
-	<CommonHead
-		title="KennethTrecy's Portforlio"
-		description="Open-source technology enthusiast. Back-end experimentalist. Analytic tester. Hi! I am Kenneth Trecy, programmer living in Philippines. Check out my personal website!"
-		keywords={[ "Kenneth Trecy", "portfolio" , "philippines" ]}
-		{pageVersion}/>
+	<CommonHead {pageMeta}/>
 </svelte:head>
 
 <MainArticle>

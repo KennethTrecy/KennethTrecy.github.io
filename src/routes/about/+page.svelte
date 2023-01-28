@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { FIRST_PUBLICATION_DATE } from "@/constants/miscellaneous_meta"
+	import pageMeta from "@/routes/about/meta"
 
 	import Heading from "@/components/general/heading.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
@@ -203,11 +204,7 @@
 </script>
 
 <svelte:head>
-	<CommonHead
-		title="Who am I?"
-		description="Know more about Kenneth Trecy's journey and his skills on I.T. field. Contact details are also listed here if you wnt to connect with him."
-		keywords={[ "Kenneth Trecy", "contact" , "journey" ]}
-		{pageVersion}/>
+	<CommonHead {pageMeta}/>
 </svelte:head>
 
 <MainArticle itemtype="https://schema.org/Person">

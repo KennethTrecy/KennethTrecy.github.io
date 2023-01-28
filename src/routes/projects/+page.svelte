@@ -1,5 +1,7 @@
 <script lang="ts">
+	import pageMeta from "@/routes/about/meta"
 	import { FIRST_PUBLICATION_DATE } from "@/constants/miscellaneous_meta"
+
 	import Heading from "@/components/general/heading.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
@@ -120,11 +122,7 @@
 </script>
 
 <svelte:head>
-	<CommonHead
-		title="Projects"
-		description="Kenneth Trecy is has a decade of experience in programming websites. In this page, an overview of different projects he was involve have been listed."
-		keywords={[ "Kenneth Trecy", "involved", "personal", "projects" ]}
-		{pageVersion}/>
+	<CommonHead {pageMeta}/>
 </svelte:head>
 
 <MainArticle itemtype="https://schema.org/CreativeWorkSeries">
