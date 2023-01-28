@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { FIRST_PUBLICATION_DATE } from "@/constants/miscellaneous_meta"
 	import pageMeta from "@/routes/about/meta"
 
 	import Heading from "@/components/general/heading.svelte"
@@ -8,8 +7,6 @@
 	import MainArticle from "@/components/general/main_article.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
-
-	const pageVersion = 0.1
 
 	interface Technology {
 		name: string,
@@ -307,5 +304,5 @@
 			</ul>
 		</section>
 	</svelte:fragment>
-	<PageDetailCard slot="metadata" datePublished={FIRST_PUBLICATION_DATE} {pageVersion}/>
+	<PageDetailCard slot="metadata" {pageMeta}/>
 </MainArticle>

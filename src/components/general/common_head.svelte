@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH } from "$env/static/public"
-	import { dev } from "$app/environment"
-
 	import type { PageMeta } from "@/types/head"
+
+	import { dev } from "$app/environment"
+	import { PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH } from "$env/static/public"
 
 	export let pageMeta: PageMeta
 

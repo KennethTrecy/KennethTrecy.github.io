@@ -1,14 +1,11 @@
 <script lang="ts">
 	import pageMeta from "@/routes/about/meta"
-	import { FIRST_PUBLICATION_DATE } from "@/constants/miscellaneous_meta"
 
 	import Heading from "@/components/general/heading.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
 	import ProjectCard from "@/components/general/project_card.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
-
-	const pageVersion = "0.1"
 
 	interface SoftwareProject {
 		name: string
@@ -165,7 +162,7 @@
 			</p>
 		</section>
 	</svelte:fragment>
-	<PageDetailCard slot="metadata" datePublished={FIRST_PUBLICATION_DATE} {pageVersion}/>
+	<PageDetailCard slot="metadata" {pageMeta}/>
 </MainArticle>
 
 <style lang="postcss">

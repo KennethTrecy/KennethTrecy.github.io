@@ -1,13 +1,14 @@
 <script lang="ts">
+	import type { PageMeta } from "@/types/head"
+
 	import { internalTypes, authorTypes } from "@/components/general/links/constants"
 
 	import BaseLink from "@/components/general/links/base.svelte"
 
-	export let datePublished: Date
-	export let pageVersion: string
+	export let pageMeta: PageMeta
 
-	$: dateTimePublished = datePublished.toISOString()
-	$: humanReadableDatePublished = datePublished.toLocaleString("en", {
+	$: dateTimePublished = pageMeta.datePublished.toISOString()
+	$: humanReadableDatePublished = pageMeta.datePublished.toLocaleString("en", {
 		"dateStyle": "long",
 		"timeStyle": "long",
 		"timeZone": "UTC"
@@ -21,7 +22,7 @@
 			This page was authored by
 			<BaseLink
 				address="/about"
-				relationship={[ ...internalTypes, ...authorTypes ].join(" ")}
+				relationship={[ ...internalTypes, ...authorTypes ]}
 				itemprop="mainEntityOfPage">
 				<span itemprop="name">
 					<span itemprop="givenName">Kenneth Trecy</span>
@@ -33,7 +34,7 @@
 				itemprop="datePublished"
 				datetime={dateTimePublished}>{humanReadableDatePublished}</time>.
 			It has not been modified since then.
-			Version of the page is v<span itemprop="version">{pageVersion}</span>.
+			Version of the page is v<span itemprop="version">{pageMeta.version}</span>.
 		</em>
 	</section>
 </div>
