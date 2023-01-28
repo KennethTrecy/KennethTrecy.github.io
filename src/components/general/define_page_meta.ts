@@ -15,7 +15,7 @@ export default function(path: string, {
 	designer = [ encoder ],
 	creator = encoder,
 	license = LICENSE
-}: Partial<Exclude<PageMeta, "path">>): PageMeta {
+}: Partial<Exclude<PageMeta, "path">> = {}): PageMeta {
 	return {
 		path,
 		version,
