@@ -1,5 +1,5 @@
 <script lang="ts">
-	import pageMeta from "@/routes/about/meta"
+	import pageMeta from "@/routes/meta"
 	import { externalTypes, internalTypes, authorTypes } from "@/components/general/links/constants"
 
 	import Logo from "@/multimedia/logo.png"
