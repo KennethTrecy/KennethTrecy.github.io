@@ -9,7 +9,7 @@
 <div
 	itemprop="hasPart"
 	itemscope itemtype="https://schema.org/CreativeWork"
-	class="card not-prose flex-1 bg-base-200 mr-4 mb-4">
+	class="card not-prose text-left flex-1 bg-base-200 mr-4 mb-4">
 	<div class="card-body">
 		<a itemprop="mainEntityOfPage" class="card-title flex flex-row items-center" href={link}>
 			<h3 itemprop="name">{title}</h3>
