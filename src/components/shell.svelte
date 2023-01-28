@@ -1,11 +1,13 @@
 <script lang="ts">
 	import "@/components/general.css"
+
 	import Logo from "@/multimedia/logo.png"
 
-	import Icon from "@/components/general/icon.svelte"
 	import Menu from "@/components/shell/menu.svelte"
+	import Icon from "@/components/general/icon.svelte"
 	import ProfileLink from "@/components/shell/profile_link.svelte"
 	import ThemeToggler from "@/components/shell/theme_toggler.svelte"
+	import ExternalLink from "@/components/general/links/external.svelte"
 	import ThirdPartyLink from "@/components/shell/third-party_link.svelte"
 </script>
 
@@ -100,7 +102,14 @@
 				<img class="flex-none w-16 h-auto" alt="logo" src={Logo}/>
 				<p itemprop="copyrightNotice">
 					Copyright © <span itemprop="copyrightYear">2023</span>
-					<span itemprop="copyrightHolder">Kenneth Trecy Tobias</span>
+					<span itemprop="copyrightHolder">Kenneth Trecy Tobias</span>.
+				</p>
+			</section>
+			<section class="md:items-center">
+				<p>
+					Website's code has been licensed under
+					<ExternalLink
+						address="https://raw.githubusercontent.com/KennethTrecy/kennethtrecy.pages.dev/master/LICENSE">MIT</ExternalLink>, otherwise noted.
 				</p>
 			</section>
 			<section class="socials justify-center items-center justify-items-center">
