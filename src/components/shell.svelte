@@ -2,6 +2,7 @@
 	import "@/components/general.css"
 
 	import Logo from "@/multimedia/logo.png"
+	import { LICENSE, LICENSE_URL } from "@/constants/miscellaneous_meta"
 
 	import Menu from "@/components/shell/menu.svelte"
 	import Icon from "@/components/general/icon.svelte"
@@ -109,8 +110,8 @@
 				<p>
 					Website's code (not texts containing my personal information) are under
 					<ExternalLink
-						address="https://raw.githubusercontent.com/KennethTrecy/kennethtrecy.pages.dev/master/LICENSE"
-						itemprop="license">MIT license</ExternalLink>.
+						address={LICENSE_URL}
+						itemprop="license">{LICENSE} license</ExternalLink>.
 				</p>
 			</section>
 			<section class="socials justify-center items-center justify-items-center">
