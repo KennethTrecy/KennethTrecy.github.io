@@ -10,6 +10,8 @@
 	import ProjectCard from "@/components/general/project_card.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
+
+	const pageVersion = "0.1"
 </script>
 
 <svelte:head>
@@ -17,7 +19,7 @@
 		title="KennethTrecy"
 		description="Personal website of KennethTrecy"
 		keywords={[ "Kenneth Trecy", "portfolio" , "philippines" ]}
-		pageVersion="0.1"/>
+		{pageVersion}/>
 </svelte:head>
 
 <MainArticle>
@@ -117,7 +119,7 @@
 			</section>
 		</div>
 	</svelte:fragment>
-	<PageDetailCard slot="metadata" datePublished={FIRST_PUBLICATION_DATE}/>
+	<PageDetailCard slot="metadata" datePublished={FIRST_PUBLICATION_DATE} {pageVersion}/>
 </MainArticle>
 
 <style lang="postcss">

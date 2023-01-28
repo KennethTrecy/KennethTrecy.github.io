@@ -4,6 +4,7 @@
 	import BaseLink from "@/components/general/links/base.svelte"
 
 	export let datePublished: Date
+	export let pageVersion: string
 
 	$: dateTimePublished = datePublished.toISOString()
 	$: humanReadableDatePublished = datePublished.toLocaleString("en", {
@@ -32,6 +33,7 @@
 				itemprop="datePublished"
 				datetime={dateTimePublished}>{humanReadableDatePublished}</time>.
 			It has not been modified since then.
+			Version of the page is v<span itemprop="version">{pageVersion}</span>.
 		</em>
 	</section>
 </div>
