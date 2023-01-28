@@ -34,7 +34,6 @@
 		"autoprefixer": "^10.4.13",
 		"changelogen": "^0.4.0",
 		"esbuild": "^0.16.10",
-		"html-minifier": "^4.0.0",
 		"husky": "^8.0.0",
 		"jsdom": "^20.0.3",
 		"postcss": "^8.4.20",
