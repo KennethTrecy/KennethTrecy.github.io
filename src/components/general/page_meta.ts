@@ -13,8 +13,7 @@ export default class {
 		"datePublished"?: Date
 		"dateModified"?: Date
 	} = {}) {
-		const BASE_PATH = "src/routes"
-		this.path = rawPath.slice(rawPath.indexOf(BASE_PATH) + BASE_PATH.length + 1)
+		this.path = rawPath
 		this.version = version
 		this.datePublished = datePublished
 		this.dateModified = dateModified

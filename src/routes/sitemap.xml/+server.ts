@@ -26,7 +26,7 @@ export async function GET() {
 	})
 	const documentURLTags = documentURLInfos.map(info => `
 		<url>
-			<loc>${PUBLIC_BASE_URL}/${info.path}</loc>
+			<loc>${PUBLIC_BASE_URL}${info.path}</loc>
 			<lastmod>${info.lastModified.toJSON()}</lastmod>
 		</url>
 	`)
