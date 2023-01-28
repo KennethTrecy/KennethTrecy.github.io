@@ -15,7 +15,7 @@
 	export let creator = WEBSITE_OWNER
 	export let license = LICENSE
 
-	$: if (dev && description.length > PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH) {
+	$: if (dev && description.length > Number(PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH)) {
 		console.warn(`Description for page entitled "${title}" is too long.`)
 	}
 </script>
