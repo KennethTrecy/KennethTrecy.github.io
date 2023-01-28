@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { FIRST_PUBLICATION_DATE } from "@/constants/miscellaneous_meta"
 
+	import Heading from "@/components/general/heading.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import ContactLink from "@/components/about/contact_link.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
@@ -213,7 +214,7 @@
 </svelte:head>
 
 <MainArticle itemtype="https://schema.org/Person">
-	<h1 slot="title" itemprop="headline">Who am I?</h1>
+	<Heading slot="title">Who am I?</Heading>
 	<svelte:fragment slot="content">
 		<section>
 			<h2>Journey</h2>

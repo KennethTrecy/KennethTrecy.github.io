@@ -4,6 +4,7 @@
 
 	import Logo from "@/multimedia/logo.png"
 
+	import Heading from "@/components/general/heading.svelte"
 	import BaseLink from "@/components/general/links/base.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
@@ -23,7 +24,7 @@
 </svelte:head>
 
 <MainArticle>
-	<h1 slot="title">KennethTrecy's Portfolio</h1>
+	<Heading slot="title" class="text-center md:text-left">🌀 KennethTrecy's Portfolio</Heading>
 	<svelte:fragment slot="content">
 		<div class="divider"></div>
 		<div
