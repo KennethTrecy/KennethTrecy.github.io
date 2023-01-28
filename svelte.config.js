@@ -1,5 +1,5 @@
 import { resolve } from "path"
-import adapter from "@sveltejs/adapter-auto"
+import adapter from "@sveltejs/adapter-cloudflare"
 import { vitePreprocess } from "@sveltejs/kit/vite"
 
 /** @type {import("@sveltejs/kit").Config} */
