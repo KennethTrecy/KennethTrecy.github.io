@@ -106,15 +106,15 @@
 					<span itemprop="copyrightHolder">Kenneth Trecy Tobias</span>.
 				</p>
 			</section>
-			<section class="col-span-2 md:col-span-1 text-center">
-				<p>
+			<section class="col-span-2 md:col-span-1 place-self-stretch md:place-self-auto text-center">
+				<p class="w-full">
 					Website's code (not texts containing my personal information) are under
 					<ExternalLink
 						address={LICENSE_URL}
 						itemprop="license">{LICENSE} license</ExternalLink>.
 				</p>
 			</section>
-			<section class="socials justify-center items-center justify-items-center">
+			<section class="socials place-self-end mr-4 md:place-self-auto md:mr-auto justify-center items-center justify-items-center">
 				<span class="footer-title">Socials</span>
 				<p class="grid grid-cols-2 grid-rows-1 gap-x-4">
 					<ProfileLink
