@@ -7,7 +7,7 @@
 		itemprop="mainContentOfPage"
 		itemscope
 		itemtype="https://schema.org/WebPageElement"
-		class="flex-1 flex flex-col justify-center items-center">
+		class="container flex-1 flex flex-col justify-center items-center">
 		<slot name="title"></slot>
 		<div class="flex flex-col md:flex-row-reverse justify-center items-stretch">
 			{#if $$slots.aside}
