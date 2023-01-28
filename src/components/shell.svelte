@@ -51,7 +51,7 @@
 			itemprop="mainEntity"
 			itemscope
 			itemtype="https://schema.org/WebPage"
-			class="flex flex-col justify-center items-stretch">
+			class="flex flex-col justify-center items-center">
 			<slot name="main"></slot>
 		</main>
 		<footer class="footer footer-center p-4">
