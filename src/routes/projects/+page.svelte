@@ -121,9 +121,9 @@
 
 <svelte:head>
 	<CommonHead
-		title="Projects | KennethTrecy"
-		description="List of personal open-source projects made by Kenneth Trecy"
-		keywords={[ "Kenneth Trecy", "personal", "projects" ]}
+		title="Projects"
+		description="Kenneth Trecy is has a decade of experience in programming websites. In this page, an overview of different projects he was involve have been listed."
+		keywords={[ "Kenneth Trecy", "involved", "personal", "projects" ]}
 		{pageVersion}/>
 </svelte:head>
 

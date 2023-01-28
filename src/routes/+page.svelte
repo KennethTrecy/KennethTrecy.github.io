@@ -17,8 +17,8 @@
 
 <svelte:head>
 	<CommonHead
-		title="KennethTrecy"
-		description="Personal website of KennethTrecy"
+		title="KennethTrecy's Portforlio"
+		description="Open-source technology enthusiast. Back-end experimentalist. Analytic tester. Hi! I am Kenneth Trecy, programmer living in Philippines. Check out my personal website!"
 		keywords={[ "Kenneth Trecy", "portfolio" , "philippines" ]}
 		{pageVersion}/>
 </svelte:head>

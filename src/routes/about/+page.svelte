@@ -204,10 +204,10 @@
 
 <svelte:head>
 	<CommonHead
-		title="About | KennethTrecy"
-		description="Information about Kenneth Trecy Tobias' journey and contact details"
+		title="Who am I?"
+		description="Know more about Kenneth Trecy's journey and his skills on I.T. field. Contact details are also listed here if you wnt to connect with him."
 		keywords={[ "Kenneth Trecy", "contact" , "journey" ]}
-		pageVersion="0.1"/>
+		{pageVersion}/>
 </svelte:head>
 
 <MainArticle itemtype="https://schema.org/Person">
