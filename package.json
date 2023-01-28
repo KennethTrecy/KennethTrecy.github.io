@@ -20,7 +20,7 @@
 		"prod": "vite build",
 		"production:partial": "npx rollup -c bundler/prod/rollup.partial.config.js",
 		"production:full": "npx rollup -c bundler/prod/rollup.full.config.js",
-		"test:unit": "npx rollup -c bundler/test/rollup.config.js && npx mocha hidden/t/**/*.js",
+		"test:unit": "npx vitest",
 		"test:watch_unit": "npx mocha hidden/t/**/*.js --watch --watch-files hidden/t/**/*.js"
 	},
 	"devDependencies": {
