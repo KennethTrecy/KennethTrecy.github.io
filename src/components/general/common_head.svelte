@@ -1,7 +1,9 @@
 <script lang="ts">
+	import { PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH } from "$env/static/public"
+	import { dev } from "$app/environment"
+
 	import { WEBSITE_OWNER } from "@/constants/names"
 	import { LICENSE } from "@/constants/miscellaneous_meta"
-	import { PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH } from "$env/static/public"
 
 	export let title: string
 	export let description: string
@@ -13,7 +15,7 @@
 	export let creator = WEBSITE_OWNER
 	export let license = LICENSE
 
-	$: if (description.length > PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH) {
+	$: if (dev && description.length > PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH) {
 		console.warn(`Description for page entitled "${title}" is too long.`)
 	}
 </script>
