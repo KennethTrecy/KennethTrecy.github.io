@@ -37,7 +37,7 @@
 </svelte:head>
 
 <MainArticle itemtype="https://schema.org/CreativeWorkSeries">
-	<h1 slot="title">List of Personal Projects</h1>
+	<h1 slot="title" class="prose md:prose-lg"><span class="text-5xl">List of Involved Projects</span></h1>
 	<svelte:fragment slot="content">
 		<section itemprop="about" itemscope itemtype="https://schema.org/WebContent">
 			<h2 itemprop="headline name">Rationale</h2>
