@@ -131,9 +131,9 @@
 	<Heading slot="title">List of Involved Projects</Heading>
 	<svelte:fragment slot="content">
 		<section itemprop="about" itemscope itemtype="https://schema.org/WebContent">
-			<h2 itemprop="headline name">Rationale</h2>
+			<h2 itemprop="headline name">❔Rationale</h2>
 			<p itemprop="mainEntity">
-				Over the years, I have built multiple projects to apply my knowledge. As a consequence, I gain experience to build them, to solve their technical issues, and to improve their technical design if possible. Building them helps me improve my decision-making in future projects and not to take things for granted that look like basic. Indeed, simplicity is hard.
+				Over the years, I have built and handled multiple projects to apply my knowledge. As a consequence, I gain experience to build them, to solve their technical issues, and to improve their technical design if possible. Building them helps me improve my decision-making in future projects and not to take things for granted that look like basic. Indeed, simplicity is hard.
 			</p>
 		</section>
 		{#each projectGroups as projectGroup}
@@ -160,6 +160,12 @@
 				</ul>
 			</section>
 		{/each}
+		<section itemprop="hasPart" itemscope itemtype="https://schema.org/WebContent">
+			<h2 itemprop="headline name">🔶 Other projects</h2>
+			<p itemprop="mainEntity">
+				Beside my personal projects, I have also contributed to on several open-source projects by requesting pull requests. Usually, I add a small part of code for a certain functionality that I want.
+			</p>
+		</section>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" datePublished={FIRST_PUBLICATION_DATE} {pageVersion}/>
 </MainArticle>
