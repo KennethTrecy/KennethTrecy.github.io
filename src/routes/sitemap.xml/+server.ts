@@ -1,24 +1,14 @@
 import { CF_PAGES_URL } from "$env/static/private"
 
-import type { PageMeta }from "@/types/head"
-
-import indexMeta from "@/routes/meta"
-import aboutMeta from "@/routes/about/meta"
-import projectsMeta from "@/routes/projects/meta"
+import metaCollection from "@/constants/meta_collection"
 
 export async function GET() {
-	const metas = [
-		indexMeta,
-		aboutMeta,
-		projectsMeta
-	]
-
 	interface URLInfo {
 		path: string,
 		lastModified: Date
 	}
 
-	const documentURLInfos: URLInfo[] = metas.map((meta: PageMeta) => {
+	const documentURLInfos: URLInfo[] = metaCollection.map(meta => {
 		return {
 			"lastModified": meta.dateModified,
 			"path": meta.path

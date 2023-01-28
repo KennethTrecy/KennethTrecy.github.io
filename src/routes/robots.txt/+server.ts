@@ -1,17 +1,9 @@
 import { CF_PAGES_URL } from "$env/static/private"
 
-import indexMeta from "@/routes/meta"
-import aboutMeta from "@/routes/about/meta"
-import projectsMeta from "@/routes/projects/meta"
+import metaCollection from "@/constants/meta_collection"
 
 export async function GET() {
-	const metas = [
-		indexMeta,
-		aboutMeta,
-		projectsMeta
-	]
-
-	const documentPaths = metas.map(meta => meta.path)
+	const documentPaths = metaCollection.map(meta => meta.path)
 
 	const allowRules = documentPaths.map(path => `Allow: ${path}$`)
 	const compiledAllowRules = allowRules.join("\n")
