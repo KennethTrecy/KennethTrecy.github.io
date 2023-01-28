@@ -1,6 +1,6 @@
 import { CF_PAGES_URL } from "$env/static/private"
 
-import type PageMeta from "@/components/general/page_meta"
+import type { PageMeta }from "@/types/head"
 
 import indexMeta from "@/routes/meta"
 import aboutMeta from "@/routes/about/meta"
