@@ -196,9 +196,6 @@
 				}, {
 					"name": "Perl",
 					"homepage": "https://www.perl.org/"
-				}, {
-					"name": "Arduino",
-					"homepage": "https://www.arduino.cc/reference/en/"
 				}
 			]
 		}
@@ -217,13 +214,12 @@
 	<Heading slot="title">Who am I?</Heading>
 	<svelte:fragment slot="content">
 		<section>
-			<h2>Journey</h2>
+			<h2>🛩️ Journey</h2>
 			<p>
 				I am
 				<span itemprop="name">
 					<span itemprop="givenName">Kenneth Trecy</span>
-					<span itemprop="familyName">Tobias</span>
-				</span>.
+					<span itemprop="familyName">Tobias</span></span>.
 				I am
 				<span itemprop="nationality" itemscope itemtype="https://schema.org/Country">
 					<span itemprop="name">Filipino</span> living in
@@ -232,7 +228,7 @@
 				Some people call me <em itemprop="alternateName">"Tretchi"</em>. I have been into programming for a long time.
 			</p>
 			<p>
-				Initially, I was introduced in web development around 2013. Back then, I study every summer and make some small-scale web projects in a low-end Android phone.
+				Initially, I was introduced in web development around 2013. Since then, I study every summer and make some small-scale web projects in a low-end Android phone.
 			</p>
 			<p>
 				As the time passed by, I quickly got interest in back-end programming due to
@@ -247,13 +243,13 @@
 				Using this approach, I faced the issues that other developers have already solved. It made me appreciate the existing solutions and strive to be better. I was like a toddler back then mimicking the adults.
 			</p>
 			<p>
-				That did not stopped me from thinking innovative solutions. Some solutions are better suited for certain situations. As the saying goes, <em>"it depends!"</em>.
+				That did not stopped me to try from thinking innovative solutions. Some solutions are better suited for certain situations. As the saying goes, <em>"it depends!"</em>.
 			</p>
 		</section>
 		<section itemprop="knowsAbout">
-			<h2>Skills</h2>
+			<h2>✨ Skills</h2>
 			<p>
-				I am specialized my web development skills, particularly back-end programming. The reason was that back-end programming could support most communication technologies in an increasingly interconnected world. Whether it is a e-commerce website, Internet of Things, or games, they need at a server to process and store their data.
+				I am specialized in web development, particularly back-end programming. The reason was that back-end programming could support most communication technologies in an increasingly interconnected world. Whether it is a e-commerce website, Internet of Things, or games, they need at a server to process and store their data.
 			</p>
 			<p>
 				Some of my web development skills are the following:
@@ -263,7 +259,7 @@
 					<li>
 						<section>
 							<h3>{area.name}</h3>
-							<ul class="columns-2 leading-loose not-prose">
+							<ul class="columns-2 lg:columns-3 leading-loose not-prose">
 								{#each area.technologies as technology}
 									<li title={technology.name} class="my-0">
 										<ExternalLink address={technology.homepage}>
@@ -277,14 +273,14 @@
 				{/each}
 			</ul>
 			<p>
-				I have also experienced programming using GameMaker language or GDScript to make small games in the past. I have some basics too on programming Arduino microcontrollers. Beside those, I like reading about cryptography, compilers, and latest technology.
+				Also, I have some experience in programming using GameMaker language or GDScript to make small games in the past. I have some basics too on programming Arduino microcontrollers. Beside those, I like reading about cryptography, testing, compilers, and latest technology.
 			</p>
 			<p>
-				Beside programming, I am also good in mathematics and logic. Both fields help me in validation, troubleshooting, and authorization. These skills complement my other interests.
+				Beside programming, I am also good in mathematics and logic. Both fields help me in validation, developing, troubleshooting, and authorization. These skills complement my other interests.
 			</p>
 		</section>
 		<section>
-			<h2 id="contact_details">Contact Details</h2>
+			<h2 id="contact_details">✉️ Contact Details</h2>
 			<p>Should you wish to get in touch with me, I can be communicated on different platforms.</p>
 			<ul class="list-none not-prose">
 				<li itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
