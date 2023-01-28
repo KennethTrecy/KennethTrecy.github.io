@@ -109,7 +109,8 @@
 				<p>
 					Website's code (not texts containing my personal information) are under
 					<ExternalLink
-						address="https://raw.githubusercontent.com/KennethTrecy/kennethtrecy.pages.dev/master/LICENSE">MIT license</ExternalLink>.
+						address="https://raw.githubusercontent.com/KennethTrecy/kennethtrecy.pages.dev/master/LICENSE"
+						itemprop="license">MIT license</ExternalLink>.
 				</p>
 			</section>
 			<section class="socials justify-center items-center justify-items-center">
