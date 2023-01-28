@@ -28,7 +28,7 @@
 <div itemscope itemtype="https://schema.org/WebSite" class="drawer drawer-mobile">
 	<input type="checkbox" class="drawer-toggle" id="menu_drawer_checkbox"/>
 	<div class="drawer-content">
-		<header class="navbar">
+		<header class="navbar border-b-[0.05rem] mb-8">
 			<label
 				tabindex="0"
 				for="menu_drawer_checkbox"
