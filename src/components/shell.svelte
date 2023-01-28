@@ -9,19 +9,6 @@
 	import ThirdPartyLink from "@/components/shell/third-party_link.svelte"
 </script>
 
-<svelte:head>
-	<link
-		rel="stylesheet"
-		href="https://fonts.googleapis.com/css2?family=Roboto"/>
-	<link
-		rel="stylesheet"
-		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,1"/>
-	<style>
-		body {
-			font-family: "Roboto", "Heveltica Neue", sans-serif;
-		}
-	</style>
-</svelte:head>
 <div itemscope itemtype="https://schema.org/WebSite" class="drawer drawer-mobile">
 	<input type="checkbox" class="drawer-toggle" id="menu_drawer_checkbox"/>
 	<div class="drawer-content">
