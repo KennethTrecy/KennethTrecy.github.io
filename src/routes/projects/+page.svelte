@@ -140,9 +140,17 @@
 			<section itemprop="hasPart" itemscope itemtype="https://schema.org/CreativeWorkSeries">
 				<h2 itemprop="headline name">{projectGroup.name}</h2>
 				<p itemprop="about">{projectGroup.description}</p>
-				<ul class="flex list-none">
+				<ul
+					class={[
+						"project_list",
+						"list-none",
+						"flex",
+						"flex-col",
+						"flex-wrap",
+						...projectGroup.extraListClasses
+					].join(" ")}>
 					{#each projectGroup.projects as project}
-						<li itemprop="hasPart">
+						<li class={projectGroup.extraListItemClasses.join(" ")}>
 							<ProjectCard
 								title={project.name}
 								description={project.description}
@@ -155,3 +163,9 @@
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" datePublished={FIRST_PUBLICATION_DATE} {pageVersion}/>
 </MainArticle>
+
+<style lang="postcss">
+	ul.project_list, ul.project_list > li {
+		@apply m-0 p-0;
+	}
+</style>
