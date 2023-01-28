@@ -38,9 +38,9 @@
 				7. Therefore, target margin size of self on large screens is -25 units / 125 units =
 					20%.
 			 -->
-			<section class="hero-content flex flex-col xl:flex-row">
+			<div class="hero-content flex flex-col xl:flex-row">
 				<img itemprop="image" src={Logo} alt="Kenneth Trecy's logo" class="max-w-sm"/>
-				<div class="max-w-sm xl:max-w-md text-center xl:text-left">
+				<section class="max-w-sm xl:max-w-md text-center xl:text-left">
 					<h2 itemprop="headline">
 						👋🏽 Hi, I am <span itemprop="givenName">Kenneth Trecy</span>!
 					</h2>
@@ -53,8 +53,8 @@
 						relationship={[ ...internalTypes, ...authorTypes ]}>
 						<span class="btn btn-primary">Know more about me</span>
 					</BaseLink>
-				</div>
-			</section>
+				</section>
+			</div>
 		</div>
 		<div class="divider"></div>
 		<div class="flex flex-col justify-center items-center">
