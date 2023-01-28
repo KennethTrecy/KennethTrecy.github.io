@@ -2,8 +2,34 @@ import { PUBLIC_BASE_URL } from "$env/static/public"
 
 import type PageMeta from "@/components/general/page_meta"
 
+import indexMeta from "@/routes/meta"
+import aboutMeta from "@/routes/about/meta"
+import projectsMeta from "@/routes/projects/meta"
 
 export async function GET() {
+	const metas = [
+		indexMeta,
+		aboutMeta,
+		projectsMeta
+	]
+
+	interface URLInfo {
+		path: string,
+		lastModified: Date
+	}
+
+	const documentURLInfos: URLInfo[] = metas.map((meta: PageMeta) => {
+		return {
+			"lastModified": meta.dateModified,
+			"path": meta.path
+		}
+	})
+	const documentURLTags = documentURLInfos.map(info => `
+		<url>
+			<loc>${PUBLIC_BASE_URL}/${info.path}</loc>
+			<lastmod>${info.lastModified.toJSON()}</lastmod>
+		</url>
+	`)
 	const compiledURLTags = documentURLTags.join("\n")
 
 	return new Response(
