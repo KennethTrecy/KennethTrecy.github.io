@@ -1,5 +1,5 @@
 export interface HeadingInfo {
-	prefix: string
+	prefix?: string
 	text: string
 	id?: string
 }
