@@ -31,6 +31,12 @@
 				<li>Generic-level</li>
 			<ol>
 		</section>
+		<section itemprop="hasPart" itemscope itemtype="https://schema.org/WebContent">
+			<h2 itemprop="headline name">Program-level Abstraction</h2>
+			<p>
+				This level of abstraction is the least general among other levels.
+			</p>
+		</section>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
 </MainArticle>
