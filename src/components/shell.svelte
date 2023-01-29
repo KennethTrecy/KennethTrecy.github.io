@@ -61,38 +61,6 @@
 		<footer class="footer footer-center p-4">
 			<div>
 				<p>
-					This website contains third-party packages:
-					<ThirdPartyLink
-						packageName="Svelte"
-						homeLink="https://svelte.dev/"
-						licenseName="MIT"
-						licenseLink="https://github.com/sveltejs/svelte/blob/master/LICENSE.md"/>,
-					<ThirdPartyLink
-						packageName="Tailwind CSS"
-						homeLink="https://tailwindcss.com/"
-						licenseName="MIT"
-						licenseLink="https://github.com/tailwindlabs/tailwindcss/blob/master/LICENSE"/>,
-					<ThirdPartyLink
-						packageName="@tailwindcss/typography"
-						homeLink="https://github.com/tailwindlabs/tailwindcss-typography#readme"
-						licenseName="MIT"
-						licenseLink="https://github.com/tailwindlabs/tailwindcss-typography/blob/master/LICENSE"/>,
-					<ThirdPartyLink
-						packageName="daisyUI"
-						homeLink="https://daisyui.com/"
-						licenseName="MIT"
-						licenseLink="https://github.com/saadeghi/daisyui/blob/master/LICENSE"/>,
-					<ThirdPartyLink
-						packageName="rgb-hex"
-						homeLink="https://github.com/sindresorhus/rgb-hex#readme"
-						licenseName="MIT"
-						licenseLink="https://github.com/sindresorhus/rgb-hex/blob/main/license"/>, and
-					<ThirdPartyLink
-						packageName="theme-change"
-						homeLink="https://github.com/saadeghi/theme-change#readme"
-						licenseName="MIT"
-						licenseLink="https://github.com/saadeghi/theme-change/blob/master/LICENSE"/>.
-
 					The site has been built using
 					<ThirdPartyLink
 						packageName="SvelteKit"
