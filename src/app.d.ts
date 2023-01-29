@@ -5,11 +5,11 @@ declare namespace App {
 	// interface Error {}
 	// interface Locals {}
 	// interface PageData {}
-	interface Platform {}
 	interface Platform {
 		env: {
 			COUNTER: DurableObjectNamespace
 			CF_PAGES_URL: string
+			PRODUCTION_BASE_URL: string
 			PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH: string
 		}
 		context: {
