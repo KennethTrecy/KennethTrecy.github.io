@@ -2,7 +2,6 @@
 	import "@/components/general.css"
 
 	import Logo from "@/multimedia/logo.png"
-	import { textColor } from "@/components/general/theme"
 	import { LICENSE, LICENSE_URL } from "@/constants/miscellaneous_meta"
 
 	import Menu from "@/components/shell/menu.svelte"
@@ -120,7 +119,7 @@
 				</p>
 			</section>
 			<section class="socials place-self-end mr-4 md:place-self-auto md:mr-auto justify-center items-center justify-items-center">
-				<span class="footer-title opacity-100" style={`color: #${$textColor}`}>Socials</span>
+				<span class="footer-title opacity-100">Socials</span>
 				<p class="grid grid-cols-2 grid-rows-1 gap-x-4">
 					<ProfileLink
 						address="https://www.linkedin.com/in/kenneth-trecy-tobias/"
