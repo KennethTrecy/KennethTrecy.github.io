@@ -2,9 +2,9 @@
 	import { derived } from "svelte/store"
 	import { page } from "$app/stores"
 
-	import Heading from "@/components/general/heading.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
+	import PrimaryHeader from "@/components/general/headings/primary.svelte"
 
 	const pageVersion = "0.1"
 	const title = derived(
@@ -57,7 +57,7 @@
 </svelte:head>
 
 <MainArticle>
-	<Heading slot="title">{$page.status} | {$page.error?.message}</Heading>
+	<PrimaryHeader slot="title">{$page.status} | {$page.error?.message}</PrimaryHeader>
 	<p slot="content">
 		{$message}
 	</p>

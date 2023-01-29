@@ -11,7 +11,12 @@ module.exports = {
 		"extend": {
 			"container": {
 				"padding": {
-					"DEFAULT": "4rem"
+					"DEFAULT": "3rem",
+					"sm": "4rem",
+					"md": "4rem",
+					"lg": "4rem",
+					"xl": "4rem",
+					"2xl": "4rem"
 				}
 			}
 		}
@@ -25,7 +30,7 @@ module.exports = {
 					"accent": "#808080",
 					"neutral": "#3D4451",
 					"base-100": "#FFFFFF",
-					"base-200": "#F0F0F0"
+					"base-200": "#F7F7F7"
 				}
 			},
 			{
@@ -35,7 +40,7 @@ module.exports = {
 					"accent": "#808080",
 					"neutral": "#191D24",
 					"base-100": "#2A303C",
-					"base-200": "#1B212D"
+					"base-200": "#222834"
 				}
 			}
 		]

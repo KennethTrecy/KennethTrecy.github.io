@@ -7,21 +7,34 @@
 
 	export let pageMeta: PageMeta
 
-	$: dateTimePublished = pageMeta.datePublished.toISOString()
-	$: humanReadableDatePublished = pageMeta.datePublished.toLocaleString("en", {
-		"dateStyle": "long",
-		"timeStyle": "long",
+	const dateTimeFormatOptions: Partial<Intl.DateTimeFormatOptions> = {
+		"year": "numeric",
+		"month": "long",
+		"day": "numeric",
+		"hour": "numeric",
+		"minute": "numeric",
+		"timeZoneName": "short",
 		"timeZone": "UTC"
-	})
+	}
+
+	$: dateTimePublished = pageMeta.datePublished.toISOString()
+	$: humanReadableDatePublished = pageMeta.datePublished.toLocaleString(
+		"en",
+		dateTimeFormatOptions
+	)
+	$: dateTimeModified = pageMeta.dateModified.toISOString()
+	$: humanReadableDateModified = pageMeta.dateModified.toLocaleString("en", dateTimeFormatOptions)
+	$: hasModified = dateTimePublished !== dateTimeModified
+	$: publishStatus = Number(pageMeta.version) < 1 ? "draft" : "published"
 </script>
 
 <div class="not-prose card bg-base-200">
 	<section class="card-body">
-		<h6 class="title">Page details</h6>
+		<h2 class="title">Page details</h2>
 		<address itemprop="author" itemscope itemtype="https://schema.org/Person">
 			This page was authored by
 			<BaseLink
-				address="/about"
+				address="/about_myself"
 				relationship={[ ...internalTypes, ...authorTypes ]}
 				itemprop="mainEntityOfPage">
 				<span itemprop="name">
@@ -31,10 +44,18 @@
 		<em>
 			Published last
 			<time
-				itemprop="datePublished"
+				itemprop={ hasModified ? "datePublished": "datePublished dateModified" }
 				datetime={dateTimePublished}>{humanReadableDatePublished}</time>.
-			It has not been modified since then.
-			Version of the page is v<span itemprop="version">{pageMeta.version}</span>.
+			{#if hasModified}
+				Then, it was modified last
+				<time
+					itemprop="dateModified"
+					datetime={dateTimeModified}>{humanReadableDateModified}</time>.
+			{:else}
+				It has not been modified since then.
+			{/if}
+			Version of the {publishStatus} page is
+			"<span itemprop="version">{pageMeta.version}</span>".
 		</em>
 	</section>
 </div>
