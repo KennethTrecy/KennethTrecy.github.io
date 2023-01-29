@@ -4,7 +4,8 @@
 	import CommonHead from "@/components/general/common_head.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
 	import ProjectCard from "@/components/general/project_card.svelte"
-	import PrimaryHeader from "@/components/general/heading/headings/primary.svelte"
+	import PrimaryHeader from "@/components/general/headings/primary.svelte"
+	import SecondaryHeader from "@/components/general/headings/secondary.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 
 	interface SoftwareProject {
@@ -14,6 +15,8 @@
 	}
 
 	interface SoftwareProjectGroup {
+		id: string,
+		prefix: string,
 		name: string,
 		extraListClasses: string[],
 		extraListItemClasses: string[],
@@ -23,7 +26,9 @@
 
 	const projectGroups: SoftwareProjectGroup[] = [
 		{
-			"name": "🌏 Personal Public Projects",
+			"id": "personal_public_projects",
+			"prefix": "🌏",
+			"name": "Personal Public Projects",
 			"description": "These projects were used at least once in other software (private or public). Some of them are independent. Some complement or require other software with their recent versions or old versions only. I cannot maintain all of my personal projects, yet I try to keep the code future-proof and welcome changes as much as possible.",
 			"projects": [
 				{
@@ -59,7 +64,9 @@
 			"extraListClasses": [ "md:max-h-[50rem]" ],
 			"extraListItemClasses": [ "md:w-1/2" ]
 		}, {
-			"name": "🏭 Template Projects",
+			"id": "template_projects",
+			"prefix": "🏭",
+			"name": "Template Projects",
 			"description": "Once a certain a workflow becomes repetitive for me in different personal projects, I generalize it into one public template. I would be happy if someone uses one of these.",
 			"projects": [
 				{
@@ -79,7 +86,9 @@
 			"extraListClasses": [],
 			"extraListItemClasses": []
 		}, {
-			"name": "🧪 Chearmyp Language Project",
+			"id": "chearmyp",
+			"prefix": "🧪",
+			"name": "Chearmyp Language Project",
 			"description": "I did a experimental language back then named \"Chearmyp\". For now, it only works as data format for my other projects. Originally, the repositories below came from one source and I split it according to concerns. They are also public projects.",
 			"projects": [
 				{
@@ -126,14 +135,18 @@
 	<PrimaryHeader slot="title">List of Involved Projects</PrimaryHeader>
 	<svelte:fragment slot="content">
 		<section itemprop="about" itemscope itemtype="https://schema.org/WebContent">
-			<h2 itemprop="headline name">❔Rationale</h2>
+			<SecondaryHeader id="rationale" prefix="❔">Rationale</SecondaryHeader>
 			<p itemprop="mainEntity">
 				Over the years, I have built and handled multiple projects to apply my knowledge. As a consequence, I gain experience to build them, to solve their technical issues, and to improve their technical design if possible. Building them helps me improve my decision-making in future projects and not to take things for granted that look like basic. Indeed, simplicity is hard.
 			</p>
 		</section>
 		{#each projectGroups as projectGroup}
 			<section itemprop="hasPart" itemscope itemtype="https://schema.org/CreativeWorkSeries">
-				<h2 itemprop="headline name">{projectGroup.name}</h2>
+				<SecondaryHeader
+					id={projectGroup.id}
+					prefix={projectGroup.prefix}>
+					{projectGroup.name}
+				</SecondaryHeader>
 				<p itemprop="about">{projectGroup.description}</p>
 				<ul
 					class={[
@@ -156,7 +169,7 @@
 			</section>
 		{/each}
 		<section itemprop="hasPart" itemscope itemtype="https://schema.org/WebContent">
-			<h2 itemprop="headline name">🔶 Other projects</h2>
+			<SecondaryHeader id="other_projects" prefix="🔶">Other projects</SecondaryHeader>
 			<p itemprop="mainEntity">
 				Beside my personal projects, I have also contributed to on several open-source projects by requesting pull requests. Usually, I add a small part of code for a certain functionality that I want.
 			</p>
