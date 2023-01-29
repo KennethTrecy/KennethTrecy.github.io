@@ -5,8 +5,8 @@
 	import MainArticle from "@/components/general/main_article.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import ContactLink from "@/components/about_myself/contact_link.svelte"
-	import PrimaryHeader from "@/components/general/headings/primary.svelte"
-	import SecondaryHeader from "@/components/general/headings/secondary.svelte"
+	import PrimaryHeading from "@/components/general/headings/primary.svelte"
+	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 
 	interface Technology {
@@ -206,10 +206,10 @@
 </svelte:head>
 
 <MainArticle itemtype="https://schema.org/Person">
-	<PrimaryHeader slot="title">Who am I?</PrimaryHeader>
+	<PrimaryHeading slot="title">Who am I?</PrimaryHeading>
 	<svelte:fragment slot="content">
 		<section>
-			<SecondaryHeader id="journey" mustBeRaw={true} prefix="🛩️">Journey</SecondaryHeader>
+			<SecondaryHeading id="journey" mustBeRaw={true} prefix="🛩️">Journey</SecondaryHeading>
 			<p>
 				I am
 				<span itemprop="name">
@@ -242,7 +242,7 @@
 			</p>
 		</section>
 		<section itemprop="knowsAbout">
-			<SecondaryHeader id="skills" mustBeRaw={true} prefix="✨">Skills</SecondaryHeader>
+			<SecondaryHeading id="skills" mustBeRaw={true} prefix="✨">Skills</SecondaryHeading>
 			<p>
 				I am specialized in web development, particularly back-end programming. The reason was that back-end programming could support most communication technologies in an increasingly interconnected world. Whether it is a e-commerce website, Internet of Things, or games, they need at a server to process and store their data.
 			</p>
@@ -275,9 +275,9 @@
 			</p>
 		</section>
 		<section>
-			<SecondaryHeader id="contact_details" mustBeRaw={true} prefix="✉️">
+			<SecondaryHeading id="contact_details" mustBeRaw={true} prefix="✉️">
 				Contact Details
-			</SecondaryHeader>
+			</SecondaryHeading>
 			<p>Should you wish to get in touch with me, I can be communicated on different platforms.</p>
 			<ul class="list-none not-prose">
 				<li itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">

@@ -5,7 +5,7 @@ import { render, cleanup, fireEvent } from "@testing-library/svelte"
 
 import Component from "./secondary.svelte"
 
-describe("Secondary header behavior", () => {
+describe("Secondary heading behavior", () => {
 	it("can render prefix as separate", async () => {
 		const prefix = "I. "
 		const id = "hello_a"
@@ -36,8 +36,8 @@ describe("Secondary header behavior", () => {
 		const id = "hello_c"
 		const { container } = render(Component, { id })
 
-		const header = container.querySelector("h2") as HTMLHeadingElement
-		await fireEvent.mouseOver(header)
+		const heading = container.querySelector("h2") as HTMLHeadingElement
+		await fireEvent.mouseOver(heading)
 
 		const bookmark = container.querySelector(".visible")
 		expect(bookmark).not.toBeNull()
@@ -49,9 +49,9 @@ describe("Secondary header behavior", () => {
 		const id = "hello_d"
 		const { container } = render(Component, { id })
 
-		const header = container.querySelector("h2") as HTMLHeadingElement
-		await fireEvent.mouseOver(header)
-		await fireEvent.mouseOut(header)
+		const heading = container.querySelector("h2") as HTMLHeadingElement
+		await fireEvent.mouseOver(heading)
+		await fireEvent.mouseOut(heading)
 
 		const bookmark = container.querySelector(".invisible")
 		expect(bookmark).not.toBeNull()

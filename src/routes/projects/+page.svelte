@@ -4,8 +4,8 @@
 	import CommonHead from "@/components/general/common_head.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
 	import ProjectCard from "@/components/general/project_card.svelte"
-	import PrimaryHeader from "@/components/general/headings/primary.svelte"
-	import SecondaryHeader from "@/components/general/headings/secondary.svelte"
+	import PrimaryHeading from "@/components/general/headings/primary.svelte"
+	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 
 	interface SoftwareProject {
@@ -132,21 +132,21 @@
 </svelte:head>
 
 <MainArticle itemtype="https://schema.org/CreativeWorkSeries">
-	<PrimaryHeader slot="title">List of Involved Projects</PrimaryHeader>
+	<PrimaryHeading slot="title">List of Involved Projects</PrimaryHeading>
 	<svelte:fragment slot="content">
 		<section itemprop="about" itemscope itemtype="https://schema.org/WebContent">
-			<SecondaryHeader id="rationale" prefix="❔">Rationale</SecondaryHeader>
+			<SecondaryHeading id="rationale" prefix="❔">Rationale</SecondaryHeading>
 			<p itemprop="mainEntity">
 				Over the years, I have built and handled multiple projects to apply my knowledge. As a consequence, I gain experience to build them, to solve their technical issues, and to improve their technical design if possible. Building them helps me improve my decision-making in future projects and not to take things for granted that look like basic. Indeed, simplicity is hard.
 			</p>
 		</section>
 		{#each projectGroups as projectGroup}
 			<section itemprop="hasPart" itemscope itemtype="https://schema.org/CreativeWorkSeries">
-				<SecondaryHeader
+				<SecondaryHeading
 					id={projectGroup.id}
 					prefix={projectGroup.prefix}>
 					{projectGroup.name}
-				</SecondaryHeader>
+				</SecondaryHeading>
 				<p itemprop="about">{projectGroup.description}</p>
 				<ul
 					class={[
@@ -169,7 +169,7 @@
 			</section>
 		{/each}
 		<section itemprop="hasPart" itemscope itemtype="https://schema.org/WebContent">
-			<SecondaryHeader id="other_projects" prefix="🔶">Other projects</SecondaryHeader>
+			<SecondaryHeading id="other_projects" prefix="🔶">Other projects</SecondaryHeading>
 			<p itemprop="mainEntity">
 				Beside my personal projects, I have also contributed to on several open-source projects by requesting pull requests. Usually, I add a small part of code for a certain functionality that I want.
 			</p>
