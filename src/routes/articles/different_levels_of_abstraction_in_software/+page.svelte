@@ -14,21 +14,23 @@
 <MainArticle itemtype="https://schema.org/Article">
 	<Heading slot="title">{pageMeta.title}</Heading>
 	<svelte:fragment slot="content">
-		<section itemprop="about" itemscope itemtype="https://schema.org/WebContent">
+		<section itemprop="about" itemscope itemtype="https://schema.org/ItemList">
 			<h2 itemprop="headline name">Introduction</h2>
 			<p itemprop="about">
 				Abstraction is a process to see a thing as a one rather than as the sum of its parts. It can be rules or equations that are applicable to most situations. In software development, abstractions are used to simplify the process which are common to other tasks. They take in different levels which this page is all about.
 			</p>
-			<p itemprop="text">
-				Thre are several levels of abstraction listed below. They are ordered from almost specific to most general kind of abstraction.
+			<p itemprop="mainEntity">
+				Thre are several levels of abstraction listed below. They are ordered
+				<span
+					itemprop="itemListOrder">from almost specific to most general kind of abstraction</span>.
 			</p>
-			<ol itemprop="mainEntity">
-				<li>Program-level</li>
-				<li>Configuration-level</li>
-				<li>Variable-level</li>
-				<li>Function-level</li>
-				<li>Class-level</li>
-				<li>Generic-level</li>
+			<ol>
+				<li itemprop="itemListElement">Program-level</li>
+				<li itemprop="itemListElement">Configuration-level</li>
+				<li itemprop="itemListElement">Variable-level</li>
+				<li itemprop="itemListElement">Function-level</li>
+				<li itemprop="itemListElement">Class-level</li>
+				<li itemprop="itemListElement">Generic-level</li>
 			<ol>
 		</section>
 		<section itemprop="hasPart" itemscope itemtype="https://schema.org/WebContent">
