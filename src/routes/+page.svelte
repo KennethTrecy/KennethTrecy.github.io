@@ -10,6 +10,7 @@
 	import ProjectCard from "@/components/general/project_card.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import PrimaryHeader from "@/components/general/headings/primary.svelte"
+	import SecondaryHeader from "@/components/general/headings/secondary.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 </script>
 
@@ -18,7 +19,7 @@
 </svelte:head>
 
 <MainArticle>
-	<PrimaryHeader slot="title">🌀 KennethTrecy's Portfolio</PrimaryHeader>
+	<PrimaryHeader slot="title" prefix="🌀">KennethTrecy's Portfolio</PrimaryHeader>
 	<svelte:fragment slot="content">
 		<div class="divider"></div>
 		<div
@@ -47,9 +48,9 @@
 					height="384"
 					class="max-w-sm"/>
 				<section class="max-w-sm xl:max-w-md text-center xl:text-left">
-					<h2 itemprop="headline">
-						👋🏽 Hi, I am <span itemprop="givenName">Kenneth Trecy</span>!
-					</h2>
+					<SecondaryHeader id="greetings" prefix="👋🏽">
+						Hi, I am <span itemprop="givenName">Kenneth Trecy</span>!
+					</SecondaryHeader>
 					<p itemprop="knowsAbout" class="py-6 container md:px-0">
 						I usually develop the back-end of the applications I have handled. I ensure their quality though automated tests through CI.
 					</p>
@@ -70,7 +71,7 @@
 				itemscope
 				itemtype="https://schema.org/WebContent"
 				class="container max-w-prose md:px-0">
-				<h2 itemprop="headline">🌟 Specialty</h2>
+				<SecondaryHeader id="specialty" prefix="🌟">Specialty</SecondaryHeader>
 				<p itemprop="text">Web development is my expertise. I have tried different technologies too such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
 				<p>During my free time, I apply my skills on my personal projects.</p>
 			</section>
@@ -79,7 +80,9 @@
 				itemscope
 				itemtype="https://schema.org/CreativeWorkSeries"
 				class="container max-w-prose md:px-0">
-				<h2 class="my-4">⛏️ Some of my personal projects</h2>
+				<SecondaryHeader class={[ "my-4" ]} id="personal_projects" prefix="⛏️">
+					Some of my personal projects
+				</SecondaryHeader>
 				<ul class="project_list list-none list-outside flex flex-col flex-wrap">
 					<li>
 						<ProjectCard
@@ -123,7 +126,7 @@
 				itemscope
 				itemtype="https://schema.org/WebContent"
 				class="container max-w-prose md:px-0">
-				<h2 itemprop="headline">🔐 Security in mind</h2>
+				<SecondaryHeader id="security" prefix="🔐">Security in mind</SecondaryHeader>
 				<p itemprop="text">
 					I also like reading articles about cybersecurity. For this reason, I build applications with security in mind as much as possible to be resilient from attacks.
 				</p>
