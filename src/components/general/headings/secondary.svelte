@@ -6,7 +6,7 @@
 	let otherClasses: string = ""
 
 	export let mustBeRaw: boolean = false
-	export let id: string
+	export let fragment: string
 	export let prefix: string = ""
 
 	export { otherClasses as class }
@@ -15,12 +15,10 @@
 		otherClasses
 	].filter(Boolean).join(" ")
 	$: hasPrefix = prefix !== ""
-	$: fragment = `#${id}`
 </script>
 
 <h2
 	class={joinedClasses}
-	{id}
 	on:mouseout={_event => isMouseIn = false}
 	on:mouseover={_event => isMouseIn = true}>
 	{#if hasPrefix}
