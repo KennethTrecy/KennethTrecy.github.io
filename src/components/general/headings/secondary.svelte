@@ -1,4 +1,6 @@
 <script lang="ts">
+	import type { HeadingInfo } from "@/types/body"
+
 	import Icon from "@/components/general/icon.svelte"
 	import Bookmark from "@/components/general/links/bookmark.svelte"
 
@@ -6,16 +8,15 @@
 	let otherClasses: string[] = []
 
 	export let mustBeRaw: boolean = false
-	export let fragmentID: string
-	export let prefix: string = ""
+	export let linkInfo: HeadingInfo
 
 	export { otherClasses as class }
 
 	$: joinedClasses = [
 		...otherClasses
 	].filter(Boolean).join(" ")
-	$: hasPrefix = prefix !== ""
-	$: fragment = `#${fragmentID}`
+	$: hasPrefix = linkInfo.prefix !== ""
+	$: fragment = `#${linkInfo.id}`
 </script>
 
 <h2
@@ -23,13 +24,13 @@
 	on:mouseout={_event => isMouseIn = false}
 	on:mouseover={_event => isMouseIn = true}>
 	{#if hasPrefix}
-		<span>{prefix}</span>
+		<span>{linkInfo.prefix}</span>
 	{/if}
 
 	{#if mustBeRaw}
-		<span><slot></slot></span>
+		<span>{linkInfo.text}</span>
 	{:else}
-		<span itemprop="headline name"><slot></slot></span>
+		<span itemprop="headline name">{linkInfo.text}</span>
 	{/if}
 
 	<Bookmark
