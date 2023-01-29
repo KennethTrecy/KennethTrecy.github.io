@@ -12,6 +12,10 @@
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
+
+	const specialtyID = "specialty"
+	const personalProjectsID = "personal_projects"
+	const securityID = "security"
 </script>
 
 <svelte:head>
@@ -70,8 +74,9 @@
 				itemprop="hasPart"
 				itemscope
 				itemtype="https://schema.org/WebContent"
-				class="container max-w-prose md:px-0">
-				<SecondaryHeading id="specialty" prefix="🌟">Specialty</SecondaryHeading>
+				class="container max-w-prose md:px-0"
+				id={specialtyID}>
+				<SecondaryHeading fragmentID={specialtyID} prefix="🌟">Specialty</SecondaryHeading>
 				<p itemprop="text">Web development is my expertise. I have tried different technologies too such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
 				<p>During my free time, I apply my skills on my personal projects.</p>
 			</section>
@@ -79,8 +84,9 @@
 				itemprop="hasPart"
 				itemscope
 				itemtype="https://schema.org/CreativeWorkSeries"
-				class="container max-w-prose md:px-0">
-				<SecondaryHeading class={[ "my-4" ]} id="personal_projects" prefix="⛏️">
+				class="container max-w-prose md:px-0"
+				id={personalProjectsID}>
+				<SecondaryHeading class={[ "my-4" ]} fragmentID={personalProjectsID} prefix="⛏️">
 					Some of my personal projects
 				</SecondaryHeading>
 				<ul class="project_list list-none list-outside flex flex-col flex-wrap">
@@ -125,8 +131,9 @@
 				itemprop="hasPart"
 				itemscope
 				itemtype="https://schema.org/WebContent"
-				class="container max-w-prose md:px-0">
-				<SecondaryHeading id="security" prefix="🔐">Security in mind</SecondaryHeading>
+				class="container max-w-prose md:px-0"
+				id={securityID}>
+				<SecondaryHeading fragmentID={securityID} prefix="🔐">Security in mind</SecondaryHeading>
 				<p itemprop="text">
 					I also like reading articles about cybersecurity. For this reason, I build applications with security in mind as much as possible to be resilient from attacks.
 				</p>
