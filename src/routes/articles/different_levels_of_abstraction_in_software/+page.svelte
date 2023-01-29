@@ -11,7 +11,7 @@
 	<CommonHead {pageMeta}/>
 </svelte:head>
 
-<MainArticle>
+<MainArticle itemtype="https://schema.org/Article">
 	<Heading slot="title">{pageMeta.title}</Heading>
 	<svelte:fragment slot="content">
 		<section itemprop="about" itemscope itemtype="https://schema.org/WebContent">
