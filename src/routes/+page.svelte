@@ -74,7 +74,6 @@
 				itemprop="hasPart"
 				itemscope
 				itemtype="https://schema.org/WebContent"
-				class="container max-w-prose md:px-0"
 				id={specialtyID}>
 				<SecondaryHeading fragmentID={specialtyID} prefix="🌟">Specialty</SecondaryHeading>
 				<p itemprop="text">Web development is my expertise. I have tried different technologies too such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
@@ -84,7 +83,6 @@
 				itemprop="hasPart"
 				itemscope
 				itemtype="https://schema.org/CreativeWorkSeries"
-				class="container max-w-prose md:px-0"
 				id={personalProjectsID}>
 				<SecondaryHeading class={[ "my-4" ]} fragmentID={personalProjectsID} prefix="⛏️">
 					Some of my personal projects
@@ -131,7 +129,6 @@
 				itemprop="hasPart"
 				itemscope
 				itemtype="https://schema.org/WebContent"
-				class="container max-w-prose md:px-0"
 				id={securityID}>
 				<SecondaryHeading fragmentID={securityID} prefix="🔐">Security in mind</SecondaryHeading>
 				<p itemprop="text">
