@@ -1,12 +1,12 @@
 <script lang="ts">
 	import Icon from "@/components/general/icon.svelte"
-	import Link from "@/components/general/links/base.svelte"
+	import Bookmark from "@/components/general/links/bookmark.svelte"
 
 	let isMouseIn = false
 	let otherClasses: string = ""
 
 	export let mustBeRaw: boolean = false
-	export let fragment: string
+	export let fragmentID: string
 	export let prefix: string = ""
 
 	export { otherClasses as class }
@@ -15,6 +15,7 @@
 		otherClasses
 	].filter(Boolean).join(" ")
 	$: hasPrefix = prefix !== ""
+	$: fragment = `#${fragmentID}`
 </script>
 
 <h2
@@ -31,11 +32,9 @@
 		<span itemprop="headline name"><slot></slot></span>
 	{/if}
 
-	<Link
-		address={fragment}
-		class={[ isMouseIn ? "visible" : "invisible" ]}
-		relationship={[ "bookmark" ]}
-		context="self">
+	<Bookmark
+		{fragment}
+		class={[ isMouseIn ? "visible" : "invisible" ]}>
 		<Icon name="link"/>
-	</Link>
+	</Bookmark>
 </h2>
