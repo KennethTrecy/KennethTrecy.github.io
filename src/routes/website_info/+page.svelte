@@ -58,7 +58,7 @@
 </svelte:head>
 
 <MainArticle itemtype="https://schema.org/Website">
-	<PrimaryHeader slot="title">Who am I?</PrimaryHeader>
+	<PrimaryHeader slot="title">{pageMeta.title}</PrimaryHeader>
 	<svelte:fragment slot="content">
 		<section itemprop="hasPart" itemscope itemtype="https://schema.org/WebContent">
 			<SecondaryHeader id=""></SecondaryHeader>
@@ -66,11 +66,17 @@
 
 			</p>
 		</section>
-		<section itemprop="hasPart" itemscope itemtype="https://schema.org/WebContent">
-			<SecondaryHeader id=""></SecondaryHeader>
+		<section itemprop="mentions" itemscope itemtype="https://schema.org/ItemList">
+			<SecondaryHeader id="dependencies">Dependencies</SecondaryHeader>
+			<p>
+
+			</p>
 			<ul itemprop="mainEntity">
 				{#each thirdPartyPackages as thirdPartyPackage}
-					<li itemprop="mentions" itemscope itemtype="https://schema.org/SoftwareApplication">
+					<li
+						itemprop="itemListElement"
+						itemscope
+						itemtype="https://schema.org/SoftwareApplication">
 						<ThirdPartyLink
 							packageName={thirdPartyPackage.name}
 							homeLink={thirdPartyPackage.homepage}
