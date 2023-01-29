@@ -58,4 +58,18 @@ describe("Secondary header behavior", () => {
 
 		cleanup()
 	})
+
+	it("can render as raw", async () => {
+		const id = "hello_e"
+		const mustBeRaw = true
+		const { container } = render(Component, { id, mustBeRaw })
+
+		const property = container.querySelector("[itemprop~=headline][itemprop~=name]")
+		const spans = container.querySelectorAll("h2 span")
+
+		expect(property).toBeNull()
+		expect(spans).toHaveLength(2)
+
+		cleanup()
+	})
 })
