@@ -9,7 +9,7 @@
 	import ProfileLink from "@/components/shell/profile_link.svelte"
 	import ThemeToggler from "@/components/shell/theme_toggler.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
-	import ThirdPartyLink from "@/components/shell/third-party_link.svelte"
+	import ThirdPartyLink from "@/components/shell/third-party_package_link.svelte"
 </script>
 
 <svelte:head>

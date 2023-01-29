@@ -3,9 +3,9 @@
 
 	import CommonHead from "@/components/general/common_head.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
-	import ThirdPartyLink from "@/components/shell/third-party_link.svelte"
 	import PrimaryHeader from "@/components/general/headings/primary.svelte"
 	import SecondaryHeader from "@/components/general/headings/secondary.svelte"
+	import ThirdPartyLink from "@/components/shell/third-party_package_link.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 
 	interface ThirdPartySoftware {
