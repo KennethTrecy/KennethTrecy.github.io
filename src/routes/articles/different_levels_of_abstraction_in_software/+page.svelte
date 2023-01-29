@@ -1,9 +1,9 @@
 <script lang="ts">
 	import pageMeta from "@/routes/articles/different_levels_of_abstraction_in_software/meta"
 
-	import Heading from "@/components/general/heading.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
+	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 </script>
 
@@ -12,7 +12,7 @@
 </svelte:head>
 
 <MainArticle itemtype="https://schema.org/Article">
-	<Heading slot="title">{pageMeta.title}</Heading>
+	<PrimaryHeading slot="title">{pageMeta.title}</PrimaryHeading>
 	<svelte:fragment slot="content">
 		<section itemprop="about" itemscope itemtype="https://schema.org/ItemList">
 			<h2 itemprop="headline name">Introduction</h2>

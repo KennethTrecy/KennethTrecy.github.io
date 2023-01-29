@@ -1,9 +1,9 @@
 <script lang="ts">
 	import pageMeta from "@/routes/articles/meta"
 
-	import Heading from "@/components/general/heading.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
+	import PrimaryHeading from "@/components/general/heading/primary.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 </script>
 
@@ -12,7 +12,7 @@
 </svelte:head>
 
 <MainArticle>
-	<Heading slot="title" class="text-center md:text-left">{pageMeta.title}</Heading>
+	<PrimaryHeading slot="title">{pageMeta.title}</PrimaryHeading>
 	<svelte:fragment slot="content">
 		<div
 			itemprop="mainEntity"
