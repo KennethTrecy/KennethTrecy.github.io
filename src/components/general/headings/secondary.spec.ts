@@ -19,31 +19,31 @@ describe("Secondary header behavior", () => {
 		cleanup()
 	})
 
-	it("can render two spans if there is no prefix", async () => {
+	it("can render one span if there is no prefix", async () => {
 		const id = "hello_b"
 		const { container } = render(Component, { id })
 
 		const spans = container.querySelectorAll("h2 > span")
 
-		expect(spans).toHaveLength(2)
+		expect(spans).toHaveLength(1)
 
 		cleanup()
 	})
 
-	it("can show link copier if hovered", async () => {
+	it("can show bookmark if hovered", async () => {
 		const id = "hello_c"
 		const { container } = render(Component, { id })
 
 		const header = container.querySelector("h2") as HTMLHeadingElement
 		await fireEvent.mouseOver(header)
 
-		const linkCopier = container.querySelector("span.visible")
-		expect(linkCopier).not.toBeNull()
+		const bookmark = container.querySelector(".visible")
+		expect(bookmark).not.toBeNull()
 
 		cleanup()
 	})
 
-	it("can hide link copier if unhovered", async () => {
+	it("can hide bookmark if unhovered", async () => {
 		const id = "hello_d"
 		const { container } = render(Component, { id })
 
@@ -51,8 +51,8 @@ describe("Secondary header behavior", () => {
 		await fireEvent.mouseOver(header)
 		await fireEvent.mouseOut(header)
 
-		const linkCopier = container.querySelector("span.invisible")
-		expect(linkCopier).not.toBeNull()
+		const bookmark = container.querySelector(".invisible")
+		expect(bookmark).not.toBeNull()
 
 		cleanup()
 	})
