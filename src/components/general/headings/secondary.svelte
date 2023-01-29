@@ -8,7 +8,7 @@
 	let otherClasses: string[] = []
 
 	export let mustBeRaw: boolean = false
-	export let linkInfo: HeadingInfo
+	export let linkInfo: HeadingInfo<"defined">
 
 	export { otherClasses as class }
 
