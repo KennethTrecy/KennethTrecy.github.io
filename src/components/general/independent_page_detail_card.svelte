@@ -4,22 +4,26 @@
 	import { internalTypes, authorTypes } from "@/components/general/links/constants"
 
 	import BaseLink from "@/components/general/links/base.svelte"
-import { page } from "$app/stores"
 
 	export let pageMeta: PageMeta
 
+	const dateTimeFormatOptions: Partial<Intl.DateTimeFormatOptions> = {
+		"year": "numeric",
+		"month": "long",
+		"day": "numeric",
+		"hour": "numeric",
+		"minute": "numeric",
+		"timeZoneName": "short",
+		"timeZone": "UTC"
+	}
+
 	$: dateTimePublished = pageMeta.datePublished.toISOString()
-	$: humanReadableDatePublished = pageMeta.datePublished.toLocaleString("en", {
-		"dateStyle": "long",
-		"timeStyle": "long",
-		"timeZone": "UTC"
-	})
+	$: humanReadableDatePublished = pageMeta.datePublished.toLocaleString(
+		"en",
+		dateTimeFormatOptions
+	)
 	$: dateTimeModified = pageMeta.dateModified.toISOString()
-	$: humanReadableDateModified = pageMeta.dateModified.toLocaleString("en", {
-		"dateStyle": "long",
-		"timeStyle": "long",
-		"timeZone": "UTC"
-	})
+	$: humanReadableDateModified = pageMeta.dateModified.toLocaleString("en", dateTimeFormatOptions)
 	$: hasModified = dateTimePublished !== dateTimeModified
 	$: publishStatus = Number(pageMeta.version) < 1 ? "draft" : "published"
 </script>
