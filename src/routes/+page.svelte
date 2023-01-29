@@ -146,15 +146,20 @@
 		}
 	}
 
-	section:nth-child(1) img {
+	.hero-content img {
 		@apply animate-spin;
 
 		animation-duration: 8s;
 		animation-timing-function: linear;
-		animation-play-state: paused;
 	}
 
-	section:nth-child(1):hover img {
+	@screen md {
+		.hero-content img {
+			animation-play-state: paused;
+		}
+	}
+
+	.hero-content:hover img {
 		animation-play-state: running;
 	}
 
