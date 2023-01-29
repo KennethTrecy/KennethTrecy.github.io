@@ -1,5 +1,10 @@
-export interface HeadingInfo {
+export type HeadingInfo<T extends "defined"|"raw" = "raw"> = {
 	prefix?: string
 	text: string
-	id?: string
-}
+} & (
+	T extends "defined"
+	? { id: string }
+	: T extends "raw"
+		? { id?: string }
+		: never
+)
