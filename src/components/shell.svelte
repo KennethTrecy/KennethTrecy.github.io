@@ -26,11 +26,16 @@
 	</style>
 </svelte:head>
 <div itemscope itemtype="https://schema.org/WebSite" class="drawer drawer-mobile">
-	<input type="checkbox" class="drawer-toggle" id="menu_drawer_checkbox"/>
+	<input
+		type="checkbox"
+		class="drawer-toggle"
+		aria-labelledby="menu_toggler"
+		id="menu_drawer_checkbox"/>
 	<div class="drawer-content">
 		<header class="navbar border-b-[0.05rem] mb-8">
 			<label
 				tabindex="0"
+				id="menu_toggler"
 				for="menu_drawer_checkbox"
 				class="drawer-button btn bg-transparent border-transparent lg:hidden text-secondary hover:text-primary hover:bg-secondary">
 				<Icon name="menu"/>
