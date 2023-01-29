@@ -15,7 +15,7 @@
 	$: joinedClasses = [
 		...otherClasses
 	].filter(Boolean).join(" ")
-	$: hasPrefix = linkInfo.prefix !== ""
+	$: hasPrefix = Boolean(linkInfo.prefix)
 	$: fragment = `#${linkInfo.id}`
 </script>
 
