@@ -1,11 +1,12 @@
 <script lang="ts">
 	import pageMeta from "@/routes/about_myself/meta"
 
-	import PrimaryHeader from "@/components/general/headings/primary.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
-	import ContactLink from "@/components/about_myself/contact_link.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
+	import ContactLink from "@/components/about_myself/contact_link.svelte"
+	import PrimaryHeader from "@/components/general/headings/primary.svelte"
+	import SecondaryHeader from "@/components/general/headings/secondary.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 
 	interface Technology {
@@ -208,7 +209,7 @@
 	<PrimaryHeader slot="title">Who am I?</PrimaryHeader>
 	<svelte:fragment slot="content">
 		<section>
-			<h2>🛩️ Journey</h2>
+			<SecondaryHeader id="journey" prefix="🛩️">Journey</SecondaryHeader>
 			<p>
 				I am
 				<span itemprop="name">
@@ -241,7 +242,7 @@
 			</p>
 		</section>
 		<section itemprop="knowsAbout">
-			<h2>✨ Skills</h2>
+			<SecondaryHeader id="skills" prefix="✨">Skills</SecondaryHeader>
 			<p>
 				I am specialized in web development, particularly back-end programming. The reason was that back-end programming could support most communication technologies in an increasingly interconnected world. Whether it is a e-commerce website, Internet of Things, or games, they need at a server to process and store their data.
 			</p>
@@ -274,7 +275,7 @@
 			</p>
 		</section>
 		<section>
-			<h2 id="contact_details">✉️ Contact Details</h2>
+			<SecondaryHeader id="contact_details" prefix="✉️">Contact Details</SecondaryHeader>
 			<p>Should you wish to get in touch with me, I can be communicated on different platforms.</p>
 			<ul class="list-none not-prose">
 				<li itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
