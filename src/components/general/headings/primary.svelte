@@ -8,19 +8,15 @@
 	$: hasPrefix = prefix !== ""
 </script>
 
-{#if hasPrefix}
-	<h1 class={joinedClasses}>
+<h1 class={joinedClasses}>
+	{#if hasPrefix}
 		<span class="text-5xl">
 			<span>{prefix}</span>
 			<span itemprop="headline name"><slot></slot></span>
 		</span>
-	</h1>
-{:else}
-	<h1
-		class={joinedClasses}
-		itemprop="headline name">
-		<span class="text-5xl">
+	{:else}
+		<span itemprop="headline name" class="text-5xl">
 			<slot></slot>
 		</span>
-	</h1>
-{/if}
+	{/if}
+</h1>
