@@ -2,6 +2,7 @@
 	import pageMeta from "@/routes/articles/different_levels_of_abstraction_in_software/meta"
 
 	import CommonHead from "@/components/general/common_head.svelte"
+	import Bookmark from "@/components/general/links/bookmark.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
@@ -20,17 +21,53 @@
 				Abstraction is a process to see a thing as a one rather than as the sum of its parts. It can be rules or equations that are applicable to most situations. In software development, abstractions are used to simplify the process which are common to other tasks. They take in different levels which this page is all about.
 			</p>
 			<p itemprop="mainEntity">
-				Thre are several levels of abstraction listed below. They are ordered
+				Thre are <span itemprop="numberOfItems">7</span> levels of abstraction listed below. They are ordered
 				<span
 					itemprop="itemListOrder">from almost specific to most general kind of abstraction</span>.
 			</p>
 			<ol>
-				<li itemprop="itemListElement">Program-level</li>
-				<li itemprop="itemListElement">Configuration-level</li>
-				<li itemprop="itemListElement">Variable-level</li>
-				<li itemprop="itemListElement">Function-level</li>
-				<li itemprop="itemListElement">Class-level</li>
-				<li itemprop="itemListElement">Generic-level</li>
+				<li itemprop="itemListElement" itemscope itemtype="ListItem">
+					<Bookmark
+						itemprop="mainEntityOfPage"
+						fragment="program-level_abstraction">
+						Program-level
+					</Bookmark>
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="ListItem">
+					<Bookmark
+						itemprop="mainEntityOfPage"
+						fragment="configuration-level_abstraction">
+						Configuration-level
+					</Bookmark>
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="ListItem">
+					<Bookmark
+						itemprop="mainEntityOfPage"
+						fragment="variable-level_abstraction">
+						Variable-level
+					</Bookmark>
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="ListItem">
+					<Bookmark
+						itemprop="mainEntityOfPage"
+						fragment="function-level_abstraction">
+						Function-level
+					</Bookmark>
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="ListItem">
+					<Bookmark
+						itemprop="mainEntityOfPage"
+						fragment="class-level_abstraction">
+						Class-level
+					</Bookmark>
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="ListItem">
+					<Bookmark
+						itemprop="mainEntityOfPage"
+						fragment="generic-level_abstraction">
+						Generic-level
+					</Bookmark>
+				</li>
 			<ol>
 		</section>
 		<section itemprop="hasPart" itemscope itemtype="https://schema.org/WebContent">
