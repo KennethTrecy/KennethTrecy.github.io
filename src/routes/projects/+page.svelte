@@ -24,6 +24,9 @@
 		projects: SoftwareProject[]
 	}
 
+	const rationaleID = "rationale"
+	const otherProjectsID = "other_projects"
+
 	const projectGroups: SoftwareProjectGroup[] = [
 		{
 			"id": "personal_public_projects",
@@ -134,16 +137,19 @@
 <MainArticle itemtype="https://schema.org/CreativeWorkSeries">
 	<PrimaryHeading slot="title">List of Involved Projects</PrimaryHeading>
 	<svelte:fragment slot="content">
-		<section itemprop="about" itemscope itemtype="https://schema.org/WebContent">
-			<SecondaryHeading id="rationale" prefix="❔">Rationale</SecondaryHeading>
+		<section itemprop="about" itemscope itemtype="https://schema.org/WebContent" id={rationaleID}>
+			<SecondaryHeading fragmentID={rationaleID} prefix="❔">Rationale</SecondaryHeading>
 			<p itemprop="mainEntity">
 				Over the years, I have built and handled multiple projects to apply my knowledge. As a consequence, I gain experience to build them, to solve their technical issues, and to improve their technical design if possible. Building them helps me improve my decision-making in future projects and not to take things for granted that look like basic. Indeed, simplicity is hard.
 			</p>
 		</section>
 		{#each projectGroups as projectGroup}
-			<section itemprop="hasPart" itemscope itemtype="https://schema.org/CreativeWorkSeries">
+			<section
+				itemprop="hasPart"
+				itemscope
+				itemtype="https://schema.org/CreativeWorkSeries" id={projectGroup.id}>
 				<SecondaryHeading
-					id={projectGroup.id}
+					fragmentID={projectGroup.id}
 					prefix={projectGroup.prefix}>
 					{projectGroup.name}
 				</SecondaryHeading>
@@ -168,8 +174,12 @@
 				</ul>
 			</section>
 		{/each}
-		<section itemprop="hasPart" itemscope itemtype="https://schema.org/WebContent">
-			<SecondaryHeading id="other_projects" prefix="🔶">Other projects</SecondaryHeading>
+		<section
+			itemprop="hasPart"
+			itemscope
+			itemtype="https://schema.org/WebContent"
+			id={otherProjectsID}>
+			<SecondaryHeading fragmentID={otherProjectsID} prefix="🔶">Other projects</SecondaryHeading>
 			<p itemprop="mainEntity">
 				Beside my personal projects, I have also contributed to on several open-source projects by requesting pull requests. Usually, I add a small part of code for a certain functionality that I want.
 			</p>
