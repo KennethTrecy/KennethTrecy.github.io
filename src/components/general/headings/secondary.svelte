@@ -3,7 +3,7 @@
 	import Bookmark from "@/components/general/links/bookmark.svelte"
 
 	let isMouseIn = false
-	let otherClasses: string = ""
+	let otherClasses: string[] = []
 
 	export let mustBeRaw: boolean = false
 	export let fragmentID: string
@@ -12,7 +12,7 @@
 	export { otherClasses as class }
 
 	$: joinedClasses = [
-		otherClasses
+		...otherClasses
 	].filter(Boolean).join(" ")
 	$: hasPrefix = prefix !== ""
 	$: fragment = `#${fragmentID}`
