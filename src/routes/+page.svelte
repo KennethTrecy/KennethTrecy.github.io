@@ -4,12 +4,12 @@
 
 	import Logo from "@/multimedia/logo.png"
 
-	import Heading from "@/components/general/heading.svelte"
 	import BaseLink from "@/components/general/links/base.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
 	import ProjectCard from "@/components/general/project_card.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
+	import PrimaryHeader from "@/components/general/headings/primary.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 </script>
 
@@ -18,7 +18,7 @@
 </svelte:head>
 
 <MainArticle>
-	<Heading slot="title" class="text-center md:text-left">🌀 KennethTrecy's Portfolio</Heading>
+	<PrimaryHeader slot="title" class="text-center md:text-left">🌀 KennethTrecy's Portfolio</PrimaryHeader>
 	<svelte:fragment slot="content">
 		<div class="divider"></div>
 		<div

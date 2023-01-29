@@ -1,7 +1,7 @@
 <script lang="ts">
 	import pageMeta from "@/routes/about_myself/meta"
 
-	import Heading from "@/components/general/heading.svelte"
+	import PrimaryHeader from "@/components/general/headings/primary.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import ContactLink from "@/components/about_myself/contact_link.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
@@ -205,7 +205,7 @@
 </svelte:head>
 
 <MainArticle itemtype="https://schema.org/Person">
-	<Heading slot="title">Who am I?</Heading>
+	<PrimaryHeader slot="title">Who am I?</PrimaryHeader>
 	<svelte:fragment slot="content">
 		<section>
 			<h2>🛩️ Journey</h2>

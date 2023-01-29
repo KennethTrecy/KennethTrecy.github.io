@@ -1,10 +1,10 @@
 <script lang="ts">
 	import pageMeta from "@/routes/about_myself/meta"
 
-	import Heading from "@/components/general/heading.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
 	import ProjectCard from "@/components/general/project_card.svelte"
+	import PrimaryHeader from "@/components/general/heading/headings/primary.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 
 	interface SoftwareProject {
@@ -123,7 +123,7 @@
 </svelte:head>
 
 <MainArticle itemtype="https://schema.org/CreativeWorkSeries">
-	<Heading slot="title">List of Involved Projects</Heading>
+	<PrimaryHeader slot="title">List of Involved Projects</PrimaryHeader>
 	<svelte:fragment slot="content">
 		<section itemprop="about" itemscope itemtype="https://schema.org/WebContent">
 			<h2 itemprop="headline name">❔Rationale</h2>
