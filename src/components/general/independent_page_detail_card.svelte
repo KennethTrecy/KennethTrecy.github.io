@@ -4,6 +4,7 @@
 	import { internalTypes, authorTypes } from "@/components/general/links/constants"
 
 	import BaseLink from "@/components/general/links/base.svelte"
+import { page } from "$app/stores"
 
 	export let pageMeta: PageMeta
 
@@ -13,6 +14,13 @@
 		"timeStyle": "long",
 		"timeZone": "UTC"
 	})
+	$: dateTimeModified = pageMeta.dateModified.toISOString()
+	$: humanReadableDateModified = pageMeta.dateModified.toLocaleString("en", {
+		"dateStyle": "long",
+		"timeStyle": "long",
+		"timeZone": "UTC"
+	})
+	$: hasModified = dateTimePublished !== dateTimeModified
 	$: publishStatus = Number(pageMeta.version) < 1 ? "draft" : "published"
 </script>
 
@@ -32,9 +40,16 @@
 		<em>
 			Published last
 			<time
-				itemprop="datePublished"
+				itemprop={ hasModified ? "datePublished": "datePublished dateModified" }
 				datetime={dateTimePublished}>{humanReadableDatePublished}</time>.
-			It has not been modified since then.
+			{#if hasModified}
+				Then, it was modified last
+				<time
+					itemprop="dateModified"
+					datetime={dateTimeModified}>{humanReadableDateModified}</time>.
+			{:else}
+				It has not been modified since then.
+			{/if}
 			Version of the {publishStatus} page is
 			"<span itemprop="version">{pageMeta.version}</span>".
 		</em>
