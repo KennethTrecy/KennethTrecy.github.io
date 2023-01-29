@@ -16,6 +16,10 @@
 			<span class="material-symbols-outlined">badge</span>
 			<span class="flex-1">About myself<span>
 		</a>
+		<a href="/website_info" class="inline-flex flex-row flex-nowrap items-center">
+			<span class="material-symbols-outlined">web</span>
+			<span class="flex-1">Website info<span>
+		</a>
 		<a href="/about_myself#contact_details" class="inline-flex flex-row flex-nowrap items-center">
 			<span class="material-symbols-outlined">contacts</span>
 			<span class="flex-1">Contacts<span>
