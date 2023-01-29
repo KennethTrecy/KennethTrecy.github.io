@@ -5,8 +5,16 @@
 
 	export let fragment: string
 	export let itemprop: string|undefined = undefined
+	let group: string[] = []
+
+	export { group as class }
 </script>
 
-<Link address={fragment} relationship={[ "bookmark", ...internalTypes ]} context="self" {itemprop}>
+<Link
+	address={fragment}
+	relationship={[ "bookmark", ...internalTypes ]}
+	class={group}
+	context="self"
+	{itemprop}>
 	<slot></slot>
 </Link>
