@@ -4,11 +4,10 @@
 
 	export { otherClasses as class }
 
-	$: joinedClasses = [ "prose md:prose-lg", otherClasses ].filter(Boolean).join(" ")
 	$: hasPrefix = prefix !== ""
 </script>
 
-<h1 class={joinedClasses}>
+<h2 class={otherClasses}>
 	{#if hasPrefix}
 		<span class="text-5xl">
 			<span>{prefix}</span>
@@ -19,4 +18,4 @@
 			<slot></slot>
 		</span>
 	{/if}
-</h1>
+</h2>
