@@ -1,5 +1,5 @@
 <script lang="ts">
-	import UnendorsedLink from "@/components/general/links/unendorsed.svelte"
+	import ExternalLink from "@/components/general/links/external.svelte"
 
 	export let packageName: string
 	export let homeLink: string
@@ -7,5 +7,5 @@
 	export let licenseLink: string
 </script>
 
-<UnendorsedLink address={homeLink}>{packageName}</UnendorsedLink>
-(<UnendorsedLink address={licenseLink}>{licenseName}</UnendorsedLink>)
+<ExternalLink address={homeLink} itemprop="name">{packageName}</ExternalLink>
+(<ExternalLink address={licenseLink} itemprop="license">{licenseName}</ExternalLink>)
