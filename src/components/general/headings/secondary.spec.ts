@@ -12,20 +12,22 @@ describe("Secondary header behavior", () => {
 		const { container } = render(Component, { prefix, id })
 
 		const property = container.querySelector("[itemprop~=headline][itemprop~=name]")
+		const spans = container.querySelectorAll("h2 span")
 
 		expect(property).not.toBeNull()
 		expect(property?.innerHTML).not.toContain(prefix)
+		expect(spans).toHaveLength(3)
 
 		cleanup()
 	})
 
-	it("can render one span if there is no prefix", async () => {
+	it("can render two spans if there is no prefix", async () => {
 		const id = "hello_b"
 		const { container } = render(Component, { id })
 
-		const spans = container.querySelectorAll("h2 > span")
+		const spans = container.querySelectorAll("h2 span")
 
-		expect(spans).toHaveLength(1)
+		expect(spans).toHaveLength(2)
 
 		cleanup()
 	})
