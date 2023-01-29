@@ -10,6 +10,8 @@
 	import ThemeToggler from "@/components/shell/theme_toggler.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import ThirdPartyLink from "@/components/shell/third-party_link.svelte"
+
+	export let commitHash: string
 </script>
 
 <svelte:head>
@@ -117,6 +119,9 @@
 					<ExternalLink
 						address={LICENSE_URL}
 						itemprop="license">{LICENSE} license</ExternalLink>.
+				</p>
+				<p>
+					Latest commit: {commitHash}
 				</p>
 			</section>
 			<section class="socials place-self-end mr-4 md:place-self-auto md:mr-auto justify-center items-center justify-items-center">
