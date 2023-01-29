@@ -10,6 +10,7 @@ declare namespace App {
 			COUNTER: DurableObjectNamespace
 			CF_PAGES_URL: string
 			PRODUCTION_BASE_URL: string
+			PUBLIC_COMMIT_HASH: string
 			PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH: string
 		}
 		context: {
