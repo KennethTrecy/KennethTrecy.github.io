@@ -3,6 +3,7 @@
 
 	let isMouseIn = false
 	let otherClasses: string = ""
+	export let id: string
 	export let prefix: string = ""
 
 	export { otherClasses as class }
@@ -12,6 +13,7 @@
 
 <h2
 	class={otherClasses}
+	{id}
 	on:mouseout={_event => isMouseIn = false}
 	on:mouseover={_event => isMouseIn = true}>
 	{#if hasPrefix}
