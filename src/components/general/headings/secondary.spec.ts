@@ -3,7 +3,7 @@
 import { describe, it, expect } from "vitest"
 import { render, cleanup, fireEvent } from "@testing-library/svelte"
 
-import Component from "./primary.svelte"
+import Component from "./secondary.svelte"
 
 describe("Secondary header behavior", () => {
 	it("can render prefix as separate", async () => {

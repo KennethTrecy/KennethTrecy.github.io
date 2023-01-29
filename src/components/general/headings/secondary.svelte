@@ -1,4 +1,7 @@
 <script lang="ts">
+	import Icon from "@/components/general/icon.svelte"
+
+	let isMouseIn = false
 	let otherClasses: string = ""
 	export let prefix: string = ""
 
@@ -7,7 +10,10 @@
 	$: hasPrefix = prefix !== ""
 </script>
 
-<h2 class={otherClasses}>
+<h2
+	class={otherClasses}
+	on:mouseout={_event => isMouseIn = false}
+	on:mouseover={_event => isMouseIn = true}>
 	{#if hasPrefix}
 		<span class="text-5xl">
 			<span>{prefix}</span>
@@ -18,4 +24,7 @@
 			<slot></slot>
 		</span>
 	{/if}
+	<span class:invisible={!isMouseIn} class:visible={isMouseIn}>
+		<Icon name="link"/>
+	</span>
 </h2>
