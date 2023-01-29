@@ -13,6 +13,7 @@
 		"timeStyle": "long",
 		"timeZone": "UTC"
 	})
+	$: publishStatus = Number(pageMeta.version) < 1 ? "draft" : "published"
 </script>
 
 <div class="not-prose card bg-base-200">
@@ -34,7 +35,8 @@
 				itemprop="datePublished"
 				datetime={dateTimePublished}>{humanReadableDatePublished}</time>.
 			It has not been modified since then.
-			Version of the page is v<span itemprop="version">{pageMeta.version}</span>.
+			Version of the {publishStatus} page is
+			"<span itemprop="version">{pageMeta.version}</span>".
 		</em>
 	</section>
 </div>
