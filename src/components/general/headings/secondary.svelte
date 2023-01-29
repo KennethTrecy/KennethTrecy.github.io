@@ -4,6 +4,8 @@
 
 	let isMouseIn = false
 	let otherClasses: string = ""
+
+	export let mustBeRaw: boolean = false
 	export let id: string
 	export let prefix: string = ""
 
@@ -23,12 +25,14 @@
 	on:mouseover={_event => isMouseIn = true}>
 	{#if hasPrefix}
 		<span>{prefix}</span>
-		<span itemprop="headline name"><slot></slot></span>
-	{:else}
-		<span itemprop="headline name">
-			<slot></slot>
-		</span>
 	{/if}
+
+	{#if mustBeRaw}
+		<span><slot></slot></span>
+	{:else}
+		<span itemprop="headline name"><slot></slot></span>
+	{/if}
+
 	<Link
 		address={fragment}
 		class={[ isMouseIn ? "visible" : "invisible" ]}
