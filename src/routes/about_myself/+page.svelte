@@ -209,7 +209,7 @@
 	<PrimaryHeader slot="title">Who am I?</PrimaryHeader>
 	<svelte:fragment slot="content">
 		<section>
-			<SecondaryHeader id="journey" prefix="🛩️">Journey</SecondaryHeader>
+			<SecondaryHeader id="journey" mustBeRaw={true} prefix="🛩️">Journey</SecondaryHeader>
 			<p>
 				I am
 				<span itemprop="name">
@@ -242,7 +242,7 @@
 			</p>
 		</section>
 		<section itemprop="knowsAbout">
-			<SecondaryHeader id="skills" prefix="✨">Skills</SecondaryHeader>
+			<SecondaryHeader id="skills" mustBeRaw={true} prefix="✨">Skills</SecondaryHeader>
 			<p>
 				I am specialized in web development, particularly back-end programming. The reason was that back-end programming could support most communication technologies in an increasingly interconnected world. Whether it is a e-commerce website, Internet of Things, or games, they need at a server to process and store their data.
 			</p>
@@ -275,7 +275,9 @@
 			</p>
 		</section>
 		<section>
-			<SecondaryHeader id="contact_details" prefix="✉️">Contact Details</SecondaryHeader>
+			<SecondaryHeader id="contact_details" mustBeRaw={true} prefix="✉️">
+				Contact Details
+			</SecondaryHeader>
 			<p>Should you wish to get in touch with me, I can be communicated on different platforms.</p>
 			<ul class="list-none not-prose">
 				<li itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
