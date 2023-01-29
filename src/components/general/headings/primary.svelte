@@ -4,7 +4,10 @@
 
 	export { otherClasses as class }
 
-	$: joinedClasses = [ "prose md:prose-lg", otherClasses ].filter(Boolean).join(" ")
+	$: joinedClasses = [
+		"prose md:prose-lg text-center md:text-left",
+		otherClasses
+	].filter(Boolean).join(" ")
 	$: hasPrefix = prefix !== ""
 </script>
 

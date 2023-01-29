@@ -18,7 +18,7 @@
 </svelte:head>
 
 <MainArticle>
-	<PrimaryHeader slot="title" class="text-center md:text-left">🌀 KennethTrecy's Portfolio</PrimaryHeader>
+	<PrimaryHeader slot="title">🌀 KennethTrecy's Portfolio</PrimaryHeader>
 	<svelte:fragment slot="content">
 		<div class="divider"></div>
 		<div
