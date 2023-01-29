@@ -50,7 +50,8 @@
 					<BaseLink
 						itemprop="mainEntityOfPage"
 						address="/about_myself"
-						relationship={[ ...internalTypes, ...authorTypes ]}>
+						relationship={[ ...internalTypes, ...authorTypes ]}
+						context="self">
 						<span class="btn btn-primary">Know more about me</span>
 					</BaseLink>
 				</section>
@@ -102,7 +103,7 @@
 					<BaseLink
 						address="https://github.com/KennethTrecy"
 						relationship={[ ...externalTypes, ...authorTypes ]}
-						target="other">
+						context="other">
 						my GitHub profile
 					</BaseLink>
 					or in this site's <BaseLink
