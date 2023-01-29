@@ -39,7 +39,13 @@
 					20%.
 			 -->
 			<div class="hero-content flex flex-col xl:flex-row">
-				<img itemprop="image" src={Logo} alt="Kenneth Trecy's logo" class="max-w-sm"/>
+				<img
+					itemprop="image"
+					src={Logo}
+					alt="Kenneth Trecy's logo"
+					width="384"
+					height="384"
+					class="max-w-sm"/>
 				<section class="max-w-sm xl:max-w-md text-center xl:text-left">
 					<h2 itemprop="headline">
 						👋🏽 Hi, I am <span itemprop="givenName">Kenneth Trecy</span>!

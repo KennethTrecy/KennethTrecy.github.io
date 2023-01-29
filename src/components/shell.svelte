@@ -41,7 +41,7 @@
 			</label>
 			<nav class="navbar-center">
 				<a href="/" class="text-color-inherit flex flex-row items-start">
-					<img class="flex-none w-16 h-auto" alt="logo" src={Logo}/>
+					<img src={Logo} alt="logo" width="64" height="64" class="flex-none w-16 h-auto"/>
 					<p itemprop="name" class="flex-1 ml-2 my-auto">
 						KennethTrecy
 					</p>
@@ -104,7 +104,7 @@
 		</footer>
 		<footer class="footer justify-around items-center p-4 bg-base-200">
 			<section class="grid-flow-col items-center">
-				<img class="flex-none w-16 h-auto" alt="logo" src={Logo}/>
+				<img alt="logo" src={Logo} width="64" height="64" class="flex-none w-16 h-auto"/>
 				<p itemprop="copyrightNotice">
 					Copyright © <span itemprop="copyrightYear">2023</span>
 					<span itemprop="copyrightHolder">Kenneth Trecy Tobias</span>.
@@ -140,7 +140,13 @@
 				itemprop="creator" itemscope itemtype="https://schema.org/Person"
 				href="/"
 				class="mb-4 border-b p-4 text-color-inherit flex flex-col items-start">
-				<img itemprop="image" class="flex-none w-full h-auto" alt="logo" src={Logo}/>
+				<img
+					itemprop="image"
+					src={Logo}
+					alt="Logo of Kenneth Trecy"
+					width="288"
+					height="288"
+					class="flex-none w-full h-auto"/>
 				<p itemprop="name" class="flex-1 my-auto text-2xl">
 					KennethTrecy
 				</p>
