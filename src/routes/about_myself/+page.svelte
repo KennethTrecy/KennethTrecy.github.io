@@ -4,6 +4,7 @@
 	import CommonHead from "@/components/general/common_head.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import ContactLink from "@/components/about_myself/contact_link.svelte"
+	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import MainArticle from "@/components/general/containers/main_article.svelte"
@@ -18,6 +19,19 @@
 		name: string,
 		technologies: Technology[]
 	}
+
+	const journey = defineHeadingInfo({
+		"prefix": "🛩️",
+		"text": "Journey"
+	})
+	const skills = defineHeadingInfo({
+		"prefix": "✨",
+		"text": "Skills"
+	})
+	const contacts = defineHeadingInfo({
+		"prefix": "✉️",
+		"text": "Contact Details"
+	})
 
 	const technologies: TechnologyArea[] = [
 		{
@@ -208,8 +222,8 @@
 <MainArticle itemtype="https://schema.org/Person">
 	<PrimaryHeading slot="title">Who am I?</PrimaryHeading>
 	<svelte:fragment slot="content">
-		<section>
-			<SecondaryHeading id="journey" mustBeRaw={true} prefix="🛩️">Journey</SecondaryHeading>
+		<section id={journey.id}>
+			<SecondaryHeading headingInfo={journey} mustBeRaw={true}/>
 			<p>
 				I am
 				<span itemprop="name">
@@ -241,8 +255,8 @@
 				That did not stopped me to try from thinking innovative solutions. Some solutions are better suited for certain situations. As the saying goes, <em>"it depends!"</em>.
 			</p>
 		</section>
-		<section itemprop="knowsAbout">
-			<SecondaryHeading id="skills" mustBeRaw={true} prefix="✨">Skills</SecondaryHeading>
+		<section itemprop="knowsAbout" id={skills.id}>
+			<SecondaryHeading headingInfo={skills} mustBeRaw={true}/>
 			<p>
 				I am specialized in web development, particularly back-end programming. The reason was that back-end programming could support most communication technologies in an increasingly interconnected world. Whether it is a e-commerce website, Internet of Things, or games, they need at a server to process and store their data.
 			</p>
@@ -274,10 +288,8 @@
 				Beside programming, I am also good in mathematics and logic. Both fields help me in validation, developing, troubleshooting, and authorization. These skills complement my other interests.
 			</p>
 		</section>
-		<section>
-			<SecondaryHeading id="contact_details" mustBeRaw={true} prefix="✉️">
-				Contact Details
-			</SecondaryHeading>
+		<section id={contacts.id}>
+			<SecondaryHeading headingInfo={contacts} mustBeRaw={true}/>
 			<p>Should you wish to get in touch with me, I can be communicated on different platforms.</p>
 			<ul class="list-none not-prose">
 				<li itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">

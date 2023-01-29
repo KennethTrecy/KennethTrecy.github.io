@@ -6,7 +6,7 @@ const meta = definePageMeta("/", {
 	"description": "Do you need help in back-end web development? Hi! I am Kenneth Trecy, a programmer living in Philippines. Get to know me by visiting out my personal website!",
 	"keywords": [ "Kenneth Trecy", "portfolio" , "philippines" ],
 	"title": "KennethTrecy's Portfolio",
-	"version": "0.2"
+	"version": "0.3"
 })
 
 export default meta

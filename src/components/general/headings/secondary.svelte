@@ -8,15 +8,15 @@
 	let otherClasses: string[] = []
 
 	export let mustBeRaw: boolean = false
-	export let linkInfo: HeadingInfo<"defined">
+	export let headingInfo: HeadingInfo<"defined">
 
 	export { otherClasses as class }
 
 	$: joinedClasses = [
 		...otherClasses
 	].filter(Boolean).join(" ")
-	$: hasPrefix = Boolean(linkInfo.prefix)
-	$: fragment = `#${linkInfo.id}`
+	$: hasPrefix = Boolean(headingInfo.prefix)
+	$: fragment = `#${headingInfo.id}`
 </script>
 
 <h2
@@ -24,13 +24,13 @@
 	on:mouseout={_event => isMouseIn = false}
 	on:mouseover={_event => isMouseIn = true}>
 	{#if hasPrefix}
-		<span>{linkInfo.prefix}</span>
+		<span>{headingInfo.prefix}</span>
 	{/if}
 
 	{#if mustBeRaw}
-		<span>{linkInfo.text}<slot></slot></span>
+		<span>{headingInfo.text}<slot></slot></span>
 	{:else}
-		<span itemprop="headline name">{linkInfo.text}<slot></slot></span>
+		<span itemprop="headline name">{headingInfo.text}<slot></slot></span>
 	{/if}
 
 	<Bookmark

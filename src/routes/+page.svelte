@@ -8,14 +8,28 @@
 	import CommonHead from "@/components/general/common_head.svelte"
 	import ProjectCard from "@/components/general/project_card.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
+	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import MainArticle from "@/components/general/containers/main_article.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 
-	const specialtyID = "specialty"
-	const personalProjectsID = "personal_projects"
-	const securityID = "security"
+	const greetings = defineHeadingInfo({
+		"prefix": "👋🏽",
+		"text": "Hi,"
+	})
+	const specialty = defineHeadingInfo({
+		"prefix": "🌟",
+		"text": "Specialty"
+	})
+	const personalProjects = defineHeadingInfo({
+		"prefix": "⛏️",
+		"text": "Some of my personal projects"
+	})
+	const security = defineHeadingInfo({
+		"prefix": "🔐",
+		"text": "Security in mind"
+	})
 </script>
 
 <svelte:head>
@@ -52,8 +66,8 @@
 					height="384"
 					class="max-w-sm"/>
 				<section class="max-w-sm xl:max-w-md text-center xl:text-left">
-					<SecondaryHeading id="greetings" prefix="👋🏽">
-						Hi, I am <span itemprop="givenName">Kenneth Trecy</span>!
+					<SecondaryHeading headingInfo={greetings}>
+						I am <span itemprop="givenName">Kenneth Trecy</span>!
 					</SecondaryHeading>
 					<p itemprop="knowsAbout" class="py-6 container md:px-0">
 						I usually develop the back-end of the applications I have handled. I ensure their quality though automated tests through CI.
@@ -74,8 +88,8 @@
 				itemprop="hasPart"
 				itemscope
 				itemtype="https://schema.org/WebContent"
-				id={specialtyID}>
-				<SecondaryHeading fragmentID={specialtyID} prefix="🌟">Specialty</SecondaryHeading>
+				id={specialty.id}>
+				<SecondaryHeading headingInfo={specialty}/>
 				<p itemprop="text">Web development is my expertise. I have tried different technologies too such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
 				<p>During my free time, I apply my skills on my personal projects.</p>
 			</section>
@@ -83,10 +97,8 @@
 				itemprop="hasPart"
 				itemscope
 				itemtype="https://schema.org/CreativeWorkSeries"
-				id={personalProjectsID}>
-				<SecondaryHeading class={[ "my-4" ]} fragmentID={personalProjectsID} prefix="⛏️">
-					Some of my personal projects
-				</SecondaryHeading>
+				id={personalProjects.id}>
+				<SecondaryHeading class={[ "my-4" ]} headingInfo={personalProjects}/>
 				<ul class="project_list list-none list-outside flex flex-col flex-wrap">
 					<li>
 						<ProjectCard
@@ -129,8 +141,8 @@
 				itemprop="hasPart"
 				itemscope
 				itemtype="https://schema.org/WebContent"
-				id={securityID}>
-				<SecondaryHeading fragmentID={securityID} prefix="🔐">Security in mind</SecondaryHeading>
+				id={security.id}>
+				<SecondaryHeading headingInfo={security}/>
 				<p itemprop="text">
 					I also like reading articles about cybersecurity. For this reason, I build applications with security in mind as much as possible to be resilient from attacks.
 				</p>
