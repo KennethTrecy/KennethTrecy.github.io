@@ -9,28 +9,30 @@
 
 	export { otherClasses as class }
 
+	$: joinedClasses = [
+		"relative",
+		otherClasses
+	].filter(Boolean).join(" ")
 	$: hasPrefix = prefix !== ""
 	$: fragment = `#${id}`
 </script>
 
 <h2
-	class={otherClasses}
+	class={joinedClasses}
 	{id}
 	on:mouseout={_event => isMouseIn = false}
 	on:mouseover={_event => isMouseIn = true}>
 	{#if hasPrefix}
-		<span class="text-5xl">
-			<span>{prefix}</span>
-			<span itemprop="headline name"><slot></slot></span>
-		</span>
+		<span>{prefix}</span>
+		<span itemprop="headline name"><slot></slot></span>
 	{:else}
-		<span itemprop="headline name" class="text-5xl">
+		<span itemprop="headline name">
 			<slot></slot>
 		</span>
 	{/if}
 	<Link
 		address={fragment}
-		class={[ isMouseIn ? "visible" : "invisible" ]}
+		class={[ isMouseIn ? "visible" : "invisible", "absolute", "right-4" ]}
 		relationship={[ "bookmark" ]}
 		context="self">
 		<Icon name="link"/>
