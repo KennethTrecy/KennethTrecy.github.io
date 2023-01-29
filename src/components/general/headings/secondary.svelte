@@ -28,9 +28,9 @@
 	{/if}
 
 	{#if mustBeRaw}
-		<span>{linkInfo.text}</span>
+		<span>{linkInfo.text}<slot></slot></span>
 	{:else}
-		<span itemprop="headline name">{linkInfo.text}</span>
+		<span itemprop="headline name">{linkInfo.text}<slot></slot></span>
 	{/if}
 
 	<Bookmark
