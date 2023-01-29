@@ -17,7 +17,7 @@
 
 <div class="not-prose card bg-base-200">
 	<section class="card-body">
-		<h6 class="title">Page details</h6>
+		<h2 class="title">Page details</h2>
 		<address itemprop="author" itemscope itemtype="https://schema.org/Person">
 			This page was authored by
 			<BaseLink
