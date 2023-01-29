@@ -30,6 +30,7 @@
 		"@sveltejs/adapter-cloudflare": "^2.0.0",
 		"@sveltejs/kit": "^1.0.10",
 		"@tailwindcss/typography": "^0.5.8",
+		"@testing-library/svelte": "^3.2.2",
 		"@types/node": "^18.11.18",
 		"autoprefixer": "^10.4.13",
 		"changelogen": "^0.4.0",

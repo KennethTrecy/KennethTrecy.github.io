@@ -3,10 +3,10 @@ import definePageMeta from "@/components/general/define_page_meta"
 
 const meta = definePageMeta("/", {
 	"datePublished": FIRST_PUBLICATION_DATE,
-	"description": "Open-source technology enthusiast. Back-end experimentalist. Analytic tester. Hi! I am Kenneth Trecy, programmer living in Philippines. Check out my personal website!",
+	"description": "Do you need help in back-end web development? Hi! I am Kenneth Trecy, a programmer living in Philippines. Get to know me by visiting out my personal website!",
 	"keywords": [ "Kenneth Trecy", "portfolio" , "philippines" ],
-	"title": "KennethTrecy's Portforlio",
-	"version": "0.1"
+	"title": "KennethTrecy's Portfolio",
+	"version": "0.2"
 })
 
 export default meta

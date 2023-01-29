@@ -1,5 +1,7 @@
 export const LICENSE = "MIT"
 
+export const LICENSE_URL = "https://raw.githubusercontent.com/KennethTrecy/kennethtrecy.pages.dev/master/LICENSE"
+
 /**
  * Indicate when the site was first published. Helpful for the initial pages of the site.
  */

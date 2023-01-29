@@ -3,10 +3,10 @@ import definePageMeta from "@/components/general/define_page_meta"
 
 const meta = definePageMeta("/projects", {
 	"datePublished": FIRST_PUBLICATION_DATE,
-	"description": "Kenneth Trecy is has a decade of experience in programming websites. In this page, an overview of different projects he was involve have been listed.",
+	"description": "Kenneth Trecy has a decade of experience in programming websites. Here is an overview of different projects he was involved.",
 	"keywords": [ "Kenneth Trecy", "involved", "personal", "projects" ],
 	"title": "Projects",
-	"version": "0.1"
+	"version": "0.2"
 })
 
 export default meta

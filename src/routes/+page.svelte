@@ -1,15 +1,16 @@
 <script lang="ts">
-	import pageMeta from "@/routes/about/meta"
+	import pageMeta from "@/routes/meta"
 	import { externalTypes, internalTypes, authorTypes } from "@/components/general/links/constants"
 
 	import Logo from "@/multimedia/logo.png"
 
-	import Heading from "@/components/general/heading.svelte"
 	import BaseLink from "@/components/general/links/base.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
 	import ProjectCard from "@/components/general/project_card.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
+	import PrimaryHeader from "@/components/general/headings/primary.svelte"
+	import SecondaryHeader from "@/components/general/headings/secondary.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 </script>
 
@@ -18,7 +19,7 @@
 </svelte:head>
 
 <MainArticle>
-	<Heading slot="title" class="text-center md:text-left">🌀 KennethTrecy's Portfolio</Heading>
+	<PrimaryHeader slot="title" prefix="🌀">KennethTrecy's Portfolio</PrimaryHeader>
 	<svelte:fragment slot="content">
 		<div class="divider"></div>
 		<div
@@ -38,23 +39,30 @@
 				7. Therefore, target margin size of self on large screens is -25 units / 125 units =
 					20%.
 			 -->
-			<section class="hero-content flex flex-col xl:flex-row">
-				<img itemprop="image" src={Logo} alt="Kenneth Trecy's logo" class="max-w-sm"/>
-				<div class="max-w-sm xl:max-w-md text-center xl:text-left">
-					<h2 itemprop="headline">
-						👋🏽 Hi, I am <span itemprop="givenName">Kenneth Trecy</span>!
-					</h2>
+			<div class="hero-content flex flex-col xl:flex-row">
+				<img
+					itemprop="image"
+					src={Logo}
+					alt="Kenneth Trecy's logo"
+					width="384"
+					height="384"
+					class="max-w-sm"/>
+				<section class="max-w-sm xl:max-w-md text-center xl:text-left">
+					<SecondaryHeader id="greetings" prefix="👋🏽">
+						Hi, I am <span itemprop="givenName">Kenneth Trecy</span>!
+					</SecondaryHeader>
 					<p itemprop="knowsAbout" class="py-6 container md:px-0">
 						I usually develop the back-end of the applications I have handled. I ensure their quality though automated tests through CI.
 					</p>
 					<BaseLink
 						itemprop="mainEntityOfPage"
-						address="/about"
-						relationship={[ ...internalTypes, ...authorTypes ]}>
+						address="/about_myself"
+						relationship={[ ...internalTypes, ...authorTypes ]}
+						context="self">
 						<span class="btn btn-primary">Know more about me</span>
 					</BaseLink>
-				</div>
-			</section>
+				</section>
+			</div>
 		</div>
 		<div class="divider"></div>
 		<div class="flex flex-col justify-center items-center">
@@ -63,7 +71,7 @@
 				itemscope
 				itemtype="https://schema.org/WebContent"
 				class="container max-w-prose md:px-0">
-				<h2 itemprop="headline">🌟 Specialty</h2>
+				<SecondaryHeader id="specialty" prefix="🌟">Specialty</SecondaryHeader>
 				<p itemprop="text">Web development is my expertise. I have tried different technologies too such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
 				<p>During my free time, I apply my skills on my personal projects.</p>
 			</section>
@@ -72,7 +80,9 @@
 				itemscope
 				itemtype="https://schema.org/CreativeWorkSeries"
 				class="container max-w-prose md:px-0">
-				<h2 class="my-4">⛏️ Some of my personal projects</h2>
+				<SecondaryHeader class={[ "my-4" ]} id="personal_projects" prefix="⛏️">
+					Some of my personal projects
+				</SecondaryHeader>
 				<ul class="project_list list-none list-outside flex flex-col flex-wrap">
 					<li>
 						<ProjectCard
@@ -102,7 +112,7 @@
 					<BaseLink
 						address="https://github.com/KennethTrecy"
 						relationship={[ ...externalTypes, ...authorTypes ]}
-						target="other">
+						context="other">
 						my GitHub profile
 					</BaseLink>
 					or in this site's <BaseLink
@@ -116,7 +126,7 @@
 				itemscope
 				itemtype="https://schema.org/WebContent"
 				class="container max-w-prose md:px-0">
-				<h2 itemprop="headline">🔐 Security in mind</h2>
+				<SecondaryHeader id="security" prefix="🔐">Security in mind</SecondaryHeader>
 				<p itemprop="text">
 					I also like reading articles about cybersecurity. For this reason, I build applications with security in mind as much as possible to be resilient from attacks.
 				</p>
@@ -139,15 +149,20 @@
 		}
 	}
 
-	section:nth-child(1) img {
+	.hero-content img {
 		@apply animate-spin;
 
 		animation-duration: 8s;
 		animation-timing-function: linear;
-		animation-play-state: paused;
 	}
 
-	section:nth-child(1):hover img {
+	@screen md {
+		.hero-content img {
+			animation-play-state: paused;
+		}
+	}
+
+	.hero-content:hover img {
 		animation-play-state: running;
 	}
 
