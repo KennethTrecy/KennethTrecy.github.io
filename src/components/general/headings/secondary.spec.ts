@@ -3,27 +3,34 @@
 import { describe, it, expect } from "vitest"
 import { render, cleanup, fireEvent } from "@testing-library/svelte"
 
+import defineHeadingInfo from "@/components/general/define_heading_info"
+
 import Component from "./secondary.svelte"
 
 describe("Secondary heading behavior", () => {
 	it("can render prefix as separate", async () => {
-		const prefix = "I. "
-		const id = "hello_a"
-		const { container } = render(Component, { prefix, id })
+		const linkInfo = defineHeadingInfo({
+			"prefix": "I. ",
+			"text": "hello a"
+		})
+		const { container } = render(Component, { linkInfo })
 
 		const property = container.querySelector("[itemprop~=headline][itemprop~=name]")
 		const spans = container.querySelectorAll("h2 span")
 
 		expect(property).not.toBeNull()
-		expect(property?.innerHTML).not.toContain(prefix)
+		expect(property?.innerHTML).not.toContain(linkInfo.prefix)
+		expect(property?.innerHTML).toContain(linkInfo.text)
 		expect(spans).toHaveLength(3)
 
 		cleanup()
 	})
 
 	it("can render two spans if there is no prefix", async () => {
-		const id = "hello_b"
-		const { container } = render(Component, { id })
+		const linkInfo = defineHeadingInfo({
+			"text": "hello b"
+		})
+		const { container } = render(Component, { linkInfo })
 
 		const spans = container.querySelectorAll("h2 span")
 
@@ -33,8 +40,10 @@ describe("Secondary heading behavior", () => {
 	})
 
 	it("can show bookmark if hovered", async () => {
-		const id = "hello_c"
-		const { container } = render(Component, { id })
+		const linkInfo = defineHeadingInfo({
+			"text": "hello c"
+		})
+		const { container } = render(Component, { linkInfo })
 
 		const heading = container.querySelector("h2") as HTMLHeadingElement
 		await fireEvent.mouseOver(heading)
@@ -46,8 +55,10 @@ describe("Secondary heading behavior", () => {
 	})
 
 	it("can hide bookmark if unhovered", async () => {
-		const id = "hello_d"
-		const { container } = render(Component, { id })
+		const linkInfo = defineHeadingInfo({
+			"text": "hello d"
+		})
+		const { container } = render(Component, { linkInfo })
 
 		const heading = container.querySelector("h2") as HTMLHeadingElement
 		await fireEvent.mouseOver(heading)
@@ -60,9 +71,11 @@ describe("Secondary heading behavior", () => {
 	})
 
 	it("can render as raw", async () => {
-		const id = "hello_e"
+		const linkInfo = defineHeadingInfo({
+			"text": "hello_e"
+		})
 		const mustBeRaw = true
-		const { container } = render(Component, { id, mustBeRaw })
+		const { container } = render(Component, { linkInfo, mustBeRaw })
 
 		const property = container.querySelector("[itemprop~=headline][itemprop~=name]")
 		const spans = container.querySelectorAll("h2 span")
