@@ -10,7 +10,6 @@
 	export { otherClasses as class }
 
 	$: joinedClasses = [
-		"relative",
 		otherClasses
 	].filter(Boolean).join(" ")
 	$: hasPrefix = prefix !== ""
@@ -32,7 +31,7 @@
 	{/if}
 	<Link
 		address={fragment}
-		class={[ isMouseIn ? "visible" : "invisible", "absolute", "right-4" ]}
+		class={[ isMouseIn ? "visible" : "invisible" ]}
 		relationship={[ "bookmark" ]}
 		context="self">
 		<Icon name="link"/>
