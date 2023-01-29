@@ -6,11 +6,11 @@
 
 	import BaseLink from "@/components/general/links/base.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
-	import MainArticle from "@/components/general/main_article.svelte"
 	import ProjectCard from "@/components/general/project_card.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
+	import MainArticle from "@/components/general/containers/main_article.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 
 	const specialtyID = "specialty"

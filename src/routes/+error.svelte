@@ -3,8 +3,8 @@
 	import { page } from "$app/stores"
 
 	import CommonHead from "@/components/general/common_head.svelte"
-	import MainArticle from "@/components/general/main_article.svelte"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
+	import MainArticle from "@/components/general/containers/main_article.svelte"
 
 	const pageVersion = "0.1"
 	const title = derived(

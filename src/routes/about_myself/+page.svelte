@@ -2,11 +2,11 @@
 	import pageMeta from "@/routes/about_myself/meta"
 
 	import CommonHead from "@/components/general/common_head.svelte"
-	import MainArticle from "@/components/general/main_article.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import ContactLink from "@/components/about_myself/contact_link.svelte"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
+	import MainArticle from "@/components/general/containers/main_article.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 
 	interface Technology {
