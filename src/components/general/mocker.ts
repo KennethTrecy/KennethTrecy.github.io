@@ -1,5 +1,5 @@
 import { browser } from "$app/environment"
-import type { MockInfo } from "@/constants/test_interface"
+import type { MockInfo } from "@/types/test_interface"
 
 export default class {
 	private static infos: MockInfo[] = []
