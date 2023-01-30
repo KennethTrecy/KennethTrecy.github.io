@@ -14,6 +14,8 @@
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
+	import StructuredUnorderedList
+		from "@/components/general/containers/structured_unordered_list.svelte"
 
 	const greetings = defineHeadingInfo({
 		"prefix": "👋🏽",
@@ -92,11 +94,13 @@
 			</StructuredSection>
 			<StructuredSection itemtype="https://schema.org/CreativeWork" id={personalProjects.id}>
 				<SecondaryHeading class={[ "my-4" ]} headingInfo={personalProjects}/>
-				<ul
-					itemprop="hasPart"
-					itemscope
-					itemtype="https://schema.org/ItemList"
-					class="project_list list-none list-outside flex flex-col flex-wrap">
+				<StructuredUnorderedList isProjectList={true} class={[
+					"list-none",
+					"list-outside",
+					"flex",
+					"flex-col",
+					"flex-wrap"
+				]}>
 					<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
 						<ProjectCard
 							title="Virdafils"
@@ -115,7 +119,7 @@
 							description="Builder for common Rollup configurations."
 							link="https://github.com/KennethTrecy/comroconbu"/>
 					</li>
-				</ul>
+				</StructuredUnorderedList>
 				<p class="mt-4">
 					Other projects can be found on the
 					<ExternalLink address="https://github.com/KennethTrecy?tab=repositories">

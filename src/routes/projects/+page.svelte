@@ -11,6 +11,8 @@
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
+	import StructuredUnorderedList
+		from "@/components/general/containers/structured_unordered_list.svelte"
 
 	interface SoftwareProject {
 		name: string
@@ -157,18 +159,13 @@
 			<StructuredSection id={projectGroup.id}>
 				<SecondaryHeading headingInfo={projectGroup}/>
 				<p itemprop="about">{projectGroup.description}</p>
-				<ul
-					itemprop="hasPart"
-					itemscope
-					itemtype="https://schema.org/ItemList"
-					class={[
-						"project_list",
+				<StructuredUnorderedList isProjectList={true} class={[
 						"list-none",
 						"flex",
 						"flex-col",
 						"flex-wrap",
 						...projectGroup.extraListClasses
-					].join(" ")}>
+					]}>
 					{#each projectGroup.projects as project}
 						<li
 							itemprop="itemListElement"
@@ -181,7 +178,7 @@
 								link={project.repositoryLink}/>
 						</li>
 					{/each}
-				</ul>
+				</StructuredUnorderedList>
 			</StructuredSection>
 		{/each}
 		<StructuredSection itemtype="https://schema.org/WebContent"
@@ -194,9 +191,3 @@
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
 </StructuredArticle>
-
-<style lang="postcss">
-	ul.project_list, ul.project_list > li {
-		@apply m-0 p-0;
-	}
-</style>
