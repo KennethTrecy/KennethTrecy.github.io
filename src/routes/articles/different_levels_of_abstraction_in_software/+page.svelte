@@ -49,7 +49,7 @@
 					<StructuredListItem>
 						<Bookmark
 							itemprop="mainEntityOfPage"
-							fragment={level.id}>
+							fragment={`#${level.id}`}>
 							{level.text}
 						</Bookmark>
 					</StructuredListItem>
