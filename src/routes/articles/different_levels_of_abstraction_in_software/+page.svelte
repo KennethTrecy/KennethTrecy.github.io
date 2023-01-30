@@ -58,13 +58,13 @@
 		<StructuredSection id={levels[0].id}>
 			<SecondaryHeading headingInfo={levels[0]}/>
 			<p itemprop="text">
-				<strong itemprop="mainEntity">This level of abstraction is the least general among other levels.</strong> It can be in a form of simple console application, web page, executable programs, HTTP server, or <strong>anything that faces the clients directly</strong>.
+				<strong itemprop="mainEntity">This level of abstraction is the most easiest to work on among other levels.</strong> It can be done by running a simple console application, visiting a web page, installing an executable programs, hosting a HTTP server, or <strong>anything that faces the clients directly</strong>.
 			</p>
 			<p itemprop="text">
-				The client could be you, your customer, or other end users. A software at this level are relatively easy to use compare to other softwares at other levels. They do all the work for you.
+				The client could be you, your customer, or other end users. A software at this level are relatively easy to use and modify, unlike the other softwares that are customizable on other levels. They do all the work for you.
 			</p>
 			<p itemprop="text">
-				For example, a teacher use a spreadsheet software to calculate the grades of students. You will just input the raw grade and the formula. After that, the final grade will be calculated by the software as programmed.
+				For example, a teacher use a spreadsheet software to calculate the grades of students. The teacher will just input the raw grade and the formula. After that, the final grade will be calculated by the software as programmed.
 			</p>
 		</StructuredSection>
 		<StructuredSection id={levels[1].id}>
