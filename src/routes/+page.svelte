@@ -14,6 +14,7 @@
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
+	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
 	import StructuredUnorderedList
 		from "@/components/general/containers/structured_unordered_list.svelte"
 
@@ -101,24 +102,24 @@
 					"flex-col",
 					"flex-wrap"
 				]}>
-					<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<StructuredListItem isInProjectList={true}>
 						<ProjectCard
 							title="Virdafils"
 							description="A driver for Laravel framework which use a database like file storage system."
 							link="https://github.com/KennethTrecy/virdafils"/>
-					</li>
-					<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					</StructuredListItem>
+					<StructuredListItem isInProjectList={true}>
 						<ProjectCard
 							title="Elomocato"
 							description="Custom cast classes to be used with Laravel framework."
 							link="https://github.com/KennethTrecy/elomocato"/>
-					</li>
-					<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					</StructuredListItem>
+					<StructuredListItem isInProjectList={true}>
 						<ProjectCard
 							title="Comroconbu"
 							description="Builder for common Rollup configurations."
 							link="https://github.com/KennethTrecy/comroconbu"/>
-					</li>
+					</StructuredListItem>
 				</StructuredUnorderedList>
 				<p class="mt-4">
 					Other projects can be found on the
@@ -177,9 +178,5 @@
 
 	.hero-content:hover img {
 		animation-play-state: running;
-	}
-
-	section:nth-child(2) > ul.project_list, section:nth-child(2) > ul.project_list > li {
-		@apply m-0 p-0;
 	}
 </style>

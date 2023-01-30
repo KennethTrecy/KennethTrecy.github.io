@@ -11,6 +11,7 @@
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
+	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
 	import StructuredUnorderedList
 		from "@/components/general/containers/structured_unordered_list.svelte"
 
@@ -167,16 +168,14 @@
 						...projectGroup.extraListClasses
 					]}>
 					{#each projectGroup.projects as project}
-						<li
-							itemprop="itemListElement"
-							itemscope
-							itemtype="https://schema.org/ListItem"
-							class={projectGroup.extraListItemClasses.join(" ")}>
+						<StructuredListItem
+							isInProjectList={true}
+							class={projectGroup.extraListItemClasses}>
 							<ProjectCard
 								title={project.name}
 								description={project.description}
 								link={project.repositoryLink}/>
-						</li>
+						</StructuredListItem>
 					{/each}
 				</StructuredUnorderedList>
 			</StructuredSection>
