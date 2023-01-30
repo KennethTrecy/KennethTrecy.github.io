@@ -11,8 +11,9 @@
 	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
-	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
+	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
+	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 
 	const greetings = defineHeadingInfo({
 		"prefix": "👋🏽",
@@ -84,18 +85,12 @@
 		</div>
 		<div class="divider"></div>
 		<div class="flex flex-col justify-center items-center">
-			<section
-				itemprop="hasPart"
-				itemscope
-				itemtype="https://schema.org/WebContent"
-				id={specialty.id}>
+			<StructuredSection id={specialty.id}>
 				<SecondaryHeading headingInfo={specialty}/>
 				<p itemprop="text">Web development is my expertise. I have tried different technologies too such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
 				<p>During my free time, I apply my skills on my personal projects.</p>
-			</section>
-			<section
-				itemprop="hasPart"
-				itemscope
+			</StructuredSection>
+			<StructuredSection
 				itemtype="https://schema.org/CreativeWorkSeries"
 				id={personalProjects.id}>
 				<SecondaryHeading class={[ "my-4" ]} headingInfo={personalProjects}/>
@@ -136,12 +131,8 @@
 						relationship={[ ...internalTypes, ...authorTypes ]}>
 						project list</BaseLink>.
 				</p>
-			</section>
-			<section
-				itemprop="hasPart"
-				itemscope
-				itemtype="https://schema.org/WebContent"
-				id={security.id}>
+			</StructuredSection>
+			<StructuredSection id={security.id}>
 				<SecondaryHeading headingInfo={security}/>
 				<p itemprop="text">
 					I also like reading articles about cybersecurity. For this reason, I build applications with security in mind as much as possible to be resilient from attacks.
@@ -149,7 +140,7 @@
 				<p itemprop="text">
 					I have also made my recent commits to be signed with my own cryptographic keys.
 				</p>
-			</section>
+			</StructuredSection>
 		</div>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
