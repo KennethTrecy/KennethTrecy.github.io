@@ -3,27 +3,34 @@
 import { describe, it, expect } from "vitest"
 import { render, cleanup, fireEvent } from "@testing-library/svelte"
 
+import defineHeadingInfo from "@/components/general/define_heading_info"
+
 import Component from "./secondary.svelte"
 
-describe("Secondary header behavior", () => {
+describe("Secondary heading behavior", () => {
 	it("can render prefix as separate", async () => {
-		const prefix = "I. "
-		const id = "hello_a"
-		const { container } = render(Component, { prefix, id })
+		const headingInfo = defineHeadingInfo({
+			"prefix": "I. ",
+			"text": "hello a"
+		})
+		const { container } = render(Component, { headingInfo })
 
 		const property = container.querySelector("[itemprop~=headline][itemprop~=name]")
 		const spans = container.querySelectorAll("h2 span")
 
 		expect(property).not.toBeNull()
-		expect(property?.innerHTML).not.toContain(prefix)
+		expect(property?.innerHTML).not.toContain(headingInfo.prefix)
+		expect(property?.innerHTML).toContain(headingInfo.text)
 		expect(spans).toHaveLength(3)
 
 		cleanup()
 	})
 
 	it("can render two spans if there is no prefix", async () => {
-		const id = "hello_b"
-		const { container } = render(Component, { id })
+		const headingInfo = defineHeadingInfo({
+			"text": "hello b"
+		})
+		const { container } = render(Component, { headingInfo })
 
 		const spans = container.querySelectorAll("h2 span")
 
@@ -33,11 +40,13 @@ describe("Secondary header behavior", () => {
 	})
 
 	it("can show bookmark if hovered", async () => {
-		const id = "hello_c"
-		const { container } = render(Component, { id })
+		const headingInfo = defineHeadingInfo({
+			"text": "hello c"
+		})
+		const { container } = render(Component, { headingInfo })
 
-		const header = container.querySelector("h2") as HTMLHeadingElement
-		await fireEvent.mouseOver(header)
+		const heading = container.querySelector("h2") as HTMLHeadingElement
+		await fireEvent.mouseOver(heading)
 
 		const bookmark = container.querySelector(".visible")
 		expect(bookmark).not.toBeNull()
@@ -46,12 +55,14 @@ describe("Secondary header behavior", () => {
 	})
 
 	it("can hide bookmark if unhovered", async () => {
-		const id = "hello_d"
-		const { container } = render(Component, { id })
+		const headingInfo = defineHeadingInfo({
+			"text": "hello d"
+		})
+		const { container } = render(Component, { headingInfo })
 
-		const header = container.querySelector("h2") as HTMLHeadingElement
-		await fireEvent.mouseOver(header)
-		await fireEvent.mouseOut(header)
+		const heading = container.querySelector("h2") as HTMLHeadingElement
+		await fireEvent.mouseOver(heading)
+		await fireEvent.mouseOut(heading)
 
 		const bookmark = container.querySelector(".invisible")
 		expect(bookmark).not.toBeNull()
@@ -60,9 +71,11 @@ describe("Secondary header behavior", () => {
 	})
 
 	it("can render as raw", async () => {
-		const id = "hello_e"
+		const headingInfo = defineHeadingInfo({
+			"text": "hello_e"
+		})
 		const mustBeRaw = true
-		const { container } = render(Component, { id, mustBeRaw })
+		const { container } = render(Component, { headingInfo, mustBeRaw })
 
 		const property = container.querySelector("[itemprop~=headline][itemprop~=name]")
 		const spans = container.querySelectorAll("h2 span")

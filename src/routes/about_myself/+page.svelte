@@ -2,12 +2,14 @@
 	import pageMeta from "@/routes/about_myself/meta"
 
 	import CommonHead from "@/components/general/common_head.svelte"
-	import MainArticle from "@/components/general/main_article.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import ContactLink from "@/components/about_myself/contact_link.svelte"
-	import PrimaryHeader from "@/components/general/headings/primary.svelte"
-	import SecondaryHeader from "@/components/general/headings/secondary.svelte"
+	import defineHeadingInfo from "@/components/general/define_heading_info"
+	import PrimaryHeading from "@/components/general/headings/primary.svelte"
+	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
+	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
+	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
 
 	interface Technology {
 		name: string,
@@ -18,6 +20,19 @@
 		name: string,
 		technologies: Technology[]
 	}
+
+	const journey = defineHeadingInfo({
+		"prefix": "🛩️",
+		"text": "Journey"
+	})
+	const skills = defineHeadingInfo({
+		"prefix": "✨",
+		"text": "Skills"
+	})
+	const contacts = defineHeadingInfo({
+		"prefix": "✉️",
+		"text": "Contact Details"
+	})
 
 	const technologies: TechnologyArea[] = [
 		{
@@ -205,11 +220,11 @@
 	<CommonHead {pageMeta}/>
 </svelte:head>
 
-<MainArticle itemtype="https://schema.org/Person">
-	<PrimaryHeader slot="title">Who am I?</PrimaryHeader>
+<StructuredArticle itemtype="https://schema.org/Person">
+	<PrimaryHeading slot="title">Who am I?</PrimaryHeading>
 	<svelte:fragment slot="content">
-		<section>
-			<SecondaryHeader id="journey" mustBeRaw={true} prefix="🛩️">Journey</SecondaryHeader>
+		<section id={journey.id}>
+			<SecondaryHeading headingInfo={journey} mustBeRaw={true}/>
 			<p>
 				I am
 				<span itemprop="name">
@@ -241,8 +256,8 @@
 				That did not stopped me to try from thinking innovative solutions. Some solutions are better suited for certain situations. As the saying goes, <em>"it depends!"</em>.
 			</p>
 		</section>
-		<section itemprop="knowsAbout">
-			<SecondaryHeader id="skills" mustBeRaw={true} prefix="✨">Skills</SecondaryHeader>
+		<section itemprop="knowsAbout" id={skills.id}>
+			<SecondaryHeading headingInfo={skills} mustBeRaw={true}/>
 			<p>
 				I am specialized in web development, particularly back-end programming. The reason was that back-end programming could support most communication technologies in an increasingly interconnected world. Whether it is a e-commerce website, Internet of Things, or games, they need at a server to process and store their data.
 			</p>
@@ -274,38 +289,36 @@
 				Beside programming, I am also good in mathematics and logic. Both fields help me in validation, developing, troubleshooting, and authorization. These skills complement my other interests.
 			</p>
 		</section>
-		<section>
-			<SecondaryHeader id="contact_details" mustBeRaw={true} prefix="✉️">
-				Contact Details
-			</SecondaryHeader>
+		<section id={contacts.id}>
+			<SecondaryHeading headingInfo={contacts} mustBeRaw={true}/>
 			<p>Should you wish to get in touch with me, I can be communicated on different platforms.</p>
 			<ul class="list-none not-prose">
-				<li itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
+				<StructuredListItem itemprop="contactPoint" itemtype="https://schema.org/ContactPoint">
 					<ContactLink
 						address="https://www.linkedin.com/in/kenneth-trecy-tobias/"
 						icon="linkedin"
 						platformName="LinkedIn"
 						username="kenneth-trecy-tobias"
 						usernameProperty="name"/>
-				</li>
-				<li itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
+				</StructuredListItem>
+				<StructuredListItem itemprop="contactPoint" itemtype="https://schema.org/ContactPoint">
 					<ContactLink
 						address="https://github.com/KennethTrecy/"
 						icon="github"
 						platformName="GitHub"
 						username="KennethTrecy"
 						usernameProperty="name"/>
-				</li>
-				<li itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
+				</StructuredListItem>
+				<StructuredListItem itemprop="contactPoint" itemtype="https://schema.org/ContactPoint">
 					<ContactLink
 						address="mailto:web.kennethtobias@gmail.com"
 						icon="gmail"
 						platformName="Gmail"
 						username="web.kennethtobias@gmail.com"
 						usernameProperty="name email"/>
-				</li>
+				</StructuredListItem>
 			</ul>
 		</section>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
-</MainArticle>
+</StructuredArticle>

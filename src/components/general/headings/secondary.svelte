@@ -1,43 +1,41 @@
 <script lang="ts">
+	import type { HeadingInfo } from "@/types/body"
+
 	import Icon from "@/components/general/icon.svelte"
-	import Link from "@/components/general/links/base.svelte"
+	import Bookmark from "@/components/general/links/bookmark.svelte"
 
 	let isMouseIn = false
-	let otherClasses: string = ""
+	let otherClasses: string[] = []
 
 	export let mustBeRaw: boolean = false
-	export let id: string
-	export let prefix: string = ""
+	export let headingInfo: HeadingInfo<"defined">
 
 	export { otherClasses as class }
 
 	$: joinedClasses = [
-		otherClasses
+		...otherClasses
 	].filter(Boolean).join(" ")
-	$: hasPrefix = prefix !== ""
-	$: fragment = `#${id}`
+	$: hasPrefix = Boolean(headingInfo.prefix)
+	$: fragment = `#${headingInfo.id}`
 </script>
 
 <h2
 	class={joinedClasses}
-	{id}
 	on:mouseout={_event => isMouseIn = false}
 	on:mouseover={_event => isMouseIn = true}>
 	{#if hasPrefix}
-		<span>{prefix}</span>
+		<span>{headingInfo.prefix}</span>
 	{/if}
 
 	{#if mustBeRaw}
-		<span><slot></slot></span>
+		<span>{headingInfo.text}<slot></slot></span>
 	{:else}
-		<span itemprop="headline name"><slot></slot></span>
+		<span itemprop="headline name">{headingInfo.text}<slot></slot></span>
 	{/if}
 
-	<Link
-		address={fragment}
-		class={[ isMouseIn ? "visible" : "invisible" ]}
-		relationship={[ "bookmark" ]}
-		context="self">
+	<Bookmark
+		{fragment}
+		class={[ isMouseIn ? "visible" : "invisible" ]}>
 		<Icon name="link"/>
-	</Link>
+	</Bookmark>
 </h2>
