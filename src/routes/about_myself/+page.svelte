@@ -7,8 +7,9 @@
 	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
-	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
+	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
+	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
 
 	interface Technology {
 		name: string,
@@ -292,30 +293,30 @@
 			<SecondaryHeading headingInfo={contacts} mustBeRaw={true}/>
 			<p>Should you wish to get in touch with me, I can be communicated on different platforms.</p>
 			<ul class="list-none not-prose">
-				<li itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
+				<StructuredListItem itemprop="contactPoint" itemtype="https://schema.org/ContactPoint">
 					<ContactLink
 						address="https://www.linkedin.com/in/kenneth-trecy-tobias/"
 						icon="linkedin"
 						platformName="LinkedIn"
 						username="kenneth-trecy-tobias"
 						usernameProperty="name"/>
-				</li>
-				<li itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
+				</StructuredListItem>
+				<StructuredListItem itemprop="contactPoint" itemtype="https://schema.org/ContactPoint">
 					<ContactLink
 						address="https://github.com/KennethTrecy/"
 						icon="github"
 						platformName="GitHub"
 						username="KennethTrecy"
 						usernameProperty="name"/>
-				</li>
-				<li itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
+				</StructuredListItem>
+				<StructuredListItem itemprop="contactPoint" itemtype="https://schema.org/ContactPoint">
 					<ContactLink
 						address="mailto:web.kennethtobias@gmail.com"
 						icon="gmail"
 						platformName="Gmail"
 						username="web.kennethtobias@gmail.com"
 						usernameProperty="name email"/>
-				</li>
+				</StructuredListItem>
 			</ul>
 		</section>
 	</svelte:fragment>
