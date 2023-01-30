@@ -8,8 +8,9 @@
 	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
-	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
+	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
+	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 
 	interface SoftwareProject {
 		name: string
@@ -146,21 +147,14 @@
 <StructuredArticle itemtype="https://schema.org/CreativeWorkSeries">
 	<PrimaryHeading slot="title">List of Involved Projects</PrimaryHeading>
 	<svelte:fragment slot="content">
-		<section
-			itemprop="about"
-			itemscope
-			itemtype="https://schema.org/WebContent"
-			id={rationale.id}>
+		<StructuredSection itemprop="about" id={rationale.id}>
 			<SecondaryHeading headingInfo={rationale}/>
 			<p itemprop="mainEntity">
 				Over the years, I have built and handled multiple projects to apply my knowledge. As a consequence, I gain experience to build them, to solve their technical issues, and to improve their technical design if possible. Building them helps me improve my decision-making in future projects and not to take things for granted that look like basic. Indeed, simplicity is hard.
 			</p>
-		</section>
+		</StructuredSection>
 		{#each projectGroups as projectGroup}
-			<section
-				itemprop="hasPart"
-				itemscope
-				itemtype="https://schema.org/CreativeWorkSeries" id={projectGroup.id}>
+			<StructuredSection itemtype="https://schema.org/CreativeWorkSeries" id={projectGroup.id}>
 				<SecondaryHeading headingInfo={projectGroup}/>
 				<p itemprop="about">{projectGroup.description}</p>
 				<ul
@@ -181,18 +175,15 @@
 						</li>
 					{/each}
 				</ul>
-			</section>
+			</StructuredSection>
 		{/each}
-		<section
-			itemprop="hasPart"
-			itemscope
-			itemtype="https://schema.org/WebContent"
+		<StructuredSection itemtype="https://schema.org/WebContent"
 			id={otherProjects.id}>
 			<SecondaryHeading headingInfo={otherProjects}/>
 			<p itemprop="mainEntity">
 				Beside my personal projects, I have also contributed to on several open-source projects by requesting pull requests. Usually, I add a small part of code for a certain functionality that I want.
 			</p>
-		</section>
+		</StructuredSection>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
 </StructuredArticle>
