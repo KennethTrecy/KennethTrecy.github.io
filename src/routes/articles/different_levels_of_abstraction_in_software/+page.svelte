@@ -1,11 +1,24 @@
 <script lang="ts">
+	import type { HeadingInfo } from "@/types/body"
+
 	import pageMeta from "@/routes/articles/different_levels_of_abstraction_in_software/meta"
 
 	import CommonHead from "@/components/general/common_head.svelte"
 	import Bookmark from "@/components/general/links/bookmark.svelte"
 	import MainArticle from "@/components/general/main_article.svelte"
+	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
+	import StructuredListItem from "@/components/general/container/structured_list_item.svelte"
+
+	const levels: HeadingInfo<"defined">[] = [
+		{ "text": "Program-level Abstraction" },
+		{ "text": "Configuration-level Abstraction" },
+		{ "text": "Variable-level Abstraction" },
+		{ "text": "Function-level Abstraction" },
+		{ "text": "Class-level Abstraction" },
+		{ "text": "Generic-level Abstraction" }
+	].map(defineHeadingInfo)
 </script>
 
 <svelte:head>
@@ -26,48 +39,15 @@
 					itemprop="itemListOrder">from almost specific to most general kind of abstraction</span>.
 			</p>
 			<ol>
-				<li itemprop="itemListElement" itemscope itemtype="ListItem">
-					<Bookmark
-						itemprop="mainEntityOfPage"
-						fragment="program-level_abstraction">
-						Program-level
-					</Bookmark>
-				</li>
-				<li itemprop="itemListElement" itemscope itemtype="ListItem">
-					<Bookmark
-						itemprop="mainEntityOfPage"
-						fragment="configuration-level_abstraction">
-						Configuration-level
-					</Bookmark>
-				</li>
-				<li itemprop="itemListElement" itemscope itemtype="ListItem">
-					<Bookmark
-						itemprop="mainEntityOfPage"
-						fragment="variable-level_abstraction">
-						Variable-level
-					</Bookmark>
-				</li>
-				<li itemprop="itemListElement" itemscope itemtype="ListItem">
-					<Bookmark
-						itemprop="mainEntityOfPage"
-						fragment="function-level_abstraction">
-						Function-level
-					</Bookmark>
-				</li>
-				<li itemprop="itemListElement" itemscope itemtype="ListItem">
-					<Bookmark
-						itemprop="mainEntityOfPage"
-						fragment="class-level_abstraction">
-						Class-level
-					</Bookmark>
-				</li>
-				<li itemprop="itemListElement" itemscope itemtype="ListItem">
-					<Bookmark
-						itemprop="mainEntityOfPage"
-						fragment="generic-level_abstraction">
-						Generic-level
-					</Bookmark>
-				</li>
+				{#each levels as level}
+					<StructuredListItem>
+						<Bookmark
+							itemprop="mainEntityOfPage"
+							fragment={level.id}>
+							{level.text}
+						</Bookmark>
+					</StructuredListItem>
+				{/each}
 			<ol>
 		</section>
 		<section itemprop="hasPart" itemscope itemtype="https://schema.org/WebContent">
