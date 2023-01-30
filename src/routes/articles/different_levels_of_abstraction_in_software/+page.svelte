@@ -113,6 +113,19 @@
 				In web development, instances are also used like servers too. Indeed, they have multiple fnctionalities but uses different set of values inside. They may differ in software version, domain name, or files to name a few.
 			</p>
 		</StructuredSection>
+		<StructuredSection id={levels[5].id}>
+			<SecondaryHeading headingInfo={levels[5]}/>
+			<p itemprop="text">
+				<strong itemprop="mainEntity">Hardest level of abstraction that someone could work on.</strong> It can be in a form of abstract classes, templates, traits, generics, or macros. Assembly and binary instructions are also included here since they are the most general instructions that represent a computer instructions.
+			</p>
+			<p itemprop="text">
+				If a class or function at this level has changed in identifiers, mechanism, or number of parameters, the developer has to change all codes that depend on the generalized class or function. It can be tedious process relative to the number of changes applied on a generic-level code.
+			</p>
+			<p itemprop="text">
+				Codes at this level may consider multiple use cases. Modifying them should be careful to make sure the dependent systems do not break, or at least breaks slightly.
+			</p>
+		</StructuredSection>
+		<!-- TODO: Link some concepts where they can be found -->
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
 </StructuredArticle>
