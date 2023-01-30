@@ -76,6 +76,18 @@
 				As an example, some programming languages have a compiler. Those compilers allows developer(s) to create programs that run on different operating systems or environments. For every operating system that a developer want to support, the compiler would output a specific executable or artifact specialized and optimized for the targeted system.
 			</p>
 		</StructuredSection>
+		<StructuredSection id={levels[2].id}>
+			<SecondaryHeading headingInfo={levels[2]}/>
+			<p itemprop="text">
+				This is almost similar to environment-level abstraction. However, <strong itemprop="mainEntity">the changes on the values of variables may have limited effect on the resulting program depending on their purpose</strong>. In other words, they have limited scope.
+			</p>
+			<p itemprop="text">
+				For this level, it requires a user to understand the declaration and definition of variables to modify the program. They may also need to learn about enumerations or any different data types like booleans and integers.
+			</p>
+			<p itemprop="text">
+				This level can be seen when making embedded programs for microcontrollers. It is helpful to declare multiple constants like indicating on or off, speed of sound (which can be used for calculating the distance using ultrasonic sensor), or length of intervals. In addition, it can be seen in other fields of Information Technology (<abbr>I.T.</abbr>) such as web development and game development.
+			</p>
+		</StructuredSection>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
 </StructuredArticle>
