@@ -100,6 +100,19 @@
 				Generalizing multiple but similar procedures into one function is helpful during development. It saves lines of code and effort to scroll on a file to understand the operations. Other developers do not need to reimplement a function as they only need to install a dependency containing the process they need, therefore it saves time.
 			</p>
 		</StructuredSection>
+		<StructuredSection id={levels[4].id}>
+			<SecondaryHeading headingInfo={levels[4]}/>
+			<p itemprop="text">
+				<strong itemprop="mainEntity">These are abstractions that may represent real-world things which may be composed of multiple functionalities.</strong> To have this level of abstraction, a developer need to know about the object-oriented programming (<abbr>OOP</abbr>) concepts like polymorphism or composition.
+			</p>
+			<p itemprop="text">
+				When it becomes specialized or concrete, it is known as <strong>instance</strong>.
+				Instances are useful in game development. A developer can represent the game's item, obstacles, or any other object to interact with other instances.
+			</p>
+			<p itemprop="text">
+				In web development, instances are also used like servers too. Indeed, they have multiple fnctionalities but uses different set of values inside. They may differ in software version, domain name, or files to name a few.
+			</p>
+		</StructuredSection>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
 </StructuredArticle>
