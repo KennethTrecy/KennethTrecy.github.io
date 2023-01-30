@@ -11,7 +11,7 @@
 	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
-	import MainArticle from "@/components/general/containers/main_article.svelte"
+	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 
 	const greetings = defineHeadingInfo({
@@ -36,7 +36,7 @@
 	<CommonHead {pageMeta}/>
 </svelte:head>
 
-<MainArticle>
+<StructuredArticle>
 	<PrimaryHeading slot="title" prefix="🌀">KennethTrecy's Portfolio</PrimaryHeading>
 	<svelte:fragment slot="content">
 		<div class="divider"></div>
@@ -153,7 +153,7 @@
 		</div>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
-</MainArticle>
+</StructuredArticle>
 
 <style lang="postcss">
 	@keyframes rotate_clockwise {

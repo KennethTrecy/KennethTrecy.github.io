@@ -8,7 +8,7 @@
 	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
-	import MainArticle from "@/components/general/containers/main_article.svelte"
+	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 
 	interface SoftwareProject {
@@ -143,7 +143,7 @@
 	<CommonHead {pageMeta}/>
 </svelte:head>
 
-<MainArticle itemtype="https://schema.org/CreativeWorkSeries">
+<StructuredArticle itemtype="https://schema.org/CreativeWorkSeries">
 	<PrimaryHeading slot="title">List of Involved Projects</PrimaryHeading>
 	<svelte:fragment slot="content">
 		<section
@@ -195,7 +195,7 @@
 		</section>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
-</MainArticle>
+</StructuredArticle>
 
 <style lang="postcss">
 	ul.project_list, ul.project_list > li {

@@ -7,7 +7,7 @@
 	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
-	import MainArticle from "@/components/general/containers/main_article.svelte"
+	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 
 	interface Technology {
@@ -219,7 +219,7 @@
 	<CommonHead {pageMeta}/>
 </svelte:head>
 
-<MainArticle itemtype="https://schema.org/Person">
+<StructuredArticle itemtype="https://schema.org/Person">
 	<PrimaryHeading slot="title">Who am I?</PrimaryHeading>
 	<svelte:fragment slot="content">
 		<section id={journey.id}>
@@ -320,4 +320,4 @@
 		</section>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
-</MainArticle>
+</StructuredArticle>
