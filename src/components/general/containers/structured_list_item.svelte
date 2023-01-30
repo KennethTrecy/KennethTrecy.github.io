@@ -1,5 +1,7 @@
 <script lang="ts">
 	export let isInProjectList: boolean
+	export let itemprop: string = "itemListElement"
+	export let itemtype: string = "https://schema.org/ListItem"
 	let otherClasses: string[] = []
 
 	const initialClasses = isInProjectList ? [ "project_list" ] : []
@@ -7,9 +9,9 @@
 </script>
 
 <li
-	itemprop="itemListElement"
+	{itemprop}
 	itemscope
-	itemtype="https://schema.org/ListItem"
+	{itemtype}
 	class={[ ...initialClasses, ...otherClasses].join(" ")}>
 	<slot></slot>
 </li>
