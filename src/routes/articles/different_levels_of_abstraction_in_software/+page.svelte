@@ -58,7 +58,7 @@
 		<StructuredSection id={levels[0].id}>
 			<SecondaryHeading headingInfo={levels[0]}/>
 			<p itemprop="text">
-				<span itemprop="mainEntity">This level of abstraction is the least general among other levels.</span> It can be in a form of simple console application, web page, executable programs, HTTP server, or <em>anything that faces the clients directly</em>.
+				<strong itemprop="mainEntity">This level of abstraction is the least general among other levels.</strong> It can be in a form of simple console application, web page, executable programs, HTTP server, or <strong>anything that faces the clients directly</strong>.
 			</p>
 			<p itemprop="text">
 				The client could be you, your customer, or other end users. A software at this level are relatively easy to use compare to other softwares at other levels. They do all the work for you.
@@ -70,7 +70,7 @@
 		<StructuredSection id={levels[1].id}>
 			<SecondaryHeading headingInfo={levels[1]}/>
 			<p itemprop="text">
-				<span itemprop="mainEntity">This level of abstraction allows the creation of different package-level softwares.</span> Softwares at this level can be managed using environment variables or command line arguments.
+				<strong itemprop="mainEntity">This level of abstraction allows the creation of different package-level softwares.</strong> Softwares at this level can be managed using environment variables or command line arguments.
 			</p>
 			<p itemprop="text">
 				As an example, some programming languages have a compiler or transpiler that allows developer to create programs that run on different operating systems or environments. For every operating system that a developer want to support, the compiler or transpiler would output a specific executable or artifact specialized and optimized for the targeted system.
