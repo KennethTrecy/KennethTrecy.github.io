@@ -154,10 +154,13 @@
 			</p>
 		</StructuredSection>
 		{#each projectGroups as projectGroup}
-			<StructuredSection itemtype="https://schema.org/CreativeWorkSeries" id={projectGroup.id}>
+			<StructuredSection id={projectGroup.id}>
 				<SecondaryHeading headingInfo={projectGroup}/>
 				<p itemprop="about">{projectGroup.description}</p>
 				<ul
+					itemprop="hasPart"
+					itemscope
+					itemtype="https://schema.org/ItemList"
 					class={[
 						"project_list",
 						"list-none",
@@ -167,7 +170,11 @@
 						...projectGroup.extraListClasses
 					].join(" ")}>
 					{#each projectGroup.projects as project}
-						<li class={projectGroup.extraListItemClasses.join(" ")}>
+						<li
+							itemprop="itemListElement"
+							itemscope
+							itemtype="https://schema.org/ListItem"
+							class={projectGroup.extraListItemClasses.join(" ")}>
 							<ProjectCard
 								title={project.name}
 								description={project.description}
