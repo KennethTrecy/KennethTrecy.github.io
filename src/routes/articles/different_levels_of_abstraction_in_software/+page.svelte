@@ -75,6 +75,9 @@
 			<p itemprop="text">
 				As an example, some programming languages have a compiler. Those compilers allows developer(s) to create programs that run on different operating systems or environments. For every operating system that a developer want to support, the compiler would output a specific executable or artifact specialized and optimized for the targeted system.
 			</p>
+			<p itemprop="text">
+				Environment variables are usually used in web development too. Some variables are named like <code>DOMAIN_NAME</code>, <code>SERVER_PORT</code>, or <code>BRAND_NAME</code>. These variables are used different parts of the software and customized per machine.
+			</p>
 		</StructuredSection>
 		<StructuredSection id={levels[2].id}>
 			<SecondaryHeading headingInfo={levels[2]}/>
