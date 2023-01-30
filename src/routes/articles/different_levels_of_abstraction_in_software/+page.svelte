@@ -82,7 +82,7 @@
 		<StructuredSection id={levels[2].id}>
 			<SecondaryHeading headingInfo={levels[2]}/>
 			<p itemprop="text">
-				This is almost similar to environment-level abstraction. However, <strong itemprop="mainEntity">the changes on the values of variables may have limited effect on the resulting program depending on their purpose</strong>. In other words, they have limited scope.
+				This is almost similar to environment-level abstraction. However, the environment variables are not included in this level. <strong itemprop="mainEntity">This level refers to the softwares customizable by globally-scope variables and locally-scoped variables.</strong> In other words, they have limited scope depending on their purpose.
 			</p>
 			<p itemprop="text">
 				For this level, it requires a user to understand the declaration and definition of variables to modify the program. They may also need to learn about enumerations or any different data types like booleans and integers.
