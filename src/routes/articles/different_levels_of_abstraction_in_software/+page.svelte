@@ -20,7 +20,7 @@
 		{ "text": "Variable-level Abstraction" },
 		{ "text": "Function-level Abstraction" },
 		{ "text": "Class-level Abstraction" },
-		{ "text": "Generic-level Abstraction" }
+		{ "text": "Interface-level Abstraction" }
 	].map(defineHeadingInfo)
 </script>
 
@@ -119,7 +119,7 @@
 				<strong itemprop="mainEntity">Hardest level of abstraction that someone could work on.</strong> It can be in a form of abstract classes, templates, traits, generics, or macros. Assembly and binary instructions are also included here since they are the most general instructions that represent a computer instructions.
 			</p>
 			<p itemprop="text">
-				If a class or function at this level has changed in identifiers, mechanism, or number of parameters, the developer has to change all codes that depend on the generalized class or function. It can be tedious process relative to the number of changes applied on a generic-level code.
+				If a generalized class or function has changed in identifiers, mechanism, or number of parameters, the developer has to change all codes that depend on the generalized class or function. It can be tedious process relative to the number of changes applied on an interface-level code.
 			</p>
 			<p itemprop="text">
 				Codes at this level may consider multiple use cases. Modifying them should be careful to make sure the dependent systems do not break, or at least breaks slightly.
