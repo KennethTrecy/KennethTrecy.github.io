@@ -37,7 +37,7 @@
 			id={introduction.id}>
 			<SecondaryHeading headingInfo={introduction}/>
 			<p itemprop="about">
-				Abstraction is a process to see a thing as a one rather than as the sum of its parts. It can be rules or equations that are applicable to most situations. In software development, abstractions are used to simplify the process which are common to other tasks. They take in different levels which this page is all about.
+				<strong itemprop="keyword">Abstraction</strong> is a process to see a thing as a one rather than as the sum of its parts. It can be rules or equations that are applicable to most situations. In software development, abstractions are used to simplify the process which are common to other tasks. They take in different levels which this page is all about.
 			</p>
 			<p itemprop="mainEntity">
 				Thre are <span itemprop="numberOfItems">7</span> levels of abstraction listed below. They are ordered
