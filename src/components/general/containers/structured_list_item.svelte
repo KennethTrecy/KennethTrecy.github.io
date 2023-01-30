@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let isInProjectList: boolean
+	export let isInProjectList: boolean = false
 	export let itemprop: string = "itemListElement"
 	export let itemtype: string = "https://schema.org/ListItem"
 	let otherClasses: string[] = []
