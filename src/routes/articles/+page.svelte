@@ -2,16 +2,16 @@
 	import pageMeta from "@/routes/articles/meta"
 
 	import CommonHead from "@/components/general/common_head.svelte"
-	import MainArticle from "@/components/general/main_article.svelte"
 	import PrimaryHeading from "@/components/general/heading/primary.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
+	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 </script>
 
 <svelte:head>
 	<CommonHead {pageMeta}/>
 </svelte:head>
 
-<MainArticle>
+<StructuredArticle>
 	<PrimaryHeading slot="title">{pageMeta.title}</PrimaryHeading>
 	<svelte:fragment slot="content">
 		<div
@@ -25,4 +25,4 @@
 		</div>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
-</MainArticle>
+</StructuredArticle>
