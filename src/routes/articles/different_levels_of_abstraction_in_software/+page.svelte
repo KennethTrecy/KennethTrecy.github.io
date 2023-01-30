@@ -15,7 +15,7 @@
 
 	const introduction = defineHeadingInfo({ "text": "Introduction" })
 	const levels: HeadingInfo<"defined">[] = [
-		{ "text": "Program-level Abstraction" },
+		{ "text": "Package-level Abstraction" },
 		{ "text": "Configuration-level Abstraction" },
 		{ "text": "Variable-level Abstraction" },
 		{ "text": "Function-level Abstraction" },
@@ -70,7 +70,7 @@
 		<StructuredSection id={levels[1].id}>
 			<SecondaryHeading headingInfo={levels[1]}/>
 			<p itemprop="text">
-				<span itemprop="mainEntity">This level of abstraction allows the creation of different program-level softwares.</span> Softwares at this level can be managed using environment variables or command line arguments.
+				<span itemprop="mainEntity">This level of abstraction allows the creation of different package-level softwares.</span> Softwares at this level can be managed using environment variables or command line arguments.
 			</p>
 			<p itemprop="text">
 				As an example, some programming languages have a compiler or transpiler that allows developer to create programs that run on different operating systems or environments. For every operating system that a developer want to support, the compiler or transpiler would output a specific executable or artifact specialized and optimized for the targeted system.
