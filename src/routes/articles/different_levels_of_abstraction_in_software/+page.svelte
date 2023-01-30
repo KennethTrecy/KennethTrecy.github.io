@@ -28,7 +28,7 @@
 	<CommonHead {pageMeta}/>
 </svelte:head>
 
-<StructuredArticle itemtype="https://schema.org/Article">
+<StructuredArticle itemtype="https://schema.org/BlogPosting">
 	<PrimaryHeading slot="title">{pageMeta.title}</PrimaryHeading>
 	<svelte:fragment slot="content">
 		<StructuredSection
