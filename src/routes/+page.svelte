@@ -90,24 +90,26 @@
 				<p itemprop="text">Web development is my expertise. I have tried different technologies too such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
 				<p>During my free time, I apply my skills on my personal projects.</p>
 			</StructuredSection>
-			<StructuredSection
-				itemtype="https://schema.org/CreativeWorkSeries"
-				id={personalProjects.id}>
+			<StructuredSection itemtype="https://schema.org/CreativeWork" id={personalProjects.id}>
 				<SecondaryHeading class={[ "my-4" ]} headingInfo={personalProjects}/>
-				<ul class="project_list list-none list-outside flex flex-col flex-wrap">
-					<li>
+				<ul
+					itemprop="hasPart"
+					itemscope
+					itemtype="https://schema.org/ItemList"
+					class="project_list list-none list-outside flex flex-col flex-wrap">
+					<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
 						<ProjectCard
 							title="Virdafils"
 							description="A driver for Laravel framework which use a database like file storage system."
 							link="https://github.com/KennethTrecy/virdafils"/>
 					</li>
-					<li>
+					<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
 						<ProjectCard
 							title="Elomocato"
 							description="Custom cast classes to be used with Laravel framework."
 							link="https://github.com/KennethTrecy/elomocato"/>
 					</li>
-					<li>
+					<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
 						<ProjectCard
 							title="Comroconbu"
 							description="Builder for common Rollup configurations."
