@@ -91,6 +91,15 @@
 				This level can be seen when making embedded programs for microcontrollers. It is helpful to declare multiple constants like indicating on or off, speed of sound (which can be used for calculating the distance using ultrasonic sensor), or length of intervals. In addition, it can be seen in other fields of Information Technology (<abbr>I.T.</abbr>) such as web development and game development.
 			</p>
 		</StructuredSection>
+		<StructuredSection id={levels[3].id}>
+			<SecondaryHeading headingInfo={levels[3]}/>
+			<p itemprop="text">
+				<strong itemprop="mainEntity">At this level of abstraction, a software bundles different procedures in one or more functions.</strong> Example of this are libraries which may contain different functions to change the casing of characters in a string.
+			</p>
+			<p itemprop="text">
+				Generalizing multiple but similar procedures into one function is helpful during development. It saves lines of code and effort to scroll on a file to understand the operations. Other developers do not need to reimplement a function as they only need to install a dependency containing the process they need, therefore it saves time.
+			</p>
+		</StructuredSection>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
 </StructuredArticle>
