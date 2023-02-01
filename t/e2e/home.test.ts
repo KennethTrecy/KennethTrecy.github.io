@@ -4,11 +4,16 @@ import { expect, test } from "@playwright/test"
 test("paragraphs have correct grammar", async ({ page }) => {
 	await page.goto("/")
 
-	const allTexts = await page.locator("css=p").allInnerTexts()
-	const results = await check(allTexts[0], {
-		"api_url": "http://localhost:8081/v2/check",
-		"dictionary": [ "KennethTrecy" ],
+	const allTexts = await page.locator("css=p[itemprop]").allInnerTexts()
+
+	const pendingResults: Promise<any>[] = allTexts.map(async text => {
+		const result = await check(text, {
+			"api_url": "http://localhost:8081/v2/check",
+			"dictionary": [ "KennethTrecy" ],
+		})
+
+		await expect(result.matches).toEqual([])
 	})
 
-	await expect(results).not.toBeNull()
+	await Promise.all(pendingResults)
 })
