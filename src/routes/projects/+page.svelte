@@ -106,7 +106,7 @@
 				"prefix": "🧪",
 				"text": "Chearmyp Language Project"
 			}),
-			"description": "I did a experimental language back then named \"Chearmyp\". For now, it only works as data format for my other projects. Originally, the repositories below came from one source and I split it according to concerns. They are also public projects.",
+			"description": "I did an experimental language back then named \"Chearmyp\". For now, it only works as data format for my other projects. Originally, the repositories below came from one source and I split it according to concerns. They are also public projects.",
 			"projects": [
 				{
 					"name": "Abstract Chearmyp Token",
