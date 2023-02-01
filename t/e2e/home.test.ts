@@ -1,7 +1,7 @@
 import { check } from "gramma"
 import { expect, test } from "@playwright/test"
 
-import dictionary from "../data/dictionary.json"
+import dictionary from "~/data/dictionary"
 
 test("paragraphs have correct grammar", async ({ page }) => {
 	await page.goto("/")
@@ -11,7 +11,7 @@ test("paragraphs have correct grammar", async ({ page }) => {
 	const pendingResults: Promise<any>[] = allTexts.map(async text => {
 		const result = await check(text, {
 			"api_url": "http://localhost:8081/v2/check",
-			dictionary,
+			dictionary
 		})
 
 		return result.matches
