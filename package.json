@@ -22,7 +22,8 @@
 		"production:full": "npx rollup -c bundler/prod/rollup.full.config.js",
 		"test:unit": "npx vitest",
 		"test:e2e:install": "npx playwright install",
-		"test:e2e": "npx playwright test",
+		"test:e2e": "npm run build && npm run test:e2e:fast",
+		"test:e2e:fast": "npx playwright test",
 		"test:watch_unit": "npx mocha hidden/t/**/*.js --watch --watch-files hidden/t/**/*.js"
 	},
 	"devDependencies": {
