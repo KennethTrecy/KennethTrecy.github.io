@@ -12,8 +12,9 @@ test("paragraphs have correct grammar", async ({ page }) => {
 			"dictionary": [ "KennethTrecy" ],
 		})
 
-		await expect(result.matches).toEqual([])
+		return result.matches
 	})
 
-	await Promise.all(pendingResults)
+	const matches = await Promise.all(pendingResults)
+	await expect(matches).toEqual(allTexts.map(() => []))
 })
