@@ -20,7 +20,7 @@
 
 	const greetings = defineHeadingInfo({
 		"prefix": "👋🏽",
-		"text": "Hi,"
+		"text": "Hi! "
 	})
 	const specialty = defineHeadingInfo({
 		"prefix": "🌟",
@@ -73,7 +73,7 @@
 					<SecondaryHeading headingInfo={greetings}>
 						I am <span itemprop="givenName">Kenneth Trecy</span>!
 					</SecondaryHeading>
-					<p itemprop="knowsAbout" class="py-6 container md:px-0">
+					<p itemprop="knowsAbout text" class="py-6 container md:px-0">
 						I usually develop the back-end of the applications I have handled. I ensure their quality though automated tests through CI.
 					</p>
 					<BaseLink
@@ -90,8 +90,8 @@
 		<div class="flex flex-col justify-center items-center">
 			<StructuredSection id={specialty.id}>
 				<SecondaryHeading headingInfo={specialty}/>
-				<p itemprop="text">Web development is my expertise. I have tried different technologies too such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
-				<p>During my free time, I apply my skills on my personal projects.</p>
+				<p itemprop="text">Web development is my expertise. I have tried different technologies too, such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
+				<p itemprop="text">During my free time, I apply my skills on my personal projects.</p>
 			</StructuredSection>
 			<StructuredSection itemtype="https://schema.org/CreativeWork" id={personalProjects.id}>
 				<SecondaryHeading class={[ "my-4" ]} headingInfo={personalProjects}/>
@@ -121,7 +121,7 @@
 							link="https://github.com/KennethTrecy/comroconbu"/>
 					</StructuredListItem>
 				</StructuredUnorderedList>
-				<p class="mt-4">
+				<p itemprop="text" class="mt-4">
 					Other projects can be found on the
 					<ExternalLink address="https://github.com/KennethTrecy?tab=repositories">
 						list of my respositories
