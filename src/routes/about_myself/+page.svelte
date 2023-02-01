@@ -233,7 +233,7 @@
 					<span itemprop="familyName">Tobias</span></span>.
 				I am
 				<span itemprop="nationality" itemscope itemtype="https://schema.org/Country">
-					<span itemprop="name">Filipino</span> living in
+					<span itemprop="name">Filipino</span> living in the
 					<span itemprop="address">Philippines</span>.
 				</span>
 				Some people call me <em itemprop="alternateName">"Tretchi"</em>. I have been into programming for a long time.
@@ -248,22 +248,22 @@
 				<abbr title="Create, Read, Update, and Delete">CRUD</abbr> applications, servers, and others</span>.
 			</SimpleText>
 			<SimpleText>
-				By the time I got my hands on a computer, I spent some time making personal command-line programs using C++. I may have reinvent the wheel but only for purpose of studying.
+				By the time I got my hands on a computer, I spent some time making personal command-line programs using C++. I may have been reinventing the wheel but only for purpose of studying.
 			</SimpleText>
 			<SimpleText>
 				Using this approach, I faced the issues that other developers have already solved. It made me appreciate the existing solutions and strive to be better. I was like a toddler back then mimicking the adults.
 			</SimpleText>
 			<SimpleText>
-				That did not stopped me to try from thinking innovative solutions. Some solutions are better suited for certain situations. As the saying goes, <em>"it depends!"</em>.
+				That did not stop me to try from thinking innovative solutions. Some solutions are better suited for certain situations. As the saying goes, <em>"it depends!"</em>.
 			</SimpleText>
 		</section>
 		<section itemprop="knowsAbout" id={skills.id}>
 			<SecondaryHeading headingInfo={skills} mustBeRaw={true}/>
 			<SimpleText>
-				I am specialized in web development, particularly back-end programming. The reason was that back-end programming could support most communication technologies in an increasingly interconnected world. Whether it is a e-commerce website, Internet of Things, or games, they need at a server to process and store their data.
+				I am specialized in web development, particularly back-end programming. The reason was that back-end programming could support most communication technologies in an increasingly interconnected world. Whether it is an e-commerce website, Internet of Things, or games, they need at a server to process and store their data.
 			</SimpleText>
 			<SimpleText>
-				Some of my web development skills are the following:
+				Some of my web development skills are the following below.
 			</SimpleText>
 			<ul>
 				{#each technologies as area}
@@ -287,7 +287,7 @@
 				Also, I have some experience in programming using GameMaker language or GDScript to make small games in the past. I have some basics too on programming Arduino microcontrollers. Beside those, I like reading about cryptography, testing, compilers, and latest technology.
 			</SimpleText>
 			<SimpleText>
-				Beside programming, I am also good in mathematics and logic. Both fields help me in validation, developing, troubleshooting, and authorization. These skills complement my other interests.
+				Beside programming, I am also good at mathematics and logic. Both fields help me in validation, developing, troubleshooting, and authorization. These skills complement my other interests.
 			</SimpleText>
 		</section>
 		<section id={contacts.id}>
