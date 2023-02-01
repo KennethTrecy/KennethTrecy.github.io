@@ -152,14 +152,14 @@
 	<svelte:fragment slot="content">
 		<StructuredSection itemprop="about" id={rationale.id}>
 			<SecondaryHeading headingInfo={rationale}/>
-			<p itemprop="mainEntity">
+			<p itemprop="mainEntity text">
 				Over the years, I have built and handled multiple projects to apply my knowledge. As a consequence, I gain experience to build them, to solve their technical issues, and to improve their technical design if possible. Building them helps me improve my decision-making in future projects and not to take things for granted that look like basic. Indeed, simplicity is hard.
 			</p>
 		</StructuredSection>
 		{#each projectGroups as projectGroup}
 			<StructuredSection id={projectGroup.id}>
 				<SecondaryHeading headingInfo={projectGroup}/>
-				<p itemprop="about">{projectGroup.description}</p>
+				<p itemprop="about text">{projectGroup.description}</p>
 				<StructuredUnorderedList isProjectList={true} class={[
 						"list-none",
 						"flex",
@@ -183,7 +183,7 @@
 		<StructuredSection itemtype="https://schema.org/WebContent"
 			id={otherProjects.id}>
 			<SecondaryHeading headingInfo={otherProjects}/>
-			<p itemprop="mainEntity">
+			<p itemprop="mainEntity text">
 				Beside my personal projects, I have also contributed to on several open-source projects by requesting pull requests. Usually, I add a small part of code for a certain functionality that I want.
 			</p>
 		</StructuredSection>

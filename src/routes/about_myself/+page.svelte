@@ -225,7 +225,7 @@
 	<svelte:fragment slot="content">
 		<section id={journey.id}>
 			<SecondaryHeading headingInfo={journey} mustBeRaw={true}/>
-			<p>
+			<p itemprop="text">
 				I am
 				<span itemprop="name">
 					<span itemprop="givenName">Kenneth Trecy</span>
@@ -237,31 +237,31 @@
 				</span>
 				Some people call me <em itemprop="alternateName">"Tretchi"</em>. I have been into programming for a long time.
 			</p>
-			<p>
+			<p itemprop="text">
 				Initially, I was introduced in web development around 2013. Since then, I study every summer and make some small-scale web projects in a low-end Android phone.
 			</p>
-			<p>
+			<p itemprop="text">
 				As the time passed by, I quickly got interest in back-end programming due to
 				<abbr title="PHP Hypertext Preprocessor">PHP</abbr>.
 				It sparked my interest in <span itemprop="knowsAbout">cybersecurity,
 				<abbr title="Create, Read, Update, and Delete">CRUD</abbr> applications, servers, and others</span>.
 			</p>
-			<p>
+			<p itemprop="text">
 				By the time I got my hands on a computer, I spent some time making personal command-line programs using C++. I may have reinvent the wheel but only for purpose of studying.
 			</p>
-			<p>
+			<p itemprop="text">
 				Using this approach, I faced the issues that other developers have already solved. It made me appreciate the existing solutions and strive to be better. I was like a toddler back then mimicking the adults.
 			</p>
-			<p>
+			<p itemprop="text">
 				That did not stopped me to try from thinking innovative solutions. Some solutions are better suited for certain situations. As the saying goes, <em>"it depends!"</em>.
 			</p>
 		</section>
 		<section itemprop="knowsAbout" id={skills.id}>
 			<SecondaryHeading headingInfo={skills} mustBeRaw={true}/>
-			<p>
+			<p itemprop="text">
 				I am specialized in web development, particularly back-end programming. The reason was that back-end programming could support most communication technologies in an increasingly interconnected world. Whether it is a e-commerce website, Internet of Things, or games, they need at a server to process and store their data.
 			</p>
-			<p>
+			<p itemprop="text">
 				Some of my web development skills are the following:
 			</p>
 			<ul>
@@ -282,16 +282,16 @@
 					</li>
 				{/each}
 			</ul>
-			<p>
+			<p itemprop="text">
 				Also, I have some experience in programming using GameMaker language or GDScript to make small games in the past. I have some basics too on programming Arduino microcontrollers. Beside those, I like reading about cryptography, testing, compilers, and latest technology.
 			</p>
-			<p>
+			<p itemprop="text">
 				Beside programming, I am also good in mathematics and logic. Both fields help me in validation, developing, troubleshooting, and authorization. These skills complement my other interests.
 			</p>
 		</section>
 		<section id={contacts.id}>
 			<SecondaryHeading headingInfo={contacts} mustBeRaw={true}/>
-			<p>Should you wish to get in touch with me, I can be communicated on different platforms.</p>
+			<p itemprop="text">Should you wish to get in touch with me, I can be communicated on different platforms.</p>
 			<ul class="list-none not-prose">
 				<StructuredListItem itemprop="contactPoint" itemtype="https://schema.org/ContactPoint">
 					<ContactLink
