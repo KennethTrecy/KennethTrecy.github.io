@@ -6,7 +6,7 @@ import dictionary from "~/data/dictionary"
 test("paragraphs have correct grammar", async ({ page }) => {
 	await page.goto("/")
 
-	const allTexts = await page.locator("css=p[itemprop], h1, h2, a span.flex-1").allInnerTexts()
+	const allTexts = await page.locator("css=.menu a span.flex-1, [itemprop~=text], h1, h2").allInnerTexts()
 
 	const pendingResults: Promise<any>[] = allTexts.map(async text => {
 		const result = await check(text, {
