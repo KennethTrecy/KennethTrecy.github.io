@@ -125,7 +125,7 @@
 				<p itemprop="text" class="mt-4">
 					Other projects can be found on the
 					<ExternalLink address="https://github.com/KennethTrecy?tab=repositories">
-						list of my respositories
+						list of my repositories
 					</ExternalLink>
 					in
 					<BaseLink
