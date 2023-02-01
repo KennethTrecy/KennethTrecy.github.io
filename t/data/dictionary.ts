@@ -1,5 +1,12 @@
 export default [
+	// Person names
 	"KennethTrecy",
 	"Trecy",
-	"Rollup"
+
+	// Package names
+	"@tailwindcss",
+	"daisyUI",
+	"rgb-hex",
+	"Rollup",
+	"SvelteKit"
 ]
