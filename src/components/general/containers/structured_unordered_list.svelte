@@ -1,6 +1,6 @@
 <script lang="ts">
-	export let itemprop: string = "hasPart"
-	export let itemtype: string = "https://schema.org/ItemList"
+	export const itemprop: string = "hasPart"
+	export const itemtype: string = "https://schema.org/ItemList"
 
 	export let isProjectList: boolean
 	let otherClasses: string[] = []
