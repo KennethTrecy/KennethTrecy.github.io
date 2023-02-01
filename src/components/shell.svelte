@@ -10,6 +10,7 @@
 	import ThemeToggler from "@/components/shell/theme_toggler.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import ThirdPartyLink from "@/components/shell/third-party_link.svelte"
+	import SimpleText from "@/components/general/containers/simple_text.svelte"
 </script>
 
 <svelte:head>
@@ -60,7 +61,7 @@
 		</main>
 		<footer class="footer footer-center p-4">
 			<div>
-				<p itemprop="text">
+				<SimpleText>
 					This website contains third-party packages:
 					<ThirdPartyLink
 						packageName="Svelte"
@@ -99,16 +100,16 @@
 						homeLink="https://kit.svelte.dev/"
 						licenseName="MIT"
 						licenseLink="https://github.com/sveltejs/kit/blob/master/LICENSE"/>.
-				</p>
+				</SimpleText>
 			</div>
 		</footer>
 		<footer class="footer justify-around items-center p-4 bg-base-200">
 			<section class="grid-flow-col items-center">
 				<img alt="logo" src={Logo} width="64" height="64" class="flex-none w-16 h-auto"/>
-				<p itemprop="copyrightNotice text">
+				<SimpleText itemprop="copyrightNotice">
 					Copyright © <span itemprop="copyrightYear">2023</span>
 					<span itemprop="copyrightHolder">Kenneth Trecy Tobias</span>.
-				</p>
+				</SimpleText>
 			</section>
 			<section class="col-span-2 md:col-span-1 place-self-stretch md:place-self-auto text-center">
 				<p itemprop="text" class="w-full">

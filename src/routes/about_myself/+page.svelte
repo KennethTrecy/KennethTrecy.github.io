@@ -6,6 +6,7 @@
 	import ContactLink from "@/components/about_myself/contact_link.svelte"
 	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
+	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
@@ -225,7 +226,7 @@
 	<svelte:fragment slot="content">
 		<section id={journey.id}>
 			<SecondaryHeading headingInfo={journey} mustBeRaw={true}/>
-			<p itemprop="text">
+			<SimpleText>
 				I am
 				<span itemprop="name">
 					<span itemprop="givenName">Kenneth Trecy</span>
@@ -236,34 +237,34 @@
 					<span itemprop="address">Philippines</span>.
 				</span>
 				Some people call me <em itemprop="alternateName">"Tretchi"</em>. I have been into programming for a long time.
-			</p>
-			<p itemprop="text">
+			</SimpleText>
+			<SimpleText>
 				Initially, I was introduced in web development around 2013. Since then, I study every summer and make some small-scale web projects in a low-end Android phone.
-			</p>
-			<p itemprop="text">
+			</SimpleText>
+			<SimpleText>
 				As the time passed by, I quickly got interest in back-end programming due to
 				<abbr title="PHP Hypertext Preprocessor">PHP</abbr>.
 				It sparked my interest in <span itemprop="knowsAbout">cybersecurity,
 				<abbr title="Create, Read, Update, and Delete">CRUD</abbr> applications, servers, and others</span>.
-			</p>
-			<p itemprop="text">
+			</SimpleText>
+			<SimpleText>
 				By the time I got my hands on a computer, I spent some time making personal command-line programs using C++. I may have reinvent the wheel but only for purpose of studying.
-			</p>
-			<p itemprop="text">
+			</SimpleText>
+			<SimpleText>
 				Using this approach, I faced the issues that other developers have already solved. It made me appreciate the existing solutions and strive to be better. I was like a toddler back then mimicking the adults.
-			</p>
-			<p itemprop="text">
+			</SimpleText>
+			<SimpleText>
 				That did not stopped me to try from thinking innovative solutions. Some solutions are better suited for certain situations. As the saying goes, <em>"it depends!"</em>.
-			</p>
+			</SimpleText>
 		</section>
 		<section itemprop="knowsAbout" id={skills.id}>
 			<SecondaryHeading headingInfo={skills} mustBeRaw={true}/>
-			<p itemprop="text">
+			<SimpleText>
 				I am specialized in web development, particularly back-end programming. The reason was that back-end programming could support most communication technologies in an increasingly interconnected world. Whether it is a e-commerce website, Internet of Things, or games, they need at a server to process and store their data.
-			</p>
-			<p itemprop="text">
+			</SimpleText>
+			<SimpleText>
 				Some of my web development skills are the following:
-			</p>
+			</SimpleText>
 			<ul>
 				{#each technologies as area}
 					<li>
@@ -282,16 +283,16 @@
 					</li>
 				{/each}
 			</ul>
-			<p itemprop="text">
+			<SimpleText>
 				Also, I have some experience in programming using GameMaker language or GDScript to make small games in the past. I have some basics too on programming Arduino microcontrollers. Beside those, I like reading about cryptography, testing, compilers, and latest technology.
-			</p>
-			<p itemprop="text">
+			</SimpleText>
+			<SimpleText>
 				Beside programming, I am also good in mathematics and logic. Both fields help me in validation, developing, troubleshooting, and authorization. These skills complement my other interests.
-			</p>
+			</SimpleText>
 		</section>
 		<section id={contacts.id}>
 			<SecondaryHeading headingInfo={contacts} mustBeRaw={true}/>
-			<p itemprop="text">Should you wish to get in touch with me, I can be communicated on different platforms.</p>
+			<SimpleText>Should you wish to get in touch with me, I can be communicated on different platforms.</SimpleText>
 			<ul class="list-none not-prose">
 				<StructuredListItem itemprop="contactPoint" itemtype="https://schema.org/ContactPoint">
 					<ContactLink

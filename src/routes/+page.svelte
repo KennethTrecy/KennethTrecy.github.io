@@ -10,6 +10,7 @@
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
+	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
@@ -90,8 +91,8 @@
 		<div class="flex flex-col justify-center items-center">
 			<StructuredSection id={specialty.id}>
 				<SecondaryHeading headingInfo={specialty}/>
-				<p itemprop="text">Web development is my expertise. I have tried different technologies too, such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
-				<p itemprop="text">During my free time, I apply my skills on my personal projects.</p>
+				<SimpleText>Web development is my expertise. I have tried different technologies too, such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</SimpleText>
+				<SimpleText>During my free time, I apply my skills on my personal projects.</SimpleText>
 			</StructuredSection>
 			<StructuredSection itemtype="https://schema.org/CreativeWork" id={personalProjects.id}>
 				<SecondaryHeading class={[ "my-4" ]} headingInfo={personalProjects}/>
@@ -141,12 +142,12 @@
 			</StructuredSection>
 			<StructuredSection id={security.id}>
 				<SecondaryHeading headingInfo={security}/>
-				<p itemprop="text">
+				<SimpleText>
 					I also like reading articles about cybersecurity. For this reason, I build applications with security in mind as much as possible to be resilient from attacks.
-				</p>
-				<p itemprop="text">
+				</SimpleText>
+				<SimpleText>
 					I have also made my recent commits to be signed with my own cryptographic keys.
-				</p>
+				</SimpleText>
 			</StructuredSection>
 		</div>
 	</svelte:fragment>
