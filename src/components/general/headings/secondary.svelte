@@ -22,7 +22,9 @@
 <h2
 	class={joinedClasses}
 	on:mouseout={_event => isMouseIn = false}
-	on:mouseover={_event => isMouseIn = true}>
+	on:blur={_event => isMouseIn = false}
+	on:mouseover={_event => isMouseIn = true}
+	on:focus={_event => isMouseIn = true}>
 	{#if hasPrefix}
 		<span>{headingInfo.prefix}</span>
 	{/if}

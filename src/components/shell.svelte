@@ -10,11 +10,12 @@
 	import ThemeToggler from "@/components/shell/theme_toggler.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import ThirdPartyLink from "@/components/shell/third-party_link.svelte"
+	import SimpleText from "@/components/general/containers/simple_text.svelte"
 </script>
 
 <svelte:head>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 	<link
 		rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Roboto&family=Material+Symbols+Outlined:wght,FILL@400,1&display=swap"/>
@@ -42,7 +43,7 @@
 			<nav class="navbar-center">
 				<a href="/" class="text-color-inherit flex flex-row items-start">
 					<img src={Logo} alt="logo" width="64" height="64" class="flex-none w-16 h-auto"/>
-					<p itemprop="name" class="flex-1 ml-2 my-auto">
+					<p itemprop="name text" class="flex-1 ml-2 my-auto">
 						KennethTrecy
 					</p>
 				</a>
@@ -60,7 +61,7 @@
 		</main>
 		<footer class="footer footer-center p-4">
 			<div>
-				<p>
+				<SimpleText>
 					This website contains third-party packages:
 					<ThirdPartyLink
 						packageName="Svelte"
@@ -99,19 +100,19 @@
 						homeLink="https://kit.svelte.dev/"
 						licenseName="MIT"
 						licenseLink="https://github.com/sveltejs/kit/blob/master/LICENSE"/>.
-				</p>
+				</SimpleText>
 			</div>
 		</footer>
 		<footer class="footer justify-around items-center p-4 bg-base-200">
 			<section class="grid-flow-col items-center">
 				<img alt="logo" src={Logo} width="64" height="64" class="flex-none w-16 h-auto"/>
-				<p itemprop="copyrightNotice">
+				<SimpleText itemprop="copyrightNotice">
 					Copyright © <span itemprop="copyrightYear">2023</span>
 					<span itemprop="copyrightHolder">Kenneth Trecy Tobias</span>.
-				</p>
+				</SimpleText>
 			</section>
 			<section class="col-span-2 md:col-span-1 place-self-stretch md:place-self-auto text-center">
-				<p class="w-full">
+				<p itemprop="text" class="w-full">
 					Website's code (not texts containing my personal information) are under
 					<ExternalLink
 						address={LICENSE_URL}
@@ -120,7 +121,7 @@
 			</section>
 			<section class="socials place-self-end mr-4 md:place-self-auto md:mr-auto justify-center items-center justify-items-center">
 				<span class="footer-title opacity-100">Socials</span>
-				<p class="grid grid-cols-2 grid-rows-1 gap-x-4">
+				<p itemprop="text" class="grid grid-cols-2 grid-rows-1 gap-x-4">
 					<ProfileLink
 						address="https://www.linkedin.com/in/kenneth-trecy-tobias/"
 						icon="linkedin"
@@ -147,10 +148,10 @@
 					width="288"
 					height="288"
 					class="flex-none w-full h-auto"/>
-				<p itemprop="name" class="flex-1 my-auto text-2xl">
+				<p itemprop="name text" class="flex-1 my-auto text-2xl">
 					KennethTrecy
 				</p>
-				<p itemprop="description" class="prose">
+				<p itemprop="description text" class="prose">
 					An open-source technology enthusiast, back-end experimentalist, and analytic tester.
 				</p>
 			</a>

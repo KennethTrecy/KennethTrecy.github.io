@@ -16,7 +16,7 @@
 			<h3 itemprop="name">{title}</h3>
 			<Icon name="chevron_right"/>
 		</a>
-		<p itemprop="about" class="prose">
+		<p itemprop="about text" class="prose">
 			{description}
 		</p>
 	</div>
