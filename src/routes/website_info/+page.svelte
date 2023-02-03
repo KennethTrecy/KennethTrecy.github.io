@@ -9,6 +9,9 @@
 	import ThirdPartyLink from "@/components/shell/third-party_package_link.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
+	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
+	import StructuredUnorderedList
+		from "@/components/general/containers/structured_unordered_list.svelte"
 
 	interface ThirdPartySoftware {
 		name: string,
@@ -81,20 +84,17 @@
 			<p>
 
 			</p>
-			<ul itemprop="mainEntity">
+			<StructuredUnorderedList itemprop="mainEntity" isProjectList={false}>
 				{#each thirdPartyPackages as thirdPartyPackage}
-					<li
-						itemprop="itemListElement"
-						itemscope
-						itemtype="https://schema.org/SoftwareApplication">
+					<StructuredListItem itemtype="https://schema.org/SoftwareApplication">
 						<ThirdPartyLink
 							packageName={thirdPartyPackage.name}
 							homeLink={thirdPartyPackage.homepage}
 							licenseName={thirdPartyPackage.licenseName}
 							licenseLink={thirdPartyPackage.licenseLink}/>
-					</li>
+					</StructuredListItem>
 				{/each}
-			</ul>
+			</StructuredUnorderedList>
 		</section>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
