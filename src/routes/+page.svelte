@@ -12,12 +12,11 @@
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
+	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
-	import StructuredUnorderedList
-		from "@/components/general/containers/structured_unordered_list.svelte"
 
 	const greetings = defineHeadingInfo({
 		"prefix": "👋🏽",
@@ -96,13 +95,16 @@
 			</StructuredSection>
 			<StructuredSection itemtype="https://schema.org/CreativeWork" id={personalProjects.id}>
 				<SecondaryHeading class={[ "my-4" ]} headingInfo={personalProjects}/>
-				<StructuredUnorderedList isProjectList={true} class={[
-					"list-none",
-					"list-outside",
-					"flex",
-					"flex-col",
-					"flex-wrap"
-				]}>
+				<StructuredList
+					order="unordered"
+					isProjectList={true}
+					class={[
+						"list-none",
+						"list-outside",
+						"flex",
+						"flex-col",
+						"flex-wrap"
+					]}>
 					<StructuredListItem isInProjectList={true}>
 						<ProjectCard
 							title="Virdafils"
@@ -121,7 +123,7 @@
 							description="Builder for common Rollup configurations."
 							link="https://github.com/KennethTrecy/comroconbu"/>
 					</StructuredListItem>
-				</StructuredUnorderedList>
+				</StructuredList>
 				<p itemprop="text" class="mt-4">
 					Other projects can be found on the
 					<ExternalLink address="https://github.com/KennethTrecy?tab=repositories">
