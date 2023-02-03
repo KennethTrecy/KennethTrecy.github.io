@@ -16,9 +16,9 @@
 	$: hasExternal = Array.isArray(relationship)
 		? relationship.indexOf("external") > -1
 		: relationship === "external"
+	$: mayShowExternalIcon = hasExternal && mayIndicateExternal
 	$: joinedClasses = [
 		"link",
-		hasExternal && mayIndicateExternal ? "external_link" : "",
 		...otherClasses
 	].filter(Boolean).join(" ")
 </script>
@@ -32,9 +32,12 @@
 	{target}>
 	<slot></slot>
 </a>
+{#if mayShowExternalIcon}
+	<span></span>
+{/if}
 
 <style lang="postcss">
-	.external_link::after {
+	span::after {
 		font-family: "Material Symbols Outlined";
 		content: "north_east";
 	}

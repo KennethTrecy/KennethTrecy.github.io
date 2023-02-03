@@ -294,7 +294,10 @@
 			<SecondaryHeading headingInfo={contacts} mustBeRaw={true}/>
 			<SimpleText>Should you wish to get in touch with me, I can be communicated on different platforms.</SimpleText>
 			<ul class="list-none not-prose">
-				<StructuredListItem itemprop="contactPoint" itemtype="https://schema.org/ContactPoint">
+				<StructuredListItem
+					itemprop="contactPoint"
+					itemtype="https://schema.org/ContactPoint"
+					class={[ "flex", "flex-row", "flex-nowrap", "items-center" ]}>
 					<ContactLink
 						address="https://www.linkedin.com/in/kenneth-trecy-tobias/"
 						icon="linkedin"
@@ -302,7 +305,10 @@
 						username="kenneth-trecy-tobias"
 						usernameProperty="name"/>
 				</StructuredListItem>
-				<StructuredListItem itemprop="contactPoint" itemtype="https://schema.org/ContactPoint">
+				<StructuredListItem
+					itemprop="contactPoint"
+					itemtype="https://schema.org/ContactPoint"
+					class={[ "flex", "flex-row", "flex-nowrap", "items-center" ]}>
 					<ContactLink
 						address="https://github.com/KennethTrecy/"
 						icon="github"
@@ -310,7 +316,10 @@
 						username="KennethTrecy"
 						usernameProperty="name"/>
 				</StructuredListItem>
-				<StructuredListItem itemprop="contactPoint" itemtype="https://schema.org/ContactPoint">
+				<StructuredListItem
+					itemprop="contactPoint"
+					itemtype="https://schema.org/ContactPoint"
+					class={[ "flex", "flex-row", "flex-nowrap", "items-center" ]}>
 					<ContactLink
 						address="mailto:web.kennethtobias@gmail.com"
 						icon="gmail"
