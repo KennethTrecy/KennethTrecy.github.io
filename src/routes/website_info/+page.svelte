@@ -1,6 +1,8 @@
 <script lang="ts">
 	import pageMeta from "@/routes/website_info/meta"
+	import { internalTypes, authorTypes } from "@/components/general/links/constants"
 
+	import BaseLink from "@/components/general/links/base.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import PrimaryHeader from "@/components/general/headings/primary.svelte"
@@ -39,6 +41,10 @@
 	const deployment = defineHeadingInfo({
 		"prefix": "↗️",
 		"text": "Deployment"
+	})
+	const concerns = defineHeadingInfo({
+		"prefix": "✋🏽",
+		"text": "Do you have concerns?"
 	})
 
 	const compiledThirdPartyPackages: ThirdPartyPackage[] = [
@@ -154,6 +160,16 @@
 				<ExternalLink address="https://developers.cloudflare.com/pages/">
 					Cloudflare Pages
 				</ExternalLink> then, the bundled resources will be deployed globally.
+			</SimpleText>
+		</StructuredSection>
+		<StructuredSection id={concerns.id}>
+			<SecondaryHeading headingInfo={concerns}/>
+			<SimpleText itemprop="mainEntity">
+				Should there be concerns in the contents of my web pages, please do not hesitate to <BaseLink
+				itemprop="mainEntityOfPage"
+				address="/about_myself"
+				relationship={[ ...internalTypes, ...authorTypes ]}
+				context="self">contact me</BaseLink> on one of my communication channels. You can also send offers. You can also ask for technical help if you are a beginner.
 			</SimpleText>
 		</StructuredSection>
 	</svelte:fragment>
