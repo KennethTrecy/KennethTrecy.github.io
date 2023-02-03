@@ -145,8 +145,14 @@
 			</section>
 		</footer>
 	</div>
-	<div tabindex="0" class="drawer-side">
-		<label for="menu_drawer_checkbox" class="drawer-overlay"></label>
+	<div class="drawer-side">
+		<label
+			for="menu_drawer_checkbox"
+			class="drawer-overlay"
+			tabindex="0"
+			role="switch"
+			aria-checked={isMenuShown}
+			on:keyup|stopPropagation|preventDefault={toggleMenu}></label>
 		<aside class="w-80 bg-primary">
 			<a
 				itemprop="creator" itemscope itemtype="https://schema.org/Person"
