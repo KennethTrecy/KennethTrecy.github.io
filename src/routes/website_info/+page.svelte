@@ -84,6 +84,7 @@
 			<SimpleText itemprop="about">
 				The website uses several open-source projects. Some dependencies which are included during compilation have been mentioned below.
 			</SimpleText>
+			<link itemprop="itemListOrder" href="https://schema.org/ItemListUnordered"/>
 			<StructuredUnorderedList itemprop="mainEntity" isProjectList={false}>
 				{#each thirdPartyPackages as thirdPartyPackage}
 					<StructuredListItem itemtype="https://schema.org/SoftwareApplication">
