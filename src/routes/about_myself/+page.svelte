@@ -270,7 +270,7 @@
 					<li>
 						<section>
 							<h3>{area.name}</h3>
-							<ul class="columns-2 lg:columns-3 leading-loose not-prose">
+							<ul class="columns-2 leading-loose not-prose">
 								{#each area.technologies as technology}
 									<li title={technology.name} class="my-0">
 										<ExternalLink address={technology.homepage}>
