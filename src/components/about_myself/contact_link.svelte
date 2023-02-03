@@ -17,7 +17,8 @@
 	title={platformName}
 	{address}
 	relationship={relationships}
-	class={[ "inline-flex", "flex-row", "flex-nowrap", "items-center" ]}>
+	class={[ "inline-flex", "flex-row", "flex-nowrap", "items-center" ]}
+	mustEnforceVerticalCenter={true}>
 	<BrandIcon {icon} alternateName={platformName}/>
 	<span itemprop={usernameProperty} class="ml-4">{username}</span>
 </Link>
