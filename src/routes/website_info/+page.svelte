@@ -7,11 +7,11 @@
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import ThirdPartyLink from "@/components/shell/third-party_package_link.svelte"
+	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
+	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
-	import StructuredUnorderedList
-		from "@/components/general/containers/structured_unordered_list.svelte"
 
 	interface ThirdPartySoftware {
 		name: string,
@@ -73,19 +73,19 @@
 <StructuredArticle itemtype="https://schema.org/Website">
 	<PrimaryHeader slot="title">{pageMeta.title}</PrimaryHeader>
 	<svelte:fragment slot="content">
-		<section itemprop="hasPart" itemscope itemtype="https://schema.org/WebContent">
+		<StructuredSection itemtype="https://schema.org/WebContent">
 			<SecondaryHeading headingInfo={motivation}/>
 			<SimpleText itemprop="mainEntity">
 				The purpose of this website is to showcase my projects that I have built. The website itself is also project where I can apply my different skills. It also contains valuable information to connect me and my future employers.
 			</SimpleText>
-		</section>
-		<section itemprop="mentions" itemscope itemtype="https://schema.org/ItemList">
+		</StructuredSection>
+		<StructuredSection itemtype="https://schema.org/ItemList">
 			<SecondaryHeading headingInfo={dependencies}/>
 			<SimpleText itemprop="about">
 				The website uses several open-source projects. Some dependencies which are included during compilation have been mentioned below.
 			</SimpleText>
 			<link itemprop="itemListOrder" href="https://schema.org/ItemListUnordered"/>
-			<StructuredUnorderedList itemprop="mainEntity" isProjectList={false}>
+			<StructuredList itemprop="mainEntity" isProjectList={false}>
 				{#each thirdPartyPackages as thirdPartyPackage}
 					<StructuredListItem itemtype="https://schema.org/SoftwareApplication">
 						<ThirdPartyLink
@@ -95,8 +95,8 @@
 							licenseLink={thirdPartyPackage.licenseLink}/>
 					</StructuredListItem>
 				{/each}
-			</StructuredUnorderedList>
-		</section>
+			</StructuredList>
+		</StructuredSection>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
 </StructuredArticle>
