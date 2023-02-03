@@ -3,22 +3,37 @@
 
 	export let address: string
 	export let context: AnchorTarget = "self"
+	export let mayIndicateExternal = true
 	export let relationship: AnchorLinkType|AnchorLinkType[]
 	export let title: string|undefined = undefined
 	export let itemprop: string|undefined = undefined
-	let group: string[] = []
+	let otherClasses: string[] = []
 
 	export { group as class }
 
 	$: relationshipTypes = Array.isArray(relationship) ? relationship.sort().join(" ") : relationship
 	$: target = context === "self" ? "_self" : "_blank"
+	$: hasExternal = Array.isArray(relationship)
+		? relationship.indexOf("external") > -1
+		: relationship === "external"
+	$: joinedClasses = [
+		hasExternal && mayIndicateExternal ? "external_link" : "",
+		...otherClasses
+	].filter(Boolean).join(" ")
 </script>
 
 <a
 	{title}
 	{itemprop}
 	href={address}
-	class={[ "link", ...group ].join(" ")}
+	class={joinedClasses}
 	rel={relationshipTypes} {target}>
-	<slot></slot>
+	<span class="link"><slot></slot></span>
 </a>
+
+<style lang="postcss">
+	.external_link::after {
+		font-family: "Material Symbols Outlined";
+		content: "north_east";
+	}
+</style>
