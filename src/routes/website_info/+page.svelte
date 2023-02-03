@@ -2,11 +2,11 @@
 	import pageMeta from "@/routes/website_info/meta"
 
 	import CommonHead from "@/components/general/common_head.svelte"
-	import MainArticle from "@/components/general/main_article.svelte"
 	import PrimaryHeader from "@/components/general/headings/primary.svelte"
 	import SecondaryHeader from "@/components/general/headings/secondary.svelte"
 	import ThirdPartyLink from "@/components/shell/third-party_package_link.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
+	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 
 	interface ThirdPartySoftware {
 		name: string,
@@ -57,7 +57,7 @@
 	<CommonHead {pageMeta}/>
 </svelte:head>
 
-<MainArticle itemtype="https://schema.org/Website">
+<StructuredArticle itemtype="https://schema.org/Website">
 	<PrimaryHeader slot="title">{pageMeta.title}</PrimaryHeader>
 	<svelte:fragment slot="content">
 		<section itemprop="hasPart" itemscope itemtype="https://schema.org/WebContent">
@@ -88,4 +88,4 @@
 		</section>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
-</MainArticle>
+</StructuredArticle>
