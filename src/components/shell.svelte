@@ -11,6 +11,8 @@
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import ThirdPartyLink from "@/components/shell/third-party_link.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
+
+	let isMenuShown = false
 </script>
 
 <svelte:head>
@@ -30,13 +32,16 @@
 		type="checkbox"
 		class="drawer-toggle"
 		aria-labelledby="menu_toggler"
-		id="menu_drawer_checkbox"/>
+		id="menu_drawer_checkbox"
+		bind:checked={isMenuShown}/>
 	<div class="drawer-content">
 		<header class="navbar border-b-[0.05rem] mb-8">
 			<label
 				tabindex="0"
 				id="menu_toggler"
 				for="menu_drawer_checkbox"
+				role="switch"
+				aria-checked={isMenuShown}
 				class="drawer-button btn bg-transparent border-transparent lg:hidden text-secondary hover:text-primary hover:bg-secondary">
 				<Icon name="menu"/>
 			</label>
