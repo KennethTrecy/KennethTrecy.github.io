@@ -44,7 +44,6 @@
 			<SimpleText itemprop="mainEntity">
 				Thre are <strong itemprop="numberOfItems">{levels.length}</strong> levels of abstraction listed below. They are ordered from easiest to hardest usage and implementation.
 			</SimpleText>
-			<link itemprop="itemListOrder" href="https://schema.org/ItemListOrderAscending"/>
 			<StructuredList order="ascending" hasOwnScope={false} isProjectList={false}>
 				{#each levels as level}
 					<StructuredListItem>
