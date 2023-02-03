@@ -4,58 +4,58 @@ export interface PageMeta {
 	 */
 	readonly path: string
 
-	 /**
-	  * Version of the document.
-	  */
+	/**
+	 * Version of the document.
+	 */
 	readonly version: string
 
-	 /**
-	  * First published date of the document.
-	  */
+	/**
+	 * First published date of the document.
+	 */
 	readonly datePublished: Date
 
-	 /**
-	  * Modification date of the document.
-	  */
+	/**
+	 * Modification date of the document.
+	 */
 	readonly dateModified: Date
 
-	 /**
-	  * title of the document
-	  */
+	/**
+	 * Title of the document
+	 */
 	readonly title: string
 
-	 /**
-	  * Description of the document.
-	  */
+	/**
+	 * Description of the document.
+	 */
 	readonly description: string
 
-	 /**
-	  * Keywords to understand the document.
-	  */
+	/**
+	 * Keywords to understand the document.
+	 */
 	readonly keywords: string[]
 
-	 /**
-	  * Author of the document (wrote the contents in either pen-and-paper or virtually).
-	  */
+	/**
+	 * Author of the document (wrote the contents in either pen-and-paper or virtually).
+	 */
 	readonly author: string
 
-	 /**
-	  * The one who typed the document into web page.
-	  */
+	/**
+	 * The one who typed the document into web page.
+	 */
 	readonly encoder: string
 
-	 /**
-	  * the one who designed the document.
-	  */
+	/**
+	 * The one who designed the document.
+	 */
 	readonly designer: string[]
 
-	 /**
-	  * Person who instructed to compile the document into web page.
-	  */
+	/**
+	 * Person who instructed to compile the document into web page.
+	 */
 	readonly creator: string
 
-	 /**
-	  * License of the document.
-	  */
+	/**
+	 * License of the document.
+	 */
 	readonly license: string
 }

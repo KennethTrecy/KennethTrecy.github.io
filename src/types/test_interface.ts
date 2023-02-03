@@ -1,4 +1,4 @@
 export interface MockInfo {
-	id: Symbol
-	receivedData: any[]
+	id: symbol
+	receivedData: unknown[]
 }
