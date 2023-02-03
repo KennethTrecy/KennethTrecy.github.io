@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Order } from "@/types/body"
 
+	export let hasOwnScope = true
 	export let itemprop: string = "hasPart"
 	export const itemtype: string = "https://schema.org/ItemList"
 
@@ -21,21 +22,33 @@
 
 <link itemprop="itemListOrder" href={listOrder}/>
 {#if order === "unordered"}
-	<ul
-		{itemprop}
-		itemscope
-		{itemtype}
-		class={joinedClasses}>
-		<slot></slot>
-	</ul>
+	{#if hasOwnScope}
+		<ul
+			{itemprop}
+			itemscope
+			{itemtype}
+			class={joinedClasses}>
+			<slot></slot>
+		</ul>
+	{:else}
+		<ul class={joinedClasses}>
+			<slot></slot>
+		</ul>
+	{/if}
 {:else}
-	<ol
-		{itemprop}
-		itemscope
-		{itemtype}
-		class={joinedClasses}>
-		<slot></slot>
-	</ol>
+	{#if hasOwnScope}
+		<ol
+			{itemprop}
+			itemscope
+			{itemtype}
+			class={joinedClasses}>
+			<slot></slot>
+		</ol>
+	{:else}
+		<ol class={joinedClasses}>
+			<slot></slot>
+		</ol>
+	{/if}
 {/if}
 
 <style lang="postcss">
