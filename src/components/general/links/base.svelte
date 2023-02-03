@@ -4,7 +4,6 @@
 	export let address: string
 	export let context: AnchorTarget = "self"
 	export let mayIndicateExternal = true
-	export let mustEnforceVerticalCenter = false
 	export let relationship: AnchorLinkType|AnchorLinkType[]
 	export let title: string|undefined = undefined
 	export let itemprop: string|undefined = undefined
@@ -17,15 +16,10 @@
 	$: hasExternal = Array.isArray(relationship)
 		? relationship.indexOf("external") > -1
 		: relationship === "external"
-	$: joinedParentClasses = [
+	$: joinedClasses = [
+		"link",
 		hasExternal && mayIndicateExternal ? "external_link" : "",
 		...otherClasses
-	].filter(Boolean).join(" ")
-	$: joinedChildClasses = [
-		"link",
-		...mustEnforceVerticalCenter
-			? [ "flex", "flex-row", "flex-nowrap", "items-center" ]
-			: []
 	].filter(Boolean).join(" ")
 </script>
 
@@ -33,10 +27,10 @@
 	{title}
 	{itemprop}
 	href={address}
-	class={joinedParentClasses}
+	class={joinedClasses}
 	rel={relationshipTypes}
 	{target}>
-	<span class={joinedChildClasses}><slot></slot></span>
+	<slot></slot>
 </a>
 
 <style lang="postcss">
