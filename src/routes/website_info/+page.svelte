@@ -2,6 +2,7 @@
 	import pageMeta from "@/routes/website_info/meta"
 
 	import CommonHead from "@/components/general/common_head.svelte"
+	import ExternalLink from "@/components/general/links/external.svelte"
 	import PrimaryHeader from "@/components/general/headings/primary.svelte"
 	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
@@ -34,6 +35,10 @@
 	const linkedDependencies = defineHeadingInfo({
 		"prefix": "🔗",
 		"text": "Linked Dependencies"
+	})
+	const deployment = defineHeadingInfo({
+		"prefix": "↗️",
+		"text": "Deployment"
 	})
 
 	const compiledThirdPartyPackages: ThirdPartyPackage[] = [
@@ -135,6 +140,21 @@
 					</StructuredListItem>
 				{/each}
 			</StructuredList>
+		</StructuredSection>
+		<StructuredSection id={deployment.id}>
+			<SecondaryHeading headingInfo={deployment}/>
+			<SimpleText itemprop="mainEntity">
+				To build the website, <ThirdPartyLink
+					packageName="SvelteKit"
+					homeLink="https://kit.svelte.dev/"
+					licenseName="MIT"
+					licenseLink="https://github.com/sveltejs/kit/blob/master/LICENSE"/>
+				has been used to bundle necessary resources for each web page.
+				The bundling happens in
+				<ExternalLink address="https://developers.cloudflare.com/pages/">
+					Cloudflare Pages
+				</ExternalLink> then, the bundled resources will be deployed globally.
+			</SimpleText>
 		</StructuredSection>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>

@@ -73,14 +73,6 @@
 		<footer class="footer footer-center p-4">
 			<div>
 				<SimpleText>
-					The site has been built using
-					<ThirdPartyLink
-						packageName="SvelteKit"
-						homeLink="https://kit.svelte.dev/"
-						licenseName="MIT"
-						licenseLink="https://github.com/sveltejs/kit/blob/master/LICENSE"/>.
-				</SimpleText>
-				<SimpleText>
 					<strong>Disclaimer</strong>: Otherwise noted, the views or interests expressed in this site are my views, and does not necessarily reflect the view or interest of any entity I have a connection to; whether it is an organization, or someone I have worked with.
 				</SimpleText>
 			</div>
