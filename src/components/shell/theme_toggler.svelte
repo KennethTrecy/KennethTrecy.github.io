@@ -19,7 +19,7 @@
 	})
 
 	function toggleTheme(event: KeyboardEvent): void {
-		toggleBySpace(event, mustBeInDarkMode)
+		toggleBySpace(event, () => $mustBeInDarkMode = !$mustBeInDarkMode)
 	}
 </script>
 

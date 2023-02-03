@@ -1,7 +1,5 @@
-import type { Writable } from "svelte/store"
-
-export default function(event: KeyboardEvent, toggle: Writable<boolean>): void {
+export default function(event: KeyboardEvent, action: () => void): void {
 	if (event.key === " ") {
-		toggle.update(currentState => !currentState)
+		action()
 	}
 }
