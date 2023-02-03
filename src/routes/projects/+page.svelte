@@ -9,12 +9,11 @@
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
+	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
-	import StructuredUnorderedList
-		from "@/components/general/containers/structured_unordered_list.svelte"
 
 	interface SoftwareProject {
 		name: string
@@ -161,7 +160,7 @@
 			<StructuredSection id={projectGroup.id}>
 				<SecondaryHeading headingInfo={projectGroup}/>
 				<SimpleText itemprop="about">{projectGroup.description}</SimpleText>
-				<StructuredUnorderedList isProjectList={true} class={[
+				<StructuredList isProjectList={true} class={[
 						"list-none",
 						"flex",
 						"flex-col",
@@ -178,7 +177,7 @@
 								link={project.repositoryLink}/>
 						</StructuredListItem>
 					{/each}
-				</StructuredUnorderedList>
+				</StructuredList>
 			</StructuredSection>
 		{/each}
 		<StructuredSection itemtype="https://schema.org/WebContent"

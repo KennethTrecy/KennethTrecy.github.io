@@ -7,13 +7,15 @@
 
 	const initialClasses = isProjectList ? [ "project_list" ] : []
 	export { otherClasses as class }
+
+	$: joinedClasses = [ ...initialClasses, ...otherClasses].join(" ")
 </script>
 
 <ul
 	{itemprop}
 	itemscope
 	{itemtype}
-	class={[ ...initialClasses, ...otherClasses].join(" ")}>
+	class={joinedClasses}>
 	<slot></slot>
 </ul>
 
