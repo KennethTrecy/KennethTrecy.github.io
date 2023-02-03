@@ -122,7 +122,7 @@
 		<StructuredSection itemtype="https://schema.org/ItemList" id={linkedDependencies.id}>
 			<SecondaryHeading headingInfo={linkedDependencies}/>
 			<SimpleText itemprop="about">
-				Meanwhile, some dependencies have been used in the website by using <code>&lt;link&gt;</code> tags. They are included to enhance appearance.
+				Meanwhile, some dependencies have been used in the website by using <code>&lt;link&gt;</code> tags or through <code>src</code> attribute of <code>&lt;img&gt;</code> tags. They are included to enhance appearance.
 			</SimpleText>
 			<StructuredList order="unordered" isProjectList={false} hasOwnScope={false}>
 				{#each linkedThirdPartyPackages as thirdPartyPackage}
