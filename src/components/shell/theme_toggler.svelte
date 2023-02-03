@@ -19,6 +19,8 @@
 </script>
 
 <label
+	role="switch"
+	aria-checked={$mustBeInDarkMode}
 	data-set-theme={otherTheme}
 	data-act-class={LIGHT_MODE}
 	class="btn bg-transparent border-transparent cursor-pointer text-secondary hover:text-primary hover:bg-secondary">
