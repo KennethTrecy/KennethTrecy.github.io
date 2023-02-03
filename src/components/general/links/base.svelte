@@ -17,7 +17,7 @@
 		? relationship.indexOf("external") > -1
 		: relationship === "external"
 	$: joinedClasses = [
-		hasExternal && mayIndicateExternal ? "external_link" : "",
+		"link",
 		...otherClasses
 	].filter(Boolean).join(" ")
 </script>
@@ -26,9 +26,10 @@
 	{title}
 	{itemprop}
 	href={address}
-	class={joinedClasses}
+	class={otherClasses.join(" ")}
+	class:external_link={hasExternal && mayIndicateExternal}
 	rel={relationshipTypes} {target}>
-	<span class="link"><slot></slot></span>
+	<span class={joinedClasses}><slot></slot></span>
 </a>
 
 <style lang="postcss">
