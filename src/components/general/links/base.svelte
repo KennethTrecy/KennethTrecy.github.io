@@ -21,6 +21,12 @@
 		"link",
 		...otherClasses
 	].filter(Boolean).join(" ")
+
+	function visitLink(event: KeyboardEvent): void {
+		if (event.key === "Enter") {
+			location.href = address
+		}
+	}
 </script>
 
 <a
@@ -33,7 +39,7 @@
 	<slot></slot>
 </a>
 {#if mayShowExternalIcon}
-	<span></span>
+	<span class="cursor-pointer" role="link" tabindex="0" on:keyup={visitLink}></span>
 {/if}
 
 <style lang="postcss">
