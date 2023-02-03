@@ -160,7 +160,10 @@
 			<StructuredSection id={projectGroup.id}>
 				<SecondaryHeading headingInfo={projectGroup}/>
 				<SimpleText itemprop="about">{projectGroup.description}</SimpleText>
-				<StructuredList isProjectList={true} class={[
+				<StructuredList
+					order="unordered"
+					isProjectList={true}
+					class={[
 						"list-none",
 						"flex",
 						"flex-col",
