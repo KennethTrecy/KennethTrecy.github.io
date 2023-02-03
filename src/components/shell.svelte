@@ -7,12 +7,17 @@
 	import Menu from "@/components/shell/menu.svelte"
 	import Icon from "@/components/general/icon.svelte"
 	import ProfileLink from "@/components/shell/profile_link.svelte"
+	import toggleBySpace from "@/components/general/toggle_by_space"
 	import ThemeToggler from "@/components/shell/theme_toggler.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import ThirdPartyLink from "@/components/shell/third-party_link.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 
 	let isMenuShown = false
+
+	function toggleMenu(event: KeyboardEvent): void {
+		toggleBySpace(event, () => isMenuShown = !isMenuShown)
+	}
 </script>
 
 <svelte:head>
@@ -42,6 +47,7 @@
 				for="menu_drawer_checkbox"
 				role="switch"
 				aria-checked={isMenuShown}
+				on:keyup|stopPropagation|preventDefault={toggleMenu}
 				class="drawer-button btn bg-transparent border-transparent lg:hidden text-secondary hover:text-primary hover:bg-secondary">
 				<Icon name="menu"/>
 			</label>
