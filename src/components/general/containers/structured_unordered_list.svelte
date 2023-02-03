@@ -1,5 +1,5 @@
 <script lang="ts">
-	export const itemprop: string = "hasPart"
+	export let itemprop: string = "hasPart"
 	export const itemtype: string = "https://schema.org/ItemList"
 
 	export let isProjectList: boolean
@@ -10,9 +10,9 @@
 </script>
 
 <ul
-	itemprop="hasPart"
+	{itemprop}
 	itemscope
-	itemtype="https://schema.org/ItemList"
+	{itemtype}
 	class={[ ...initialClasses, ...otherClasses].join(" ")}>
 	<slot></slot>
 </ul>
