@@ -16,13 +16,21 @@
 		themeChange(false)
 		$mustBeInDarkMode = document.documentElement.dataset.theme === DARK_MODE
 	})
+
+	function toggleTheme(event: KeyboardEvent): void {
+		if (event.key === " ") {
+			$mustBeInDarkMode = !$mustBeInDarkMode
+		}
+	}
 </script>
 
 <label
+	tabindex="0"
 	role="switch"
 	aria-checked={$mustBeInDarkMode}
 	data-set-theme={otherTheme}
 	data-act-class={LIGHT_MODE}
+	on:keyup|stopPropagation|preventDefault={toggleTheme}
 	class="btn bg-transparent border-transparent cursor-pointer text-secondary hover:text-primary hover:bg-secondary">
 	<Icon name={modeIcon}/>
 	<input
