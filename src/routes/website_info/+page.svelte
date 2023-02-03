@@ -81,9 +81,9 @@
 		</section>
 		<section itemprop="mentions" itemscope itemtype="https://schema.org/ItemList">
 			<SecondaryHeading headingInfo={dependencies}/>
-			<p>
-
-			</p>
+			<SimpleText itemprop="about">
+				The website uses several open-source projects. Some dependencies which are included during compilation have been mentioned below.
+			</SimpleText>
 			<StructuredUnorderedList itemprop="mainEntity" isProjectList={false}>
 				{#each thirdPartyPackages as thirdPartyPackage}
 					<StructuredListItem itemtype="https://schema.org/SoftwareApplication">
