@@ -5,7 +5,7 @@ import { render, cleanup } from "@testing-library/svelte"
 
 import Component from "./primary.svelte"
 
-describe("Primary header behavior", () => {
+describe("Primary heading behavior", () => {
 	it("can render prefix as separate", async () => {
 		const prefix = "I. "
 		const { container } = render(Component, { prefix })

@@ -3,10 +3,10 @@
 	import { page } from "$app/stores"
 
 	import CommonHead from "@/components/general/common_head.svelte"
-	import MainArticle from "@/components/general/main_article.svelte"
-	import PrimaryHeader from "@/components/general/headings/primary.svelte"
+	import definePageMeta from "@/components/general/define_page_meta"
+	import PrimaryHeading from "@/components/general/headings/primary.svelte"
+	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 
-	const pageVersion = "0.1"
 	const title = derived(
 		page,
 		pageData => (
@@ -46,19 +46,26 @@
 			return DEFAULT_MESSAGE
 		}
 	)
+
+	const pageMeta = derived(
+		[ page, title ],
+		([ pageData, titleData ]) => definePageMeta(pageData.url.pathname, {
+			"title": titleData,
+			"description": "Encountered an error while visiting a page.",
+			"keywords": [ "error" ],
+			"version": "0.1",
+			"datePublished": new Date()
+		})
+	)
  </script>
 
 <svelte:head>
-	<CommonHead
-		title={$title}
-		description="Encountered an error while visiting a page."
-		keywords={[ "error" ]}
-		{pageVersion}/>
+	<CommonHead pageMeta={$pageMeta}/>
 </svelte:head>
 
-<MainArticle>
-	<PrimaryHeader slot="title">{$page.status} | {$page.error?.message}</PrimaryHeader>
+<StructuredArticle>
+	<PrimaryHeading slot="title">{$page.status} | {$page.error?.message}</PrimaryHeading>
 	<p slot="content">
 		{$message}
 	</p>
-</MainArticle>
+</StructuredArticle>

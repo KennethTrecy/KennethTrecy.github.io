@@ -1,12 +1,20 @@
 <script lang="ts">
+	import type { HeadingInfo } from "@/types/body"
+
 	import pageMeta from "@/routes/about_myself/meta"
 
 	import CommonHead from "@/components/general/common_head.svelte"
-	import MainArticle from "@/components/general/main_article.svelte"
 	import ProjectCard from "@/components/general/project_card.svelte"
-	import PrimaryHeader from "@/components/general/headings/primary.svelte"
-	import SecondaryHeader from "@/components/general/headings/secondary.svelte"
+	import defineHeadingInfo from "@/components/general/define_heading_info"
+	import PrimaryHeading from "@/components/general/headings/primary.svelte"
+	import SimpleText from "@/components/general/containers/simple_text.svelte"
+	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
+	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
+	import StructuredSection from "@/components/general/containers/structured_section.svelte"
+	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
+	import StructuredUnorderedList
+		from "@/components/general/containers/structured_unordered_list.svelte"
 
 	interface SoftwareProject {
 		name: string
@@ -14,21 +22,28 @@
 		repositoryLink: string
 	}
 
-	interface SoftwareProjectGroup {
-		id: string,
-		prefix: string,
-		name: string,
+	interface SoftwareProjectGroup extends HeadingInfo<"defined"> {
 		extraListClasses: string[],
 		extraListItemClasses: string[],
 		description: string,
 		projects: SoftwareProject[]
 	}
 
+	const rationale = defineHeadingInfo({
+		"prefix": "❔",
+		"text": "Rationale"
+	})
+	const otherProjects = defineHeadingInfo({
+		"prefix": "🔶",
+		"text": "Other projects"
+	})
+
 	const projectGroups: SoftwareProjectGroup[] = [
 		{
-			"id": "personal_public_projects",
-			"prefix": "🌏",
-			"name": "Personal Public Projects",
+			...defineHeadingInfo({
+				"prefix": "🌏",
+				"text": "Personal Public Projects"
+			}),
 			"description": "These projects were used at least once in other software (private or public). Some of them are independent. Some complement or require other software with their recent versions or old versions only. I cannot maintain all of my personal projects, yet I try to keep the code future-proof and welcome changes as much as possible.",
 			"projects": [
 				{
@@ -64,9 +79,10 @@
 			"extraListClasses": [ "md:max-h-[50rem]" ],
 			"extraListItemClasses": [ "md:w-1/2" ]
 		}, {
-			"id": "template_projects",
-			"prefix": "🏭",
-			"name": "Template Projects",
+			...defineHeadingInfo({
+				"prefix": "🏭",
+				"text": "Template Projects"
+			}),
 			"description": "Once a certain a workflow becomes repetitive for me in different personal projects, I generalize it into one public template. I would be happy if someone uses one of these.",
 			"projects": [
 				{
@@ -86,10 +102,11 @@
 			"extraListClasses": [],
 			"extraListItemClasses": []
 		}, {
-			"id": "chearmyp",
-			"prefix": "🧪",
-			"name": "Chearmyp Language Project",
-			"description": "I did a experimental language back then named \"Chearmyp\". For now, it only works as data format for my other projects. Originally, the repositories below came from one source and I split it according to concerns. They are also public projects.",
+			...defineHeadingInfo({
+				"prefix": "🧪",
+				"text": "Chearmyp Language Project"
+			}),
+			"description": "I did an experimental language back then named \"Chearmyp\". For now, it only works as data format for my other projects. Originally, the repositories below came from one source and I split it according to concerns. They are also public projects.",
 			"projects": [
 				{
 					"name": "Abstract Chearmyp Token",
@@ -131,55 +148,46 @@
 	<CommonHead {pageMeta}/>
 </svelte:head>
 
-<MainArticle itemtype="https://schema.org/CreativeWorkSeries">
-	<PrimaryHeader slot="title">List of Involved Projects</PrimaryHeader>
+<StructuredArticle itemtype="https://schema.org/CreativeWorkSeries">
+	<PrimaryHeading slot="title">List of Involved Projects</PrimaryHeading>
 	<svelte:fragment slot="content">
-		<section itemprop="about" itemscope itemtype="https://schema.org/WebContent">
-			<SecondaryHeader id="rationale" prefix="❔">Rationale</SecondaryHeader>
-			<p itemprop="mainEntity">
+		<StructuredSection itemprop="about" id={rationale.id}>
+			<SecondaryHeading headingInfo={rationale}/>
+			<SimpleText itemprop="mainEntity">
 				Over the years, I have built and handled multiple projects to apply my knowledge. As a consequence, I gain experience to build them, to solve their technical issues, and to improve their technical design if possible. Building them helps me improve my decision-making in future projects and not to take things for granted that look like basic. Indeed, simplicity is hard.
-			</p>
-		</section>
+			</SimpleText>
+		</StructuredSection>
 		{#each projectGroups as projectGroup}
-			<section itemprop="hasPart" itemscope itemtype="https://schema.org/CreativeWorkSeries">
-				<SecondaryHeader
-					id={projectGroup.id}
-					prefix={projectGroup.prefix}>
-					{projectGroup.name}
-				</SecondaryHeader>
-				<p itemprop="about">{projectGroup.description}</p>
-				<ul
-					class={[
-						"project_list",
+			<StructuredSection id={projectGroup.id}>
+				<SecondaryHeading headingInfo={projectGroup}/>
+				<SimpleText itemprop="about">{projectGroup.description}</SimpleText>
+				<StructuredUnorderedList isProjectList={true} class={[
 						"list-none",
 						"flex",
 						"flex-col",
 						"flex-wrap",
 						...projectGroup.extraListClasses
-					].join(" ")}>
+					]}>
 					{#each projectGroup.projects as project}
-						<li class={projectGroup.extraListItemClasses.join(" ")}>
+						<StructuredListItem
+							isInProjectList={true}
+							class={projectGroup.extraListItemClasses}>
 							<ProjectCard
 								title={project.name}
 								description={project.description}
 								link={project.repositoryLink}/>
-						</li>
+						</StructuredListItem>
 					{/each}
-				</ul>
-			</section>
+				</StructuredUnorderedList>
+			</StructuredSection>
 		{/each}
-		<section itemprop="hasPart" itemscope itemtype="https://schema.org/WebContent">
-			<SecondaryHeader id="other_projects" prefix="🔶">Other projects</SecondaryHeader>
-			<p itemprop="mainEntity">
+		<StructuredSection itemtype="https://schema.org/WebContent"
+			id={otherProjects.id}>
+			<SecondaryHeading headingInfo={otherProjects}/>
+			<SimpleText itemprop="mainEntity text">
 				Beside my personal projects, I have also contributed to on several open-source projects by requesting pull requests. Usually, I add a small part of code for a certain functionality that I want.
-			</p>
-		</section>
+			</SimpleText>
+		</StructuredSection>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
-</MainArticle>
-
-<style lang="postcss">
-	ul.project_list, ul.project_list > li {
-		@apply m-0 p-0;
-	}
-</style>
+</StructuredArticle>
