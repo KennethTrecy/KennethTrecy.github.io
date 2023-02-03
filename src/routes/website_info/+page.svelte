@@ -96,7 +96,7 @@
 <StructuredArticle itemtype="https://schema.org/Website">
 	<PrimaryHeader slot="title">{pageMeta.title}</PrimaryHeader>
 	<svelte:fragment slot="content">
-		<StructuredSection itemtype="https://schema.org/WebContent">
+		<StructuredSection itemtype="https://schema.org/WebContent" id={motivation.id}>
 			<SecondaryHeading headingInfo={motivation}/>
 			<SimpleText itemprop="mainEntity">
 				The purpose of this website is to showcase my projects that I have built. The website itself is also project where I can apply my different skills. It also contains valuable information to connect me and my future employers.
