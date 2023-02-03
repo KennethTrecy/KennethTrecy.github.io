@@ -4,6 +4,7 @@
 	import { DARK_MODE, LIGHT_MODE, mustBeInDarkMode, themeName } from "@/components/general/theme"
 
 	import Icon from "@/components/general/icon.svelte"
+	import toggleBySpace from "@/components/general/toggle_by_space"
 
 	$: if (typeof window !== "undefined") document.documentElement.setAttribute(
 		"data-theme",
@@ -18,9 +19,7 @@
 	})
 
 	function toggleTheme(event: KeyboardEvent): void {
-		if (event.key === " ") {
-			$mustBeInDarkMode = !$mustBeInDarkMode
-		}
+		toggleBySpace(event, mustBeInDarkMode)
 	}
 </script>
 
