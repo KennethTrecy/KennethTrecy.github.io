@@ -4,6 +4,7 @@
 	import { DARK_MODE, LIGHT_MODE, mustBeInDarkMode, themeName } from "@/components/general/theme"
 
 	import Icon from "@/components/general/icon.svelte"
+	import toggleBySpace from "@/components/general/toggle_by_space"
 
 	$: if (typeof window !== "undefined") document.documentElement.setAttribute(
 		"data-theme",
@@ -16,11 +17,19 @@
 		themeChange(false)
 		$mustBeInDarkMode = document.documentElement.dataset.theme === DARK_MODE
 	})
+
+	function toggleTheme(event: KeyboardEvent): void {
+		toggleBySpace(event, () => $mustBeInDarkMode = !$mustBeInDarkMode)
+	}
 </script>
 
 <label
+	tabindex="0"
+	role="switch"
+	aria-checked={$mustBeInDarkMode}
 	data-set-theme={otherTheme}
 	data-act-class={LIGHT_MODE}
+	on:keyup|stopPropagation|preventDefault={toggleTheme}
 	class="btn bg-transparent border-transparent cursor-pointer text-secondary hover:text-primary hover:bg-secondary">
 	<Icon name={modeIcon}/>
 	<input

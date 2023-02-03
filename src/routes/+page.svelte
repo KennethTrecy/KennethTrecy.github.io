@@ -10,17 +10,17 @@
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
+	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
+	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
-	import StructuredUnorderedList
-		from "@/components/general/containers/structured_unordered_list.svelte"
 
 	const greetings = defineHeadingInfo({
 		"prefix": "👋🏽",
-		"text": "Hi,"
+		"text": "Hi! "
 	})
 	const specialty = defineHeadingInfo({
 		"prefix": "🌟",
@@ -73,7 +73,7 @@
 					<SecondaryHeading headingInfo={greetings}>
 						I am <span itemprop="givenName">Kenneth Trecy</span>!
 					</SecondaryHeading>
-					<p itemprop="knowsAbout" class="py-6 container md:px-0">
+					<p itemprop="knowsAbout text" class="py-6 container md:px-0">
 						I usually develop the back-end of the applications I have handled. I ensure their quality though automated tests through CI.
 					</p>
 					<BaseLink
@@ -90,18 +90,21 @@
 		<div class="flex flex-col justify-center items-center">
 			<StructuredSection id={specialty.id}>
 				<SecondaryHeading headingInfo={specialty}/>
-				<p itemprop="text">Web development is my expertise. I have tried different technologies too such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</p>
-				<p>During my free time, I apply my skills on my personal projects.</p>
+				<SimpleText>Web development is my expertise. I have tried different technologies too, such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</SimpleText>
+				<SimpleText>During my free time, I apply my skills on my personal projects.</SimpleText>
 			</StructuredSection>
 			<StructuredSection itemtype="https://schema.org/CreativeWork" id={personalProjects.id}>
 				<SecondaryHeading class={[ "my-4" ]} headingInfo={personalProjects}/>
-				<StructuredUnorderedList isProjectList={true} class={[
-					"list-none",
-					"list-outside",
-					"flex",
-					"flex-col",
-					"flex-wrap"
-				]}>
+				<StructuredList
+					order="unordered"
+					isProjectList={true}
+					class={[
+						"list-none",
+						"list-outside",
+						"flex",
+						"flex-col",
+						"flex-wrap"
+					]}>
 					<StructuredListItem isInProjectList={true}>
 						<ProjectCard
 							title="Virdafils"
@@ -120,11 +123,11 @@
 							description="Builder for common Rollup configurations."
 							link="https://github.com/KennethTrecy/comroconbu"/>
 					</StructuredListItem>
-				</StructuredUnorderedList>
-				<p class="mt-4">
+				</StructuredList>
+				<p itemprop="text" class="mt-4">
 					Other projects can be found on the
 					<ExternalLink address="https://github.com/KennethTrecy?tab=repositories">
-						list of my respositories
+						list of my repositories
 					</ExternalLink>
 					in
 					<BaseLink
@@ -141,12 +144,12 @@
 			</StructuredSection>
 			<StructuredSection id={security.id}>
 				<SecondaryHeading headingInfo={security}/>
-				<p itemprop="text">
+				<SimpleText>
 					I also like reading articles about cybersecurity. For this reason, I build applications with security in mind as much as possible to be resilient from attacks.
-				</p>
-				<p itemprop="text">
+				</SimpleText>
+				<SimpleText>
 					I have also made my recent commits to be signed with my own cryptographic keys.
-				</p>
+				</SimpleText>
 			</StructuredSection>
 		</div>
 	</svelte:fragment>

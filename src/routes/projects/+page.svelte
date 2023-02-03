@@ -7,13 +7,13 @@
 	import ProjectCard from "@/components/general/project_card.svelte"
 	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
+	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
+	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
-	import StructuredUnorderedList
-		from "@/components/general/containers/structured_unordered_list.svelte"
 
 	interface SoftwareProject {
 		name: string
@@ -105,7 +105,7 @@
 				"prefix": "🧪",
 				"text": "Chearmyp Language Project"
 			}),
-			"description": "I did a experimental language back then named \"Chearmyp\". For now, it only works as data format for my other projects. Originally, the repositories below came from one source and I split it according to concerns. They are also public projects.",
+			"description": "I did an experimental language back then named \"Chearmyp\". For now, it only works as data format for my other projects. Originally, the repositories below came from one source and I split it according to concerns. They are also public projects.",
 			"projects": [
 				{
 					"name": "Abstract Chearmyp Token",
@@ -152,15 +152,18 @@
 	<svelte:fragment slot="content">
 		<StructuredSection itemprop="about" id={rationale.id}>
 			<SecondaryHeading headingInfo={rationale}/>
-			<p itemprop="mainEntity">
+			<SimpleText itemprop="mainEntity">
 				Over the years, I have built and handled multiple projects to apply my knowledge. As a consequence, I gain experience to build them, to solve their technical issues, and to improve their technical design if possible. Building them helps me improve my decision-making in future projects and not to take things for granted that look like basic. Indeed, simplicity is hard.
-			</p>
+			</SimpleText>
 		</StructuredSection>
 		{#each projectGroups as projectGroup}
 			<StructuredSection id={projectGroup.id}>
 				<SecondaryHeading headingInfo={projectGroup}/>
-				<p itemprop="about">{projectGroup.description}</p>
-				<StructuredUnorderedList isProjectList={true} class={[
+				<SimpleText itemprop="about">{projectGroup.description}</SimpleText>
+				<StructuredList
+					order="unordered"
+					isProjectList={true}
+					class={[
 						"list-none",
 						"flex",
 						"flex-col",
@@ -177,15 +180,15 @@
 								link={project.repositoryLink}/>
 						</StructuredListItem>
 					{/each}
-				</StructuredUnorderedList>
+				</StructuredList>
 			</StructuredSection>
 		{/each}
 		<StructuredSection itemtype="https://schema.org/WebContent"
 			id={otherProjects.id}>
 			<SecondaryHeading headingInfo={otherProjects}/>
-			<p itemprop="mainEntity">
+			<SimpleText itemprop="mainEntity text">
 				Beside my personal projects, I have also contributed to on several open-source projects by requesting pull requests. Usually, I add a small part of code for a certain functionality that I want.
-			</p>
+			</SimpleText>
 		</StructuredSection>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
