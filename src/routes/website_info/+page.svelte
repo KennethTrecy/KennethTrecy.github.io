@@ -27,9 +27,13 @@
 		"prefix": "🚴🏽",
 		"text": "The Motivation"
 	})
-	const dependencies = defineHeadingInfo({
+	const bundledDependencies = defineHeadingInfo({
 		"prefix": "🧬",
-		"text": "Dependencies"
+		"text": "Bundled Dependencies"
+	})
+	const linkedDependencies = defineHeadingInfo({
+		"prefix": "🔗",
+		"text": "Linked Dependencies"
 	})
 	const thirdPartyPackages: ThirdPartyPackage[] = [
 		{
@@ -80,12 +84,28 @@
 			</SimpleText>
 		</StructuredSection>
 		<StructuredSection itemtype="https://schema.org/ItemList">
-			<SecondaryHeading headingInfo={dependencies}/>
+			<SecondaryHeading headingInfo={bundledDependencies}/>
 			<SimpleText itemprop="about">
-				The website uses several open-source projects. Some dependencies which are included during compilation have been mentioned below.
+				The website uses several open-source projects. Some dependencies (which are included during bundling) have been mentioned below.
 			</SimpleText>
-			<link itemprop="itemListOrder" href="https://schema.org/ItemListUnordered"/>
-			<StructuredList itemprop="mainEntity" isProjectList={false}>
+			<StructuredList order="unordered" isProjectList={false} hasOwnScope={false}>
+				{#each thirdPartyPackages as thirdPartyPackage}
+					<StructuredListItem itemtype="https://schema.org/SoftwareApplication">
+						<ThirdPartyLink
+							packageName={thirdPartyPackage.name}
+							homeLink={thirdPartyPackage.homepage}
+							licenseName={thirdPartyPackage.licenseName}
+							licenseLink={thirdPartyPackage.licenseLink}/>
+					</StructuredListItem>
+				{/each}
+			</StructuredList>
+		</StructuredSection>
+		<StructuredSection itemtype="https://schema.org/ItemList">
+			<SecondaryHeading headingInfo={linkedDependencies}/>
+			<SimpleText itemprop="about">
+
+			</SimpleText>
+			<StructuredList order="unordered" isProjectList={false} hasOwnScope={false}>
 				{#each thirdPartyPackages as thirdPartyPackage}
 					<StructuredListItem itemtype="https://schema.org/SoftwareApplication">
 						<ThirdPartyLink
