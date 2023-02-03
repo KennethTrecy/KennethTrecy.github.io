@@ -3,7 +3,9 @@
 
 	import CommonHead from "@/components/general/common_head.svelte"
 	import PrimaryHeader from "@/components/general/headings/primary.svelte"
-	import SecondaryHeader from "@/components/general/headings/secondary.svelte"
+	import defineHeadingInfo from "@/components/general/define_heading_info"
+	import SimpleText from "@/components/general/containers/simple_text.svelte"
+	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import ThirdPartyLink from "@/components/shell/third-party_package_link.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
@@ -18,6 +20,14 @@
 		licenseLink: string
 	}
 
+	const motivation = defineHeadingInfo({
+		"prefix": "🚴🏽",
+		"text": "The Motivation"
+	})
+	const dependencies = defineHeadingInfo({
+		"prefix": "🧬",
+		"text": "Dependencies"
+	})
 	const thirdPartyPackages: ThirdPartyPackage[] = [
 		{
 			"name": "Svelte",
@@ -61,13 +71,13 @@
 	<PrimaryHeader slot="title">{pageMeta.title}</PrimaryHeader>
 	<svelte:fragment slot="content">
 		<section itemprop="hasPart" itemscope itemtype="https://schema.org/WebContent">
-			<SecondaryHeader id=""></SecondaryHeader>
-			<p itemprop="mainEntity">
-
-			</p>
+			<SecondaryHeading headingInfo={motivation}/>
+			<SimpleText itemprop="mainEntity">
+				The purpose of this website is to showcase my projects that I have built. The website itself is also project where I can apply my different skills. It also contains valuable information to connect me and my future employers.
+			</SimpleText>
 		</section>
 		<section itemprop="mentions" itemscope itemtype="https://schema.org/ItemList">
-			<SecondaryHeader id="dependencies">Dependencies</SecondaryHeader>
+			<SecondaryHeading headingInfo={dependencies}/>
 			<p>
 
 			</p>
