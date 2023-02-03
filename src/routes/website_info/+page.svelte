@@ -35,7 +35,8 @@
 		"prefix": "🔗",
 		"text": "Linked Dependencies"
 	})
-	const thirdPartyPackages: ThirdPartyPackage[] = [
+
+	const compiledThirdPartyPackages: ThirdPartyPackage[] = [
 		{
 			"name": "Svelte",
 			"homepage": "https://svelte.dev/",
@@ -68,6 +69,24 @@
 			"licenseLink": "https://github.com/saadeghi/theme-change/blob/master/LICENSE"
 		}
 	]
+	const linkedThirdPartyPackages: ThirdPartyPackage[] = [
+		{
+			"name": "Roboto",
+			"homepage": "https://fonts.google.com/specimen/Roboto",
+			"licenseName": "Apache License, Version 2.0",
+			"licenseLink": "https://www.apache.org/licenses/LICENSE-2.0"
+		}, {
+			"name": "Material Symbols",
+			"homepage": "https://fonts.google.com/icons",
+			"licenseName": "Apache License, Version 2.0",
+			"licenseLink": "https://www.apache.org/licenses/LICENSE-2.0"
+		}, {
+			"name": "Simple Icons",
+			"homepage": "https://simpleicons.org/",
+			"licenseName": "Creative Commons Zero v1.0 Universal",
+			"licenseLink": "https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md"
+		}
+	]
 </script>
 
 <svelte:head>
@@ -83,13 +102,13 @@
 				The purpose of this website is to showcase my projects that I have built. The website itself is also project where I can apply my different skills. It also contains valuable information to connect me and my future employers.
 			</SimpleText>
 		</StructuredSection>
-		<StructuredSection itemtype="https://schema.org/ItemList">
+		<StructuredSection itemtype="https://schema.org/ItemList" id={bundledDependencies.id}>
 			<SecondaryHeading headingInfo={bundledDependencies}/>
 			<SimpleText itemprop="about">
 				The website uses several open-source projects. Some dependencies (which are included during bundling) have been mentioned below.
 			</SimpleText>
 			<StructuredList order="unordered" isProjectList={false} hasOwnScope={false}>
-				{#each thirdPartyPackages as thirdPartyPackage}
+				{#each compiledThirdPartyPackages as thirdPartyPackage}
 					<StructuredListItem itemtype="https://schema.org/SoftwareApplication">
 						<ThirdPartyLink
 							packageName={thirdPartyPackage.name}
@@ -100,13 +119,13 @@
 				{/each}
 			</StructuredList>
 		</StructuredSection>
-		<StructuredSection itemtype="https://schema.org/ItemList">
+		<StructuredSection itemtype="https://schema.org/ItemList" id={linkedDependencies.id}>
 			<SecondaryHeading headingInfo={linkedDependencies}/>
 			<SimpleText itemprop="about">
-
+				Meanwhile, some dependencies have been used in the website by using <code>&lt;link&gt;</code> tags. They are included to enhance appearance.
 			</SimpleText>
 			<StructuredList order="unordered" isProjectList={false} hasOwnScope={false}>
-				{#each thirdPartyPackages as thirdPartyPackage}
+				{#each linkedThirdPartyPackages as thirdPartyPackage}
 					<StructuredListItem itemtype="https://schema.org/SoftwareApplication">
 						<ThirdPartyLink
 							packageName={thirdPartyPackage.name}
