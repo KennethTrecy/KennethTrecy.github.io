@@ -7,3 +7,4 @@ export type AnchorLinkType =
 	| "opener"
 	| "bookmark"
 	| "me"
+	| "author"
