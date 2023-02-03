@@ -9,7 +9,7 @@
 	export let itemprop: string|undefined = undefined
 	let otherClasses: string[] = []
 
-	export { group as class }
+	export { otherClasses as class }
 
 	$: relationshipTypes = Array.isArray(relationship) ? relationship.sort().join(" ") : relationship
 	$: target = context === "self" ? "_self" : "_blank"
