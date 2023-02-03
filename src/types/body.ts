@@ -8,3 +8,8 @@ export type HeadingInfo<T extends "defined"|"raw" = "raw"> = {
 		? { id?: string }
 		: never
 )
+
+export type Order =
+	| "ascending"
+	| "descending"
+	| "unordered"
