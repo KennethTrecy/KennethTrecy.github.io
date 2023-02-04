@@ -26,6 +26,8 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Treat .env.ci as the environment for CI
+      run: cp .env.ci .env
     - name: Install general dependencies
       run: npm install
     - name: Install dependencies to do E2E tests
