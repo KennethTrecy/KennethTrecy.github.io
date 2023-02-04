@@ -12,7 +12,16 @@ on:
       - master
       - dev
     paths:
+      - 'package.json'
+      - '.env.ci'
+      - 'vite.config.ts'
+      - 'svelte.config.js'
+      - 'tsconfig.json'
+      - 'postcss.config.cjs'
+      - 'tailwind.config.cjs'
       - 'src/**'
+      - 't/**'
+      - '.github/workflows/e2e.yml'
 
 jobs:
   e2e_tests:

@@ -12,7 +12,15 @@ on:
       - master
       - dev
     paths:
+      - 'package.json'
+      - '.env.ci'
+      - 'vite.config.ts'
+      - 'svelte.config.js'
+      - 'tsconfig.json'
+      - 'postcss.config.cjs'
+      - 'tailwind.config.cjs'
       - 'src/**'
+      - '.github/workflows/front-end.yml'
 
 jobs:
   web_front-end_tests:
