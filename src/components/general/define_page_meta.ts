@@ -1,6 +1,10 @@
 import type { PageMeta } from "@/types/head"
 
-import { WEBSITE_OWNER } from "@/constants/names"
+import {
+	WEBSITE_OWNER_GIVEN_NAME,
+	WEBSITE_OWNER_FAMILY_NAME,
+	WEBSITE_OWNER_LINK
+} from "@/constants/names"
 import { LICENSE } from "@/constants/miscellaneous_meta"
 
 export default function(path: string, {
@@ -10,9 +14,15 @@ export default function(path: string, {
 	title = "Draft Page",
 	description = "This is a draft page.",
 	keywords = [ "draft" ],
-	authors = [ WEBSITE_OWNER ],
+	authors = [
+		{
+			"givenName": WEBSITE_OWNER_GIVEN_NAME,
+			"familyName": WEBSITE_OWNER_FAMILY_NAME,
+			"link": WEBSITE_OWNER_LINK
+		}
+	],
 	encoder = authors[0],
-	designer = [ encoder ],
+	designers = [ encoder ],
 	creator = encoder,
 	license = LICENSE
 }: Partial<Exclude<PageMeta, "path">> = {}): PageMeta {
@@ -26,7 +36,7 @@ export default function(path: string, {
 		keywords,
 		authors,
 		encoder,
-		designer,
+		designers,
 		creator,
 		license
 	}
