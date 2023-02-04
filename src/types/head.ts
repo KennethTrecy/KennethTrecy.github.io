@@ -4,6 +4,11 @@ export interface PersonName {
 	link: string
 }
 
+interface LicenseInfo {
+	name: string,
+	link: string
+}
+
 export interface PageMeta {
 	/**
 	 * Path of the document within the website.
@@ -63,5 +68,5 @@ export interface PageMeta {
 	/**
 	 * License of the document.
 	 */
-	readonly license: string
+	readonly license: LicenseInfo
 }
