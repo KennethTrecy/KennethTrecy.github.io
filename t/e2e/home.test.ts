@@ -1,4 +1,3 @@
-import { check } from "gramma"
 import { test } from "@playwright/test"
 
 import checkGrammar from "../utilities/check_grammar"
