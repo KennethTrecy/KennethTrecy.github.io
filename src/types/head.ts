@@ -43,22 +43,22 @@ export interface PageMeta {
 	/**
 	 * Author of the document (wrote the contents in either pen-and-paper or virtually).
 	 */
-	readonly authors: string[]
+	readonly authors: PersonName[]
 
 	/**
 	 * The one who typed the document into web page.
 	 */
-	readonly encoder: string
+	readonly encoder: PersonName
 
 	/**
 	 * The one who designed the document.
 	 */
-	readonly designer: string[]
+	readonly designer: PersonName[]
 
 	/**
 	 * Person who instructed to compile the document into web page.
 	 */
-	readonly creator: string
+	readonly creator: PersonName
 
 	/**
 	 * License of the document.
