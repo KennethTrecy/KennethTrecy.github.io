@@ -1,0 +1,35 @@
+name: Web Front-end Tests
+
+on:
+  push: []
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - review_requested
+    branches:
+      - master
+    paths:
+      - 'src/**'
+
+jobs:
+  web_front-end_tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Testing on Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install general dependencies
+      run: npm install
+    - name: Install dependencies to do E2E tests
+      run: test:e2e:install
+    - name: Install dependencies to check grammar
+      run: npx gramma server install
+    - name: Run the tests
+      run: npm run test:e2e
