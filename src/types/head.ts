@@ -1,3 +1,9 @@
+export interface PersonName {
+	givenName: string,
+	familyName: string,
+	link: string
+}
+
 export interface PageMeta {
 	/**
 	 * Path of the document within the website.
