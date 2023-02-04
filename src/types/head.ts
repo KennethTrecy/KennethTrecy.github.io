@@ -58,4 +58,25 @@ export interface PageMeta {
 	 * License of the document.
 	 */
 	readonly license: string
+
+	/**
+	 * URL of the image that represents the page.
+	 *
+	 * See: https://ogp.me/
+	 */
+	readonly imageURL: string
+
+	/**
+	 * Canonical URL of the page.
+	 *
+	 * See: https://ogp.me/
+	 */
+	readonly pageURL: string
+
+	/**
+	 * Obejct type of the page.
+	 *
+	 * See: https://ogp.me/#types
+	 */
+	readonly objectType: "website"|"article"
 }
