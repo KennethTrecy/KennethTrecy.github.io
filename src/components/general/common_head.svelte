@@ -27,3 +27,5 @@
 <meta name="og:type" content="website"/>
 <meta name="og:image" content={imageURL}/>
 <meta name="og:url" content={pageURL}/>
+<meta name="og:description" content={pageMeta.description}/>
+<meta name="og:sitename" content="KennethTrecy"/>
