@@ -17,6 +17,7 @@
 </script>
 
 <title>{pageMeta.title}</title>
+<link rel="icon" href="favicon.ico" />
 <link rel="canonical" href={canonicalURL}/>
 <meta name="description" content={pageMeta.description}/>
 <meta name="keywords" content={pageMeta.keywords.join(",")}/>
