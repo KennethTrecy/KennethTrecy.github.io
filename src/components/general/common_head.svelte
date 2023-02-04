@@ -13,9 +13,11 @@
 	$: designers = pageMeta.designers
 		.map(person => `${person.givenName} ${person.familyName}`)
 		.join(" ")
+	$: canonicalURL = `https://kennethtrecy.pages.dev${pageMeta.path}`
 </script>
 
 <title>{pageMeta.title}</title>
+<link rel="canonical" href={canonicalURL}/>
 <meta name="description" content={pageMeta.description}/>
 <meta name="keywords" content={pageMeta.keywords.join(",")}/>
 <meta name="page-version" content={pageMeta.version}/>
