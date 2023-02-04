@@ -9,6 +9,10 @@
 	$: if (dev && pageMeta.description.length > Number(PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH)) {
 		console.warn(`Description for page entitled "${pageMeta.title}" is too long.`)
 	}
+
+	$: designers = pageMeta.designers
+		.map(person => `${person.givenName} ${person.familyName}`)
+		.join(" ")
 </script>
 
 <title>{pageMeta.title}</title>
@@ -16,9 +20,9 @@
 <meta name="keywords" content={pageMeta.keywords.join(",")}/>
 <meta name="page-version" content={pageMeta.version}/>
 {#each pageMeta.authors as author}
-	<meta name="author" content={author}/>
+	<meta name="author" content={`${author.givenName} ${author.familyName}`}/>
 {/each}
-<meta name="web_author" content={pageMeta.encoder}/>
-<meta name="designer" content={pageMeta.designer.join(" ")}/>
-<meta name="creator" content={pageMeta.creator}/>
+<meta name="web_author" content={`${pageMeta.encoder.givenName} ${pageMeta.encoder.familyName}`}/>
+<meta name="creator" content={`${pageMeta.creator.givenName} ${pageMeta.creator.familyName}`}/>
+<meta name="designer" content={designers}/>
 <meta name="license" content={pageMeta.license}/>
