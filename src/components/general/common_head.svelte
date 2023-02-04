@@ -28,4 +28,5 @@
 <meta name="web_author" content={`${pageMeta.encoder.givenName} ${pageMeta.encoder.familyName}`}/>
 <meta name="creator" content={`${pageMeta.creator.givenName} ${pageMeta.creator.familyName}`}/>
 <meta name="designer" content={designers}/>
-<meta name="license" content={pageMeta.license}/>
+<link rel="license" href={pageMeta.license.link}/>
+<meta name="license" content={pageMeta.license.name}/>
