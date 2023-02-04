@@ -1,3 +1,14 @@
+interface PersonInfo {
+	givenName: string,
+	familyName: string,
+	link: string
+}
+
+interface LicenseInfo {
+	name: string,
+	link: string
+}
+
 export interface PageMeta {
 	/**
 	 * Path of the document within the website.
@@ -37,25 +48,46 @@ export interface PageMeta {
 	/**
 	 * Author of the document (wrote the contents in either pen-and-paper or virtually).
 	 */
-	readonly author: string
+	readonly authors: PersonInfo[]
 
 	/**
 	 * The one who typed the document into web page.
 	 */
-	readonly encoder: string
+	readonly encoder: PersonInfo
 
 	/**
-	 * The one who designed the document.
+	 * The ones who designed the document.
 	 */
-	readonly designer: string[]
+	readonly designers: PersonInfo[]
 
 	/**
 	 * Person who instructed to compile the document into web page.
 	 */
-	readonly creator: string
+	readonly creator: PersonInfo
 
 	/**
 	 * License of the document.
 	 */
-	readonly license: string
+	readonly license: LicenseInfo
+
+	/**
+	 * URL of the image that represents the page.
+	 *
+	 * See: https://ogp.me/
+	 */
+	readonly imageURL: string
+
+	/**
+	 * Canonical URL of the page.
+	 *
+	 * See: https://ogp.me/
+	 */
+	readonly pageURL: string
+
+	/**
+	 * Obejct type of the page.
+	 *
+	 * See: https://ogp.me/#types
+	 */
+	readonly objectType: "website"|"article"|"profile"
 }
