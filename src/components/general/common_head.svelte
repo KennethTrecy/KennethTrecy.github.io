@@ -15,6 +15,9 @@
 <meta name="description" content={pageMeta.description}/>
 <meta name="keywords" content={pageMeta.keywords.join(",")}/>
 <meta name="page-version" content={pageMeta.version}/>
+{#each pageMeta.authors as author}
+	<meta name="author" content={author}/>
+{/each}
 <meta name="web_author" content={pageMeta.encoder}/>
 <meta name="designer" content={pageMeta.designer.join(" ")}/>
 <meta name="creator" content={pageMeta.creator}/>
