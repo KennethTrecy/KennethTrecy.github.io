@@ -39,8 +39,9 @@ jobs:
       run: cp .env.ci .env
     - name: Install general dependencies
       run: npm install
+      # See https://playwright.dev/docs/ci-intro
     - name: Install dependencies to do E2E tests
-      run: npm run test:e2e:install
+      run: npx playwright install --with-deps
     - name: Install dependencies to check grammar
       run: npx gramma server install
     - name: Run the tests
