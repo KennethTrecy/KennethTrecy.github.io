@@ -42,7 +42,9 @@ jobs:
       # See https://playwright.dev/docs/ci-intro
     - name: Install dependencies to do E2E tests
       run: npx playwright install --with-deps
-    - name: Install dependencies to check grammar
+    - name: Install server to check grammar
       run: npx gramma server install
+    - name: Initiate the sever to check grammar
+      run: npx gramma server start --port 8081
     - name: Run the tests
       run: npm run test:e2e
