@@ -5,7 +5,7 @@ import {
 	WEBSITE_OWNER_FAMILY_NAME,
 	WEBSITE_OWNER_LINK
 } from "@/constants/names"
-import { LICENSE } from "@/constants/miscellaneous_meta"
+import { LICENSE, LICENSE_URL } from "@/constants/miscellaneous_meta"
 
 export default function(path: string, {
 	version = "0.1",
@@ -24,7 +24,10 @@ export default function(path: string, {
 	encoder = authors[0],
 	designers = [ encoder ],
 	creator = encoder,
-	license = LICENSE
+	license = {
+		"name": LICENSE,
+		"link": LICENSE_URL
+	}
 }: Partial<Exclude<PageMeta, "path">> = {}): PageMeta {
 	return {
 		path,
