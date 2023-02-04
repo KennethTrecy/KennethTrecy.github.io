@@ -37,7 +37,7 @@ export interface PageMeta {
 	/**
 	 * Author of the document (wrote the contents in either pen-and-paper or virtually).
 	 */
-	readonly author: string
+	readonly authors: string[]
 
 	/**
 	 * The one who typed the document into web page.
