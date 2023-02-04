@@ -24,6 +24,7 @@
 <meta name="page-version" content={pageMeta.version}/>
 {#each pageMeta.authors as author}
 	<meta name="author" content={`${author.givenName} ${author.familyName}`}/>
+	<link rel="author" href={author.link}/>
 {/each}
 <meta name="web_author" content={`${pageMeta.encoder.givenName} ${pageMeta.encoder.familyName}`}/>
 <meta name="creator" content={`${pageMeta.creator.givenName} ${pageMeta.creator.familyName}`}/>
