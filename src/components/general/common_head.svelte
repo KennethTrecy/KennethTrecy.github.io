@@ -2,7 +2,10 @@
 	import type { PageMeta } from "@/types/head"
 
 	import { dev } from "$app/environment"
-	import { PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH } from "$env/static/public"
+	import {
+		PUBLIC_PRODUCTION_BASE_URL,
+		PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH
+	} from "$env/static/public"
 
 	export let pageMeta: PageMeta
 
@@ -13,7 +16,7 @@
 	$: designers = pageMeta.designers
 		.map(person => `${person.givenName} ${person.familyName}`)
 		.join(" ")
-	$: canonicalURL = `https://kennethtrecy.pages.dev${pageMeta.path}`
+	$: canonicalURL = `${PUBLIC_PRODUCTION_BASE_URL}${pageMeta.path}`
 </script>
 
 <title>{pageMeta.title}</title>
