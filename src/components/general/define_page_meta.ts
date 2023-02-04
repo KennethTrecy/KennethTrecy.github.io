@@ -1,11 +1,11 @@
 import type { PageMeta } from "@/types/head"
 
+import { LICENSE, LICENSE_URL } from "@/constants/miscellaneous_meta"
 import {
 	WEBSITE_OWNER_GIVEN_NAME,
 	WEBSITE_OWNER_FAMILY_NAME,
 	WEBSITE_OWNER_LINK
 } from "@/constants/names"
-import { LICENSE, LICENSE_URL } from "@/constants/miscellaneous_meta"
 
 export default function(path: string, {
 	version = "0.1",

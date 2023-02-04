@@ -2,8 +2,12 @@ import { describe, it, expect } from "vitest"
 
 import type { PageMeta } from "@/types/head"
 
-import { WEBSITE_OWNER } from "@/constants/names"
-import { LICENSE } from "@/constants/miscellaneous_meta"
+import { LICENSE, LICENSE_URL } from "@/constants/miscellaneous_meta"
+import {
+	WEBSITE_OWNER_GIVEN_NAME,
+	WEBSITE_OWNER_FAMILY_NAME,
+	WEBSITE_OWNER_LINK
+} from "@/constants/names"
 
 import definePageMeta from "./define_page_meta"
 
@@ -25,11 +29,19 @@ describe("Define page meta behavior", function() {
 		expect(meta.title).toStrictEqual("Draft Page")
 		expect(meta.description).toStrictEqual("This is a draft page.")
 		expect(meta.keywords).toStrictEqual([ "draft" ])
-		expect(meta.author).toStrictEqual(WEBSITE_OWNER)
-		expect(meta.encoder).toStrictEqual(WEBSITE_OWNER)
-		expect(meta.designer).toStrictEqual([ WEBSITE_OWNER ])
-		expect(meta.creator).toStrictEqual(WEBSITE_OWNER)
-		expect(meta.license).toStrictEqual(LICENSE)
+		const websiteOwner = {
+			"givenName": WEBSITE_OWNER_GIVEN_NAME,
+			"familyName": WEBSITE_OWNER_FAMILY_NAME,
+			"link": WEBSITE_OWNER_LINK
+		}
+		expect(meta.authors).toStrictEqual([ websiteOwner ])
+		expect(meta.encoder).toStrictEqual(websiteOwner)
+		expect(meta.designers).toStrictEqual([ websiteOwner ])
+		expect(meta.creator).toStrictEqual(websiteOwner)
+		expect(meta.license).toStrictEqual({
+			"name": LICENSE,
+			"link": LICENSE_URL
+		})
 	})
 
 	it("can default last modified date to published date", function() {
@@ -44,15 +56,24 @@ describe("Define page meta behavior", function() {
 	it("can defaults to optional properties", function() {
 		const path = "/"
 		const others: Partial<PageMeta> = {
-			"encoder": "A B"
+			"encoder": {
+				"givenName": "A",
+				"familyName": "B",
+				"link": "https//example.com"
+			}
 		}
 
 		const meta = definePageMeta(path, others)
 
 		expect(meta.keywords).toStrictEqual([ "draft" ])
-		expect(meta.author).toStrictEqual(WEBSITE_OWNER)
+		const websiteOwner = {
+			"givenName": WEBSITE_OWNER_GIVEN_NAME,
+			"familyName": WEBSITE_OWNER_FAMILY_NAME,
+			"link": WEBSITE_OWNER_LINK
+		}
+		expect(meta.authors).toStrictEqual([ websiteOwner ])
 		expect(meta.encoder).toStrictEqual(others.encoder)
-		expect(meta.designer).toStrictEqual([ others.encoder ])
+		expect(meta.designers).toStrictEqual([ others.encoder ])
 		expect(meta.creator).toStrictEqual(others.encoder)
 	})
 })
