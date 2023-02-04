@@ -18,7 +18,16 @@ export default async function(page: Page) {
 	]
 	const allMetaSelectors = metaSelectors.map(name => `meta[name=${name}]`)
 	const allTexts = (await Promise.all([
-		...allMetaSelectors.map(selector => page.locator(selector).getAttribute("content")),
+		...allMetaSelectors.map(
+			selector => page
+				.locator(selector)
+				.getAttribute("content")
+				.then(
+					content => selector.includes("keywords")
+						? content.replace(/,/g, ", ")
+						: content
+				)
+		),
 		page.locator(`css=${allInnerTextSelectors}`).allInnerTexts()
 	])).flat()
 
