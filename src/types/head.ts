@@ -51,9 +51,9 @@ export interface PageMeta {
 	readonly encoder: PersonName
 
 	/**
-	 * The one who designed the document.
+	 * The ones who designed the document.
 	 */
-	readonly designer: PersonName[]
+	readonly designers: PersonName[]
 
 	/**
 	 * Person who instructed to compile the document into web page.
