@@ -1,4 +1,4 @@
-export interface PersonName {
+interface PersonInfo {
 	givenName: string,
 	familyName: string,
 	link: string
@@ -48,22 +48,22 @@ export interface PageMeta {
 	/**
 	 * Author of the document (wrote the contents in either pen-and-paper or virtually).
 	 */
-	readonly authors: PersonName[]
+	readonly authors: PersonInfo[]
 
 	/**
 	 * The one who typed the document into web page.
 	 */
-	readonly encoder: PersonName
+	readonly encoder: PersonInfo
 
 	/**
 	 * The ones who designed the document.
 	 */
-	readonly designers: PersonName[]
+	readonly designers: PersonInfo[]
 
 	/**
 	 * Person who instructed to compile the document into web page.
 	 */
-	readonly creator: PersonName
+	readonly creator: PersonInfo
 
 	/**
 	 * License of the document.
