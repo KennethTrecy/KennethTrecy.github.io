@@ -1,7 +1,7 @@
 import { check } from "gramma"
 import { expect, Page } from "@playwright/test"
 
-import dictionary from "~/data/dictionary"
+import dictionary from "../data/dictionary"
 
 export default async function(page: Page) {
 	const selectors = [
