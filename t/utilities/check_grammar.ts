@@ -4,14 +4,23 @@ import { expect, Page } from "@playwright/test"
 import dictionary from "~/data/dictionary"
 
 export default async function(page: Page) {
-	const selectors = [
+	const innerTextSelectors = [
+		"title",
 		".menu a span.flex-1",
 		"[itemprop~=text]",
 		"h1",
 		"h2"
 	]
-	const allSelectors = selectors.join(", ")
-	const allTexts = await page.locator(`css=${allSelectors}`).allInnerTexts()
+	const allInnerTextSelectors = innerTextSelectors.join(", ")
+	const metaSelectors = [
+		"description",
+		"keywords"
+	]
+	const allMetaSelectors = metaSelectors.map(name => `meta[name=${name}]`)
+	const allTexts = (await Promise.all([
+		...allMetaSelectors.map(selector => page.locator(selector).getAttribute("content")),
+		page.locator(`css=${allInnerTextSelectors}`).allInnerTexts()
+	])).flat()
 
 	const pendingResults: Promise<any>[] = allTexts.map(async text => {
 		const result = await check(text, {
