@@ -78,5 +78,5 @@ export interface PageMeta {
 	 *
 	 * See: https://ogp.me/#types
 	 */
-	readonly objectType: "website"|"article"
+	readonly objectType: "website"|"article"|"profile"
 }
