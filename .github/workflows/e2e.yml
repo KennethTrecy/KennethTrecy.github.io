@@ -10,6 +10,7 @@ on:
       - review_requested
     branches:
       - master
+      - dev
     paths:
       - 'src/**'
 

@@ -10,6 +10,7 @@ on:
       - review_requested
     branches:
       - master
+      - dev
     paths:
       - 'src/**'
 
@@ -25,5 +26,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm run test:unit
+    - name: Install general dependencies
+      run: npm install
+    - name: Run the tests
+      run: npm run test:unit
