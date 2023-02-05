@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { MAIN_CONTENT_ID } from "@/constants/miscellaneous_meta"
+
 	import Heading from "@/components/general/headings/base.svelte"
 
 	let otherClasses: string[] = []
@@ -15,7 +17,7 @@
 	$: hasPrefix = prefix !== ""
 </script>
 
-<Heading level={1} fragment="#" class={joinedClasses}>
+<Heading level={1} fragment={MAIN_CONTENT_ID} class={joinedClasses}>
 	{#if hasPrefix}
 		<span class="text-5xl">
 			<span>{prefix}</span>
