@@ -14,4 +14,6 @@
 	]
 </script>
 
-<Subheading level={2} {headingInfo} {mustBeRaw} class={joinedClasses}/>
+<Subheading level={2} {headingInfo} {mustBeRaw} class={joinedClasses}>
+	<slot></slot>
+</Subheading>
