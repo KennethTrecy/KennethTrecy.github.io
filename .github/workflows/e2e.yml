@@ -44,7 +44,9 @@ jobs:
       run: npx playwright install --with-deps
     - name: Install server to check grammar
       run: npx gramma server install
-    - name: Initiate the sever to check grammar
-      run: npx gramma server start --port 8081
+    - name: Identify the server to check grammar
+      run: gramma server info
+    - name: Disable firewall
+      run: sudo ufw disable
     - name: Run the tests
       run: npm run test:e2e
