@@ -1,5 +1,7 @@
 import type { PageMeta } from "@/types/head"
 
+import Logo from "@/multimedia/logo.png"
+import { PUBLIC_PRODUCTION_BASE_URL } from "$env/static/public"
 import { LICENSE, LICENSE_URL } from "@/constants/miscellaneous_meta"
 import {
 	WEBSITE_OWNER_GIVEN_NAME,
@@ -27,7 +29,11 @@ export default function(path: string, {
 	license = {
 		"name": LICENSE,
 		"link": LICENSE_URL
-	}
+	},
+	pageURL = `${PUBLIC_PRODUCTION_BASE_URL}${path}`,
+	imageURL = `${PUBLIC_PRODUCTION_BASE_URL}${Logo}`,
+	imageDescription = "Logo of Kenneth Trecy Tobias",
+	objectType = "website"
 }: Partial<Exclude<PageMeta, "path">> = {}): PageMeta {
 	return {
 		path,
@@ -41,6 +47,10 @@ export default function(path: string, {
 		encoder,
 		designers,
 		creator,
-		license
+		license,
+		pageURL,
+		imageURL,
+		imageDescription,
+		objectType
 	}
 }
