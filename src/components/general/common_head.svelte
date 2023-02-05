@@ -25,9 +25,13 @@
 <title>{pageMeta.title}</title>
 <link rel="icon" href="favicon.png"/>
 <link rel="canonical" href={canonicalURL}/>
+
 <meta name="description" content={pageMeta.description}/>
 <meta name="keywords" content={pageMeta.keywords.join(",")}/>
 <meta name="page-version" content={pageMeta.version}/>
+<link rel="license" href={pageMeta.license.link}/>
+<meta name="license" content={pageMeta.license.name}/>
+
 {#each pageMeta.authors as author}
 	<meta name="author" content={`${author.givenName} ${author.familyName}`}/>
 	<link rel="author" href={author.link}/>
@@ -35,11 +39,11 @@
 <meta name="web_author" content={`${pageMeta.encoder.givenName} ${pageMeta.encoder.familyName}`}/>
 <meta name="creator" content={`${pageMeta.creator.givenName} ${pageMeta.creator.familyName}`}/>
 <meta name="designer" content={designers}/>
-<link rel="license" href={pageMeta.license.link}/>
-<meta name="license" content={pageMeta.license.name}/>
+
 <meta name="og:title" content={pageMeta.title}/>
-<meta name="og:type" content="website"/>
-<meta name="og:image" content={imageURL}/>
-<meta name="og:url" content={pageURL}/>
+<meta name="og:type" content={pageMeta.objectType}/>
+<meta name="og:image" content={pageMeta.imageURL}/>
+<meta name="og:image:alt" content={pageMeta.imageDescription}/>
+<meta name="og:url" content={pageMeta.pageURL}/>
 <meta name="og:description" content={pageMeta.description}/>
 <meta name="og:sitename" content="KennethTrecy"/>
