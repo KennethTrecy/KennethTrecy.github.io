@@ -44,11 +44,11 @@ jobs:
       run: npx playwright install --with-deps
     - name: Install server to check grammar
       run: npx gramma server install
-    - name: Identify the server to check grammar
+    - name: Identify the server before explicitly enabling it to check grammar
       run: npx gramma server info
     - name: Initiate server to check grammar
       run: npx gramma server start
-    - name: Identify the server to check grammar
+    - name: Identify the server after explicitly enabling it to check grammar
       run: npx gramma server info
     - name: Run the tests
       run: npm run test:e2e
