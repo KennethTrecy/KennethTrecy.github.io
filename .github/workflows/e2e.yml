@@ -46,6 +46,10 @@ jobs:
       run: npx gramma server install
     - name: Identify the server to check grammar
       run: npx gramma server info
+    - name: Initiate server to check grammar
+      run: npx gramma server start
+    - name: Identify the server to check grammar
+      run: npx gramma server info
     - name: Disable firewall
       run: sudo ufw disable
     - name: Run the tests
