@@ -7,12 +7,15 @@
 		PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH
 	} from "$env/static/public"
 
+	import Logo from "@/multimedia/logo.png"
+
 	export let pageMeta: PageMeta
 
 	$: if (dev && pageMeta.description.length > Number(PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH)) {
 		console.warn(`Description for page entitled "${pageMeta.title}" is too long.`)
 	}
-
+	$: pageURL = `https://kennethtrecy.pages.dev${pageMeta.path}`
+	$: imageURL = `https://kennethtrecy.pages.dev${Logo}`
 	$: designers = pageMeta.designers
 		.map(person => `${person.givenName} ${person.familyName}`)
 		.join(" ")
@@ -34,3 +37,9 @@
 <meta name="designer" content={designers}/>
 <link rel="license" href={pageMeta.license.link}/>
 <meta name="license" content={pageMeta.license.name}/>
+<meta name="og:title" content={pageMeta.title}/>
+<meta name="og:type" content="website"/>
+<meta name="og:image" content={imageURL}/>
+<meta name="og:url" content={pageURL}/>
+<meta name="og:description" content={pageMeta.description}/>
+<meta name="og:sitename" content="KennethTrecy"/>
