@@ -11,7 +11,7 @@
 
 	$: joinedClasses = [
 		...otherClasses
-	].filter(Boolean).join(" ")
+	]
 	$: hasPrefix = Boolean(headingInfo.prefix)
 </script>
 
