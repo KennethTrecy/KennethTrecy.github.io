@@ -37,6 +37,13 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Treat .env.ci as the environment for CI
       run: cp .env.ci .env
+    - name: Cache node modules
+      uses: actions/cache@v3
+      with:
+        path: ./node_modules
+        key: ${{ runner.os }}_${{ matrix.node-version }}_${{ hashFiles('package.json') }}
+        restore-keys: |
+          ${{ runner.os }}_${{ matrix.node-version }}_${{ hashFiles('package.json') }}
     - name: Install general dependencies
       run: npm install
       # See https://playwright.dev/docs/ci-intro
