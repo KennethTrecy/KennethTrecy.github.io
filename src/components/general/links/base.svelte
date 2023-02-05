@@ -36,11 +36,11 @@
 	class={joinedClasses}
 	rel={relationshipTypes}
 	{target}>
-	<slot></slot>
-</a>
-{#if mayShowExternalIcon}
-	<span class="cursor-pointer" role="link" tabindex="0" on:keyup={visitLink}></span>
-{/if}
+	<slot></slot></a>{#if mayShowExternalIcon}<span
+	class="cursor-pointer"
+	role="link"
+	tabindex="0"
+	on:keyup={visitLink}></span>{/if}
 
 <style lang="postcss">
 	span::after {
