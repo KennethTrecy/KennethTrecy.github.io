@@ -46,4 +46,4 @@
 <meta name="og:image:alt" content={pageMeta.imageDescription}/>
 <meta name="og:url" content={pageMeta.pageURL}/>
 <meta name="og:description" content={pageMeta.description}/>
-<meta name="og:sitename" content="KennethTrecy"/>
+<meta name="og:site_name" content="KennethTrecy"/>
