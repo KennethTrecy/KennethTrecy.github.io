@@ -78,6 +78,13 @@ export interface PageMeta {
 	readonly imageURL: string
 
 	/**
+	 * Description of the image that represents the page.
+	 *
+	 * See: https://ogp.me/
+	 */
+	readonly imageDescription: string
+
+	/**
 	 * Canonical URL of the page.
 	 *
 	 * See: https://ogp.me/
