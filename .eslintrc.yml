@@ -11,5 +11,6 @@ plugins:
   - "@typescript-eslint"
 parser: "@typescript-eslint/parser"
 extends:
+  - "eslint:all"
   - "plugin:@typescript-eslint/recommended-requiring-type-checking"
   - "whitelistyle"
