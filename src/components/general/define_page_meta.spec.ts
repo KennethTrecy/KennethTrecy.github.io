@@ -2,6 +2,8 @@ import { describe, it, expect } from "vitest"
 
 import type { PageMeta } from "@/types/head"
 
+import Logo from "@/multimedia/logo.png"
+import { PUBLIC_PRODUCTION_BASE_URL } from "$env/static/public"
 import { LICENSE, LICENSE_URL } from "@/constants/miscellaneous_meta"
 import {
 	WEBSITE_OWNER_GIVEN_NAME,
@@ -42,6 +44,10 @@ describe("Define page meta behavior", function() {
 			"name": LICENSE,
 			"link": LICENSE_URL
 		})
+		expect(meta.pageURL).toStrictEqual(`${PUBLIC_PRODUCTION_BASE_URL}${path}`)
+		expect(meta.imageURL).toStrictEqual(`${PUBLIC_PRODUCTION_BASE_URL}${Logo}`)
+		expect(meta.imageDescription).toStrictEqual("Logo of Kenneth Trecy Tobias")
+		expect(meta.objectType).toStrictEqual("website")
 	})
 
 	it("can default last modified date to published date", function() {
