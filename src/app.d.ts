@@ -9,7 +9,7 @@ declare namespace App {
 		env: {
 			COUNTER: DurableObjectNamespace
 			CF_PAGES_URL: string
-			PRODUCTION_BASE_URL: string
+			PUBLIC_PRODUCTION_BASE_URL: string
 			PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH: string
 			PERSONAL_GITHUB_ACCESS_TOKEN: string
 		}

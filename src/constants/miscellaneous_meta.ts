@@ -11,3 +11,5 @@ export const FIRST_PUBLICATION_DATE = new Date(Date.UTC(2023, 1, 1))
  * Indicate when the articles was first published.
  */
 export const SECOND_PUBLICATION_DATE = new Date(Date.UTC(2023, 1, 15))
+
+export const MAIN_CONTENT_ID = "#"
