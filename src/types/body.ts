@@ -39,6 +39,6 @@ export interface CompleteViewableFileInfo {
 export interface CodeFile {
 	viewURL: string
 	sha: string
-	size: string
+	size: number
 	content: string
 }
