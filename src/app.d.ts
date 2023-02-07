@@ -11,6 +11,7 @@ declare namespace App {
 			CF_PAGES_URL: string
 			PRODUCTION_BASE_URL: string
 			PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH: string
+			PERSONAL_GITHUB_ACCESS_TOKEN: string
 		}
 		context: {
 			waitUntil(promise: Promise<any>): void;
