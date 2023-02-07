@@ -2,6 +2,9 @@
 	import type { HeadingInfo } from "@/types/body"
 
 	import pageMeta from "@/routes/articles/different_levels_of_abstraction_in_software/meta"
+	import {
+		associatedFileList
+	} from "@/routes/articles/different_levels_of_abstraction_in_software/shared_constants"
 
 	import CommonHead from "@/components/general/common_head.svelte"
 	import Bookmark from "@/components/general/links/bookmark.svelte"
@@ -67,6 +70,9 @@
 			<SimpleText>
 				For example, a teacher use a spreadsheet software to calculate the grades of students. The teacher will just input the raw grade and the formula. After that, the final grade will be calculated by the software as programmed.
 			</SimpleText>
+			<section class="mockup-code">
+				<pre data-prefix="1"><code>export default []</code></pre>
+			</section>
 		</StructuredSection>
 		<StructuredSection id={levels[1].id}>
 			<SecondaryHeading headingInfo={levels[1]}/>
