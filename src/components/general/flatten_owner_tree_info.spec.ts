@@ -12,9 +12,14 @@ describe("Flatten owner tree info behavior", () => {
 				"repos": [
 					{
 						"repo": "b",
-						"paths": [
-							"c.ts",
-							"d.ts"
+						"branches": [
+							{
+								"branch": "master",
+								"paths": [
+									"c.ts",
+									"d.ts"
+								]
+							}
 						]
 					}
 				]
@@ -27,10 +32,12 @@ describe("Flatten owner tree info behavior", () => {
 			{
 				"owner": "a",
 				"repo": "b",
+				"branch": "master",
 				"path": "c.ts"
 			}, {
 				"owner": "a",
 				"repo": "b",
+				"branch": "master",
 				"path": "d.ts"
 			}
 		])
@@ -43,9 +50,14 @@ describe("Flatten owner tree info behavior", () => {
 				"repos": [
 					{
 						"repo": "f",
-						"paths": [
-							"g.js",
-							"h.js"
+						"branches": [
+							{
+								"branch": "dev",
+								"paths": [
+									"g.js",
+									"h.js"
+								]
+							}
 						]
 					}
 				]
@@ -54,9 +66,14 @@ describe("Flatten owner tree info behavior", () => {
 				"repos": [
 					{
 						"repo": "b",
-						"paths": [
-							"c.ts",
-							"d.ts"
+						"branches": [
+							{
+								"branch": "master",
+								"paths": [
+									"c.ts",
+									"d.ts"
+								]
+							}
 						]
 					}
 				]
@@ -69,18 +86,22 @@ describe("Flatten owner tree info behavior", () => {
 			{
 				"owner": "e",
 				"repo": "f",
+				"branch": "dev",
 				"path": "g.js"
 			}, {
 				"owner": "e",
 				"repo": "f",
+				"branch": "dev",
 				"path": "h.js"
 			}, {
 				"owner": "a",
 				"repo": "b",
+				"branch": "master",
 				"path": "c.ts"
 			}, {
 				"owner": "a",
 				"repo": "b",
+				"branch": "master",
 				"path": "d.ts"
 			}
 		])

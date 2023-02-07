@@ -5,13 +5,17 @@ export default function(forest: ViewableOwnerInfoTree[]): CompleteViewableFileIn
 		...previousFileInfo,
 		...currentOwner.repos.reduce((previousRepos, currentRepo) => [
 			...previousRepos,
-			...currentRepo.paths.reduce((previousPaths, currentPath) => [
-				...previousPaths,
-				{
-					"owner": currentOwner.owner,
-					"repo": currentRepo.repo,
-					"path": currentPath
-				}
+			...currentRepo.branches.reduce((previousBranches, currentBranch) => [
+				...previousBranches,
+				...currentBranch.paths.reduce((previousPaths, currentPath) => [
+					...previousPaths,
+					{
+						"owner": currentOwner.owner,
+						"repo": currentRepo.repo,
+						"branch": currentBranch.branch,
+						"path": currentPath
+					}
+				], <CompleteViewableFileInfo[]>[])
 			], <CompleteViewableFileInfo[]>[])
 		], <CompleteViewableFileInfo[]>[])
 	], <CompleteViewableFileInfo[]>[])

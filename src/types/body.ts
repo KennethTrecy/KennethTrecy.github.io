@@ -14,9 +14,14 @@ export type Order =
 	| "descending"
 	| "unordered"
 
+interface ViewableBranchInfoTree {
+	branch: string
+	paths: string[]
+}
+
 interface ViewableRepoInfoTree {
 	repo: string
-	paths: string[]
+	branches: ViewableBranchInfoTree[]
 }
 
 export interface ViewableOwnerInfoTree {
@@ -27,5 +32,6 @@ export interface ViewableOwnerInfoTree {
 export interface CompleteViewableFileInfo {
 	owner: string
 	repo: string
+	branch: string
 	path: string
 }

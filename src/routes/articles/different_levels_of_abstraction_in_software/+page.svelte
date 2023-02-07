@@ -39,8 +39,7 @@
 
 	onMount(async () => {
 		const fileInfo = associatedFileList[0]
-		const URL =
-		fetch(`${PUBLIC_PRODUCTION_BASE_URL}/v0/github/${fileInfo.owner}/${fileInfo.repo}/code/${fileInfo.path}`, {
+		fetch(`${PUBLIC_PRODUCTION_BASE_URL}/v0/github/${fileInfo.owner}/${fileInfo.repo}/code/${fileInfo.branch}/${fileInfo.path}`, {
 			"method": "GET"
 		}).then(response => response.json())
 		.then(codeInfo => {
