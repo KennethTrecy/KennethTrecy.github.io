@@ -41,8 +41,8 @@
 			address={codeInfo.viewURL}
 			itemprop={[ "mainEntityOfPage" ]}>{fileInfo.path}</ExternalLink> in
 		{fileInfo.branch}
-		at <ExternalLink address={repoURL}>{fileInfo.owner}/{fileInfo.repo}</ExternalLink>.
-		Its size is <span itemprop="fileSize">{codeInfo.size}B</span> in commit
-		<span itemprop="softwareVersion">{codeInfo.sha}</span>.
+		at <ExternalLink
+			address={repoURL}
+			itemprop="codeRepository">{fileInfo.owner}/{fileInfo.repo}</ExternalLink>.
 	</p>
 </section>
