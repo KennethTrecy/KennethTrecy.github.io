@@ -3,7 +3,6 @@
 
 	import type { HeadingInfo } from "@/types/body"
 
-	import { PUBLIC_PRODUCTION_BASE_URL } from "$env/static/public"
 	import pageMeta from "@/routes/articles/different_levels_of_abstraction_in_software/meta"
 	import {
 		associatedFileList
@@ -15,6 +14,7 @@
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
+	import ExampleCode from "@/components/general/containers/example_code.svelte"
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
@@ -98,9 +98,7 @@
 			<SimpleText>
 				For example, a teacher use a spreadsheet software to calculate the grades of students. The teacher will just input the raw grade and the formula. After that, the final grade will be calculated by the software as programmed.
 			</SimpleText>
-			<section class="mockup-code">
-				<pre data-prefix="1"><code>export default []</code></pre>
-			</section>
+			<ExampleCode code={"export default [\n\t1\n]"}/>
 		</StructuredSection>
 		<StructuredSection id={levels[1].id}>
 			<SecondaryHeading headingInfo={levels[1]}/>
