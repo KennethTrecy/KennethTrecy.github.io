@@ -30,27 +30,6 @@
 		{ "text": "Class-level Abstraction" },
 		{ "text": "Interface-level Abstraction" }
 	].map(defineHeadingInfo)
-
-	let codes: CodeFile[] = []
-
-	onMount(async () => {
-		const fileInfo = associatedFileList[0]
-		const repoNamespace = `${fileInfo.owner}/${fileInfo.repo}`
-		const fileNamespace = `${fileInfo.branch}/${fileInfo.path}`
-		const URL = `/api/v0/github/${repoNamespace}/code/${fileNamespace}`
-		await fetch(URL, {
-			"method": "GET"
-		}).then(response => response.json())
-		.then(codeInfo => {
-			codes = [
-				...codes,
-				{
-					"URL": codeInfo.html_url,
-					"content": atob(codeInfo.content)
-				}
-			]
-		})
-	})
 </script>
 
 <svelte:head>
@@ -94,7 +73,7 @@
 			<SimpleText>
 				For example, a teacher use a spreadsheet software to calculate the grades of students. The teacher will just input the raw grade and the formula. After that, the final grade will be calculated by the software as programmed.
 			</SimpleText>
-			<ExampleCode code={"export default [\n\t1\n]"}/>
+			<ExampleCode fileInfo={associatedFileList[0]}/>
 		</StructuredSection>
 		<StructuredSection id={levels[1].id}>
 			<SecondaryHeading headingInfo={levels[1]}/>
