@@ -14,14 +14,14 @@ export type Order =
 	| "descending"
 	| "unordered"
 
-export interface PartialViewableRepoInfo {
+interface ViewableRepoInfoTree {
 	repo: string
 	paths: string[]
 }
 
-export interface PartialViewableOwnerInfo {
+export interface ViewableOwnerInfoTree {
 	owner: string
-	repo: PartialViewableRepoInfo[]
+	repos: ViewableRepoInfoTree[]
 }
 
 export interface CompleteViewableFileInfo {
