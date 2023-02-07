@@ -1,6 +1,9 @@
 <script lang="ts">
+	import { onMount } from "svelte"
+
 	import type { HeadingInfo } from "@/types/body"
 
+	import { PUBLIC_PRODUCTION_BASE_URL } from "$env/static/public"
 	import pageMeta from "@/routes/articles/different_levels_of_abstraction_in_software/meta"
 	import {
 		associatedFileList
@@ -27,6 +30,26 @@
 		{ "text": "Class-level Abstraction" },
 		{ "text": "Interface-level Abstraction" }
 	].map(defineHeadingInfo)
+
+	interface CodeFile {
+		URL: string,
+		content: string
+	}
+	let codes: CodeFile[] = []
+
+	onMount(async () => {
+		const fileInfo = associatedFileList[0]
+		const URL =
+		fetch(`${PUBLIC_PRODUCTION_BASE_URL}/v0/github/${fileInfo.owner}/${fileInfo.repo}/code/${fileInfo.path}`, {
+			"method": "GET"
+		}).then(response => response.json())
+		.then(codeInfo => {
+			codes = [
+				...codes,
+				codeInfo
+			]
+		})
+	})
 </script>
 
 <svelte:head>
