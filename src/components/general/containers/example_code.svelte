@@ -29,7 +29,7 @@
 	})
 </script>
 
-<section itemprop="workExample" itemscope itemtype="https://schema.org/SoftwareApplication>
+<section itemprop="workExample" itemscope itemtype="https://schema.org/SoftwareSourceCode">
 	<div class="mockup-code not-prose text-sm">
 		{#each codeLines as line, i}
 			<pre data-prefix={i+1}><code>{line}</code></pre>
