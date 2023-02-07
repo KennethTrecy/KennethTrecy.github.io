@@ -13,3 +13,19 @@ export type Order =
 	| "ascending"
 	| "descending"
 	| "unordered"
+
+export interface PartialViewableRepoInfo {
+	repo: string
+	paths: string[]
+}
+
+export interface PartialViewableOwnerInfo {
+	owner: string
+	repo: PartialViewableRepoInfo[]
+}
+
+export interface CompleteViewableFileInfo {
+	owner: string
+	repo: string
+	path: string
+}
