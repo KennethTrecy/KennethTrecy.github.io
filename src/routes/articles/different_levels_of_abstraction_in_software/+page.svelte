@@ -45,10 +45,10 @@
 			id={introduction.id}>
 			<SecondaryHeading headingInfo={introduction}/>
 			<SimpleText itemprop="about">
-				<strong itemprop="keyword">Abstraction</strong> is a process to see a thing as a one rather than as the sum of its parts. It can be rules or equations that are applicable to most situations. In software development, abstractions are used to simplify the process which are common to other tasks. They take in different levels which this page is all about.
+				<strong itemprop="keyword">Abstraction</strong> is a process to see a thing as a one rather than as the sum of its parts. It can be rules or equations that are applicable to most situations. In software development, abstractions are used to simplify the process which are common to other tasks. In other words, they are <strong itemprop="keyword">reusable</strong>. They take in different levels which this page is all about.
 			</SimpleText>
 			<SimpleText itemprop="mainEntity">
-				Thre are <strong itemprop="numberOfItems">{levels.length}</strong> levels of abstraction listed below. They are ordered from easiest to hardest usage and implementation.
+				Thre are <strong itemprop="numberOfItems">{levels.length}</strong> levels of abstraction listed below. They are ordered from easiest to hardest in implementation and customizability.
 			</SimpleText>
 			<StructuredList order="ascending" hasOwnScope={false} isProjectList={false}>
 				{#each levels as level}
