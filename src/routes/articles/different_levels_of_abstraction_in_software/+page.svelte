@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte"
 
-	import type { HeadingInfo } from "@/types/body"
+	import type { CodeFile, HeadingInfo } from "@/types/body"
 
 	import pageMeta from "@/routes/articles/different_levels_of_abstraction_in_software/meta"
 	import {
@@ -31,10 +31,6 @@
 		{ "text": "Interface-level Abstraction" }
 	].map(defineHeadingInfo)
 
-	interface CodeFile {
-		URL: string,
-		content: string
-	}
 	let codes: CodeFile[] = []
 
 	onMount(async () => {

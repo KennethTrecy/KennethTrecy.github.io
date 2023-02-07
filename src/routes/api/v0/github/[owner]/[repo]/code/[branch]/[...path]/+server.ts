@@ -1,4 +1,5 @@
 import type { RequestEvent } from "@sveltejs/kit"
+import type { CodeFile } from "@/types/body"
 
 import { Octokit } from "@octokit/core"
 
@@ -15,5 +16,10 @@ export async function GET(event: RequestEvent) {
 
 	const { html_url, sha, size, content } = info.data as any
 
-	return new Response(JSON.stringify({ html_url, sha, size, content }))
+	return new Response(JSON.stringify(<CodeFile>{
+		"viewURL": html_url,
+		sha,
+		size,
+		content
+	}))
 }

@@ -35,3 +35,10 @@ export interface CompleteViewableFileInfo {
 	branch: string
 	path: string
 }
+
+export interface CodeFile {
+	viewURL: string
+	sha: string
+	size: string
+	content: string
+}
