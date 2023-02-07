@@ -1,7 +1,13 @@
 import type { PageMeta } from "@/types/head"
 
-import { WEBSITE_OWNER } from "@/constants/names"
-import { LICENSE } from "@/constants/miscellaneous_meta"
+import Logo from "@/multimedia/logo.png"
+import { PUBLIC_PRODUCTION_BASE_URL } from "$env/static/public"
+import { LICENSE, LICENSE_URL } from "@/constants/miscellaneous_meta"
+import {
+	WEBSITE_OWNER_GIVEN_NAME,
+	WEBSITE_OWNER_FAMILY_NAME,
+	WEBSITE_OWNER_LINK
+} from "@/constants/names"
 
 export default function(path: string, {
 	version = "0.1",
@@ -10,11 +16,24 @@ export default function(path: string, {
 	title = "Draft Page",
 	description = "This is a draft page.",
 	keywords = [ "draft" ],
-	author = WEBSITE_OWNER,
-	encoder = author,
-	designer = [ encoder ],
+	authors = [
+		{
+			"givenName": WEBSITE_OWNER_GIVEN_NAME,
+			"familyName": WEBSITE_OWNER_FAMILY_NAME,
+			"link": WEBSITE_OWNER_LINK
+		}
+	],
+	encoder = authors[0],
+	designers = [ encoder ],
 	creator = encoder,
-	license = LICENSE
+	license = {
+		"name": LICENSE,
+		"link": LICENSE_URL
+	},
+	pageURL = `${PUBLIC_PRODUCTION_BASE_URL}${path}`,
+	imageURL = `${PUBLIC_PRODUCTION_BASE_URL}${Logo}`,
+	imageDescription = "Logo of Kenneth Trecy Tobias",
+	objectType = "website"
 }: Partial<Exclude<PageMeta, "path">> = {}): PageMeta {
 	return {
 		path,
@@ -24,10 +43,14 @@ export default function(path: string, {
 		title,
 		description,
 		keywords,
-		author,
+		authors,
 		encoder,
-		designer,
+		designers,
 		creator,
-		license
+		license,
+		pageURL,
+		imageURL,
+		imageDescription,
+		objectType
 	}
 }

@@ -1,4 +1,4 @@
-name: Web Front-end Tests
+name: E2E Tests
 
 on:
   push: []
@@ -20,14 +20,15 @@ on:
       - 'postcss.config.cjs'
       - 'tailwind.config.cjs'
       - 'src/**'
-      - '.github/workflows/front-end.yml'
+      - 't/**'
+      - '.github/workflows/e2e.yml'
 
 jobs:
-  web_front-end_tests:
+  e2e_tests:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [16.x, 18.x]
+        node-version: [16.x]
     steps:
     - uses: actions/checkout@v3
     - name: Testing on Node.js ${{ matrix.node-version }}
@@ -45,5 +46,23 @@ jobs:
           ${{ runner.os }}_${{ matrix.node-version }}_${{ hashFiles('package.json') }}
     - name: Install general dependencies
       run: npm install
+    - name: Cache dependencies for E2E tests
+      uses: actions/cache@v3
+      with:
+        path: /home/runner
+        key: ${{ runner.os }}_${{ matrix.node-version }}_${{ hashFiles('package.json') }}
+        restore-keys: |
+          ${{ runner.os }}_${{ matrix.node-version }}_${{ hashFiles('package.json') }}
+      # See https://playwright.dev/docs/ci-intro
+    - name: Install dependencies to do E2E tests
+      run: npx playwright install --with-deps
+    - name: Install server to check grammar
+      run: npx gramma server install
+    - name: Identify the server before explicitly enabling it to check grammar
+      run: npx gramma server info
+    - name: Initiate server to check grammar
+      run: npx gramma server start
+    - name: Identify the server after explicitly enabling it to check grammar
+      run: npx gramma server info
     - name: Run the tests
-      run: npm run test:unit
+      run: npm run test:e2e
