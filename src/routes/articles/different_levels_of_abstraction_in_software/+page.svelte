@@ -39,13 +39,19 @@
 
 	onMount(async () => {
 		const fileInfo = associatedFileList[0]
-		fetch(`${PUBLIC_PRODUCTION_BASE_URL}/v0/github/${fileInfo.owner}/${fileInfo.repo}/code/${fileInfo.branch}/${fileInfo.path}`, {
+		const repoNamespace = `${fileInfo.owner}/${fileInfo.repo}`
+		const fileNamespace = `${fileInfo.branch}/${fileInfo.path}`
+		const URL = `/api/v0/github/${repoNamespace}/code/${fileNamespace}`
+		await fetch(URL, {
 			"method": "GET"
 		}).then(response => response.json())
 		.then(codeInfo => {
 			codes = [
 				...codes,
-				codeInfo
+				{
+					"URL": codeInfo.html_url,
+					"content": atob(codeInfo.content)
+				}
 			]
 		})
 	})
