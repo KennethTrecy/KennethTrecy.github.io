@@ -6,6 +6,7 @@
 	import ExternalLink from "@/components/general/links/external.svelte"
 
 	export let fileInfo: CompleteViewableFileInfo
+	export let itemprop: string = "workExample"
 
 	let codeInfo: CodeFile = {
 		"content": "",
@@ -29,7 +30,7 @@
 	})
 </script>
 
-<section itemprop="workExample" itemscope itemtype="https://schema.org/SoftwareSourceCode">
+<div {itemprop} itemscope itemtype="https://schema.org/SoftwareSourceCode">
 	<div class="mockup-code not-prose text-sm">
 		{#each codeLines as line, i}
 			<pre data-prefix={i+1}><code>{line}</code></pre>
