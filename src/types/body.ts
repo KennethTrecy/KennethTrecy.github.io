@@ -42,3 +42,17 @@ export interface CodeFile {
 	size: number
 	content: string
 }
+
+interface CommandOutput {
+	text: string
+}
+
+interface ExecutedCommandInfo {
+	command: string
+	output: CommandOutput[]
+}
+
+export interface ExecutedCommandSetInfo {
+	description: string,
+	commands: ExecutedCommandInfo[]
+}
