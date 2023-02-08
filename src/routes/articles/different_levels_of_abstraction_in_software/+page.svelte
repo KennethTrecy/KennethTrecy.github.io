@@ -146,14 +146,18 @@
 		<StructuredSection id={levels[2].id}>
 			<SecondaryHeading headingInfo={levels[2]}/>
 			<SimpleText>
-				This is almost similar to environment-level abstraction. However, the environment variables are not included in this level. <strong itemprop="mainEntity">This level refers to the softwares customizable by globally-scope variables and locally-scoped variables.</strong> In other words, they have limited scope depending on their purpose.
+				This is almost similar to environment-level abstraction. However, the environment variables are not included in this level. <strong itemprop="mainEntity">This level refers to the softwares customizable by globally-scope variables and locally-scoped variables.</strong>
 			</SimpleText>
 			<SimpleText>
-				For this level, it requires a user to understand the declaration and definition of variables to modify the program. They may also need to learn about enumerations or any different data types like booleans and integers.
+				Should the user want to customize the program, knowledge in <strong itemprop="keyword">variable declaration</strong> (depending on the programming language used) is a must. They may also need to learn about enumerations or any different data types like booleans and integers.
 			</SimpleText>
 			<SimpleText>
-				This level can be seen when making embedded programs for microcontrollers. It is helpful to declare multiple constants like indicating on or off, speed of sound (which can be used for calculating the distance using ultrasonic sensor), or length of intervals. In addition, it can be seen in other fields of Information Technology (<abbr>I.T.</abbr>) such as web development and game development.
+				This level can be seen when making embedded programs for microcontrollers. It is helpful to declare multiple constants that are repeatedly used like indicating on or off, speed of sound (which can be used for calculating the distance using ultrasonic sensor), or <ExternalLink address="https://www.youtube.com/watch?v=nPOKOi1jIK0">length of intervals</ExternalLink>. In addition, it can be seen in other fields of Information Technology (<abbr>I.T.</abbr>) such as web development and game development.
 			</SimpleText>
+			<SimpleText>
+				Building from previous example, default messages can be put in global scope allowing other developers find the default messages quickly.
+			</SimpleText>
+			<ExampleCode fileInfo={associatedFileList[3]}/>
 		</StructuredSection>
 		<StructuredSection id={levels[3].id}>
 			<SecondaryHeading headingInfo={levels[3]}/>
