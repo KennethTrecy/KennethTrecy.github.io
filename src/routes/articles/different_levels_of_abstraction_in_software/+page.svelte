@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte"
 
-	import type { CodeFile, HeadingInfo } from "@/types/body"
+	import type { ExecutedCommandSetInfo, HeadingInfo } from "@/types/body"
 
 	import pageMeta from "@/routes/articles/different_levels_of_abstraction_in_software/meta"
 	import {
@@ -15,6 +15,7 @@
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import ExampleCode from "@/components/general/containers/example_code.svelte"
+	import ExampleOutput from "@/components/general/containers/example_output.svelte"
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
