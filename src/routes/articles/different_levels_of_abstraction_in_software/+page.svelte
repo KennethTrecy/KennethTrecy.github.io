@@ -10,6 +10,7 @@
 
 	import CommonHead from "@/components/general/common_head.svelte"
 	import Bookmark from "@/components/general/links/bookmark.svelte"
+	import ExternalLink from "@/components/general/links/external.svelte"
 	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
@@ -40,6 +41,22 @@
 				"output": [
 					{ "text": "What is your first name? Kenneth" },
 					{ "text": "What is your last name? Tobias" },
+					{ "text": "What is your age? 10" },
+					{ "text": "How many meters did you walk? 100" },
+					{ "text": "You are Kenneth Tobias." },
+					{ "text": "Your age is 10 and you have walked for 100 meters.\n" }
+				]
+			}
+		]
+	}
+	const environmentLevelExecutedCommandInfo: ExecutedCommandSetInfo = {
+		"description": "This is the output after running the environment-level code. Notice that the questions for first name and last name have changed according to the questions in environment file.",
+		"commands": [
+			{
+				"command": `npx ts-node ${associatedFileList[1].path}`,
+				"output": [
+					{ "text": "Enter your first name:Kenneth" },
+					{ "text": "Enter your last name:Tobias" },
 					{ "text": "What is your age? 10" },
 					{ "text": "How many meters did you walk? 100" },
 					{ "text": "You are Kenneth Tobias." },
@@ -104,7 +121,7 @@
 		<StructuredSection id={levels[1].id}>
 			<SecondaryHeading headingInfo={levels[1]}/>
 			<SimpleText>
-				<strong itemprop="mainEntity">This level of abstraction allows the creation of different package-level softwares.</strong> Softwares at this level can be managed using environment variables (which are declared on the system, <code>.env</code> files, or other contexts) or command line arguments.
+				<strong itemprop="mainEntity">This level of abstraction allows the creation of different package-level softwares.</strong> Softwares at this level can be managed using environment variables (which are declared on the system, <code>.env</code> files, or other contexts) or command line arguments. Users who want customize their software should know how to <strong itemprop="keyword">run</strong> or <strong itemprop="keyword">compile</strong> software.
 			</SimpleText>
 			<SimpleText>
 				As an example, some programming languages have a compiler. Those compilers allows developer(s) to create programs that run on different operating systems or environments. For every operating system that a developer want to support, the compiler would output a specific executable or artifact specialized and optimized for the targeted system.
@@ -112,6 +129,19 @@
 			<SimpleText>
 				Environment variables are usually used in web development too. Some variables are named like <code>DOMAIN_NAME</code>, <code>SERVER_PORT</code>, or <code>BRAND_NAME</code>. These variables are used different parts of the software and customized per machine.
 			</SimpleText>
+			<SimpleText>
+				Using the previous example, the program can be be modified to allow environment-level customization. It uses an external package named <ExternalLink address="https://www.npmjs.com/package/dotenv">dotenv</ExternalLink> package to use the environment variables by using <code>process.env.&lt;variable name&gt;</code>. Note that the program uses logical OR operator (<code>||</code>) in order to use default messages.
+			</SimpleText>
+			<ExampleCode fileInfo={associatedFileList[1]} let:codeInfo>
+				<SimpleText>
+					There are different methods to declare environment variables. Below, uses <code>.env</code> file to declare them. Note some the variables do not have value. Therefore, the program will use default values for those empty variables.
+				</SimpleText>
+				<ExampleCode itemprop="hasPart" fileInfo={associatedFileList[2]}/>
+				<ExampleOutput
+					commandInfos={environmentLevelExecutedCommandInfo}
+					{codeInfo}
+					fileInfo={associatedFileList[1]}/>
+			</ExampleCode>
 		</StructuredSection>
 		<StructuredSection id={levels[2].id}>
 			<SecondaryHeading headingInfo={levels[2]}/>
