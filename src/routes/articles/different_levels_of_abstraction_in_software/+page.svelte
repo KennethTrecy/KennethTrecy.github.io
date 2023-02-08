@@ -200,16 +200,15 @@
 		<StructuredSection id={levels[5].id}>
 			<SecondaryHeading headingInfo={levels[5]}/>
 			<SimpleText>
-				<strong itemprop="mainEntity">Hardest level of abstraction that someone could work on.</strong> It can be in a form of abstract classes, templates, traits, generics, or macros. Assembly and binary instructions are also included here since they are the most general instructions that represent a computer instructions.
+				<strong itemprop="mainEntity">Hardest level of abstraction that someone could work on.</strong> It can be in a form of <ExternalLink address="https://www.php.net/manual/en/language.oop5.abstract.php">abstract classes</ExternalLink>, <ExternalLink address="https://en.cppreference.com/w/cpp/language/templates">templates</ExternalLink>, <ExternalLink address="https://doc.rust-lang.org/book/ch10-02-traits.html">traits</ExternalLink>, <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">generics</ExternalLink>, or <ExternalLink address="https://doc.rust-lang.org/reference/macros.html">macros</ExternalLink>.
 			</SimpleText>
 			<SimpleText>
-				If a generalized class or function has changed in identifiers, mechanism, or number of parameters, the developer has to change all codes that depend on the generalized class or function. It can be tedious process relative to the number of changes applied on an interface-level code.
+				If a generalized class or function has changed in identifiers, mechanism, or number of parameters, the developer has to change all codes that depend on the generalized class or function. It can be tedious process as the difficulty is relative to the number of changes applied on an interface-level code.
 			</SimpleText>
 			<SimpleText>
 				Codes at this level may consider multiple use cases. Modifying them should be careful to make sure the dependent systems do not break, or at least breaks slightly.
 			</SimpleText>
 		</StructuredSection>
-		<!-- TODO: Link some concepts where they can be found -->
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
 </StructuredArticle>
