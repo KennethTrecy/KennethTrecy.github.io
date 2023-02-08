@@ -29,7 +29,7 @@
 		{ "text": "Configuration-level Abstraction" },
 		{ "text": "Variable-level Abstraction" },
 		{ "text": "Function-level Abstraction" },
-		{ "text": "Class-level Abstraction" },
+		{ "text": "Object-level Abstraction" },
 		{ "text": "Interface-level Abstraction" }
 	].map(defineHeadingInfo)
 
