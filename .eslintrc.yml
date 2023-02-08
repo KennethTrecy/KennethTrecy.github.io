@@ -10,8 +10,15 @@ env:
   es6: true
   node: true
 plugins:
+  - "svelte3"
   - "@typescript-eslint"
 parser: "@typescript-eslint/parser"
+overrides:
+  - files:
+      - "*.svelte"
+    processor: "svelte3/svelte3"
+settings:
+  "svelte3/typescript": true
 extends:
   - "eslint:all"
   - "plugin:@typescript-eslint/recommended"
