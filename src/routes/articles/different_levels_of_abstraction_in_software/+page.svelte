@@ -31,6 +31,23 @@
 		{ "text": "Class-level Abstraction" },
 		{ "text": "Interface-level Abstraction" }
 	].map(defineHeadingInfo)
+
+	const packageLevelExecutedCommandInfo: ExecutedCommandSetInfo = {
+		"description": "This is the output after running the package-level code.",
+		"commands": [
+			{
+				"command": `npx ts-node ${associatedFileList[0].path}`,
+				"output": [
+					{ "text": "What is your first name? Kenneth" },
+					{ "text": "What is your last name? Tobias" },
+					{ "text": "What is your age? 10" },
+					{ "text": "How many meters did you walk? 100" },
+					{ "text": "You are Kenneth Tobias." },
+					{ "text": "Your age is 10 and you have walked for 100 meters.\n" }
+				]
+			}
+		]
+	}
 </script>
 
 <svelte:head>
@@ -66,15 +83,23 @@
 		<StructuredSection id={levels[0].id}>
 			<SecondaryHeading headingInfo={levels[0]}/>
 			<SimpleText>
-				<strong itemprop="mainEntity">This level of abstraction is the most easiest to work on among other levels.</strong> It can be done by running a simple console application, visiting a web page, installing an executable programs, hosting a HTTP server, or <strong>anything that faces the clients directly</strong>.
+				<strong itemprop="mainEntity">This level of abstraction is the most easiest to work on among other levels.</strong> However, a code at this level may have repetitive statements. Therefore, the program will be longer and will take time to read.
 			</SimpleText>
 			<SimpleText>
-				The client could be you, your customer, or other end users. A software at this level are relatively easy to use and modify, unlike the other softwares that are customizable on other levels. They do all the work for you.
+				In addition, most applications are only usable in this level. They are relatively easy to install as they can be standalone or in compressed portable format. The downside is that there is a <strong itemprop="keyword">limited customizability</strong> which are offered through <em>settings</em> or <em>preferences</em> option. It is expected that the users of these applications are anyone who are <strong itemprop="keyword">basic computer literacy</strong>.
 			</SimpleText>
 			<SimpleText>
 				For example, a teacher use a spreadsheet software to calculate the grades of students. The teacher will just input the raw grade and the formula. After that, the final grade will be calculated by the software as programmed.
 			</SimpleText>
-			<ExampleCode fileInfo={associatedFileList[0]}/>
+			<SimpleText>
+				Below is another example of a program which asks for user's first name, last name, age, and distance walked. Notice that there are repetitive statements and may take time to read.
+			</SimpleText>
+			<ExampleCode fileInfo={associatedFileList[0]} let:codeInfo>
+				<ExampleOutput
+					commandInfos={packageLevelExecutedCommandInfo}
+					{codeInfo}
+					fileInfo={associatedFileList[0]}/>
+			</ExampleCode>
 		</StructuredSection>
 		<StructuredSection id={levels[1].id}>
 			<SecondaryHeading headingInfo={levels[1]}/>
