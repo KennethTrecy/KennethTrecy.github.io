@@ -40,7 +40,7 @@
 		Content of
 		<ExternalLink
 			address={codeInfo.viewURL}
-			itemprop={[ "mainEntityOfPage" ]}>{fileInfo.path}</ExternalLink> in
+			itemprop="mainEntityOfPage">{fileInfo.path}</ExternalLink> in
 		{fileInfo.branch}
 		at <ExternalLink
 			address={repoURL}
