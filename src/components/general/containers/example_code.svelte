@@ -44,6 +44,6 @@
 		{fileInfo.branch}
 		at <ExternalLink
 			address={repoURL}
-			itemprop="codeRepository">{fileInfo.owner}/{fileInfo.repo}</ExternalLink>.
+			itemprop="codeRepository">{fileInfo.owner}/{fileInfo.repo}</ExternalLink>
 	</p>
 </section>
