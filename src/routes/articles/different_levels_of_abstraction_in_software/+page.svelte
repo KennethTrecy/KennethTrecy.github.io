@@ -192,6 +192,10 @@
 			<SimpleText>
 				In web development, instances are also used like servers too. Indeed, they have multiple fnctionalities but uses different set of values inside. They may differ in software version, domain name, or files to name a few.
 			</SimpleText>
+			<SimpleText>
+				Below is another improved version of the same program. It uses classes and the concept of inheritance to reuse the code. There are four instances in this code which are contained in variables declared at line 47, 50, 53, and 56.
+			</SimpleText>
+			<ExampleCode fileInfo={associatedFileList[7]}/>
 		</StructuredSection>
 		<StructuredSection id={levels[5].id}>
 			<SecondaryHeading headingInfo={levels[5]}/>
