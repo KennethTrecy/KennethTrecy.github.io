@@ -167,6 +167,18 @@
 			<SimpleText>
 				Generalizing multiple but similar procedures into one function is helpful during development. It saves lines of code and effort to scroll on a file to understand the operations. Other developers do not need to reimplement a function as they only need to install a dependency containing the process they need, therefore it saves time.
 			</SimpleText>
+			<SimpleText>
+				From the previous example again, repeated statements on reading a string can be summarized into one function. Therefore, it quicker to read.
+			</SimpleText>
+			<ExampleCode fileInfo={associatedFileList[4]}/>
+			<SimpleText>
+				Repeated statements on reading an integer can also be summarized.
+			</SimpleText>
+			<ExampleCode fileInfo={associatedFileList[5]}/>
+			<SimpleText>
+				There are similarities between the two new functions. Generalizing it further, it becomes something like below.
+			</SimpleText>
+			<ExampleCode fileInfo={associatedFileList[6]}/>
 		</StructuredSection>
 		<StructuredSection id={levels[4].id}>
 			<SecondaryHeading headingInfo={levels[4]}/>
