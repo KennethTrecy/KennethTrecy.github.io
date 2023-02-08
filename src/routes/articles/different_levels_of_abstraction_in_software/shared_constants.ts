@@ -14,6 +14,7 @@ const associatedFileTree: ViewableOwnerInfoTree[] = [
 						"paths": [
 							"src/package-level_abstraction.ts",
 							"src/environment-level_abstraction.ts",
+							".env",
 							"src/variable-level_abstraction.ts",
 							"src/function-level_abstraction_variant_1.ts",
 							"src/function-level_abstraction_variant_2.ts",
