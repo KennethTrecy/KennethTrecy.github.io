@@ -46,4 +46,5 @@
 			address={repoURL}
 			itemprop="codeRepository">{fileInfo.owner}/{fileInfo.repo}</ExternalLink>
 	</p>
-</section>
+	<slot {codeInfo}></slot>
+</div>
