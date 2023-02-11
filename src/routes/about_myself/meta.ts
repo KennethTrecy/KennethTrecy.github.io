@@ -7,7 +7,7 @@ const meta = definePageMeta("/about_myself", {
 	"description": "Know more about Kenneth Trecy's journey and his skills on I.T. field. Contact details have been listed here too if you want to connect with him.",
 	"keywords": [ "Kenneth Trecy", "contact" , "journey" ],
 	"title": "Who am I?",
-	"version": "1.1-dev"
+	"version": "1.001-dev"
 })
 
 export default meta
