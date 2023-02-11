@@ -14,6 +14,8 @@ export async function handle({ event, resolve }) {
 				// - Sentences after period start with uppercase letter or number
 				// - An acronym inside a sentence followed by a lowercase letter
 				.replace(/>\.([A-Za-z0-9])/g, ">. $1")
+				// Handles the case of opening tags inside a sentence.
+				.replace(/([a-zA-Z0-9]{2,})<([a-z]+)/g, "$1 <$2")
 				// Ensure there is a space between commas.
 				.replace(/,([^ ])/g, ", $1")
 			return spacedHTML
