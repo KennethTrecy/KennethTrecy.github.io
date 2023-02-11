@@ -148,7 +148,7 @@
 </svelte:head>
 
 <StructuredArticle itemtype="https://schema.org/CreativeWorkSeries">
-	<PrimaryHeading slot="title">List of Involved Projects</PrimaryHeading>
+	<PrimaryHeading slot="title">{pageMeta.title}</PrimaryHeading>
 	<svelte:fragment slot="content">
 		<StructuredSection itemprop="about" id={rationale.id}>
 			<SecondaryHeading headingInfo={rationale}/>
