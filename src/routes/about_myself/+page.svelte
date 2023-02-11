@@ -61,7 +61,7 @@
 					"name": "SvelteKit",
 					"homepage": "https://kit.svelte.dev/"
 				}, {
-					"name": "daisyUi",
+					"name": "daisyUI",
 					"homepage": "https://daisyui.com/"
 				}, {
 					"name": "Tailwind CSS",

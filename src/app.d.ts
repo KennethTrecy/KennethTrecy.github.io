@@ -7,10 +7,10 @@ declare namespace App {
 	// interface PageData {}
 	interface Platform {
 		env: {
-			COUNTER: DurableObjectNamespace
 			CF_PAGES_URL: string
 			PUBLIC_PRODUCTION_BASE_URL: string
 			PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH: string
+			IS_INDEXABLE: string
 		}
 		context: {
 			waitUntil(promise: Promise<any>): void;

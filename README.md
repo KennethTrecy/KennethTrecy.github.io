@@ -8,7 +8,6 @@ Some parts of the repository was based from [`docker_js-mocha-svelte-typescript-
 The template is specialized for front-end development.
 
 ## Usage
-You can modify this repository's files' content or names as much as you want.
 
 ### Initialization
 This repository should be initialized to adhere in [Conventional Commits specification] for organize
