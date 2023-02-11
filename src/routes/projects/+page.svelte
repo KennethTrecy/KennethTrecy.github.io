@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HeadingInfo } from "@/types/body"
 
-	import pageMeta from "@/routes/about_myself/meta"
+	import pageMeta from "@/routes/projects/meta"
 
 	import CommonHead from "@/components/general/common_head.svelte"
 	import ProjectCard from "@/components/general/project_card.svelte"
