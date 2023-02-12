@@ -1,4 +1,4 @@
-interface MultimediaLink {
+export interface MultimediaLink {
 	link: string,
 	densityPerPixel: number
 }
