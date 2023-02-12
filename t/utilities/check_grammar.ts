@@ -28,15 +28,17 @@ export default async function(page: Page) {
 	const allMetaTexts = allMetaSelectors.map(
 		selector => page
 			.locator(selector)
-			.getAttribute("content")
-			.then(
-				content => selector.includes("keywords")
-					? content.replace(/,/g, ", ")
-					: content
+			.all()
+			.then(metas => metas.map(
+				meta => meta.getAttribute("content")
+				.then(
+					content => selector.includes("keywords")
+						? content.replace(/,/g, ", ")
+						: content))
 			)
 	)
 	const allTexts = (await Promise.all([
-		...allMetaTexts,
+		...(await Promise.all(allMetaTexts)).flat(),
 		...await allAlternateTexts,
 		page.locator(`css=${allInnerTextSelectors}`).allInnerTexts()
 	])).flat()
