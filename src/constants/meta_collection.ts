@@ -1,4 +1,4 @@
-import type { PageMeta } from "@/types/head"
+import type { PageMeta } from "@/types/content"
 
 import indexMeta from "@/routes/meta"
 import aboutMeta from "@/routes/about_myself/meta"

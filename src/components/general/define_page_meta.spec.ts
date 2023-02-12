@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest"
 
-import type { PageMeta } from "@/types/head"
+import type { PageMeta } from "@/types/content"
 
 import Logo from "@/multimedia/logo.png"
 import { PUBLIC_PRODUCTION_BASE_URL } from "$env/static/public"
