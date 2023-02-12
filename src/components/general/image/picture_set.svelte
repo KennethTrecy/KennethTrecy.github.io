@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { MultimediaInfo } from "@/types/content"
 
-	import makeSet from "@/components/general/make_set"
+	import makeSet from "@/components/general/image/make_set"
 
 	export let info: MultimediaInfo
 	let otherClasses: string[] = []
