@@ -13,9 +13,14 @@
 
 	$: sourceSet = makeSet(info.responsiveLinks)
 	$: joinedClasses = [ ...initialClasses, ...otherClasses].join(" ")
+	$: style = [
+		`width: ${info.defaultWidth}px; height: ${info.defaultHeight}px`,
+		`min-width: ${info.defaultWidth}px; min-height: ${info.defaultHeight}px`,
+		`max-width: ${info.defaultWidth}px; max-height: ${info.defaultHeight}px`
+	].join(";")
 </script>
 
-<picture {itemprop} class={joinedClasses}>
+<picture {itemprop} class={joinedClasses} {style}>
 	<source srcset={sourceSet}/>
 	<img
 		src={info.defaultLink}
