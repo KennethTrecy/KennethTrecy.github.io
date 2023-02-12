@@ -4,6 +4,7 @@
 	import makeSet from "@/components/general/image/make_set"
 
 	export let info: MultimediaInfo
+	export let itemprop: string|undefined = undefined
 	let otherClasses: string[] = []
 
 	export { otherClasses as class }
@@ -14,7 +15,7 @@
 	$: joinedClasses = [ ...initialClasses, ...otherClasses].join(" ")
 </script>
 
-<picture class={joinedClasses}>
+<picture {itemprop} class={joinedClasses}>
 	<source srcset={sourceSet}/>
 	<img
 		src={info.defaultLink}
