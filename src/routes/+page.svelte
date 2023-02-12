@@ -4,6 +4,7 @@
 
 	import { profile } from "@/constants/drive_images"
 
+	import makeSet from "@/components/general/image/make_set"
 	import BaseLink from "@/components/general/links/base.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import ProjectCard from "@/components/general/project_card.svelte"
@@ -35,6 +36,7 @@
 		"prefix": "🔐",
 		"text": "Security in mind"
 	})
+	const sourceSet = makeSet(profile.responsiveLinks)
 </script>
 
 <svelte:head>
@@ -63,9 +65,13 @@
 					20%.
 			 -->
 			<div class="hero-content flex flex-col xl:flex-row">
-				<PictureSet
+				<img
 					itemprop="image"
-					src={profile}
+					src={profile.defaultLink}
+					srcset={sourceSet}
+					width={profile.defaultWidth}
+					height={profile.defaultHeight}
+					alt={profile.description}
 					class="max-w-sm"/>
 				<section class="max-w-sm xl:max-w-md text-center xl:text-left">
 					<SecondaryHeading headingInfo={greetings}>
