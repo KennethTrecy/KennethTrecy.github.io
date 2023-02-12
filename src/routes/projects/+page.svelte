@@ -147,7 +147,7 @@
 	<CommonHead {pageMeta}/>
 </svelte:head>
 
-<StructuredArticle itemtype="https://schema.org/CreativeWorkSeries">
+<StructuredArticle itemtype="https://schema.org/CreativeWork">
 	<PrimaryHeading slot="title">{pageMeta.title}</PrimaryHeading>
 	<svelte:fragment slot="content">
 		<StructuredSection itemprop="about" id={rationale.id}>
