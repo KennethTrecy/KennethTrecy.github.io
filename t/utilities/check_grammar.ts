@@ -20,9 +20,9 @@ export default async function(page: Page) {
 	const metaSelectors = [
 		"description",
 		"keywords",
-		'"og:title"',
-		'"og:image:alt"',
-		'"og:description"'
+		"og:title",
+		"og:image:alt",
+		"og:description"
 	]
 	const allMetaSelectors = metaSelectors.map(name => `meta[name=${name}]`)
 	const allMetaTexts = allMetaSelectors.map(
