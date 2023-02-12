@@ -35,6 +35,6 @@ describe("Make set behavior", () => {
 
 		const sourceSet = makeSet(links)
 
-		expect(sourceSet).toBeUndefined()
+		expect(sourceSet).toBe("")
 	})
 })
