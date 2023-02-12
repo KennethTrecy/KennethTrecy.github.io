@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import { describe, expect, it } from "vitest"
 
 import type { MultimediaLink } from "@/types/content"
@@ -5,29 +6,29 @@ import type { MultimediaLink } from "@/types/content"
 import makeSet from "./make_set"
 
 describe("Make set behavior", () => {
-	it("can generate source set for multiple images", () => {
+	it("can generate source set from multiple link", () => {
 		const links: MultimediaLink[] = [
 			{
-				"densityPerPixel": 4,
+				"intrinsicWidth": 400,
 				"link": "A"
 			}, {
-				"densityPerPixel": 5,
+				"intrinsicWidth": 500,
 				"link": "B"
 			}, {
-				"densityPerPixel": 8,
+				"intrinsicWidth": 800,
 				"link": "C"
 			}
 		]
 
 		const sourceSet = makeSet(links)
 
-		expect(sourceSet).toBe("A 1x, B 1.25x, C 2x")
+		expect(sourceSet).toBe("A 400w, B 500w, C 800w")
 	})
 
-	it("can generate source set for single image", () => {
+	it("cannot generate source set for single link", () => {
 		const links: MultimediaLink[] = [
 			{
-				"densityPerPixel": 1,
+				"intrinsicWidth": 400,
 				"link": "A"
 			}
 		]
