@@ -11,7 +11,7 @@ const meta = definePageMeta("/", {
 	"description": "Do you need help in back-end web development? Hi! I am Kenneth Trecy, a programmer living in the Philippines. Get to know me by visiting out my personal website!",
 	"keywords": [ "Kenneth Trecy", "portfolio", "Philippines" ],
 	"title": "KennethTrecy's Portfolio",
-	"version": "1.1-dev",
+	"version": "1.001-dev",
 	"imageURL": makeSharedMultimediaLink(profile),
 	"imageDescription": "Kenneth Trecy's face"
 })
