@@ -2,7 +2,7 @@
 	import pageMeta from "@/routes/meta"
 	import { externalTypes, internalTypes, authorTypes } from "@/components/general/links/constants"
 
-	import Logo from "@/multimedia/logo.png"
+	import { profile } from "@/constants/drive_images"
 
 	import BaseLink from "@/components/general/links/base.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
@@ -14,6 +14,7 @@
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
+	import makeSharedMultimediaLink from "@/components/general/make_shared_multimedia_link"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
@@ -64,8 +65,8 @@
 			<div class="hero-content flex flex-col xl:flex-row">
 				<img
 					itemprop="image"
-					src={Logo}
-					alt="Kenneth Trecy's logo"
+					src={makeSharedMultimediaLink(profile)}
+					alt="Kenneth Trecy's face"
 					width="384"
 					height="384"
 					class="max-w-sm"/>
