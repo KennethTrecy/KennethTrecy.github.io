@@ -1,6 +1,7 @@
 export interface MultimediaLink {
 	link: string,
-	densityPerPixel: number
+	densityPerPixel: number,
+	isBase?: boolean
 }
 
 export interface MultimediaInfo {
