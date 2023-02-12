@@ -17,19 +17,24 @@ export default async function(page: Page) {
 	)
 	const metaSelectors = [
 		"description",
-		"keywords"
+		"keywords",
+		"og:title",
+		"og:description",
+		"og:image:alt"
 	]
 	const allMetaSelectors = metaSelectors.map(name => `meta[name=${name}]`)
-	const allMetaTexts = allMetaSelectors.map(
-		selector => page
-			.locator(selector)
-			.getAttribute("content")
-			.then(
-				content => selector.includes("keywords")
-					? content.replace(/,/g, ", ")
-					: content
+	const allMetaTexts = (await Promise.all(allMetaSelectors.map(
+		selector => page.locator(selector).all().then(
+			locators => locators.map(
+				locator => locator.getAttribute("content")
+				.then(
+					content => selector.includes("keywords")
+						? content.replace(/,/g, ", ")
+						: content
+				)
 			)
-	)
+		)
+	))).flat()
 	const allTexts = (await Promise.all([
 		...allMetaTexts,
 		...allAlternateTexts,
