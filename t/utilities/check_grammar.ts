@@ -15,7 +15,10 @@ export default async function(page: Page) {
 	const allAlternateTexts = page.locator(`css=[alt]`).getAttribute("alt")
 	const metaSelectors = [
 		"description",
-		"keywords"
+		"keywords",
+		"og:title",
+		"og:image:alt",
+		"og:description"
 	]
 	const allMetaSelectors = metaSelectors.map(name => `meta[name=${name}]`)
 	const allMetaTexts = allMetaSelectors.map(
