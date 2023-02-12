@@ -8,13 +8,13 @@
 	import CommonHead from "@/components/general/common_head.svelte"
 	import ProjectCard from "@/components/general/project_card.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
+	import PictureSet from "@/components/general/image/picture_set.svelte"
 	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
-	import makeSharedMultimediaLink from "@/components/general/make_shared_multimedia_link"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
@@ -63,12 +63,9 @@
 					20%.
 			 -->
 			<div class="hero-content flex flex-col xl:flex-row">
-				<img
+				<PictureSet
 					itemprop="image"
-					src={makeSharedMultimediaLink(profile)}
-					alt="Kenneth Trecy's face"
-					width="384"
-					height="384"
+					src={profile}
 					class="max-w-sm"/>
 				<section class="max-w-sm xl:max-w-md text-center xl:text-left">
 					<SecondaryHeading headingInfo={greetings}>

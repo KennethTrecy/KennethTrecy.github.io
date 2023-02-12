@@ -1,9 +1,9 @@
-import { profile } from "@/constants/drive_images"
 import { FIRST_PUBLICATION_DATE } from "@/constants/miscellaneous_meta"
+import { profile } from "@/constants/drive_images"
 
 import definePageMeta from "@/components/general/define_page_meta"
-import makeSharedMultimediaLink from "@/components/general/make_shared_multimedia_link"
 
+const highestResolutionImage = profile.responsiveLinks[profile.responsiveLinks.length - 1]
 
 const meta = definePageMeta("/", {
 	"datePublished": FIRST_PUBLICATION_DATE,
@@ -12,8 +12,8 @@ const meta = definePageMeta("/", {
 	"keywords": [ "Kenneth Trecy", "portfolio", "Philippines" ],
 	"title": "KennethTrecy's Portfolio",
 	"version": "1.001-dev",
-	"imageURL": makeSharedMultimediaLink(profile),
-	"imageDescription": "Kenneth Trecy's face"
+	"imageURL": highestResolutionImage.link,
+	"imageDescription": profile.description
 })
 
 export default meta
