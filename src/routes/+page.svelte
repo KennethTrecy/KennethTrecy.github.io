@@ -178,6 +178,12 @@
 		animation-play-state: running;
 	}
 
+	@media (prefers-reduced-motion) {
+		.hero-content img, .hero-content:hover img {
+			animation-play-state: paused;
+		}
+	}
+
 	@keyframes heptagon_border {
 		0% {
 			clip-path: polygon(100% 49.3652404307133%,80.9354966417325% 88.953089569181%,38.0979464407022% 98.7304808614266%,3.74489842506188% 71.334839241954%,3.74489842506188% 27.3956416194726%,38.0979464407022% 0%,80.9354966417325% 9.77739129224562%);
