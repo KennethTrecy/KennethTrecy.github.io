@@ -12,7 +12,11 @@ export default async function(page: Page) {
 		"h2"
 	]
 	const allInnerTextSelectors = innerTextSelectors.join(", ")
-	const allAlternateTexts = page.locator(`css=[alt]`).getAttribute("alt")
+	const allAlternateTexts = page.locator(`css=[alt]`)
+		.all()
+		.then(elements => elements.map(element => {
+			element.getAttribute("alt")
+		}))
 	const metaSelectors = [
 		"description",
 		"keywords",
@@ -33,7 +37,7 @@ export default async function(page: Page) {
 	)
 	const allTexts = (await Promise.all([
 		...allMetaTexts,
-		allAlternateTexts,
+		...await allAlternateTexts,
 		page.locator(`css=${allInnerTextSelectors}`).allInnerTexts()
 	])).flat()
 
