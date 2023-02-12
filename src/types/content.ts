@@ -7,4 +7,6 @@ export interface MultimediaInfo {
 	description: string
 	responsiveLinks: MultimediaLink[],
 	defaultLink: string
+	defaultWidth: number
+	defaultHeight: number
 }

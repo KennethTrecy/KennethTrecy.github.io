@@ -16,5 +16,9 @@
 
 <picture class={joinedClasses}>
 	<source srcset={sourceSet}/>
-	<img src={info.defaultLink} alt={info.description}/>
+	<img
+		src={info.defaultLink}
+		alt={info.description}
+		width={info.defaultWidth}
+		height={info.defaultHeight}/>
 </picture>
