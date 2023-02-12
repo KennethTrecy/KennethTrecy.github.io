@@ -7,6 +7,7 @@ module.exports = {
 		],
 		"tsconfigRootDir": __dirname
 	},
+	"ignorePatterns": [ ".eslintrc.cjs" ],
 	"env": {
 		"browser": true,
 		"es6": true,
