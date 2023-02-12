@@ -36,7 +36,7 @@ export default async function(page: Page) {
 		page.locator(`css=${allInnerTextSelectors}`).allInnerTexts()
 	])).flat()
 
-	const pendingResults: Promise<any>[] = allTexts.map(async text => {
+	const pendingResults: Promise<any>[] = [...new Set(allTexts)].map(async text => {
 		const result = await check(text, {
 			"api_url": "http://localhost:8081/v2/check",
 			dictionary
