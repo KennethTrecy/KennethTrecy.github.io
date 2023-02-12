@@ -42,8 +42,15 @@
 
 <meta name="og:title" content={pageMeta.title}/>
 <meta name="og:type" content={pageMeta.objectType}/>
-<meta name="og:image" content={pageMeta.imageURL}/>
-<meta name="og:image:alt" content={pageMeta.imageDescription}/>
+<meta name="og:image" content={pageMeta.image.defaultLink}/>
+<meta name="og:image:alt" content={pageMeta.image.description}/>
+<meta name="og:image:width" content={pageMeta.image.defaultWidth}/>
+<meta name="og:image:height" content={pageMeta.image.defaultHeight}/>
+{#each pageMeta.image.responsiveLinks as linkInfo}
+	<meta name="og:image" content={linkInfo.link}/>
+	<meta name="og:image:alt" content={pageMeta.image.description}/>
+	<meta name="og:image:width" content={linkInfo.intrinsicWidth}/>
+{/each}
 <meta name="og:url" content={pageMeta.pageURL}/>
 <meta name="og:description" content={pageMeta.description}/>
 <meta name="og:site_name" content="KennethTrecy"/>

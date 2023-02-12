@@ -84,18 +84,11 @@ export interface PageMeta {
 	readonly license: LicenseInfo
 
 	/**
-	 * URL of the image that represents the page.
+	 * Info about the main image in the page
 	 *
 	 * See: https://ogp.me/
 	 */
-	readonly imageURL: string
-
-	/**
-	 * Description of the image that represents the page.
-	 *
-	 * See: https://ogp.me/
-	 */
-	readonly imageDescription: string
+	readonly image: MultimediaInfo
 
 	/**
 	 * Canonical URL of the page.

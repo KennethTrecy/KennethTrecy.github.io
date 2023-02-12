@@ -1,10 +1,10 @@
 import type { PageMeta } from "@/types/content"
 
-import indexMeta from "@/routes/meta"
 import aboutMeta from "@/routes/about_myself/meta"
+import indexMeta from "@/routes/meta"
 import projectsMeta from "@/routes/projects/meta"
 
-const metaCollection: PageMeta[] = [
+const metaCollection = <PageMeta[]>[
 	indexMeta,
 	aboutMeta,
 	projectsMeta
