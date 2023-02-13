@@ -7,7 +7,7 @@ const meta = definePageMeta("/about_myself", {
 	// eslint-disable-next-line max-len
 	"description": "Know more about Kenneth Trecy's journey and his skills on I.T. field. Contact details have been listed here too if you want to connect with him.",
 	"keywords": [ "Kenneth Trecy", "contact", "journey", "skills", "Filipino programmer" ],
-	"title": "Who am I?",
+	"title": "Who am I?: Journey of Trecy",
 	"version": "1.001-dev"
 })
 
