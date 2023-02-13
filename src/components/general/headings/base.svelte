@@ -26,7 +26,7 @@
 	<slot></slot>
 	<Bookmark
 		{fragment}
-		class={[ isMouseIn ? "visible" : "invisible" ]}>
+		class={[ isMouseIn ? "" : "hidden" ]}>
 		<Icon name="link"/>
 	</Bookmark>
 </svelte:element>
