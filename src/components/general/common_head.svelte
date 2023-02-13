@@ -4,6 +4,7 @@
 	import { dev } from "$app/environment"
 	import {
 		PUBLIC_PRODUCTION_BASE_URL,
+		PUBLIC_MINIMUM_TITLE_LENGTH,
 		PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH
 	} from "$env/static/public"
 
@@ -13,6 +14,9 @@
 
 	$: if (dev && pageMeta.description.length > Number(PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH)) {
 		console.warn(`Description for page entitled "${pageMeta.title}" is too long.`)
+	}
+	$: if (dev && pageMeta.title.length < Number(PUBLIC_MINIMUM_TITLE_LENGTH)) {
+		console.warn(`Title for page entitled "${pageMeta.title}" is too short.`)
 	}
 	$: pageURL = `https://kennethtrecy.pages.dev${pageMeta.path}`
 	$: imageURL = `https://kennethtrecy.pages.dev${Logo}`
