@@ -16,15 +16,11 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"development": "vite dev",
-		"watch": "npx rollup -c bundler/dev/rollup.config.js --watch",
 		"prod": "vite build",
-		"production:partial": "npx rollup -c bundler/prod/rollup.partial.config.js",
-		"production:full": "npx rollup -c bundler/prod/rollup.full.config.js",
 		"test:unit": "npx vitest",
 		"test:e2e:install": "npx playwright install",
 		"test:e2e": "npm run build && npm run test:e2e:fast",
-		"test:e2e:fast": "npx playwright test",
-		"test:watch_unit": "npx mocha hidden/t/**/*.js --watch --watch-files hidden/t/**/*.js"
+		"test:e2e:fast": "npx playwright test"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.3.0",
