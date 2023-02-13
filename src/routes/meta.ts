@@ -5,7 +5,7 @@ import definePageMeta from "@/components/general/define_page_meta"
 
 const meta = definePageMeta("/", {
 	"datePublished": FIRST_PUBLICATION_DATE,
-	"dateModified": new Date(Date.UTC(2022, 1, 12)),
+	"dateModified": new Date(Date.UTC(2023, 1, 13, 11, 30)),
 	// eslint-disable-next-line max-len
 	"description": "Do you need help in back-end web development? Hi! I am Kenneth Trecy, a programmer living in the Philippines. Get to know me by visiting out my personal website!",
 	"keywords": [
