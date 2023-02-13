@@ -23,6 +23,7 @@ module.exports = {
 				"dprct",
 				"remove",
 				"dx",
+				"seo",
 				"security",
 				"revert",
 				"internal",
