@@ -22,7 +22,7 @@ export default async function(page: Page) {
 		"og:description",
 		"og:image:alt"
 	]
-	const allMetaSelectors = metaSelectors.map(name => `meta[name=${name}]`)
+	const allMetaSelectors = metaSelectors.map(name => `meta[name="${name}"]`)
 	const allMetaTexts = (await Promise.all(allMetaSelectors.map(
 		selector => page.locator(selector).all().then(
 			locators => locators.map(
