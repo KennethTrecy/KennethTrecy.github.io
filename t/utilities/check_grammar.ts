@@ -41,7 +41,8 @@ export default async function(page: Page) {
 		page.locator(`css=${allInnerTextSelectors}`).allInnerTexts()
 	])).flat()
 
-	const pendingResults: Promise<any>[] = [...new Set(allTexts)].map(async text => {
+	const uniqueTexts = [ ...new Set(allTexts) ]
+	const pendingResults: Promise<any>[] = uniqueTexts.map(async text => {
 		const result = await check(text, {
 			"api_url": "http://localhost:8081/v2/check",
 			dictionary
@@ -50,7 +51,7 @@ export default async function(page: Page) {
 		return result.matches
 	})
 
-	const expectedMatches = allTexts.map(() => [])
+	const expectedMatches = uniqueTexts.map(() => [])
 	const matches = await Promise.all(pendingResults)
 	await expect(matches).toEqual(expectedMatches)
 }
