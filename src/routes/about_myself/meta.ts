@@ -6,7 +6,7 @@ const meta = definePageMeta("/about_myself", {
 	"dateModified": new Date(Date.UTC(2023, 1, 12)),
 	// eslint-disable-next-line max-len
 	"description": "Know more about Kenneth Trecy's journey and his skills on I.T. field. Contact details have been listed here too if you want to connect with him.",
-	"keywords": [ "Kenneth Trecy", "contact", "journey" ],
+	"keywords": [ "Kenneth Trecy", "contact", "journey", "skills", "Filipino programmer" ],
 	"title": "Who am I?",
 	"version": "1.001-dev"
 })
