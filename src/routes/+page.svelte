@@ -91,7 +91,7 @@
 			</div>
 		</div>
 		<div class="divider"></div>
-		<div class="flex flex-col justify-center items-center">
+		<div class="container md:m-0 md:p-0 flex flex-col justify-center items-center">
 			<StructuredSection id={specialty.id}>
 				<SecondaryHeading headingInfo={specialty}/>
 				<SimpleText>Web development is my expertise. I have tried different technologies too, such as networking, Internet of Things (<abbr>IoT</abbr>), and game.</SimpleText>
