@@ -10,6 +10,7 @@ declare namespace App {
 			CF_PAGES_URL: string
 			PUBLIC_PRODUCTION_BASE_URL: string
 			PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH: string
+			PUBLIC_MINIMUM_TITLE_LENGTH: string
 			IS_INDEXABLE: string
 		}
 		context: {
