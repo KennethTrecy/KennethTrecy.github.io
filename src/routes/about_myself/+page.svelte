@@ -222,7 +222,7 @@
 </svelte:head>
 
 <StructuredArticle itemtype="https://schema.org/Person">
-	<PrimaryHeading slot="title">Who am I?</PrimaryHeading>
+	<PrimaryHeading slot="title">{pageMeta.title}</PrimaryHeading>
 	<svelte:fragment slot="content">
 		<section id={journey.id}>
 			<SecondaryHeading headingInfo={journey} mustBeRaw={true}/>
