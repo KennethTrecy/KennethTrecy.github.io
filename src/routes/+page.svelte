@@ -72,7 +72,7 @@
 					width={profile.defaultWidth}
 					height={profile.defaultHeight}
 					alt={profile.description}
-					class="max-w-sm"/>
+					class="max-w-sm bg-primary"/>
 				<section class="max-w-sm xl:max-w-md text-center xl:text-left">
 					<SecondaryHeading headingInfo={greetings}>
 						I am <span itemprop="givenName">Kenneth Trecy</span>!
