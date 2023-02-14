@@ -12,7 +12,7 @@
 
 	$: joinedClasses = [
 		...otherClasses
-	].filter(Boolean).join(" ")
+	].filter(Boolean).join(" ") || undefined
 	$: tag = level == 1
 		? "h1"
 		: level === 2
