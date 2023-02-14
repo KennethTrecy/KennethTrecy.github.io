@@ -10,7 +10,8 @@ export async function handle({ event, resolve }) {
 
 			const minimizeHTML = html
 				.replace(/(?<extraSpaces>\t|\r)/gu, "")
-				.replace(/(?<extraNewLines>\n+)/gu, "\n")
+				.replace(/\n(?<closingTagAfterNewLine><\/[a-z]+>)/gu, "$1")
+				.replace(/\n+/gu, "\n")
 
 			return minimizeHTML
 		}
