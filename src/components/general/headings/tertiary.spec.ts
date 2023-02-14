@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 // @vitest-environment jsdom
 
 import { describe, it, expect } from "vitest"
@@ -48,8 +49,8 @@ describe("Tertiary heading behavior", () => {
 		const heading = container.querySelector("h3") as HTMLHeadingElement
 		await fireEvent.mouseOver(heading)
 
-		const bookmark = container.querySelector(".visible")
-		expect(bookmark).not.toBeNull()
+		const bookmark = container.querySelector(".hidden")
+		expect(bookmark).toBeNull()
 
 		cleanup()
 	})
@@ -64,7 +65,7 @@ describe("Tertiary heading behavior", () => {
 		await fireEvent.mouseOver(heading)
 		await fireEvent.mouseOut(heading)
 
-		const bookmark = container.querySelector(".invisible")
+		const bookmark = container.querySelector(".hidden")
 		expect(bookmark).not.toBeNull()
 
 		cleanup()
