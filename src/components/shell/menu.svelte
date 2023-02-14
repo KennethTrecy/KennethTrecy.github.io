@@ -14,12 +14,12 @@
 			<Icon name="code"/>
 			<span class="flex-1">Projects<span>
 		</a>
-		<a href="/about_myself" class="inline-flex flex-row flex-nowrap items-center">
+		<a href="/about_myself#" class="inline-flex flex-row flex-nowrap items-center">
 			<Icon name="badge"/>
 			<span class="flex-1">About myself<span>
 		</a>
 		<a href="/website_info" class="inline-flex flex-row flex-nowrap items-center">
-			<span class="material-symbols-outlined">web</span>
+			<Icon name="web"/>
 			<span class="flex-1">Website info<span>
 		</a>
 		<a href="/about_myself#contact_details" class="inline-flex flex-row flex-nowrap items-center">
