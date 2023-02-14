@@ -19,7 +19,7 @@ export async function handle({ event, resolve }) {
 				// Handles the case of opening tags inside a sentence.
 				.replace(/(?<textBeforeElement>[a-zA-Z0-9]{2,})<(?<elementName>[a-z]+)/gu, "$1 <$2")
 				// Ensure there is a space between commas.
-				.replace(/(?<=<body>),(?<contentAfterCommaInBody>[^ ])/gu, ", $1")
+				.replace(/,(?<openingTag><\w+)/gu, ", $1")
 				.replace(/<\/span><span/gu, "</span> <span")
 			return spacedHTML
 		}
