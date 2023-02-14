@@ -1,5 +1,5 @@
 <script lang="ts">
-	export const otherItemprop: string = ""
+	export let otherItemprop: string = ""
 
 	export { otherItemprop as itemprop }
 
