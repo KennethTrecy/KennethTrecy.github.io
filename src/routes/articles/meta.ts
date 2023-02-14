@@ -8,7 +8,7 @@ const meta = definePageMeta("/", {
 	"dateModified": new Date(Math.max(...publishedDateTimes)),
 	"description": "Collection of articles written by Kenneth Trecy",
 	"keywords": [ "Kenneth Trecy", "articles", "collection" ],
-	"title": "KennethTrecy's Article Collection",
+	"title": "Kenneth Trecy's Article Collection",
 	"version": "0.1"
 })
 
