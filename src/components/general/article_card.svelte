@@ -8,9 +8,14 @@
 	} from "$env/static/public"
 
 	import Icon from "@/components/general/icon.svelte"
+	import defineHeadingInfo from "@/components/general/define_heading_info"
+	import TertiaryHeading from "@/components/general/headings/tertiary.svelte"
 
 	export let articleMeta: PageMeta
 
+	$: title = defineHeadingInfo({
+		"text": articleMeta.title
+	})
 	$: canonicalURL = `${PUBLIC_PRODUCTION_BASE_URL}${articleMeta.path}`
 </script>
 
@@ -24,7 +29,7 @@
 			class="card-title flex flex-row items-center"
 			itemprop={externalTypes.join(" ")}
 			href={canonicalURL}>
-			<h3 itemprop="name">{articleMeta.title}</h3>
+			<TertiaryHeading headingInfo={title}/>
 			<Icon name="chevron_right"/>
 		</a>
 		<p itemprop="about text" class="prose">
