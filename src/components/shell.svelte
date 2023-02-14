@@ -10,8 +10,8 @@
 	import toggleBySpace from "@/components/general/toggle_by_space"
 	import ThemeToggler from "@/components/shell/theme_toggler.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
-	import ThirdPartyLink from "@/components/shell/third-party_link.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
+	import ThirdPartyLink from "@/components/shell/third-party_package_link.svelte"
 
 	let isMenuShown = false
 
@@ -73,44 +73,7 @@
 		<footer class="footer footer-center p-4">
 			<div>
 				<SimpleText>
-					This website contains third-party packages:
-					<ThirdPartyLink
-						packageName="Svelte"
-						homeLink="https://svelte.dev/"
-						licenseName="MIT"
-						licenseLink="https://github.com/sveltejs/svelte/blob/master/LICENSE.md"/>,
-					<ThirdPartyLink
-						packageName="Tailwind CSS"
-						homeLink="https://tailwindcss.com/"
-						licenseName="MIT"
-						licenseLink="https://github.com/tailwindlabs/tailwindcss/blob/master/LICENSE"/>,
-					<ThirdPartyLink
-						packageName="@tailwindcss/typography"
-						homeLink="https://github.com/tailwindlabs/tailwindcss-typography#readme"
-						licenseName="MIT"
-						licenseLink="https://github.com/tailwindlabs/tailwindcss-typography/blob/master/LICENSE"/>,
-					<ThirdPartyLink
-						packageName="daisyUI"
-						homeLink="https://daisyui.com/"
-						licenseName="MIT"
-						licenseLink="https://github.com/saadeghi/daisyui/blob/master/LICENSE"/>,
-					<ThirdPartyLink
-						packageName="rgb-hex"
-						homeLink="https://github.com/sindresorhus/rgb-hex#readme"
-						licenseName="MIT"
-						licenseLink="https://github.com/sindresorhus/rgb-hex/blob/main/license"/>, and
-					<ThirdPartyLink
-						packageName="theme-change"
-						homeLink="https://github.com/saadeghi/theme-change#readme"
-						licenseName="MIT"
-						licenseLink="https://github.com/saadeghi/theme-change/blob/master/LICENSE"/>.
-
-					The site has been built using
-					<ThirdPartyLink
-						packageName="SvelteKit"
-						homeLink="https://kit.svelte.dev/"
-						licenseName="MIT"
-						licenseLink="https://github.com/sveltejs/kit/blob/master/LICENSE"/>.
+					<strong>Disclaimer</strong>: Otherwise noted, the views or interests expressed in this site are my views, and does not necessarily reflect the view or interest of any entity I have a connection to; whether it is an organization, or someone I have worked with.
 				</SimpleText>
 			</div>
 		</footer>

@@ -1,20 +1,21 @@
-import { describe, it, expect } from "vitest"
+/* eslint-disable max-lines-per-function */
+import { describe, expect, it } from "vitest"
 
-import type { PageMeta } from "@/types/head"
+import type { PageMeta } from "@/types/content"
 
 import Logo from "@/multimedia/logo.png"
 import { PUBLIC_PRODUCTION_BASE_URL } from "$env/static/public"
 import { LICENSE, LICENSE_URL } from "@/constants/miscellaneous_meta"
 import {
-	WEBSITE_OWNER_GIVEN_NAME,
 	WEBSITE_OWNER_FAMILY_NAME,
+	WEBSITE_OWNER_GIVEN_NAME,
 	WEBSITE_OWNER_LINK
 } from "@/constants/names"
 
 import definePageMeta from "./define_page_meta"
 
-describe("Define page meta behavior", function() {
-	it("can set defaults to optional properties", function() {
+describe("Define page meta behavior", () => {
+	it("can set defaults to optional properties", () => {
 		const path = "/"
 		const others: Partial<PageMeta> = {}
 
@@ -45,12 +46,12 @@ describe("Define page meta behavior", function() {
 			"link": LICENSE_URL
 		})
 		expect(meta.pageURL).toStrictEqual(`${PUBLIC_PRODUCTION_BASE_URL}${path}`)
-		expect(meta.imageURL).toStrictEqual(`${PUBLIC_PRODUCTION_BASE_URL}${Logo}`)
-		expect(meta.imageDescription).toStrictEqual("Logo of Kenneth Trecy Tobias")
+		expect(meta.image.defaultLink).toStrictEqual(`${PUBLIC_PRODUCTION_BASE_URL}${Logo}`)
+		expect(meta.image.description).toStrictEqual("Logo of Kenneth Trecy Tobias")
 		expect(meta.objectType).toStrictEqual("website")
 	})
 
-	it("can default last modified date to published date", function() {
+	it("can default last modified date to published date", () => {
 		const datePublished = new Date(2022, 0, 1)
 		const instance = definePageMeta("", { datePublished })
 
@@ -59,7 +60,7 @@ describe("Define page meta behavior", function() {
 		expect(data).toStrictEqual(datePublished)
 	})
 
-	it("can defaults to optional properties", function() {
+	it("can defaults to optional properties", () => {
 		const path = "/"
 		const others: Partial<PageMeta> = {
 			"encoder": {

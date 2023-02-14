@@ -1,3 +1,16 @@
+export interface MultimediaLink {
+	link: string,
+	intrinsicWidth: number
+}
+
+export interface MultimediaInfo {
+	description: string
+	responsiveLinks: MultimediaLink[],
+	defaultLink: string
+	defaultWidth: number
+	defaultHeight: number
+}
+
 interface PersonInfo {
 	givenName: string,
 	familyName: string,
@@ -71,18 +84,11 @@ export interface PageMeta {
 	readonly license: LicenseInfo
 
 	/**
-	 * URL of the image that represents the page.
+	 * Info about the main image in the page
 	 *
 	 * See: https://ogp.me/
 	 */
-	readonly imageURL: string
-
-	/**
-	 * Description of the image that represents the page.
-	 *
-	 * See: https://ogp.me/
-	 */
-	readonly imageDescription: string
+	readonly image: MultimediaInfo
 
 	/**
 	 * Canonical URL of the page.

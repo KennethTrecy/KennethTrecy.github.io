@@ -61,7 +61,7 @@
 					"name": "SvelteKit",
 					"homepage": "https://kit.svelte.dev/"
 				}, {
-					"name": "daisyUi",
+					"name": "daisyUI",
 					"homepage": "https://daisyui.com/"
 				}, {
 					"name": "Tailwind CSS",
@@ -222,7 +222,7 @@
 </svelte:head>
 
 <StructuredArticle itemtype="https://schema.org/Person">
-	<PrimaryHeading slot="title">Who am I?</PrimaryHeading>
+	<PrimaryHeading slot="title">{pageMeta.title}</PrimaryHeading>
 	<svelte:fragment slot="content">
 		<section id={journey.id}>
 			<SecondaryHeading headingInfo={journey} mustBeRaw={true}/>
@@ -234,8 +234,7 @@
 				I am
 				<span itemprop="nationality" itemscope itemtype="https://schema.org/Country">
 					<span itemprop="name">Filipino</span> living in the
-					<span itemprop="address">Philippines</span>.
-				</span>
+					<span itemprop="address">Philippines</span></span>.
 				Some people call me <em itemprop="alternateName">"Tretchi"</em>. I have been into programming for a long time.
 			</SimpleText>
 			<SimpleText>
@@ -292,7 +291,9 @@
 		</section>
 		<section id={contacts.id}>
 			<SecondaryHeading headingInfo={contacts} mustBeRaw={true}/>
-			<SimpleText>Should you wish to get in touch with me, I can be communicated on different platforms.</SimpleText>
+			<SimpleText>
+				Should you wish to get in touch with me, I can be communicated on different platforms. Sometimes, I may use emails that came from certain organization or group I belong to depending on the nature of e-mail.
+			</SimpleText>
 			<ul class="list-none not-prose">
 				<StructuredListItem
 					itemprop="contactPoint"

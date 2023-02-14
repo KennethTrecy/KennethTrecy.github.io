@@ -1,9 +1,10 @@
 <script lang="ts">
-	import type { PageMeta } from "@/types/head"
+	import type { PageMeta } from "@/types/content"
 
 	import { dev } from "$app/environment"
 	import {
 		PUBLIC_PRODUCTION_BASE_URL,
+		PUBLIC_MINIMUM_TITLE_LENGTH,
 		PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH
 	} from "$env/static/public"
 
@@ -13,6 +14,9 @@
 
 	$: if (dev && pageMeta.description.length > Number(PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH)) {
 		console.warn(`Description for page entitled "${pageMeta.title}" is too long.`)
+	}
+	$: if (dev && pageMeta.title.length < Number(PUBLIC_MINIMUM_TITLE_LENGTH)) {
+		console.warn(`Title for page entitled "${pageMeta.title}" is too short.`)
 	}
 	$: pageURL = `https://kennethtrecy.pages.dev${pageMeta.path}`
 	$: imageURL = `https://kennethtrecy.pages.dev${Logo}`
@@ -42,8 +46,15 @@
 
 <meta name="og:title" content={pageMeta.title}/>
 <meta name="og:type" content={pageMeta.objectType}/>
-<meta name="og:image" content={pageMeta.imageURL}/>
-<meta name="og:image:alt" content={pageMeta.imageDescription}/>
+<meta name="og:image" content={pageMeta.image.defaultLink}/>
+<meta name="og:image:alt" content={pageMeta.image.description}/>
+<meta name="og:image:width" content={pageMeta.image.defaultWidth}/>
+<meta name="og:image:height" content={pageMeta.image.defaultHeight}/>
+{#each pageMeta.image.responsiveLinks as linkInfo}
+	<meta name="og:image" content={linkInfo.link}/>
+	<meta name="og:image:alt" content={pageMeta.image.description}/>
+	<meta name="og:image:width" content={linkInfo.intrinsicWidth}/>
+{/each}
 <meta name="og:url" content={pageMeta.pageURL}/>
 <meta name="og:description" content={pageMeta.description}/>
 <meta name="og:site_name" content="KennethTrecy"/>

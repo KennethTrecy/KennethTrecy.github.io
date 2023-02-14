@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PageMeta } from "@/types/head"
+	import type { PageMeta } from "@/types/content"
 
 	import { internalTypes, authorTypes } from "@/components/general/links/constants"
 

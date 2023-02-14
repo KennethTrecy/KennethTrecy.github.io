@@ -17,7 +17,7 @@
 	$: hasPrefix = prefix !== ""
 </script>
 
-<Heading level={1} fragment={MAIN_CONTENT_ID} class={joinedClasses}>
+<Heading level={1} fragment={`#${MAIN_CONTENT_ID}`} class={joinedClasses}>
 	{#if hasPrefix}
 		<span class="text-5xl">
 			<span>{prefix}</span>

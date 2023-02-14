@@ -1,17 +1,19 @@
-import type { PageMeta } from "@/types/head"
+import type { PageMeta } from "@/types/content"
 
 import aboutMeta from "@/routes/about_myself/meta"
-import articlesMeta from "@/routes/articles/meta"
 import articleMetaCollection from "@/constants/article_meta_collection"
+import articlesMeta from "@/routes/articles/meta"
 import indexMeta from "@/routes/meta"
 import projectsMeta from "@/routes/projects/meta"
+import websiteInfoMeta from "@/routes/website_info/meta"
 
-const metaCollection: PageMeta[] = [
+const metaCollection = <PageMeta[]>[
 	indexMeta,
 	aboutMeta,
 	projectsMeta,
 	articlesMeta,
-	...articleMetaCollection
+	websiteInfoMeta,
+	...<PageMeta[]>articleMetaCollection
 ]
 
 export default metaCollection

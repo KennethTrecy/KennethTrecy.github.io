@@ -12,8 +12,12 @@
 
 	$: joinedClasses = [
 		...otherClasses
-	].filter(Boolean).join(" ")
-	$: tag = level == 1 ? "h1" : "h2"
+	].filter(Boolean).join(" ") || undefined
+	$: tag = level == 1
+		? "h1"
+		: level === 2
+			? "h2"
+			: "h3"
 </script>
 
 <svelte:element
@@ -26,7 +30,7 @@
 	<slot></slot>
 	<Bookmark
 		{fragment}
-		class={[ isMouseIn ? "visible" : "invisible" ]}>
+		class={[ isMouseIn ? "" : "hidden" ]}>
 		<Icon name="link"/>
 	</Bookmark>
 </svelte:element>

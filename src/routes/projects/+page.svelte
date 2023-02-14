@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HeadingInfo } from "@/types/body"
 
-	import pageMeta from "@/routes/about_myself/meta"
+	import pageMeta from "@/routes/projects/meta"
 
 	import CommonHead from "@/components/general/common_head.svelte"
 	import ProjectCard from "@/components/general/project_card.svelte"
@@ -147,8 +147,8 @@
 	<CommonHead {pageMeta}/>
 </svelte:head>
 
-<StructuredArticle itemtype="https://schema.org/CreativeWorkSeries">
-	<PrimaryHeading slot="title">List of Involved Projects</PrimaryHeading>
+<StructuredArticle itemtype="https://schema.org/CreativeWork">
+	<PrimaryHeading slot="title">{pageMeta.title}</PrimaryHeading>
 	<svelte:fragment slot="content">
 		<StructuredSection itemprop="about" id={rationale.id}>
 			<SecondaryHeading headingInfo={rationale}/>

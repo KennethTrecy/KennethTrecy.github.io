@@ -1,8 +1,8 @@
 {
-	"name": "kennethtrecy.github.io",
-	"version": "v0.1.0-dev",
+	"name": "kennethtrecy.pages.dev",
+	"version": "2.1.0-dev",
 	"description": "This is a personal website of Kenneth Trecy Tobias.",
-	"homepage": "https://github.com/KennethTrecy/kennethtrecy.github.io",
+	"homepage": "https://github.com/KennethTrecy/kennethtrecy.pages.dev",
 	"keywords": [
 		"personal",
 		"website"
@@ -16,15 +16,11 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"development": "vite dev",
-		"watch": "npx rollup -c bundler/dev/rollup.config.js --watch",
 		"prod": "vite build",
-		"production:partial": "npx rollup -c bundler/prod/rollup.partial.config.js",
-		"production:full": "npx rollup -c bundler/prod/rollup.full.config.js",
 		"test:unit": "npx vitest",
 		"test:e2e:install": "npx playwright install",
 		"test:e2e": "npm run build && npm run test:e2e:fast",
-		"test:e2e:fast": "npx playwright test",
-		"test:watch_unit": "npx mocha hidden/t/**/*.js --watch --watch-files hidden/t/**/*.js"
+		"test:e2e:fast": "npx playwright test"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.3.0",
@@ -43,6 +39,7 @@
 		"esbuild": "^0.16.10",
 		"eslint": "^8.33.0",
 		"eslint-config-whitelistyle": "github:KennethTrecy/eslint-config-whitelistyle",
+		"eslint-plugin-svelte3": "^4.0.0",
 		"gramma": "^1.6.0",
 		"husky": "^8.0.0",
 		"jsdom": "^20.0.3",

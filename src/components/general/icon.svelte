@@ -11,4 +11,10 @@
 	].join(" ")
 </script>
 
-<span class={joinedClasses}>{name}</span>
+<span class={joinedClasses} data-icon={name}></span>
+
+<style lang="postcss">
+	.material-symbols-outlined::after {
+		content: attr(data-icon);
+	}
+</style>
