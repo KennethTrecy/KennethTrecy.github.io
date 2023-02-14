@@ -234,8 +234,8 @@
 				I am
 				<span itemprop="nationality" itemscope itemtype="https://schema.org/Country">
 					<span itemprop="name">Filipino</span> living in the
-					<span itemprop="address">Philippines</span>.
-				</span>
+					<span itemprop="address">Philippines</span>
+				</span>.
 				Some people call me <em itemprop="alternateName">"Tretchi"</em>. I have been into programming for a long time.
 			</SimpleText>
 			<SimpleText>
