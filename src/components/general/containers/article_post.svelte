@@ -2,7 +2,7 @@
 	import type { PageMeta } from "@/types/head"
 
 	import CommonHead from "@/components/general/common_head.svelte"
-	import PrimaryHeading from "@/components/general/heading/primary.svelte"
+	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 
