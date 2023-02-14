@@ -13,7 +13,11 @@
 	$: joinedClasses = [
 		...otherClasses
 	].filter(Boolean).join(" ")
-	$: tag = level == 1 ? "h1" : "h2"
+	$: tag = level == 1
+		? "h1"
+		: level === 2
+			? "h2"
+			: "h3"
 </script>
 
 <svelte:element
