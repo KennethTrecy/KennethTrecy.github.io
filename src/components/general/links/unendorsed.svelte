@@ -4,8 +4,9 @@
 	import Link from "@/components/general/links/base.svelte"
 
 	export let address: string
+	export let itemprop: string|undefined = undefined
 </script>
 
-<Link address={address} relationship={[ "nofollow", ...externalTypes ]} context="other">
+<Link address={address} relationship={[ "nofollow", ...externalTypes ]} context="other" {itemprop}>
 	<slot></slot>
 </Link>
