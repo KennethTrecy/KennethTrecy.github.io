@@ -292,7 +292,9 @@
 		</section>
 		<section id={contacts.id}>
 			<SecondaryHeading headingInfo={contacts} mustBeRaw={true}/>
-			<SimpleText>Should you wish to get in touch with me, I can be communicated on different platforms.</SimpleText>
+			<SimpleText>
+				Should you wish to get in touch with me, I can be communicated on different platforms. Sometimes, I may use emails that came from certain organization or group I belong to depending on the nature of e-mail.
+			</SimpleText>
 			<ul class="list-none not-prose">
 				<StructuredListItem
 					itemprop="contactPoint"
