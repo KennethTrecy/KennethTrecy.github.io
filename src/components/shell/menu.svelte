@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { MAIN_CONTENT_ID } from "@/constants/miscellaneous_meta"
+
 	import Icon from "@/components/general/icon.svelte"
 
 	export let mustShowHorizontally: boolean = false
@@ -14,7 +16,9 @@
 			<Icon name="code"/>
 			<span class="flex-1">Projects<span>
 		</a>
-		<a href="/about_myself#" class="inline-flex flex-row flex-nowrap items-center">
+		<a
+			href={`/about_myself#${MAIN_CONTENT_ID}`}
+			class="inline-flex flex-row flex-nowrap items-center">
 			<Icon name="badge"/>
 			<span class="flex-1">About myself<span>
 		</a>

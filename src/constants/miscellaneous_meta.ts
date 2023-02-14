@@ -7,4 +7,4 @@ export const LICENSE_URL = "https://raw.githubusercontent.com/KennethTrecy/kenne
  */
 export const FIRST_PUBLICATION_DATE = new Date(Date.UTC(2023, 1, 11, 4, 50))
 
-export const MAIN_CONTENT_ID = "#"
+export const MAIN_CONTENT_ID = "main"
