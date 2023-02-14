@@ -1,15 +1,15 @@
 /* eslint-disable max-lines-per-function */
 // @vitest-environment jsdom
 
-import { describe, it, expect } from "vitest"
-import { render, cleanup, fireEvent } from "@testing-library/svelte"
+import { cleanup, fireEvent, render } from "@testing-library/svelte"
+import { describe, expect, it } from "vitest"
 
 import defineHeadingInfo from "@/components/general/define_heading_info"
 
 import Component from "./tertiary.svelte"
 
 describe("Tertiary heading behavior", () => {
-	it("can render prefix as separate", async () => {
+	it("can render prefix as separate", async() => {
 		const headingInfo = defineHeadingInfo({
 			"prefix": "I. ",
 			"text": "hello a"
@@ -27,7 +27,7 @@ describe("Tertiary heading behavior", () => {
 		cleanup()
 	})
 
-	it("can render two spans if there is no prefix", async () => {
+	it("can render two spans if there is no prefix", async() => {
 		const headingInfo = defineHeadingInfo({
 			"text": "hello b"
 		})
@@ -40,7 +40,7 @@ describe("Tertiary heading behavior", () => {
 		cleanup()
 	})
 
-	it("can show bookmark if hovered", async () => {
+	it("can show bookmark if hovered", async() => {
 		const headingInfo = defineHeadingInfo({
 			"text": "hello c"
 		})
@@ -55,7 +55,7 @@ describe("Tertiary heading behavior", () => {
 		cleanup()
 	})
 
-	it("can hide bookmark if unhovered", async () => {
+	it("can hide bookmark if unhovered", async() => {
 		const headingInfo = defineHeadingInfo({
 			"text": "hello d"
 		})
@@ -71,12 +71,13 @@ describe("Tertiary heading behavior", () => {
 		cleanup()
 	})
 
-	it("can render as raw", async () => {
+	it("can render as raw", async() => {
 		const headingInfo = defineHeadingInfo({
 			"text": "hello_e"
 		})
 		const mustBeRaw = true
-		const { container } = render(Component, { headingInfo, mustBeRaw })
+		const { container } = render(Component, { headingInfo,
+			mustBeRaw })
 
 		const property = container.querySelector("[itemprop~=headline][itemprop~=name]")
 		const spans = container.querySelectorAll("h3 span")

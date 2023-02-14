@@ -1,5 +1,6 @@
 export const LICENSE = "MIT"
 
+// eslint-disable-next-line max-len
 export const LICENSE_URL = "https://raw.githubusercontent.com/KennethTrecy/kennethtrecy.pages.dev/master/LICENSE"
 
 /**
