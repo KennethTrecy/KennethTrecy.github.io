@@ -3,7 +3,7 @@
 
 	import articleMetaCollection from "@/constants/article_meta_collection"
 
-	import ArticleCard from "@/components/general/article_card.svelte"
+	import ArticleCard from "@/components/general/card/article.svelte"
 	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
