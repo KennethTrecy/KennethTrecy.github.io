@@ -5,12 +5,12 @@
 	import { profile } from "@/constants/drive_images"
 
 	import makeSet from "@/components/general/image/make_set"
+	import defineHeadingInfo from "@/components/general/define_heading_info"
+
 	import BaseLink from "@/components/general/links/base.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import ProjectCard from "@/components/general/card/project.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
-	import PictureSet from "@/components/general/image/picture_set.svelte"
-	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import PageDetailCard from "@/components/general/card/page_detail.svelte"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
