@@ -25,10 +25,10 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 	<link
 		rel="stylesheet"
-		href="https://fonts.googleapis.com/css2?family=Roboto&family=Material+Symbols+Outlined:wght,FILL@400,1&display=swap"/>
+		href="https://fonts.googleapis.com/css2?family=Roboto&family=Material+Symbols+Outlined:wght,FILL@400,1&family=Noto+Color+Emoji&display=swap"/>
 	<style>
 		body {
-			font-family: "Roboto", "Segoe UI", Tahoma, Verdana, Geneva, sans-serif;
+			font-family: "Roboto", "Noto Color Emoji", "Segoe UI", Tahoma, Verdana, Geneva, sans-serif;
 		}
 	</style>
 </svelte:head>
