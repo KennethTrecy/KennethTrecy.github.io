@@ -1,7 +1,7 @@
 /* eslint-disable max-lines-per-function */
 import { describe, expect, it } from "vitest"
 
-import type { MultimediaLink } from "@/types/content"
+import type { MultimediaLink } from "@/types/content_metadata"
 
 import makeSet from "./make_set"
 

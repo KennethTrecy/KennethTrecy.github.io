@@ -1,20 +1,8 @@
-/**
- * @module
- * Do not add here anymore. If there are still files refererring to the types in this module, move
- * them to `./content_metadata.ts`
- */
-
-/**
- * @deprecated since v2.1.0. Use the type in content metadata instead.
- */
 export interface MultimediaLink {
 	link: string,
 	intrinsicWidth: number
 }
 
-/**
- * @deprecated since v2.1.0. Use the type in content metadata instead.
- */
 export interface MultimediaInfo {
 	description: string
 	responsiveLinks: MultimediaLink[],
@@ -34,9 +22,6 @@ interface LicenseInfo {
 	link: string
 }
 
-/**
- * @deprecated since v2.1.0. Use the type in content metadata instead.
- */
 export interface PageMeta {
 	/**
 	 * Path of the document within the website.

@@ -5,10 +5,10 @@
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import ContactLink from "@/components/about_myself/contact_link.svelte"
 	import defineHeadingInfo from "@/components/general/define_heading_info"
+	import PageDetailCard from "@/components/general/card/page_detail.svelte"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
-	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
 

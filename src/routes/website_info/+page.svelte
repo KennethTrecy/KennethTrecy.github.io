@@ -7,12 +7,12 @@
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
+	import PageDetailCard from "@/components/general/card/page_detail.svelte"
 	import TertiaryHeading from "@/components/general/headings/tertiary.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import ThirdPartyLink from "@/components/shell/third-party_package_link.svelte"
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
-	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
@@ -115,7 +115,7 @@
 		<StructuredSection itemtype="https://schema.org/WebContent" id={motivation.id}>
 			<SecondaryHeading headingInfo={motivation}/>
 			<SimpleText itemprop="mainEntity">
-				The purpose of this website is to showcase my projects that I have built. The website itself is also project where I can apply my different skills. It also contains valuable information to connect me and my future employers.
+				The purpose of this website is to showcase my projects that I have built. The website itself is also a project where I can apply my different skills. It also contains valuable information to connect me and my future employers.
 			</SimpleText>
 		</StructuredSection>
 		<StructuredSection id={dependencies.id}>
@@ -143,7 +143,7 @@
 			<StructuredSection itemtype="https://schema.org/ItemList" id={linkedDependencies.id}>
 				<TertiaryHeading headingInfo={linkedDependencies}/>
 				<SimpleText itemprop="about">
-					Meanwhile, some dependencies have been used in the website by using <code>&lt;link&gt;</code> tags or through <code>src</code> attribute of <code>&lt;img&gt;</code> tags. They are included in the rendering process of a user's browser to enhance appearance.
+					Meanwhile, some dependencies have been used on the website by using <code>&lt;link&gt;</code> tags or through <code>src</code> attribute of <code>&lt;img&gt;</code> tags. They are included in the rendering process of a user's browser to enhance appearance.
 				</SimpleText>
 				<StructuredList order="unordered" isProjectList={false} hasOwnScope={false}>
 					{#each linkedThirdPartyPackages as thirdPartyPackage}

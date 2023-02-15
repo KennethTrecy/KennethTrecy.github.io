@@ -46,13 +46,6 @@ jobs:
           ${{ runner.os }}_${{ matrix.node-version }}_${{ hashFiles('package.json') }}
     - name: Install general dependencies
       run: npm install
-    - name: Cache dependencies for E2E tests
-      uses: actions/cache@v3
-      with:
-        path: /home/runner
-        key: ${{ runner.os }}_${{ matrix.node-version }}_${{ hashFiles('package.json') }}
-        restore-keys: |
-          ${{ runner.os }}_${{ matrix.node-version }}_${{ hashFiles('package.json') }}
       # See https://playwright.dev/docs/ci-intro
     - name: Install dependencies to do E2E tests
       run: npx playwright install --with-deps

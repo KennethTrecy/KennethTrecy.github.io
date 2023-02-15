@@ -1,5 +1,6 @@
 <script lang="ts">
-	import type { MultimediaInfo } from "@/types/content"
+	// @deprecated since v2.1.0. It will be removed as it is not used anywhere.
+	import type { MultimediaInfo } from "@/types/content_metadata"
 
 	import makeSet from "@/components/general/image/make_set"
 
