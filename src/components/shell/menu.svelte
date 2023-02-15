@@ -16,6 +16,10 @@
 			<Icon name="code"/>
 			<span class="flex-1">Projects<span>
 		</a>
+		<a href="/articles" class="inline-flex flex-row flex-nowrap items-center">
+			<Icon name="article"/>
+			<span class="flex-1">Articles<span>
+		</a>
 		<a
 			href={`/about_myself#${MAIN_CONTENT_ID}`}
 			class="inline-flex flex-row flex-nowrap items-center">

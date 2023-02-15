@@ -27,7 +27,7 @@
 </script>
 
 <title>{pageMeta.title}</title>
-<link rel="icon" href="favicon.png"/>
+<link rel="icon" href={Logo}/>
 <link rel="canonical" href={canonicalURL}/>
 
 <meta name="description" content={pageMeta.description}/>

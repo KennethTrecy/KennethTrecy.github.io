@@ -52,6 +52,7 @@
 		"vitest": "^0.28.2"
 	},
 	"dependencies": {
+		"@octokit/core": "^4.2.0",
 		"daisyui": "^2.46.0",
 		"rgb-hex": "^4.0.0",
 		"svelte": "^3.55.0",

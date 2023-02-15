@@ -10,6 +10,7 @@ declare namespace App {
 			PUBLIC_PRODUCTION_BASE_URL: string
 			PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH: string
 			PUBLIC_MINIMUM_TITLE_LENGTH: string
+			PERSONAL_GITHUB_ACCESS_TOKEN: string
 			IS_INDEXABLE: string
 		}
 		context: {
