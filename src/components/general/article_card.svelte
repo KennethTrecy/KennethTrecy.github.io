@@ -32,6 +32,8 @@
 			<TertiaryHeading headingInfo={title}/>
 			<Icon name="chevron_right"/>
 		</a>
+		<!-- TODO: Add date and time when the article was published -->
+		<!-- TODO: Use link component -->
 		<p itemprop="about text" class="prose">
 			{articleMeta.description}
 		</p>
