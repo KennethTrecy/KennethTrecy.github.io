@@ -4,7 +4,7 @@
 
 	export let level: number
 	export let fragment: string
-	export let shouldBeBookmarked: boolean = true
+	export let mayUseBookmark: boolean = true
 	let otherClasses: string[] = []
 
 	export { otherClasses as class }
@@ -29,7 +29,7 @@
 	on:mouseover={_event => isMouseIn = true}
 	on:focus={_event => isMouseIn = true}>
 	<slot></slot>
-	{#if shouldBeBookmarked}
+	{#if mayUseBookmark}
 		<Bookmark
 			{fragment}
 			class={[ isMouseIn ? "" : "hidden" ]}>

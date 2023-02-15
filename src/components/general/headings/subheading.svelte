@@ -6,6 +6,7 @@
 	export let level: number
 	export let mustBeRaw: boolean
 	export let headingInfo: HeadingInfo<"defined">
+	export let mayUseBookmark: boolean = true
 	let otherClasses: string[] = []
 
 	export { otherClasses as class }
@@ -17,7 +18,7 @@
 	$: fragment = `#${headingInfo.id}`
 </script>
 
-<Heading {level} {fragment} class={joinedClasses}>
+<Heading {level} {fragment} {mayUseBookmark} class={joinedClasses}>
 	{#if hasPrefix}
 		<span>{headingInfo.prefix}</span>
 	{/if}

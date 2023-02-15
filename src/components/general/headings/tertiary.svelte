@@ -4,6 +4,7 @@
 
 	export let headingInfo: HeadingInfo<"defined">
 	export let mustBeRaw: boolean = false
+	export let mayUseBookmark: boolean = true
 	let otherClasses: string[] = []
 
 	export { otherClasses as class }
@@ -13,6 +14,6 @@
 	]
 </script>
 
-<Subheading level={3} {headingInfo} {mustBeRaw} class={joinedClasses}>
+<Subheading level={3} {headingInfo} {mustBeRaw} {mayUseBookmark} class={joinedClasses}>
 	<slot></slot>
 </Subheading>
