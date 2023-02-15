@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { MultimediaInfo } from "@/types/content"
+	import type { MultimediaInfo } from "@/types/content_metadata"
 
 	import makeSet from "@/components/general/image/make_set"
 
