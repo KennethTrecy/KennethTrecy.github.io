@@ -53,7 +53,7 @@
 			"title": titleData,
 			"description": "Encountered an error while visiting a page.",
 			"keywords": [ "error" ],
-			"version": "0.1",
+			"version": "1.0",
 			"datePublished": new Date()
 		})
 	)
