@@ -13,6 +13,7 @@ export default [
 	"rgb-hex",
 	"Rollup",
 	"SvelteKit",
+	"JAMstack",
 
 	// Tag names
 	"img"
