@@ -12,5 +12,8 @@ export default [
 	"Pruecendrae",
 	"rgb-hex",
 	"Rollup",
-	"SvelteKit"
+	"SvelteKit",
+
+	// Tag names
+	"img"
 ]
