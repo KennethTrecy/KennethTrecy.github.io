@@ -49,7 +49,7 @@
 	itemtype="https://schema.org/Article"
 	class="card not-prose text-left flex-1 bg-base-200 mr-4 mb-4">
 	<StructuredSection class={[ "card-body" ]}>
-		<TertiaryHeading headingInfo={title} class={[ "card-title" ]}/>
+		<TertiaryHeading headingInfo={title} mayUseBookmark={false} class={[ "card-title" ]}/>
 		<p itemprop="about text" class="prose">
 			{articleMeta.description}
 		</p>
