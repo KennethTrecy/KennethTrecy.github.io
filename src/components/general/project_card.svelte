@@ -1,4 +1,5 @@
 <script lang="ts">
+	// @deprecated since v2.1.0. New changes will be in `@/components/general/card/project`
 	import { externalTypes } from "@/components/general/links/constants"
 
 	import Icon from "@/components/general/icon.svelte"
