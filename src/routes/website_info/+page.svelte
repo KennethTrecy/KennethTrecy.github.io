@@ -97,6 +97,11 @@
 			"licenseName": "Apache License, Version 2.0",
 			"licenseLink": "https://www.apache.org/licenses/LICENSE-2.0"
 		}, {
+			"name": "Noto Color Emoji",
+			"homepage": "https://fonts.google.com/noto/specimen/Noto+Color+Emoji/about",
+			"licenseName": "Open Font License",
+			"licenseLink": "https://scripts.sil.org/OFL"
+		}, {
 			"name": "Simple Icons",
 			"homepage": "https://simpleicons.org/",
 			"licenseName": "Creative Commons Zero v1.0 Universal",
