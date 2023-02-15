@@ -17,16 +17,12 @@ export async function GET(event: RequestEvent) {
 		"path": event.params.path as string
 	}
 
-	const isPermitted = permittedFileList.some(fileInfo => {
-		const doesMatch = fileInfo.owner === requestedFileInfo.owner
+	if (permittedFileList.some(
+		fileInfo => fileInfo.owner === requestedFileInfo.owner
 			&& fileInfo.repo === requestedFileInfo.repo
 			&& fileInfo.branch === requestedFileInfo.branch
 			&& fileInfo.path === requestedFileInfo.path
-
-		return doesMatch
-	})
-
-	if (isPermitted) {
+	)) {
 		const info = await octokit.request(
 			"GET /repos/{owner}/{repo}/contents/{path}?ref={branch}",
 			{ ...requestedFileInfo }
@@ -47,7 +43,16 @@ export async function GET(event: RequestEvent) {
 		}))
 	}
 
-	return new Response(JSON.stringify({}), {
-		"status": 400
+	const status = 404
+	return new Response(JSON.stringify({
+		"id": "1",
+		"code": "0x1",
+		status,
+		"title": "Not Found",
+		"detail": "The file was not found in the repository.",
+		"source": { "parameter": "path" }
+	}), {
+		"headers": { "Content-Type": "application/vnd.api+json" },
+		status
 	})
 }

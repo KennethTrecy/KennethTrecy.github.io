@@ -29,11 +29,11 @@ export async function GET() {
 
 		${compiledSitemapRules}
 		`.trim()
-		.replace(/\t+/g, ""),
+			.replace(/\t+/gu, ""),
 		{
-			headers: {
+			"headers": {
 				"Content-Type": "text/plain"
 			}
 		}
-	);
+	)
 }
