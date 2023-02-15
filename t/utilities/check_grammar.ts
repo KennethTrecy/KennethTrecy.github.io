@@ -28,9 +28,16 @@ export default async function(page: Page) {
 			locators => locators.map(
 				locator => locator.getAttribute("content")
 				.then(
-					content => selector.includes("keywords")
-						? content.replace(/,/g, ", ")
-						: content
+					content => {
+						const areKeywords = selector.includes("keywords")
+
+						if (areKeywords) {
+							const spacedKeywords = content.replace(/,/g, ", ")
+							return spacedKeywords.slice(0, 1).toLocaleUpperCase() + spacedKeywords.slice(1)
+						}
+
+						return content
+					}
 				)
 			)
 		)
