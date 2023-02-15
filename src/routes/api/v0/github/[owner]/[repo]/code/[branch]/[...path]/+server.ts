@@ -1,5 +1,5 @@
 import type { RequestEvent } from "@sveltejs/kit"
-import type { CodeFile } from "@/types/body"
+import type { CodeFile } from "@/types/container_info"
 
 import { Octokit } from "@octokit/core"
 

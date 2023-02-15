@@ -1,11 +1,11 @@
-import { describe, it, expect } from "vitest"
+import { describe, expect, it } from "vitest"
 
-import type { HeadingInfo } from "@/types/body"
+import type { HeadingInfo } from "@/types/container_info"
 
 import defineHeadingInfo from "./define_heading_info"
 
-describe("Define heading info behavior", function() {
-	it("can set ID base from space-delimited text", function() {
+describe("Define heading info behavior", () => {
+	it("can set ID base from space-delimited text", () => {
 		const rawInfo: HeadingInfo = {
 			"text": "Hello world"
 		}
@@ -15,7 +15,7 @@ describe("Define heading info behavior", function() {
 		expect(info.id).toStrictEqual("hello_world")
 	})
 
-	it("can set ID base from hypen-delimited text", function() {
+	it("can set ID base from hypen-delimited text", () => {
 		const rawInfo: HeadingInfo = {
 			"text": "Hello-world"
 		}
@@ -25,7 +25,7 @@ describe("Define heading info behavior", function() {
 		expect(info.id).toStrictEqual("hello-world")
 	})
 
-	it("can respect set ID", function() {
+	it("can respect set ID", () => {
 		const rawInfo: HeadingInfo = {
 			"text": "Hello world",
 			"id": "hello"

@@ -1,6 +1,7 @@
-import { describe, it, expect } from "vitest"
+/* eslint-disable max-lines-per-function */
+import { describe, expect, it } from "vitest"
 
-import type { ViewableOwnerInfoTree } from "@/types/body"
+import type { ViewableOwnerInfoTree } from "@/types/container_info"
 
 import flattenOwnerTreeInfo from "./flatten_owner_tree_info"
 

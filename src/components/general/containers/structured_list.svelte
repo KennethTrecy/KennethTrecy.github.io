@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Order } from "@/types/body"
+	import type { Order } from "@/types/container_info"
 
 	export let hasOwnScope = true
 	export let itemprop: string = "hasPart"

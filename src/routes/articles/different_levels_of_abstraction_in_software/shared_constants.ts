@@ -1,4 +1,4 @@
-import type { ViewableOwnerInfoTree } from "@/types/body"
+import type { ViewableOwnerInfoTree } from "@/types/container_info"
 
 import flattenOwnerTreeInfo from "@/components/general/flatten_owner_tree_info"
 

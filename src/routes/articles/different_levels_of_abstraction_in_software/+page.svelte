@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte"
 
-	import type { ExecutedCommandSetInfo, HeadingInfo } from "@/types/body"
+	import type { ExecutedCommandSetInfo, HeadingInfo } from "@/types/container_info"
 
 	import pageMeta from "@/routes/articles/different_levels_of_abstraction_in_software/meta"
 	import {

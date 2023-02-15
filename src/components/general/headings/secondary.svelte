@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { HeadingInfo } from "@/types/body"
+	import type { HeadingInfo } from "@/types/container_info"
 	import Subheading from "@/components/general/headings/subheading.svelte"
 
 	export let headingInfo: HeadingInfo<"defined">

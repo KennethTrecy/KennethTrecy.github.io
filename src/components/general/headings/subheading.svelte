@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { HeadingInfo } from "@/types/body"
+	import type { HeadingInfo } from "@/types/container_info"
 
 	import Heading from "@/components/general/headings/base.svelte"
 

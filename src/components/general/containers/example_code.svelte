@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte"
 
-	import type { CodeFile, CompleteViewableFileInfo } from "@/types/body"
+	import type { CodeFile, CompleteViewableFileInfo } from "@/types/container_info"
 
 	import ExternalLink from "@/components/general/links/external.svelte"
 
