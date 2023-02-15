@@ -5,7 +5,7 @@ const meta = definePageMeta("/website_info", {
 	"description": "This website's purpose, dependencies, and process are listed here",
 	"keywords": [ "about", "website" ],
 	"title": "About the Website",
-	"version": "0.1"
+	"version": "1.0"
 })
 
 export default meta

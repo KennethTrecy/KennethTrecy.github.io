@@ -16,7 +16,7 @@ const meta = definePageMeta("/", {
 		"back-end programmer"
 	],
 	"title": "Kenneth Trecy's Portfolio",
-	"version": "1.002-dev",
+	"version": "1.002",
 	"image": profile
 })
 
