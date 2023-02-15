@@ -14,6 +14,7 @@
 		<slot name="title"></slot>
 		<div class="flex flex-col md:flex-row-reverse justify-center items-stretch">
 			{#if $$slots.aside}
+				<!-- TODO: Create a side navigation for articles -->
 				<aside class="prose md:prose-lg w-96 flex flex-row justify-left items-start">
 					<slot name="aside"></slot>
 				</aside>
