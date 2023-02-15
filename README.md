@@ -1,4 +1,4 @@
-[![Web Front-end Tests](https://img.shields.io/github/actions/workflow/status/KennethTrecy/kennethtrecy.pages.dev/front-end.yml?style=for-the-badge)](https://github.com/KennethTrecy/kennethtrecy.pages.dev/actions/workflows/:workflow-filename.yml)
+[![Web Front-end Tests](https://img.shields.io/github/actions/workflow/status/KennethTrecy/kennethtrecy.pages.dev/front-end.yml?style=for-the-badge)](https://github.com/KennethTrecy/kennethtrecy.pages.dev/actions/workflows/front-end.yml)
 ![GitHub lines](https://img.shields.io/github/license/KennethTrecy/kennethtrecy.pages.dev?style=for-the-badge)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/KennethTrecy/kennethtrecy.pages.dev?style=for-the-badge&display_name=tag&sort=semver)
 ![GitHub closed issues count](https://img.shields.io/github/issues-closed/KennethTrecy/kennethtrecy.pages.dev?style=for-the-badge)
