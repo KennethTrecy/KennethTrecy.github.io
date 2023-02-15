@@ -7,7 +7,7 @@
 	import makeSet from "@/components/general/image/make_set"
 	import BaseLink from "@/components/general/links/base.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
-	import ProjectCard from "@/components/general/project_card.svelte"
+	import ProjectCard from "@/components/general/card/project.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import PictureSet from "@/components/general/image/picture_set.svelte"
 	import defineHeadingInfo from "@/components/general/define_heading_info"
