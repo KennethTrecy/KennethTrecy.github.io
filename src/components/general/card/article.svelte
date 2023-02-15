@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { PageMeta } from "@/types/content"
-	import { externalTypes } from "@/components/general/links/constants"
+	import { internalTypes } from "@/components/general/links/constants"
 	import {
 		PUBLIC_PRODUCTION_BASE_URL,
 		PUBLIC_MINIMUM_TITLE_LENGTH,
@@ -8,8 +8,10 @@
 	} from "$env/static/public"
 
 	import Icon from "@/components/general/icon.svelte"
+	import Link from "@/components/general/links/base.svelte"
 	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import TertiaryHeading from "@/components/general/headings/tertiary.svelte"
+	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 
 	export let articleMeta: PageMeta
 
@@ -17,6 +19,28 @@
 		"text": articleMeta.title
 	})
 	$: canonicalURL = `${PUBLIC_PRODUCTION_BASE_URL}${articleMeta.path}`
+
+	const dateTimeFormatOptions: Partial<Intl.DateTimeFormatOptions> = {
+		"year": "numeric",
+		"month": "long",
+		"day": "numeric",
+		"hour": "numeric",
+		"minute": "numeric",
+		"timeZoneName": "short",
+		"timeZone": "UTC"
+	}
+
+	$: dateTimePublished = articleMeta.datePublished.toISOString()
+	$: humanReadableDatePublished = articleMeta.datePublished.toLocaleString(
+		"en",
+		dateTimeFormatOptions
+	)
+	$: dateTimeModified = articleMeta.dateModified.toISOString()
+	$: humanReadableDateModified = articleMeta.dateModified.toLocaleString(
+		"en",
+		dateTimeFormatOptions
+	)
+	$: hasModified = dateTimePublished !== dateTimeModified
 </script>
 
 <div
@@ -24,18 +48,35 @@
 	itemscope
 	itemtype="https://schema.org/Article"
 	class="card not-prose text-left flex-1 bg-base-200 mr-4 mb-4">
-	<div class="card-body">
-		<a
-			class="card-title flex flex-row items-center"
-			itemprop={externalTypes.join(" ")}
-			href={canonicalURL}>
-			<TertiaryHeading headingInfo={title}/>
-			<Icon name="chevron_right"/>
-		</a>
-		<!-- TODO: Add date and time when the article was published -->
-		<!-- TODO: Use link component -->
+	<StructuredSection class={[ "card-body" ]}>
+		<TertiaryHeading headingInfo={title} class={[ "card-title" ]}/>
 		<p itemprop="about text" class="prose">
 			{articleMeta.description}
 		</p>
-	</div>
+		<div class="card-actions flex md:flex-row items-center">
+			{#if hasModified}
+				<p itemprop="text" class="prose text-sm">
+					Published last <time
+						itemprop="datePublished dateModified"
+						datetime={dateTimePublished}>{humanReadableDatePublished}</time>
+					then updated last <time
+						itemprop="dateModified"
+						datetime={dateTimeModified}>{humanReadableDateModified}</time>.
+				</p>
+			{:else}
+				<p itemprop="text" class="prose text-sm">
+					Published last <time
+						itemprop="datePublished dateModified"
+						datetime={dateTimePublished}>{humanReadableDatePublished}</time>.
+				</p>
+			{/if}
+			<Link
+				address={canonicalURL}
+				relationship={internalTypes}
+				itemprop="mainEntityOfPage"
+				class={[ "btn", "no-underline" ]}>
+				Visit Article
+			</Link>
+		</div>
+	</StructuredSection>
 </div>
