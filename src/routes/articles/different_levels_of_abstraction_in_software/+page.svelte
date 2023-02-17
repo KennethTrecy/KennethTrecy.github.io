@@ -137,7 +137,7 @@
 			</SimpleText>
 			<ExampleCode fileInfo={associatedFileList[1]} let:codeInfo>
 				<SimpleText>
-					There are different methods to declare environment variables. Below, uses <code>.env</code> file to declare them. Note some the variables do not have value. Therefore, the program will use default values for those empty variables.
+					There are different methods to declare environment variables. Below, it is an example of <code>.env</code> file to declare them. Note some the variables do not have value. Therefore, the program will use default values for those empty variables.
 				</SimpleText>
 				<ExampleCode itemprop="hasPart" fileInfo={associatedFileList[2]}/>
 				<ExampleOutput
