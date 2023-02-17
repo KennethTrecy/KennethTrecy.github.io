@@ -238,10 +238,12 @@
 		<StructuredSection id={conclusion.id}>
 			<SecondaryHeading headingInfo={conclusion}/>
 			<SimpleText>
-				Those are the different level of abstraction that programmers may find on every software they build. Beginners may want to make their programs customizable by aiming for a package-level to variable-level abstraction. Thus, being overwhelmed can be prevented and focus at the current task.
+				Those are the different level of abstraction that programmers may find on every software they build. Beginners may want to make their programs customizable by aiming for a <Bookmark fragment={`#${levels[0].id}`}>package-level</Bookmark> to <Bookmark fragment={`#${levels[2].id}`}>variable-level</Bookmark> abstraction. Thus, being overwhelmed can be prevented and focus at the current task.
 			</SimpleText>
 			<SimpleText>
-				Meanwhile, developers of a large project or proficient programmers may want to transform their code aiming for a function-level to interface-level abstraction to save time configuring the similar behaviors. Another benefit is that there is a consistency between the different components/mechanisms/interfaces of the application. The price is that the other contributors need to know advance concepts to understand the advanced abstractions.
+				Meanwhile, developers of a large project or proficient programmers may want to transform their code aiming for a
+				<Bookmark fragment={`#${levels[3].id}`}>function-level</Bookmark>
+				to <Bookmark fragment={`#${levels[5].id}`}>interface-level</Bookmark> abstraction to save time configuring the similar behaviors. Another benefit is that there is a consistency between the different components/mechanisms/interfaces of the application. The price is that the other contributors need to know advance concepts to understand the advanced abstractions.
 			</SimpleText>
 			<SimpleText>
 				That said, the levels in this article allows programmers determine the complexity of a code. They are just one of the tools to be able to communicate with other developers efficiently.
