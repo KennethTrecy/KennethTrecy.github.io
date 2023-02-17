@@ -19,7 +19,9 @@ const associatedFileTree: ViewableOwnerInfoTree[] = [
 							"src/function-level_abstraction_variant_1.ts",
 							"src/function-level_abstraction_variant_2.ts",
 							"src/function-level_abstraction_variant_3.ts",
-							"src/object-level_abstraction.ts"
+							"src/object-level_abstraction.ts",
+							"src/interface-level_abstraction_variant_1.ts",
+							"src/interface-level_abstraction_variant_2.ts"
 						]
 					}
 				]
