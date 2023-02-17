@@ -125,13 +125,15 @@
 				<strong itemprop="mainEntity">This level of abstraction allows the creation of different package-level softwares.</strong> Softwares at this level can be managed using environment variables (which are declared on the system, <code>.env</code> files, or other contexts) or command line arguments. Users who want customize their software should know how to <strong itemprop="keyword">run</strong> or <strong itemprop="keyword">compile</strong> software.
 			</SimpleText>
 			<SimpleText>
-				As an example, some programming languages have a compiler. Those compilers allows developer(s) to create programs that run on different operating systems or environments. For every operating system that a developer want to support, the compiler would output a specific executable or artifact specialized and optimized for the targeted system.
+				For instance, some programming languages have a compiler. Those compilers allows developer(s) to create programs that run on different operating systems or environments. For every operating system that a developer want to support, the compiler would output a specific executable or artifact specialized and optimized for the targeted system.
 			</SimpleText>
 			<SimpleText>
 				Environment variables are usually used in web development too. Some variables are named like <code>DOMAIN_NAME</code>, <code>SERVER_PORT</code>, or <code>BRAND_NAME</code>. These variables are used different parts of the software and customized per machine.
 			</SimpleText>
 			<SimpleText>
-				Using the previous example, the program can be be modified to allow environment-level customization. It uses an external package named <ExternalLink address="https://www.npmjs.com/package/dotenv">dotenv</ExternalLink> package to use the environment variables by using <code>process.env.&lt;variable name&gt;</code>. Note that the program uses logical OR operator (<code>||</code>) in order to use default messages.
+				Using the <Bookmark fragment={`#${levels[0].id}`}>{
+					levels[0].text.toLocaleLowerCase()
+				}'s example</Bookmark>, the program can be be modified to allow environment-level customization. It uses an external package named <ExternalLink address="https://www.npmjs.com/package/dotenv">dotenv</ExternalLink> package to use the environment variables by using <code>process.env.&lt;variable name&gt;</code>. Note that the program uses logical OR operator (<code>||</code>) in order to use default messages.
 			</SimpleText>
 			<ExampleCode fileInfo={associatedFileList[1]} let:codeInfo>
 				<SimpleText>
@@ -147,7 +149,9 @@
 		<StructuredSection id={levels[2].id}>
 			<SecondaryHeading headingInfo={levels[2]}/>
 			<SimpleText>
-				This is almost similar to environment-level abstraction. However, the environment variables are not included in this level. <strong itemprop="mainEntity">This level refers to the softwares customizable by globally-scope variables and locally-scoped variables.</strong>
+				This is almost similar to <Bookmark fragment={`#${levels[1].id}`}>{
+					levels[1].text.toLocaleLowerCase()
+				}</Bookmark>. However, the environment variables are not included in this level. <strong itemprop="mainEntity">This level refers to the softwares customizable by globally-scope variables and locally-scoped variables.</strong>
 			</SimpleText>
 			<SimpleText>
 				Should the user want to customize the program, knowledge in <strong itemprop="keyword">variable declaration</strong> (depending on the programming language used) is a must. They may also need to learn about enumerations or any different data types like booleans and integers.
@@ -156,7 +160,9 @@
 				This level can be seen when making embedded programs for microcontrollers. It is helpful to declare multiple constants that are repeatedly used like indicating on or off, speed of sound (which can be used for calculating the distance using ultrasonic sensor), or <ExternalLink address="https://www.youtube.com/watch?v=nPOKOi1jIK0">length of intervals</ExternalLink>. In addition, it can be seen in other fields of Information Technology (<abbr>I.T.</abbr>) such as web development and game development.
 			</SimpleText>
 			<SimpleText>
-				Building from previous example, default messages can be put in global scope allowing other developers find the default messages quickly.
+				Building from <Bookmark fragment={`#${levels[1].id}`}>{
+					levels[1].text.toLocaleLowerCase()
+				}</Bookmark>, default messages can be put in global scope allowing other developers find the default messages quickly.
 			</SimpleText>
 			<ExampleCode fileInfo={associatedFileList[3]}/>
 		</StructuredSection>
@@ -169,7 +175,9 @@
 				Generalizing multiple but similar procedures into one function is helpful during development. It saves lines of code and effort to scroll on a file to understand the operations. Other developers do not need to reimplement a function as they only need to install a dependency containing the process they need, therefore it saves time.
 			</SimpleText>
 			<SimpleText>
-				From the previous example again, repeated statements on reading a string can be summarized into one function. Therefore, it quicker to read.
+				From the <Bookmark fragment={`#${levels[2].id}`}>{
+					levels[2].text.toLocaleLowerCase()
+				}</Bookmark>, repeated statements on reading a string can be summarized into one function. Therefore, it quicker to read.
 			</SimpleText>
 			<ExampleCode fileInfo={associatedFileList[4]}/>
 			<SimpleText>
@@ -194,7 +202,9 @@
 				In web development, instances are also used like servers too. Indeed, they have multiple fnctionalities but uses different set of values inside. They may differ in software version, domain name, or files to name a few.
 			</SimpleText>
 			<SimpleText>
-				Below is another improved version of the same program. It uses classes and the concept of inheritance to reuse the code. There are four instances in this code which are contained in variables declared at line 47, 50, 53, and 56.
+				Below is another improved version of the <Bookmark fragment={`#${levels[3].id}`}>{
+					levels[3].text.toLocaleLowerCase()
+				}'s last example</Bookmark>. It uses classes and the concept of inheritance to reuse the code. There are four instances in this code which are contained in variables declared at line 47, 50, 53, and 56.
 			</SimpleText>
 			<ExampleCode fileInfo={associatedFileList[7]}/>
 		</StructuredSection>
@@ -211,14 +221,16 @@
 			</SimpleText>
 			<SimpleText>
 				Below, is an another example based from <Bookmark fragment={`#${levels[4].id}`}>
-					{levels[4].text.toLocaleLowerCase()}
+					{levels[4].text.toLocaleLowerCase()}'s example
 				</Bookmark> but with the application of <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">Typescript's generics</ExternalLink>.
-				The code may become longer than the original example. However, making an interface-level abstraction has greater benefits on large projects than this example.
+				The code may appear longer than the example in <Bookmark fragment={`#${levels[0].id}`}>{
+					levels[0].text.toLocaleLowerCase()
+				}</Bookmark>. However, making an interface-level abstraction has greater benefits on large projects than this example.
 			</SimpleText>
 			<ExampleCode fileInfo={associatedFileList[8]}/>
 			<SimpleText>
 				In addition, an another example based from <Bookmark fragment={`#${levels[3].id}`}>
-					{levels[3].text.toLocaleLowerCase()}
+					{levels[3].text.toLocaleLowerCase()}'s example
 				</Bookmark> but with the application of <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">Typescript's generics</ExternalLink> too. It appears to be shorter than the code above.
 			</SimpleText>
 			<ExampleCode fileInfo={associatedFileList[9]}/>
