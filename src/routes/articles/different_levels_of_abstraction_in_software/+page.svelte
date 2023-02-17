@@ -209,6 +209,19 @@
 			<SimpleText>
 				Codes at this level may consider multiple use cases. Modifying them should be careful to make sure the dependent systems do not break, or at least breaks slightly.
 			</SimpleText>
+			<SimpleText>
+				Below, is an another example based from <Bookmark fragment={`#${levels[4].id}`}>
+					{levels[4].text.toLocaleLowerCase()}
+				</Bookmark> but with the application of <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">Typescript's generics</ExternalLink>.
+				The code may become longer than the original example. However, making an interface-level abstraction has greater benefits on large projects than this example.
+			</SimpleText>
+			<ExampleCode fileInfo={associatedFileList[8]}/>
+			<SimpleText>
+				In addition, an another example based from <Bookmark fragment={`#${levels[3].id}`}>
+					{levels[3].text.toLocaleLowerCase()}
+				</Bookmark> but with the application of <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">Typescript's generics</ExternalLink> too. It appears to be shorter than the code above.
+			</SimpleText>
+			<ExampleCode fileInfo={associatedFileList[9]}/>
 		</StructuredSection>
 		<StructuredSection id={conclusion.id}>
 			<SecondaryHeading headingInfo={conclusion}/>
