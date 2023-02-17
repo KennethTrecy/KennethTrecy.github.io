@@ -32,6 +32,7 @@
 		{ "text": "Object-level Abstraction" },
 		{ "text": "Interface-level Abstraction" }
 	].map(defineHeadingInfo)
+	const conclusion = defineHeadingInfo({ "text": "Conclusion" })
 
 	const packageLevelExecutedCommandInfo: ExecutedCommandSetInfo = {
 		"description": "This is the output after running the package-level code.",
@@ -207,6 +208,15 @@
 			</SimpleText>
 			<SimpleText>
 				Codes at this level may consider multiple use cases. Modifying them should be careful to make sure the dependent systems do not break, or at least breaks slightly.
+			</SimpleText>
+		</StructuredSection>
+		<StructuredSection id={conclusion.id}>
+			<SecondaryHeading headingInfo={conclusion}/>
+			<SimpleText>
+				Those are the different level of abstraction that programmers may find on every software they build. Beginners may want to make their programs customizable by aiming for a package-level to variable-level abstraction. Thus, being overwhelmed can be prevented and focus at the current task. Meanwhile, advanced programmers may want to transform their code aiming for a function-level to interface-level abstraction to save time configuring the similar behaviors.
+			</SimpleText>
+			<SimpleText>
+				That said, the levels in this article allows programmers determine the complexity of a code. They are just one of the tools to be able to communicate with other developers efficiently.
 			</SimpleText>
 		</StructuredSection>
 	</svelte:fragment>
