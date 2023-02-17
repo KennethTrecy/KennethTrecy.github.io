@@ -43,7 +43,7 @@ To generate the change log automatically, run the command below:
 $ npx changelogen --from=[tag name or branch name or commit itself] --to=master
 ```
 
-To run the website on local environemnt, run the following command:
+To run the website on local environment, run the following command:
 ```
 npm run dev
 ```
