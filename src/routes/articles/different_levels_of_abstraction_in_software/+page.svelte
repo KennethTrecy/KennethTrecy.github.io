@@ -51,7 +51,7 @@
 		]
 	}
 	const environmentLevelExecutedCommandInfo: ExecutedCommandSetInfo = {
-		"description": "This is the output after running the environment-level code. Notice that the questions for first name and last name have changed according to the questions in environment file.",
+		"description": "This is the output after running the configuration-level code. Notice that the questions for first name and last name have changed according to the questions in environment file.",
 		"commands": [
 			{
 				"command": `npx ts-node ${associatedFileList[1].path}`,
@@ -104,7 +104,7 @@
 				<strong itemprop="mainEntity">This level of abstraction is the most easiest to work on among other levels.</strong> However, a code at this level may have repetitive statements. Therefore, the program will be longer and will take time to read.
 			</SimpleText>
 			<SimpleText>
-				In addition, most applications are only usable in this level. They are relatively easy to install as they can be standalone or in compressed portable format. The downside is that there is a <strong itemprop="keyword">limited customizability</strong> which are offered through <em>settings</em> or <em>preferences</em> option. It is expected that the users of these applications are anyone who have <strong itemprop="keyword">basic computer literacy</strong>.
+				In addition, most applications are only usable in this level. They are relatively easy to install as they can be standalone or in compressed portable format. The downside is that there is a <strong itemprop="keyword">limited customizability</strong> which are usually offered through <em>settings</em> or <em>preferences</em> option. It is expected that the users of these applications are anyone who have <strong itemprop="keyword">basic computer literacy</strong>.
 			</SimpleText>
 			<SimpleText>
 				For example, a teacher use a spreadsheet software to calculate the grades of students. The teacher will just input the raw grade and the formula. After that, the final grade will be calculated by the software as programmed.
@@ -133,7 +133,7 @@
 			<SimpleText>
 				Using the <Bookmark fragment={`#${levels[0].id}`}>{
 					levels[0].text.toLocaleLowerCase()
-				}'s example</Bookmark>, the program can be be modified to allow environment-level customization. It uses an external package named <ExternalLink address="https://www.npmjs.com/package/dotenv">dotenv</ExternalLink> package to use the environment variables by using <code>process.env.&lt;variable name&gt;</code>. Note that the program uses logical OR operator (<code>||</code>) in order to use default messages.
+				}'s example</Bookmark>, the program can be be modified to allow configuration-level customization. It uses an external package named <ExternalLink address="https://www.npmjs.com/package/dotenv">dotenv</ExternalLink> package to use the environment variables by using <code>process.env.&lt;variable name&gt;</code>. Note that the program uses logical OR operator (<code>||</code>) in order to use default messages.
 			</SimpleText>
 			<ExampleCode fileInfo={associatedFileList[1]} let:codeInfo>
 				<SimpleText>
@@ -151,7 +151,7 @@
 			<SimpleText>
 				This is almost similar to <Bookmark fragment={`#${levels[1].id}`}>{
 					levels[1].text.toLocaleLowerCase()
-				}</Bookmark>. However, the environment variables are not included in this level. <strong itemprop="mainEntity">This level refers to the softwares customizable by globally-scope variables and locally-scoped variables.</strong>
+				}</Bookmark>. However, the environment variables are not included in this level. <strong itemprop="mainEntity">This level refers to the programs/codes customizable by globally-scoped variables and locally-scoped variables.</strong>
 			</SimpleText>
 			<SimpleText>
 				Should the user want to customize the program, knowledge in <strong itemprop="keyword">variable declaration</strong> (depending on the programming language used) is a must. They may also need to learn about enumerations or any different data types like booleans and integers.
@@ -160,7 +160,7 @@
 				This level can be seen when making embedded programs for microcontrollers. It is helpful to declare multiple constants for values that are repeatedly used like indicating on or off, <ExternalLink address="https://www.youtube.com/watch?v=nPOKOi1jIK0">pin to the <abbr>LED</abbr>, or length of intervals</ExternalLink>. In addition, it can be seen in other fields of Information Technology (<abbr>I.T.</abbr>) such as web development and game development.
 			</SimpleText>
 			<SimpleText>
-				Building from <Bookmark fragment={`#${levels[1].id}`}>example in {
+				Building from the <Bookmark fragment={`#${levels[1].id}`}>example in {
 					levels[1].text.toLocaleLowerCase()
 				}</Bookmark>, default messages can be put in global scope allowing other developers find the default messages quickly.
 			</SimpleText>
@@ -169,15 +169,15 @@
 		<StructuredSection id={levels[3].id}>
 			<SecondaryHeading headingInfo={levels[3]}/>
 			<SimpleText>
-				<strong itemprop="mainEntity">At this level of abstraction, a software bundles different procedures in one or more functions.</strong> Example of this are libraries which may contain different functions to change the casing of characters in a string.
+				<strong itemprop="mainEntity">At this level of abstraction, a software/code file bundles different procedures in one or more functions.</strong> Example of this are libraries which may contain different functions to change the casing of characters in a string.
 			</SimpleText>
 			<SimpleText>
 				Generalizing multiple but similar procedures into one function is helpful during development. It saves lines of code and effort to scroll on a file to understand the operations. Other developers do not need to reimplement a function as they only need to install a dependency containing the process they need, therefore it saves time.
 			</SimpleText>
 			<SimpleText>
-				From the <Bookmark fragment={`#${levels[2].id}`}>{
+				Reusing the <Bookmark fragment={`#${levels[2].id}`}>{
 					levels[2].text.toLocaleLowerCase()
-				}</Bookmark>, repeated statements on reading a string can be summarized into one function. Therefore, it quicker to read.
+				}'s example</Bookmark>, repeated statements on reading a string can be summarized into one function. Therefore, it is quicker to read.
 			</SimpleText>
 			<ExampleCode fileInfo={associatedFileList[4]}/>
 			<SimpleText>
@@ -196,13 +196,13 @@
 			</SimpleText>
 			<SimpleText>
 				When it becomes specialized or concrete, it is known as <strong>instance</strong>.
-				Instances are useful in game development. A developer can represent the game's item, obstacles, or any other object to interact with other instances.
+				Instances are useful in game development. A developer can use an instance represent the game's item, obstacles, or any other object to interact with other instances.
 			</SimpleText>
 			<SimpleText>
-				In web development, instances are also used like servers too. Indeed, they have multiple fnctionalities but uses different set of values inside. They may differ in software version, domain name, or files to name a few.
+				In web development, instances are also used like servers too. Indeed, they have multiple functionalities but uses different set of values inside. They may differ in software version, domain name, or files to name a few.
 			</SimpleText>
 			<SimpleText>
-				Below is another improved version of the <Bookmark fragment={`#${levels[3].id}`}>{
+				Below is an another improved version of the <Bookmark fragment={`#${levels[3].id}`}>{
 					levels[3].text.toLocaleLowerCase()
 				}'s last example</Bookmark>. It uses classes and the concept of inheritance to reuse the code. There are four instances in this code which are contained in variables declared at line 47, 50, 53, and 56.
 			</SimpleText>
@@ -243,7 +243,7 @@
 			<SimpleText>
 				Meanwhile, developers of a large project or proficient programmers may want to transform their code aiming for a
 				<Bookmark fragment={`#${levels[3].id}`}>function-level</Bookmark>
-				to <Bookmark fragment={`#${levels[5].id}`}>interface-level</Bookmark> abstraction to save time configuring the similar behaviors. Another benefit is that there is a consistency between the different components/mechanisms/interfaces of the application. The price is that the other contributors need to know advance concepts to understand the advanced abstractions.
+				to <Bookmark fragment={`#${levels[5].id}`}>interface-level</Bookmark> abstraction to save time configuring the similar behaviors. Another benefit is that there is a consistency between the different components, mechanisms, or interfaces of the application. Yet, the price is that the other contributors need to know advance concepts to understand the advanced abstractions.
 			</SimpleText>
 			<SimpleText>
 				That said, the levels in this article allows programmers determine the complexity of a code. They are just one of the tools to be able to communicate with other developers efficiently.
