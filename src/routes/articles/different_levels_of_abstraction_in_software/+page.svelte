@@ -157,10 +157,10 @@
 				Should the user want to customize the program, knowledge in <strong itemprop="keyword">variable declaration</strong> (depending on the programming language used) is a must. They may also need to learn about enumerations or any different data types like booleans and integers.
 			</SimpleText>
 			<SimpleText>
-				This level can be seen when making embedded programs for microcontrollers. It is helpful to declare multiple constants that are repeatedly used like indicating on or off, speed of sound (which can be used for calculating the distance using ultrasonic sensor), or <ExternalLink address="https://www.youtube.com/watch?v=nPOKOi1jIK0">length of intervals</ExternalLink>. In addition, it can be seen in other fields of Information Technology (<abbr>I.T.</abbr>) such as web development and game development.
+				This level can be seen when making embedded programs for microcontrollers. It is helpful to declare multiple constants for values that are repeatedly used like indicating on or off, <ExternalLink address="https://www.youtube.com/watch?v=nPOKOi1jIK0">pin to the <abbr>LED</abbr>, or length of intervals</ExternalLink>. In addition, it can be seen in other fields of Information Technology (<abbr>I.T.</abbr>) such as web development and game development.
 			</SimpleText>
 			<SimpleText>
-				Building from <Bookmark fragment={`#${levels[1].id}`}>{
+				Building from <Bookmark fragment={`#${levels[1].id}`}>example in {
 					levels[1].text.toLocaleLowerCase()
 				}</Bookmark>, default messages can be put in global scope allowing other developers find the default messages quickly.
 			</SimpleText>
