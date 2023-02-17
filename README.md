@@ -10,6 +10,11 @@
 # Kenneth Trecy's Personal Website
 This is my personal website.
 
+Other programmers may fork it and customize the website's code according to their needs as it has
+been licensed under [MIT]. The website complies with [semantic versioning specification]. With that,
+other developers can know which code like components, APIs, or test utilities will be broken in the
+next release.
+
 ## Origin
 Some parts of the repository was based from [`docker_js-mocha-svelte-typescript-sass`] branch of
 [Web Template].
@@ -64,3 +69,4 @@ Coded by Kenneth Trecy Tobias.
 [pnpm]: https://pnpm.io/installation
 [Conventional Commits specification]: https://www.conventionalcommits.org/en/v1.0.0/
 [contributing guide]: ./CONTRIBUTING.md
+[semantic versioning specification]: https://semver.org/
