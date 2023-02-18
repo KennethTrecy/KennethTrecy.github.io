@@ -49,6 +49,9 @@ export default async function(page: Page) {
 	])).flat()
 
 	const uniqueTexts = [ ...new Set(allTexts) ]
+
+	await page.waitForTimeout(1000)
+
 	const pendingResults: Promise<any>[] = uniqueTexts.map(async text => {
 		const result = await check(text, {
 			"api_url": "http://localhost:8081/v2/check",
