@@ -1,9 +1,6 @@
-import type { MultimediaLink } from "@/types/content_metadata"
+import makeSet from "@/utilities/resource/make_set"
 
-export default function(links: MultimediaLink[]): string {
-	if (links.length > 1) {
-		return links.map(linkInfo => `${linkInfo.link} ${linkInfo.intrinsicWidth}w`).join(", ")
-	}
-
-	return ""
-}
+/**
+ * @deprecated since v3.0.0. Use its new path instead.
+ */
+export default makeSet
