@@ -75,7 +75,7 @@
 				relationship={internalTypes}
 				itemprop="mainEntityOfPage"
 				class={[ "btn", "no-underline" ]}>
-				Visit Article
+				<Icon name="navigate_next"/>
 			</Link>
 		</div>
 	</StructuredSection>
