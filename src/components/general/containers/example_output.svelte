@@ -1,20 +1,15 @@
 <script lang="ts">
 	import { onMount } from "svelte"
 
-	import type {
-		CodeFile,
-		CompleteViewableFileInfo,
-		ExecutedCommandSetInfo
-	} from "@/types/container_info"
+	import type { CompleteCodeFileInfo, ExecutedCommandSetInfo } from "@/types/container_info"
 
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 
-	export let fileInfo: CompleteViewableFileInfo
-	export let codeInfo: CodeFile
+	export let codeInfo: CompleteCodeFileInfo
 	export let commandInfos: ExecutedCommandSetInfo
 
-	$: repoURL = `https://github.com/${fileInfo.owner}/${fileInfo.repo}`
+	$: repoURL = `https://github.com/${codeInfo.owner}/${codeInfo.repo}`
 </script>
 
 <div itemprop="hasPart" itemscope itemtype="https://schema.org/CreativeWork">
@@ -33,6 +28,6 @@
 		Output of
 		<ExternalLink
 			address={codeInfo.viewURL}
-			itemprop={[ "mainEntityOfPage" ]}>{fileInfo.path}</ExternalLink>
+			itemprop={[ "mainEntityOfPage" ]}>{codeInfo.path}</ExternalLink>
 	</p>
 </div>
