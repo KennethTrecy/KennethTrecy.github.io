@@ -6,7 +6,7 @@ export default function(path: string, {
 	title = "Draft Article Page",
 	description = "This is a draft article page.",
 	objectType = "article",
-	articleType = "techical article",
+	articleType = "article",
 	...otherProperties
 }: Partial<Exclude<ArticlePageMeta, "path">> = {}): ArticlePageMeta {
 	return {

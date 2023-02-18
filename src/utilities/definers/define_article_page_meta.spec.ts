@@ -49,7 +49,7 @@ describe("Define article page meta behavior", () => {
 		expect(meta.image.defaultLink).toStrictEqual(`${PUBLIC_PRODUCTION_BASE_URL}${Logo}`)
 		expect(meta.image.description).toStrictEqual("Logo of Kenneth Trecy Tobias")
 		expect(meta.objectType).toStrictEqual("article")
-		expect(meta.articleType).toStrictEqual("techical article")
+		expect(meta.articleType).toStrictEqual("article")
 	})
 
 	it("can default last modified date to published date", () => {
