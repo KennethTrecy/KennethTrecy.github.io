@@ -8,18 +8,17 @@
 		associatedFileList
 	} from "@/routes/articles/different_levels_of_abstraction_in_software/shared_constants"
 
+	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
+
 	import CommonHead from "@/components/general/common_head.svelte"
 	import Bookmark from "@/components/general/links/bookmark.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
-	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
-	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import ArticlePost from "@/components/general/containers/article_post.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import ExampleCode from "@/components/general/containers/example_code.svelte"
 	import ExampleOutput from "@/components/general/containers/example_output.svelte"
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
-	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
 
@@ -68,7 +67,7 @@
 	}
 </script>
 
-<ArticlePost {pageMeta} itemtype="https://schema.org/TechArticle">
+<ArticlePost {pageMeta}>
 	<StructuredSection
 		itemprop="about"
 		itemtype="https://schema.org/ItemList"
