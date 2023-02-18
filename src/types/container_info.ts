@@ -49,6 +49,8 @@ export interface CodeFile {
 	content: string
 }
 
+export type CompleteCodeFileInfo = CodeFile & CompleteViewableFileInfo
+
 interface CommandOutput {
 	text: string
 }
