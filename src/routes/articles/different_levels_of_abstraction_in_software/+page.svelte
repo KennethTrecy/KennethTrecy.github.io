@@ -107,7 +107,7 @@
 				In addition, most applications are only usable in this level. They are relatively easy to install as they can be standalone or in compressed portable format. The downside is that there is a <strong itemprop="keyword">limited customizability</strong> which are usually offered through <em>settings</em> or <em>preferences</em> option. It is expected that the users of these applications are anyone who have <strong itemprop="keyword">basic computer literacy</strong>.
 			</SimpleText>
 			<SimpleText>
-				For example, a teacher use a spreadsheet software to calculate the grades of students. The teacher will just input the raw grade and the formula. After that, the final grade will be calculated by the software as programmed.
+				For example, a teacher use a spreadsheet software to calculate the grades of students. The teacher will just input the raw grade and the formula. After that, the final grade will be automatically calculated by the software as programmed.
 			</SimpleText>
 			<SimpleText>
 				Below is another example of a program which asks for user's first name, last name, age, and distance walked. Notice that there are repetitive statements and may take time to read.
@@ -137,7 +137,7 @@
 			</SimpleText>
 			<ExampleCode fileInfo={associatedFileList[1]} let:codeInfo>
 				<SimpleText>
-					There are different methods to declare environment variables. Below, it is an example of <code>.env</code> file to declare them. Note some the variables do not have value. Therefore, the program will use default values for those empty variables.
+					There are different methods to declare environment variables. Below, it is an example of <code>.env</code> file to declare them. Note some the variables in the environment do not have a declared value. Therefore, the program will use default values for those empty variables.
 				</SimpleText>
 				<ExampleCode itemprop="hasPart" fileInfo={associatedFileList[2]}/>
 				<ExampleOutput
@@ -220,7 +220,7 @@
 				Codes at this level may consider multiple use cases. Modifying them should be careful to make sure the dependent systems do not break, or at least breaks slightly.
 			</SimpleText>
 			<SimpleText>
-				Below, is an another example based from <Bookmark fragment={`#${levels[4].id}`}>
+				Below, is an example based from <Bookmark fragment={`#${levels[4].id}`}>
 					{levels[4].text.toLocaleLowerCase()}'s example
 				</Bookmark> but with the application of <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">Typescript's generics</ExternalLink>.
 				The code may appear longer than the example in <Bookmark fragment={`#${levels[0].id}`}>{
@@ -238,7 +238,7 @@
 		<StructuredSection id={conclusion.id}>
 			<SecondaryHeading headingInfo={conclusion}/>
 			<SimpleText>
-				Those are the different level of abstraction that programmers may find on every software they build. Beginners may want to make their programs customizable by aiming for a <Bookmark fragment={`#${levels[0].id}`}>package-level</Bookmark> to <Bookmark fragment={`#${levels[2].id}`}>variable-level</Bookmark> abstraction. Thus, being overwhelmed can be prevented and focus at the current task.
+				Those are the various levels of abstraction that programmers may find on every software they build. Beginners may want to make their programs customizable by aiming for a <Bookmark fragment={`#${levels[0].id}`}>package-level</Bookmark> to <Bookmark fragment={`#${levels[2].id}`}>variable-level</Bookmark> abstraction. Thus, being overwhelmed can be prevented and focus at the current task.
 			</SimpleText>
 			<SimpleText>
 				Meanwhile, developers of a large project or proficient programmers may want to transform their code aiming for a
@@ -246,7 +246,7 @@
 				to <Bookmark fragment={`#${levels[5].id}`}>interface-level</Bookmark> abstraction to save time configuring the similar behaviors. Another benefit is that there is a consistency between the different components, mechanisms, or interfaces of the application. Yet, the price is that the other contributors need to know advance concepts to understand the advanced abstractions.
 			</SimpleText>
 			<SimpleText>
-				That said, the levels in this article allows programmers determine the complexity of a code. They are just one of the tools to be able to communicate with other developers efficiently.
+				That said, the levels in this article allows programmers determine the complexity of a code. They are just one of the tools in order to communicate with other developers efficiently.
 			</SimpleText>
 		</StructuredSection>
 	</svelte:fragment>
