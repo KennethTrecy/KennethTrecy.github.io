@@ -36,10 +36,6 @@
 		dateTimeFormatOptions
 	)
 	$: dateTimeModified = articleMeta.dateModified.toISOString()
-	$: humanReadableDateModified = articleMeta.dateModified.toLocaleString(
-		"en",
-		dateTimeFormatOptions
-	)
 	$: hasModified = dateTimePublished !== dateTimeModified
 </script>
 
@@ -54,22 +50,18 @@
 			{articleMeta.description}
 		</p>
 		<div class="card-actions flex md:flex-row items-center">
-			{#if hasModified}
-				<p class="prose text-sm">
-					Published last <time
-						itemprop="datePublished dateModified"
-						datetime={dateTimePublished}>{humanReadableDatePublished}</time>
-					then updated last <time
-						itemprop="dateModified"
-						datetime={dateTimeModified}>{humanReadableDateModified}</time>.
-				</p>
-			{:else}
-				<p class="prose text-sm">
-					Published last <time
-						itemprop="datePublished dateModified"
-						datetime={dateTimePublished}>{humanReadableDatePublished}</time>.
-				</p>
-			{/if}
+			<p class="prose text-sm">
+				{#if hasModified}
+						Published last <time
+							itemprop="datePublished"
+							datetime={dateTimePublished}>{humanReadableDatePublished}</time>.
+						<meta itemprop="dateModified" content={dateTimeModified}/>
+				{:else}
+						Published last <time
+							itemprop="datePublished dateModified"
+							datetime={dateTimePublished}>{humanReadableDatePublished}</time>.
+				{/if}
+			</p>
 			<Link
 				address={canonicalURL}
 				relationship={internalTypes}
