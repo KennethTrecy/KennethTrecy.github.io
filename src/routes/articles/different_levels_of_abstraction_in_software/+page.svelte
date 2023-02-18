@@ -40,11 +40,11 @@
 	].map(defineHeadingInfo)
 	const conclusion = defineHeadingInfo({ "text": "Conclusion" })
 
-	const packageLevelExecutedCommandInfo: ExecutedCommandSetInfo = {
+	const packageLevelExecutedCommandInfo = derived(loadedFileInfos, resolvedFiles => ({
 		"description": "This is the output after running the package-level code.",
 		"commands": [
 			{
-				"command": `npx ts-node ${associatedFileList[0].path}`,
+				"command": `npx ts-node ${resolvedFiles[0]?.path ?? ""}`,
 				"output": [
 					{ "text": "What is your first name? Kenneth" },
 					{ "text": "What is your last name? Tobias" },
@@ -55,12 +55,12 @@
 				]
 			}
 		]
-	}
-	const environmentLevelExecutedCommandInfo: ExecutedCommandSetInfo = {
+	} as ExecutedCommandSetInfo))
+	const environmentLevelExecutedCommandInfo = derived(loadedFileInfos, resolvedFiles => ({
 		"description": "This is the output after running the configuration-level code. Notice that the questions for first name and last name have changed according to the questions in environment file.",
 		"commands": [
 			{
-				"command": `npx ts-node ${associatedFileList[1].path}`,
+				"command": `npx ts-node ${resolvedFiles[1]?.path ?? ""}`,
 				"output": [
 					{ "text": "Enter your first name:Kenneth" },
 					{ "text": "Enter your last name:Tobias" },
@@ -71,7 +71,7 @@
 				]
 			}
 		]
-	}
+	} as ExecutedCommandSetInfo))
 </script>
 
 <ArticlePost {pageMeta}>
