@@ -7,6 +7,8 @@
 
 	export let fileInfo: CompleteViewableFileInfo
 	export let itemprop: string = "workExample"
+	export let beginLineIndex: number = 0
+	export let endLineIndex: number = 0
 
 	let codeInfo: CodeFile = {
 		"content": "",
@@ -14,7 +16,10 @@
 		"size": 0,
 		"viewURL": ""
 	}
-	$: codeLines = codeInfo.content.split("\n")
+	$: rawCodeLines = codeInfo.content.split("\n")
+	$: targetBeginLineIndex = Math.max(0, beginLineIndex)
+	$: targetEndLineIndex = Math.min(rawCodeLines.length, endLineIndex)
+	$: codeLines = rawCodeLines.slice(targetBeginLineIndex, targetEndLineIndex)
 	$: repoURL = `https://github.com/${fileInfo.owner}/${fileInfo.repo}`
 
 	onMount(async () => {
@@ -33,7 +38,7 @@
 <div class="code_container" {itemprop} itemscope itemtype="https://schema.org/SoftwareSourceCode">
 	<div class="mockup-code not-prose text-sm">
 		{#each codeLines as line, i}
-			<pre data-prefix={i+1}><code>{line}</code></pre>
+			<pre data-prefix={targetBeginLineIndex+i+1}><code>{line}</code></pre>
 		{/each}
 	</div>
 	<p itemprop="text" class="text-center text-sm">
