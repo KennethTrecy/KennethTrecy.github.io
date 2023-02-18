@@ -1,7 +1,12 @@
 <script lang="ts">
 	import { onMount } from "svelte"
+	import { page } from "$app/stores"
+	import { derived } from "svelte/store"
 
 	import type { ExecutedCommandSetInfo, HeadingInfo } from "@/types/container_info"
+	import type {
+		PageData
+	} from "@/routes/articles/different_levels_of_abstraction_in_software/$types"
 
 	import pageMeta from "@/routes/articles/different_levels_of_abstraction_in_software/meta"
 	import {
@@ -21,6 +26,8 @@
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
+
+	const loadedFileInfos = derived(page, resolvedPage => resolvedPage.data.loadedFileInfos ?? [])
 
 	const introduction = defineHeadingInfo({ "text": "Introduction" })
 	const levels: HeadingInfo<"defined">[] = [
