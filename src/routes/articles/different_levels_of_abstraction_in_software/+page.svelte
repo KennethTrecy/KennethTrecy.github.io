@@ -93,7 +93,7 @@
 					</Bookmark>
 				</StructuredListItem>
 			{/each}
-			</StructuredList>
+		</StructuredList>
 	</StructuredSection>
 	<StructuredSection id={levels[0].id}>
 		<SecondaryHeading headingInfo={levels[0]}/>
