@@ -1,6 +1,6 @@
 import articleMetaCollection from "@/constants/article_meta_collection"
 
-import definePageMeta from "@/components/general/define_page_meta"
+import definePageMeta from "@/utilities/definers/define_page_meta"
 
 const publishedDateTimes = articleMetaCollection.map(meta => meta.datePublished.getTime())
 const meta = definePageMeta("/articles", {

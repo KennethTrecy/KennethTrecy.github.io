@@ -1,4 +1,4 @@
-import definePageMeta from "@/components/general/define_page_meta"
+import definePageMeta from "@/utilities/definers/define_page_meta"
 
 const meta = definePageMeta("/articles/different_levels_of_abstraction_in_software", {
 	"datePublished": new Date(Date.UTC(2023, 1, 18, 3, 40)),

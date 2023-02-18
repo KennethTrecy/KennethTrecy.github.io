@@ -1,6 +1,6 @@
 import { FIRST_PUBLICATION_DATE } from "@/constants/miscellaneous_meta"
 
-import definePageMeta from "@/components/general/define_page_meta"
+import definePageMeta from "@/utilities/definers/define_page_meta"
 
 const meta = definePageMeta("/projects", {
 	"datePublished": FIRST_PUBLICATION_DATE,
