@@ -29,7 +29,7 @@
 			isProjectList={false}
 			class={[ "list-none", "flex", "flex-col", "flex-wrap", "p-0" ]}>
 			{#each articleMetaCollection as articleMeta}
-				<StructuredListItem isInProjectList={false}>
+				<StructuredListItem isInProjectList={false} class={[ "p-0" ]}>
 					<ArticleCard {articleMeta}/>
 				</StructuredListItem>
 			{/each}
