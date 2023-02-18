@@ -17,15 +17,7 @@
 <StructuredArticle {itemtype}>
 	<PrimaryHeading slot="title">{pageMeta.title}</PrimaryHeading>
 	<svelte:fragment slot="content">
-		<div class="article_content">
-			<slot></slot>
-		</div>
+		<slot></slot>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
 </StructuredArticle>
-
-<style lang="postcss">
-	.article_content {
-		max-width: 100vw;
-	}
-</style>
