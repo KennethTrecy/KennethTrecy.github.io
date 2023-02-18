@@ -55,7 +55,7 @@
 		</p>
 		<div class="card-actions flex md:flex-row items-center">
 			{#if hasModified}
-				<p itemprop="text" class="prose text-sm">
+				<p class="prose text-sm">
 					Published last <time
 						itemprop="datePublished dateModified"
 						datetime={dateTimePublished}>{humanReadableDatePublished}</time>
@@ -64,7 +64,7 @@
 						datetime={dateTimeModified}>{humanReadableDateModified}</time>.
 				</p>
 			{:else}
-				<p itemprop="text" class="prose text-sm">
+				<p class="prose text-sm">
 					Published last <time
 						itemprop="datePublished dateModified"
 						datetime={dateTimePublished}>{humanReadableDatePublished}</time>.
