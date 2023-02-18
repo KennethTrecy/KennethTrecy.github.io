@@ -14,6 +14,7 @@
 
 	import CommonHead from "@/components/general/common_head.svelte"
 	import Bookmark from "@/components/general/links/bookmark.svelte"
+	import Keyword from "@/components/general/containers/keyword.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import ArticlePost from "@/components/general/containers/article_post.svelte"
@@ -78,7 +79,7 @@
 		id={introduction.id}>
 		<SecondaryHeading headingInfo={introduction}/>
 		<SimpleText itemprop="about">
-			<strong itemprop="keyword">Abstraction</strong> is a process to see a thing as a one rather than as the sum of its parts. It can be rules or equations that are applicable to most situations. In software development, abstractions are used to simplify the process which are common to other tasks. In other words, they are <strong itemprop="keyword">reusable</strong>. They take in different levels which this page is all about.
+			<Keyword>Abstraction</Keyword> is a process to see a thing as a one rather than as the sum of its parts. It can be rules or equations that are applicable to most situations. In software development, abstractions are used to simplify the process which are common to other tasks. In other words, they are <Keyword>reusable</Keyword>. They take in different levels which this page is all about.
 		</SimpleText>
 		<SimpleText itemprop="mainEntity">
 			There are <strong itemprop="numberOfItems">{levels.length}</strong> levels of abstraction listed below. They are ordered from easiest to hardest in implementation and customizability.
@@ -101,7 +102,7 @@
 			<strong itemprop="mainEntity">This level of abstraction is the easiest to work on among other levels.</strong> However, a code at this level may have repetitive statements. Therefore, the program will be longer and will take time to read.
 		</SimpleText>
 		<SimpleText>
-			In addition, most applications are only usable in this level. They are relatively easy to install as they can be standalone or in compressed portable format. The downside is that there is a <strong itemprop="keyword">limited customizability</strong> which are usually offered through <em>settings</em> or <em>preferences</em> option. It is expected that the users of these applications are anyone who have <strong itemprop="keyword">basic computer literacy</strong>.
+			In addition, most applications are only usable in this level. They are relatively easy to install as they can be standalone or in compressed portable format. The downside is that there is a <Keyword>limited customizability</Keyword> which are usually offered through <em>settings</em> or <em>preferences</em> option. It is expected that the users of these applications are anyone who have <Keyword>basic computer literacy</Keyword>.
 		</SimpleText>
 		<SimpleText>
 			For example, a teacher use a spreadsheet software to calculate the grades of students. The teacher will just input the raw grade and the formula. After that, the final grade will be automatically calculated by the software as programmed.
@@ -118,7 +119,7 @@
 	<StructuredSection id={levels[1].id}>
 		<SecondaryHeading headingInfo={levels[1]}/>
 		<SimpleText>
-			<strong itemprop="mainEntity">This level of abstraction allows the creation of different package-level software programs.</strong> Software programs at this level can be managed using environment variables (which are declared on the system, <code>.env</code> files, or other contexts) or command line arguments. Users who want to customize their software should know how to <strong itemprop="keyword">run</strong> or <strong itemprop="keyword">compile</strong> software.
+			<strong itemprop="mainEntity">This level of abstraction allows the creation of different package-level software programs.</strong> Software programs at this level can be managed using environment variables (which are declared on the system, <code>.env</code> files, or other contexts) or command line arguments. Users who want to customize their software should know how to <Keyword>run</Keyword> or <Keyword>compile</Keyword> software.
 		</SimpleText>
 		<SimpleText>
 			For instance, some programming languages have a compiler. Those compilers allow developer(s) to create programs that run on different operating systems or environments. For every operating system that a developer want to support, the compiler would output a specific executable or artifact specialized and optimized for the targeted system.
@@ -149,7 +150,7 @@
 			}</Bookmark>. However, the environment variables are not included in this level. <strong itemprop="mainEntity">This level refers to the programs/codes customizable by globally-scoped variables and locally-scoped variables.</strong>
 		</SimpleText>
 		<SimpleText>
-			Should the user want to customize the program, knowledge in <strong itemprop="keyword">variable declaration</strong> (depending on the programming language used) is a must. They may also need to learn about enumerations or any different data types like boolean and integer.
+			Should the user want to customize the program, knowledge in <Keyword>variable declaration</Keyword> (depending on the programming language used) is a must. They may also need to learn about enumerations or any different data types like boolean and integer.
 		</SimpleText>
 		<SimpleText>
 			This level can be seen when making embedded programs for microcontrollers. It is helpful to declare multiple constants for values that are repeatedly used like indicating on or off, <ExternalLink address="https://www.youtube.com/watch?v=nPOKOi1jIK0">pin to the <abbr>LED</abbr>, or length of intervals</ExternalLink>. In addition, it can be seen in other fields of Information Technology (<abbr>I.T.</abbr>) such as web development and game development.
