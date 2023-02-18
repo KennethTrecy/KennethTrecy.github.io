@@ -3,7 +3,7 @@
 
 	import type { HeadingInfo } from "@/types/container_info"
 
-	import pageMeta from "@/routes/articles/different_levels_of_abstraction_in_software/meta"
+	import pageMeta from "@/routes/articles/centering_a_child_element/meta"
 
 	import Bookmark from "@/components/general/links/bookmark.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
