@@ -127,7 +127,7 @@
 		<SimpleText>
 			Using the <Bookmark fragment={`#${levels[0].id}`}>{
 				levels[0].text.toLocaleLowerCase()
-			}'s example</Bookmark>, the program can be modified to allow configuration-level customization. It uses an external package named <ExternalLink address="https://www.npmjs.com/package/dotenv">dotenv</ExternalLink> package to use the environment variables by using <code>process.env.&lt;variable name&gt;</code>. Note that the program uses logical OR operator (<code>||</code>) in order to use default messages.
+			}'s example</Bookmark>, the program can be modified to allow configuration-level customization. It uses an external package named <ExternalLink address="https://www.npmjs.com/package/dotenv">dotenv</ExternalLink> package to use the environment variables by using <code>process<span>.</span>env.&lt;variable name&gt;</code>. Note that the program uses logical OR operator (<code>||</code>) in order to use default messages.
 		</SimpleText>
 		<ExampleCode fileInfo={associatedFileList[1]} let:codeInfo>
 			<SimpleText>
