@@ -6,7 +6,7 @@ const meta = definePageMeta("/articles/different_levels_of_abstraction_in_softwa
 	"description": "Find out different levels of abstraction in software and their differences.",
 	"keywords": [ "Abstraction", "level", "software", "customizability", "reusability" ],
 	"title": "Different Levels of Abstraction in Software",
-	"version": "1.001-dev"
+	"version": "1.001"
 })
 
 export default meta
