@@ -3,7 +3,7 @@
 
 	import CommonHead from "@/components/general/common_head.svelte"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
-	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
+	import PageDetailCard from "@/components/general/card/page_detail.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 
 	export let pageMeta: ArticlePageMeta
