@@ -13,7 +13,7 @@ const metaCollection = <PageMeta[]>[
 	projectsMeta,
 	articlesMeta,
 	websiteInfoMeta,
-	...<PageMeta[]>articleMetaCollection
+	...articleMetaCollection
 ]
 
 export default metaCollection

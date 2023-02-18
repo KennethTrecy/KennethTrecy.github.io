@@ -8,12 +8,10 @@ export async function GET() {
 		lastModified: Date
 	}
 
-	const documentURLInfos: URLInfo[] = metaCollection.map(meta => {
-		return {
-			"lastModified": meta.dateModified,
-			"path": meta.path
-		}
-	})
+	const documentURLInfos: URLInfo[] = metaCollection.map(meta => ({
+		"lastModified": meta.dateModified,
+		"path": meta.path
+	}))
 	const documentURLTags = documentURLInfos.map(info => `
 		<url>
 			<loc>${PUBLIC_PRODUCTION_BASE_URL}${info.path}</loc>
@@ -35,13 +33,13 @@ export async function GET() {
 		>
 			${compiledURLTags}
 		</urlset>`.trim()
-		.replace(/(\n|\t)/g, " ")
-		.replace(/  +/g, " ")
-		.replace(/> </g, "><"),
+			.replace(/(?<newLines>\n|\t)/gu, " ")
+			.replace(/  +/gu, " ")
+			.replace(/> </gu, "><"),
 		{
-			headers: {
+			"headers": {
 				"Content-Type": "application/xml"
 			}
 		}
-	);
+	)
 }
