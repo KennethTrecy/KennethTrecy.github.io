@@ -3,7 +3,7 @@ import type { HeadingInfo } from "@/types/container_info"
 export default function({
 	prefix,
 	text,
-	id = text.replace(/ /g, "_").toLocaleLowerCase()
+	id = text.replace(/ /gu, "_").toLocaleLowerCase()
 }: HeadingInfo<"raw">): HeadingInfo<"defined"> {
 	return {
 		prefix,
