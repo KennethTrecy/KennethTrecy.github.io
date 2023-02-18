@@ -7,7 +7,7 @@
 	import Menu from "@/components/shell/menu.svelte"
 	import Icon from "@/components/general/icon.svelte"
 	import ProfileLink from "@/components/shell/profile_link.svelte"
-	import toggleBySpace from "@/components/general/toggle_by_space"
+	import toggleBySpace from "@/utilities/toggle_by_space"
 	import ThemeToggler from "@/components/shell/theme_toggler.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
