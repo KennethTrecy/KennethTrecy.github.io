@@ -104,3 +104,9 @@ export interface PageMeta {
 	 */
 	readonly objectType: "website"|"article"|"profile"
 }
+
+type ArticleType = "techical article"
+
+export interface ArticlePageMeta extends PageMeta {
+	articleType: ArticleType
+}
