@@ -8,8 +8,6 @@ import { PERSONAL_GITHUB_ACCESS_TOKEN } from "$env/static/private"
 import permittedFileList from "@/constants/associated_file_list"
 
 export async function GET(event: RequestEvent) {
-	const octokit = new Octokit({ "auth": PERSONAL_GITHUB_ACCESS_TOKEN })
-
 	const requestedFileInfo: CompleteViewableFileInfo = {
 		"owner": event.params.owner as string,
 		"repo": event.params.repo as string,
@@ -19,15 +17,15 @@ export async function GET(event: RequestEvent) {
 
 	if (permittedFileList.some(
 		fileInfo => fileInfo.owner === requestedFileInfo.owner
-			&& fileInfo.repo === requestedFileInfo.repo
-			&& fileInfo.branch === requestedFileInfo.branch
-			&& fileInfo.path === requestedFileInfo.path
+		&& fileInfo.repo === requestedFileInfo.repo
+		&& fileInfo.branch === requestedFileInfo.branch
+		&& fileInfo.path === requestedFileInfo.path
 	)) {
+		const octokit = new Octokit({ "auth": PERSONAL_GITHUB_ACCESS_TOKEN })
 		const info = await octokit.request(
 			"GET /repos/{owner}/{repo}/contents/{path}?ref={branch}",
 			{ ...requestedFileInfo }
 		)
-
 		const { "html_url": pageURL, sha, size, content } = info.data as {
 			"html_url": string
 			"sha": string
@@ -52,7 +50,10 @@ export async function GET(event: RequestEvent) {
 		"detail": "The file was not found in the repository.",
 		"source": { "parameter": "path" }
 	}), {
-		"headers": { "Content-Type": "application/vnd.api+json" },
+		"headers": {
+			"Content-Type": "application/vnd.api+json",
+			"X-Robots-Tag": "noindex"
+		},
 		status
 	})
 }
