@@ -50,7 +50,7 @@
 			{articleMeta.description}
 		</p>
 		<div class="card-actions flex md:flex-row items-center">
-			<p class="prose text-sm">
+			<p class="prose text-sm max-w-[60%] md:max-w-full">
 				{#if hasModified}
 						Published last <time
 							itemprop="datePublished"
