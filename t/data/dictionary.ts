@@ -14,6 +14,7 @@ export default [
 	"Rollup",
 	"SvelteKit",
 	"JAMstack",
+	"dotenv",
 
 	// Tag names
 	"img"
