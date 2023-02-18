@@ -36,10 +36,6 @@
 		dateTimeFormatOptions
 	)
 	$: dateTimeModified = articleMeta.dateModified.toISOString()
-	$: humanReadableDateModified = articleMeta.dateModified.toLocaleString(
-		"en",
-		dateTimeFormatOptions
-	)
 	$: hasModified = dateTimePublished !== dateTimeModified
 </script>
 
@@ -47,35 +43,31 @@
 	itemprop="item"
 	itemscope
 	itemtype="https://schema.org/Article"
-	class="card not-prose text-left flex-1 bg-base-200 mr-4 mb-4">
+	class="card not-prose text-left flex-1 bg-base-200">
 	<StructuredSection class={[ "card-body" ]}>
 		<TertiaryHeading headingInfo={title} mayUseBookmark={false} class={[ "card-title" ]}/>
 		<p itemprop="about text" class="prose">
 			{articleMeta.description}
 		</p>
 		<div class="card-actions flex md:flex-row items-center">
-			{#if hasModified}
-				<p class="prose text-sm">
-					Published last <time
-						itemprop="datePublished dateModified"
-						datetime={dateTimePublished}>{humanReadableDatePublished}</time>
-					then updated last <time
-						itemprop="dateModified"
-						datetime={dateTimeModified}>{humanReadableDateModified}</time>.
-				</p>
-			{:else}
-				<p class="prose text-sm">
-					Published last <time
-						itemprop="datePublished dateModified"
-						datetime={dateTimePublished}>{humanReadableDatePublished}</time>.
-				</p>
-			{/if}
+			<p class="prose text-sm max-w-[60%] md:max-w-full">
+				{#if hasModified}
+						Published last <time
+							itemprop="datePublished"
+							datetime={dateTimePublished}>{humanReadableDatePublished}</time>.
+						<meta itemprop="dateModified" content={dateTimeModified}/>
+				{:else}
+						Published last <time
+							itemprop="datePublished dateModified"
+							datetime={dateTimePublished}>{humanReadableDatePublished}</time>.
+				{/if}
+			</p>
 			<Link
 				address={canonicalURL}
 				relationship={internalTypes}
 				itemprop="mainEntityOfPage"
 				class={[ "btn", "no-underline" ]}>
-				Visit Article
+				<Icon name="navigate_next"/>
 			</Link>
 		</div>
 	</StructuredSection>
