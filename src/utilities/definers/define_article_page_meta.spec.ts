@@ -29,8 +29,8 @@ describe("Define article page meta behavior", () => {
 		expect(meta.dateModified.getDate()).toStrictEqual(currentDate.getDate())
 		expect(meta.dateModified.getMonth()).toStrictEqual(currentDate.getMonth())
 		expect(meta.dateModified.getFullYear()).toStrictEqual(currentDate.getFullYear())
-		expect(meta.title).toStrictEqual("Draft Page")
-		expect(meta.description).toStrictEqual("This is a draft page.")
+		expect(meta.title).toStrictEqual("Draft Article Page")
+		expect(meta.description).toStrictEqual("This is a draft article page.")
 		expect(meta.keywords).toStrictEqual([ "draft" ])
 		const websiteOwner = {
 			"givenName": WEBSITE_OWNER_GIVEN_NAME,
