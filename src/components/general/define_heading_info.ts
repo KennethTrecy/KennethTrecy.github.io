@@ -1,13 +1,6 @@
-import type { HeadingInfo } from "@/types/container_info"
+import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 
-export default function({
-	prefix,
-	text,
-	id = text.replace(/ /g, "_").toLocaleLowerCase()
-}: HeadingInfo<"raw">): HeadingInfo<"defined"> {
-	return {
-		prefix,
-		text,
-		id
-	}
-}
+/**
+ * @deprecated since v3.0.0. Use its new path instead.
+ */
+export default defineHeadingInfo

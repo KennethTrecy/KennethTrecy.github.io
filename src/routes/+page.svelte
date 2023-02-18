@@ -5,7 +5,7 @@
 	import { profile } from "@/constants/drive_images"
 
 	import makeSet from "@/components/general/image/make_set"
-	import defineHeadingInfo from "@/components/general/define_heading_info"
+	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 
 	import BaseLink from "@/components/general/links/base.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"

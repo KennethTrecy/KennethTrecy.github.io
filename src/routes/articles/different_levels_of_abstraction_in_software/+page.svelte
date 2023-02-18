@@ -11,7 +11,7 @@
 	import CommonHead from "@/components/general/common_head.svelte"
 	import Bookmark from "@/components/general/links/bookmark.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
-	import defineHeadingInfo from "@/components/general/define_heading_info"
+	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import ArticlePost from "@/components/general/containers/article_post.svelte"

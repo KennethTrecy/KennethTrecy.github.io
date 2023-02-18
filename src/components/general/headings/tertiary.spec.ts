@@ -4,7 +4,7 @@
 import { cleanup, fireEvent, render } from "@testing-library/svelte"
 import { describe, expect, it } from "vitest"
 
-import defineHeadingInfo from "@/components/general/define_heading_info"
+import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 
 import Component from "./tertiary.svelte"
 
