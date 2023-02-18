@@ -47,7 +47,7 @@
 	itemprop="item"
 	itemscope
 	itemtype="https://schema.org/Article"
-	class="card not-prose text-left flex-1 bg-base-200 mr-4 mb-4">
+	class="card not-prose text-left flex-1 bg-base-200">
 	<StructuredSection class={[ "card-body" ]}>
 		<TertiaryHeading headingInfo={title} mayUseBookmark={false} class={[ "card-title" ]}/>
 		<p itemprop="about text" class="prose">
