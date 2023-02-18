@@ -27,7 +27,7 @@
 		<StructuredList
 			order="descending"
 			isProjectList={false}
-			class={[ "list-none", "flex", "flex-col", "flex-wrap" ]}>
+			class={[ "list-none", "flex", "flex-col", "flex-wrap", "p-0" ]}>
 			{#each articleMetaCollection as articleMeta}
 				<StructuredListItem isInProjectList={false}>
 					<ArticleCard {articleMeta}/>
