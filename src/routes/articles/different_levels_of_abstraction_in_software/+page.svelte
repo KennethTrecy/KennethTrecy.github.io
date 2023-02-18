@@ -68,7 +68,7 @@
 	}
 </script>
 
-<ArticlePost {pageMeta} itemtype="https://schema.org/BlogPosting">
+<ArticlePost {pageMeta} itemtype="https://schema.org/TechArticle">
 	<StructuredSection
 		itemprop="about"
 		itemtype="https://schema.org/ItemList"
