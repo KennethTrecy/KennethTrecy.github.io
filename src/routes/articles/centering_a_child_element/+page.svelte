@@ -18,6 +18,10 @@
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
 
 	const introduction = defineHeadingInfo({ "text": "Introduction" })
+	const classical = defineHeadingInfo({ "text": "The Classical Way" })
+	const flexbox = defineHeadingInfo({ "text": "Using Flexible Box Layout" })
+	const grid = defineHeadingInfo({ "text": "Using Grid Layout" })
+	const unorthodox = defineHeadingInfo({ "text": "The Unorthodox Way" })
 </script>
 
 <ArticlePost {pageMeta}>
