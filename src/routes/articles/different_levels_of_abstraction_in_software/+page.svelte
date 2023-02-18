@@ -131,7 +131,7 @@
 		</SimpleText>
 		<ExampleCode fileInfo={associatedFileList[1]} let:codeInfo>
 			<SimpleText>
-				There are different methods to declare environment variables. Below, it is an example of <code>.env</code> file to declare them. Note some the variables in the environment do not have a declared value. Therefore, the program will use default values for those empty variables.
+				There are different methods to declare environment variables. Below, it is an example of <code>.env</code> file to declare them. Note that some of the variables in the environment do not have a declared value. Therefore, the program will use default values for those empty variables.
 			</SimpleText>
 			<ExampleCode itemprop="hasPart" fileInfo={associatedFileList[2]}/>
 			<ExampleOutput
@@ -214,18 +214,18 @@
 			Codes at this level may consider multiple use cases. Modifying them should be careful to make sure the dependent systems do not break, or at least breaks slightly.
 		</SimpleText>
 		<SimpleText>
-			Below, is an example based from <Bookmark fragment={`#${levels[4].id}`}>
-				{levels[4].text.toLocaleLowerCase()}'s example
-			</Bookmark> but with the application of <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">Typescript's generics</ExternalLink>.
+			Below, is an example based from <Bookmark fragment={`#${levels[4].id}`}>{
+				levels[4].text.toLocaleLowerCase()
+			}'s example</Bookmark> but with the application of <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">Typescript's generics</ExternalLink>.
 			The code may appear longer than the example in <Bookmark fragment={`#${levels[0].id}`}>{
 				levels[0].text.toLocaleLowerCase()
 			}</Bookmark>. However, making an interface-level abstraction has greater benefits on large projects than this example.
 		</SimpleText>
 		<ExampleCode fileInfo={associatedFileList[8]}/>
 		<SimpleText>
-			In addition, an example based from <Bookmark fragment={`#${levels[3].id}`}>
-				{levels[3].text.toLocaleLowerCase()}'s example
-			</Bookmark> but with the application of <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">Typescript's generics</ExternalLink> too. It appears to be shorter than the code above.
+			In addition, an example based from <Bookmark fragment={`#${levels[3].id}`}>{
+				levels[3].text.toLocaleLowerCase()
+			}'s example</Bookmark> but with the application of <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">Typescript's generics</ExternalLink> too. It appears to be shorter than the code above.
 		</SimpleText>
 		<ExampleCode fileInfo={associatedFileList[9]}/>
 	</StructuredSection>
