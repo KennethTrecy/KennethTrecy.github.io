@@ -1,22 +1,6 @@
-import { browser } from "$app/environment"
-import type { MockInfo } from "@/types/test_interface"
+import Mocker from "@/utilities/mocker"
 
-export default class {
-	private static infos: MockInfo[] = []
-
-	static mock(mockLogic: () => MockInfo, realLogic: () => void): void {
-		if (browser) {
-			realLogic()
-		} else {
-			this.infos.push(mockLogic())
-		}
-	}
-
-	static unmockAll(): MockInfo[] {
-		const infos = this.infos
-
-		this.infos = []
-
-		return infos
-	}
-}
+/**
+ * @deprecated since v3.0.0. Use its new path instead.
+ */
+export default Mocker

@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let id: string
+	export let id: string|undefined = undefined
 	export let itemprop: string = "hasPart"
 	export let itemtype: string = "https://schema.org/WebContent"
 

@@ -4,7 +4,7 @@
 	import { DARK_MODE, LIGHT_MODE, mustBeInDarkMode, themeName } from "@/components/general/theme"
 
 	import Icon from "@/components/general/icon.svelte"
-	import toggleBySpace from "@/components/general/toggle_by_space"
+	import toggleBySpace from "@/utilities/toggle_by_space"
 
 	$: if (typeof window !== "undefined") document.documentElement.setAttribute(
 		"data-theme",

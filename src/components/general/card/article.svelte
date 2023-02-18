@@ -9,7 +9,7 @@
 
 	import Icon from "@/components/general/icon.svelte"
 	import Link from "@/components/general/links/base.svelte"
-	import defineHeadingInfo from "@/components/general/define_heading_info"
+	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 	import TertiaryHeading from "@/components/general/headings/tertiary.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 

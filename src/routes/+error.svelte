@@ -3,7 +3,7 @@
 	import { page } from "$app/stores"
 
 	import CommonHead from "@/components/general/common_head.svelte"
-	import definePageMeta from "@/components/general/define_page_meta"
+	import definePageMeta from "@/utilities/definers/define_page_meta"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 

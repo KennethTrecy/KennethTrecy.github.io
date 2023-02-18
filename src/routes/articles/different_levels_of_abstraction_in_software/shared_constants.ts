@@ -1,6 +1,6 @@
 import type { ViewableOwnerInfoTree } from "@/types/container_info"
 
-import flattenOwnerTreeInfo from "@/components/general/flatten_owner_tree_info"
+import flattenOwnerTreeInfo from "@/utilities/resource/flatten_owner_tree_info"
 
 const associatedFileTree: ViewableOwnerInfoTree[] = [
 	{

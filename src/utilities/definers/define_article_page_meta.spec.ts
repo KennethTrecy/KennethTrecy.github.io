@@ -1,7 +1,7 @@
 /* eslint-disable max-lines-per-function */
 import { describe, expect, it } from "vitest"
 
-import type { PageMeta } from "@/types/content_metadata"
+import type { ArticlePageMeta } from "@/types/content_metadata"
 
 import Logo from "@/multimedia/logo.png"
 import { PUBLIC_PRODUCTION_BASE_URL } from "$env/static/public"
@@ -12,14 +12,14 @@ import {
 	WEBSITE_OWNER_LINK
 } from "@/constants/names"
 
-import definePageMeta from "./define_page_meta"
+import defineArticlePageMeta from "./define_article_page_meta"
 
-describe("Define page meta behavior", () => {
+describe("Define article page meta behavior", () => {
 	it("can set defaults to optional properties", () => {
 		const path = "/"
-		const others: Partial<PageMeta> = {}
+		const others: Partial<ArticlePageMeta> = {}
 
-		const meta = definePageMeta(path, others)
+		const meta = defineArticlePageMeta(path, others)
 
 		expect(meta.version).toStrictEqual("0.1")
 		const currentDate = new Date()
@@ -29,8 +29,8 @@ describe("Define page meta behavior", () => {
 		expect(meta.dateModified.getDate()).toStrictEqual(currentDate.getDate())
 		expect(meta.dateModified.getMonth()).toStrictEqual(currentDate.getMonth())
 		expect(meta.dateModified.getFullYear()).toStrictEqual(currentDate.getFullYear())
-		expect(meta.title).toStrictEqual("Draft Page")
-		expect(meta.description).toStrictEqual("This is a draft page.")
+		expect(meta.title).toStrictEqual("Draft Article Page")
+		expect(meta.description).toStrictEqual("This is a draft article page.")
 		expect(meta.keywords).toStrictEqual([ "draft" ])
 		const websiteOwner = {
 			"givenName": WEBSITE_OWNER_GIVEN_NAME,
@@ -48,21 +48,22 @@ describe("Define page meta behavior", () => {
 		expect(meta.pageURL).toStrictEqual(`${PUBLIC_PRODUCTION_BASE_URL}${path}`)
 		expect(meta.image.defaultLink).toStrictEqual(`${PUBLIC_PRODUCTION_BASE_URL}${Logo}`)
 		expect(meta.image.description).toStrictEqual("Logo of Kenneth Trecy Tobias")
-		expect(meta.objectType).toStrictEqual("website")
+		expect(meta.objectType).toStrictEqual("article")
+		expect(meta.articleType).toStrictEqual("article")
 	})
 
 	it("can default last modified date to published date", () => {
 		const datePublished = new Date(2022, 0, 1)
-		const instance = definePageMeta("", { datePublished })
+		const instance = defineArticlePageMeta("", { datePublished })
 
 		const data = instance.dateModified
 
 		expect(data).toStrictEqual(datePublished)
 	})
 
-	it("can defaults to optional properties", () => {
+	it("can default to optional properties", () => {
 		const path = "/"
-		const others: Partial<PageMeta> = {
+		const others: Partial<ArticlePageMeta> = {
 			"encoder": {
 				"givenName": "A",
 				"familyName": "B",
@@ -70,7 +71,7 @@ describe("Define page meta behavior", () => {
 			}
 		}
 
-		const meta = definePageMeta(path, others)
+		const meta = defineArticlePageMeta(path, others)
 
 		expect(meta.keywords).toStrictEqual([ "draft" ])
 		const websiteOwner = {

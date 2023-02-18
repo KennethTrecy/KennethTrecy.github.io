@@ -5,7 +5,7 @@
 	import BaseLink from "@/components/general/links/base.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
-	import defineHeadingInfo from "@/components/general/define_heading_info"
+	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import PageDetailCard from "@/components/general/card/page_detail.svelte"
 	import TertiaryHeading from "@/components/general/headings/tertiary.svelte"

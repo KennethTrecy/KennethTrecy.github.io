@@ -4,7 +4,7 @@
 	import articleMetaCollection from "@/constants/article_meta_collection"
 
 	import ArticleCard from "@/components/general/card/article.svelte"
-	import defineHeadingInfo from "@/components/general/define_heading_info"
+	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import ArticlePost from "@/components/general/containers/article_post.svelte"
@@ -27,7 +27,7 @@
 		<StructuredList
 			order="descending"
 			isProjectList={false}
-			class={[ "list-none", "flex", "flex-col", "flex-wrap" ]}>
+			class={[ "list-none", "flex", "flex-col", "flex-wrap", "p-0" ]}>
 			{#each articleMetaCollection as articleMeta}
 				<StructuredListItem isInProjectList={false}>
 					<ArticleCard {articleMeta}/>

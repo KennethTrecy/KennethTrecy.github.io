@@ -1,27 +1,30 @@
 <script lang="ts">
 	import { onMount } from "svelte"
+	import { page } from "$app/stores"
+	import { derived } from "svelte/store"
 
 	import type { ExecutedCommandSetInfo, HeadingInfo } from "@/types/container_info"
+	import type {
+		PageData
+	} from "@/routes/articles/different_levels_of_abstraction_in_software/$types"
 
 	import pageMeta from "@/routes/articles/different_levels_of_abstraction_in_software/meta"
-	import {
-		associatedFileList
-	} from "@/routes/articles/different_levels_of_abstraction_in_software/shared_constants"
+
+	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 
 	import CommonHead from "@/components/general/common_head.svelte"
 	import Bookmark from "@/components/general/links/bookmark.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
-	import defineHeadingInfo from "@/components/general/define_heading_info"
-	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import ArticlePost from "@/components/general/containers/article_post.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import ExampleCode from "@/components/general/containers/example_code.svelte"
 	import ExampleOutput from "@/components/general/containers/example_output.svelte"
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
-	import PageDetailCard from "@/components/general/independent_page_detail_card.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
+
+	const loadedFileInfos = derived(page, resolvedPage => resolvedPage.data.loadedFileInfos ?? [])
 
 	const introduction = defineHeadingInfo({ "text": "Introduction" })
 	const levels: HeadingInfo<"defined">[] = [
@@ -34,11 +37,11 @@
 	].map(defineHeadingInfo)
 	const conclusion = defineHeadingInfo({ "text": "Conclusion" })
 
-	const packageLevelExecutedCommandInfo: ExecutedCommandSetInfo = {
+	const packageLevelExecutedCommandInfo = derived(loadedFileInfos, resolvedFiles => ({
 		"description": "This is the output after running the package-level code.",
 		"commands": [
 			{
-				"command": `npx ts-node ${associatedFileList[0].path}`,
+				"command": `npx ts-node ${resolvedFiles[0]?.path ?? ""}`,
 				"output": [
 					{ "text": "What is your first name? Kenneth" },
 					{ "text": "What is your last name? Tobias" },
@@ -49,12 +52,12 @@
 				]
 			}
 		]
-	}
-	const environmentLevelExecutedCommandInfo: ExecutedCommandSetInfo = {
+	} as ExecutedCommandSetInfo))
+	const environmentLevelExecutedCommandInfo = derived(loadedFileInfos, resolvedFiles => ({
 		"description": "This is the output after running the configuration-level code. Notice that the questions for first name and last name have changed according to the questions in environment file.",
 		"commands": [
 			{
-				"command": `npx ts-node ${associatedFileList[1].path}`,
+				"command": `npx ts-node ${resolvedFiles[1]?.path ?? ""}`,
 				"output": [
 					{ "text": "Enter your first name:Kenneth" },
 					{ "text": "Enter your last name:Tobias" },
@@ -65,10 +68,10 @@
 				]
 			}
 		]
-	}
+	} as ExecutedCommandSetInfo))
 </script>
 
-<ArticlePost {pageMeta} itemtype="https://schema.org/TechArticle">
+<ArticlePost {pageMeta}>
 	<StructuredSection
 		itemprop="about"
 		itemtype="https://schema.org/ItemList"
@@ -106,11 +109,10 @@
 		<SimpleText>
 			Below is another example of a program which asks for user's first name, last name, age, and distance walked. Notice that there are repetitive statements and may take time to read.
 		</SimpleText>
-		<ExampleCode fileInfo={associatedFileList[0]} let:codeInfo>
+		<ExampleCode codeInfo={$loadedFileInfos[0]}>
 			<ExampleOutput
-				commandInfos={packageLevelExecutedCommandInfo}
-				{codeInfo}
-				fileInfo={associatedFileList[0]}/>
+				commandInfos={$packageLevelExecutedCommandInfo}
+				codeInfo={$loadedFileInfos[0]}/>
 		</ExampleCode>
 	</StructuredSection>
 	<StructuredSection id={levels[1].id}>
@@ -129,15 +131,14 @@
 				levels[0].text.toLocaleLowerCase()
 			}'s example</Bookmark>, the program can be modified to allow configuration-level customization. It uses an external package named <ExternalLink address="https://www.npmjs.com/package/dotenv">dotenv</ExternalLink> package to use the environment variables by using <code>process<span>.</span>env.&lt;variable name&gt;</code>. Note that the program uses logical OR operator (<code>||</code>) in order to use default messages.
 		</SimpleText>
-		<ExampleCode fileInfo={associatedFileList[1]} let:codeInfo>
+		<ExampleCode codeInfo={$loadedFileInfos[1]}>
 			<SimpleText>
 				There are different methods to declare environment variables. Below, it is an example of <code>.env</code> file to declare them. Note that some of the variables in the environment do not have a declared value. Therefore, the program will use default values for those empty variables.
 			</SimpleText>
-			<ExampleCode itemprop="hasPart" fileInfo={associatedFileList[2]}/>
+			<ExampleCode itemprop="hasPart" codeInfo={$loadedFileInfos[2]}/>
 			<ExampleOutput
-				commandInfos={environmentLevelExecutedCommandInfo}
-				{codeInfo}
-				fileInfo={associatedFileList[1]}/>
+				commandInfos={$environmentLevelExecutedCommandInfo}
+				codeInfo={$loadedFileInfos[1]}/>
 		</ExampleCode>
 	</StructuredSection>
 	<StructuredSection id={levels[2].id}>
@@ -158,7 +159,7 @@
 				levels[1].text.toLocaleLowerCase()
 			}</Bookmark>, default messages can be put in global scope allowing other developers find the default messages quickly.
 		</SimpleText>
-		<ExampleCode fileInfo={associatedFileList[3]}/>
+		<ExampleCode codeInfo={$loadedFileInfos[3]}/>
 	</StructuredSection>
 	<StructuredSection id={levels[3].id}>
 		<SecondaryHeading headingInfo={levels[3]}/>
@@ -173,15 +174,15 @@
 				levels[2].text.toLocaleLowerCase()
 			}'s example</Bookmark>, repeated statements on reading a string can be summarized into one function. Therefore, it is quicker to read.
 		</SimpleText>
-		<ExampleCode fileInfo={associatedFileList[4]}/>
+		<ExampleCode codeInfo={$loadedFileInfos[4]}/>
 		<SimpleText>
 			Repeated statements on reading an integer can also be summarized.
 		</SimpleText>
-		<ExampleCode fileInfo={associatedFileList[5]}/>
+		<ExampleCode codeInfo={$loadedFileInfos[5]}/>
 		<SimpleText>
 			There are similarities between the two new functions. Generalizing it further, it becomes something like below.
 		</SimpleText>
-		<ExampleCode fileInfo={associatedFileList[6]}/>
+		<ExampleCode codeInfo={$loadedFileInfos[6]}/>
 	</StructuredSection>
 	<StructuredSection id={levels[4].id}>
 		<SecondaryHeading headingInfo={levels[4]}/>
@@ -200,7 +201,7 @@
 				levels[3].text.toLocaleLowerCase()
 			}'s last example</Bookmark>. It uses classes and the concept of inheritance to reuse the code. There are four instances in this code which are contained in variables declared at line 47, 50, 53, and 56.
 		</SimpleText>
-		<ExampleCode fileInfo={associatedFileList[7]}/>
+		<ExampleCode codeInfo={$loadedFileInfos[7]}/>
 	</StructuredSection>
 	<StructuredSection id={levels[5].id}>
 		<SecondaryHeading headingInfo={levels[5]}/>
@@ -221,13 +222,13 @@
 				levels[0].text.toLocaleLowerCase()
 			}</Bookmark>. However, making an interface-level abstraction has greater benefits on large projects than this example.
 		</SimpleText>
-		<ExampleCode fileInfo={associatedFileList[8]}/>
+		<ExampleCode codeInfo={$loadedFileInfos[8]}/>
 		<SimpleText>
 			In addition, an example based from <Bookmark fragment={`#${levels[3].id}`}>{
 				levels[3].text.toLocaleLowerCase()
 			}'s example</Bookmark> but with the application of <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">Typescript's generics</ExternalLink> too. It appears to be shorter than the code above.
 		</SimpleText>
-		<ExampleCode fileInfo={associatedFileList[9]}/>
+		<ExampleCode codeInfo={$loadedFileInfos[9]}/>
 	</StructuredSection>
 	<StructuredSection id={conclusion.id}>
 		<SecondaryHeading headingInfo={conclusion}/>

@@ -1,22 +1,6 @@
-import type { ViewableOwnerInfoTree, CompleteViewableFileInfo } from "@/types/container_info"
+import flattenOwnerTreeInfo from "@/utilities/resource/flatten_owner_tree_info"
 
-export default function(forest: ViewableOwnerInfoTree[]): CompleteViewableFileInfo[] {
-	return forest.reduce((previousFileInfo, currentOwner) => [
-		...previousFileInfo,
-		...currentOwner.repos.reduce((previousRepos, currentRepo) => [
-			...previousRepos,
-			...currentRepo.branches.reduce((previousBranches, currentBranch) => [
-				...previousBranches,
-				...currentBranch.paths.reduce((previousPaths, currentPath) => [
-					...previousPaths,
-					{
-						"owner": currentOwner.owner,
-						"repo": currentRepo.repo,
-						"branch": currentBranch.branch,
-						"path": currentPath
-					}
-				], <CompleteViewableFileInfo[]>[])
-			], <CompleteViewableFileInfo[]>[])
-		], <CompleteViewableFileInfo[]>[])
-	], <CompleteViewableFileInfo[]>[])
-}
+/**
+ * @deprecated since v3.0.0. Use its new path instead.
+ */
+export default flattenOwnerTreeInfo

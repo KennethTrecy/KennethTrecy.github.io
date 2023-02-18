@@ -104,3 +104,14 @@ export interface PageMeta {
 	 */
 	readonly objectType: "website"|"article"|"profile"
 }
+
+/**
+ * This will be based on the subtypes of [Article].
+ *
+ * [Article]: https://schema.org/Article
+ */
+type ArticleType = "article"|"techical article"|"blog post"
+
+export interface ArticlePageMeta extends PageMeta {
+	articleType: ArticleType
+}

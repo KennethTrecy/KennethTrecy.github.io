@@ -1,6 +1,6 @@
 import type { MultimediaInfo } from "@/types/content_metadata"
 
-import makeSharedMultimediaLink from "@/components/general/make_shared_multimedia_link"
+import makeSharedMultimediaLink from "@/utilities/resource/make_shared_multimedia_link"
 
 export const profile: MultimediaInfo = {
 	"description": "Face of Kenneth Trecy",
