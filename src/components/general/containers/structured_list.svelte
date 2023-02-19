@@ -10,10 +10,10 @@
 	let otherClasses: string[] = []
 	const cardVariantClasses = [ "flex", "flex-col", "list-outside", "list-none" ]
 
-	const initialClasses = variant === "project"
+	$: initialClasses = variant === "project"
 		? [ "project_list", "flex-wrap", ...cardVariantClasses ]
 		: variant === "card"
-			? [ ...cardVariantClasses, , "m-0", "p-0" ]
+			? [ "card_list", ...cardVariantClasses, ]
 			: []
 	export { otherClasses as class }
 
@@ -57,7 +57,7 @@
 {/if}
 
 <style lang="postcss">
-	ul.project_list {
+	ul.project_list, ol.card_list {
 		@apply m-0 p-0;
 	}
 </style>
