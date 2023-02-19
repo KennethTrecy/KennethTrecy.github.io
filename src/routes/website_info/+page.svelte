@@ -133,7 +133,7 @@
 				<SimpleText itemprop="about">
 					 Some dependencies which are included during bundling have been mentioned below. These dependencies have significant impact on source code of this website.
 				</SimpleText>
-				<StructuredList order="unordered" isProjectList={false} hasOwnScope={false}>
+				<StructuredList order="unordered" hasOwnScope={false}>
 					{#each compiledThirdPartyPackages as thirdPartyPackage}
 						<StructuredListItem itemtype="https://schema.org/SoftwareApplication">
 							<ThirdPartyLink
@@ -150,7 +150,7 @@
 				<SimpleText itemprop="about">
 					Meanwhile, some dependencies have been used on the website by using <code>&lt;link&gt;</code> tags or through <code>src</code> attribute of <code>&lt;img&gt;</code> tags. They are included in the rendering process of a user's browser to enhance appearance.
 				</SimpleText>
-				<StructuredList order="unordered" isProjectList={false} hasOwnScope={false}>
+				<StructuredList order="unordered" hasOwnScope={false}>
 					{#each linkedThirdPartyPackages as thirdPartyPackage}
 						<StructuredListItem itemtype="https://schema.org/SoftwareApplication">
 							<ThirdPartyLink
