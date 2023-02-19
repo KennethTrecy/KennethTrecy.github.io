@@ -125,15 +125,15 @@
 		</StructuredSection>
 		<StructuredSection id={dependencies.id}>
 			<SecondaryHeading headingInfo={dependencies}/>
-			<SimpleText itemprop="about">
+			<SimpleText itemprop="description">
 				The website uses several open-source projects and third-party services to build and host it. They may be linked in the final output. Some are included in the bundling process. Some make up the deployment process.
 			</SimpleText>
-			<StructuredSection itemtype="https://schema.org/ItemList" id={bundledDependencies.id}>
+			<StructuredSection id={bundledDependencies.id}>
 				<TertiaryHeading headingInfo={bundledDependencies}/>
-				<SimpleText itemprop="about">
+				<SimpleText itemprop="description">
 					 Some dependencies which are included during bundling have been mentioned below. These dependencies have significant impact on source code of this website.
 				</SimpleText>
-				<StructuredList order="unordered" hasOwnScope={false}>
+				<StructuredList order="unordered">
 					{#each compiledThirdPartyPackages as thirdPartyPackage}
 						<StructuredListItem itemtype="https://schema.org/SoftwareApplication">
 							<ThirdPartyLink
@@ -145,12 +145,12 @@
 					{/each}
 				</StructuredList>
 			</StructuredSection>
-			<StructuredSection itemtype="https://schema.org/ItemList" id={linkedDependencies.id}>
+			<StructuredSection id={linkedDependencies.id}>
 				<TertiaryHeading headingInfo={linkedDependencies}/>
-				<SimpleText itemprop="about">
+				<SimpleText itemprop="description">
 					Meanwhile, some dependencies have been used on the website by using <code>&lt;link&gt;</code> tags or through <code>src</code> attribute of <code>&lt;img&gt;</code> tags. They are included in the rendering process of a user's browser to enhance appearance.
 				</SimpleText>
-				<StructuredList order="unordered" hasOwnScope={false}>
+				<StructuredList order="unordered">
 					{#each linkedThirdPartyPackages as thirdPartyPackage}
 						<StructuredListItem itemtype="https://schema.org/SoftwareApplication">
 							<ThirdPartyLink
