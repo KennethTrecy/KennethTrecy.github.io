@@ -76,9 +76,11 @@ describe("Tertiary heading behavior", () => {
 		const headingInfo = defineHeadingInfo({
 			"text": "hello_e"
 		})
-		const mustBeRaw = true
-		const { container } = render(Component, { headingInfo,
-			mustBeRaw })
+		const variant = "raw"
+		const { container } = render(Component, {
+			headingInfo,
+			variant
+		})
 
 		const property = container.querySelector("[itemprop~=headline][itemprop~=name]")
 		const spans = container.querySelectorAll("h3 span")
@@ -93,10 +95,10 @@ describe("Tertiary heading behavior", () => {
 		const headingInfo = defineHeadingInfo({
 			"text": "hello_e"
 		})
-		const isHeadlineProperty = false
+		const variant = "name"
 		const { container } = render(Component, {
 			headingInfo,
-			isHeadlineProperty
+			variant
 		})
 
 		const missingProperty = container.querySelector("[itemprop~=headline][itemprop~=name]")

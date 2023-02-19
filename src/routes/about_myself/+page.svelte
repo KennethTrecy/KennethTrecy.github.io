@@ -224,7 +224,7 @@
 	<PrimaryHeading slot="title">{pageMeta.title}</PrimaryHeading>
 	<svelte:fragment slot="content">
 		<section id={journey.id}>
-			<SecondaryHeading headingInfo={journey} mustBeRaw={true}/>
+			<SecondaryHeading headingInfo={journey} variant="raw"/>
 			<p>
 				I am
 				<span itemprop="name">
@@ -256,7 +256,7 @@
 			</p>
 		</section>
 		<section itemprop="knowsAbout" id={skills.id}>
-			<SecondaryHeading headingInfo={skills} mustBeRaw={true}/>
+			<SecondaryHeading headingInfo={skills} variant="raw"/>
 			<p>
 				I am specialized in web development, particularly back-end programming. The reason was that back-end programming could support most communication technologies in an increasingly interconnected world. Whether it is an e-commerce website, Internet of Things, or games, they need at a server to process and store their data.
 			</p>
@@ -289,7 +289,7 @@
 			</p>
 		</section>
 		<section id={contacts.id}>
-			<SecondaryHeading headingInfo={contacts} mustBeRaw={true}/>
+			<SecondaryHeading headingInfo={contacts} variant="raw"/>
 			<p>
 				Should you wish to get in touch with me, I can be communicated on different platforms. Sometimes, I may use emails that came from certain organization or group I belong to depending on the nature of e-mail.
 			</p>

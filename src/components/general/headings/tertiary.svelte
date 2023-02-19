@@ -1,11 +1,10 @@
 <script lang="ts">
-	import type { HeadingInfo } from "@/types/container_info"
+	import type { HeadingInfo, SubheadingVariant } from "@/types/container_info"
 	import Subheading from "@/components/general/headings/subheading.svelte"
 
 	export let headingInfo: HeadingInfo<"defined">
-	export let mustBeRaw: boolean = false
+	export let variant: SubheadingVariant = "headline"
 	export let mayUseBookmark: boolean = true
-	export let isHeadlineProperty: boolean = true
 	let otherClasses: string[] = []
 
 	export { otherClasses as class }
@@ -15,12 +14,6 @@
 	]
 </script>
 
-<Subheading
-	level={3}
-	{headingInfo}
-	{mustBeRaw}
-	{mayUseBookmark}
-	{isHeadlineProperty}
-	class={joinedClasses}>
+<Subheading level={3} {headingInfo} {variant} {mayUseBookmark} class={joinedClasses}>
 	<slot></slot>
 </Subheading>

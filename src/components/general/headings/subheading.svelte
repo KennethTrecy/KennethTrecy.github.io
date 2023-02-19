@@ -1,11 +1,10 @@
 <script lang="ts">
-	import type { HeadingInfo } from "@/types/container_info"
+	import type { HeadingInfo, SubheadingVariant } from "@/types/container_info"
 
 	import Heading from "@/components/general/headings/base.svelte"
 
 	export let level: number
-	export let mustBeRaw: boolean
-	export let isHeadlineProperty: boolean
+	export let variant: SubheadingVariant
 	export let headingInfo: HeadingInfo<"defined">
 	export let mayUseBookmark: boolean = true
 	let otherClasses: string[] = []
@@ -17,7 +16,11 @@
 	]
 	$: hasPrefix = Boolean(headingInfo.prefix)
 	$: fragment = `#${headingInfo.id}`
-	$: itemprop = isHeadlineProperty ? "headline name": "name"
+	$: itemprop = variant === "headline"
+		? "headline name"
+		: variant === "name"
+			? "name"
+			: undefined
 </script>
 
 <Heading {level} {fragment} {mayUseBookmark} class={joinedClasses}>
@@ -25,9 +28,5 @@
 		<span>{headingInfo.prefix}</span>
 	{/if}
 
-	{#if mustBeRaw}
-		<span>{headingInfo.text}<slot></slot></span>
-	{:else}
-		<span {itemprop}>{headingInfo.text}<slot></slot></span>
-	{/if}
+	<span {itemprop}>{headingInfo.text}<slot></slot></span>
 </Heading>

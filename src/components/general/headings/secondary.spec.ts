@@ -76,10 +76,10 @@ describe("Secondary heading behavior", () => {
 		const headingInfo = defineHeadingInfo({
 			"text": "hello_e"
 		})
-		const mustBeRaw = true
+		const variant = "raw"
 		const { container } = render(Component, {
 			headingInfo,
-			mustBeRaw
+			variant
 		})
 
 		const property = container.querySelector("[itemprop~=headline][itemprop~=name]")
@@ -95,10 +95,10 @@ describe("Secondary heading behavior", () => {
 		const headingInfo = defineHeadingInfo({
 			"text": "hello_e"
 		})
-		const isHeadlineProperty = false
+		const variant = "name"
 		const { container } = render(Component, {
 			headingInfo,
-			isHeadlineProperty
+			variant
 		})
 
 		const missingProperty = container.querySelector("[itemprop~=headline][itemprop~=name]")

@@ -74,7 +74,7 @@
 					alt={profile.description}
 					class="max-w-sm bg-primary"/>
 				<section class="max-w-sm xl:max-w-md text-center xl:text-left">
-					<SecondaryHeading headingInfo={greetings} isHeadlineProperty={false}>
+					<SecondaryHeading headingInfo={greetings} variant="name">
 						I am <span itemprop="givenName">Kenneth Trecy</span>!
 					</SecondaryHeading>
 					<p itemprop="knowsAbout" class="py-6 container md:px-0">
