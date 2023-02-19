@@ -99,7 +99,7 @@
 			</StructuredSection>
 			<StructuredSection itemtype="https://schema.org/CreativeWork" id={personalProjects.id}>
 				<SecondaryHeading class={[ "my-4" ]} headingInfo={personalProjects}/>
-				<StructuredList itemprop="mainEntity" order="unordered" variant="project">
+				<StructuredList order="unordered" variant="project">
 					<StructuredListItem variant="project">
 						<ProjectCard
 							title="Virdafils"

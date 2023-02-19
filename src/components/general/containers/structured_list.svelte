@@ -4,7 +4,7 @@
 	export let order: Order
 
 	export let hasOwnScope = true
-	export let itemprop: string = "hasPart"
+	export let itemprop: string = "mainEntity"
 	export const itemtype: string = "https://schema.org/ItemList"
 	export let variant: ListVariant = "normal"
 	let otherClasses: string[] = []

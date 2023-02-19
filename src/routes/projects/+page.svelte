@@ -161,7 +161,6 @@
 				<SecondaryHeading headingInfo={projectGroup}/>
 				<SimpleText itemprop="description">{projectGroup.description}</SimpleText>
 				<StructuredList
-					itemprop="mainEntity"
 					order="unordered"
 					variant="project"
 					class={projectGroup.extraListClasses}>
