@@ -7,7 +7,7 @@ import {
 	associatedFileList
 } from "@/routes/articles/different_levels_of_abstraction_in_software/shared_constants"
 
-export const load: PageLoad = async() => {
+export const load: PageLoad = async({ fetch }) => {
 	const pendingExtractedFileInfoList: Promise<CodeFile>[] = []
 
 	for (const fileInfo of associatedFileList) {
