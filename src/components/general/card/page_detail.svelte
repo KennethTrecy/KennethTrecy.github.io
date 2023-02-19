@@ -33,7 +33,7 @@
 	const branch = "master"
 	$: targetFilePath = `src/routes${(pageMeta.path === "/" ? "" : pageMeta.path)}/+page.svelte`
 	$: editLink = `${repositoryURL}/edit/${branch}/${targetFilePath}`
-	$: issueLink = `${repositoryURL}/issues/new`
+	$: issueLink = `${repositoryURL}/issues/new?template=page_concern.md`
 	$: viewLink = `${repositoryURL}/blob/${branch}/${targetFilePath}`
 </script>
 
@@ -71,9 +71,9 @@
 			</em>
 		</p>
 		<SimpleText>
-			The source of the page can be <ExternalLink address={viewLink}>viewed</ExternalLink> or <ExternalLink address={editLink}>modified</ExternalLink>on GitHub. Should there be any concern or problem in the page, please report by making an <ExternalLink address={issueLink}>issue</ExternalLink> or <BaseLink
+			The source of the page can be <ExternalLink address={viewLink}>viewed</ExternalLink> or <ExternalLink address={editLink}>modified</ExternalLink>on GitHub. Should there be a concern or problem in the page, please report by making an <ExternalLink address={issueLink}>issue</ExternalLink> or <BaseLink
 					address="/about_myself#contact_details"
-					relationship={[ ...internalTypes ]}>contact the website owner</BaseLink>.
+					relationship={[ ...internalTypes ]}>contact the website administrator</BaseLink>.
 		</SimpleText>
 	</section>
 </div>
