@@ -5,6 +5,7 @@
 
 	export let level: number
 	export let mustBeRaw: boolean
+	export let isHeadlineProperty: boolean
 	export let headingInfo: HeadingInfo<"defined">
 	export let mayUseBookmark: boolean = true
 	let otherClasses: string[] = []
@@ -16,6 +17,7 @@
 	]
 	$: hasPrefix = Boolean(headingInfo.prefix)
 	$: fragment = `#${headingInfo.id}`
+	$: itemprop = isHeadlineProperty ? "headline name": "name"
 </script>
 
 <Heading {level} {fragment} {mayUseBookmark} class={joinedClasses}>
@@ -26,6 +28,6 @@
 	{#if mustBeRaw}
 		<span>{headingInfo.text}<slot></slot></span>
 	{:else}
-		<span itemprop="headline name">{headingInfo.text}<slot></slot></span>
+		<span {itemprop}>{headingInfo.text}<slot></slot></span>
 	{/if}
 </Heading>

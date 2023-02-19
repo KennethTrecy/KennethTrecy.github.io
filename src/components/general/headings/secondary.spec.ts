@@ -1,15 +1,16 @@
+/* eslint-disable @typescript-eslint/require-await */
 /* eslint-disable max-lines-per-function */
 // @vitest-environment jsdom
 
-import { describe, it, expect } from "vitest"
-import { render, cleanup, fireEvent } from "@testing-library/svelte"
+import { cleanup, fireEvent, render } from "@testing-library/svelte"
+import { describe, expect, it } from "vitest"
 
 import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 
 import Component from "./secondary.svelte"
 
 describe("Secondary heading behavior", () => {
-	it("can render prefix as separate", async () => {
+	it("can render prefix as separate", async() => {
 		const headingInfo = defineHeadingInfo({
 			"prefix": "I. ",
 			"text": "hello a"
@@ -27,7 +28,7 @@ describe("Secondary heading behavior", () => {
 		cleanup()
 	})
 
-	it("can render two spans if there is no prefix", async () => {
+	it("can render two spans if there is no prefix", async() => {
 		const headingInfo = defineHeadingInfo({
 			"text": "hello b"
 		})
@@ -40,7 +41,7 @@ describe("Secondary heading behavior", () => {
 		cleanup()
 	})
 
-	it("can show bookmark if hovered", async () => {
+	it("can show bookmark if hovered", async() => {
 		const headingInfo = defineHeadingInfo({
 			"text": "hello c"
 		})
@@ -55,7 +56,7 @@ describe("Secondary heading behavior", () => {
 		cleanup()
 	})
 
-	it("can hide bookmark if unhovered", async () => {
+	it("can hide bookmark if unhovered", async() => {
 		const headingInfo = defineHeadingInfo({
 			"text": "hello d"
 		})
@@ -71,18 +72,40 @@ describe("Secondary heading behavior", () => {
 		cleanup()
 	})
 
-	it("can render as raw", async () => {
+	it("can render as raw", async() => {
 		const headingInfo = defineHeadingInfo({
 			"text": "hello_e"
 		})
 		const mustBeRaw = true
-		const { container } = render(Component, { headingInfo, mustBeRaw })
+		const { container } = render(Component, {
+			headingInfo,
+			mustBeRaw
+		})
 
 		const property = container.querySelector("[itemprop~=headline][itemprop~=name]")
 		const spans = container.querySelectorAll("h2 span")
 
 		expect(property).toBeNull()
 		expect(spans).toHaveLength(2)
+
+		cleanup()
+	})
+
+	it("can render as normal name", async() => {
+		const headingInfo = defineHeadingInfo({
+			"text": "hello_e"
+		})
+		const isHeadlineProperty = false
+		const { container } = render(Component, {
+			headingInfo,
+			isHeadlineProperty
+		})
+
+		const missingProperty = container.querySelector("[itemprop~=headline][itemprop~=name]")
+		const presentProperty = container.querySelector("[itemprop~=name]")
+
+		expect(missingProperty).toBeNull()
+		expect(presentProperty).not.toBeNull()
 
 		cleanup()
 	})

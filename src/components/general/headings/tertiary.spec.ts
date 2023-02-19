@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 /* eslint-disable max-lines-per-function */
 // @vitest-environment jsdom
 
@@ -84,6 +85,25 @@ describe("Tertiary heading behavior", () => {
 
 		expect(property).toBeNull()
 		expect(spans).toHaveLength(2)
+
+		cleanup()
+	})
+
+	it("can render as normal name", async() => {
+		const headingInfo = defineHeadingInfo({
+			"text": "hello_e"
+		})
+		const isHeadlineProperty = false
+		const { container } = render(Component, {
+			headingInfo,
+			isHeadlineProperty
+		})
+
+		const missingProperty = container.querySelector("[itemprop~=headline][itemprop~=name]")
+		const presentProperty = container.querySelector("[itemprop~=name]")
+
+		expect(missingProperty).toBeNull()
+		expect(presentProperty).not.toBeNull()
 
 		cleanup()
 	})
