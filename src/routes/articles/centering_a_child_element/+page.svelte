@@ -35,4 +35,28 @@
 			A programmer may center a content according to its <Keyword>x-axis</Keyword> (e.g. <code>text-align: center;</code>), <Keyword>y-axis</Keyword> (e.g. <code>vertical-align: middle;</code>), or both. This article explores common ways to put an element in the center and presents a unorthodox way for a special use case.
 		</SimpleText>
 	</StructuredSection>
+	<StructuredSection id={classical.id}>
+		<SecondaryHeading headingInfo={classical}/>
+		<SimpleText>
+			The classical way to center an element is through the use of margins of the child element. There are many variations for this technique. A developer in the past can conveniently use this technique in conjunction with the previous versions of CSS frameworks. Utilizing the 12-column layout, a developer would the following steps below to determine the margin the child element would take.
+			<!-- TODO: Find a URL for previous version of CSS framework and 12 column layout -->
+		</SimpleText>
+		<StructuredList order="ascending" isProjectList={false}>
+			<StructuredListItem>
+				Resize the child element by an arbitrary number of columns. The number of columns should be an even number.
+			</StructuredListItem>
+			<StructuredListItem>
+				Subtract the chosen number of columns from 12. The result is the number of unused columns that can be used as a margin.
+			</StructuredListItem>
+			<StructuredListItem>
+				Divide the difference from step 2 because the unused space will distributed both horizontal sides of the child element.
+			</StructuredListItem>
+			<StructuredListItem>
+				Depending on the CSS framework, the developer may <em>push</em> the element by a certain number of column based on quotient in step 3. Otherwise, the quotient would be divided by 12 then multiplied to 100 to get the percentage of left margin.
+			</StructuredListItem>
+		</StructuredList>
+		<SimpleText>
+			Below is an example positioning the child element in the center using the classical technique programmed in vanilla <abbr title="Cascading Style Sheets">CSS</abbr>
+		</SimpleText>
+	</StructuredSection>
 </ArticlePost>
