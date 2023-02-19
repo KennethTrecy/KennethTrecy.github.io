@@ -52,12 +52,12 @@ export default async function(page: Page) {
 
 	const BASE_DELAY = 500
 	const pendingResults: Promise<any>[] = uniqueTexts.map(async text => {
-		// Subtract it by half to allow reducing the final delay
-		const delayMultiplier = Math.random() - 0.5
-		// Base delay has been multiplied by 2 to simulate that it is like 100% when multiplied with
-		// delay multiplier
-		const finalDelay = BASE_DELAY + (BASE_DELAY * 2 / delayMultiplier)
 		await new Promise(resolve => {
+			// Subtract it by half to allow reducing the final delay
+			const delayMultiplier = Math.random() - 0.5
+			// Base delay has been multiplied by 2 to simulate that it is like 100% when multiplied
+			// with delay multiplier
+			const finalDelay = BASE_DELAY + (BASE_DELAY * 2 / delayMultiplier)
 			setTimeout(resolve, finalDelay)
 		})
 		const result = await check(text, {
