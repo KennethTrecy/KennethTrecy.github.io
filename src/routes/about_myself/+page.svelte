@@ -7,7 +7,6 @@
 	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 	import PageDetailCard from "@/components/general/card/page_detail.svelte"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
-	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
@@ -226,7 +225,7 @@
 	<svelte:fragment slot="content">
 		<section id={journey.id}>
 			<SecondaryHeading headingInfo={journey} mustBeRaw={true}/>
-			<SimpleText>
+			<p>
 				I am
 				<span itemprop="name">
 					<span itemprop="givenName">Kenneth Trecy</span>
@@ -236,34 +235,34 @@
 					<span itemprop="name">Filipino</span> living in the
 					<span itemprop="address">Philippines</span></span>.
 				Some people call me <em itemprop="alternateName">"Tretchi"</em>. I have been into programming for a long time.
-			</SimpleText>
-			<SimpleText>
+			</p>
+			<p>
 				Initially, I was introduced in web development around 2013. Since then, I study every summer and make some small-scale web projects in a low-end Android phone.
-			</SimpleText>
-			<SimpleText>
+			</p>
+			<p>
 				As the time passed by, I quickly got interest in back-end programming due to
 				<abbr title="PHP Hypertext Preprocessor">PHP</abbr>.
 				It sparked my interest in <span itemprop="knowsAbout">cybersecurity,
 				<abbr title="Create, Read, Update, and Delete">CRUD</abbr> applications, servers, and others</span>.
-			</SimpleText>
-			<SimpleText>
+			</p>
+			<p>
 				By the time I got my hands on a computer, I spent some time making personal command-line programs using C++. I may have been reinventing the wheel but only for purpose of studying.
-			</SimpleText>
-			<SimpleText>
+			</p>
+			<p>
 				Using this approach, I faced the issues that other developers have already solved. It made me appreciate the existing solutions and strive to be better. I was like a toddler back then mimicking the adults.
-			</SimpleText>
-			<SimpleText>
+			</p>
+			<p>
 				That did not stop me to try from thinking innovative solutions. Some solutions are better suited for certain situations. As the saying goes, <em>"it depends!"</em>.
-			</SimpleText>
+			</p>
 		</section>
 		<section itemprop="knowsAbout" id={skills.id}>
 			<SecondaryHeading headingInfo={skills} mustBeRaw={true}/>
-			<SimpleText>
+			<p>
 				I am specialized in web development, particularly back-end programming. The reason was that back-end programming could support most communication technologies in an increasingly interconnected world. Whether it is an e-commerce website, Internet of Things, or games, they need at a server to process and store their data.
-			</SimpleText>
-			<SimpleText>
+			</p>
+			<p>
 				Some of my web development skills are the following below.
-			</SimpleText>
+			</p>
 			<ul>
 				{#each technologies as area}
 					<li>
@@ -282,18 +281,18 @@
 					</li>
 				{/each}
 			</ul>
-			<SimpleText>
+			<p>
 				Also, I have some experience in programming using GameMaker language or GDScript to make small games in the past. I have some basics too on programming Arduino microcontrollers. Beside those, I like reading about cryptography, testing, compilers, and latest technology.
-			</SimpleText>
-			<SimpleText>
+			</p>
+			<p>
 				Beside programming, I am also good at mathematics and logic. Both fields help me in validation, developing, troubleshooting, and authorization. These skills complement my other interests.
-			</SimpleText>
+			</p>
 		</section>
 		<section id={contacts.id}>
 			<SecondaryHeading headingInfo={contacts} mustBeRaw={true}/>
-			<SimpleText>
+			<p>
 				Should you wish to get in touch with me, I can be communicated on different platforms. Sometimes, I may use emails that came from certain organization or group I belong to depending on the nature of e-mail.
-			</SimpleText>
+			</p>
 			<ul class="list-none not-prose">
 				<StructuredListItem
 					itemprop="contactPoint"
