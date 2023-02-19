@@ -5,8 +5,10 @@
 </script>
 
 <div class="flex-1 m-0 p-0 h-full w-full flex flex-col justify-center items-stretch container">
+	<!-- TODO: Pass the URL of the website -->
 	<article
 		id={MAIN_CONTENT_ID}
+		itemid={`#${MAIN_CONTENT_ID}`}
 		itemprop="mainContentOfPage"
 		itemscope
 		itemtype="https://schema.org/WebPageElement"
