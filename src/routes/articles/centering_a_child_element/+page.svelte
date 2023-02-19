@@ -56,7 +56,36 @@
 			</StructuredListItem>
 		</StructuredList>
 		<SimpleText>
-			Below is an example positioning the child element in the center using the classical technique programmed in vanilla <abbr title="Cascading Style Sheets">CSS</abbr>
+			Below is an example positioning the child element in the center using the classical technique programmed in vanilla <abbr title="Cascading Style Sheets">CSS</abbr>.
 		</SimpleText>
+		<div itemprop="workExample" itemscope itemtype="https://schema.org/CreativeWork">
+			<div class="mockup-window border border-secondary bg-base-200">
+				<div class="w-full border-t border-secondary bg-base-100 py-4">
+					<div class="parent">
+						<div class="child">
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<p itemprop="text" class="text-center text-sm">
+				Example of child positioned in the horizontal center using margins.
+			</p>
+		</div>
 	</StructuredSection>
 </ArticlePost>
+
+<style lang="postcss">
+	.parent {
+		@apply bg-green-900 w-3/4 h-48 mx-[12.5%];
+	}
+
+	.child {
+		@apply bg-green-400 h-24;
+	}
+
+	.child {
+		width: calc(4 / 12 * 100%);
+		margin-left: calc(((12 - 4) / 2) / 12 * 100%)
+	}
+</style>
