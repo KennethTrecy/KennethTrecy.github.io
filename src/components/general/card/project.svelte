@@ -16,12 +16,13 @@
 	<div class="card-body">
 		<a
 			class="card-title flex flex-row items-center"
-			itemprop={externalTypes.join(" ")}
+			itemprop="mainEntityOfPage"
+			rel={externalTypes.join(" ")}
 			href={link}>
 			<h3 itemprop="name">{title}</h3>
 			<Icon name="chevron_right"/>
 		</a>
-		<p itemprop="about text" class="prose">
+		<p itemprop="abstract text" class="prose">
 			{description}
 		</p>
 	</div>
