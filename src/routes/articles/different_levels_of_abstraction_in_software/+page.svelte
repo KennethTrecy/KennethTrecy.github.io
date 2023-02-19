@@ -73,18 +73,16 @@
 </script>
 
 <ArticlePost {pageMeta}>
-	<StructuredSection
-		itemprop="about"
-		itemtype="https://schema.org/ItemList"
-		id={introduction.id}>
+	<StructuredSection itemprop="about" id={introduction.id}>
 		<SecondaryHeading headingInfo={introduction}/>
-		<SimpleText itemprop="about">
+		<SimpleText itemprop="description">
 			<Keyword>Abstraction</Keyword> is a process to see a thing as a one rather than as the sum of its parts. It can be rules or equations that are applicable to most situations. In software development, abstractions are used to simplify the process which are common to other tasks. In other words, they are <Keyword>reusable</Keyword>. They take in different levels which this page is all about.
 		</SimpleText>
 		<SimpleText itemprop="mainEntity">
-			There are <strong itemprop="numberOfItems">{levels.length}</strong> levels of abstraction listed below. They are ordered from easiest to hardest in implementation and customizability.
+			There are {levels.length} levels of abstraction listed below. They are ordered from easiest to hardest in implementation and customizability.
 		</SimpleText>
-		<StructuredList order="ascending" hasOwnScope={false}>
+		<StructuredList order="ascending">
+			<meta itemprop="numberOfItems" content={levels.length}>
 			{#each levels as level}
 				<StructuredListItem>
 					<Bookmark
@@ -98,7 +96,7 @@
 	</StructuredSection>
 	<StructuredSection id={levels[0].id}>
 		<SecondaryHeading headingInfo={levels[0]}/>
-		<SimpleText>
+		<SimpleText itemprop="description">
 			<strong itemprop="mainEntity">This level of abstraction is the easiest to work on among other levels.</strong> However, a code at this level may have repetitive statements. Therefore, the program will be longer and will take time to read.
 		</SimpleText>
 		<SimpleText>
@@ -118,7 +116,7 @@
 	</StructuredSection>
 	<StructuredSection id={levels[1].id}>
 		<SecondaryHeading headingInfo={levels[1]}/>
-		<SimpleText>
+		<SimpleText itemprop="description">
 			<strong itemprop="mainEntity">This level of abstraction allows the creation of different package-level software programs.</strong> Software programs at this level can be managed using environment variables (which are declared on the system, <code>.env</code> files, or other contexts) or command line arguments. Users who want to customize their software should know how to <Keyword>run</Keyword> or <Keyword>compile</Keyword> software.
 		</SimpleText>
 		<SimpleText>
@@ -144,7 +142,7 @@
 	</StructuredSection>
 	<StructuredSection id={levels[2].id}>
 		<SecondaryHeading headingInfo={levels[2]}/>
-		<SimpleText>
+		<SimpleText itemprop="description">
 			This is almost similar to <Bookmark fragment={`#${levels[1].id}`}>{
 				levels[1].text.toLocaleLowerCase()
 			}</Bookmark>. However, the environment variables are not included in this level. <strong itemprop="mainEntity">This level refers to the programs/codes customizable by globally-scoped variables and locally-scoped variables.</strong>
@@ -164,7 +162,7 @@
 	</StructuredSection>
 	<StructuredSection id={levels[3].id}>
 		<SecondaryHeading headingInfo={levels[3]}/>
-		<SimpleText>
+		<SimpleText itemprop="description">
 			<strong itemprop="mainEntity">At this level of abstraction, a software/code file bundles different procedures in one or more functions.</strong> Example of this are libraries which may contain different functions to change the casing of characters in a string.
 		</SimpleText>
 		<SimpleText>
@@ -187,7 +185,7 @@
 	</StructuredSection>
 	<StructuredSection id={levels[4].id}>
 		<SecondaryHeading headingInfo={levels[4]}/>
-		<SimpleText>
+		<SimpleText itemprop="description">
 			<strong itemprop="mainEntity">These are abstractions that may represent real-world things which may be composed of multiple functionalities.</strong> To have this level of abstraction, a developer needs to know about the object-oriented programming (<abbr>OOP</abbr>) concepts like polymorphism or composition.
 		</SimpleText>
 		<SimpleText>
@@ -206,7 +204,7 @@
 	</StructuredSection>
 	<StructuredSection id={levels[5].id}>
 		<SecondaryHeading headingInfo={levels[5]}/>
-		<SimpleText>
+		<SimpleText itemprop="description">
 			<strong itemprop="mainEntity">Hardest level of abstraction that someone could work on.</strong> It can be in a form of <ExternalLink address="https://www.php.net/manual/en/language.oop5.abstract.php">abstract classes</ExternalLink>, <ExternalLink address="https://en.cppreference.com/w/cpp/language/templates">templates</ExternalLink>, <ExternalLink address="https://doc.rust-lang.org/book/ch10-02-traits.html">traits</ExternalLink>, <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">generics</ExternalLink>, or <ExternalLink address="https://doc.rust-lang.org/reference/macros.html">macros</ExternalLink>.
 		</SimpleText>
 		<SimpleText>
@@ -233,7 +231,7 @@
 	</StructuredSection>
 	<StructuredSection id={conclusion.id}>
 		<SecondaryHeading headingInfo={conclusion}/>
-		<SimpleText>
+		<SimpleText itemprop="description">
 			Those are the various levels of abstraction that programmers may find on every software they build. Beginners may want to make their programs customizable by aiming for a <Bookmark fragment={`#${levels[0].id}`}>package-level</Bookmark> to <Bookmark fragment={`#${levels[2].id}`}>variable-level</Bookmark> abstraction. Thus, being overwhelmed can be prevented and focus at the current task.
 		</SimpleText>
 		<SimpleText>
