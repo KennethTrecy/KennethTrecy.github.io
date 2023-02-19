@@ -1,4 +1,4 @@
-import type { AnchorLinkType } from "@/types/link"
+import type { AnchorLinkType } from "@/types/container_info"
 
 export const externalTypes: AnchorLinkType[] = [
 	"external",
