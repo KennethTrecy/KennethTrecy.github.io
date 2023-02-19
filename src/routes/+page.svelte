@@ -121,7 +121,9 @@
 				</StructuredList>
 				<p itemprop="text" class="mt-4">
 					Other projects can be found on the
-					<ExternalLink address="https://github.com/KennethTrecy?tab=repositories">
+					<ExternalLink
+						address="https://github.com/KennethTrecy?tab=repositories"
+						itemprop="isBasedOn">
 						list of my repositories
 					</ExternalLink>
 					in
@@ -133,7 +135,8 @@
 					</BaseLink>
 					or in this site's <BaseLink
 						address="/projects"
-						relationship={[ ...internalTypes, ...authorTypes ]}>
+						relationship={[ ...internalTypes, ...authorTypes ]}
+						itemprop="mainEntityOfPage">
 						project list</BaseLink>.
 				</p>
 			</StructuredSection>
