@@ -25,7 +25,6 @@
 			: "https://schema.org/ItemListOrderDescending"
 </script>
 
-<link itemprop="itemListOrder" href={listOrder}/>
 {#if order === "unordered"}
 	{#if hasOwnScope}
 		<ul
@@ -33,10 +32,12 @@
 			itemscope
 			{itemtype}
 			class={joinedClasses}>
+			<link itemprop="itemListOrder" href={listOrder}/>
 			<slot></slot>
 		</ul>
 	{:else}
 		<ul class={joinedClasses}>
+			<link itemprop="itemListOrder" href={listOrder}/>
 			<slot></slot>
 		</ul>
 	{/if}
@@ -47,10 +48,12 @@
 			itemscope
 			{itemtype}
 			class={joinedClasses}>
+			<link itemprop="itemListOrder" href={listOrder}/>
 			<slot></slot>
 		</ol>
 	{:else}
 		<ol class={joinedClasses}>
+			<link itemprop="itemListOrder" href={listOrder}/>
 			<slot></slot>
 		</ol>
 	{/if}
