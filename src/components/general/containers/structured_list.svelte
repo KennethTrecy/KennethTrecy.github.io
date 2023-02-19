@@ -1,12 +1,12 @@
 <script lang="ts">
 	import type { Order } from "@/types/container_info"
 
+	export let order: Order
+
 	export let hasOwnScope = true
 	export let itemprop: string = "hasPart"
 	export const itemtype: string = "https://schema.org/ItemList"
-
-	export let isProjectList: boolean
-	export let order: Order
+	export let isProjectList: boolean = false
 	let otherClasses: string[] = []
 
 	const initialClasses = isProjectList ? [ "project_list" ] : []
