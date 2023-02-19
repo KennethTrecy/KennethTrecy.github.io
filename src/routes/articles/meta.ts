@@ -9,7 +9,7 @@ const meta = definePageMeta("/articles", {
 	"description": "Collection of articles written by Kenneth Trecy",
 	"keywords": [ "Kenneth Trecy", "articles", "collection" ],
 	"title": "Kenneth Trecy's Article Collection",
-	"version": "1.0"
+	"version": "1.001-dev"
 })
 
 export default meta
