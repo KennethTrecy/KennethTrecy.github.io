@@ -74,10 +74,10 @@
 					alt={profile.description}
 					class="max-w-sm bg-primary"/>
 				<section class="max-w-sm xl:max-w-md text-center xl:text-left">
-					<SecondaryHeading headingInfo={greetings}>
+					<SecondaryHeading headingInfo={greetings} isHeadlineProperty={false}>
 						I am <span itemprop="givenName">Kenneth Trecy</span>!
 					</SecondaryHeading>
-					<p itemprop="knowsAbout text" class="py-6 container md:px-0">
+					<p itemprop="knowsAbout" class="py-6 container md:px-0">
 						I usually develop the back-end of the applications I have handled. I ensure their quality though automated tests through CI.
 					</p>
 					<BaseLink
