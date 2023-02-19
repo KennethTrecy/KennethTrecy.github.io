@@ -4,6 +4,7 @@
 	import { internalTypes, authorTypes } from "@/components/general/links/constants"
 
 	import BaseLink from "@/components/general/links/base.svelte"
+	import SimpleText from "@/components/general/containers/simple_text.svelte"
 
 	export let pageMeta: PageMeta
 
@@ -31,31 +32,35 @@
 <div class="not-prose card bg-base-200">
 	<section class="card-body">
 		<h2 class="title">Page details</h2>
-		<address itemprop="author" itemscope itemtype="https://schema.org/Person">
-			This page was authored by
-			<BaseLink
-				address="/about_myself"
-				relationship={[ ...internalTypes, ...authorTypes ]}
-				itemprop="mainEntityOfPage">
-				<span itemprop="name">
-					<span itemprop="givenName">Kenneth Trecy</span>
-					<span itemprop="familyName">Tobias</span></span></BaseLink>.
-		</address>
-		<em>
-			Published last
-			<time
-				itemprop={ hasModified ? "datePublished": "datePublished dateModified" }
-				datetime={dateTimePublished}>{humanReadableDatePublished}</time>.
-			{#if hasModified}
-				Then, it was modified last
+		<SimpleText>
+			<address itemprop="author" itemscope itemtype="https://schema.org/Person">
+				This page was authored by
+				<BaseLink
+					address="/about_myself"
+					relationship={[ ...internalTypes, ...authorTypes ]}
+					itemprop="mainEntityOfPage">
+					<span itemprop="name">
+						<span itemprop="givenName">Kenneth Trecy</span>
+						<span itemprop="familyName">Tobias</span></span></BaseLink>.
+			</address>
+		</SimpleText>
+		<p>
+			<em>
+				Published last
 				<time
-					itemprop="dateModified"
-					datetime={dateTimeModified}>{humanReadableDateModified}</time>.
-			{:else}
-				It has not been modified since then.
-			{/if}
-			Version of the {publishStatus} page is
-			"<span itemprop="version">{pageMeta.version}</span>".
-		</em>
+					itemprop={ hasModified ? "datePublished": "datePublished dateModified" }
+					datetime={dateTimePublished}>{humanReadableDatePublished}</time>.
+				{#if hasModified}
+					Then, it was modified last
+					<time
+						itemprop="dateModified"
+						datetime={dateTimeModified}>{humanReadableDateModified}</time>.
+				{:else}
+					It has not been modified since then.
+				{/if}
+				Version of the {publishStatus} page is
+				"<span itemprop="version">{pageMeta.version}</span>".
+			</em>
+		</p>
 	</section>
 </div>
