@@ -159,8 +159,9 @@
 		{#each projectGroups as projectGroup}
 			<StructuredSection id={projectGroup.id}>
 				<SecondaryHeading headingInfo={projectGroup}/>
-				<SimpleText itemprop="about">{projectGroup.description}</SimpleText>
+				<SimpleText itemprop="description">{projectGroup.description}</SimpleText>
 				<StructuredList
+					itemprop="mainEntity"
 					order="unordered"
 					variant="project"
 					class={projectGroup.extraListClasses}>
@@ -177,8 +178,7 @@
 				</StructuredList>
 			</StructuredSection>
 		{/each}
-		<StructuredSection itemtype="https://schema.org/WebContent"
-			id={otherProjects.id}>
+		<StructuredSection id={otherProjects.id}>
 			<SecondaryHeading headingInfo={otherProjects}/>
 			<SimpleText itemprop="mainEntity text">
 				Beside my personal projects, I have also contributed to on several open-source projects by requesting pull requests. Usually, I add a small part of code for a certain functionality that I want.
