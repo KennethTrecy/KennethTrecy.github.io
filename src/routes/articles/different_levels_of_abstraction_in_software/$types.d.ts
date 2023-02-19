@@ -5,4 +5,4 @@ export interface PageData {
 	loadedFileInfos: CompleteCodeFileInfo[]
 }
 
-export type PageServerLoad = Kit.ServerLoad<Record<string, string>, PageData>
+export type PageLoad = Kit.Load<Record<string, string>, PageData>
