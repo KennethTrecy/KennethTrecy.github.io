@@ -6,9 +6,9 @@
 	import type { ExecutedCommandSetInfo, HeadingInfo } from "@/types/container_info"
 	import type {
 		PageData
-	} from "@/routes/articles/different_levels_of_abstraction_in_software/$types"
+	} from "@/routes/articles/different_levels_of_abstraction_in_programming/$types"
 
-	import pageMeta from "@/routes/articles/different_levels_of_abstraction_in_software/meta"
+	import pageMeta from "@/routes/articles/different_levels_of_abstraction_in_programming/meta"
 
 	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 
