@@ -4,6 +4,7 @@
 	import { internalTypes, authorTypes } from "@/components/general/links/constants"
 
 	import BaseLink from "@/components/general/links/base.svelte"
+	import ExternalLink from "@/components/general/links/external.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 
 	export let pageMeta: PageMeta
@@ -27,6 +28,13 @@
 	$: humanReadableDateModified = pageMeta.dateModified.toLocaleString("en", dateTimeFormatOptions)
 	$: hasModified = dateTimePublished !== dateTimeModified
 	$: publishStatus = Number(pageMeta.version) < 1 ? "draft" : "published"
+
+	const repositoryURL = "https://github.com/KennethTrecy/kennethtrecy.pages.dev"
+	const branch = "master"
+	$: targetFilePath = `src/routes${(pageMeta.path === "/" ? "" : pageMeta.path)}/+page.svelte`
+	$: editLink = `${repositoryURL}/edit/${branch}/${targetFilePath}`
+	$: issueLink = `${repositoryURL}/issues/new`
+	$: viewLink = `${repositoryURL}/blob/${branch}/${targetFilePath}`
 </script>
 
 <div class="not-prose card bg-base-200">
@@ -62,5 +70,10 @@
 				"<span itemprop="version">{pageMeta.version}</span>".
 			</em>
 		</p>
+		<SimpleText>
+			The source of the page can be <ExternalLink address={viewLink}>viewed</ExternalLink> or <ExternalLink address={editLink}>modified</ExternalLink>on GitHub. Should there be any concern or problem in the page, please report by making an <ExternalLink address={issueLink}>issue</ExternalLink> or <BaseLink
+					address="/about_myself#contact_details"
+					relationship={[ ...internalTypes ]}>contact the website owner</BaseLink>.
+		</SimpleText>
 	</section>
 </div>
