@@ -162,14 +162,8 @@
 				<SimpleText itemprop="about">{projectGroup.description}</SimpleText>
 				<StructuredList
 					order="unordered"
-					isProjectList={true}
-					class={[
-						"list-none",
-						"flex",
-						"flex-col",
-						"flex-wrap",
-						...projectGroup.extraListClasses
-					]}>
+					variant="project"
+					class={projectGroup.extraListClasses}>
 					{#each projectGroup.projects as project}
 						<StructuredListItem
 							isInProjectList={true}

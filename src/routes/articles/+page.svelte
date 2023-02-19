@@ -24,9 +24,7 @@
 		<SimpleText itemprop="mainEntity">
 			For some time, Kenneth Trecy may write articles and posts that may be useful for beginners and fellow developers. People are free to reference or link the articles below if they deemed informational or related to the topic they are in.
 		</SimpleText>
-		<StructuredList
-			order="descending"
-			class={[ "list-none", "flex", "flex-col", "flex-wrap", "p-0" ]}>
+		<StructuredList order="descending" variant="card">
 			{#each articleMetaCollection as articleMeta}
 				<StructuredListItem isInProjectList={false} class={[ "p-0" ]}>
 					<ArticleCard {articleMeta}/>

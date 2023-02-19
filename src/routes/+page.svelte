@@ -99,16 +99,7 @@
 			</StructuredSection>
 			<StructuredSection itemtype="https://schema.org/CreativeWork" id={personalProjects.id}>
 				<SecondaryHeading class={[ "my-4" ]} headingInfo={personalProjects}/>
-				<StructuredList
-					order="unordered"
-					isProjectList={true}
-					class={[
-						"list-none",
-						"list-outside",
-						"flex",
-						"flex-col",
-						"flex-wrap"
-					]}>
+				<StructuredList order="unordered" variant="project">
 					<StructuredListItem isInProjectList={true}>
 						<ProjectCard
 							title="Virdafils"
