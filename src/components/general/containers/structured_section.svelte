@@ -8,6 +8,6 @@
 	export { otherClasses as class }
 </script>
 
-<section {itemprop} itemscope {itemtype} class={otherClasses.join(" ")} {id}>
+<section {itemprop} itemscope {itemtype} class={otherClasses.join(" ")} {id} itemid={`#${id}`}>
 	<slot></slot>
 </section>
