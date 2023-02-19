@@ -26,7 +26,7 @@
 		</SimpleText>
 		<StructuredList order="descending" variant="card">
 			{#each articleMetaCollection as articleMeta}
-				<StructuredListItem isInProjectList={false} class={[ "p-0" ]}>
+				<StructuredListItem variant="card">
 					<ArticleCard {articleMeta}/>
 				</StructuredListItem>
 			{/each}

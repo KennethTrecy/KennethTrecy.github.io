@@ -166,7 +166,7 @@
 					class={projectGroup.extraListClasses}>
 					{#each projectGroup.projects as project}
 						<StructuredListItem
-							isInProjectList={true}
+							variant="project"
 							class={projectGroup.extraListItemClasses}>
 							<ProjectCard
 								title={project.name}

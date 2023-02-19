@@ -1,10 +1,16 @@
 <script lang="ts">
-	export let isInProjectList: boolean = false
+	import type { ListVariant } from "@/types/container_info"
+
 	export let itemprop: string = "itemListElement"
 	export let itemtype: string = "https://schema.org/ListItem"
+	export let variant: ListVariant = "normal"
 	let otherClasses: string[] = []
 
-	const initialClasses = isInProjectList ? [ "project_list" ] : []
+	$: initialClasses = variant === "project"
+		? [ "project_list" ]
+		: variant === "card"
+			? [ "card_list" ]
+			: []
 	export { otherClasses as class }
 </script>
 
@@ -17,7 +23,7 @@
 </li>
 
 <style lang="postcss">
-	li.project_list {
+	li.project_list, li.card_list {
 		@apply m-0 p-0;
 	}
 </style>

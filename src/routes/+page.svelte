@@ -100,19 +100,19 @@
 			<StructuredSection itemtype="https://schema.org/CreativeWork" id={personalProjects.id}>
 				<SecondaryHeading class={[ "my-4" ]} headingInfo={personalProjects}/>
 				<StructuredList order="unordered" variant="project">
-					<StructuredListItem isInProjectList={true}>
+					<StructuredListItem variant="project">
 						<ProjectCard
 							title="Virdafils"
 							description="A driver for Laravel framework which use a database like file storage system."
 							link="https://github.com/KennethTrecy/virdafils"/>
 					</StructuredListItem>
-					<StructuredListItem isInProjectList={true}>
+					<StructuredListItem variant="project">
 						<ProjectCard
 							title="Elomocato"
 							description="Custom cast classes to be used with Laravel framework."
 							link="https://github.com/KennethTrecy/elomocato"/>
 					</StructuredListItem>
-					<StructuredListItem isInProjectList={true}>
+					<StructuredListItem variant="project">
 						<ProjectCard
 							title="Comroconbu"
 							description="Builder for common Rollup configurations."
