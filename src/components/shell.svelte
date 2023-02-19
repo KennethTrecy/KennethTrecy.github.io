@@ -128,10 +128,10 @@
 					width="288"
 					height="288"
 					class="flex-none w-full h-auto"/>
-				<p itemprop="name text" class="flex-1 my-auto text-2xl">
+				<p itemprop="name" class="flex-1 my-auto text-2xl">
 					KennethTrecy
 				</p>
-				<p itemprop="description text" class="prose">
+				<p itemprop="description" class="prose">
 					An open-source technology enthusiast, back-end experimentalist, and analytic tester.
 				</p>
 			</a>
