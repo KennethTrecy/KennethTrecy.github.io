@@ -15,6 +15,11 @@ export type HeadingInfo<T extends "defined"|"raw" = "raw"> = {
 		: never
 )
 
+export type SubheadingVariant =
+	| "raw"
+	| "name"
+	| "headline"
+
 export type Order =
 	| "ascending"
 	| "descending"
