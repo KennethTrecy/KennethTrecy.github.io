@@ -64,3 +64,8 @@ export interface ExecutedCommandSetInfo {
 	description: string,
 	commands: ExecutedCommandInfo[]
 }
+
+export type ListVariant =
+	| "normal"
+	| "project"
+	| "card"
