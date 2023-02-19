@@ -71,7 +71,7 @@
 			</em>
 		</p>
 		<SimpleText>
-			The source of the page can be <ExternalLink address={viewLink}>viewed</ExternalLink> or <ExternalLink address={editLink}>modified</ExternalLink>on GitHub. Should there be a concern or problem in the page, please report by making an <ExternalLink address={issueLink}>issue</ExternalLink> or <BaseLink
+			The source of the page can be <ExternalLink address={viewLink}>viewed</ExternalLink> or <ExternalLink address={editLink}>modified</ExternalLink> on GitHub. Should there be a concern or problem in the page, please report by making an <ExternalLink address={issueLink}>issue</ExternalLink> or <BaseLink
 					address="/about_myself#contact_details"
 					relationship={[ ...internalTypes ]}>contact the website administrator</BaseLink>.
 		</SimpleText>
