@@ -3,6 +3,7 @@
 	import { page } from "$app/stores"
 	import { derived } from "svelte/store"
 
+	import type { ReferenceInfo } from "@/types/reference"
 	import type { ExecutedCommandSetInfo, HeadingInfo } from "@/types/container_info"
 	import type {
 		PageData
@@ -14,6 +15,7 @@
 
 	import CommonHead from "@/components/general/common_head.svelte"
 	import Bookmark from "@/components/general/links/bookmark.svelte"
+	import Citation from "@/components/general/links/citation.svelte"
 	import Keyword from "@/components/general/containers/keyword.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
@@ -70,6 +72,38 @@
 			}
 		]
 	} as ExecutedCommandSetInfo))
+
+	const references: ReferenceInfo[] = [
+		{
+			"title": "dotenv",
+			"link": "github.com/motdotla/dotenv#readme",
+			"itemtype": "https://schema.org/SoftwareSourceCode",
+			"linkCategory": "outbound",
+			"author": {
+				"givenName": "Scott",
+				"familyName": "Motte",
+				"link": "https://github.com/motdotla"
+			},
+			"license": {
+				"name": "BSD-2-Clause",
+				"link": "https://github.com/motdotla/dotenv/blob/master/LICENSE"
+			}
+		}, {
+			"title": "Arduino Tutorial 4: Understanding Arduino Variables",
+			"link": "https://www.youtube.com/watch?v=nPOKOi1jIK0",
+			"itemtype": "https://schema.org/SoftwareSourceCode",
+			"linkCategory": "outbound",
+			"author": {
+				"givenName": "Paul",
+				"familyName": "McWhorter",
+				"link": "https://www.patreon.com/PaulMcWhorter"
+			},
+			"license": {
+				"name": "",
+				"link": ""
+			}
+		}
+	]
 </script>
 
 <ArticlePost {pageMeta}>
@@ -128,7 +162,7 @@
 		<SimpleText>
 			Using the <Bookmark fragment={`#${levels[0].id}`}>{
 				levels[0].text.toLocaleLowerCase()
-			}'s example</Bookmark>, the program can be modified to allow configuration-level customization. It uses an external package named <ExternalLink address="https://www.npmjs.com/package/dotenv">dotenv</ExternalLink> package to use the environment variables by using <code>process<span>.</span>env.&lt;variable name&gt;</code>. Note that the program uses logical OR operator (<code>||</code>) in order to use default messages.
+			}'s example</Bookmark>, the program can be modified to allow configuration-level customization. It uses an external package named <Citation info={references[0]}>dotenv</Citation> package to use the environment variables by using <code>process<span>.</span>env.&lt;variable name&gt;</code>. Note that the program uses logical OR operator (<code>||</code>) in order to use default messages.
 		</SimpleText>
 		<ExampleCode codeInfo={$loadedFileInfos[1]}>
 			<SimpleText>
@@ -151,7 +185,7 @@
 			Should the user want to customize the program, knowledge in <Keyword>variable declaration</Keyword> (depending on the programming language used) is a must. They may also need to learn about enumerations or any different data types like boolean and integer.
 		</SimpleText>
 		<SimpleText>
-			This level can be seen when making embedded programs for microcontrollers. It is helpful to declare multiple constants for values that are repeatedly used like indicating on or off, <ExternalLink address="https://www.youtube.com/watch?v=nPOKOi1jIK0">pin to the <abbr>LED</abbr>, or length of intervals</ExternalLink>. In addition, it can be seen in other fields of Information Technology (<abbr>I.T.</abbr>) such as web development and game development.
+			This level can be seen when making embedded programs for microcontrollers. It is helpful to declare multiple constants for values that are repeatedly used like indicating on or off, <Citation info={references[1]}>pin to the <abbr>LED</abbr>, or length of intervals</Citation>. In addition, it can be seen in other fields of Information Technology (<abbr>I.T.</abbr>) such as web development and game development.
 		</SimpleText>
 		<SimpleText>
 			Building from the <Bookmark fragment={`#${levels[1].id}`}>example in {
