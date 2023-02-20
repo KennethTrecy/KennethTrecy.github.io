@@ -1,11 +1,11 @@
 import type { CodeFile } from "@/types/container_info"
 import type {
 	PageLoad
-} from "@/routes/articles/different_levels_of_abstraction_in_software/$types"
+} from "@/routes/articles/different_levels_of_abstraction_in_programming/$types"
 
 import {
 	associatedFileList
-} from "@/routes/articles/different_levels_of_abstraction_in_software/shared_constants"
+} from "@/routes/articles/different_levels_of_abstraction_in_programming/shared_constants"
 
 export const load: PageLoad = async({ fetch }) => {
 	const pendingExtractedFileInfoList: Promise<CodeFile>[] = []
