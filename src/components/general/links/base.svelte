@@ -2,9 +2,10 @@
 	import type { AnchorTarget, AnchorLinkType } from "@/types/container_info"
 
 	export let address: string
+	export let relationship: AnchorLinkType|AnchorLinkType[]
+
 	export let context: AnchorTarget = "self"
 	export let mayIndicateExternal = true
-	export let relationship: AnchorLinkType|AnchorLinkType[]
 	export let title: string|undefined = undefined
 	export let itemprop: string|undefined = undefined
 	let otherClasses: string[] = []
