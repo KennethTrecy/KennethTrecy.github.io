@@ -100,7 +100,7 @@
 			<strong itemprop="mainEntity">This level of abstraction is the easiest to work on among other levels.</strong> However, a code at this level may have repetitive statements. Therefore, the program will be longer and will take time to read.
 		</SimpleText>
 		<SimpleText>
-			In addition, most applications are only usable in this level. They are relatively easy to install as they can be standalone or in compressed portable format. The downside is that there is a <Keyword>limited customizability</Keyword> which are usually offered through <em>settings</em> or <em>preferences</em> option. It is expected that the users of these applications are anyone who have <Keyword>basic computer literacy</Keyword>.
+			In addition, most software are only usable in this level. They are relatively easy to install as they can be standalone, in compressed portable format, or included with the help of package manager. The downside is that there is a <Keyword>limited customizability</Keyword> which are usually offered through <em>settings</em> or <em>preferences</em> option. It is expected that the users of these applications are anyone who have <Keyword>basic computer literacy</Keyword>.
 		</SimpleText>
 		<SimpleText>
 			For example, a teacher use a spreadsheet software to calculate the grades of students. The teacher will just input the raw grade and the formula. After that, the final grade will be automatically calculated by the software as programmed.
