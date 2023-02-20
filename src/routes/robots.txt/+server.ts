@@ -2,6 +2,7 @@ import { IS_INDEXABLE } from "$env/static/private"
 import { PUBLIC_PRODUCTION_BASE_URL } from "$env/static/public"
 
 import metaCollection from "@/constants/meta_collection"
+import redirectedMetaCollection from "@/constants/redirected_meta_collection"
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export async function GET() {
@@ -9,7 +10,7 @@ export async function GET() {
 	const sitemapPath = "/sitemap.xml"
 	const icon = "/favicon.png"
 	const documentPaths = IS_INDEXABLE === "true"
-		? metaCollection.map(meta => meta.path)
+		? [ ...metaCollection, ...redirectedMetaCollection ].map(meta => meta.path)
 		: []
 
 	/*
