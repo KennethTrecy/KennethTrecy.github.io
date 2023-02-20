@@ -8,10 +8,11 @@
 
 	import pageMeta from "@/routes/articles/centering_a_child_element/meta"
 
+	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
+
 	import Bookmark from "@/components/general/links/bookmark.svelte"
 	import Keyword from "@/components/general/containers/keyword.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
-	import defineHeadingInfo from "@/components/general/define_heading_info"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import ArticlePost from "@/components/general/containers/article_post.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
@@ -54,7 +55,7 @@
 				Subtract the chosen number of columns from 12. The result is the number of unused columns that can be used as a margin.
 			</StructuredListItem>
 			<StructuredListItem>
-				Divide the difference from step 2 because the unused space will distributed both horizontal sides of the child element.
+				Divide the difference from step 2 because the unused space would distributed both horizontal sides of the child element.
 			</StructuredListItem>
 			<StructuredListItem>
 				Depending on the CSS framework, the developer may <em>push</em> the element by a certain number of column based on quotient in step 3. Otherwise, the quotient would be divided by 12 then multiplied to 100 to get the percentage of left margin.
@@ -81,6 +82,57 @@
 			The <abbr title="Cascading Style Sheets">CSS</abbr> code for the example above can be seen below. It uses <code>calc()</code> to derive the margin.
 		</SimpleText>
 		<ExampleCode codeInfo={$loadedFileInfos[0]} beginLineIndex={4} endLineIndex={9}/>
+	</StructuredSection>
+	<StructuredSection id={flexbox.id}>
+		<SecondaryHeading headingInfo={flexbox}/>
+		<SimpleText>
+			Another method is through the use of flexible box layut which was introduced
+			<ExternalLink address="https://cran.r-project.org/web/packages/imola/vignettes/imola-why-flex-and-grid.html">around 2012</ExternalLink>. It allows web developer to layout conveniently and responsively as the elements would automatically resize while adhering to the specified properties.
+		</SimpleText>
+		<SimpleText>
+			A web developer would declare certain properties on the parent like <code>display: flex;</code> paired with <code>flex-direction</code> and/or <code>flex-wrap</code>. On the other hand, children of the flexible parent would have properties like <code>flex-grow</code> nd/or <code>flex-basis</code>.
+		</SimpleText>
+		<SimpleText>
+			It is very easy to center an element in both axes using flexible box layout. A web developer would just do the following steps.
+		</SimpleText>
+		<StructuredList order="ascending">
+			<StructuredListItem>
+				Set <code>display: flex;</code> on the parent.
+				<!-- TODO: Reference the documentation -->
+			</StructuredListItem>
+			<StructuredListItem>
+				Set <code>justify-content: center;</code> on the parent. This indicates to center the children with respect to main axis.
+				<!-- TODO: Reference the documentation -->
+			</StructuredListItem>
+			<StructuredListItem>
+				Set <code>align-items: center;</code> on the parent. This indicates to center the children with respect to cross axis.
+				<!-- TODO: Reference the documentation -->
+			</StructuredListItem>
+			<StructuredListItem>
+				Optionally, set <code>flex-direction: row;</code> on the parent if there are multiple children to be layout horizontally and direction matters. If the children should be in vertical manner, use <code>flex-direction: column;</code> instead.
+				<!-- TODO: Reference the documentation -->
+			</StructuredListItem>
+		</StructuredList>
+		<SimpleText>
+			Usually, the <code>flex-direction: row;</code> sets the x-axis as the main axis and y-axis as the cross axis. If <code>flex-direction: column;</code> has been used, the y-axis axis would be the main axis and x-axis would be the cross axis.
+		</SimpleText>
+		<SimpleText>
+			Below is an example positioning the child element in the center (in both horizontal and vertical manner) using the flexible box layout programmed in vanilla <abbr title="Cascading Style Sheets">CSS</abbr>.
+		</SimpleText>
+		<div itemprop="workExample" itemscope itemtype="https://schema.org/CreativeWork">
+			<div class="mockup-window border border-secondary bg-base-200">
+				<div class="w-full border-t border-secondary bg-base-100 py-4">
+					<div class="parent">
+						<div class="child">
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<p itemprop="text" class="text-center text-sm">
+				Example of children positioned in the horizontal center and vertical center using flexible box layout.
+			</p>
+		</div>
 	</StructuredSection>
 </ArticlePost>
 
