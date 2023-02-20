@@ -15,8 +15,13 @@ export interface LicenseInfo extends LinkedInfo {
 	name: string
 }
 
+type ReferenceLinkCategory =
+	| "inbound"
+	| "outbound"
+
 export interface ReferenceInfo extends LinkedInfo {
 	title: string
+	linkCategory: ReferenceLinkCategory
 	author: PersonInfo|GroupInfo
 	license: LicenseInfo
 }

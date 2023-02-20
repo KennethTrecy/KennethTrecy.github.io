@@ -16,6 +16,7 @@ describe("Primary heading behavior", () => {
 		const referenceA: ReferenceInfo = {
 			"title": "Reference A",
 			"link": "https://example.com/reference_a",
+			"linkCategory": "outbound",
 			"author": {
 				"groupName": "A",
 				"link": "https://example.com/a"
@@ -28,6 +29,7 @@ describe("Primary heading behavior", () => {
 		const referenceB: ReferenceInfo = {
 			"title": "Reference B",
 			"link": "https://example.com/reference_b",
+			"linkCategory": "outbound",
 			"author": {
 				"groupName": "B",
 				"link": "https://example.com/b"
@@ -55,6 +57,7 @@ describe("Primary heading behavior", () => {
 		const referenceA: ReferenceInfo = {
 			"title": "Repeating Reference A",
 			"link": "https://example.com/repeating_reference_a",
+			"linkCategory": "outbound",
 			"author": {
 				"groupName": "A",
 				"link": "https://example.com/a"
@@ -67,6 +70,7 @@ describe("Primary heading behavior", () => {
 		const referenceB: ReferenceInfo = {
 			"title": "Reference B",
 			"link": "https://example.com/reference_b",
+			"linkCategory": "outbound",
 			"author": {
 				"groupName": "B",
 				"link": "https://example.com/b"
