@@ -46,7 +46,7 @@
 			The classical way to center an element is through the use of margins of the child element. There are many variations for this technique. A developer in the past can conveniently use this technique in conjunction with the previous versions of CSS frameworks. Utilizing the 12-column layout, a developer would the following steps below to determine the margin the child element would take.
 			<!-- TODO: Find a URL for previous version of CSS framework and 12 column layout -->
 		</SimpleText>
-		<StructuredList order="ascending" isProjectList={false}>
+		<StructuredList order="ascending">
 			<StructuredListItem>
 				Resize the child element by an arbitrary number of columns. The number of columns should be an even number.
 			</StructuredListItem>
