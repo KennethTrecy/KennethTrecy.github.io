@@ -77,6 +77,10 @@
 				Example of child positioned in the horizontal center using margins.
 			</p>
 		</div>
+		<SimpleText>
+			The <abbr title="Cascading Style Sheets">CSS</abbr> code for the example above can be seen below. It uses <code>calc()</code> to derive the margin.
+		</SimpleText>
+		<ExampleCode codeInfo={$loadedFileInfos[0]} beginLineIndex={4} endLineIndex={9}/>
 	</StructuredSection>
 </ArticlePost>
 
