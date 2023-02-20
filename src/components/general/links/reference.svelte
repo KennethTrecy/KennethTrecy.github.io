@@ -1,20 +1,26 @@
 <script lang="ts">
-	import { onMount } from "svelte"
-
 	import type { ReferenceInfo } from "@/types/reference"
 
-	import { PUBLIC_PRODUCTION_BASE_URL } from "$env/static/public"
-
-	import { appendReference } from "@/components/general/containers/reference_info_collection.ts"
-
-	import BaseLink from "@/components/general/links/base.svelte"
-	import ExternalLink from "@/components/general/links/external.svelte"
+	import BoundLink from "@/components/general/links/bound.svelte"
 
 	export let info: ReferenceInfo
 
-	onMount(async () => {
-		appendReference(info)
-	})
-
-	$: isInbound = info.link.includes(PUBLIC_PRODUCTION_BASE_URL)
+	$: titleLinkComponent = info.category === "inbound"
+		? BaseLink
+		: ExternalLink
+	$: entityName = typeof info.author.givenName !== undefined
+		? `${info.author.givenName} ${info.author.familyName}`
+		: info.author.groupName
 </script>
+
+<cite itemprop="citation" itemscope itemtype={info.itemtype}>
+	<svelte:component
+		this={titleLinkComponent}
+		address={info.link}
+		itemprop="mainEntityOfPage">{info.title}</svelte:component>
+	made by
+	<BoundLink address={info.author.link}>{entityName}</BoundLink>
+	<!-- TODO: structure data further -->
+	is licensed under
+	<BoundLink address={info.license.link}>{info.license.name}</BoundLink>.
+</cite>
