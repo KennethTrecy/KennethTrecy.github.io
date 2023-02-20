@@ -1,7 +1,9 @@
 <script lang="ts">
 	import type { ReferenceInfo } from "@/types/reference"
 
+	import BaseLink from "@/components/general/links/base.svelte"
 	import BoundLink from "@/components/general/links/bound.svelte"
+	import ExternalLink from "@/components/general/links/external.svelte"
 
 	export let info: ReferenceInfo
 
