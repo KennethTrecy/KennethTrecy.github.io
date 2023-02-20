@@ -5,6 +5,7 @@
 
 	import { appendReference } from "@/components/general/containers/reference_info_collection.ts"
 
+	import BaseLink from "@/components/general/links/base.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 
 	export let info: ReferenceInfo
@@ -13,6 +14,13 @@
 	onMount(async () => {
 		appendReference(info)
 	})
+
+	$: linkComponent = info.category === "inbound"
+		? BaseLink
+		: ExternalLink
 </script>
 
-<ExternalLink address={info.link} {itemprop}><slot></slot></ExternalLink>
+<svelte:component
+	this={linkComponent}
+	address={info.link}
+	{itemprop}><slot></slot></svelte:component>
