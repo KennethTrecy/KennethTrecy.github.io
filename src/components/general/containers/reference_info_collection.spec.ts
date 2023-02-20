@@ -3,11 +3,11 @@
 
 import type { ReferenceInfo } from "@/types/reference"
 
-import { describe, it, expect } from "vitest"
-import { render, cleanup } from "@testing-library/svelte"
-
-import { referenceInfo } from "./reference_info_collection"
+import { cleanup } from "@testing-library/svelte"
 import { get } from "svelte/store"
+import { describe, expect, it } from "vitest"
+
+import { appendReference, referenceInfos } from "./reference_info_collection"
 
 describe("Primary heading behavior", () => {
 	it("can put mutiple references", () => {
@@ -36,20 +36,20 @@ describe("Primary heading behavior", () => {
 			}
 		}
 
-		referenceInfo.update(otherInfos => [ ...otherInfos, referenceA ])
-		referenceInfo.update(otherInfos => [ ...otherInfos, referenceB ])
+		appendReference(referenceA)
+		appendReference(referenceB)
 
-		expect(get(referenceInfo)).toStrictEqual([
+		expect(get(referenceInfos)).toStrictEqual([
 			referenceA,
 			referenceB
 		])
 		cleanup()
 	})
 
-	it("cannot put same references", () => {
+	it("cannot put repeating references", () => {
 		const referenceA: ReferenceInfo = {
-			"title": "Reference A",
-			"link": "https://example.com/reference_a",
+			"title": "Repeating Reference A",
+			"link": "https://example.com/repeating_reference_a",
 			"author": {
 				"groupName": "A",
 				"link": "https://example.com/a"
@@ -72,11 +72,11 @@ describe("Primary heading behavior", () => {
 			}
 		}
 
-		referenceInfo.update(otherInfos => [ ...otherInfos, referenceA ])
-		referenceInfo.update(otherInfos => [ ...otherInfos, referenceB ])
-		referenceInfo.update(otherInfos => [ ...otherInfos, referenceA ])
+		appendReference(referenceA)
+		appendReference(referenceB)
+		appendReference(referenceA)
 
-		expect(get(referenceInfo)).toStrictEqual([
+		expect(get(referenceInfos)).toStrictEqual([
 			referenceA,
 			referenceB
 		])
