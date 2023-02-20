@@ -22,6 +22,7 @@ type ReferenceLinkCategory =
 export interface ReferenceInfo extends LinkedInfo {
 	title: string
 	linkCategory: ReferenceLinkCategory
+	itemtype: string
 	author: PersonInfo|GroupInfo
 	license: LicenseInfo
 }

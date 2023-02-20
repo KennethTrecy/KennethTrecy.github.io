@@ -17,6 +17,7 @@ describe("Primary heading behavior", () => {
 			"title": "Reference A",
 			"link": "https://example.com/reference_a",
 			"linkCategory": "outbound",
+			"itemtype": "https://schema.org/CreativeWork",
 			"author": {
 				"groupName": "A",
 				"link": "https://example.com/a"
@@ -30,6 +31,7 @@ describe("Primary heading behavior", () => {
 			"title": "Reference B",
 			"link": "https://example.com/reference_b",
 			"linkCategory": "outbound",
+			"itemtype": "https://schema.org/CreativeWork",
 			"author": {
 				"groupName": "B",
 				"link": "https://example.com/b"
@@ -58,6 +60,7 @@ describe("Primary heading behavior", () => {
 			"title": "Repeating Reference A",
 			"link": "https://example.com/repeating_reference_a",
 			"linkCategory": "outbound",
+			"itemtype": "https://schema.org/CreativeWork",
 			"author": {
 				"groupName": "A",
 				"link": "https://example.com/a"
@@ -71,6 +74,7 @@ describe("Primary heading behavior", () => {
 			"title": "Reference B",
 			"link": "https://example.com/reference_b",
 			"linkCategory": "outbound",
+			"itemtype": "https://schema.org/CreativeWork",
 			"author": {
 				"groupName": "B",
 				"link": "https://example.com/b"
