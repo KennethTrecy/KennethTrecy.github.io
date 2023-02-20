@@ -11,6 +11,8 @@ import { appendReference, referenceInfos } from "./reference_info_collection"
 
 describe("Primary heading behavior", () => {
 	it("can put mutiple references", () => {
+		referenceInfos.set([])
+
 		const referenceA: ReferenceInfo = {
 			"title": "Reference A",
 			"link": "https://example.com/reference_a",
@@ -43,10 +45,13 @@ describe("Primary heading behavior", () => {
 			referenceA,
 			referenceB
 		])
+
 		cleanup()
 	})
 
 	it("cannot put repeating references", () => {
+		referenceInfos.set([])
+
 		const referenceA: ReferenceInfo = {
 			"title": "Repeating Reference A",
 			"link": "https://example.com/repeating_reference_a",
@@ -80,6 +85,7 @@ describe("Primary heading behavior", () => {
 			referenceA,
 			referenceB
 		])
+
 		cleanup()
 	})
 })
