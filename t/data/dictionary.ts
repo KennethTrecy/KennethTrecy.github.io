@@ -4,7 +4,7 @@ export default [
 	"Trecy",
 	"Tretchi",
 
-	// Software names
+	// Software and scope names
 	"@tailwindcss",
 	"Chearmyp",
 	"daisyUI",
@@ -15,6 +15,7 @@ export default [
 	"SvelteKit",
 	"JAMstack",
 	"dotenv",
+	"@octokit",
 
 	// Tag names
 	"img"
