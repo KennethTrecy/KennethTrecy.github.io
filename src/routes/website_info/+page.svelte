@@ -83,6 +83,11 @@
 			"homepage": "https://github.com/saadeghi/theme-change#readme",
 			"licenseName": "MIT",
 			"licenseLink": "https://github.com/saadeghi/theme-change/blob/master/LICENSE"
+		}, {
+			"name": "@octokit/core",
+			"homepage": "https://github.com/octokit/core.js#readme",
+			"licenseName": "MIT",
+			"licenseLink": "https://github.com/octokit/core.js/blob/main/LICENSE"
 		}
 	]
 	const linkedThirdPartyPackages: ThirdPartyPackage[] = [
