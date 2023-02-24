@@ -141,6 +141,12 @@
 		</SimpleText>
 		<ExampleCode codeInfo={$loadedFileInfos[0]} beginLineIndex={4} endLineIndex={9}/>
 	</StructuredSection>
+	<StructuredSection id={grid.id}>
+		<SecondaryHeading headingInfo={grid}/>
+		<SimpleText>
+			Next method is to use CSS Grid Layout. It is newest among other method layout mechanism. However, <ExternalLink address="https://caniuse.com/css-grid">more than 96%</ExternalLink> users have browsers that can support it as of this writing.
+		</SimpleText>
+	</StructuredSection>
 </ArticlePost>
 
 <style lang="postcss">
