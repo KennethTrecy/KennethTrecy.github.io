@@ -136,6 +136,10 @@
 				Example of children positioned in the horizontal center and vertical center using flexible box layout.
 			</p>
 		</div>
+		<SimpleText>
+			Below is corresponding <abbr title="Cascading Style Sheets">CSS</abbr> code to center children using flexible box layout.
+		</SimpleText>
+		<ExampleCode codeInfo={$loadedFileInfos[0]} beginLineIndex={4} endLineIndex={9}/>
 	</StructuredSection>
 </ArticlePost>
 
