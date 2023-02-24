@@ -29,36 +29,36 @@ export const exactWidthDemo: MultimediaInfo = {
 	"description": "Image of the hero content if it has the same exact width like its parent.",
 	"responsiveLinks": [
 		{
-			"intrinsicWidth": 87,
+			"intrinsicWidth": 394,
 			"link": makeSharedMultimediaLink("1yvFgU4SS8cnTMMe5Q4RUkuvXd-ayHVUg")
 		}, {
-			"intrinsicWidth": 131,
+			"intrinsicWidth": 591,
 			"link": makeSharedMultimediaLink("1qZI43hUiVrODaVYTLNj5xkMPEl_vt8jn")
 		}, {
-			"intrinsicWidth": 175,
+			"intrinsicWidth": 788,
 			"link": makeSharedMultimediaLink("1tIb097vdkOs4qWVTtd1MKk7KDgHqk_ql")
 		}
 	],
 	"defaultLink": makeSharedMultimediaLink("1tIb097vdkOs4qWVTtd1MKk7KDgHqk_ql"),
-	"defaultHeight": 175,
-	"defaultWidth": 130
+	"defaultHeight": 585,
+	"defaultWidth": 788
 }
 
 export const largerWidthDemo: MultimediaInfo = {
 	"description": "Image of the hero content if it has the larger width than its parent.",
 	"responsiveLinks": [
 		{
-			"intrinsicWidth": 87,
+			"intrinsicWidth": 394,
 			"link": makeSharedMultimediaLink("1HQujFn_bLoEO5TOTJeNbmLNV5rn-xPDc")
 		}, {
-			"intrinsicWidth": 131,
+			"intrinsicWidth": 591,
 			"link": makeSharedMultimediaLink("1NarukIAVkWH9YJssZZQljEUkuq30-iAh")
 		}, {
-			"intrinsicWidth": 175,
+			"intrinsicWidth": 788,
 			"link": makeSharedMultimediaLink("17cH2pGqM7fGWcydbNGI2pLzwcVuUPTo6")
 		}
 	],
 	"defaultLink": makeSharedMultimediaLink("17cH2pGqM7fGWcydbNGI2pLzwcVuUPTo6"),
-	"defaultHeight": 175,
-	"defaultWidth": 135
+	"defaultHeight": 607,
+	"defaultWidth": 788
 }
