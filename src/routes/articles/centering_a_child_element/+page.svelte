@@ -55,8 +55,7 @@
 	<StructuredSection id={classical.id}>
 		<SecondaryHeading headingInfo={classical}/>
 		<SimpleText>
-			The classical way to center an element is through the use of margins of the child element. There are many variations for this technique. A developer in the past can conveniently use this technique in conjunction with the previous versions of CSS frameworks. Utilizing the 12-column layout, a developer would the following steps below to determine the margin the child element would take.
-			<!-- TODO: Find a URL for previous version of CSS framework and 12 column layout -->
+			The classical way to center an element is through the <Keyword>use of margins</Keyword> of the child element. There are many variations for this technique. A developer in the past can conveniently use this technique in conjunction with the previous versions of CSS frameworks. Utilizing the <ExternalLink address="https://getbootstrap.com/docs/3.4/css/#grid">12-column grid system</ExternalLink>, a developer would the following steps below to determine the margin the child element would take.
 		</SimpleText>
 		<StructuredList order="ascending">
 			<StructuredListItem>
@@ -69,7 +68,7 @@
 				Divide the difference from step 2 because the unused space would distributed both horizontal sides of the child element.
 			</StructuredListItem>
 			<StructuredListItem>
-				Depending on the CSS framework, the developer may <em>push</em> the element by a certain number of column based on quotient in step 3. Otherwise, the quotient would be divided by 12 then multiplied to 100 to get the percentage of left margin.
+				Depending on the CSS framework, the developer may <ExternalLink address="https://getbootstrap.com/docs/3.4/css/#grid-offsetting">offset</ExternalLink> the element by a certain number of column based on quotient in step 3. Otherwise, the quotient would be divided by 12 then multiplied to 100 to get the percentage of left margin.
 			</StructuredListItem>
 		</StructuredList>
 		<SimpleText>
