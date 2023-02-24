@@ -141,7 +141,9 @@
 
 <style lang="postcss">
 	.parent {
-		@apply bg-green-900 w-3/4 h-48 mx-[12.5%];
+		@apply bg-green-900 h-48;
+		width: calc(5 / 8 * 100%);
+		margin: 0 calc(3 / 16 * 100%);
 	}
 
 	.child {
