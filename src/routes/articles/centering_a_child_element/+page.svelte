@@ -65,7 +65,7 @@
 			Below is an example positioning the child element in the center using the classical technique programmed in vanilla <abbr title="Cascading Style Sheets">CSS</abbr>.
 		</SimpleText>
 		<div itemprop="workExample" itemscope itemtype="https://schema.org/CreativeWork">
-			<div class="mockup-window border border-secondary bg-base-200">
+			<div class="classical mockup-window border border-secondary bg-base-200">
 				<div class="w-full border-t border-secondary bg-base-100 py-4">
 					<div class="parent">
 						<div class="child">
@@ -117,12 +117,15 @@
 			Usually, the <code>flex-direction: row;</code> sets the x-axis as the main axis and y-axis as the cross axis. If <code>flex-direction: column;</code> has been used, the y-axis axis would be the main axis and x-axis would be the cross axis.
 		</SimpleText>
 		<SimpleText>
-			Below is an example positioning the child element in the center (in both horizontal and vertical manner) using the flexible box layout programmed in vanilla <abbr title="Cascading Style Sheets">CSS</abbr>.
+			Below is an example positioning the child element in the center (in both horizontal and vertical manner) using the flexible box layout programmed in vanilla <abbr title="Cascading Style Sheets">CSS</abbr>. Note that there is a margin between the the two children to distinguish them.
 		</SimpleText>
 		<div itemprop="workExample" itemscope itemtype="https://schema.org/CreativeWork">
-			<div class="mockup-window border border-secondary bg-base-200">
+			<div class="flexible mockup-window border border-secondary bg-base-200">
 				<div class="w-full border-t border-secondary bg-base-100 py-4">
 					<div class="parent">
+						<div class="child">
+
+						</div>
 						<div class="child">
 
 						</div>
@@ -145,8 +148,21 @@
 		@apply bg-green-400 h-24;
 	}
 
-	.child {
+	.classical .child {
 		width: calc(4 / 12 * 100%);
 		margin-left: calc(((12 - 4) / 2) / 12 * 100%)
+	}
+
+	.flexible .parent {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.flexible .child {
+		width: calc(1 / 3 * 100%);
+		margin: 0.1em;
 	}
 </style>
