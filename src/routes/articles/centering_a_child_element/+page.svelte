@@ -237,6 +237,24 @@
 				Expected width would be <var>w<sub>r</sub></var> × 150 pixels = 240 pixels. On the other hand, the expected left margin would be <var>w<sub>r</sub></var> × 150 pixels = 45 pixels.
 			</StructuredListItem>
 		</StructuredList>
+		<SimpleText>
+			Below is a live demonstration of the unorthodox way along with its <abbr title="Cascading Style Sheets">CSS</abbr> code.
+		</SimpleText>
+		<div itemprop="workExample" itemscope itemtype="https://schema.org/CreativeWork">
+			<div class="unorthodox mockup-window border border-secondary bg-base-200">
+				<div class="w-full border-t border-secondary bg-base-100 py-4">
+					<div class="parent">
+						<div class="child">
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<p itemprop="text" class="text-center text-sm">
+				Example of child positioned in the horizontal center only using negative left margin.
+			</p>
+		</div>
+		<ExampleCode codeInfo={$loadedFileInfos[0]} beginLineIndex={4} endLineIndex={9}/>
 	</StructuredSection>
 </ArticlePost>
 
@@ -280,5 +298,10 @@
 		grid-row-end: 3;
 		grid-column-start: 2;
 		grid-column-end: 3;
+	}
+
+	.unorthodox .child {
+		width: 140%;
+		margin-left: -20%;
 	}
 </style>
