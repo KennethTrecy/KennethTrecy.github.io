@@ -58,7 +58,7 @@
 				2. On large screens, resize the self's width to 125% of the own width.
 				3. To center the contents, self's horizontal margin size should be -25% of the own
 					original width.
-				4. Therefore, target left margin size of self on large screens is -25% / 2 = 12.5%.
+				4. Therefore, target left margin size of self on large screens is -25% / 2 = -12.5%.
 			 -->
 			<div class="hero-content flex flex-col xl:flex-row">
 				<img

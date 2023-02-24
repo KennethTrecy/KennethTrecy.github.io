@@ -214,7 +214,7 @@
 				Let <var>w<sub>r</sub></var> be the resized width of self. The formula is <var>w<sub>o</sub></var> + <var>w<sub>a</sub></var>.
 			</StructuredListItem>
 			<StructuredListItem>
-				Let <var>m<sub>l</sub></var> be the left margin of resized self expressed in percentage. The left margin should be equal to <var>w<sub>a</sub></var> ÷ 2.
+				Let <var>m<sub>l</sub></var> be the left margin of resized self expressed in percentage. The left margin should be equal to -<var>w<sub>a</sub></var> ÷ 2.
 			</StructuredListItem>
 		</StructuredList>
 		<SimpleText>
@@ -231,10 +231,10 @@
 				Let <var>w<sub>r</sub></var> = <var>w<sub>o</sub></var> + <var>w<sub>a</sub></var> = 100% + 60% = 160%.
 			</StructuredListItem>
 			<StructuredListItem>
-				Let <var>m<sub>l</sub></var> = <var>w<sub>a</sub></var> ÷ <var>w<sub>r</sub></var> = 60% ÷ 2 = 30%.
+				Let <var>m<sub>l</sub></var> = -<var>w<sub>a</sub></var> ÷ 2 = -60% ÷ 2 = -30%.
 			</StructuredListItem>
 			<StructuredListItem>
-				Expected width would be <var>w<sub>r</sub></var> × 150 pixels = 240 pixels. On the other hand, the expected left margin would be <var>w<sub>r</sub></var> × 150 pixels = 45 pixels.
+				Expected width would be <var>w<sub>r</sub></var> × 150 pixels = 240 pixels. On the other hand, the expected left margin would be <var>m<sub>l</sub></var> × 150 pixels = -45 pixels.
 			</StructuredListItem>
 		</StructuredList>
 		<SimpleText>
