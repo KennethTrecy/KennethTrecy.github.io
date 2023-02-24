@@ -117,7 +117,7 @@
 			Usually, the <code>flex-direction: row;</code> sets the x-axis as the main axis and y-axis as the cross axis. If <code>flex-direction: column;</code> has been used, the y-axis axis would be the main axis and x-axis would be the cross axis.
 		</SimpleText>
 		<SimpleText>
-			Below is an example positioning the child element in the center (in both horizontal and vertical manner) using the flexible box layout programmed in vanilla <abbr title="Cascading Style Sheets">CSS</abbr>. Note that there is a margin between the the two children to distinguish them.
+			Below is an example positioning the child elements in the center (in both horizontal and vertical manner) using the flexible box layout programmed in vanilla <abbr title="Cascading Style Sheets">CSS</abbr>. Note that there is a margin between the the two children to distinguish them.
 		</SimpleText>
 		<div itemprop="workExample" itemscope itemtype="https://schema.org/CreativeWork">
 			<div class="flexible mockup-window border border-secondary bg-base-200">
@@ -137,7 +137,7 @@
 			</p>
 		</div>
 		<SimpleText>
-			Below is corresponding <abbr title="Cascading Style Sheets">CSS</abbr> code to center children using flexible box layout.
+			Below is corresponding <abbr title="Cascading Style Sheets">CSS</abbr> code to center the children using flexible box layout.
 		</SimpleText>
 		<ExampleCode codeInfo={$loadedFileInfos[0]} beginLineIndex={4} endLineIndex={9}/>
 	</StructuredSection>
@@ -146,6 +146,27 @@
 		<SimpleText>
 			Next method is to use CSS Grid Layout. It is newest among other method layout mechanism. However, <ExternalLink address="https://caniuse.com/css-grid">more than 96%</ExternalLink> users have browsers that can support it as of this writing.
 		</SimpleText>
+		<SimpleText>
+			Below is an example positioning the child element in the center (in both horizontal and vertical manner) using the grid layout programmed in vanilla <abbr title="Cascading Style Sheets">CSS</abbr>.
+		</SimpleText>
+		<div itemprop="workExample" itemscope itemtype="https://schema.org/CreativeWork">
+			<div class="grid-based mockup-window border border-secondary bg-base-200">
+				<div class="w-full border-t border-secondary bg-base-100 py-4">
+					<div class="parent">
+						<div class="child">
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<p itemprop="text" class="text-center text-sm">
+				Example of child positioned in the horizontal center and vertical center using grid layout.
+			</p>
+		</div>
+		<SimpleText>
+			Below is corresponding <abbr title="Cascading Style Sheets">CSS</abbr> code to center the child using grid box layout.
+		</SimpleText>
+		<ExampleCode codeInfo={$loadedFileInfos[0]} beginLineIndex={4} endLineIndex={9}/>
 	</StructuredSection>
 </ArticlePost>
 
@@ -176,5 +197,18 @@
 	.flexible .child {
 		width: calc(1 / 3 * 100%);
 		margin: 0.1em;
+	}
+
+	.grid-based .parent {
+		display: grid;
+		grid-template-rows: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	.grid-based .child {
+		grid-row-start: 2;
+		grid-row-end: 3;
+		grid-column-start: 2;
+		grid-column-end: 3;
 	}
 </style>
