@@ -38,6 +38,7 @@
 	const unorthodox = defineHeadingInfo({ "text": "The Unorthodox Way" })
 
 	const exactWidthDemoSourceSet = makeSet(exactWidthDemo.responsiveLinks)
+	const largerWidthDemoSourceSet = makeSet(largerWidthDemo.responsiveLinks)
 </script>
 
 <ArticlePost {pageMeta}>
@@ -218,7 +219,18 @@
 			</StructuredListItem>
 		</StructuredList>
 		<SimpleText>
-			For instance, a developer want to add another 60% of the current width. The solution can be seen below. The current width of self is 150 pixels.
+			Below is a snapshot of home page using the unorthodox way. The <var>w<sub>r</sub></var> is 125% and the <var>m<sub>l</sub></var> is 12.5%.
+		</SimpleText>
+		<img
+			itemprop="image"
+			src={largerWidthDemo.defaultLink}
+			srcset={largerWidthDemoSourceSet}
+			width={largerWidthDemo.defaultWidth}
+			height={largerWidthDemo.defaultHeight}
+			alt={largerWidthDemo.description}
+			class="w-full h-auto bg-primary"/>
+		<SimpleText>
+			To give another example, consider that a developer want to add another 60% of the current width. The solution can be seen below. The current width of self is 150 pixels.
 		</SimpleText>
 		<StructuredList order="ascending" itemprop="workExample">
 			<StructuredListItem>
