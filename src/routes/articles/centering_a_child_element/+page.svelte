@@ -8,7 +8,12 @@
 
 	import { internalTypes } from "@/components/general/links/constants"
 	import pageMeta from "@/routes/articles/centering_a_child_element/meta"
+	import {
+		exactWidthDemo,
+		largerWidthDemo
+	} from "@/routes/articles/centering_a_child_element/shared_constants"
 
+	import makeSet from "@/utilities/resource/make_set"
 	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 
 	import BaseLink from "@/components/general/links/base.svelte"
@@ -31,6 +36,8 @@
 	const flexbox = defineHeadingInfo({ "text": "Using Flexible Box Layout" })
 	const grid = defineHeadingInfo({ "text": "Using Grid Layout" })
 	const unorthodox = defineHeadingInfo({ "text": "The Unorthodox Way" })
+
+	const exactWidthDemoSourceSet = makeSet(exactWidthDemo.responsiveLinks)
 </script>
 
 <ArticlePost {pageMeta}>
@@ -181,6 +188,14 @@
 		<SimpleText>
 			If the target box is limited to the full width of the parent in large screens, the text takes vertical space instead.
 		</SimpleText>
+		<img
+			itemprop="image"
+			src={exactWidthDemo.defaultLink}
+			srcset={exactWidthDemoSourceSet}
+			width={exactWidthDemo.defaultWidth}
+			height={exactWidthDemo.defaultHeight}
+			alt={exactWidthDemo.description}
+			class="w-full h-auto bg-primary"/>
 	</StructuredSection>
 </ArticlePost>
 
