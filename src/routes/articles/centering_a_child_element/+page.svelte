@@ -186,7 +186,7 @@
 				itemprop="exampleOfWork">this website's home page</BaseLink>. The home page requires the text container to 65 characters at most. However, there is a box that requires to be greater than its parent.
 		</SimpleText>
 		<SimpleText>
-			If the target box is limited to the full width of the parent in large screens, the text takes vertical space instead.
+			If the target box is limited to the full width of the parent in large screens, the text takes vertical space instead. See the image below.
 		</SimpleText>
 		<img
 			itemprop="image"
@@ -196,6 +196,27 @@
 			height={exactWidthDemo.defaultHeight}
 			alt={exactWidthDemo.description}
 			class="w-full h-auto bg-primary"/>
+		<SimpleText>
+			To increase the width of the target box, target box should use negative margins to balance.
+			This gives an illusion that the target box is in the center of the parent despite that the child's width is bigger than parent's width. The following steps have been generalized to do the <Keyword>unorthdox way</Keyword>. Note that the instructions were based from comment in the source code of the home page.
+		</SimpleText>
+		<StructuredList order="ascending">
+			<StructuredListItem>
+				Let <em>self</em> be the target box.
+			</StructuredListItem>
+			<StructuredListItem>
+				Let <var>w<sub>o</sub></var> be the original width of self expressed in percentage. Therefore, it is 100%.
+			</StructuredListItem>
+			<StructuredListItem>
+				Let <var>w<sub>a</sub></var> be the width to be added to self expressed in percentage.
+			</StructuredListItem>
+			<StructuredListItem>
+				Let <var>w<sub>r</sub></var> be the resized width of self. The formula is <var>w<sub>o</sub></var> + <var>w<sub>a</sub></var>.
+			</StructuredListItem>
+			<StructuredListItem>
+				Let <var>m<sub>l</sub></var> be the left margin of resized self expressed in percentage. The left margin should be equal to <var>w<sub>a</sub></var> / <var>w<sub>r</sub></var>.
+			</StructuredListItem>
+		</StructuredList>
 	</StructuredSection>
 </ArticlePost>
 
