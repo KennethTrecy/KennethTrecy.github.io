@@ -51,18 +51,14 @@
 			itemprop="mainEntity"
 			itemscope
 			itemtype="https://schema.org/Person"
-			class="hero lg:w-[125%] lg:ml-[-20%]">
+			class="hero lg:w-[125%] lg:ml-[-12.5%]">
 			<!--
 				To calculate left margin of hero component, the following method was done:
 				1. Let `self` be the current component
 				2. On large screens, resize the self's width to 125% of the own width.
-				3. To center the contents, self's left margin size should be -25% of the own original
-					width.
-				4. Let 100 units be the original width of the self.
-				5. The width of self on large screens is 100 units × 125% = 125 units.
-				6. The target left margin size of self is 100 units × -25% = -25 units.
-				7. Therefore, target margin size of self on large screens is -25 units / 125 units =
-					20%.
+				3. To center the contents, self's horizontal margin size should be -25% of the own
+					original width.
+				4. Therefore, target left margin size of self on large screens is -25% / 2 = 12.5%.
 			 -->
 			<div class="hero-content flex flex-col xl:flex-row">
 				<img
