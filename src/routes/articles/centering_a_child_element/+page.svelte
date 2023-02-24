@@ -36,6 +36,7 @@
 	const flexbox = defineHeadingInfo({ "text": "Using Flexible Box Layout" })
 	const grid = defineHeadingInfo({ "text": "Using Grid Layout" })
 	const unorthodox = defineHeadingInfo({ "text": "The Unorthodox Way" })
+	const takeaways = defineHeadingInfo({ "text": "Takeaways" })
 
 	const exactWidthDemoSourceSet = makeSet(exactWidthDemo.responsiveLinks)
 	const largerWidthDemoSourceSet = makeSet(largerWidthDemo.responsiveLinks)
@@ -267,6 +268,15 @@
 			</p>
 		</div>
 		<ExampleCode codeInfo={$loadedFileInfos[0]} beginLineIndex={4} endLineIndex={9}/>
+	</StructuredSection>
+	<StructuredSection id={takeaways.id}>
+		<SecondaryHeading headingInfo={takeaways}/>
+		<SimpleText itemprop="about">
+			Despite that there are different methods to center an element, each has benefits and limitations. Centering based on 12-column layout may be too limited or rigid. Using <code>display: flex;</code> or <code>display: grid;</code>, can center an child element as long as it is smaller than the parent yet not for bigger child. Meanwhile, using negative margins is only applicable bigger child element and not for smaller child element.
+		</SimpleText>
+		<SimpleText>
+			Usage of these techniques may depend on the programmer's style, requirements of the system being built, or supported browsers. There is no best solution at every scenario when it comes to centering child elements. There are also techniques not mentioned in this article such as using <code>position</code> property and others. It is left for the readers to study the other techniques.
+		</SimpleText>
 	</StructuredSection>
 </ArticlePost>
 
