@@ -6,10 +6,12 @@
 	import type { HeadingInfo } from "@/types/container_info"
 	import type { PageData } from "@/routes/articles/centering_a_child_element/$types"
 
+	import { internalTypes } from "@/components/general/links/constants"
 	import pageMeta from "@/routes/articles/centering_a_child_element/meta"
 
 	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 
+	import BaseLink from "@/components/general/links/base.svelte"
 	import Bookmark from "@/components/general/links/bookmark.svelte"
 	import Keyword from "@/components/general/containers/keyword.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
@@ -167,6 +169,18 @@
 			Below is corresponding <abbr title="Cascading Style Sheets">CSS</abbr> code to center the child using grid box layout.
 		</SimpleText>
 		<ExampleCode codeInfo={$loadedFileInfos[0]} beginLineIndex={4} endLineIndex={9}/>
+	</StructuredSection>
+	<StructuredSection id={unorthodox.id}>
+		<SecondaryHeading headingInfo={unorthodox}/>
+		<SimpleText>
+			The scenarios above are only applicable if the child element is smaller than its parent. However, there is a special case where in a child requires to be bigger than its parent. As a demonstration, the special case can be seen in <BaseLink
+				address="https://kennethtrecy.pages.dev"
+				relationship={internalTypes}
+				itemprop="exampleOfWork">this website's home page</BaseLink>. The home page requires the text container to 65 characters at most. However, there is a box that requires to be greater than its parent.
+		</SimpleText>
+		<SimpleText>
+			If the target box is limited to the full width of the parent in large screens, the text takes vertical space instead.
+		</SimpleText>
 	</StructuredSection>
 </ArticlePost>
 
