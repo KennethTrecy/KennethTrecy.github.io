@@ -11,7 +11,7 @@
 		? BaseLink
 		: ExternalLink
 	$: isAuthoredByPerson = typeof info.author.givenName !== "undefined"
-	$: licenseCount = typeof info.license !== "undefined"
+	$: licenseCount = typeof info.license === "undefined"
 		? 0
 		: Array.isArray(info.license)
 			? info.license.length
