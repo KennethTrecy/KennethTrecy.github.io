@@ -9,6 +9,7 @@
 
 	import { internalTypes } from "@/components/general/links/constants"
 	import pageMeta from "@/routes/articles/centering_a_child_element/meta"
+	import indexPageMeta from "@/routes/meta"
 	import {
 		exactWidthDemo,
 		largerWidthDemo
@@ -143,6 +144,13 @@
 				"name": "CC BY 4.0",
 				"link": "https://github.com/Fyrd/caniuse/blob/main/LICENSE"
 			}
+		}, {
+			"title": indexPageMeta.title,
+			"link": indexPageMeta.pageURL,
+			"itemtype": "https://schema.org/SoftwareApplication",
+			"linkCategory": "inbound",
+			"author": indexPageMeta.authors[0],
+			"license": indexPageMeta.license
 		}
 	]
 </script>
@@ -282,10 +290,9 @@
 	<StructuredSection id={unorthodox.id}>
 		<SecondaryHeading headingInfo={unorthodox}/>
 		<SimpleText>
-			The scenarios above are only applicable if the child element is smaller than its parent. However, there is a special case where in a child requires to be bigger than its parent. As a demonstration, the special case can be seen in <BaseLink
-				address="https://kennethtrecy.pages.dev"
-				relationship={internalTypes}
-				itemprop="exampleOfWork">this website's home page</BaseLink>. The home page requires the text container to 65 characters at most. However, there is a box that requires to be greater than its parent.
+			The scenarios above are only applicable if the child element is smaller than its parent. However, there is a special case where in a child requires to be bigger than its parent. As a demonstration, the special case can be seen in <Citation
+				info={references[8]}
+				itemprop="exampleOfWork">this website's home page</Citation>. The home page requires the text container to 65 characters at most. However, there is a box that requires to be greater than its parent.
 		</SimpleText>
 		<SimpleText>
 			If the target box is limited to the full width of the parent in large screens, the text takes vertical space instead. See the image below.
