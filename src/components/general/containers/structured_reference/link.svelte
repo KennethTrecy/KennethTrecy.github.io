@@ -54,7 +54,7 @@
 					</BoundLink>
 				{:else}
 					<BoundLink address={licenseInfo.link} itemprop="license">
-						{licenseInfo.name}</BoundLink>,
+						{licenseInfo.name}</BoundLink>{#if info.license.length === 2}&nbsp;{:else}, {/if}
 				{/if}
 			{/each}
 		{/if}
