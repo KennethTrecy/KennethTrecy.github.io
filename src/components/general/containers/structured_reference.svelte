@@ -15,9 +15,9 @@
 </script>
 
 <StructuredSection id={references.id}>
-	<SecondaryHeading headingInfo={references}>
+	<SecondaryHeading headingInfo={references}/>
 	<StructuredList order="ascending">
-		{#each $referenceInfos as referenceInfo}
+		{#each $referenceInfos as info}
 			<StructuredListItem>
 				<ReferenceLink {info}/>
 			</StructuredListItem>

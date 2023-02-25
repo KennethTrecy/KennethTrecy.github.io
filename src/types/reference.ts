@@ -24,5 +24,5 @@ export interface ReferenceInfo extends LinkedInfo {
 	linkCategory: ReferenceLinkCategory
 	itemtype: string
 	author: PersonInfo|GroupInfo
-	license: LicenseInfo
+	license?: LicenseInfo
 }
