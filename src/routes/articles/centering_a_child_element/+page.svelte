@@ -129,6 +129,20 @@
 				"link": "https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction/contributors.txt"
 			},
 			"license": CC_BY_SA_LICENSE
+		}, {
+			"title": "CSS Grid Layout (level 1) | Can I use... Support tables for HTML5, CSS3, etc",
+			"link": "https://caniuse.com/css-grid",
+			"itemtype": "https://schema.org/SoftwareApplication",
+			"linkCategory": "outbound",
+			"author": {
+				"givenName": "Alexis",
+				"familyName": "Deveria",
+				"link": "https://github.com/Fyrd"
+			},
+			"license": {
+				"name": "CC BY 4.0",
+				"link": "https://github.com/Fyrd/caniuse/blob/main/LICENSE"
+			}
 		}
 	]
 </script>
@@ -241,7 +255,7 @@
 	<StructuredSection id={grid.id}>
 		<SecondaryHeading headingInfo={grid}/>
 		<SimpleText>
-			Next method is to use CSS Grid Layout. It is newest among other method layout mechanism. However, <ExternalLink address="https://caniuse.com/css-grid">more than 96%</ExternalLink> users have browsers that can support it as of this writing.
+			Next method is to use CSS Grid Layout. It is newest among other method layout mechanism. However, <Citation info={references[7]}>more than 96%</Citation> users have browsers that can support it as of this writing, based from <ExternalLink address="https://caniuse.com">caniuse.com</ExternalLink>.
 		</SimpleText>
 		<SimpleText>
 			Below is an example positioning the child element in the center (in both horizontal and vertical manner) using the grid layout programmed in vanilla <abbr title="Cascading Style Sheets">CSS</abbr>.
