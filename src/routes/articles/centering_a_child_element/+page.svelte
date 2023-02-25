@@ -3,7 +3,7 @@
 	import { page } from "$app/stores"
 	import { derived } from "svelte/store"
 
-	import type { ReferenceInfo } from "@/types/reference"
+	import type { ReferenceInfo, LicnseInfo } from "@/types/reference"
 	import type { HeadingInfo } from "@/types/container_info"
 	import type { PageData } from "@/routes/articles/centering_a_child_element/$types"
 
@@ -45,7 +45,7 @@
 	const largerWidthDemoSourceSet = makeSet(largerWidthDemo.responsiveLinks)
 
 	const bootstrapCSSInfo: Partial<ReferenceInfo> = {
-		"itemtype": "https://schema.org/SoftwareApplication",
+		"itemtype": "https://schema.org/APIReference",
 		"linkCategory": "outbound",
 		"author": {
 			"groupName": "Twitter, Inc.",
@@ -55,6 +55,11 @@
 			"name": "CC BY 3.0",
 			"link": "https://creativecommons.org/licenses/by/3.0/"
 		}
+	}
+	const MDNContributors = "Mozilla Contributors"
+	const CC_BY_SA_LICENSE: LicnseInfo = {
+		"name": "CC-BY-SA v2.5",
+		"link": "https://creativecommons.org/licenses/by-sa/2.5/"
 	}
 	const references: ReferenceInfo[] = [
 		{
@@ -84,6 +89,46 @@
 					"link": "https://cran.r-project.org/web/packages/imola/LICENSE"
 				}
 			]
+		}, {
+			"title": "display",
+			"link": "https://developer.mozilla.org/en-US/docs/Web/CSS/display",
+			"itemtype": "https://schema.org/APIReference",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": MDNContributors,
+				"link": "https://developer.mozilla.org/en-US/docs/Web/CSS/display/contributors.txt"
+			},
+			"license": CC_BY_SA_LICENSE
+		}, {
+			"title": "justify-content",
+			"link": "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content",
+			"itemtype": "https://schema.org/APIReference",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": MDNContributors,
+				"link": "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content/contributors.txt"
+			},
+			"license": CC_BY_SA_LICENSE
+		}, {
+			"title": "align-items",
+			"link": "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items",
+			"itemtype": "https://schema.org/APIReference",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": MDNContributors,
+				"link": "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items/contributors.txt"
+			},
+			"license": CC_BY_SA_LICENSE
+		}, {
+			"title": "flex-direction",
+			"link": "https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction",
+			"itemtype": "https://schema.org/APIReference",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": MDNContributors,
+				"link": "https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction/contributors.txt"
+			},
+			"license": CC_BY_SA_LICENSE
 		}
 	]
 </script>
@@ -142,7 +187,7 @@
 	<StructuredSection id={flexbox.id}>
 		<SecondaryHeading headingInfo={flexbox}/>
 		<SimpleText>
-			Another method is through the use of flexible box layut which was introduced
+			Another method is through the use of flexible box layout which was introduced
 			<Citation info={references[2]}>around 2012</Citation>. It allows web developer to layout conveniently and responsively as the elements would automatically resize while adhering to the specified properties.
 		</SimpleText>
 		<SimpleText>
@@ -153,20 +198,16 @@
 		</SimpleText>
 		<StructuredList order="ascending">
 			<StructuredListItem>
-				Set <code>display: flex;</code> on the parent.
-				<!-- TODO: Reference the documentation -->
+				Set <Citation info={references[3]}><code>display: flex;</code></Citation> on the parent.
 			</StructuredListItem>
 			<StructuredListItem>
-				Set <code>justify-content: center;</code> on the parent. This indicates to center the children with respect to main axis.
-				<!-- TODO: Reference the documentation -->
+				Set <code>justify-content: center;</code> on the parent. This <Citation info={references[4]}>indicates to center the children with respect to main axis</Citation>.
 			</StructuredListItem>
 			<StructuredListItem>
-				Set <code>align-items: center;</code> on the parent. This indicates to center the children with respect to cross axis.
-				<!-- TODO: Reference the documentation -->
+				Set <code>align-items: center;</code> on the parent. This <Citation info={references[5]}>indicates to center the children with respect to cross axis</Citation>.
 			</StructuredListItem>
 			<StructuredListItem>
-				Optionally, set <code>flex-direction: row;</code> on the parent if there are multiple children to be layout horizontally and direction matters. If the children should be in vertical manner, use <code>flex-direction: column;</code> instead.
-				<!-- TODO: Reference the documentation -->
+				Optionally, set <Citation info={references[6]}><code>flex-direction: row;</code></Citation> on the parent if there are multiple children to be layout horizontally and direction matters. If the children should be in vertical manner, use <Citation info={references[6]}><code>flex-direction: column;</code></Citation> instead.
 			</StructuredListItem>
 		</StructuredList>
 		<SimpleText>
