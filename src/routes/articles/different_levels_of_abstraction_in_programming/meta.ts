@@ -13,7 +13,7 @@ const meta = defineArticlePageMeta("/articles/different_levels_of_abstraction_in
 		"programming"
 	],
 	"title": "Different Levels of Abstraction in Programming",
-	"version": "2.0"
+	"version": "2.001-dev"
 })
 
 export default meta
