@@ -31,7 +31,6 @@
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
-	import StructuredReference from "@/components/general/containers/structured_reference.svelte"
 
 	const loadedFileInfos = derived(page, resolvedPage => resolvedPage.data.loadedFileInfos ?? [])
 
@@ -393,7 +392,6 @@
 			Usage of these techniques may depend on the programmer's style, requirements of the system being built, or supported browsers. There is no best solution at every scenario when it comes to centering child elements. There are also techniques not mentioned in this article such as using <Citation info={references[9]}><code>position</code> property</Citation> and others. It is left for the readers to study the other techniques.
 		</SimpleText>
 	</StructuredSection>
-	<StructuredReference/>
 </ArticlePost>
 
 <style lang="postcss">

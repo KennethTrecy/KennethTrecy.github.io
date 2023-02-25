@@ -27,7 +27,6 @@
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
-	import StructuredReference from "@/components/general/containers/structured_reference.svelte"
 
 	const loadedFileInfos = derived(page, resolvedPage => resolvedPage.data.loadedFileInfos ?? [])
 
@@ -376,5 +375,4 @@
 			That said, the levels in this article allows programmers determine the complexity of a code. They are just one of the tools in order to communicate with other developers efficiently.
 		</SimpleText>
 	</StructuredSection>
-	<StructuredReference/>
 </ArticlePost>
