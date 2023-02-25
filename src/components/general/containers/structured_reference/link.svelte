@@ -10,7 +10,7 @@
 	$: titleLinkComponent = info.category === "inbound"
 		? BaseLink
 		: ExternalLink
-	$: isAuthoredByPerson = typeof info.author.givenName !== undefined
+	$: isAuthoredByPerson = typeof info.author.givenName !== "undefined"
 	$: hasLicense = typeof info.license !== "undefined"
 </script>
 
