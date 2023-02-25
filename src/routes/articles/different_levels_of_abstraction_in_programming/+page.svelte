@@ -98,10 +98,34 @@
 				"givenName": "Paul",
 				"familyName": "McWhorter",
 				"link": "https://www.patreon.com/PaulMcWhorter"
+			}
+		}, {
+			"title": "PHP: Class Abstraction - Manual",
+			"link": "https://www.php.net/manual/en/language.oop5.abstract.php",
+			"itemtype": "https://schema.org/CreativeWork",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "PHP Documentation Group",
+				"link": "https://www.php.net/manual/en/preface.php#contributors"
 			},
 			"license": {
-				"name": "",
-				"link": ""
+				"link": "https://www.php.net/manual/en/cc.license.php",
+				"name": "CC BY 3.0"
+			}
+		}, {
+			"title": "Templates - cppreference.com",
+			"link": "https://en.cppreference.com/w/cpp/language/templates",
+			"itemtype": "https://schema.org/CreativeWork",
+			"linkCategory": "outbound",
+			"author": {
+				// The group name was based on question "Who is behind this site?" in FAQs.
+				// See: https://en.cppreference.com/w/Cppreference:FAQ
+				"groupName": "C++ enthusiasts worldwide",
+				"link": "https://en.cppreference.com/mwiki/index.php?title=cpp/language/templates&action=history"
+			},
+			"license": {
+				"link": "https://en.cppreference.com/w/Cppreference:Copyright/CC-BY-SA",
+				"name": "CC BY-SA 3.0"
 			}
 		}
 	]
@@ -240,7 +264,7 @@
 	<StructuredSection id={levels[5].id}>
 		<SecondaryHeading headingInfo={levels[5]}/>
 		<SimpleText itemprop="description">
-			<strong itemprop="mainEntity">Hardest level of abstraction that someone could work on.</strong> It can be in a form of <ExternalLink address="https://www.php.net/manual/en/language.oop5.abstract.php">abstract classes</ExternalLink>, <ExternalLink address="https://en.cppreference.com/w/cpp/language/templates">templates</ExternalLink>, <ExternalLink address="https://doc.rust-lang.org/book/ch10-02-traits.html">traits</ExternalLink>, <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">generics</ExternalLink>, or <ExternalLink address="https://doc.rust-lang.org/reference/macros.html">macros</ExternalLink>.
+			<strong itemprop="mainEntity">Hardest level of abstraction that someone could work on.</strong> It can be in a form of <Citation info={references[2]}>abstract classes</Citation>, <Citation info={references[3]}>templates</Citation>, <ExternalLink address="https://doc.rust-lang.org/book/ch10-02-traits.html">traits</ExternalLink>, <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">generics</ExternalLink>, or <ExternalLink address="https://doc.rust-lang.org/reference/macros.html">macros</ExternalLink>.
 		</SimpleText>
 		<SimpleText>
 			If a generalized class or function has changed in identifiers, mechanism, or number of parameters, the developer has to change all codes that depend on the generalized class or function. It can be tedious process as the difficulty is relative to the number of changes applied on an interface-level code.
