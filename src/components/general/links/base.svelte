@@ -23,7 +23,7 @@
 		"link",
 		...otherClasses
 	].filter(Boolean).join(" ")
-	$: hasItemScope = typeof itemtype !== "undefined"
+	$: itemscope = typeof itemtype === "undefined" ? undefined : ""
 
 	function visitLink(event: KeyboardEvent): void {
 		if (event.key === "Enter") {
@@ -39,7 +39,7 @@
 	class={joinedClasses}
 	rel={relationshipTypes}
 	{target}
-	itemscope={hasItemScope}
+	{itemscope}
 	{itemtype}>
 	<slot></slot></a>{#if mayShowExternalIcon}<span
 	class="cursor-pointer"
