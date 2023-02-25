@@ -109,8 +109,8 @@
 				"link": "https://www.php.net/manual/en/preface.php#contributors"
 			},
 			"license": {
-				"link": "https://www.php.net/manual/en/cc.license.php",
-				"name": "CC BY 3.0"
+				"name": "CC BY 3.0",
+				"link": "https://www.php.net/manual/en/cc.license.php"
 			}
 		}, {
 			"title": "Templates - cppreference.com",
@@ -123,10 +123,64 @@
 				"groupName": "C++ enthusiasts worldwide",
 				"link": "https://en.cppreference.com/mwiki/index.php?title=cpp/language/templates&action=history"
 			},
+			"license": [
+				{
+					"name": "CC BY-SA 3.0",
+					"link": "https://en.cppreference.com/w/Cppreference:Copyright/CC-BY-SA"
+				}, {
+					"name": "GDFL",
+					"link": "https://en.cppreference.com/w/Cppreference:Copyright/GDFL"
+				}
+			]
+		}, {
+			"title": "Traits: Defining Shared Behavior - The Rust Programming Language",
+			"link": "https://doc.rust-lang.org/book/ch10-02-traits.html",
+			"itemtype": "https://schema.org/CreativeWork",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "The Rust Project Developers",
+				"link": "https://github.com/rust-lang/book/graphs/contributors"
+			},
+			"license": [
+				{
+					"name": "MIT",
+					"link": "https://github.com/rust-lang/book/blob/main/LICENSE-MIT"
+				}, {
+					"name": "Apache License, Version 2.0",
+					"link": "https://github.com/rust-lang/book/blob/main/LICENSE-APACHE"
+				}
+			]
+		}, {
+			"title": "TypeScript: Documentation - Generics",
+			"link": "https://www.typescriptlang.org/docs/handbook/2/generics.html",
+			"itemtype": "https://schema.org/CreativeWork",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "Microsoft Corporation",
+				"link": "https://www.microsoft.com"
+			},
 			"license": {
-				"link": "https://en.cppreference.com/w/Cppreference:Copyright/CC-BY-SA",
-				"name": "CC BY-SA 3.0"
+				"name": "CC BY 4.0",
+				"link": "https://github.com/microsoft/TypeScript-Website/blob/v2/LICENSE"
 			}
+		}, {
+			"title": "Macros - The Rust Reference",
+			"link": "https://doc.rust-lang.org/reference/macros.html",
+			"itemtype": "https://schema.org/CreativeWork",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "The Rust Project Developers",
+				"link": "https://github.com/rust-lang/reference/graphs/contributors"
+			},
+			"license": [
+				{
+					"name": "MIT",
+					"link": "https://github.com/rust-lang/reference/blob/master/LICENSE-MIT"
+				}, {
+					"name": "Apache License, Version 2.0",
+					"link": "https://github.com/rust-lang/reference/blob/master/LICENSE-APACHE"
+				}
+			]
 		}
 	]
 </script>
@@ -264,7 +318,7 @@
 	<StructuredSection id={levels[5].id}>
 		<SecondaryHeading headingInfo={levels[5]}/>
 		<SimpleText itemprop="description">
-			<strong itemprop="mainEntity">Hardest level of abstraction that someone could work on.</strong> It can be in a form of <Citation info={references[2]}>abstract classes</Citation>, <Citation info={references[3]}>templates</Citation>, <ExternalLink address="https://doc.rust-lang.org/book/ch10-02-traits.html">traits</ExternalLink>, <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">generics</ExternalLink>, or <ExternalLink address="https://doc.rust-lang.org/reference/macros.html">macros</ExternalLink>.
+			<strong itemprop="mainEntity">Hardest level of abstraction that someone could work on.</strong> It can be in a form of <Citation info={references[2]}>abstract classes</Citation>, <Citation info={references[3]}>templates</Citation>, <Citation info={references[4]}>traits</Citation>, <Citation info={references[5]}>generics</Citation>, or <Citation info={references[6]}>macros</Citation>.
 		</SimpleText>
 		<SimpleText>
 			If a generalized class or function has changed in identifiers, mechanism, or number of parameters, the developer has to change all codes that depend on the generalized class or function. It can be tedious process as the difficulty is relative to the number of changes applied on an interface-level code.
@@ -275,7 +329,7 @@
 		<SimpleText>
 			Below, is an example based from <Bookmark fragment={`#${levels[4].id}`}>{
 				levels[4].text.toLocaleLowerCase()
-			}'s example</Bookmark> but with the application of <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">Typescript's generics</ExternalLink>.
+			}'s example</Bookmark> but with the application of <Citation info={references[5]}>Typescript's generics</Citation>.
 			The code may appear longer than the example in <Bookmark fragment={`#${levels[0].id}`}>{
 				levels[0].text.toLocaleLowerCase()
 			}</Bookmark>. However, making an interface-level abstraction has greater benefits on large projects than this example.
@@ -284,7 +338,7 @@
 		<SimpleText>
 			In addition, an example based from <Bookmark fragment={`#${levels[3].id}`}>{
 				levels[3].text.toLocaleLowerCase()
-			}'s example</Bookmark> but with the application of <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">Typescript's generics</ExternalLink> too. It appears to be shorter than the code above.
+			}'s example</Bookmark> but with the application of <Citation info={references[5]}>Typescript's generics</Citation> too. It appears to be shorter than the code above.
 		</SimpleText>
 		<ExampleCode codeInfo={$loadedFileInfos[9]}/>
 	</StructuredSection>
