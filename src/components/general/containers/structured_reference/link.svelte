@@ -11,7 +11,11 @@
 		? BaseLink
 		: ExternalLink
 	$: isAuthoredByPerson = typeof info.author.givenName !== "undefined"
-	$: hasLicense = typeof info.license !== "undefined"
+	$: licenseCount = typeof info.license !== "undefined"
+		? 0
+		: Array.isArray(info.license)
+			? info.license.length
+			: 1
 </script>
 
 <cite itemprop="citation" itemscope itemtype={info.itemtype}>
@@ -38,8 +42,21 @@
 			<span itemprop="name">{info.author.groupName}</span>
 		</BoundLink>
 	{/if}
-	{#if hasLicense}
+	{#if licenseCount > 0}
 		is licensed under
-		<BoundLink address={info.license.link} itemprop="license">{info.license.name}</BoundLink>
+		{#if licenseCount === 1}
+			<BoundLink address={info.license.link} itemprop="license">{info.license.name}</BoundLink>
+		{:else}
+			{#each info.license as licenseInfo, i}
+				{#if i === info.license - 1}
+					and <BoundLink address={licenseInfo.link} itemprop="license">
+						{licenseInfo.name}
+					</BoundLink>
+				{:else}
+					<BoundLink address={licenseInfo.link} itemprop="license">
+						{licenseInfo.name}</BoundLink>,
+				{/if}
+			{/each}
+		{/if}
 	{/if}
 </cite>
