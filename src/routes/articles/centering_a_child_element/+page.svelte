@@ -151,6 +151,16 @@
 			"linkCategory": "inbound",
 			"author": indexPageMeta.authors[0],
 			"license": indexPageMeta.license
+		}, {
+			"title": "3 Ways To Center Elements In CSS",
+			"link": "https://dev.to/sanchithasr/3-ways-to-center-elements-in-css-1m43",
+			"itemtype": "https://schema.org/TechArticle",
+			"linkCategory": "outbound",
+			"author": {
+				"givenName": "Sanchitha",
+				"familyName": "Sharma",
+				"link": "https://dev.to/sanchithasr"
+			}
 		}
 	]
 </script>
@@ -290,9 +300,7 @@
 	<StructuredSection id={unorthodox.id}>
 		<SecondaryHeading headingInfo={unorthodox}/>
 		<SimpleText>
-			The scenarios above are only applicable if the child element is smaller than its parent. However, there is a special case where in a child requires to be bigger than its parent. As a demonstration, the special case can be seen in <Citation
-				info={references[8]}
-				itemprop="exampleOfWork">this website's home page</Citation>. The home page requires the text container to 65 characters at most. However, there is a box that requires to be greater than its parent.
+			The scenarios above are only applicable if the child element is smaller than its parent. However, there is a special case where in a child requires to be bigger than its parent. As a demonstration, the special case can be seen in <Citation info={references[8]} itemprop="exampleOfWork">this website's home page</Citation>. The home page requires the text container to 65 characters at most. However, there is a box that requires to be greater than its parent.
 		</SimpleText>
 		<SimpleText>
 			If the target box is limited to the full width of the parent in large screens, the text takes vertical space instead. See the image below.
@@ -379,10 +387,10 @@
 	<StructuredSection id={takeaways.id}>
 		<SecondaryHeading headingInfo={takeaways}/>
 		<SimpleText itemprop="about">
-			Despite that there are different methods to center an element, each has benefits and limitations. Centering based on 12-column layout may be too limited or rigid. Using <code>display: flex;</code> or <code>display: grid;</code>, can center an child element as long as it is smaller than the parent yet not for bigger child. Meanwhile, using negative margins is only applicable bigger child element and not for smaller child element.
+			Despite that there are different methods to center an element, each has benefits and limitations. Centering based on 12-column layout may be rigid at the price of convenience. Using <code>display: flex;</code> or <code>display: grid;</code>, can center an child element as long as it is smaller than the parent yet not for bigger child. Meanwhile, using negative margins is only applicable bigger child element and not for smaller child element.
 		</SimpleText>
 		<SimpleText>
-			Usage of these techniques may depend on the programmer's style, requirements of the system being built, or supported browsers. There is no best solution at every scenario when it comes to centering child elements. There are also techniques not mentioned in this article such as using <code>position</code> property and others. It is left for the readers to study the other techniques.
+			Usage of these techniques may depend on the programmer's style, requirements of the system being built, or supported browsers. There is no best solution at every scenario when it comes to centering child elements. There are also techniques not mentioned in this article such as using <Citation info={references[9]}><code>position</code> property</Citation> and others. It is left for the readers to study the other techniques.
 		</SimpleText>
 	</StructuredSection>
 	<StructuredReference/>
