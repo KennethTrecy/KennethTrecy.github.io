@@ -15,7 +15,7 @@
 		appendReference(info)
 	})
 
-	$: linkComponent = info.category === "inbound"
+	$: linkComponent = info.linkCategory === "inbound"
 		? BaseLink
 		: ExternalLink
 </script>
