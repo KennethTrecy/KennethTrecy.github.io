@@ -3,6 +3,7 @@
 	import { page } from "$app/stores"
 	import { derived } from "svelte/store"
 
+	import type { ReferenceInfo } from "@/types/reference"
 	import type { ExecutedCommandSetInfo, HeadingInfo } from "@/types/container_info"
 	import type {
 		PageData
@@ -14,6 +15,7 @@
 
 	import CommonHead from "@/components/general/common_head.svelte"
 	import Bookmark from "@/components/general/links/bookmark.svelte"
+	import Citation from "@/components/general/links/citation.svelte"
 	import Keyword from "@/components/general/containers/keyword.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
@@ -24,6 +26,7 @@
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
+	import StructuredReference from "@/components/general/containers/structured_reference.svelte"
 
 	const loadedFileInfos = derived(page, resolvedPage => resolvedPage.data.loadedFileInfos ?? [])
 
@@ -70,6 +73,116 @@
 			}
 		]
 	} as ExecutedCommandSetInfo))
+
+	const references: ReferenceInfo[] = [
+		{
+			"title": "dotenv",
+			"link": "github.com/motdotla/dotenv#readme",
+			"itemtype": "https://schema.org/SoftwareSourceCode",
+			"linkCategory": "outbound",
+			"author": {
+				"givenName": "Scott",
+				"familyName": "Motte",
+				"link": "https://github.com/motdotla"
+			},
+			"license": {
+				"name": "BSD-2-Clause",
+				"link": "https://github.com/motdotla/dotenv/blob/master/LICENSE"
+			}
+		}, {
+			"title": "Arduino Tutorial 4: Understanding Arduino Variables",
+			"link": "https://www.youtube.com/watch?v=nPOKOi1jIK0",
+			"itemtype": "https://schema.org/SoftwareSourceCode",
+			"linkCategory": "outbound",
+			"author": {
+				"givenName": "Paul",
+				"familyName": "McWhorter",
+				"link": "https://www.patreon.com/PaulMcWhorter"
+			}
+		}, {
+			"title": "PHP: Class Abstraction - Manual",
+			"link": "https://www.php.net/manual/en/language.oop5.abstract.php",
+			"itemtype": "https://schema.org/CreativeWork",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "PHP Documentation Group",
+				"link": "https://www.php.net/manual/en/preface.php#contributors"
+			},
+			"license": {
+				"name": "CC BY 3.0",
+				"link": "https://www.php.net/manual/en/cc.license.php"
+			}
+		}, {
+			"title": "Templates - cppreference.com",
+			"link": "https://en.cppreference.com/w/cpp/language/templates",
+			"itemtype": "https://schema.org/CreativeWork",
+			"linkCategory": "outbound",
+			"author": {
+				// The group name was based on question "Who is behind this site?" in FAQs.
+				// See: https://en.cppreference.com/w/Cppreference:FAQ
+				"groupName": "C++ enthusiasts worldwide",
+				"link": "https://en.cppreference.com/mwiki/index.php?title=cpp/language/templates&action=history"
+			},
+			"license": [
+				{
+					"name": "CC BY-SA 3.0",
+					"link": "https://en.cppreference.com/w/Cppreference:Copyright/CC-BY-SA"
+				}, {
+					"name": "GDFL",
+					"link": "https://en.cppreference.com/w/Cppreference:Copyright/GDFL"
+				}
+			]
+		}, {
+			"title": "Traits: Defining Shared Behavior - The Rust Programming Language",
+			"link": "https://doc.rust-lang.org/book/ch10-02-traits.html",
+			"itemtype": "https://schema.org/CreativeWork",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "The Rust Project Developers",
+				"link": "https://github.com/rust-lang/book/graphs/contributors"
+			},
+			"license": [
+				{
+					"name": "MIT",
+					"link": "https://github.com/rust-lang/book/blob/main/LICENSE-MIT"
+				}, {
+					"name": "Apache License, Version 2.0",
+					"link": "https://github.com/rust-lang/book/blob/main/LICENSE-APACHE"
+				}
+			]
+		}, {
+			"title": "TypeScript: Documentation - Generics",
+			"link": "https://www.typescriptlang.org/docs/handbook/2/generics.html",
+			"itemtype": "https://schema.org/CreativeWork",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "Microsoft Corporation",
+				"link": "https://www.microsoft.com"
+			},
+			"license": {
+				"name": "CC BY 4.0",
+				"link": "https://github.com/microsoft/TypeScript-Website/blob/v2/LICENSE"
+			}
+		}, {
+			"title": "Macros - The Rust Reference",
+			"link": "https://doc.rust-lang.org/reference/macros.html",
+			"itemtype": "https://schema.org/CreativeWork",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "The Rust Project Developers",
+				"link": "https://github.com/rust-lang/reference/graphs/contributors"
+			},
+			"license": [
+				{
+					"name": "MIT",
+					"link": "https://github.com/rust-lang/reference/blob/master/LICENSE-MIT"
+				}, {
+					"name": "Apache License, Version 2.0",
+					"link": "https://github.com/rust-lang/reference/blob/master/LICENSE-APACHE"
+				}
+			]
+		}
+	]
 </script>
 
 <ArticlePost {pageMeta}>
@@ -128,7 +241,7 @@
 		<SimpleText>
 			Using the <Bookmark fragment={`#${levels[0].id}`}>{
 				levels[0].text.toLocaleLowerCase()
-			}'s example</Bookmark>, the program can be modified to allow configuration-level customization. It uses an external package named <ExternalLink address="https://www.npmjs.com/package/dotenv">dotenv</ExternalLink> package to use the environment variables by using <code>process<span>.</span>env.&lt;variable name&gt;</code>. Note that the program uses logical OR operator (<code>||</code>) in order to use default messages.
+			}'s example</Bookmark>, the program can be modified to allow configuration-level customization. It uses an external package named <Citation info={references[0]}>dotenv</Citation> package to use the environment variables by using <code>process<span>.</span>env.&lt;variable name&gt;</code>. Note that the program uses logical OR operator (<code>||</code>) in order to use default messages.
 		</SimpleText>
 		<ExampleCode codeInfo={$loadedFileInfos[1]}>
 			<SimpleText>
@@ -151,7 +264,7 @@
 			Should the user want to customize the program, knowledge in <Keyword>variable declaration</Keyword> (depending on the programming language used) is a must. They may also need to learn about enumerations or any different data types like boolean and integer.
 		</SimpleText>
 		<SimpleText>
-			This level can be seen when making embedded programs for microcontrollers. It is helpful to declare multiple constants for values that are repeatedly used like indicating on or off, <ExternalLink address="https://www.youtube.com/watch?v=nPOKOi1jIK0">pin to the <abbr>LED</abbr>, or length of intervals</ExternalLink>. In addition, it can be seen in other fields of Information Technology (<abbr>I.T.</abbr>) such as web development and game development.
+			This level can be seen when making embedded programs for microcontrollers. It is helpful to declare multiple constants for values that are repeatedly used like indicating on or off, <Citation info={references[1]}>pin to the <abbr>LED</abbr>, or length of intervals</Citation>. In addition, it can be seen in other fields of Information Technology (<abbr>I.T.</abbr>) such as web development and game development.
 		</SimpleText>
 		<SimpleText>
 			Building from the <Bookmark fragment={`#${levels[1].id}`}>example in {
@@ -205,7 +318,7 @@
 	<StructuredSection id={levels[5].id}>
 		<SecondaryHeading headingInfo={levels[5]}/>
 		<SimpleText itemprop="description">
-			<strong itemprop="mainEntity">Hardest level of abstraction that someone could work on.</strong> It can be in a form of <ExternalLink address="https://www.php.net/manual/en/language.oop5.abstract.php">abstract classes</ExternalLink>, <ExternalLink address="https://en.cppreference.com/w/cpp/language/templates">templates</ExternalLink>, <ExternalLink address="https://doc.rust-lang.org/book/ch10-02-traits.html">traits</ExternalLink>, <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">generics</ExternalLink>, or <ExternalLink address="https://doc.rust-lang.org/reference/macros.html">macros</ExternalLink>.
+			<strong itemprop="mainEntity">Hardest level of abstraction that someone could work on.</strong> It can be in a form of <Citation info={references[2]}>abstract classes</Citation>, <Citation info={references[3]}>templates</Citation>, <Citation info={references[4]}>traits</Citation>, <Citation info={references[5]}>generics</Citation>, or <Citation info={references[6]}>macros</Citation>.
 		</SimpleText>
 		<SimpleText>
 			If a generalized class or function has changed in identifiers, mechanism, or number of parameters, the developer has to change all codes that depend on the generalized class or function. It can be tedious process as the difficulty is relative to the number of changes applied on an interface-level code.
@@ -216,7 +329,7 @@
 		<SimpleText>
 			Below, is an example based from <Bookmark fragment={`#${levels[4].id}`}>{
 				levels[4].text.toLocaleLowerCase()
-			}'s example</Bookmark> but with the application of <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">Typescript's generics</ExternalLink>.
+			}'s example</Bookmark> but with the application of <Citation info={references[5]}>Typescript's generics</Citation>.
 			The code may appear longer than the example in <Bookmark fragment={`#${levels[0].id}`}>{
 				levels[0].text.toLocaleLowerCase()
 			}</Bookmark>. However, making an interface-level abstraction has greater benefits on large projects than this example.
@@ -225,7 +338,7 @@
 		<SimpleText>
 			In addition, an example based from <Bookmark fragment={`#${levels[3].id}`}>{
 				levels[3].text.toLocaleLowerCase()
-			}'s example</Bookmark> but with the application of <ExternalLink address="https://www.typescriptlang.org/docs/handbook/2/generics.html">Typescript's generics</ExternalLink> too. It appears to be shorter than the code above.
+			}'s example</Bookmark> but with the application of <Citation info={references[5]}>Typescript's generics</Citation> too. It appears to be shorter than the code above.
 		</SimpleText>
 		<ExampleCode codeInfo={$loadedFileInfos[9]}/>
 	</StructuredSection>
@@ -243,4 +356,5 @@
 			That said, the levels in this article allows programmers determine the complexity of a code. They are just one of the tools in order to communicate with other developers efficiently.
 		</SimpleText>
 	</StructuredSection>
+	<StructuredReference/>
 </ArticlePost>

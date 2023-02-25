@@ -5,8 +5,9 @@
 
 	export let address: string
 	export let itemprop: string|undefined = undefined
+	export let itemtype: string|undefined = undefined
 </script>
 
-<Link address={address} relationship={externalTypes} context="other" {itemprop}>
+<Link address={address} relationship={externalTypes} context="other" {itemprop} {itemtype}>
 	<slot></slot>
 </Link>

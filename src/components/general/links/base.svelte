@@ -2,11 +2,13 @@
 	import type { AnchorTarget, AnchorLinkType } from "@/types/container_info"
 
 	export let address: string
+	export let relationship: AnchorLinkType|AnchorLinkType[]
+
 	export let context: AnchorTarget = "self"
 	export let mayIndicateExternal = true
-	export let relationship: AnchorLinkType|AnchorLinkType[]
 	export let title: string|undefined = undefined
 	export let itemprop: string|undefined = undefined
+	export let itemtype: string|undefined = undefined
 	let otherClasses: string[] = []
 
 	export { otherClasses as class }
@@ -21,6 +23,7 @@
 		"link",
 		...otherClasses
 	].filter(Boolean).join(" ")
+	$: itemscope = typeof itemtype === "undefined" ? undefined : ""
 
 	function visitLink(event: KeyboardEvent): void {
 		if (event.key === "Enter") {
@@ -35,7 +38,9 @@
 	href={address}
 	class={joinedClasses}
 	rel={relationshipTypes}
-	{target}>
+	{target}
+	{itemscope}
+	{itemtype}>
 	<slot></slot></a>{#if mayShowExternalIcon}<span
 	class="cursor-pointer"
 	role="link"

@@ -1,3 +1,5 @@
+import type { LicenseInfo, PersonInfo } from "@/types/reference"
+
 export interface MultimediaLink {
 	link: string,
 	intrinsicWidth: number
@@ -9,17 +11,6 @@ export interface MultimediaInfo {
 	defaultLink: string
 	defaultWidth: number
 	defaultHeight: number
-}
-
-interface PersonInfo {
-	givenName: string,
-	familyName: string,
-	link: string
-}
-
-interface LicenseInfo {
-	name: string,
-	link: string
 }
 
 export interface PageMeta {
