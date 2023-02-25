@@ -13,6 +13,7 @@
 	$: entityName = typeof info.author.givenName !== undefined
 		? `${info.author.givenName} ${info.author.familyName}`
 		: info.author.groupName
+	$: hasLicense = typeof info.license !== "undefined"
 </script>
 
 <cite itemprop="citation" itemscope itemtype={info.itemtype}>
@@ -23,6 +24,8 @@
 	made by
 	<BoundLink address={info.author.link}>{entityName}</BoundLink>
 	<!-- TODO: structure data further -->
-	is licensed under
-	<BoundLink address={info.license.link}>{info.license.name}</BoundLink>.
+	{#if hasLicense}
+		is licensed under
+		<BoundLink address={info.license.link}>{info.license.name}</BoundLink>.
+	{/if}
 </cite>
