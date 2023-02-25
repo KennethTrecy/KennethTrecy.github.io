@@ -10,9 +10,7 @@
 	$: titleLinkComponent = info.category === "inbound"
 		? BaseLink
 		: ExternalLink
-	$: entityName = typeof info.author.givenName !== undefined
-		? `${info.author.givenName} ${info.author.familyName}`
-		: info.author.groupName
+	$: isAuthoredByPerson = typeof info.author.givenName !== undefined
 	$: hasLicense = typeof info.license !== "undefined"
 </script>
 
@@ -22,10 +20,26 @@
 		address={info.link}
 		itemprop="mainEntityOfPage">{info.title}</svelte:component>
 	made by
-	<BoundLink address={info.author.link}>{entityName}</BoundLink>
-	<!-- TODO: structure data further -->
+	{#if isAuthoredByPerson}
+		<BoundLink
+			address={info.author.link}
+			itemprop="author"
+			itemtype="https://schema.org/Person">
+			<span itemprop="name">
+				<span itemprop="givenName">{info.author.givenName}</span>
+				<span itemprop="familyName">{info.author.familyName}</span>
+			</span>
+		</BoundLink>
+	{:else}
+		<BoundLink
+			address={info.author.link}
+			itemprop="author"
+			itemtype="https://schema.org/Organization">
+			<span itemprop="name">{info.author.groupName}</span>
+		</BoundLink>
+	{/if}
 	{#if hasLicense}
 		is licensed under
-		<BoundLink address={info.license.link}>{info.license.name}</BoundLink>.
+		<BoundLink address={info.license.link} itemprop="license">{info.license.name}</BoundLink>
 	{/if}
 </cite>
