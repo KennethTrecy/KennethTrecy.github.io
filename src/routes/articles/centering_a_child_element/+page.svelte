@@ -3,6 +3,7 @@
 	import { page } from "$app/stores"
 	import { derived } from "svelte/store"
 
+	import type { ReferenceInfo } from "@/types/reference"
 	import type { HeadingInfo } from "@/types/container_info"
 	import type { PageData } from "@/routes/articles/centering_a_child_element/$types"
 
@@ -18,6 +19,7 @@
 
 	import BaseLink from "@/components/general/links/base.svelte"
 	import Bookmark from "@/components/general/links/bookmark.svelte"
+	import Citation from "@/components/general/links/citation.svelte"
 	import Keyword from "@/components/general/containers/keyword.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
@@ -28,6 +30,7 @@
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
+	import StructuredReference from "@/components/general/containers/structured_reference.svelte"
 
 	const loadedFileInfos = derived(page, resolvedPage => resolvedPage.data.loadedFileInfos ?? [])
 
@@ -40,6 +43,49 @@
 
 	const exactWidthDemoSourceSet = makeSet(exactWidthDemo.responsiveLinks)
 	const largerWidthDemoSourceSet = makeSet(largerWidthDemo.responsiveLinks)
+
+	const bootstrapCSSInfo: Partial<ReferenceInfo> = {
+		"itemtype": "https://schema.org/SoftwareApplication",
+		"linkCategory": "outbound",
+		"author": {
+			"groupName": "Twitter, Inc.",
+			"link": "https://investor.twitterinc.com/home/default.aspx"
+		},
+		"license": {
+			"name": "CC BY 3.0",
+			"link": "https://creativecommons.org/licenses/by/3.0/"
+		}
+	}
+	const references: ReferenceInfo[] = [
+		{
+			"title": "Grid system",
+			"link": "https://getbootstrap.com/docs/3.4/css/#grid",
+			...bootstrapCSSInfo
+		}, {
+			"title": "Offsetting columns",
+			"link": "https://getbootstrap.com/docs/3.4/css/#grid-offsetting",
+			...bootstrapCSSInfo
+		}, {
+			"title": "Web layout history: How we got to grid and flex",
+			"link": "https://cran.r-project.org/web/packages/imola/vignettes/imola-why-flex-and-grid.html",
+			"itemtype": "https://schema.org/SoftwareApplication",
+			"linkCategory": "outbound",
+			"author": {
+				"givenName": "Pedro",
+				"familyName": "Silva",
+				"link": "https://github.com/pedrocoutinhosilva"
+			},
+			"license": [
+				{
+					"name": "MIT",
+					"link": "https://cran.r-project.org/web/licenses/MIT"
+				}, {
+					"name": "LICENSE",
+					"link": "https://cran.r-project.org/web/packages/imola/LICENSE"
+				}
+			]
+		}
+	]
 </script>
 
 <ArticlePost {pageMeta}>
@@ -55,7 +101,7 @@
 	<StructuredSection id={classical.id}>
 		<SecondaryHeading headingInfo={classical}/>
 		<SimpleText>
-			The classical way to center an element is through the <Keyword>use of margins</Keyword> of the child element. There are many variations for this technique. A developer in the past can conveniently use this technique in conjunction with the previous versions of CSS frameworks. Utilizing the <ExternalLink address="https://getbootstrap.com/docs/3.4/css/#grid">12-column grid system</ExternalLink>, a developer would the following steps below to determine the margin the child element would take.
+			The classical way to center an element is through the <Keyword>use of margins</Keyword> of the child element. There are many variations for this technique. A developer in the past can conveniently use this technique in conjunction with the previous versions of CSS frameworks. Utilizing the <Citation info={references[0]}>12-column grid system</Citation>, a developer would the following steps below to determine the margin the child element would take.
 		</SimpleText>
 		<StructuredList order="ascending">
 			<StructuredListItem>
@@ -68,7 +114,7 @@
 				Divide the difference from step 2 because the unused space would distributed both horizontal sides of the child element.
 			</StructuredListItem>
 			<StructuredListItem>
-				Depending on the CSS framework, the developer may <ExternalLink address="https://getbootstrap.com/docs/3.4/css/#grid-offsetting">offset</ExternalLink> the element by a certain number of column based on quotient in step 3. Otherwise, the quotient would be divided by 12 then multiplied to 100 to get the percentage of left margin.
+				Depending on the CSS framework, the developer may <Citation info={references[1]}>offset</Citation> the element by a certain number of column based on quotient in step 3. Otherwise, the quotient would be divided by 12 then multiplied to 100 to get the percentage of left margin.
 			</StructuredListItem>
 		</StructuredList>
 		<SimpleText>
@@ -97,7 +143,7 @@
 		<SecondaryHeading headingInfo={flexbox}/>
 		<SimpleText>
 			Another method is through the use of flexible box layut which was introduced
-			<ExternalLink address="https://cran.r-project.org/web/packages/imola/vignettes/imola-why-flex-and-grid.html">around 2012</ExternalLink>. It allows web developer to layout conveniently and responsively as the elements would automatically resize while adhering to the specified properties.
+			<Citation info={references[2]}>around 2012</Citation>. It allows web developer to layout conveniently and responsively as the elements would automatically resize while adhering to the specified properties.
 		</SimpleText>
 		<SimpleText>
 			A web developer would declare certain properties on the parent like <code>display: flex;</code> paired with <code>flex-direction</code> and/or <code>flex-wrap</code>. On the other hand, children of the flexible parent would have properties like <code>flex-grow</code> nd/or <code>flex-basis</code>.
@@ -277,6 +323,7 @@
 			Usage of these techniques may depend on the programmer's style, requirements of the system being built, or supported browsers. There is no best solution at every scenario when it comes to centering child elements. There are also techniques not mentioned in this article such as using <code>position</code> property and others. It is left for the readers to study the other techniques.
 		</SimpleText>
 	</StructuredSection>
+	<StructuredReference/>
 </ArticlePost>
 
 <style lang="postcss">
