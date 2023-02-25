@@ -48,7 +48,7 @@
 			<BoundLink address={info.license.link} itemprop="license">{info.license.name}</BoundLink>
 		{:else}
 			{#each info.license as licenseInfo, i}
-				{#if i === info.license - 1}
+				{#if i === info.license.length - 1}
 					and <BoundLink address={licenseInfo.link} itemprop="license">
 						{licenseInfo.name}
 					</BoundLink>
