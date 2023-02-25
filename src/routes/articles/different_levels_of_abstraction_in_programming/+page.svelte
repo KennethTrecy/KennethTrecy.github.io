@@ -11,6 +11,7 @@
 
 	import pageMeta from "@/routes/articles/different_levels_of_abstraction_in_programming/meta"
 
+	import { appendReference } from "@/components/general/containers/reference_info_collection.ts"
 	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 
 	import CommonHead from "@/components/general/common_head.svelte"
@@ -183,6 +184,25 @@
 			]
 		}
 	]
+
+	onMount(() => {
+		// Source code reference
+		appendReference({
+			"title": "demo_of_different_levels_of_abstraction",
+			"link": "https://github.com/KennethTrecy/demo_of_different_levels_of_abstraction",
+			"itemtype": "https://schema.org/SoftwareSourceCode",
+			"linkCategory": "outbound",
+			"author": {
+				"givenName": "Kenneth Trecy",
+				"familyName": "Tobias",
+				"link": "https://github.com/KennethTrecy"
+			},
+			"license": {
+				"name": "MIT",
+				"link": "https://github.com/KennethTrecy/demo_of_different_levels_of_abstraction/blob/master/LICENSE"
+			}
+		})
+	})
 </script>
 
 <ArticlePost {pageMeta}>
