@@ -59,7 +59,9 @@ export default async function(page: Page) {
 		// Base delay has been multiplied by 2 to simulate that it is like 100% when multiplied with
 		// delay multiplier
 		const finalDelay = BASE_DELAY + (BASE_DELAY * 2 / delayMultiplier)
-		await page.waitForTimeout(finalDelay)
+		await new Promise(resolve => {
+			setTimeout(resolve, finalDelay)
+		})
 		const result = await check(text, {
 			"api_url": "http://localhost:8081/v2/check",
 			dictionary
