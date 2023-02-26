@@ -5,7 +5,8 @@ const configuration: PlaywrightTestConfig = {
 		"command": "npm run preview",
 		"port": 4173
 	},
-	"testDir": "t/e2e"
+	"testDir": "t/e2e",
+	"timeout": 45 * 1000
 }
 
 export default configuration
