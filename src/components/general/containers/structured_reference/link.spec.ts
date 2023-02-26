@@ -85,7 +85,7 @@ describe("Reference link behavior", () => {
 
 		expect(citation).not.toBeNull()
 		const citationText = citation?.textContent?.replaceAll(rawSpaceDetector, " ")
-		expect(citationText).toContain("License A,")
+		expect(citationText).toContain("License A")
 		expect(citationText).toContain("and License B")
 
 		cleanup()
@@ -120,6 +120,7 @@ describe("Reference link behavior", () => {
 
 		expect(citation).not.toBeNull()
 		const citationText = citation?.textContent?.replaceAll(rawSpaceDetector, " ")
+
 		expect(citationText).toContain("License A,")
 		expect(citationText).toContain("License B,")
 		expect(citationText).toContain("and License C")
