@@ -24,6 +24,7 @@
 		...otherClasses
 	].filter(Boolean).join(" ")
 	$: itemscope = typeof itemtype === "undefined" ? undefined : ""
+	$: label = `Link to ${address}`
 
 	function visitLink(event: KeyboardEvent): void {
 		if (event.key === "Enter") {
@@ -45,6 +46,7 @@
 	class="cursor-pointer"
 	role="link"
 	tabindex="0"
+	aria-label={label}
 	on:keyup={visitLink}></span>{/if}
 
 <style lang="postcss">
