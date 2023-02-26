@@ -136,6 +136,7 @@
 			tabindex="0"
 			role="switch"
 			aria-checked={isMenuShown}
+			aria-label="Toggle menu"
 			on:keyup|stopPropagation|preventDefault={toggleMenu}></label>
 		<aside class="w-80 bg-primary">
 			<a

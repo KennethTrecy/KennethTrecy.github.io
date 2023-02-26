@@ -29,6 +29,7 @@
 	aria-checked={$mustBeInDarkMode}
 	data-set-theme={otherTheme}
 	data-act-class={LIGHT_MODE}
+	aria-label="Toggle theme"
 	on:keyup|stopPropagation|preventDefault={toggleTheme}
 	class="btn bg-transparent border-transparent cursor-pointer text-secondary hover:text-primary hover:bg-secondary">
 	<Icon name={modeIcon}/>
