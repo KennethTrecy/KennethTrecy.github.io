@@ -187,10 +187,10 @@
 			<SecondaryHeading headingInfo={concerns}/>
 			<SimpleText itemprop="mainEntity">
 				Should there be concerns in the contents of my web pages, please do not hesitate to <BaseLink
-				itemprop="mainEntityOfPage"
-				address="/about_myself#contacts"
-				relationship={[ ...internalTypes, ...authorTypes ]}
-				context="self">contact me</BaseLink> on one of my communication channels. You can also send offers. You can also ask for technical help if you are a beginner.
+					itemprop="mainEntityOfPage"
+					address="/about_myself#contacts"
+					relationship={[ ...internalTypes, ...authorTypes ]}
+					context="self">contact me</BaseLink> on one of my communication channels. You can also send offers. You can also ask for technical help if you are a beginner.
 			</SimpleText>
 		</StructuredSection>
 	</svelte:fragment>

@@ -3,6 +3,8 @@
 
 	import type { ReferenceInfo } from "@/types/reference"
 
+	import { internalTypes } from "@/components/general/links/constants"
+
 	import { appendReference } from "@/components/general/containers/reference_info_collection.ts"
 
 	import BaseLink from "@/components/general/links/base.svelte"
@@ -18,9 +20,13 @@
 	$: linkComponent = info.linkCategory === "inbound"
 		? BaseLink
 		: ExternalLink
+	$: relationship = info.linkCategory === "inbound"
+		? internalTypes
+		: []
 </script>
 
 <svelte:component
 	this={linkComponent}
 	address={info.link}
-	{itemprop}><slot></slot></svelte:component>
+	{itemprop}
+	{relationship}><slot></slot></svelte:component>
