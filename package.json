@@ -38,7 +38,7 @@
 		"changelogen": "^0.4.1",
 		"esbuild": "^0.16.17",
 		"eslint": "^8.34.0",
-		"eslint-config-whitelistyle": "git+http://repo.local/KennethTrecy/eslint-config-whitelistyle",
+		"eslint-config-whitelistyle": "github:KennethTrecy/eslint-config-whitelistyle",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"gramma": "^1.6.0",
 		"husky": "^8.0.3",
