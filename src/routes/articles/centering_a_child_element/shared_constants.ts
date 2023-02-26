@@ -14,7 +14,7 @@ const associatedFileTree: ViewableOwnerInfoTree[] = [
 					{
 						"branch": "dev",
 						"paths": [
-							"src/routes/articles/centering_a_child_element/page.svelte"
+							"src/routes/articles/centering_a_child_element/+page.svelte"
 						]
 					}
 				]
