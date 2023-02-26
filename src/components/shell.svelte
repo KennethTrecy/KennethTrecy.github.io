@@ -68,6 +68,7 @@
 				for="menu_drawer_checkbox"
 				role="switch"
 				aria-checked={isMenuShown}
+				aria-label="Toggle menu drawer"
 				on:keyup|stopPropagation|preventDefault={toggleMenu}
 				class="drawer-button btn bg-transparent border-transparent lg:hidden text-secondary hover:text-primary hover:bg-secondary">
 				<Icon name="menu"/>
@@ -136,7 +137,7 @@
 			tabindex="0"
 			role="switch"
 			aria-checked={isMenuShown}
-			aria-label="Toggle menu"
+			aria-label="Toggle menu drawer"
 			on:keyup|stopPropagation|preventDefault={toggleMenu}></label>
 		<aside class="w-80 bg-primary">
 			<a
