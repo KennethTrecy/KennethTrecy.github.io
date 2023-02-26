@@ -162,6 +162,16 @@
 			}
 		}
 	]
+
+	const styleTagLine = 419;
+	const classicalBeginLineIndex = styleTagLine + 11;
+	const classicalEndLineIndex = classicalBeginLineIndex + 4;
+	const flexibleBeginLineIndex = styleTagLine + 16;
+	const flexibleEndLineIndex = flexibleBeginLineIndex + 27;
+	const gridBeginLineIndex = styleTagLine + 29;
+	const gridEndLineIndex = gridBeginLineIndex + 11;
+	const unrthodoxBeginLineIndex = styleTagLine + 42;
+	const unrthodoxEndLineIndex = unrthodoxBeginLineIndex + 4;
 </script>
 
 <ArticlePost {pageMeta}>
@@ -213,7 +223,10 @@
 		<SimpleText>
 			The <abbr title="Cascading Style Sheets">CSS</abbr> code for the example above can be seen below. It uses <code>calc()</code> to derive the margin.
 		</SimpleText>
-		<ExampleCode codeInfo={$loadedFileInfos[0]} beginLineIndex={4} endLineIndex={9}/>
+		<ExampleCode
+			codeInfo={$loadedFileInfos[0]}
+			beginLineIndex={classicalBeginLineIndex}
+			endLineIndex={classicalEndLineIndex}/>
 	</StructuredSection>
 	<StructuredSection id={flexbox.id}>
 		<SecondaryHeading headingInfo={flexbox}/>
@@ -267,7 +280,10 @@
 		<SimpleText>
 			Below is corresponding <abbr title="Cascading Style Sheets">CSS</abbr> code to center the children using flexible box layout.
 		</SimpleText>
-		<ExampleCode codeInfo={$loadedFileInfos[0]} beginLineIndex={4} endLineIndex={9}/>
+		<ExampleCode
+			codeInfo={$loadedFileInfos[0]}
+			beginLineIndex={flexibleBeginLineIndex}
+			endLineIndex={flexibleEndLineIndex}/>
 	</StructuredSection>
 	<StructuredSection id={grid.id}>
 		<SecondaryHeading headingInfo={grid}/>
@@ -294,7 +310,10 @@
 		<SimpleText>
 			Below is corresponding <abbr title="Cascading Style Sheets">CSS</abbr> code to center the child using grid box layout.
 		</SimpleText>
-		<ExampleCode codeInfo={$loadedFileInfos[0]} beginLineIndex={4} endLineIndex={9}/>
+		<ExampleCode
+			codeInfo={$loadedFileInfos[0]}
+			beginLineIndex={gridBeginLineIndex}
+			endLineIndex={gridEndLineIndex}/>
 	</StructuredSection>
 	<StructuredSection id={unorthodox.id}>
 		<SecondaryHeading headingInfo={unorthodox}/>
@@ -381,7 +400,10 @@
 				Example of child positioned in the horizontal center only using negative left margin.
 			</p>
 		</div>
-		<ExampleCode codeInfo={$loadedFileInfos[0]} beginLineIndex={4} endLineIndex={9}/>
+		<ExampleCode
+			codeInfo={$loadedFileInfos[0]}
+			beginLineIndex={unrthodoxBeginLineIndex}
+			endLineIndex={unrthodoxEndLineIndex}/>
 	</StructuredSection>
 	<StructuredSection id={takeaways.id}>
 		<SecondaryHeading headingInfo={takeaways}/>
