@@ -163,15 +163,23 @@
 		}
 	]
 
-	const styleTagLine = 419;
-	const classicalBeginLineIndex = styleTagLine + 10;
-	const classicalEndLineIndex = classicalBeginLineIndex + 4;
-	const flexibleBeginLineIndex = styleTagLine + 15;
-	const flexibleEndLineIndex = flexibleBeginLineIndex + 12;
-	const gridBeginLineIndex = styleTagLine + 28;
-	const gridEndLineIndex = gridBeginLineIndex + 12;
-	const unrthodoxBeginLineIndex = styleTagLine + 41;
-	const unrthodoxEndLineIndex = unrthodoxBeginLineIndex + 4;
+	const styleTagLine = derived(loadedFileInfos, loadedFile => {
+		const selfSourceCode = loadedFile[0]
+		if (typeof selfSourceCode === "object") {
+			const rawCodeLines = atob(selfSourceCode?.content ?? "\n").split("\n")
+			return rawCodeLines.indexOf(`${"<"}style lang="postcss">`) + 1
+		}
+
+		return 0
+	})
+	const classicalBeginLineIndex = derived(styleTagLine, index => index + 10)
+	const classicalEndLineIndex = derived(classicalBeginLineIndex, index => index + 4)
+	const flexibleBeginLineIndex = derived(styleTagLine, index => index + 15)
+	const flexibleEndLineIndex = derived(flexibleBeginLineIndex, index => index + 12)
+	const gridBeginLineIndex = derived(styleTagLine, index => index + 28)
+	const gridEndLineIndex = derived(gridBeginLineIndex, index => index + 12)
+	const unrthodoxBeginLineIndex = derived(styleTagLine, index => index + 41)
+	const unrthodoxEndLineIndex = derived(unrthodoxBeginLineIndex, index => index + 4)
 </script>
 
 <ArticlePost {pageMeta}>
@@ -225,8 +233,8 @@
 		</SimpleText>
 		<ExampleCode
 			codeInfo={$loadedFileInfos[0]}
-			beginLineIndex={classicalBeginLineIndex}
-			endLineIndex={classicalEndLineIndex}/>
+			beginLineIndex={$classicalBeginLineIndex}
+			endLineIndex={$classicalEndLineIndex}/>
 	</StructuredSection>
 	<StructuredSection id={flexbox.id}>
 		<SecondaryHeading headingInfo={flexbox}/>
@@ -282,8 +290,8 @@
 		</SimpleText>
 		<ExampleCode
 			codeInfo={$loadedFileInfos[0]}
-			beginLineIndex={flexibleBeginLineIndex}
-			endLineIndex={flexibleEndLineIndex}/>
+			beginLineIndex={$flexibleBeginLineIndex}
+			endLineIndex={$flexibleEndLineIndex}/>
 	</StructuredSection>
 	<StructuredSection id={grid.id}>
 		<SecondaryHeading headingInfo={grid}/>
@@ -312,8 +320,8 @@
 		</SimpleText>
 		<ExampleCode
 			codeInfo={$loadedFileInfos[0]}
-			beginLineIndex={gridBeginLineIndex}
-			endLineIndex={gridEndLineIndex}/>
+			beginLineIndex={$gridBeginLineIndex}
+			endLineIndex={$gridEndLineIndex}/>
 	</StructuredSection>
 	<StructuredSection id={unorthodox.id}>
 		<SecondaryHeading headingInfo={unorthodox}/>
@@ -404,8 +412,8 @@
 		</div>
 		<ExampleCode
 			codeInfo={$loadedFileInfos[0]}
-			beginLineIndex={unrthodoxBeginLineIndex}
-			endLineIndex={unrthodoxEndLineIndex}/>
+			beginLineIndex={$unrthodoxBeginLineIndex}
+			endLineIndex={$unrthodoxEndLineIndex}/>
 	</StructuredSection>
 	<StructuredSection id={takeaways.id}>
 		<SecondaryHeading headingInfo={takeaways}/>
