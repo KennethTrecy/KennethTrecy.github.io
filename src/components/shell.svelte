@@ -14,9 +14,14 @@
 	import ThirdPartyLink from "@/components/shell/third-party_package_link.svelte"
 
 	let isMenuShown = false
+	let hasLoadedEmojiStyleSheet = false
 
 	function toggleMenu(event: KeyboardEvent): void {
 		toggleBySpace(event, () => isMenuShown = !isMenuShown)
+	}
+
+	function loadEmojiStyleSheet() {
+		hasLoadedEmojiStyleSheet = true
 	}
 </script>
 
@@ -25,7 +30,23 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 	<link
 		rel="stylesheet"
-		href="https://fonts.googleapis.com/css2?family=Roboto&family=Material+Symbols+Outlined:wght,FILL@400,1&family=Noto+Color+Emoji&display=swap"/>
+		href="https://fonts.googleapis.com/css2?family=Roboto&family=Material+Symbols+Outlined:wght,FILL@400,1&display=swap"/>
+	<link
+		rel="preload"
+		href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap"
+		as="style"
+		on:load={loadEmojiStyleSheet}/>
+	{#if loadEmojiStyleSheet}
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap"
+			as="style"/>
+	{/if}
+	<noscript>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap"/>
+	</noscript>
 	<style>
 		body {
 			font-family: "Roboto", "Noto Color Emoji", "Segoe UI", Tahoma, Verdana, Geneva, sans-serif;
