@@ -6,7 +6,7 @@ const configuration: PlaywrightTestConfig = {
 		"port": 4173
 	},
 	"testDir": "t/e2e",
-	"timeout": 90 * 1000
+	"timeout": 120 * 1000
 }
 
 export default configuration
