@@ -366,23 +366,25 @@
 		<SimpleText>
 			To give another example, consider that a developer want to add another 60% of the current width. The solution can be seen below. The current width of self is 150 pixels.
 		</SimpleText>
-		<StructuredList order="ascending" itemprop="workExample">
-			<StructuredListItem>
-				Let <var>w<sub>o</sub></var> = 100%.
-			</StructuredListItem>
-			<StructuredListItem>
-				Let <var>w<sub>a</sub></var> = 60%.
-			</StructuredListItem>
-			<StructuredListItem>
-				Let <var>w<sub>r</sub></var> = <var>w<sub>o</sub></var> + <var>w<sub>a</sub></var> = 100% + 60% = 160%.
-			</StructuredListItem>
-			<StructuredListItem>
-				Let <var>m<sub>l</sub></var> = -<var>w<sub>a</sub></var> ÷ 2 = -60% ÷ 2 = -30%.
-			</StructuredListItem>
-			<StructuredListItem>
-				Expected width would be <var>w<sub>r</sub></var> × 150 pixels = 240 pixels. On the other hand, the expected left margin would be <var>m<sub>l</sub></var> × 150 pixels = -45 pixels.
-			</StructuredListItem>
-		</StructuredList>
+		<div itemprop="workExample" itemscope itemtype="https://schema.org/CreativeWork">
+			<StructuredList order="ascending">
+				<StructuredListItem>
+					Let <var>w<sub>o</sub></var> = 100%.
+				</StructuredListItem>
+				<StructuredListItem>
+					Let <var>w<sub>a</sub></var> = 60%.
+				</StructuredListItem>
+				<StructuredListItem>
+					Let <var>w<sub>r</sub></var> = <var>w<sub>o</sub></var> + <var>w<sub>a</sub></var> = 100% + 60% = 160%.
+				</StructuredListItem>
+				<StructuredListItem>
+					Let <var>m<sub>l</sub></var> = -<var>w<sub>a</sub></var> ÷ 2 = -60% ÷ 2 = -30%.
+				</StructuredListItem>
+				<StructuredListItem>
+					Expected width would be <var>w<sub>r</sub></var> × 150 pixels = 240 pixels. On the other hand, the expected left margin would be <var>m<sub>l</sub></var> × 150 pixels = -45 pixels.
+				</StructuredListItem>
+			</StructuredList>
+		</div>
 		<SimpleText>
 			Below is a live demonstration of the unorthodox way along with its <abbr title="Cascading Style Sheets">CSS</abbr> code.
 		</SimpleText>
