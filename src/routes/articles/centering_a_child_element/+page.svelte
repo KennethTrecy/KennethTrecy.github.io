@@ -164,13 +164,13 @@
 	]
 
 	const styleTagLine = 419;
-	const classicalBeginLineIndex = styleTagLine + 11;
+	const classicalBeginLineIndex = styleTagLine + 10;
 	const classicalEndLineIndex = classicalBeginLineIndex + 4;
-	const flexibleBeginLineIndex = styleTagLine + 16;
-	const flexibleEndLineIndex = flexibleBeginLineIndex + 27;
-	const gridBeginLineIndex = styleTagLine + 29;
-	const gridEndLineIndex = gridBeginLineIndex + 11;
-	const unrthodoxBeginLineIndex = styleTagLine + 42;
+	const flexibleBeginLineIndex = styleTagLine + 15;
+	const flexibleEndLineIndex = flexibleBeginLineIndex + 12;
+	const gridBeginLineIndex = styleTagLine + 28;
+	const gridEndLineIndex = gridBeginLineIndex + 12;
+	const unrthodoxBeginLineIndex = styleTagLine + 41;
 	const unrthodoxEndLineIndex = unrthodoxBeginLineIndex + 4;
 </script>
 
