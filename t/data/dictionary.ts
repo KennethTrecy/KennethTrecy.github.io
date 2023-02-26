@@ -17,6 +17,10 @@ export default [
 	"dotenv",
 	"@octokit",
 
-	// Tag names
-	"img"
+	// Code identifiers
+	"img",
+	"calc",
+
+	// Mathematical Variables
+	"wr", // Found in https://kennethtrecy.pages.dev/articles/centering_a_child_element
 ]
