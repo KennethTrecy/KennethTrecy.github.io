@@ -181,7 +181,7 @@
 			<Keyword>Centering</Keyword> an element is a usual task for a web developer. Images, modals, navigation anchor, and container of block of texts are the common components desired to be in the center. Semantically, Cascading Style Sheets (<abbr>CSS</abbr>) uses the word <em>center</em> to indicate that an element has equal spaces with respect to intended axis.
 		</SimpleText>
 		<SimpleText>
-			A programmer may center a content according to its <Keyword>x-axis</Keyword> (e.g. <code>text-align: center;</code>), <Keyword>y-axis</Keyword> (e.g. <code>vertical-align: middle;</code>), or both. This article explores common ways to put an element in the center and presents a unorthodox way for a special use case.
+			A programmer may center a content according to its <Keyword>x-axis</Keyword> (e.g. <code class="terminated">text-align: center</code>), <Keyword>y-axis</Keyword> (e.g. <code class="terminated">vertical-align: middle</code>), or both. This article explores common ways to put an element in the center and presents a unorthodox way for a special use case.
 		</SimpleText>
 	</StructuredSection>
 	<StructuredSection id={classical.id}>
@@ -235,27 +235,27 @@
 			<Citation info={references[2]}>around 2012</Citation>. It allows web developer to layout conveniently and responsively as the elements would automatically resize while adhering to the specified properties.
 		</SimpleText>
 		<SimpleText>
-			A web developer would declare certain properties on the parent like <code>display: flex;</code> paired with <code>flex-direction</code> and/or <code>flex-wrap</code>. On the other hand, children of the flexible parent would have properties like <code>flex-grow</code> nd/or <code>flex-basis</code>.
+			A web developer would declare certain properties on the parent like <code class="terminated">display: flex</code> paired with <code>flex-direction</code> and/or <code>flex-wrap</code>. On the other hand, children of the flexible parent would have properties like <code>flex-grow</code> nd/or <code>flex-basis</code>.
 		</SimpleText>
 		<SimpleText>
 			It is very easy to center an element in both axes using flexible box layout. A web developer would just do the following steps.
 		</SimpleText>
 		<StructuredList order="ascending">
 			<StructuredListItem>
-				Set <Citation info={references[3]}><code>display: flex;</code></Citation> on the parent.
+				Set <Citation info={references[3]}> <code class="terminated">display: flex</code></Citation> on the parent.
 			</StructuredListItem>
 			<StructuredListItem>
-				Set <code>justify-content: center;</code> on the parent. This <Citation info={references[4]}>indicates to center the children with respect to main axis</Citation>.
+				Set <code class="terminated">justify-content: center</code> on the parent. This <Citation info={references[4]}>indicates to center the children with respect to main axis</Citation>.
 			</StructuredListItem>
 			<StructuredListItem>
-				Set <code>align-items: center;</code> on the parent. This <Citation info={references[5]}>indicates to center the children with respect to cross axis</Citation>.
+				Set <code class="terminated">align-items: center</code> on the parent. This <Citation info={references[5]}>indicates to center the children with respect to cross axis</Citation>.
 			</StructuredListItem>
 			<StructuredListItem>
-				Optionally, set <Citation info={references[6]}><code>flex-direction: row;</code></Citation> on the parent if there are multiple children to be layout horizontally and direction matters. If the children should be in vertical manner, use <Citation info={references[6]}><code>flex-direction: column;</code></Citation> instead.
+				Optionally, set <Citation info={references[6]}><code class="terminated">flex-direction: row</code></Citation> on the parent if there are multiple children to be layout horizontally and direction matters. If the children should be in vertical manner, use <Citation info={references[6]}><code class="terminated">flex-direction: column</code></Citation> instead.
 			</StructuredListItem>
 		</StructuredList>
 		<SimpleText>
-			Usually, the <code>flex-direction: row;</code> sets the x-axis as the main axis and y-axis as the cross axis. If <code>flex-direction: column;</code> has been used, the y-axis axis would be the main axis and x-axis would be the cross axis.
+			Usually, the <code class="terminated">flex-direction: row</code> sets the x-axis as the main axis and y-axis as the cross axis. If <code class="terminated">flex-direction: column</code> has been used, the y-axis axis would be the main axis and x-axis would be the cross axis.
 		</SimpleText>
 		<SimpleText>
 			Below is an example positioning the child elements in the center (in both horizontal and vertical manner) using the flexible box layout programmed in vanilla <abbr title="Cascading Style Sheets">CSS</abbr>. Note that there is a margin between the the two children to distinguish them.
@@ -408,7 +408,7 @@
 	<StructuredSection id={takeaways.id}>
 		<SecondaryHeading headingInfo={takeaways}/>
 		<SimpleText itemprop="about">
-			Despite that there are different methods to center an element, each has benefits and limitations. Centering based on 12-column layout may be rigid at the price of convenience. Using <code>display: flex;</code> or <code>display: grid;</code>, can center an child element as long as it is smaller than the parent yet not for bigger child. Meanwhile, using negative margins is only applicable bigger child element and not for smaller child element.
+			Despite that there are different methods to center an element, each has benefits and limitations. Centering based on 12-column layout may be rigid at the price of convenience. Using  <code class="terminated">display: flex</code> or  <code class="terminated">display: grid</code>, can center an child element as long as it is smaller than the parent yet not for bigger child. Meanwhile, using negative margins is only applicable bigger child element and not for smaller child element.
 		</SimpleText>
 		<SimpleText>
 			Usage of these techniques may depend on the programmer's style, requirements of the system being built, or supported browsers. There is no best solution at every scenario when it comes to centering child elements. There are also techniques not mentioned in this article such as using <Citation info={references[9]}><code>position</code> property</Citation> and others. It is left for the readers to study the other techniques.
@@ -461,5 +461,9 @@
 	.unorthodox .child {
 		width: 140%;
 		margin-left: -20%;
+	}
+
+	code.terminated::after {
+		content: ";";
 	}
 </style>
