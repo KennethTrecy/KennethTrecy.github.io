@@ -50,7 +50,7 @@ export default async function(page: Page) {
 
 	const uniqueTexts = [ ...new Set(allTexts) ]
 
-	await page.waitForTimeout(3000)
+	await page.waitForTimeout(1500)
 
 	const BASE_DELAY = 500
 	const pendingResults: Promise<any>[] = uniqueTexts.map(async text => {
