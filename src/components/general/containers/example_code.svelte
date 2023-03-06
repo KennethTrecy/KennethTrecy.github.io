@@ -10,7 +10,13 @@
 	export let beginLineIndex: number = 0
 	export let endLineIndex: number = Infinity
 
-	$: rawCodeLines = atob(codeInfo.content).split("\n")
+	$: rawCodeLines = (() => {
+		try {
+			return atob(codeInfo.content).split("\n")
+		} catch (error) {
+			return []
+		}
+	})()
 	$: targetBeginLineIndex = Math.max(0, beginLineIndex)
 	$: targetEndLineIndex = Math.min(rawCodeLines.length, endLineIndex)
 	$: codeLines = rawCodeLines.slice(targetBeginLineIndex, targetEndLineIndex)
