@@ -63,7 +63,7 @@ export default async function(page: Page) {
 			setTimeout(resolve, finalDelay)
 		})
 		const result = await check(text, {
-			"api_url": "http://localhost:8081/v2/check",
+			"api_url": "http://0.0.0.0:8081/v2/check",
 			dictionary
 		})
 

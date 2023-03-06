@@ -11,7 +11,7 @@ const configuration: UserConfig = {
 		"hmr": {
 			"clientPort": 7000,
 			"port": 7000,
-			"host": "localhost",
+			"host": "0.0.0.0",
 			"protocol": "ws"
 		}
 	},
