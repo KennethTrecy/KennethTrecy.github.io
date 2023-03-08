@@ -1,5 +1,7 @@
 <script lang="ts">
-	import type { ReferenceInfo } from "@/types/reference"
+	import type { ReferenceInfo, PersonInfo, LicenseInfo } from "@/types/reference"
+
+	import { internalTypes } from "@/components/general/links/constants"
 
 	import BaseLink from "@/components/general/links/base.svelte"
 	import BoundLink from "@/components/general/links/bound.svelte"
@@ -7,24 +9,27 @@
 
 	export let info: ReferenceInfo
 
-	$: titleLinkComponent = info.category === "inbound"
-		? BaseLink
-		: ExternalLink
-	$: isAuthoredByPerson = typeof info.author.givenName !== "undefined"
-	$: licenseCount = typeof info.license === "undefined"
-		? 0
-		: Array.isArray(info.license)
-			? info.license.length
-			: 1
+	function isPerson(data: ReferenceInfo["author"]): data is PersonInfo {
+		const hasGivenName = Object.keys(info.author).includes("givenName")
+		return hasGivenName
+	}
+	function hasMultipleLicense(data: ReferenceInfo["license"]): data is LicenseInfo[] {
+		return Array.isArray(data)
+	}
+
+	$: isInbound = info.linkCategory === "inbound"
+	$: titleLinkComponent = isInbound ? BaseLink : ExternalLink
+	$: relationship = isInbound ? internalTypes : []
 </script>
 
 <cite itemprop="citation" itemscope itemtype={info.itemtype}>
 	<svelte:component
 		this={titleLinkComponent}
+		{relationship}
 		address={info.link}
 		itemprop="mainEntityOfPage">{info.title}</svelte:component>
 	made by
-	{#if isAuthoredByPerson}
+	{#if isPerson(info.author)}
 		<BoundLink
 			address={info.author.link}
 			itemprop="author"
@@ -42,11 +47,9 @@
 			<span itemprop="name">{info.author.groupName}</span>
 		</BoundLink>
 	{/if}
-	{#if licenseCount > 0}
+	{#if typeof info.license !== "undefined"}
 		is licensed under
-		{#if licenseCount === 1}
-			<BoundLink address={info.license.link} itemprop="license">{info.license.name}</BoundLink>
-		{:else}
+		{#if hasMultipleLicense(info.license)}
 			{#each info.license as licenseInfo, i}
 				{#if i === info.license.length - 1}
 					and <BoundLink address={licenseInfo.link} itemprop="license">
@@ -57,6 +60,8 @@
 						{licenseInfo.name}</BoundLink>{#if info.license.length === 2}&nbsp;{:else}, {/if}
 				{/if}
 			{/each}
+		{:else}
+			<BoundLink address={info.license.link} itemprop="license">{info.license.name}</BoundLink>
 		{/if}
 	{/if}
 </cite>
