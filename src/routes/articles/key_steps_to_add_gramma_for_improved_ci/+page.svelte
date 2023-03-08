@@ -81,10 +81,13 @@
 			The reason is that grammar is particularly important in formal contexts. Even in informal context, having a good grammar helps the writer to convey the ideas correctly. It is even recommended by a search engine to <Citation info={references[2]}>avoid mistakes in grammar or spellings</Citation>.
 		</SimpleText>
 	</StructuredSection>
-	<StructuredSection id={prerequisites.id} itemtype="https://schema.org/TechArticle">
+	<section id={prerequisites.id}>
 		<SecondaryHeading headingInfo={prerequisites}/>
 		<SimpleText>
-
+			Readers are expected to have <span itemprop="proficiencyLevel">intermediate</span> knowledge in JavaScript yet may be a beginner in employing continuous integration. The readers are also assumed to have knowledge in using Node.js <abbr title="Command Line Interface">CLI</abbr> to install packages or run scripts.
 		</SimpleText>
-	</StructuredSection>
+		<SimpleText itemprop="dependencies">
+			Additionally, it is encouraged (but not required) to have a sample website to follow the steps and have a hands-on experience. Should a reader opt to do a hands-on, the website may even have a single page only for simplicity.
+		</SimpleText>
+	</section>
 </ArticlePost>
