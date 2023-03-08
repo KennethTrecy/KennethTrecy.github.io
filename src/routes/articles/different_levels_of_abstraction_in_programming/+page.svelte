@@ -211,7 +211,7 @@
 			<Keyword>Abstraction</Keyword> is a process to see a thing as a one rather than as the sum of its parts. It can be rules or equations that are applicable to most situations. In programming, abstractions are used to simplify the process which are common to other tasks. In other words, they are <Keyword>reusable</Keyword>. They take in different levels which this page is all about.
 		</SimpleText>
 		<SimpleText itemprop="mainEntity">
-			There are {levels.length} levels of abstraction listed below. They are ordered from easiest to hardest in implementation and customizability.
+			There are {levels.length} levels of abstraction listed below. They are ordered from easiest to hardest in implementation and flexibility.
 		</SimpleText>
 		<StructuredList order="ascending">
 			<meta itemprop="numberOfItems" content={levels.length}>
@@ -232,7 +232,7 @@
 			<strong itemprop="mainEntity">This level of abstraction is the easiest to work on among other levels.</strong> However, a code at this level may have repetitive statements. Therefore, the program will be longer and will take time to read.
 		</SimpleText>
 		<SimpleText>
-			In addition, most software are only usable in this level. They are relatively easy to install as they can be standalone, in compressed portable format, or included with the help of package manager. The downside is that there is a <Keyword>limited customizability</Keyword> which are usually offered through <em>settings</em> or <em>preferences</em> option. It is expected that the users of these applications are anyone who have <Keyword>basic computer literacy</Keyword>.
+			In addition, most software are only usable in this level. They are relatively easy to install as they can be standalone, in compressed portable format, or included with the help of package manager. The downside is that there is a <Keyword>limited flexibility</Keyword> which are usually offered through <em>settings</em> or <em>preferences</em> option. It is expected that the users of these applications are anyone who have <Keyword>basic computer literacy</Keyword>.
 		</SimpleText>
 		<SimpleText>
 			For example, a teacher use a spreadsheet software to calculate the grades of students. The teacher will just input the raw grade and the formula. After that, the final grade will be automatically calculated by the software as programmed.
@@ -264,7 +264,7 @@
 		</SimpleText>
 		<ExampleCode codeInfo={$loadedFileInfos[1]}>
 			<SimpleText>
-				There are different methods to declare environment variables. Below, it is an example of <code>.env</code> file to declare them. Note that some of the variables in the environment do not have a declared value. Therefore, the program will use default values for those empty variables.
+				There are different methods to declare environment variables. Below, it is an example of <code>.env</code> file to declare them. Note that some variables in the environment do not have a declared value. Therefore, the program will use default values for those empty variables.
 			</SimpleText>
 			<ExampleCode itemprop="hasPart" codeInfo={$loadedFileInfos[2]}/>
 			<ExampleOutput
