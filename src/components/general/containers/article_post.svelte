@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ArticlePageMeta } from "@/types/head"
+	import type { ArticlePageMeta } from "@/types/content_metadata"
 
 	import CommonHead from "@/components/general/common_head.svelte"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
