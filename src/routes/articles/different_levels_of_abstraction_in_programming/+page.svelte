@@ -213,11 +213,13 @@
 			<meta itemprop="numberOfItems" content={`${levels.length}`}>
 			{#each levels as level}
 				<StructuredListItem>
-					<Bookmark
-						itemprop="mainEntityOfPage"
-						fragment={`#${level.id}`}>
-						{level.text}
-					</Bookmark>
+					<span itemprop="item" itemscope itemtype="https://schema.org/Thing">
+						<Bookmark
+							itemprop="mainEntityOfPage"
+							fragment={`#${level.id}`}>
+							<span itemprop="name">{level.text}</span>
+						</Bookmark>
+					</span>
 				</StructuredListItem>
 			{/each}
 		</StructuredList>
