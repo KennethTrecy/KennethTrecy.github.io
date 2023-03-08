@@ -8,6 +8,8 @@ const meta = defineArticlePageMeta("/articles/centering_a_child_element", {
 	"keywords": [ "CSS", "layout tutorial", "centering" ],
 	"title": "Centering a Child Element",
 	"version": "1.002-dev",
+	"objectType": "article",
+	"articleType": "techical article"
 })
 
 export default meta
