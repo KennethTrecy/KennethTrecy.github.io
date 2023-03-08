@@ -22,10 +22,9 @@
 	import ArticlePost from "@/components/general/containers/article_post.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import ExampleCode from "@/components/general/containers/example_code.svelte"
-	import ExampleOutput from "@/components/general/containers/example_output.svelte"
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
-	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
+	import DescriptiveListItem from "@/components/general/containers/descriptive_list_item.svelte"
 
 	const loadedFileInfos = derived(page, resolvedPage => resolvedPage.data.loadedFileInfos ?? [])
 
@@ -194,18 +193,18 @@
 				The classical way to center an element is through the <Keyword>use of margins</Keyword> of the child element. There are many variations for this technique. A developer in the past can conveniently use this technique in conjunction with the previous versions of CSS frameworks. Utilizing the <Citation info={references[0]}>12-column grid system</Citation>, a developer would the following steps below to determine the margin the child element would take.
 			</SimpleText>
 			<StructuredList order="ascending">
-				<StructuredListItem>
+				<DescriptiveListItem>
 					Resize the child element by an arbitrary number of columns. The number of columns should be an even number.
-				</StructuredListItem>
-				<StructuredListItem>
+				</DescriptiveListItem>
+				<DescriptiveListItem>
 					Subtract the chosen number of columns from 12. The result is the number of unused columns that can be used as a margin.
-				</StructuredListItem>
-				<StructuredListItem>
+				</DescriptiveListItem>
+				<DescriptiveListItem>
 					Divide the difference from step 2 because the unused space would distributed both horizontal sides of the child element.
-				</StructuredListItem>
-				<StructuredListItem>
+				</DescriptiveListItem>
+				<DescriptiveListItem>
 					Depending on the CSS framework, the developer may <Citation info={references[1]}>offset</Citation> the element by a certain number of column based on quotient in step 3. Otherwise, the quotient would be divided by 12 then multiplied to 100 to get the percentage of left margin.
-				</StructuredListItem>
+				</DescriptiveListItem>
 			</StructuredList>
 			<SimpleText>
 				Below is an example positioning the child element in the center using the classical technique programmed in vanilla <abbr title="Cascading Style Sheets">CSS</abbr>.
@@ -245,18 +244,18 @@
 				It is very easy to center an element in both axes using flexible box layout. A web developer would just do the following steps.
 			</SimpleText>
 			<StructuredList order="ascending">
-				<StructuredListItem>
+				<DescriptiveListItem>
 					Set <Citation info={references[3]}> <code class="terminated">display: flex</code></Citation> on the parent.
-				</StructuredListItem>
-				<StructuredListItem>
+				</DescriptiveListItem>
+				<DescriptiveListItem>
 					Set <code class="terminated">justify-content: center</code> on the parent. This <Citation info={references[4]}>indicates to center the children with respect to main axis</Citation>.
-				</StructuredListItem>
-				<StructuredListItem>
+				</DescriptiveListItem>
+				<DescriptiveListItem>
 					Set <code class="terminated">align-items: center</code> on the parent. This <Citation info={references[5]}>indicates to center the children with respect to cross axis</Citation>.
-				</StructuredListItem>
-				<StructuredListItem>
+				</DescriptiveListItem>
+				<DescriptiveListItem>
 					Optionally, set <Citation info={references[6]}><code class="terminated">flex-direction: row</code></Citation> on the parent if there are multiple children to be layout horizontally and direction matters. If the children should be in vertical manner, use <Citation info={references[6]}><code class="terminated">flex-direction: column</code></Citation> instead.
-				</StructuredListItem>
+				</DescriptiveListItem>
 			</StructuredList>
 			<SimpleText>
 				Usually, the <code class="terminated">flex-direction: row</code> sets the x-axis as the main axis and y-axis as the cross axis. If <code class="terminated">flex-direction: column</code> has been used, the y-axis axis would be the main axis and x-axis would be the cross axis.
@@ -340,21 +339,21 @@
 				This gives an illusion that the target box is in the center of the parent despite that the child's width is bigger than parent's width. The following steps have been generalized to do the <Keyword>unorthodox way</Keyword>. Note that the instructions were based from comment in the source code of the home page.
 			</SimpleText>
 			<StructuredList order="ascending">
-				<StructuredListItem>
+				<DescriptiveListItem>
 					Let <em>self</em> be the target box.
-				</StructuredListItem>
-				<StructuredListItem>
+				</DescriptiveListItem>
+				<DescriptiveListItem>
 					Let <var>w<sub>o</sub></var> be the original width of self expressed in percentage. Therefore, it is 100%.
-				</StructuredListItem>
-				<StructuredListItem>
+				</DescriptiveListItem>
+				<DescriptiveListItem>
 					Let <var>w<sub>a</sub></var> be the width to be added to self expressed in percentage.
-				</StructuredListItem>
-				<StructuredListItem>
+				</DescriptiveListItem>
+				<DescriptiveListItem>
 					Let <var>w<sub>r</sub></var> be the resized width of self. The formula is <var>w<sub>o</sub></var> + <var>w<sub>a</sub></var>.
-				</StructuredListItem>
-				<StructuredListItem>
+				</DescriptiveListItem>
+				<DescriptiveListItem>
 					Let <var>m<sub>l</sub></var> be the left margin of resized self expressed in percentage. The left margin should be equal to -<var>w<sub>a</sub></var> ÷ 2.
-				</StructuredListItem>
+				</DescriptiveListItem>
 			</StructuredList>
 			<SimpleText>
 				Below is a snapshot of home page using the unorthodox way. The <var>w<sub>r</sub></var> is 125% and the <var>m<sub>l</sub></var> is 12.5%.
@@ -372,21 +371,21 @@
 			</SimpleText>
 			<div itemprop="workExample" itemscope itemtype="https://schema.org/CreativeWork">
 				<StructuredList order="ascending">
-					<StructuredListItem>
+					<DescriptiveListItem>
 						Let <var>w<sub>o</sub></var> = 100%.
-					</StructuredListItem>
-					<StructuredListItem>
+					</DescriptiveListItem>
+					<DescriptiveListItem>
 						Let <var>w<sub>a</sub></var> = 60%.
-					</StructuredListItem>
-					<StructuredListItem>
+					</DescriptiveListItem>
+					<DescriptiveListItem>
 						Let <var>w<sub>r</sub></var> = <var>w<sub>o</sub></var> + <var>w<sub>a</sub></var> = 100% + 60% = 160%.
-					</StructuredListItem>
-					<StructuredListItem>
+					</DescriptiveListItem>
+					<DescriptiveListItem>
 						Let <var>m<sub>l</sub></var> = -<var>w<sub>a</sub></var> ÷ 2 = -60% ÷ 2 = -30%.
-					</StructuredListItem>
-					<StructuredListItem>
+					</DescriptiveListItem>
+					<DescriptiveListItem>
 						Expected width would be <var>w<sub>r</sub></var> × 150 pixels = 240 pixels. On the other hand, the expected left margin would be <var>m<sub>l</sub></var> × 150 pixels = -45 pixels.
-					</StructuredListItem>
+					</DescriptiveListItem>
 				</StructuredList>
 			</div>
 			<SimpleText>
