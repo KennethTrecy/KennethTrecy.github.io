@@ -3,7 +3,7 @@
 	import Subheading from "@/components/general/headings/subheading.svelte"
 
 	export let headingInfo: HeadingInfo<"defined">
-	export let variant = "headline"
+	export let variant: SubheadingVariant = "headline"
 	let otherClasses: string[] = []
 
 	export { otherClasses as class }
