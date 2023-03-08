@@ -15,6 +15,7 @@ export const themeName = derived(
 export const textColor = derived(
 	themeName,
 	($name, set) => {
+		const quickDuration = 25
 		setTimeout(() => {
 			if (typeof window !== "undefined") {
 				set(rgbToHex(window.getComputedStyle(
@@ -22,6 +23,6 @@ export const textColor = derived(
 					|| document.documentElement
 				).color))
 			}
-		}, 25)
+		}, quickDuration)
 	}
 )
