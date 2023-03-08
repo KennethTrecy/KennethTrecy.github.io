@@ -214,7 +214,7 @@
 			There are {levels.length} levels of abstraction listed below. They are ordered from easiest to hardest in implementation and flexibility.
 		</SimpleText>
 		<StructuredList order="ascending">
-			<meta itemprop="numberOfItems" content={levels.length}>
+			<meta itemprop="numberOfItems" content={`${levels.length}`}>
 			{#each levels as level}
 				<StructuredListItem>
 					<Bookmark

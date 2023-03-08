@@ -48,12 +48,12 @@
 <meta name="og:type" content={pageMeta.objectType}/>
 <meta name="og:image" content={pageMeta.image.defaultLink}/>
 <meta name="og:image:alt" content={pageMeta.image.description}/>
-<meta name="og:image:width" content={pageMeta.image.defaultWidth}/>
-<meta name="og:image:height" content={pageMeta.image.defaultHeight}/>
+<meta name="og:image:width" content={`${pageMeta.image.defaultWidth}`}/>
+<meta name="og:image:height" content={`${pageMeta.image.defaultHeight}`}/>
 {#each pageMeta.image.responsiveLinks as linkInfo}
 	<meta name="og:image" content={linkInfo.link}/>
 	<meta name="og:image:alt" content={pageMeta.image.description}/>
-	<meta name="og:image:width" content={linkInfo.intrinsicWidth}/>
+	<meta name="og:image:width" content={`${linkInfo.intrinsicWidth}`}/>
 {/each}
 <meta name="og:url" content={pageMeta.pageURL}/>
 <meta name="og:description" content={pageMeta.description}/>
