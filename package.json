@@ -40,7 +40,7 @@
 		"eslint": "^8.35.0",
 		"eslint-config-whitelistyle": "github:KennethTrecy/eslint-config-whitelistyle",
 		"eslint-plugin-svelte3": "^4.0.0",
-		"gramma": "^1.6.0",
+		"gramma": "github:KennethTrecy/gramma#v1.7.0-rc1",
 		"husky": "^8.0.3",
 		"jsdom": "^20.0.3",
 		"postcss": "^8.4.21",

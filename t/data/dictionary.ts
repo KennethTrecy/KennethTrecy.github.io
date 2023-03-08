@@ -1,6 +1,7 @@
 export default [
 	// Person names
 	"KennethTrecy",
+	"kennethtrecy",
 	"Trecy",
 	"Tretchi",
 
