@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { ListVariant } from "@/types/container_info"
 
+	import SimpleThing from "@/components/general/containers/simple_thing.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
 
 	export let itemprop: string = "itemListElement"
@@ -17,7 +18,7 @@
 	{variant}
 	{itemtype}
 	class={[ ...initialClasses, ...otherClasses] }>
-	<span itemprop="item" itemscope itemtype="https://schema.org/Thing">
-		<span itemprop="description"><slot></slot></span>
-	</span>
+	<SimpleThing itemprop="description">
+		<slot></slot>
+	</SimpleThing>
 </StructuredListItem>

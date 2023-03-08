@@ -19,6 +19,7 @@
 	import ArticlePost from "@/components/general/containers/article_post.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import ExampleCode from "@/components/general/containers/example_code.svelte"
+	import SimpleThing from "@/components/general/containers/simple_thing.svelte"
 	import ExampleOutput from "@/components/general/containers/example_output.svelte"
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
@@ -213,13 +214,13 @@
 			<meta itemprop="numberOfItems" content={`${levels.length}`}>
 			{#each levels as level}
 				<StructuredListItem>
-					<span itemprop="item" itemscope itemtype="https://schema.org/Thing">
+					<SimpleThing itemprop="name">
 						<Bookmark
 							itemprop="mainEntityOfPage"
 							fragment={`#${level.id}`}>
-							<span itemprop="name">{level.text}</span>
+							{level.text}
 						</Bookmark>
-					</span>
+					</SimpleThing>
 				</StructuredListItem>
 			{/each}
 		</StructuredList>
