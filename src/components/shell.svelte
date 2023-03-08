@@ -36,7 +36,7 @@
 		href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap"
 		as="style"
 		on:load={loadEmojiStyleSheet}/>
-	{#if loadEmojiStyleSheet}
+	{#if hasLoadedEmojiStyleSheet}
 		<link
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap"
