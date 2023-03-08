@@ -9,7 +9,7 @@
 	export let pageMeta: ArticlePageMeta
 	$: articleType = pageMeta.articleType
 	$: itemtype = articleType === "technical article"
-		? "https://schema.org/TechnicalArticle"
+		? "https://schema.org/TechArticle"
 		: articleType === "blog post"
 			? "https://schema.org/BlogPosting"
 			: "https://schema.org/Article"
