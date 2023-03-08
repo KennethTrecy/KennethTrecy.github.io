@@ -3,7 +3,7 @@
 	import { page } from "$app/stores"
 	import { derived } from "svelte/store"
 
-	import type { ReferenceInfo, LicnseInfo } from "@/types/reference"
+	import type { ReferenceInfo, LicenseInfo } from "@/types/reference"
 	import type { HeadingInfo } from "@/types/container_info"
 	import type { PageData } from "@/routes/articles/centering_a_child_element/$types"
 
@@ -57,19 +57,19 @@
 		}
 	}
 	const MDNContributors = "Mozilla Contributors"
-	const CC_BY_SA_LICENSE: LicnseInfo = {
+	const CC_BY_SA_LICENSE: LicenseInfo = {
 		"name": "CC-BY-SA v2.5",
 		"link": "https://creativecommons.org/licenses/by-sa/2.5/"
 	}
 	const references: ReferenceInfo[] = [
 		{
+			...bootstrapCSSInfo as ReferenceInfo,
 			"title": "Grid system",
-			"link": "https://getbootstrap.com/docs/3.4/css/#grid",
-			...bootstrapCSSInfo
+			"link": "https://getbootstrap.com/docs/3.4/css/#grid"
 		}, {
+			...bootstrapCSSInfo as ReferenceInfo,
 			"title": "Offsetting columns",
-			"link": "https://getbootstrap.com/docs/3.4/css/#grid-offsetting",
-			...bootstrapCSSInfo
+			"link": "https://getbootstrap.com/docs/3.4/css/#grid-offsetting"
 		}, {
 			"title": "Web layout history: How we got to grid and flex",
 			"link": "https://cran.r-project.org/web/packages/imola/vignettes/imola-why-flex-and-grid.html",

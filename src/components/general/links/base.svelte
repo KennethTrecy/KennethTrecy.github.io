@@ -23,7 +23,7 @@
 		"link",
 		...otherClasses
 	].filter(Boolean).join(" ")
-	$: itemscope = typeof itemtype === "undefined" ? undefined : ""
+	$: itemscope = typeof itemtype === "undefined" ? undefined : true
 	$: label = `Link to ${address}`
 
 	function visitLink(event: KeyboardEvent): void {

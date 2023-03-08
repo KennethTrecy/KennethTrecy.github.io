@@ -11,7 +11,7 @@
 
 	import pageMeta from "@/routes/articles/different_levels_of_abstraction_in_programming/meta"
 
-	import { appendReference } from "@/components/general/containers/reference_info_collection.ts"
+	import { appendReference } from "@/components/general/containers/reference_info_collection"
 	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 
 	import CommonHead from "@/components/general/common_head.svelte"
@@ -214,7 +214,7 @@
 			There are {levels.length} levels of abstraction listed below. They are ordered from easiest to hardest in implementation and flexibility.
 		</SimpleText>
 		<StructuredList order="ascending">
-			<meta itemprop="numberOfItems" content={levels.length}>
+			<meta itemprop="numberOfItems" content={`${levels.length}`}>
 			{#each levels as level}
 				<StructuredListItem>
 					<Bookmark

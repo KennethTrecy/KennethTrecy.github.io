@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { referenceInfos } from "@/components/general/containers/reference_info_collection.ts"
+	import { referenceInfos } from "@/components/general/containers/reference_info_collection"
 
 	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 

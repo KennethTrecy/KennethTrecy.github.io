@@ -5,7 +5,7 @@
 
 	import { internalTypes } from "@/components/general/links/constants"
 
-	import { appendReference } from "@/components/general/containers/reference_info_collection.ts"
+	import { appendReference } from "@/components/general/containers/reference_info_collection"
 
 	import BaseLink from "@/components/general/links/base.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
