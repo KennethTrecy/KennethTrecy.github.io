@@ -8,7 +8,7 @@ const meta = defineArticlePageMeta("/articles/different_levels_of_abstraction_in
 		"Abstraction",
 		"level",
 		"software development",
-		"customizability",
+		"flexibility",
 		"reusability",
 		"programming"
 	],
