@@ -1,38 +1,47 @@
 <script lang="ts">
 	import { MAIN_CONTENT_ID } from "@/constants/miscellaneous_meta"
 
+	import { internalTypes } from "@/components/general/links/constants"
+
 	import Icon from "@/components/general/icon.svelte"
+	import BaseLink from "@/components/general/links/base.svelte"
 
 	export let mustShowHorizontally: boolean = false
+
+	const linkClasses = [ "inline-flex", "flex-row", "flex-nowrap", "items-center", "no-underline" ]
 </script>
 
 <ul class="menu bg-primary-100" class:menu-horizontal={mustShowHorizontally}>
 	<li>
-		<a href="/" class="inline-flex flex-row flex-nowrap items-center">
+		<BaseLink address="/" class={linkClasses} relationship={internalTypes}>
 			<Icon name="home"/>
 			<span class="flex-1">Home<span>
-		</a>
-		<a href="/projects" class="inline-flex flex-row flex-nowrap items-center">
+		</BaseLink>
+		<BaseLink address="/projects" class={linkClasses} relationship={internalTypes}>
 			<Icon name="code"/>
 			<span class="flex-1">Projects<span>
-		</a>
-		<a href="/articles" class="inline-flex flex-row flex-nowrap items-center">
+		</BaseLink>
+		<BaseLink address="/articles" class={linkClasses} relationship={internalTypes}>
 			<Icon name="article"/>
 			<span class="flex-1">Articles<span>
-		</a>
-		<a
-			href={`/about_myself#${MAIN_CONTENT_ID}`}
-			class="inline-flex flex-row flex-nowrap items-center">
+		</BaseLink>
+		<BaseLink
+			address={`/about_myself#${MAIN_CONTENT_ID}`}
+			class={linkClasses}
+			relationship={internalTypes}>
 			<Icon name="badge"/>
 			<span class="flex-1">About myself<span>
-		</a>
-		<a href="/website_info" class="inline-flex flex-row flex-nowrap items-center">
+		</BaseLink>
+		<BaseLink address="/website_info" class={linkClasses} relationship={internalTypes}>
 			<Icon name="web"/>
 			<span class="flex-1">Website info<span>
-		</a>
-		<a href="/about_myself#contact_details" class="inline-flex flex-row flex-nowrap items-center">
+		</BaseLink>
+		<BaseLink
+			address="/about_myself#contact_details"
+			class={linkClasses}
+			relationship={internalTypes}>
 			<Icon name="contacts"/>
 			<span class="flex-1">Contacts<span>
-		</a>
+		</BaseLink>
 	</li>
 </ul>
