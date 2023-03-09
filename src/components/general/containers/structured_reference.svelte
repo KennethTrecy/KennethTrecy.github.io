@@ -15,7 +15,7 @@
 	})
 </script>
 
-<StructuredSection id={references.id}>
+<StructuredSection itemprop="citation" id={references.id}>
 	<SecondaryHeading headingInfo={references}/>
 	<SimpleText itemprop="description">
 		Some portions in this article were based on work authored and shared by following groups or persons that have been attributed below.

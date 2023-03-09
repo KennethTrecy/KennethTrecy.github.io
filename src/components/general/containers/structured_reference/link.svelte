@@ -23,47 +23,45 @@
 </script>
 
 <cite itemprop="item" itemscope itemtype={info.itemtype}>
-	<span itemprop="citation">
-		<svelte:component
-			this={titleLinkComponent}
-			{relationship}
-			address={info.link}
-			itemprop="mainEntityOfPage">{info.title}</svelte:component>
-		made by
-		{#if isPerson(info.author)}
-			<BoundLink
-				address={info.author.link}
-				itemprop="author"
-				itemtype="https://schema.org/Person">
-				<span itemprop="name">
-					<span itemprop="givenName">{info.author.givenName}</span>
-					<span itemprop="familyName">{info.author.familyName}</span>
-				</span>
-			</BoundLink>
+	<svelte:component
+		this={titleLinkComponent}
+		{relationship}
+		address={info.link}
+		itemprop="mainEntityOfPage">{info.title}</svelte:component>
+	made by
+	{#if isPerson(info.author)}
+		<BoundLink
+			address={info.author.link}
+			itemprop="author"
+			itemtype="https://schema.org/Person">
+			<span itemprop="name">
+				<span itemprop="givenName">{info.author.givenName}</span>
+				<span itemprop="familyName">{info.author.familyName}</span>
+			</span>
+		</BoundLink>
+	{:else}
+		<BoundLink
+			address={info.author.link}
+			itemprop="author"
+			itemtype="https://schema.org/Organization">
+			<span itemprop="name">{info.author.groupName}</span>
+		</BoundLink>
+	{/if}
+	{#if typeof info.license !== "undefined"}
+		is licensed under
+		{#if hasMultipleLicense(info.license)}
+			{#each info.license as licenseInfo, i}
+				{#if i === info.license.length - 1}
+					and <BoundLink address={licenseInfo.link} itemprop="license">
+						{licenseInfo.name}
+					</BoundLink>
+				{:else}
+					<BoundLink address={licenseInfo.link} itemprop="license">
+						{licenseInfo.name}</BoundLink>{#if info.license.length === 2}&nbsp;{:else}, {/if}
+				{/if}
+			{/each}
 		{:else}
-			<BoundLink
-				address={info.author.link}
-				itemprop="author"
-				itemtype="https://schema.org/Organization">
-				<span itemprop="name">{info.author.groupName}</span>
-			</BoundLink>
+			<BoundLink address={info.license.link} itemprop="license">{info.license.name}</BoundLink>
 		{/if}
-		{#if typeof info.license !== "undefined"}
-			is licensed under
-			{#if hasMultipleLicense(info.license)}
-				{#each info.license as licenseInfo, i}
-					{#if i === info.license.length - 1}
-						and <BoundLink address={licenseInfo.link} itemprop="license">
-							{licenseInfo.name}
-						</BoundLink>
-					{:else}
-						<BoundLink address={licenseInfo.link} itemprop="license">
-							{licenseInfo.name}</BoundLink>{#if info.license.length === 2}&nbsp;{:else}, {/if}
-					{/if}
-				{/each}
-			{:else}
-				<BoundLink address={info.license.link} itemprop="license">{info.license.name}</BoundLink>
-			{/if}
-		{/if}
-	</span>
+	{/if}
 </cite>
