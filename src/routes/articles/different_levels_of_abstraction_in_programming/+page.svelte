@@ -226,7 +226,6 @@
 		</StructuredList>
 	</StructuredSection>
 	<BodyGroup>
-
 		<StructuredSection id={levels[0].id}>
 			<SecondaryHeading headingInfo={levels[0]}/>
 			<SimpleText itemprop="description">
