@@ -5,6 +5,7 @@
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import PageDetailCard from "@/components/general/card/page_detail.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
+	import StructuredReference from "@/components/general/containers/structured_reference.svelte"
 
 	export let pageMeta: ArticlePageMeta
 	$: articleType = pageMeta.articleType
@@ -23,6 +24,7 @@
 	<PrimaryHeading slot="title">{pageMeta.title}</PrimaryHeading>
 	<svelte:fragment slot="content">
 		<slot></slot>
+		<StructuredReference/>
 	</svelte:fragment>
 	<PageDetailCard slot="metadata" {pageMeta}/>
 </StructuredArticle>

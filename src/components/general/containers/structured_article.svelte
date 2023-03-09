@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { MAIN_CONTENT_ID } from "@/constants/miscellaneous_meta"
 
-	import StructuredReference from "@/components/general/containers/structured_reference.svelte"
-
 	export let itemtype: string = "https://schema.org/WebContent"
 </script>
 
@@ -29,7 +27,6 @@
 				{itemtype}
 				class="prose md:prose-lg pb-8 text-justify">
 				<slot name="content"></slot>
-				<StructuredReference/>
 			</div>
 		</div>
 		<footer class="prose md:prose-lg pb-8">
