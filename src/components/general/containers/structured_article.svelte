@@ -1,14 +1,14 @@
 <script lang="ts">
+	import { PUBLIC_PRODUCTION_BASE_URL } from "$env/static/public"
 	import { MAIN_CONTENT_ID } from "@/constants/miscellaneous_meta"
 
 	export let itemtype: string = "https://schema.org/WebContent"
 </script>
 
 <div class="flex-1 m-0 p-0 h-full w-full flex flex-col justify-center items-stretch container">
-	<!-- TODO: Pass the URL of the website -->
 	<article
 		id={MAIN_CONTENT_ID}
-		itemid={`#${MAIN_CONTENT_ID}`}
+		itemid={`${PUBLIC_PRODUCTION_BASE_URL}#${MAIN_CONTENT_ID}`}
 		itemprop="mainContentOfPage"
 		itemscope
 		itemtype="https://schema.org/WebPageElement"
