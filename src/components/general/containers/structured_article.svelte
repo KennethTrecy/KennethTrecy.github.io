@@ -3,12 +3,14 @@
 	import { MAIN_CONTENT_ID } from "@/constants/miscellaneous_meta"
 
 	export let itemtype: string = "https://schema.org/WebContent"
+
+	const currentLocation = location.href
 </script>
 
 <div class="flex-1 m-0 p-0 h-full w-full flex flex-col justify-center items-stretch container">
 	<article
 		id={MAIN_CONTENT_ID}
-		itemid={`${PUBLIC_PRODUCTION_BASE_URL}#${MAIN_CONTENT_ID}`}
+		itemid={`${currentLocation}#${MAIN_CONTENT_ID}`}
 		itemprop="mainContentOfPage"
 		itemscope
 		itemtype="https://schema.org/WebPageElement"
