@@ -190,7 +190,11 @@
 		<StructuredSection id={publicationPrinciples.id}>
 			<SecondaryHeading headingInfo={publicationPrinciples}/>
 			<SimpleText itemprop="mainEntity">
-				Before deploying the new and modified web pages, there are a set of principles being used. They are recommended to be followed but not required. They serve as guide to ensure the quality and consistency of the pages.
+				Before deploying the new and modified web pages, there is <BaseLink
+					itemprop="mainEntityOfPage"
+					address="/website_info/publishing_principles"
+					relationship={internalTypes}
+					context="self">a set of principles</BaseLink> being used. They are recommended to be followed but not required. They serve as guide to ensure the quality and consistency of the pages.
 			</SimpleText>
 		</StructuredSection>
 		<StructuredSection id={concerns.id}>
