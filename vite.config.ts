@@ -11,12 +11,12 @@ const configuration: UserConfig = {
 		"hmr": {
 			"clientPort": 7000,
 			"port": 7000,
-			"host": "0.0.0.0",
+			"host": "localhost",
 			"protocol": "ws"
 		}
 	},
 	"test": {
-		"include": ["src/**/*.spec.ts"]
+		"include": [ "src/**/*.spec.ts" ]
 	}
 }
 

@@ -18,9 +18,11 @@
 	$: fragment = `#${headingInfo.id}`
 	$: itemprop = variant === "headline"
 		? "headline name"
-		: variant === "name"
-			? "name"
-			: undefined
+		: variant === "term"
+			? "termCode name"
+			: variant ==="name"
+				? "name"
+				: undefined
 </script>
 
 <Heading {level} {fragment} {mayUseBookmark} class={joinedClasses}>
