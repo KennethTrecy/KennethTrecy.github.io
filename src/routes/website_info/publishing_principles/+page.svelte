@@ -21,9 +21,11 @@
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import QuaternaryHeading from "@/components/general/headings/quaternary.svelte"
+	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredReference from "@/components/general/containers/structured_reference.svelte"
+	import DescriptiveListItem from "@/components/general/containers/descriptive_list_item.svelte"
 
 	const overview = defineHeadingInfo({
 		"prefix": "🌄",
@@ -47,6 +49,18 @@
 		"prefix": "📰",
 		"text": "Published Status",
 		"id": publishedStatusID
+	})
+	const pageStatusUpdateTriggers = defineHeadingInfo({
+		"prefix": "🔼",
+		"text": "Update Triggers of Page Status"
+	})
+	const minorUpdateTriggers = defineHeadingInfo({
+		"prefix": "🦐",
+		"text": "Minor Update Triggers"
+	})
+	const majorUpdateTriggers = defineHeadingInfo({
+		"prefix": "🦣",
+		"text": "Major Update Triggers"
 	})
 
 	const references: ReferenceInfo[] = [
@@ -87,7 +101,7 @@
 				A page's version increases mathematically. A version that is mathematically highest is considered to be the latest version. This was inspired from mechanism of determining the page version base from <Citation info={references[0]}>a meta tag</Citation>.
 			</SimpleText>
 			<SimpleText>
-				Page version increase by 0.001 for every minor change. For major changes on them, the version will be rounded up to the nearest whole number. Only text contents or properties inside the main structured data will be considered as changes. Changes in the shell will be ignored.
+				Page version consists of a major version (indicated by whole part), minor version (indicated by the fractional part), and optional suffix to override to a certain status.
 			</SimpleText>
 			<StructuredSection id={pageStatusSet.id} itemtype="https://schema.org/DefinedTermSet">
 				<TertiaryHeading headingInfo={pageStatusSet}/>
@@ -129,6 +143,46 @@
 					<SimpleText itemprop="description">
 						If a page is in published status, changes for that specific version have been applied. A page may update in the future in case there are changes in topic(s) it discusses, corrections in grammar or spellings, and other kinds of improvements in the content.
 					</SimpleText>
+				</StructuredSection>
+			</StructuredSection>
+			<StructuredSection id={pageStatusUpdateTriggers.id} >
+				<TertiaryHeading headingInfo={pageStatusUpdateTriggers}/>
+				<SimpleText itemprop="description">
+					 Page version increases depending on the size and influence of the change. Only text contents or properties inside the main structured data will be considered as changes. Changes in the shell and other components (with generalized text) will be ignored. Below is a non-exhaustive list of possible triggers.
+				</SimpleText>
+				<StructuredSection id={minorUpdateTriggers.id}>
+					<QuaternaryHeading headingInfo={minorUpdateTriggers}/>
+					<SimpleText itemprop="description">
+						Page version increase by 0.001 for every minor change. Due to this mechanism, a page is allowed to have 1000 minor versions starting from <var>x</var>.000 until <var>x</var>.999 where <var>x</var> is the major version. Below are examples that trigger a minor change.
+					</SimpleText>
+					<StructuredList order="unordered" variant="normal">
+						<DescriptiveListItem>
+							Correction in grammar and spellings
+						</DescriptiveListItem>
+						<DescriptiveListItem>
+							Additions of information
+						</DescriptiveListItem>
+						<DescriptiveListItem>
+							Removal of outdated information
+						</DescriptiveListItem>
+						<DescriptiveListItem>
+							Updates of certain package(s) that is part of prerequisite to an article
+						</DescriptiveListItem>
+					</StructuredList>
+				</StructuredSection>
+				<StructuredSection id={majorUpdateTriggers.id}>
+					<QuaternaryHeading headingInfo={majorUpdateTriggers}/>
+					<SimpleText itemprop="description">
+						For invoked triggers to do a major update, the page version would be rounded up to the nearest whole number, regardless if there is a minor change included in the new version.
+					</SimpleText>
+					<StructuredList order="unordered" variant="normal">
+						<DescriptiveListItem>
+							Change in main data structure type
+						</DescriptiveListItem>
+						<DescriptiveListItem>
+							Change in title, thus affecting URL, and other links.
+						</DescriptiveListItem>
+					</StructuredList>
 				</StructuredSection>
 			</StructuredSection>
 		</StructuredSection>
