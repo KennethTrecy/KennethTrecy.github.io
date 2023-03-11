@@ -17,9 +17,13 @@
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
 
-	const introduction = defineHeadingInfo({
+	const overview = defineHeadingInfo({
 		"prefix": "🌄",
 		"text": "Overview"
+	})
+	const pageVersioning = defineHeadingInfo({
+		"prefix": "📃",
+		"text": "Web Pages' Versioning Guidelines"
 	})
 </script>
 
@@ -32,8 +36,14 @@
 	<svelte:fragment slot="content">
 		<StructuredSection id={overview.id}>
 			<SecondaryHeading headingInfo={overview}/>
-			<SimpleText itemprop="mainEntity">
+			<SimpleText itemprop="description">
 				The website administrator will release a new or modified page. Each page are versioned and timestamped. This is important especially for the pages that update due to new set of dependencies, new standards, or changes in the industry. The website itself also has a version which can be seen on its release page. Below are set of guidelines on versioning of the contents.
+			</SimpleText>
+		</StructuredSection>
+		<StructuredSection id={pageVersioning.id}>
+			<SecondaryHeading headingInfo={pageVersioning}/>
+			<SimpleText itemprop="mainEntity">
+				A page's version increases mathematically. Published pages increase by 0.001 for every minor change. For major changes on them, the version will be rounded up to the nearest whole number. Only text contents or properties inside the main structured data will be considered as changes. Changes in the shell will be ignored.
 			</SimpleText>
 		</StructuredSection>
 	</svelte:fragment>
