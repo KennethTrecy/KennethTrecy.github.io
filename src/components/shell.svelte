@@ -42,11 +42,6 @@
 			href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap"
 			as="style"/>
 	{/if}
-	<noscript>
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap"/>
-	</noscript>
 	<style>
 		body {
 			font-family: "Roboto", "Noto Color Emoji", "Segoe UI", Tahoma, Verdana, Geneva, sans-serif;
