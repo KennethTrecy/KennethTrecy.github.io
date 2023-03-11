@@ -6,26 +6,24 @@
 		pageStatusSetID,
 		pageStatusSetURL,
 		draftStatusID,
-		publishedStatusID
+		draftStatusURL,
+		publishedStatusID,
+		publishedStatusURL
 	} from "@/constants/schema_collection"
 
 	import BaseLink from "@/components/general/links/base.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
 	import Citation from "@/components/general/links/citation.svelte"
-	import ExternalLink from "@/components/general/links/external.svelte"
 	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import PageDetailCard from "@/components/general/card/page_detail.svelte"
 	import TertiaryHeading from "@/components/general/headings/tertiary.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
-	import ThirdPartyLink from "@/components/shell/third-party_package_link.svelte"
-	import StructuredList from "@/components/general/containers/structured_list.svelte"
+	import QuaternaryHeading from "@/components/general/headings/quaternary.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
-	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
 	import StructuredReference from "@/components/general/containers/structured_reference.svelte"
-	import DescriptiveListItem from "@/components/general/containers/descriptive_list_item.svelte"
 
 	const overview = defineHeadingInfo({
 		"prefix": "🌄",
@@ -35,10 +33,20 @@
 		"prefix": "📃",
 		"text": "Versioning Guidelines of Web Pages"
 	})
-	const pageStatus = defineHeadingInfo({
+	const pageStatusSet = defineHeadingInfo({
 		"prefix": "🔁",
 		"text": "List of Page Statuses",
 		"id": pageStatusSetID
+	})
+	const draftStatus = defineHeadingInfo({
+		"prefix": "📄",
+		"text": "Draft Status",
+		"id": draftStatusID
+	})
+	const publishedStatus = defineHeadingInfo({
+		"prefix": "📰",
+		"text": "Published Status",
+		"id": publishedStatusID
 	})
 
 	const references: ReferenceInfo[] = [
@@ -76,27 +84,53 @@
 		<StructuredSection id={pageVersioning.id}>
 			<SecondaryHeading headingInfo={pageVersioning}/>
 			<SimpleText itemprop="mainEntity">
-				A page's version increases mathematically. A version that is mathematically highest is considered to be the latest version. This was inspired from mechanism of determining the page version base from <Citation info={references[0]}>a meta tag</Citation>. The page version is used to determine the status of the page.
+				A page's version increases mathematically. A version that is mathematically highest is considered to be the latest version. This was inspired from mechanism of determining the page version base from <Citation info={references[0]}>a meta tag</Citation>.
 			</SimpleText>
-			<StructuredSection id={pageStatus.id} itemtype="https://schema.org/DefinedTermSet">
-				<TertiaryHeading headingInfo={pageStatus}/>
-				<ol>
-					<li itemprop="hasDefinedTerm" itemscope itemtype="DefinedTerm">
-						<span itemprop="termCode name">Draft</span>
-						<link itemprop="inDefinedTermSet" href={pageStatusSetURL}>
+			<SimpleText>
+				Page version increase by 0.001 for every minor change. For major changes on them, the version will be rounded up to the nearest whole number. Only text contents or properties inside the main structured data will be considered as changes. Changes in the shell will be ignored.
+			</SimpleText>
+			<StructuredSection id={pageStatusSet.id} itemtype="https://schema.org/DefinedTermSet">
+				<TertiaryHeading headingInfo={pageStatusSet}/>
+				<SimpleText itemprop="description">
+					The page version is used to determine the status of the page. The pages alternate between the two statuses below.
+				</SimpleText>
+				<ul>
+					<li itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+						<span itemprop="termCode name">
+							<BaseLink
+								address={draftStatusURL}
+								relationship={internalTypes}
+								itemprop="mainEntityOfPage">
+								{draftStatus.text}
+							</BaseLink>
+						</span>
 					</li>
-					<li itemprop="hasDefinedTerm" itemscope itemtype="DefinedTerm">
-						<span itemprop="termCode name">Published</span>
-						<link itemprop="inDefinedTermSet" href={pageStatusSetURL}>
+					<li itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+						<span itemprop="termCode name">
+							<BaseLink
+								address={publishedStatusURL}
+								relationship={internalTypes}
+								itemprop="mainEntityOfPage">
+								{publishedStatus.text}
+							</BaseLink>
+						</span>
 					</li>
-				</ol>
+				</ul>
+				<StructuredSection id={draftStatusID} itemtype="https://schema.org/DefinedTerm">
+					<link itemprop="inDefinedTermSet" href={pageStatusSetURL}>
+					<QuaternaryHeading headingInfo={draftStatus}/>
+					<SimpleText itemprop="description">
+						All pages start from <em>0.1-dev</em>. Similar to the <Citation info={references[0]}>meta tag specification for <em>page-version</em></Citation>, any version that is mathematically smaller than one is also considered as draft. Any version with <em>-dev</em> suffix are considered to be in draft and are still being developed.
+					</SimpleText>
+				</StructuredSection>
+				<StructuredSection id={publishedStatusID} itemtype="https://schema.org/DefinedTerm">
+					<link itemprop="inDefinedTermSet" href={pageStatusSetURL}>
+					<QuaternaryHeading headingInfo={publishedStatus}/>
+					<SimpleText itemprop="description">
+						If a page is in published status, changes for that specific version have been applied. A page may update in the future in case there are changes in topic(s) it discusses, corrections in grammar or spellings, and other kinds of improvements in the content.
+					</SimpleText>
+				</StructuredSection>
 			</StructuredSection>
-			<SimpleText>
-				All pages start from <em>0.1-dev</em>. Similar to the <Citation info={references[0]}>meta tag specification for <em>page-version</em></Citation>, any version that is mathematically smaller than one is also considered as draft. Any version with <em>-dev</em> suffix are considered to be in draft and still being developed.
-			</SimpleText>
-			<SimpleText>
-				Published pages increase by 0.001 for every minor change. For major changes on them, the version will be rounded up to the nearest whole number. Only text contents or properties inside the main structured data will be considered as changes. Changes in the shell will be ignored.
-			</SimpleText>
 		</StructuredSection>
 		<StructuredReference/>
 	</svelte:fragment>
