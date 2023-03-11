@@ -16,7 +16,7 @@ const configuration: UserConfig = {
 		}
 	},
 	"test": {
-		"include": ["src/**/*.spec.ts"]
+		"include": [ "src/**/*.spec.ts" ]
 	}
 }
 
