@@ -19,6 +19,7 @@
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
 	import StructuredReference from "@/components/general/containers/structured_reference.svelte"
+	import DescriptiveListItem from "@/components/general/containers/descriptive_list_item.svelte"
 
 	const overview = defineHeadingInfo({
 		"prefix": "🌄",
@@ -26,7 +27,11 @@
 	})
 	const pageVersioning = defineHeadingInfo({
 		"prefix": "📃",
-		"text": "Web Pages' Versioning Guidelines"
+		"text": "Versioning Guidelines of Web Pages"
+	})
+	const pageStatus = defineHeadingInfo({
+		"prefix": "🔁",
+		"text": "List of Page Statuses"
 	})
 
 	const references: ReferenceInfo[] = [
@@ -64,8 +69,21 @@
 		<StructuredSection id={pageVersioning.id}>
 			<SecondaryHeading headingInfo={pageVersioning}/>
 			<SimpleText itemprop="mainEntity">
-				A page's version increases mathematically. A version that is mathematically highest is considered to be the latest version. This was inspired from mechanism of determining the page version base from <Citation info={references[0]}>a meta tag</Citation>.
+				A page's version increases mathematically. A version that is mathematically highest is considered to be the latest version. This was inspired from mechanism of determining the page version base from <Citation info={references[0]}>a meta tag</Citation>. The page version is used to determine the status of the page.
 			</SimpleText>
+			<StructuredSection id={pageStatus.id} itemtype="https://schema.org/DefinedTermSet">
+				<TertiaryHeading headingInfo={pageStatus}/>
+				<ol>
+					<li itemprop="hasDefinedTerm" itemscope itemtype="DefinedTerm">
+						<span itemprop="termCode name">Draft</span>
+						<link itemprop="inDefinedTermSet" href={`#${pageStatus.id}`}>
+					</li>
+					<li itemprop="hasDefinedTerm" itemscope itemtype="DefinedTerm">
+						<span itemprop="termCode name">Published</span>
+						<link itemprop="inDefinedTermSet" href={`#${pageStatus.id}`}>
+					</li>
+				</ol>
+			</StructuredSection>
 			<SimpleText>
 				All pages start from <em>0.1-dev</em>. Similar to the <Citation info={references[0]}>meta tag specification for <em>page-version</em></Citation>, any version that is mathematically smaller than one is also considered as draft. Any version with <em>-dev</em> suffix are considered to be in draft and still being developed.
 			</SimpleText>
