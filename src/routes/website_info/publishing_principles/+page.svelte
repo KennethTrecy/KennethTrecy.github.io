@@ -31,9 +31,9 @@
 		"prefix": "🌄",
 		"text": "Overview"
 	})
-	const pageVersioning = defineHeadingInfo({
+	const pageGuidelines = defineHeadingInfo({
 		"prefix": "📃",
-		"text": "Versioning Guidelines of Web Pages"
+		"text": "Guidelines for Web Pages"
 	})
 	const pageStatusSet = defineHeadingInfo({
 		"prefix": "🔁",
@@ -50,9 +50,9 @@
 		"text": "Published Status",
 		"id": publishedStatusID
 	})
-	const pageStatusUpdateTriggers = defineHeadingInfo({
+	const pageVersionUpdateTriggers = defineHeadingInfo({
 		"prefix": "🔼",
-		"text": "Update Triggers of Page Status"
+		"text": "Update Triggers of Page Version"
 	})
 	const minorUpdateTriggers = defineHeadingInfo({
 		"prefix": "🦐",
@@ -61,6 +61,10 @@
 	const majorUpdateTriggers = defineHeadingInfo({
 		"prefix": "🦣",
 		"text": "Major Update Triggers"
+	})
+	const referencingOthers = defineHeadingInfo({
+		"prefix": "👉🏽",
+		"text": "Referencing Others"
 	})
 
 	const references: ReferenceInfo[] = [
@@ -95,8 +99,8 @@
 				The website administrator will release a new or modified page. Each page are versioned and timestamped. This is important especially for the pages that update due to new set of dependencies, new standards, or changes in the industry. The website itself also has a version which can be seen on its release page. Below are set of guidelines on versioning of the contents.
 			</SimpleText>
 		</StructuredSection>
-		<StructuredSection id={pageVersioning.id}>
-			<SecondaryHeading headingInfo={pageVersioning}/>
+		<StructuredSection id={pageGuidelines.id}>
+			<SecondaryHeading headingInfo={pageGuidelines}/>
 			<SimpleText itemprop="mainEntity">
 				A page's version increases mathematically. A version that is mathematically highest is considered to be the latest version. This was inspired from mechanism of determining the page version base from <Citation info={references[0]}>a meta tag</Citation>.
 			</SimpleText>
@@ -145,8 +149,8 @@
 					</SimpleText>
 				</StructuredSection>
 			</StructuredSection>
-			<StructuredSection id={pageStatusUpdateTriggers.id} >
-				<TertiaryHeading headingInfo={pageStatusUpdateTriggers}/>
+			<StructuredSection id={pageVersionUpdateTriggers.id} >
+				<TertiaryHeading headingInfo={pageVersionUpdateTriggers}/>
 				<SimpleText itemprop="description">
 					 Page version increases depending on the size and influence of the change. Only text contents or properties inside the main structured data will be considered as changes. Changes in the shell and other components (with generalized text) will be ignored. Below is a non-exhaustive list of possible triggers.
 				</SimpleText>
@@ -184,6 +188,12 @@
 						</DescriptiveListItem>
 					</StructuredList>
 				</StructuredSection>
+			</StructuredSection>
+			<StructuredSection id={referencingOthers.id}>
+				<TertiaryHeading headingInfo={referencingOthers}/>
+				<SimpleText>
+					For the articles, an attribution should given to different individuals and groups of people. Texts should be paraphrased as much as possible.
+				</SimpleText>
 			</StructuredSection>
 		</StructuredSection>
 		<StructuredReference/>
