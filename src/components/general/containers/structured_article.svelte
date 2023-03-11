@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { PUBLIC_PRODUCTION_BASE_URL } from "$env/static/public"
+	import { browser } from "$app/environment"
 	import { MAIN_CONTENT_ID } from "@/constants/miscellaneous_meta"
 
 	export let itemtype: string = "https://schema.org/WebContent"
 
-	const currentLocation = location.href
+	const currentLocation = browser ? location.href : ""
 </script>
 
 <div class="flex-1 m-0 p-0 h-full w-full flex flex-col justify-center items-stretch container">
