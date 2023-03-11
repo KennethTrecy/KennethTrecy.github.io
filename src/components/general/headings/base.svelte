@@ -18,7 +18,9 @@
 		? "h1"
 		: level === 2
 			? "h2"
-			: "h3"
+			: level === 3
+				? "h3"
+				: "h4"
 </script>
 
 <svelte:element
