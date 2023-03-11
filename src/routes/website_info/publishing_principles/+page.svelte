@@ -2,6 +2,12 @@
 	import pageMeta from "@/routes/website_info/meta"
 	import type { ReferenceInfo, LicenseInfo } from "@/types/reference"
 	import { internalTypes, authorTypes } from "@/components/general/links/constants"
+	import {
+		pageStatusSetID,
+		pageStatusSetURL,
+		draftStatusID,
+		publishedStatusID
+	} from "@/constants/schema_collection"
 
 	import BaseLink from "@/components/general/links/base.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
@@ -31,7 +37,8 @@
 	})
 	const pageStatus = defineHeadingInfo({
 		"prefix": "🔁",
-		"text": "List of Page Statuses"
+		"text": "List of Page Statuses",
+		"id": pageStatusSetID
 	})
 
 	const references: ReferenceInfo[] = [
@@ -76,11 +83,11 @@
 				<ol>
 					<li itemprop="hasDefinedTerm" itemscope itemtype="DefinedTerm">
 						<span itemprop="termCode name">Draft</span>
-						<link itemprop="inDefinedTermSet" href={`#${pageStatus.id}`}>
+						<link itemprop="inDefinedTermSet" href={pageStatusSetURL}>
 					</li>
 					<li itemprop="hasDefinedTerm" itemscope itemtype="DefinedTerm">
 						<span itemprop="termCode name">Published</span>
-						<link itemprop="inDefinedTermSet" href={`#${pageStatus.id}`}>
+						<link itemprop="inDefinedTermSet" href={pageStatusSetURL}>
 					</li>
 				</ol>
 			</StructuredSection>
