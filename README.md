@@ -3,7 +3,7 @@
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/KennethTrecy/kennethtrecy.pages.dev?style=for-the-badge&display_name=tag&sort=semver)
 ![GitHub closed issues count](https://img.shields.io/github/issues-closed/KennethTrecy/kennethtrecy.pages.dev?style=for-the-badge)
 ![GitHub pull request count](https://img.shields.io/github/issues-pr-closed/KennethTrecy/kennethtrecy.pages.dev?style=for-the-badge)
-![Commits since latest version](https://img.shields.io/github/commits-since/KennethTrecy/kennethtrecy.pages.dev/latest?style=for-the-badge)
+![Commits since latest version](https://img.shields.io/github/commits-since/KennethTrecy/kennethtrecy.pages.dev/latest/dev?style=for-the-badge)
 ![Lines of code](https://img.shields.io/tokei/lines/github/KennethTrecy/kennethtrecy.pages.dev?style=for-the-badge)
 ![GitHub code size in bytes](https://img.shields.io/github/repo-size/KennethTrecy/kennethtrecy.pages.dev?style=for-the-badge)
 
