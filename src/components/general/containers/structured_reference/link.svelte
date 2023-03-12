@@ -33,7 +33,7 @@
 		{#if isPerson(info.author)}
 			<BoundLink
 				address={info.author.link}
-				itemprop="autho copyrightHolder"
+				itemprop="author copyrightHolder"
 				itemtype="https://schema.org/Person">
 				<span itemprop="name">
 					<span itemprop="givenName">{info.author.givenName}</span>
