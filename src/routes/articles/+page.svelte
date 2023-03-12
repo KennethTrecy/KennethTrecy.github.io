@@ -7,7 +7,6 @@
 	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 	import PageDetailCard from "@/components/general/card/page_detail.svelte"
 	import PrimaryHeading from "@/components/general/headings/primary.svelte"
-	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
