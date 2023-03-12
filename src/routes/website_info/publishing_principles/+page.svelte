@@ -82,6 +82,20 @@
 				"name": "CC0",
 				"link": "https://creativecommons.org/publicdomain/zero/1.0/"
 			}
+		},
+		{
+			"title": "Recommended practices for attribution - Creative Commons",
+			"itemtype": "https://schema.org/Article",
+			"link": "https://wiki.creativecommons.org/wiki/Recommended_practices_for_attribution",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "CC Wiki",
+				"link": "https://wiki.creativecommons.org/wiki/Main_Page"
+			},
+			"license": {
+				"name": "CC BY 4.0",
+				"link": "https://creativecommons.org/licenses/by/4.0/"
+			}
 		}
 	]
 </script>
@@ -192,7 +206,7 @@
 			<StructuredSection id={referencingOthers.id}>
 				<TertiaryHeading headingInfo={referencingOthers}/>
 				<SimpleText>
-					For the articles, an attribution should given to different individuals and groups of people. Texts should be paraphrased as much as possible.
+					For the articles, an attribution should given to different individuals and groups of people. The <Citation info={references[1]}>components for attribution</Citation> should be present as possible. Texts should be paraphrased as much as possible.
 				</SimpleText>
 			</StructuredSection>
 		</StructuredSection>
