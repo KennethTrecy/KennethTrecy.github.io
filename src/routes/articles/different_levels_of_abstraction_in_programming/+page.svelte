@@ -110,25 +110,18 @@
 				"link": "https://www.php.net/manual/en/cc.license.php"
 			}
 		}, {
-			"title": "Templates - cppreference.com",
-			"link": "https://en.cppreference.com/w/cpp/language/templates",
+			"title": "Templates (C++)",
+			"link": "https://learn.microsoft.com/en-us/cpp/cpp/templates-cpp?view=msvc-170",
 			"itemtype": "https://schema.org/CreativeWork",
 			"linkCategory": "outbound",
 			"author": {
-				// The group name was based on question "Who is behind this site?" in FAQs.
-				// See: https://en.cppreference.com/w/Cppreference:FAQ
-				"groupName": "C++ enthusiasts worldwide",
-				"link": "https://en.cppreference.com/mwiki/index.php?title=cpp/language/templates&action=history"
+				"groupName": "Microsoft Corporation",
+				"link": "https://www.microsoft.com"
 			},
-			"license": [
-				{
-					"name": "CC BY-SA 3.0",
-					"link": "https://en.cppreference.com/w/Cppreference:Copyright/CC-BY-SA"
-				}, {
-					"name": "GDFL",
-					"link": "https://en.cppreference.com/w/Cppreference:Copyright/GDFL"
-				}
-			]
+			"license": {
+				"name": "CC BY 4.0",
+				"link": "https://github.com/MicrosoftDocs/cpp-docs/blob/main/LICENSE"
+			}
 		}, {
 			"title": "Traits: Defining Shared Behavior - The Rust Programming Language",
 			"link": "https://doc.rust-lang.org/book/ch10-02-traits.html",
