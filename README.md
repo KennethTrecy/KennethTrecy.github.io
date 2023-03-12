@@ -57,7 +57,7 @@ npm run dev
 Before hosting your fork of this website, replace the website's articles or any content referring to my personal information with your own articles and personal information, unless it is for the purpose of acknowledging my work.
 
 ### License
-The repository's code (but not the paragraphs containing my information) is licensed under [MIT].
+The repository's code (but not the paragraphs such as containing my information) is licensed under [MIT].
 
 ### Want to contribute?
 Read the [contributing guide] for different ways to contribute in the project.
