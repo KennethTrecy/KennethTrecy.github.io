@@ -18,7 +18,7 @@
 <StructuredSection itemprop="citation" id={references.id}>
 	<SecondaryHeading headingInfo={references}/>
 	<SimpleText itemprop="description">
-		Some portions in this article were based on work authored and shared by following groups or persons that have been attributed below.
+		Some portions in this article were based on third-party work(s). They are copyright of the respective groups or persons that have been attributed below. Note that these works may have been shared under different licenses and may have notices (e.g. disclaimer of warranties) in the linked licenses. If a work has no existing license(s), a link to the work have been still provided.
 	</SimpleText>
 	<StructuredList order="ascending">
 		{#each $referenceInfos as info}
