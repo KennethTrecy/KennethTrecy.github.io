@@ -1,16 +1,16 @@
 <script lang="ts">
+	import { browser } from "$app/environment"
 	import { MAIN_CONTENT_ID } from "@/constants/miscellaneous_meta"
 
-	import StructuredReference from "@/components/general/containers/structured_reference.svelte"
-
 	export let itemtype: string = "https://schema.org/WebContent"
+
+	const currentLocation = browser ? location.href : ""
 </script>
 
 <div class="flex-1 m-0 p-0 h-full w-full flex flex-col justify-center items-stretch container">
-	<!-- TODO: Pass the URL of the website -->
 	<article
 		id={MAIN_CONTENT_ID}
-		itemid={`#${MAIN_CONTENT_ID}`}
+		itemid={`${currentLocation}#${MAIN_CONTENT_ID}`}
 		itemprop="mainContentOfPage"
 		itemscope
 		itemtype="https://schema.org/WebPageElement"
@@ -29,7 +29,6 @@
 				{itemtype}
 				class="prose md:prose-lg pb-8 text-justify">
 				<slot name="content"></slot>
-				<StructuredReference/>
 			</div>
 		</div>
 		<footer class="prose md:prose-lg pb-8">

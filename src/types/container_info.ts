@@ -19,6 +19,7 @@ export type SubheadingVariant =
 	| "raw"
 	| "name"
 	| "headline"
+	| "term"
 
 export type Order =
 	| "ascending"

@@ -69,7 +69,7 @@
 					height={profile.defaultHeight}
 					alt={profile.description}
 					class="max-w-sm bg-primary"/>
-				<section class="max-w-sm xl:max-w-md text-center xl:text-left">
+				<section class="max-w-sm xl:max-w-md text-center xl:text-left" id={greetings.id}>
 					<SecondaryHeading headingInfo={greetings} variant="name">
 						I am <span itemprop="givenName">Kenneth Trecy</span>!
 					</SecondaryHeading>

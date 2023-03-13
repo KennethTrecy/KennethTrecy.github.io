@@ -101,7 +101,7 @@ export interface PageMeta {
  *
  * [Article]: https://schema.org/Article
  */
-type ArticleType = "article"|"techical article"|"blog post"
+type ArticleType = "article"|"technical article"|"blog post"
 
 export interface ArticlePageMeta extends PageMeta {
 	articleType: ArticleType

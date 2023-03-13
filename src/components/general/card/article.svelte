@@ -1,11 +1,7 @@
 <script lang="ts">
 	import type { PageMeta } from "@/types/content_metadata"
 	import { internalTypes } from "@/components/general/links/constants"
-	import {
-		PUBLIC_PRODUCTION_BASE_URL,
-		PUBLIC_MINIMUM_TITLE_LENGTH,
-		PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH
-	} from "$env/static/public"
+	import { PUBLIC_PRODUCTION_BASE_URL } from "$env/static/public"
 
 	import Icon from "@/components/general/icon.svelte"
 	import Link from "@/components/general/links/base.svelte"

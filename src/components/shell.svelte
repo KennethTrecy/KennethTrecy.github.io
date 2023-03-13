@@ -42,11 +42,6 @@
 			href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap"
 			as="style"/>
 	{/if}
-	<noscript>
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap"/>
-	</noscript>
 	<style>
 		body {
 			font-family: "Roboto", "Noto Color Emoji", "Segoe UI", Tahoma, Verdana, Geneva, sans-serif;
@@ -109,7 +104,7 @@
 			</section>
 			<section class="col-span-2 md:col-span-1 place-self-stretch md:place-self-auto text-center">
 				<p itemprop="text" class="w-full">
-					Website's code (not texts containing my personal information) are under
+					Website's code (not texts such as containing my personal information) are under
 					<ExternalLink
 						address={LICENSE_URL}
 						itemprop="license">{LICENSE} license</ExternalLink>.

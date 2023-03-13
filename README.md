@@ -3,7 +3,7 @@
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/KennethTrecy/kennethtrecy.pages.dev?style=for-the-badge&display_name=tag&sort=semver)
 ![GitHub closed issues count](https://img.shields.io/github/issues-closed/KennethTrecy/kennethtrecy.pages.dev?style=for-the-badge)
 ![GitHub pull request count](https://img.shields.io/github/issues-pr-closed/KennethTrecy/kennethtrecy.pages.dev?style=for-the-badge)
-![Commits since latest version](https://img.shields.io/github/commits-since/KennethTrecy/kennethtrecy.pages.dev/latest?style=for-the-badge)
+![Commits since latest version](https://img.shields.io/github/commits-since/KennethTrecy/kennethtrecy.pages.dev/latest/dev?style=for-the-badge)
 ![Lines of code](https://img.shields.io/tokei/lines/github/KennethTrecy/kennethtrecy.pages.dev?style=for-the-badge)
 ![GitHub code size in bytes](https://img.shields.io/github/repo-size/KennethTrecy/kennethtrecy.pages.dev?style=for-the-badge)
 
@@ -57,7 +57,7 @@ npm run dev
 Before hosting your fork of this website, replace the website's articles or any content referring to my personal information with your own articles and personal information, unless it is for the purpose of acknowledging my work.
 
 ### License
-The repository's code (but not the paragraphs containing my information) is licensed under [MIT].
+The repository's code (but not the paragraphs such as containing my information) is licensed under [MIT].
 
 ### Want to contribute?
 Read the [contributing guide] for different ways to contribute in the project.
