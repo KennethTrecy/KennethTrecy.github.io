@@ -50,21 +50,18 @@
 			"link": "https://creativecommons.org/licenses/by/3.0/"
 		}
 	}
-	const MDNContributors = "Mozilla Contributors"
-	const CC_BY_SA_LICENSE: LicenseInfo = {
-		"name": "CC-BY-SA v2.5",
-		"link": "https://creativecommons.org/licenses/by-sa/2.5/"
-	}
 	const references: ReferenceInfo[] = [
 		{
 			...bootstrapCSSInfo as ReferenceInfo,
 			"title": "Grid system",
 			"link": "https://getbootstrap.com/docs/3.4/css/#grid"
-		}, {
+		},
+		{
 			...bootstrapCSSInfo as ReferenceInfo,
 			"title": "Offsetting columns",
 			"link": "https://getbootstrap.com/docs/3.4/css/#grid-offsetting"
-		}, {
+		},
+		{
 			"title": "Web layout history: How we got to grid and flex",
 			"link": "https://cran.r-project.org/web/packages/imola/vignettes/imola-why-flex-and-grid.html",
 			"itemtype": "https://schema.org/SoftwareApplication",
@@ -78,52 +75,14 @@
 				{
 					"name": "MIT",
 					"link": "https://cran.r-project.org/web/licenses/MIT"
-				}, {
+				},
+				{
 					"name": "LICENSE",
 					"link": "https://cran.r-project.org/web/packages/imola/LICENSE"
 				}
 			]
-		}, {
-			"title": "display",
-			"link": "https://developer.mozilla.org/en-US/docs/Web/CSS/display",
-			"itemtype": "https://schema.org/APIReference",
-			"linkCategory": "outbound",
-			"author": {
-				"groupName": MDNContributors,
-				"link": "https://developer.mozilla.org/en-US/docs/Web/CSS/display/contributors.txt"
-			},
-			"license": CC_BY_SA_LICENSE
-		}, {
-			"title": "justify-content",
-			"link": "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content",
-			"itemtype": "https://schema.org/APIReference",
-			"linkCategory": "outbound",
-			"author": {
-				"groupName": MDNContributors,
-				"link": "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content/contributors.txt"
-			},
-			"license": CC_BY_SA_LICENSE
-		}, {
-			"title": "align-items",
-			"link": "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items",
-			"itemtype": "https://schema.org/APIReference",
-			"linkCategory": "outbound",
-			"author": {
-				"groupName": MDNContributors,
-				"link": "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items/contributors.txt"
-			},
-			"license": CC_BY_SA_LICENSE
-		}, {
-			"title": "flex-direction",
-			"link": "https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction",
-			"itemtype": "https://schema.org/APIReference",
-			"linkCategory": "outbound",
-			"author": {
-				"groupName": MDNContributors,
-				"link": "https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction/contributors.txt"
-			},
-			"license": CC_BY_SA_LICENSE
-		}, {
+		},
+		{
 			"title": "CSS Grid Layout (level 1) | Can I use... Support tables for HTML5, CSS3, etc",
 			"link": "https://caniuse.com/css-grid",
 			"itemtype": "https://schema.org/SoftwareApplication",
@@ -137,14 +96,16 @@
 				"name": "CC BY 4.0",
 				"link": "https://github.com/Fyrd/caniuse/blob/main/LICENSE"
 			}
-		}, {
+		},
+		{
 			"title": indexPageMeta.title,
 			"link": indexPageMeta.pageURL,
 			"itemtype": "https://schema.org/SoftwareApplication",
 			"linkCategory": "inbound",
 			"author": indexPageMeta.authors[0],
 			"license": indexPageMeta.license
-		}, {
+		},
+		{
 			"title": "3 Ways To Center Elements In CSS",
 			"link": "https://dev.to/sanchithasr/3-ways-to-center-elements-in-css-1m43",
 			"itemtype": "https://schema.org/TechArticle",
@@ -238,27 +199,7 @@
 				<Citation info={references[2]}>around 2012</Citation>. It allows web developer to layout conveniently and responsively as the elements would automatically resize while adhering to the specified properties.
 			</SimpleText>
 			<SimpleText>
-				A web developer would declare certain properties on the parent like <code class="terminated">display: flex</code> paired with <code>flex-direction</code> and/or <code>flex-wrap</code>. On the other hand, children of the flexible parent would have properties like <code>flex-grow</code> and/or <code>flex-basis</code>.
-			</SimpleText>
-			<SimpleText>
-				It is very easy to center an element in both axes using flexible box layout. A web developer would just do the following steps.
-			</SimpleText>
-			<StructuredList order="ascending">
-				<DescriptiveListItem>
-					Set <Citation info={references[3]}> <code class="terminated">display: flex</code></Citation> on the parent.
-				</DescriptiveListItem>
-				<DescriptiveListItem>
-					Set <code class="terminated">justify-content: center</code> on the parent. This <Citation info={references[4]}>indicates to center the children with respect to main axis</Citation>.
-				</DescriptiveListItem>
-				<DescriptiveListItem>
-					Set <code class="terminated">align-items: center</code> on the parent. This <Citation info={references[5]}>indicates to center the children with respect to cross axis</Citation>.
-				</DescriptiveListItem>
-				<DescriptiveListItem>
-					Optionally, set <Citation info={references[6]}><code class="terminated">flex-direction: row</code></Citation> on the parent if there are multiple children to be layout horizontally and direction matters. If the children should be in vertical manner, use <Citation info={references[6]}><code class="terminated">flex-direction: column</code></Citation> instead.
-				</DescriptiveListItem>
-			</StructuredList>
-			<SimpleText>
-				Usually, the <code class="terminated">flex-direction: row</code> sets the x-axis as the main axis and y-axis as the cross axis. If <code class="terminated">flex-direction: column</code> has been used, the y-axis axis would be the main axis and x-axis would be the cross axis.
+				A web developer would declare certain properties on the parent like <code class="terminated">display: flex</code> paired with <code>flex-direction</code> and/or <code>flex-wrap</code>. On the other hand, children of the flexible parent would have properties like <code>flex-grow</code> and/or <code>flex-basis</code>. It is very easy to center an element in both axes using flexible box layout.
 			</SimpleText>
 			<SimpleText>
 				Below is an example positioning the child elements in the center (in both horizontal and vertical manner) using the flexible box layout programmed in vanilla <abbr title="Cascading Style Sheets">CSS</abbr>. Note that there is a margin between the two children to distinguish them.
@@ -291,7 +232,7 @@
 		<StructuredSection id={grid.id}>
 			<SecondaryHeading headingInfo={grid}/>
 			<SimpleText>
-				Next method is to use CSS Grid Layout. It is newest among other method layout mechanism. However, <Citation info={references[7]}>more than 96%</Citation> users have browsers that can support it as of this writing, based from <ExternalLink address="https://caniuse.com">caniuse.com</ExternalLink>.
+				Next method is to use CSS Grid Layout. It is newest among other method layout mechanism. However, <Citation info={references[3]}>more than 96%</Citation> users have browsers that can support it as of this writing, based from <ExternalLink address="https://caniuse.com">caniuse.com</ExternalLink>.
 			</SimpleText>
 			<SimpleText>
 				Below is an example positioning the child element in the center (in both horizontal and vertical manner) using the grid layout programmed in vanilla <abbr title="Cascading Style Sheets">CSS</abbr>.
@@ -321,7 +262,7 @@
 		<StructuredSection id={unorthodox.id}>
 			<SecondaryHeading headingInfo={unorthodox}/>
 			<SimpleText>
-				The scenarios above are only applicable if the child element is smaller than its parent. However, there is a special case where in a child is bigger than its parent. As a demonstration, the special case can be seen in <Citation info={references[8]} itemprop="exampleOfWork">this website's home page</Citation>. The home page requires the text container to 65 characters at most. However, there is a box that requires to be greater than its parent.
+				The scenarios above are only applicable if the child element is smaller than its parent. However, there is a special case where in a child is bigger than its parent. As a demonstration, the special case can be seen in <Citation info={references[4]} itemprop="exampleOfWork">this website's home page</Citation>. The home page requires the text container to 65 characters at most. However, there is a box that requires to be greater than its parent.
 			</SimpleText>
 			<SimpleText>
 				If the target box is limited to the full width of the parent in large screens, the text takes vertical space instead. See the image below.
@@ -416,7 +357,7 @@
 				Despite that there are different methods to center an element, each has benefits and limitations. Centering based on 12-column layout may be rigid at the price of convenience. Using  <code class="terminated">display: flex</code> or  <code class="terminated">display: grid</code>, can center a child element as long as it is smaller than the parent yet not for bigger child. Meanwhile, using negative margins is only applicable bigger child element and not for smaller child element.
 			</SimpleText>
 			<SimpleText>
-				Usage of these techniques may depend on the programmer's style, requirements of the system being built, or supported browsers. There is no best solution at every scenario when it comes to centering child elements. There are also techniques not mentioned in this article such as using <Citation info={references[9]}><code>position</code> property</Citation> and others. It is left for the readers to study the other techniques.
+				Usage of these techniques may depend on the programmer's style, requirements of the system being built, or supported browsers. There is no best solution at every scenario when it comes to centering child elements. There are also techniques not mentioned in this article such as using <Citation info={references[5]}><code>position</code> property</Citation> and others. It is left for the readers to study the other techniques.
 			</SimpleText>
 		</StructuredSection>
 	</BodyGroup>
