@@ -5,7 +5,6 @@
 
 	import BaseLink from "@/components/general/links/base.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
-	import SimpleText from "@/components/general/containers/simple_text.svelte"
 
 	export let pageMeta: PageMeta
 
@@ -38,20 +37,18 @@
 </script>
 
 <div class="not-prose card bg-base-200">
-	<section class="card-body">
+	<section itemprop="description" class="card-body">
 		<h2 class="title">Page details</h2>
-		<SimpleText>
-			<address itemprop="author" itemscope itemtype="https://schema.org/Person">
-				This page was authored by
-				<BaseLink
-					address="/about_myself"
-					relationship={[ ...internalTypes, ...authorTypes ]}
-					itemprop="mainEntityOfPage">
-					<span itemprop="name">
-						<span itemprop="givenName">Kenneth Trecy</span>
-						<span itemprop="familyName">Tobias</span></span></BaseLink>.
-			</address>
-		</SimpleText>
+		<address itemprop="author" itemscope itemtype="https://schema.org/Person">
+			This page was authored by
+			<BaseLink
+				address="/about_myself"
+				relationship={[ ...internalTypes, ...authorTypes ]}
+				itemprop="mainEntityOfPage">
+				<span itemprop="name">
+					<span itemprop="givenName">Kenneth Trecy</span>
+					<span itemprop="familyName">Tobias</span></span></BaseLink>.
+		</address>
 		<p>
 			<em>
 				Published last
@@ -70,10 +67,10 @@
 				"<span itemprop="version">{pageMeta.version}</span>".
 			</em>
 		</p>
-		<SimpleText>
+		<p>
 			The source of the page can be <ExternalLink address={viewLink}>viewed</ExternalLink> or <ExternalLink address={editLink}>modified</ExternalLink> on GitHub. Should there be a concern or problem in the page, please report by making an <ExternalLink address={issueLink}>issue</ExternalLink> or <BaseLink
 					address="/about_myself#contact_details"
 					relationship={[ ...internalTypes ]}>contact the website administrator</BaseLink>.
-		</SimpleText>
+		</p>
 	</section>
 </div>

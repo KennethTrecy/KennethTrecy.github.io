@@ -5,10 +5,11 @@
 
 	import ArticleCard from "@/components/general/card/article.svelte"
 	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
-	import SimpleText from "@/components/general/containers/simple_text.svelte"
+	import PageDetailCard from "@/components/general/card/page_detail.svelte"
+	import PrimaryHeading from "@/components/general/headings/primary.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
-	import ArticlePost from "@/components/general/containers/article_post.svelte"
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
+	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
 
@@ -18,18 +19,25 @@
 	})
 </script>
 
-<ArticlePost {pageMeta}>
-	<StructuredSection itemprop="about" id={articlesWritten.id}>
-		<SecondaryHeading headingInfo={articlesWritten}/>
-		<SimpleText itemprop="mainEntity">
-			For some time, Kenneth Trecy may write articles and posts that may be useful for beginners and fellow developers. People are free to reference or link the articles below if they deemed informational or related to the topic they are in.
-		</SimpleText>
-		<StructuredList order="descending" variant="card">
-			{#each articleMetaCollection as articleMeta}
-				<StructuredListItem variant="card">
-					<ArticleCard {articleMeta}/>
-				</StructuredListItem>
-			{/each}
-		</StructuredList>
-	</StructuredSection>
-</ArticlePost>
+<StructuredArticle>
+	<PrimaryHeading slot="title">{pageMeta.title}</PrimaryHeading>
+	<svelte:fragment slot="content">
+		<StructuredSection
+			id={articlesWritten.id}
+			itemprop="mainEntity"
+			itemtype="https://schema.org/ItemList">
+			<SecondaryHeading headingInfo={articlesWritten} variant="name"/>
+			<p itemprop="description">
+				For some time, Kenneth Trecy may write articles and posts that may be useful for beginners and fellow developers. People are free to reference or link the articles below if they deemed informational or related to the topic they are in.
+			</p>
+			<StructuredList order="descending" variant="card" hasOwnScope={false}>
+				{#each articleMetaCollection as articleMeta}
+					<StructuredListItem variant="card">
+						<ArticleCard {articleMeta}/>
+					</StructuredListItem>
+				{/each}
+			</StructuredList>
+		</StructuredSection>
+	</svelte:fragment>
+	<PageDetailCard slot="metadata" {pageMeta}/>
+</StructuredArticle>
