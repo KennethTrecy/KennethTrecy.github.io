@@ -62,6 +62,10 @@
 		"prefix": "🦣",
 		"text": "Major Update Triggers"
 	})
+	const pageTimestampNotes = defineHeadingInfo({
+		"prefix": "📃",
+		"text": "Notes about Timestamps"
+	})
 	const referencingOthers = defineHeadingInfo({
 		"prefix": "👉🏽",
 		"text": "Referencing Others"
@@ -203,10 +207,16 @@
 					</StructuredList>
 				</StructuredSection>
 			</StructuredSection>
+			<StructuredSection id={pageTimestampNotes.id}>
+				<TertiaryHeading headingInfo={pageTimestampNotes}/>
+				<SimpleText>
+					The date and time of a page, whether to indicate when it was published or modified, may be set up to 15 minutes into the future. The reason is to take account for the bundling time. Should a reader see that one of the dates and/or times is set into the future, the page is also in draft status until the time specified has arrived.
+				</SimpleText>
+			</StructuredSection>
 			<StructuredSection id={referencingOthers.id}>
 				<TertiaryHeading headingInfo={referencingOthers}/>
 				<SimpleText>
-					For the articles, an attribution should given to different individuals and groups of people. The <Citation info={references[1]}>components for attribution</Citation> should be present as possible. Texts should be paraphrased as much as possible.
+					For the articles, an attribution should given to different individuals and groups of people. The <Citation info={references[1]}>components for attribution</Citation> should be present as much as possible. Texts should be paraphrased as much as possible.
 				</SimpleText>
 			</StructuredSection>
 		</StructuredSection>
