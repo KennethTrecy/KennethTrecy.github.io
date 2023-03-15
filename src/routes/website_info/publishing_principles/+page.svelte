@@ -63,12 +63,16 @@
 		"text": "Major Update Triggers"
 	})
 	const pageTimestampNotes = defineHeadingInfo({
-		"prefix": "📃",
+		"prefix": "📅",
 		"text": "Notes about Timestamps"
 	})
 	const referencingOthers = defineHeadingInfo({
 		"prefix": "👉🏽",
 		"text": "Referencing Others"
+	})
+	const websiteGuidelines = defineHeadingInfo({
+		"prefix": "🕸️",
+		"text": "Guidelines for the Whole Website"
 	})
 
 	const references: ReferenceInfo[] = [
@@ -99,6 +103,21 @@
 			"license": {
 				"name": "CC BY 4.0",
 				"link": "https://creativecommons.org/licenses/by/4.0/"
+			}
+		},
+		{
+			"title": "Semantic Versioning 2.0.0",
+			"itemtype": "https://schema.org/WebPage",
+			"link": "https://semver.org/spec/v2.0.0.html",
+			"linkCategory": "outbound",
+			"author": {
+				"givenName": "Tom",
+				"familyName": "Preston-Werner",
+				"link": "https://github.com/mojombo/"
+			},
+			"license": {
+				"name": "CC BY 3.0",
+				"link": "https://creativecommons.org/licenses/by/3.0/"
 			}
 		}
 	]
@@ -219,6 +238,12 @@
 					For the articles, an attribution should given to different individuals and groups of people. The <Citation info={references[1]}>components for attribution</Citation> should be present as much as possible. Texts should be paraphrased as much as possible.
 				</SimpleText>
 			</StructuredSection>
+		</StructuredSection>
+		<StructuredSection id={websiteGuidelines.id}>
+			<SecondaryHeading headingInfo={websiteGuidelines}/>
+			<SimpleText>
+				The website follows <Citation info={references[2]}>Semantic Versioning v2.0.0</Citation> because its code could be reused by other developers. A breaking change would happen if there is a change in the required properties of an interface.
+			</SimpleText>
 		</StructuredSection>
 		<StructuredReference/>
 	</svelte:fragment>
