@@ -1,7 +1,7 @@
 <script lang="ts">
-	import pageMeta from "@/routes/website_info/meta"
-	import type { ReferenceInfo, LicenseInfo } from "@/types/reference"
-	import { internalTypes, authorTypes } from "@/components/general/links/constants"
+	import pageMeta from "@/routes/website_info/publishing_principles/meta"
+	import type { ReferenceInfo } from "@/types/reference"
+	import { internalTypes } from "@/components/general/links/constants"
 	import {
 		pageStatusSetID,
 		pageStatusSetURL,
