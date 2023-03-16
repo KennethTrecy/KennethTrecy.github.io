@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { PageMeta } from "@/types/content_metadata"
 
+	import { principlesPath } from "@/constants/schema_collection"
 	import { internalTypes, authorTypes } from "@/components/general/links/constants"
 	import {
 		draftStatusURL,
@@ -82,7 +83,7 @@
 				</span> page is
 				"<span itemprop="version">{pageMeta.version}</span>".
 				See the <BaseLink
-					address="/website_info/publishing_principles"
+					address={principlesPath}
 					relationship={internalTypes}
 					itemprop="publishingPrinciples">
 					publishing principles
