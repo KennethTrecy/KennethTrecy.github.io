@@ -78,9 +78,7 @@
 						address={publishStatusURL}
 						relationship={internalTypes}
 						itemprop="mainEntityOfPage">
-						{publishStatus}
-					</BaseLink>
-				</span> page is
+						{publishStatus}</BaseLink></span> page is
 				"<span itemprop="version">{pageMeta.version}</span>".
 				See the <BaseLink
 					address={principlesPath}
