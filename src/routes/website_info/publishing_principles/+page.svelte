@@ -155,7 +155,7 @@
 							<BaseLink
 								address={draftStatusURL}
 								relationship={internalTypes}
-								itemprop="mainEntityOfPage">
+								itemprop="url">
 								{draftStatus.text}
 							</BaseLink>
 						</span>
@@ -165,25 +165,31 @@
 							<BaseLink
 								address={publishedStatusURL}
 								relationship={internalTypes}
-								itemprop="mainEntityOfPage">
+								itemprop="url">
 								{publishedStatus.text}
 							</BaseLink>
 						</span>
 					</li>
 				</ul>
-				<StructuredSection id={draftStatusID} itemtype="https://schema.org/DefinedTerm">
+				<StructuredSection
+					id={draftStatusID}
+					itemprop="about"
+					itemtype="https://schema.org/DefinedTerm">
 					<link itemprop="inDefinedTermSet" href={pageStatusSetURL}>
 					<QuaternaryHeading headingInfo={draftStatus} variant="term"/>
-					<SimpleText itemprop="description">
+					<p itemprop="description">
 						All pages start from <em>0.1-dev</em>. Similar to the <Citation info={references[0]}>meta tag specification for <em>page-version</em></Citation>, any version that is mathematically smaller than one is also considered as draft. Any version with <em>-dev</em> suffix are considered to be in draft and are still being developed.
-					</SimpleText>
+					</p>
 				</StructuredSection>
-				<StructuredSection id={publishedStatusID} itemtype="https://schema.org/DefinedTerm">
+				<StructuredSection
+					id={publishedStatusID}
+					itemprop="about"
+					itemtype="https://schema.org/DefinedTerm">
 					<link itemprop="inDefinedTermSet" href={pageStatusSetURL}>
 					<QuaternaryHeading headingInfo={publishedStatus} variant="term"/>
-					<SimpleText itemprop="description">
+					<p itemprop="description">
 						If a page is in published status, changes for that specific version have been applied. A page may update in the future in case there are changes in topic(s) it discusses, corrections in grammar or spellings, and other kinds of improvements in the content.
-					</SimpleText>
+					</p>
 				</StructuredSection>
 			</StructuredSection>
 			<StructuredSection id={pageVersionUpdateTriggers.id} >
