@@ -2,6 +2,10 @@
 	import type { PageMeta } from "@/types/content_metadata"
 
 	import { internalTypes, authorTypes } from "@/components/general/links/constants"
+	import {
+		draftStatusURL,
+		publishedStatusURL
+	} from "@/constants/schema_collection"
 
 	import BaseLink from "@/components/general/links/base.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
@@ -26,7 +30,9 @@
 	$: dateTimeModified = pageMeta.dateModified.toISOString()
 	$: humanReadableDateModified = pageMeta.dateModified.toLocaleString("en", dateTimeFormatOptions)
 	$: hasModified = dateTimePublished !== dateTimeModified
-	$: publishStatus = Number(pageMeta.version) < 1 ? "draft" : "published"
+	$: isDraft = Number(pageMeta.version) < 1
+	$: publishStatus = isDraft ? "draft" : "published"
+	$: publishStatusURL = isDraft ? draftStatusURL : publishedStatusURL
 
 	const repositoryURL = "https://github.com/KennethTrecy/kennethtrecy.pages.dev"
 	const branch = "master"
@@ -63,8 +69,24 @@
 				{:else}
 					It has not been modified since then.
 				{/if}
-				Version of the {publishStatus} page is
+				Version of the <span
+					itemprop="creativeWorkStatus"
+					itemscope
+					itemtype="https://schema.org/DefinedTerm">
+					<BaseLink
+						address={publishStatusURL}
+						relationship={internalTypes}
+						itemprop="mainEntityOfPage">
+						{publishStatus}
+					</BaseLink>
+				</span> page is
 				"<span itemprop="version">{pageMeta.version}</span>".
+				See the <BaseLink
+					address="/website_info/publishing_principles"
+					relationship={internalTypes}
+					itemprop="publishingPrinciples">
+					publishing principles
+				</BaseLink> for technical info about the details.
 			</em>
 		</p>
 		<p>
