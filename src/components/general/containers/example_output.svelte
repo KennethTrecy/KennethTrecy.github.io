@@ -28,6 +28,6 @@
 		Output of
 		<ExternalLink
 			address={codeInfo.viewURL}
-			itemprop={[ "mainEntityOfPage" ]}>{codeInfo.path}</ExternalLink>
+			itemprop="mainEntityOfPage">{codeInfo.path}</ExternalLink>
 	</p>
 </div>
