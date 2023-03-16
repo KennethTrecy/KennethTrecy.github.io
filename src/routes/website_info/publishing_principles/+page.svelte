@@ -133,7 +133,7 @@
 		<StructuredSection id={overview.id}>
 			<SecondaryHeading headingInfo={overview}/>
 			<SimpleText itemprop="description">
-				The website administrator will release a new or modified page. Each page are versioned and timestamped. This is important especially for the pages that update due to new set of dependencies, new standards, or changes in the industry. The website itself also has a version which can be seen on its release page. Below are set of guidelines on versioning of the contents.
+				The website administrator will release a new or modified page. Each page have been versioned and timestamped. This is important especially for the pages that update due to new set of dependencies, new standards, or changes in the industry. The website itself also has a version which can be seen on its release page. Below are set of guidelines on versioning of the contents.
 			</SimpleText>
 		</StructuredSection>
 		<StructuredSection id={pageGuidelines.id}>
@@ -235,7 +235,7 @@
 			<StructuredSection id={referencingOthers.id}>
 				<TertiaryHeading headingInfo={referencingOthers}/>
 				<SimpleText>
-					For the articles, an attribution should given to different individuals and groups of people. The <Citation info={references[1]}>components for attribution</Citation> should be present as much as possible. Texts should be paraphrased as much as possible.
+					For the articles, an attribution should be given to different individuals and groups of people. The <Citation info={references[1]}>components for attribution</Citation> should be present as much as possible. Texts should be paraphrased as much as possible.
 				</SimpleText>
 			</StructuredSection>
 		</StructuredSection>
