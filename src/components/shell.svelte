@@ -11,17 +11,16 @@
 	import ThemeToggler from "@/components/shell/theme_toggler.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
-	import ThirdPartyLink from "@/components/shell/third-party_package_link.svelte"
 
 	let isMenuShown = false
-	let hasLoadedEmojiStyleSheet = false
+	let hasLoadedExtraStyleSheet = false
 
 	function toggleMenu(event: KeyboardEvent): void {
 		toggleBySpace(event, () => isMenuShown = !isMenuShown)
 	}
 
-	function loadEmojiStyleSheet() {
-		hasLoadedEmojiStyleSheet = true
+	function loadExtraStyleSheet() {
+		hasLoadedExtraStyleSheet = true
 	}
 </script>
 
@@ -30,16 +29,16 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 	<link
 		rel="stylesheet"
-		href="https://fonts.googleapis.com/css2?family=Roboto&family=Material+Symbols+Outlined:wght,FILL@400,1&display=swap"/>
+		href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"/>
 	<link
 		rel="preload"
-		href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,1&family=Noto+Color+Emoji&display=swap"
 		as="style"
-		on:load={loadEmojiStyleSheet}/>
-	{#if hasLoadedEmojiStyleSheet}
+		on:load={loadExtraStyleSheet}/>
+	{#if hasLoadedExtraStyleSheet}
 		<link
 			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,1&family=Noto+Color+Emoji&display=swap"
 			as="style"/>
 	{/if}
 	<style>
