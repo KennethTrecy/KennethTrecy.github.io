@@ -47,6 +47,10 @@
 		"prefix": "↗️",
 		"text": "Deployment"
 	})
+	const publicationPrinciples = defineHeadingInfo({
+		"prefix": "🧾",
+		"text": "Publication Principles"
+	})
 	const concerns = defineHeadingInfo({
 		"prefix": "✋🏽",
 		"text": "Do you have concerns?"
@@ -182,6 +186,16 @@
 					</ExternalLink> then, the bundled resources will be deployed globally.
 				</SimpleText>
 			</StructuredSection>
+		</StructuredSection>
+		<StructuredSection id={publicationPrinciples.id}>
+			<SecondaryHeading headingInfo={publicationPrinciples}/>
+			<SimpleText itemprop="mainEntity">
+				Before deploying the new and modified web pages, there is <BaseLink
+					itemprop="mainEntityOfPage"
+					address="/website_info/publishing_principles"
+					relationship={internalTypes}
+					context="self">a set of principles</BaseLink> being used. They are recommended to be followed but not required. They serve as guide to ensure the quality and consistency of the pages.
+			</SimpleText>
 		</StructuredSection>
 		<StructuredSection id={concerns.id}>
 			<SecondaryHeading headingInfo={concerns}/>
