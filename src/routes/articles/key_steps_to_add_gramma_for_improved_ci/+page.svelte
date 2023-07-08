@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { ReferenceInfo } from "@/types/reference"
-	import type { HeadingInfo } from "@/types/container_info"
+	import type { ExecutedCommandSetInfo, HeadingInfo } from "@/types/container_info"
 
 	import { internalTypes } from "@/components/general/links/constants"
 	import pageMeta from "@/routes/articles/key_steps_to_add_gramma_for_improved_ci/meta"
@@ -18,10 +18,11 @@
 	import ArticlePost from "@/components/general/containers/article_post.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import ExampleCode from "@/components/general/containers/example_code.svelte"
+	import SimpleThing from "@/components/general/containers/simple_thing.svelte"
 	import ExampleOutput from "@/components/general/containers/example_output.svelte"
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
-	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
+	import DescriptiveListItem from "@/components/general/containers/descriptive_list_item.svelte"
 
 	const background = defineHeadingInfo({ "text": "Background" })
 	const prerequisites = defineHeadingInfo({ "text": "Prerequisites" })
@@ -29,6 +30,20 @@
 	const workflowConfiguration = defineHeadingInfo({ "text": "Workflow Configuration" })
 	const execution = defineHeadingInfo({ "text": "Execution" })
 	const summary = defineHeadingInfo({ "text": "Summary" })
+
+	const installPackageCommandInfo: ExecutedCommandSetInfo = {
+		"description": "First set of steps to setup the CI",
+		"commands": [
+			{
+				"command": "npm install ",
+				"output": []
+			},
+			{
+				"command": "npm init",
+				"output": []
+			}
+		]
+	}
 
 	const references: ReferenceInfo[] = [
 		{
@@ -64,6 +79,19 @@
 				"name": "CC BY 4.0",
 				"link": "https://creativecommons.org/licenses/by/4.0/"
 			}
+		}, {
+			"title": "LanguageTool",
+			"link": "https://github.com/languagetool-org/languagetool",
+			"itemtype": "https://schema.org/SoftwareSourceCode",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "LanguageTool Contributors",
+				"link": "https://github.com/languagetool-org/languagetool/graphs/contributors"
+			},
+			"license": {
+				"name": "LGPL-2.1",
+				"link": "https://github.com/languagetool-org/languagetool/blob/master/COPYING.txt"
+			}
 		}
 	]
 </script>
@@ -89,5 +117,20 @@
 		<SimpleText itemprop="dependencies">
 			Additionally, it is encouraged (but not required) to have a sample website to follow the steps and have a hands-on experience. Should a reader opt to do a hands-on, the website may even have a single page only for simplicity.
 		</SimpleText>
+	</section>
+	<section id={localSetup.id}>
+		<SecondaryHeading headingInfo={localSetup}/>
+		<SimpleText>
+			The steps below assumes that there is a website, real or hypothetical, that would be check for its grammar.
+		</SimpleText>
+		<StructuredList order="ascending">
+			<meta itemprop="numberOfItems" content="5">
+			<DescriptiveListItem>
+				Run the command: <code>npm install gramma</code>. This installs the required package locally which provides methods to request to a <Citation info={references[3]}>LanguageTool</Citation> server.
+			</DescriptiveListItem>
+			<DescriptiveListItem>
+				Run the command: <code>npm install @playwright/test</code>. This installs the tool to do an end-to-end (<abbr>E2E</abbr>) tests. On those tests, the web page to check for grammar would be visited and scrape its textual contents. Readers may choose their preferred framework to scrape the contents of the website as long as they could request through the package installed in step 1.
+			</DescriptiveListItem>
+		</StructuredList>
 	</section>
 </ArticlePost>
