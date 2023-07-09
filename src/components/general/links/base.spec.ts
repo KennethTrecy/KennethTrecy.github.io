@@ -16,7 +16,7 @@ describe("Base link behavior", () => {
 			relationship
 		})
 
-		const property = container.querySelector("[itemscope]")
+		const property = container.querySelector("[itemtype]")
 
 		expect(property).toBeNull()
 
@@ -33,7 +33,7 @@ describe("Base link behavior", () => {
 			relationship
 		})
 
-		const property = container.querySelector("[itemscope]")
+		const property = container.querySelector("[itemtype]")
 
 		expect(property).not.toBeNull()
 		expect(property?.getAttribute("rel")).toContain("external")

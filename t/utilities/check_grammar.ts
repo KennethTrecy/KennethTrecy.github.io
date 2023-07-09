@@ -8,8 +8,18 @@ export default async function(page: Page) {
 		"title",
 		".menu a span.flex-1",
 		"[itemprop~=text]",
+		"p[itemprop~=description]",
 		"h1",
-		"h2"
+		"h2",
+		"h3",
+		"h4",
+
+		// Page-specific selectors
+
+		// Selectors that will match on `/about_myself`.
+		"#journey p",
+		"#skills p",
+		"#contacts p",
 	]
 	const allInnerTextSelectors = innerTextSelectors.join(", ")
 	const allAlternateTexts = (await page.locator(`css=[alt]`).all()).map(

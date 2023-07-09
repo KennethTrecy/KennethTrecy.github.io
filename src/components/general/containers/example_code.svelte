@@ -47,9 +47,9 @@
 <style lang="postcss">
 	.code_container {
 		/**
-		 * 3rem is the padding of the container that contains this component.
+		 * 3rem is the padding of the general `.container`.
 		 */
-		max-width: calc(100vw - 3rem * 2)
+		max-width: calc(100vw - 1rem * 2);
 	}
 
 	@screen lg {

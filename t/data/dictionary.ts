@@ -17,6 +17,11 @@ export default [
 	"JAMstack",
 	"dotenv",
 	"@octokit",
+	"Feo",
+	"Origenne",
+	"Comroconbu",
+	"Elomocato",
+	"Virdafils",
 
 	// Code identifiers
 	"img",
