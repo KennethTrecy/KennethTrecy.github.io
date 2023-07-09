@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { page } from "$app/stores"
+	import { derived } from "svelte/store"
+
 	import type { ReferenceInfo } from "@/types/reference"
 	import type { ExecutedCommandSetInfo, HeadingInfo } from "@/types/container_info"
 
@@ -24,6 +27,8 @@
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import DescriptiveListItem from "@/components/general/containers/descriptive_list_item.svelte"
 
+	const loadedFileInfos = derived(page, resolvedPage => resolvedPage.data.loadedFileInfos ?? [])
+
 	const background = defineHeadingInfo({ "text": "Background" })
 	const prerequisites = defineHeadingInfo({ "text": "Prerequisites" })
 	const localSetup = defineHeadingInfo({ "text": "Local Setup" })
@@ -35,7 +40,11 @@
 		"description": "First set of steps to setup the CI",
 		"commands": [
 			{
-				"command": "npm install ",
+				"command": "npm install gramma",
+				"output": []
+			},
+			{
+				"command": "npm install gramma",
 				"output": []
 			},
 			{
@@ -126,11 +135,19 @@
 		<StructuredList order="ascending">
 			<meta itemprop="numberOfItems" content="5">
 			<DescriptiveListItem>
-				Run the command: <code>npm install gramma</code>. This installs the required package locally which provides methods to request to a <Citation info={references[3]}>LanguageTool</Citation> server.
+				Run <code>npm install gramma</code>. This installs the required package locally which provides methods to request to a <Citation info={references[3]}>LanguageTool</Citation> server. As of this writing, this step works for Node.js environment version 16.
+				For those using a version 18 and above, run <code>npm install git+ssh://git@github.com:KennethTrecy/gramma.git#v1.7.0-rc1</code> instead.
 			</DescriptiveListItem>
 			<DescriptiveListItem>
-				Run the command: <code>npm install @playwright/test</code>. This installs the tool to do an end-to-end (<abbr>E2E</abbr>) tests. On those tests, the web page to check for grammar would be visited and scrape its textual contents. Readers may choose their preferred framework to scrape the contents of the website as long as they could request through the package installed in step 1.
+				Run <code>npm install @playwright/test</code>. This installs the tool to do an end-to-end (<abbr>E2E</abbr>) tests. On those tests, the web page to check for grammar would be visited and scrape its textual contents. Readers may choose their preferred framework to scrape the contents of the website as long as they could request through the package installed in step 1.
 			</DescriptiveListItem>
 		</StructuredList>
+	</section>
+	<section id={workflowConfiguration.id}>
+		<SecondaryHeading headingInfo={workflowConfiguration}/>
+		<SimpleText>
+			Copy the code below and paste it a file under <code>.github/workflows</code>.
+		</SimpleText>
+		<ExampleCode codeInfo={$loadedFileInfos[0]}/>
 	</section>
 </ArticlePost>
