@@ -7,6 +7,13 @@ import { Octokit } from "@octokit/core"
 import { PERSONAL_GITHUB_ACCESS_TOKEN } from "$env/static/private"
 import permittedFileList from "@/constants/associated_file_list"
 
+interface ExpectedReceivedData {
+	html_url: string
+	sha: string
+	size: number
+	content: string
+}
+
 export async function GET(event: RequestEvent) {
 	const requestedFileInfo: CompleteViewableFileInfo = {
 		"owner": event.params.owner as string,
@@ -24,14 +31,14 @@ export async function GET(event: RequestEvent) {
 		const octokit = new Octokit({ "auth": PERSONAL_GITHUB_ACCESS_TOKEN })
 		const info = await octokit.request(
 			"GET /repos/{owner}/{repo}/contents/{path}?ref={branch}",
-			{ ...requestedFileInfo }
+			{
+				...requestedFileInfo,
+				"headers": {
+					"X-GitHub-Api-Version": "2022-11-28"
+				}
+			}
 		)
-		const { "html_url": pageURL, sha, size, content } = info.data as {
-			"html_url": string
-			"sha": string
-			"size": number
-			"content": string
-		}
+		const { "html_url": pageURL, sha, size, content } = info.data as ExpectedReceivedData
 
 		return new Response(JSON.stringify(<CodeFile>{
 			"viewURL": pageURL,
