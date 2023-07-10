@@ -12,7 +12,7 @@ const associatedFileTree: ViewableOwnerInfoTree[] = [
 					{
 						"branch": "master",
 						"paths": [
-							".github/workflows/front-end.yml"
+							".github/workflows/e2e.yml"
 						]
 					}
 				]
