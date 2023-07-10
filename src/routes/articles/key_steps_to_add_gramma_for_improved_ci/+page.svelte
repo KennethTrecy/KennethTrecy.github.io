@@ -191,7 +191,7 @@
 	<StructuredSection id={setupSteps[1].id}>
 		<TertiaryHeading headingInfo={setupSteps[1]}/>
 		<SimpleText>
-			The second step is to setup the E2E testing framework to be used. For this guide, <Citation info={references[4]}>Playwright</Citation> would be used. The readers may choose their preferred framework to scrape the contents of the website as long as they could request through the package from the <Bookmark
+			The second step is to setup the E2E testing framework to be used. For this guide, <Citation info={references[4]}>Playwright package</Citation> would be used. The readers may choose their preferred framework to scrape the contents of the website as long as they could request through the package from the <Bookmark
 				itemprop="citation"
 				fragment={`#${setupSteps[0].id}`}>
 				first step
@@ -199,7 +199,7 @@
 		</SimpleText>
 		<ExampleCommand commandInfos={installOptionalPackageCommandInfo}/>
 		<SimpleText>
-			If <Citation info={references[4]}>Playwright</Citation>, use the following configuration below and save it as <em>playwright.config.ts</em> in the project root. Note that <code>npm run preview</code> would run HTTP server binded on a certain port. In the configuration below, it requires the server should be found on port 4173. The readers may customize the command and port according to their setup.
+			If the reader chose <Citation info={references[4]}>Playwright package</Citation>, use the following configuration below and save it as <em>playwright.config.ts</em> in the project root. Note that <code>npm run preview</code> would run HTTP server binded on a certain port. In the configuration below, it requires the server should be found on port 4173. The readers may customize the command and port according to their setup.
 		</SimpleText>
 		<ExampleCode codeInfo={$loadedFileInfos[0]}/>
 	</StructuredSection>
@@ -212,5 +212,34 @@
 		<SimpleText>
 			On lines 30 - 31, it double checks if the <Citation info={references[3]}>LanguageTool</Citation> server is not yet running. After that, the lines 34 - 35, explicitly starts it. The line 36 - 37 just confirms if the server is running. The grammar-checking activity starts at line 38.
 		</SimpleText>
+	</StructuredSection>
+	<StructuredSection id={execution.id}>
+		<SecondaryHeading headingInfo={execution}/>
+		<SimpleText>
+			Below is a sample test code of a grammar-checking activity. It may be improved upon depending on the reader's use case, situation, or goal. Next to test code is the explanation or the idea behind the test code, regardless whether the reader chose <Citation info={references[4]}>Playwright package</Citation> or not.
+		</SimpleText>
+		<ExampleCode codeInfo={$loadedFileInfos[2]}/>
+		<StructuredList order="ascending">
+			<StructuredListItem>
+				<span>
+					Page Selection Step. Line 5 visits the page. This selects the page to be scanned for texts.
+				</span>
+			</StructuredListItem>
+			<StructuredListItem>
+				<span>
+					Extraction Step. Line 7 searches for all of the paragraphs found on the visited page. After that, all texts of the paragraphs would be extracted.
+				</span>
+			</StructuredListItem>
+			<StructuredListItem>
+				<span>
+					Analysis Step. Lines 9 - 18 send the extracted texts to the server for checking. This is the core step. Each result should return an empty array signifying that there that the checked paragraph is correct and free from errors.
+				</span>
+			</StructuredListItem>
+			<StructuredListItem>
+				<span>
+					Review Step. After getting all results of checking, line 22 expects that each result is an empty array.
+				</span>
+			</StructuredListItem>
+		</StructuredList>
 	</StructuredSection>
 </ArticlePost>
