@@ -23,11 +23,11 @@
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import ExampleCode from "@/components/general/containers/example_code.svelte"
 	import SimpleThing from "@/components/general/containers/simple_thing.svelte"
+	import LabeledThing from "@/components/general/containers/labeled_thing.svelte"
 	import ExampleOutput from "@/components/general/containers/example_output.svelte"
 	import ExampleCommand from "@/components/general/containers/example_command.svelte"
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
-	import DescriptiveListItem from "@/components/general/containers/descriptive_list_item.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
 
 	const loadedFileInfos = derived(page, resolvedPage => resolvedPage.data.loadedFileInfos ?? [])
@@ -182,7 +182,7 @@
 	<StructuredSection id={setupSteps[0].id}>
 		<TertiaryHeading headingInfo={setupSteps[0]}/>
 		<SimpleText>
-			The first step is dependent on the reader's Node.js environment version. Regardless of the version, the package to be installed locally provides methods to request to a <Citation info={references[3]}>LanguageTool</Citation> server.
+			The first step is dependent on the reader's Node.js environment version. Regardless of the version, the package to be installed locally provides methods to request to a <Citation info={references[3]}>LanguageTool server</Citation>.
 		</SimpleText>
 		{#each installRequiredPackageCommandInfos as commandInfoSet}
 			<ExampleCommand commandInfos={commandInfoSet}/>
@@ -206,40 +206,43 @@
 	<StructuredSection id={workflowConfiguration.id}>
 		<SecondaryHeading headingInfo={workflowConfiguration}/>
 		<SimpleText>
-			Copy the code below and paste it a file under <em>.github/workflows</em> in the project root. The readers may name it whatever they like.
+			Copy the code below and paste it a file under <em>.github/workflows</em> from the project root. The readers may name it whatever they like.
 		</SimpleText>
 		<ExampleCode codeInfo={$loadedFileInfos[1]} endLineIndex={38}/>
 		<SimpleText>
-			On lines 30 - 31, it double checks if the <Citation info={references[3]}>LanguageTool</Citation> server is not yet running. After that, the lines 34 - 35, explicitly starts it. The line 36 - 37 just confirms if the server is running. The grammar-checking activity starts at line 38.
+			On lines 30 - 31, it double checks if the <Citation info={references[3]}>LanguageTool server</Citation> is not yet running. After that, the lines 34 - 35, explicitly starts it. The line 36 - 37 just confirms if the server is running. The grammar-checking activity starts at line 38.
 		</SimpleText>
 	</StructuredSection>
 	<StructuredSection id={execution.id}>
 		<SecondaryHeading headingInfo={execution}/>
 		<SimpleText>
-			Below is a sample test code of a grammar-checking activity. It may be improved upon depending on the reader's use case, situation, or goal. Next to test code is the explanation or the idea behind the test code, regardless whether the reader chose <Citation info={references[4]}>Playwright package</Citation> or not.
+			Below is a sample test code of a grammar-checking activity. It should be in a file placed under <em>t/e2e</em> from the project root. It may be improved upon depending on the reader's use case, situation, or goal. Next to test code is the explanation or the idea behind the test code, regardless whether the reader chose <Citation info={references[4]}>Playwright package</Citation> or not.
 		</SimpleText>
 		<ExampleCode codeInfo={$loadedFileInfos[2]}/>
 		<StructuredList order="ascending">
 			<StructuredListItem>
-				<span>
-					Page Selection Step. Line 5 visits the page. This selects the page to be scanned for texts.
-				</span>
+				<LabeledThing label="Page Selection Step">
+					Line 5 visits the page. This selects the page to be scanned for texts.
+				</LabeledThing>
 			</StructuredListItem>
 			<StructuredListItem>
-				<span>
-					Extraction Step. Line 7 searches for all of the paragraphs found on the visited page. After that, all texts of the paragraphs would be extracted.
-				</span>
+				<LabeledThing label="Extraction Step">
+					Line 7 searches for all of the paragraphs found on the visited page. After that, all texts of the paragraphs would be extracted.
+				</LabeledThing>
 			</StructuredListItem>
 			<StructuredListItem>
-				<span>
-					Analysis Step. Lines 9 - 18 send the extracted texts to the server for checking. This is the core step. Each result should return an empty array signifying that there that the checked paragraph is correct and free from errors.
-				</span>
+				<LabeledThing label="Analysis Step">
+					Lines 9 - 18 send the extracted texts to the server for checking. This is the core step. Each result should return an empty array signifying that there that the checked paragraph is correct and free from errors.
+				</LabeledThing>
 			</StructuredListItem>
 			<StructuredListItem>
-				<span>
-					Review Step. After getting all results of checking, line 22 expects that each result is an empty array.
-				</span>
+				<LabeledThing label="Review Step">
+					After getting all results of checking, line 22 expects that each result is an empty array.
+				</LabeledThing>
 			</StructuredListItem>
 		</StructuredList>
+		<SimpleText>
+			After creating a test code, push the changes to a remote repository. The reader should check the "Actions" tab of the remote repository to see if the grammar checking tests works properly. If not, the mismatches would be shown by the chosen testing framework.
+		</SimpleText>
 	</StructuredSection>
 </ArticlePost>
