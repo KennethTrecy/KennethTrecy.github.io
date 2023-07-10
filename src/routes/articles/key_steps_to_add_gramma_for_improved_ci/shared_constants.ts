@@ -12,6 +12,7 @@ const associatedFileTree: ViewableOwnerInfoTree[] = [
 					{
 						"branch": "master",
 						"paths": [
+							"playwright.config.ts",
 							".github/workflows/e2e.yml"
 						]
 					}

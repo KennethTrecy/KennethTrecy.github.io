@@ -198,12 +198,16 @@
 			</Bookmark>
 		</SimpleText>
 		<ExampleCommand commandInfos={installOptionalPackageCommandInfo}/>
+		<SimpleText>
+			If <Citation info={references[4]}>Playwright</Citation>, use the following configuration below and save it as <em>playwright.config.ts</em> in the project root. Note that <code>npm run preview</code> would run HTTP server binded on a certain port. In the configuration below, it requires the server should be found on port 4173. Readers may customize the command and port according to their setup.
+		</SimpleText>
+		<ExampleCode codeInfo={$loadedFileInfos[0]}/>
 	</StructuredSection>
 	<StructuredSection id={workflowConfiguration.id}>
 		<SecondaryHeading headingInfo={workflowConfiguration}/>
 		<SimpleText>
-			Copy the code below and paste it a file under <code>.github/workflows</code>.
+			Copy the code below and paste it a file under <em>.github/workflows</em> in the project root. Readers may name it whatever they like.
 		</SimpleText>
-		<ExampleCode codeInfo={$loadedFileInfos[0]} endLineIndex={38}/>
+		<ExampleCode codeInfo={$loadedFileInfos[1]} endLineIndex={38}/>
 	</StructuredSection>
 </ArticlePost>
