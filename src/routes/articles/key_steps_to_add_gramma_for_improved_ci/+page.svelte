@@ -153,10 +153,10 @@
 	<StructuredSection id={prerequisites.id}>
 		<SecondaryHeading headingInfo={prerequisites}/>
 		<SimpleText>
-			Readers are expected to have <span itemprop="proficiencyLevel">intermediate</span> knowledge in JavaScript yet may be a beginner in employing continuous integration. The readers are also assumed to have knowledge in using Node.js <abbr title="Command Line Interface">CLI</abbr> to install packages or run scripts.
+			The readers of this article are expected to have <span itemprop="proficiencyLevel">intermediate</span> knowledge in JavaScript yet may be a beginner in employing continuous integration. They are also assumed to have knowledge in using Node.js <abbr title="Command Line Interface">CLI</abbr> to install packages or run scripts.
 		</SimpleText>
 		<SimpleText itemprop="dependencies">
-			Additionally, it is encouraged (but not required) to have a sample website to follow the steps and have a hands-on experience. Should a reader opt to do a hands-on, the website may even have a single page only for simplicity.
+			Additionally, it is encouraged (but not required) to have a sample website to follow the steps and have a hands-on experience. Should the reader opt to do a hands-on, the website may even have a single page only for simplicity.
 		</SimpleText>
 	</StructuredSection>
 	<StructuredSection id={localSetup.id}>
@@ -182,7 +182,7 @@
 	<StructuredSection id={setupSteps[0].id}>
 		<TertiaryHeading headingInfo={setupSteps[0]}/>
 		<SimpleText>
-			The first step is dependent on reader's Node.js environment version. Regardless of the version, the package to be installed locally provides methods to request to a <Citation info={references[3]}>LanguageTool</Citation> server.
+			The first step is dependent on the reader's Node.js environment version. Regardless of the version, the package to be installed locally provides methods to request to a <Citation info={references[3]}>LanguageTool</Citation> server.
 		</SimpleText>
 		{#each installRequiredPackageCommandInfos as commandInfoSet}
 			<ExampleCommand commandInfos={commandInfoSet}/>
@@ -191,7 +191,7 @@
 	<StructuredSection id={setupSteps[1].id}>
 		<TertiaryHeading headingInfo={setupSteps[1]}/>
 		<SimpleText>
-			The second step is to setup the E2E testing framework to be used. For this guide, <Citation info={references[4]}>Playwright</Citation> would be used. Readers may choose their preferred framework to scrape the contents of the website as long as they could request through the package from the <Bookmark
+			The second step is to setup the E2E testing framework to be used. For this guide, <Citation info={references[4]}>Playwright</Citation> would be used. The readers may choose their preferred framework to scrape the contents of the website as long as they could request through the package from the <Bookmark
 				itemprop="citation"
 				fragment={`#${setupSteps[0].id}`}>
 				first step
@@ -199,15 +199,18 @@
 		</SimpleText>
 		<ExampleCommand commandInfos={installOptionalPackageCommandInfo}/>
 		<SimpleText>
-			If <Citation info={references[4]}>Playwright</Citation>, use the following configuration below and save it as <em>playwright.config.ts</em> in the project root. Note that <code>npm run preview</code> would run HTTP server binded on a certain port. In the configuration below, it requires the server should be found on port 4173. Readers may customize the command and port according to their setup.
+			If <Citation info={references[4]}>Playwright</Citation>, use the following configuration below and save it as <em>playwright.config.ts</em> in the project root. Note that <code>npm run preview</code> would run HTTP server binded on a certain port. In the configuration below, it requires the server should be found on port 4173. The readers may customize the command and port according to their setup.
 		</SimpleText>
 		<ExampleCode codeInfo={$loadedFileInfos[0]}/>
 	</StructuredSection>
 	<StructuredSection id={workflowConfiguration.id}>
 		<SecondaryHeading headingInfo={workflowConfiguration}/>
 		<SimpleText>
-			Copy the code below and paste it a file under <em>.github/workflows</em> in the project root. Readers may name it whatever they like.
+			Copy the code below and paste it a file under <em>.github/workflows</em> in the project root. The readers may name it whatever they like.
 		</SimpleText>
 		<ExampleCode codeInfo={$loadedFileInfos[1]} endLineIndex={38}/>
+		<SimpleText>
+			On lines 30 - 31, it double checks if the <Citation info={references[3]}>LanguageTool</Citation> server is not yet running. After that, the lines 34 - 35, explicitly starts it. The line 36 - 37 just confirms if the server is running. The grammar-checking activity starts at line 38.
+		</SimpleText>
 	</StructuredSection>
 </ArticlePost>
