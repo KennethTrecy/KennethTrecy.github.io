@@ -204,6 +204,6 @@
 		<SimpleText>
 			Copy the code below and paste it a file under <code>.github/workflows</code>.
 		</SimpleText>
-		<ExampleCode codeInfo={$loadedFileInfos[0]}/>
+		<ExampleCode codeInfo={$loadedFileInfos[0]} endLineIndex={38}/>
 	</StructuredSection>
 </ArticlePost>

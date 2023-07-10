@@ -4,8 +4,8 @@ import type { CodeFile, CompleteViewableFileInfo } from "@/types/container_info"
 
 import { Octokit } from "@octokit/core"
 
-import { dev } from "$app/environment"
 import { PERSONAL_GITHUB_ACCESS_TOKEN } from "$env/static/private"
+import { dev } from "$app/environment"
 import permittedFileList from "@/constants/associated_file_list"
 
 interface ExpectedReceivedData {
