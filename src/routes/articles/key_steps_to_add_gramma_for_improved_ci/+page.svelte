@@ -5,9 +5,12 @@
 	import type { ReferenceInfo } from "@/types/reference"
 	import type { ExecutedCommandSetInfo, HeadingInfo } from "@/types/container_info"
 
+	import indexPageMeta from "@/routes/meta"
 	import { internalTypes } from "@/components/general/links/constants"
 	import pageMeta from "@/routes/articles/key_steps_to_add_gramma_for_improved_ci/meta"
-	import indexPageMeta from "@/routes/meta"
+	import {
+		successfulGrammarCheckSnapshot
+	} from "@/routes/articles/key_steps_to_add_gramma_for_improved_ci/shared_constants"
 
 	import makeSet from "@/utilities/resource/make_set"
 	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
@@ -72,6 +75,10 @@
 			}
 		]
 	}
+
+	const successfulGrammarCheckSnapshotSourceSet = makeSet(
+		successfulGrammarCheckSnapshot.responsiveLinks
+	)
 
 	const references: ReferenceInfo[] = [
 		{
@@ -244,6 +251,17 @@
 		<SimpleText>
 			After creating a test code, push the changes to a remote repository. The reader should check the "Actions" tab of the remote repository to see if the grammar checking tests works properly. If not, the mismatches would be shown by the chosen testing framework.
 		</SimpleText>
+		<SimpleText>
+			Below is a snapshot of previous results of successful grammar check using the <Citation info={references[4]}>Playwright package</Citation>. Note that the presentation of results may vary per framework used for testing.
+		</SimpleText>
+		<img
+			itemprop="image"
+			src={successfulGrammarCheckSnapshot.defaultLink}
+			srcset={successfulGrammarCheckSnapshotSourceSet}
+			width={successfulGrammarCheckSnapshot.defaultWidth}
+			height={successfulGrammarCheckSnapshot.defaultHeight}
+			alt={successfulGrammarCheckSnapshot.description}
+			class="w-full h-auto bg-primary"/>
 	</StructuredSection>
 	<StructuredSection id={summary.id}>
 		<SecondaryHeading headingInfo={summary}/>
@@ -254,7 +272,7 @@
 			The testing framework to be used is wholly dependent on the current progress in the system development, preferences, and other factors. It recommended to have unanimous decision for ease and fast progress of development.
 		</SimpleText>
 		<SimpleText>
-			Regardless of the framework, this article has presented a pattern to conduct grammar checks. Readers may even request directly to the API of <Citation info={references[3]}>LanguageTool server</Citation> if they know how to translate the code according to their chosen technologies and programming language.
+			Regardless of the framework, this article has presented a pattern to conduct grammar checks. The reader may even request directly to the API of <Citation info={references[3]}>LanguageTool server</Citation> if they know how to translate the code according to their chosen technologies and programming language.
 		</SimpleText>
 	</StructuredSection>
 </ArticlePost>
