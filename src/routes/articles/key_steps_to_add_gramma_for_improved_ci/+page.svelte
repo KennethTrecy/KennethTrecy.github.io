@@ -195,7 +195,7 @@
 				itemprop="citation"
 				fragment={`#${setupSteps[0].id}`}>
 				first step
-			</Bookmark>
+			</Bookmark>.
 		</SimpleText>
 		<ExampleCommand commandInfos={installOptionalPackageCommandInfo}/>
 		<SimpleText>
@@ -243,6 +243,18 @@
 		</StructuredList>
 		<SimpleText>
 			After creating a test code, push the changes to a remote repository. The reader should check the "Actions" tab of the remote repository to see if the grammar checking tests works properly. If not, the mismatches would be shown by the chosen testing framework.
+		</SimpleText>
+	</StructuredSection>
+	<StructuredSection id={summary.id}>
+		<SecondaryHeading headingInfo={summary}/>
+		<SimpleText>
+			Good grammar is important both in formal and informal contexts, as it helps convey ideas correctly and is recommended by search engines. By utilizing continuous integration, grammatical errors can be caught early in the development before publishing document, article, or any group of texts.
+		</SimpleText>
+		<SimpleText>
+			The testing framework to be used is wholly dependent on the current progress in the system development, preferences, and other factors. It recommended to have unanimous decision for ease and fast progress of development.
+		</SimpleText>
+		<SimpleText>
+			Regardless of the framework, this article has presented a pattern to conduct grammar checks. Readers may even request directly to the API of <Citation info={references[3]}>LanguageTool server</Citation> if they know how to translate the code according to their chosen technologies and programming language.
 		</SimpleText>
 	</StructuredSection>
 </ArticlePost>
