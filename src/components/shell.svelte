@@ -103,7 +103,12 @@
 			</section>
 			<section class="col-span-2 md:col-span-1 place-self-stretch md:place-self-auto text-center">
 				<p itemprop="text" class="w-full">
-					Website's code (not texts such as containing my personal information) are under
+					<ExternalLink
+						address="https://github.com/KennethTrecy/kennethtrecy.pages.dev/"
+						itemprop="mainEntityOfPage">
+						Website's code
+					</ExternalLink>
+					(not texts such as containing my personal information) are under
 					<ExternalLink
 						address={LICENSE_URL}
 						itemprop="license">{LICENSE} license</ExternalLink>.
