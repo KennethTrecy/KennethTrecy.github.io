@@ -16,7 +16,6 @@
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
-	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
 
@@ -68,7 +67,7 @@
 					width={profile.defaultWidth}
 					height={profile.defaultHeight}
 					alt={profile.description}
-					class="max-w-100 lg:max-w-sm bg-primary"/>
+					class="max-w-full lg:max-w-sm bg-primary"/>
 				<section class="max-w-sm xl:max-w-md text-center xl:text-left" id={greetings.id}>
 					<SecondaryHeading headingInfo={greetings} variant="name">
 						I am <span itemprop="givenName">Kenneth Trecy</span>!
