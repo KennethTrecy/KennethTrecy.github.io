@@ -89,7 +89,7 @@
 		<footer class="footer footer-center p-4">
 			<div>
 				<SimpleText>
-					<strong>Disclaimer</strong>: Otherwise noted, the views or interests expressed in this site are my views, and does not necessarily reflect the view or interest of any entity I have a connection to; whether it is an organization, or someone I have worked with.
+					<strong>Disclaimer</strong>: Otherwise noted, the views or interests expressed in this site are my views, and does not necessarily reflect the view or interest of any entity I have a connection to; whether it is an organization, or someone I have worked with. In addition, trademarks (that may be mentioned in different pages) are the property of their respective owners and should not be interpreted as indicating endorsement, affiliation, or sponsorship, unless stated otherwise.
 				</SimpleText>
 			</div>
 		</footer>
