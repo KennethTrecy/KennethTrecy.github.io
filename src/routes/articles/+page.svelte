@@ -3,6 +3,7 @@
 
 	import articleMetaCollection from "@/constants/article_meta_collection"
 
+	import CommonHead from "@/components/general/common_head.svelte"
 	import ArticleCard from "@/components/general/card/article.svelte"
 	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 	import PageDetailCard from "@/components/general/card/page_detail.svelte"
@@ -18,6 +19,10 @@
 		"text": "Articles Written"
 	})
 </script>
+
+<svelte:head>
+	<CommonHead {pageMeta}/>
+</svelte:head>
 
 <StructuredArticle>
 	<PrimaryHeading slot="title">{pageMeta.title}</PrimaryHeading>
