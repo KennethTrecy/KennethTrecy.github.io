@@ -22,6 +22,7 @@ export default [
 	"Comroconbu",
 	"Elomocato",
 	"Virdafils",
+	"Gramma",
 
 	// Code identifiers
 	"img",
