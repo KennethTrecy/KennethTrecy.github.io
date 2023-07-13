@@ -18,10 +18,6 @@
 	function toggleMenu(event: KeyboardEvent): void {
 		toggleBySpace(event, () => isMenuShown = !isMenuShown)
 	}
-
-	function loadExtraStyleSheet() {
-		hasLoadedExtraStyleSheet = true
-	}
 </script>
 
 <svelte:head>
@@ -31,16 +27,9 @@
 		rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"/>
 	<link
-		rel="preload"
+		rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,1&family=Noto+Color+Emoji&display=swap"
-		as="style"
-		on:load={loadExtraStyleSheet}/>
-	{#if hasLoadedExtraStyleSheet}
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,1&family=Noto+Color+Emoji&display=swap"
-			as="style"/>
-	{/if}
+		as="style"/>
 	<style>
 		body {
 			font-family: "Roboto", "Noto Color Emoji", "Segoe UI", Tahoma, Verdana, Geneva, sans-serif;
