@@ -7,14 +7,17 @@ const configuration: UserConfig = {
 		sveltekit()
 	],
 	"server": {
-		"host": true,
-		"port": 8000,
-		"open": false,
-		"watch": {
-			"usePolling": true
+		"port": Number(process.env.PORT || "7000"),
+		"hmr": {
+			"clientPort": 7000,
+			"port": 7000,
+			"host": "localhost",
+			"protocol": "ws"
 		}
 	},
 	"test": {
 		"include": [ "src/**/*.spec.ts" ]
 	}
-});
+}
+
+export default configuration
