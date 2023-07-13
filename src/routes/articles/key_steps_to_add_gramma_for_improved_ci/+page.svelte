@@ -157,7 +157,8 @@
 			The reason is that grammar is particularly important in formal contexts. Even in informal context, having a good grammar helps the writer to convey the ideas correctly. It is even recommended by a search engine to <Citation info={references[2]}>avoid mistakes in grammar or spellings</Citation>.
 		</SimpleText>
 	</StructuredSection>
-	<StructuredSection id={prerequisites.id}>
+	<StructuredSection itemtype="https://schema.org/TechArticle" id={prerequisites.id}>
+		<link itemprop="mainEntityOfPage" href={`#${pageMeta.pageURL}`}/>
 		<SecondaryHeading headingInfo={prerequisites}/>
 		<SimpleText>
 			The readers of this article are expected to have <span itemprop="proficiencyLevel">intermediate</span> knowledge in JavaScript yet may be a beginner in employing continuous integration. They are also assumed to have knowledge in using Node.js <abbr title="Command Line Interface">CLI</abbr> to install packages or run scripts.
