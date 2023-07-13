@@ -13,7 +13,6 @@
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 
 	let isMenuShown = false
-	let hasLoadedExtraStyleSheet = false
 
 	function toggleMenu(event: KeyboardEvent): void {
 		toggleBySpace(event, () => isMenuShown = !isMenuShown)
