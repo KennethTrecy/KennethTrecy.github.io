@@ -16,6 +16,7 @@
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
+	import StructuredArticle from "@/components/general/containers/structured_article.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
 
