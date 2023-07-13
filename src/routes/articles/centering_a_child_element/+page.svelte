@@ -151,7 +151,7 @@
 		<StructuredSection id={classical.id}>
 			<SecondaryHeading headingInfo={classical}/>
 			<SimpleText>
-				The classical way to center an element is through the <Keyword>use of margins</Keyword> of the child element. There are many variations for this technique. A developer in the past can conveniently use this technique in conjunction with the previous versions of CSS frameworks. Utilizing the <Citation info={references[0]}>12-column grid system</Citation>, a developer would the following steps below to determine the margin the child element would take.
+				The classical way to position an element in the center is through the <Keyword>use of margins</Keyword> of the child element. There are many variations for this technique. A developer in the past can conveniently use this technique in conjunction with the previous versions of CSS frameworks. Utilizing the <Citation info={references[0]}>12-column grid system</Citation>, a developer would the following steps below to determine the margin the child element would take.
 			</SimpleText>
 			<StructuredList order="ascending">
 				<DescriptiveListItem>
@@ -199,7 +199,7 @@
 				<Citation info={references[2]}>around 2012</Citation>. It allows web developer to layout conveniently and responsively as the elements would automatically resize while adhering to the specified properties.
 			</SimpleText>
 			<SimpleText>
-				A web developer would declare certain properties on the parent like <code class="terminated">display: flex</code> paired with <code>flex-direction</code> and/or <code>flex-wrap</code>. On the other hand, children of the flexible parent would have properties like <code>flex-grow</code> and/or <code>flex-basis</code>. It is very easy to center an element in both axes using flexible box layout.
+				A web developer would declare certain properties on the parent like <code class="terminated">display: flex</code> paired with <code>flex-direction</code> and/or <code>flex-wrap</code>. On the other hand, children of the flexible parent would have properties like <code>flex-grow</code> and/or <code>flex-basis</code>. It is very easy make an element positioned in center in both axes using flexible box layout.
 			</SimpleText>
 			<SimpleText>
 				Below is an example positioning the child elements in the center (in both horizontal and vertical manner) using the flexible box layout programmed in vanilla <abbr title="Cascading Style Sheets">CSS</abbr>. Note that there is a margin between the two children to distinguish them.
@@ -354,7 +354,7 @@
 		<StructuredSection id={takeaways.id}>
 			<SecondaryHeading headingInfo={takeaways}/>
 			<SimpleText itemprop="about">
-				Despite that there are different methods to center an element, each has benefits and limitations. Centering based on 12-column layout may be rigid at the price of convenience. Using  <code class="terminated">display: flex</code> or  <code class="terminated">display: grid</code>, can center a child element as long as it is smaller than the parent yet not for bigger child. Meanwhile, using negative margins is only applicable bigger child element and not for smaller child element.
+				Despite that there are different methods to position an element in the center, each has benefits and limitations. Centering based on 12-column layout may be rigid at the price of convenience. Using  <code class="terminated">display: flex</code> or  <code class="terminated">display: grid</code>, can center a child element as long as it is smaller than the parent yet not for bigger child. Meanwhile, using negative margins is only applicable bigger child element and not for smaller child element.
 			</SimpleText>
 			<SimpleText>
 				Usage of these techniques may depend on the programmer's style, requirements of the system being built, or supported browsers. There is no best solution at every scenario when it comes to centering child elements. There are also techniques not mentioned in this article such as using <Citation info={references[5]}><code>position</code> property</Citation> and others. It is left for the readers to study the other techniques.
