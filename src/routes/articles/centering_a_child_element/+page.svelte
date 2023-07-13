@@ -199,7 +199,7 @@
 				<Citation info={references[2]}>around 2012</Citation>. It allows web developer to layout conveniently and responsively as the elements would automatically resize while adhering to the specified properties.
 			</SimpleText>
 			<SimpleText>
-				A web developer would declare certain properties on the parent like <code class="terminated">display: flex</code> paired with <code>flex-direction</code> and/or <code>flex-wrap</code>. On the other hand, children of the flexible parent would have properties like <code>flex-grow</code> and/or <code>flex-basis</code>. It is very easy make an element positioned in center in both axes using flexible box layout.
+				A web developer would declare certain properties on the parent like <code class="terminated">display: flex</code> paired with <code>flex-direction</code> and/or <code>flex-wrap</code>. On the other hand, children of the flexible parent would have properties like <code>flex-grow</code> and/or <code>flex-basis</code>. It is very easy to make an element positioned in center in both axes using flexible box layout.
 			</SimpleText>
 			<SimpleText>
 				Below is an example positioning the child elements in the center (in both horizontal and vertical manner) using the flexible box layout programmed in vanilla <abbr title="Cascading Style Sheets">CSS</abbr>. Note that there is a margin between the two children to distinguish them.
