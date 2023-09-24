@@ -39,7 +39,7 @@
 		"esbuild": "^0.16.17",
 		"eslint": "^8.50.0",
 		"eslint-config-whitelistyle": "github:KennethTrecy/eslint-config-whitelistyle",
-		"eslint-plugin-svelte3": "^4.0.0",
+		"eslint-plugin-svelte": "^2.33.2",
 		"gramma": "github:KennethTrecy/gramma#v1.7.0-rc1",
 		"husky": "^8.0.3",
 		"jsdom": "^20.0.3",
