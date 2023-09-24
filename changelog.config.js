@@ -6,6 +6,7 @@ export default {
 		"seo": { "title": "🔍 Search Engine Optimization" },
 		"security": { "title": "🔒 Security" },
 		"revert": { "title": "↩️ Reverts" },
+		"config": { "title": "🗒️ Configurations" },
 		"internal": { "title": "🧩 Internals" }
 	}
 }
