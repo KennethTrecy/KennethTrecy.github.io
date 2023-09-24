@@ -7,6 +7,7 @@ module.exports = {
 		],
 		"tsconfigRootDir": __dirname
 	},
+	"include": [ "src/**/*.svelte" ],
 	"ignorePatterns": [ ".eslintrc.cjs" ],
 	"env": {
 		"browser": true,
@@ -14,7 +15,6 @@ module.exports = {
 		"node": true
 	},
 	"plugins": [
-		"svelte3",
 		"@typescript-eslint"
 	],
 	"parser": "@typescript-eslint/parser",
@@ -23,16 +23,17 @@ module.exports = {
 			"files": [
 				"*.svelte"
 			],
-			"processor": "svelte3/svelte3"
+			"parser": "svelte-eslint-parser",
+			"parserOptions": {
+				"parser": "@typescript-eslint/parser",
+			}
 		}
 	],
-	"settings": {
-		"svelte3/typescript": true
-	},
 	"extends": [
 		"eslint:all",
 		"plugin:@typescript-eslint/recommended",
 		"plugin:@typescript-eslint/recommended-requiring-type-checking",
+		"plugin:svelte/recommended",
 		"whitelistyle"
 	]
 }
