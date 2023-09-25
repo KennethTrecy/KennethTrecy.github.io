@@ -13,7 +13,7 @@ const meta = defineArticlePageMeta("/articles/installation_guide_for_fragmented_
 	"title": "Installation Guide for Fragmented Web Servers",
 	"version": "0.1-dev",
 	"objectType": "article",
-	"articleType": "article"
+	"articleType": "technical article"
 })
 
 export default meta
