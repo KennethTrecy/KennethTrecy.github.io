@@ -7,7 +7,7 @@ module.exports = {
 		],
 		"tsconfigRootDir": __dirname
 	},
-	"include": [ "src/**/*.svelte" ],
+	"include": [ "src/**/*.svelte", "src/**/*.ts" ],
 	"ignorePatterns": [ ".eslintrc.cjs" ],
 	"env": {
 		"browser": true,
