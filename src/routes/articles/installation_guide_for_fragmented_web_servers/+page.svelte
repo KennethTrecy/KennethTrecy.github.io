@@ -36,7 +36,7 @@
 	<StructuredSection itemprop="about" id={problem.id}>
 		<SecondaryHeading headingInfo={problem}/>
 		<SimpleText itemprop="description">
-
+			Some web developers may have used an all-in-one server during their first years in web development. The all-in-one server may have a database server and HTTP server with an integrated interpreter (usually to read server-side PHP scripts). However, bundled servers are not always good for scalability purposes.
 		</SimpleText>
 		<SimpleText itemprop="mainEntity">
 
