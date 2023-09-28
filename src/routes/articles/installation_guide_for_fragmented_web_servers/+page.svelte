@@ -36,9 +36,9 @@
 	<StructuredSection itemprop="about" id={problem.id}>
 		<SecondaryHeading headingInfo={problem}/>
 		<SimpleText itemprop="description">
-			Some web developers may have used an all-in-one server during their first years in web development. The all-in-one server may have a database server and HTTP server with an integrated interpreter (usually to read server-side PHP scripts). However, bundled servers are not always good for scalability or customizability purposes.
+			Some web developers may have used an <Keyword>all-in-one server</Keyword> during their first years in web development. The all-in-one server may have a database server and HTTP server with an integrated interpreter (usually to read server-side PHP scripts). However, bundled servers are not always good for scalability or customizability purposes. <strong itemprop="mainEntity">This guides ther developers to set up their "<Keyword>fragmented web servers</Keyword>".</strong>
 		</SimpleText>
-		<SimpleText itemprop="mainEntity">
+		<SimpleText>
 			If a server component of that bundled server has newer version, developers would need to wait for a new installer containing all of the updates. The developer would also need to download large amount of bytes to get installer which may only update one or more components.
 		</SimpleText>
 		<SimpleText>
@@ -63,7 +63,7 @@
 		<link itemprop="mainEntityOfPage" href={`#${pageMeta.pageURL}`}/>
 		<SecondaryHeading headingInfo={prerequisites}/>
 		<SimpleText>
-			The readers of this article are expected to be <span itemprop="proficiencyLevel">intermediate or semi-intermediate</span> web developers. The earlier they know about the topic of this article, the better.
+			The readers of this article are expected to be <span itemprop="proficiencyLevel">semi-intermediate or intermediate</span> web developers. The earlier they know about the topic of this article, the better.
 		</SimpleText>
 		<SimpleText itemprop="dependencies">
 			In addition, readers are encouraged (but not required) to have a sample website to follow the guide and get used to the set up. The website can be simple as having a single page only.
