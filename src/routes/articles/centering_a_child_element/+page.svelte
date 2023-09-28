@@ -2,7 +2,7 @@
 	import { page } from "$app/stores"
 	import { derived } from "svelte/store"
 
-	import type { ReferenceInfo, LicenseInfo } from "@/types/reference"
+	import type { ReferenceInfo } from "@/types/reference"
 
 	import pageMeta from "@/routes/articles/centering_a_child_element/meta"
 	import indexPageMeta from "@/routes/meta"

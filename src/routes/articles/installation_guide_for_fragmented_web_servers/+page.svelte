@@ -9,6 +9,7 @@
 	import Bookmark from "@/components/general/links/bookmark.svelte"
 	import Citation from "@/components/general/links/citation.svelte"
 	import Keyword from "@/components/general/containers/keyword.svelte"
+	import ExternalLink from "@/components/general/links/external.svelte"
 	import BodyGroup from "@/components/general/containers/body_group.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import ArticlePost from "@/components/general/containers/article_post.svelte"
@@ -17,6 +18,7 @@
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
+	import DescriptiveListItem from "@/components/general/containers/descriptive_list_item.svelte"
 
 	const problem = defineHeadingInfo({ "text": "Problem" })
 	const prerequisites = defineHeadingInfo({ "text": "Prerequisites" })
@@ -76,8 +78,16 @@
 		<StructuredSection id={steps[0].id}>
 			<SecondaryHeading headingInfo={steps[0]}/>
 			<SimpleText itemprop="description">
-
+				For this step, the reader would use Apache HTTP server. There are other options available such as Nginx. The steps are outlined below.
 			</SimpleText>
+			<StructuredList order="ascending">
+				<DescriptiveListItem>
+					Download the <ExternalLink address="https://www.apachehaus.com/cgi-bin/download.plx">portable package (in zipped format) of Apache HTTP server</ExternalLink> from Apache Haus.
+				</DescriptiveListItem>
+				<DescriptiveListItem>
+					Unzip Apache HTTP server to your chosen directory. Label the chosen directory as <var>APACHE_ROOT</var>.
+				</DescriptiveListItem>
+			</StructuredList>
 		</StructuredSection>
 		<StructuredSection id={steps[1].id}>
 			<SecondaryHeading headingInfo={steps[1]}/>
