@@ -36,10 +36,13 @@
 	<StructuredSection itemprop="about" id={problem.id}>
 		<SecondaryHeading headingInfo={problem}/>
 		<SimpleText itemprop="description">
-			Some web developers may have used an all-in-one server during their first years in web development. The all-in-one server may have a database server and HTTP server with an integrated interpreter (usually to read server-side PHP scripts). However, bundled servers are not always good for scalability purposes.
+			Some web developers may have used an all-in-one server during their first years in web development. The all-in-one server may have a database server and HTTP server with an integrated interpreter (usually to read server-side PHP scripts). However, bundled servers are not always good for scalability or customizability purposes.
 		</SimpleText>
 		<SimpleText itemprop="mainEntity">
-
+			If a server component of that bundled server has newer version, developers would need to wait for a new installer containing all of the updates. The developer would also need to download large amount of bytes to get installer which may only update one or more components.
+		</SimpleText>
+		<SimpleText>
+			There are no problems on using a bundled server especially if the developers are looking for a quick and easy solution when they are still at beginner level. Yet, the I.T. industry at this era is fast-paced. When the beginner developers are already done with their basic lessons, this article would prove to be a useful guide to them.
 		</SimpleText>
 		<StructuredList order="ascending">
 			<meta itemprop="numberOfItems" content={`${steps.length}`}>
