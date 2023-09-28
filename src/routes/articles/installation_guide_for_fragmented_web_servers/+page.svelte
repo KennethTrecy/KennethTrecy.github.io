@@ -63,8 +63,13 @@
 		<link itemprop="mainEntityOfPage" href={`#${pageMeta.pageURL}`}/>
 		<SecondaryHeading headingInfo={prerequisites}/>
 		<SimpleText>
+			The readers of this article are expected to be <span itemprop="proficiencyLevel">intermediate or semi-intermediate</span> web developers. The earlier they know about the topic of this article, the better.
 		</SimpleText>
 		<SimpleText itemprop="dependencies">
+			In addition, readers are encouraged (but not required) to have a sample website to follow the guide and get used to the set up. The website can be simple as having a single page only.
+		</SimpleText>
+		<SimpleText>
+			Website that are made for more than 500 users may be hard to integrate depending on its scalability and required dependencies. It is up to the reader to read complementary information to support their use case.
 		</SimpleText>
 	</StructuredSection>
 	<BodyGroup>
