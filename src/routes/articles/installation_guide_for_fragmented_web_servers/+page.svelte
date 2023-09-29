@@ -101,7 +101,7 @@
 		<StructuredSection id={steps[1].id}>
 			<SecondaryHeading headingInfo={steps[1]}/>
 			<SimpleText itemprop="description">
-
+				For this step, the reader would integrate a server-side script interpreter on Apache HTTP server. PHP interpreter would be used as it is a popular choice based from author's experience.
 			</SimpleText>
 		</StructuredSection>
 		<StructuredSection id={steps[2].id}>
