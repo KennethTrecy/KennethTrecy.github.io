@@ -87,6 +87,15 @@
 				<DescriptiveListItem>
 					Unzip Apache HTTP server to your chosen directory. Label the chosen directory as <var>APACHE_ROOT</var>.
 				</DescriptiveListItem>
+				<DescriptiveListItem>
+					Find the Apache configuration file on <em><var>APACHE_ROOT</var>/conf/httpd.conf</em>.
+				</DescriptiveListItem>
+				<DescriptiveListItem>
+					Uncomment the following modules to enable them: <em>access_compat</em>, <em>rewrite</em>, and <em>headers</em>.
+				</DescriptiveListItem>
+				<DescriptiveListItem>
+					Optionally, reader may want to change listening port of the HTTP server. Listening on <code>0.0.0.0:80</code> allows to machine to listen to all bounded IP address on the computer such as loopback address and local address.
+				</DescriptiveListItem>
 			</StructuredList>
 		</StructuredSection>
 		<StructuredSection id={steps[1].id}>
