@@ -103,6 +103,14 @@
 			<SimpleText itemprop="description">
 				For this step, the reader would integrate a server-side script interpreter on Apache HTTP server. PHP interpreter would be used as it is a popular choice based from author's experience.
 			</SimpleText>
+			<StructuredList order="ascending">
+				<DescriptiveListItem>
+					Download the <ExternalLink address="https://windows.php.net/download/">portable package (in zipped format) of PHP interpreter</ExternalLink> from Apache Haus.
+				</DescriptiveListItem>
+				<DescriptiveListItem>
+					Unzip PHP interpreter to your chosen directory. Label the chosen directory as <var>PHP_ROOT</var>.
+				</DescriptiveListItem>
+			</StructuredList>
 		</StructuredSection>
 		<StructuredSection id={steps[2].id}>
 			<SecondaryHeading headingInfo={steps[2]}/>
