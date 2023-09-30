@@ -114,13 +114,19 @@
 					Find the HTTP server configuration file on <em><var>APACHE_ROOT</var>/conf/httpd.conf</em> and open it.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
-					Add <code>LoadModule php_module "PHP_ROOT/php8apache2_4.dll"</code> below the list of modules inside the HTTP server configuration file. This step may vary depending on the major version of the chosen PHP interpreter.
+					Add <code>LoadModule php_module "PHP_ROOT/php8apache2_4.dll"</code> below the list of modules inside the HTTP server configuration file. This step may vary depending on the major version of the chosen PHP interpreter. Change the <code>PHP_ROOT</code> according to the real path of directory done in step 2.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
-					Below the new line of HTTP server configuration file, add <code>PHPIniDir "PHP_ROOT/php.ini"</code> to configure the PHP interpreter.
+					Below the new line of HTTP server configuration file, add <code>PHPIniDir "PHP_ROOT/php.ini"</code> to configure the PHP interpreter. Change the <code>PHP_ROOT</code> according to the real path of directory done in step 2.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
 					Last line to add is <code>AddHandler application/x-httpd-php .php</code> to instruct the HTTP server to treat files ending on <em>.php</em> as files that can be interpreted by the PHP interpreter.
+				</DescriptiveListItem>
+				<DescriptiveListItem>
+					Find the PHP configuration file on <em><var>PHP_ROOT</var>/php.ini</em> and open it.
+				</DescriptiveListItem>
+				<DescriptiveListItem>
+					Enable the extensions in <em><var>PHP_ROOT</var>/php.ini</em> that can found around line 900 by removing the <code>#</code> symbol before the target line. If the developer would like to communicate to MySQL database server, enable <code>extension=pdo_mysql</code> and <code>extension=mysqli</code>. If the developer would like to communicate to PostgreSQL database server, enable <code>extension=pdo_pgsql</code> and <code>extension=pgsql</code>.
 				</DescriptiveListItem>
 			</StructuredList>
 		</StructuredSection>
