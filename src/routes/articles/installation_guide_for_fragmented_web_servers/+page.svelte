@@ -133,8 +133,16 @@
 		<StructuredSection id={steps[2].id}>
 			<SecondaryHeading headingInfo={steps[2]}/>
 			<SimpleText itemprop="description">
-				In this section, the reader would install MySQL database server to be used for saving the data of systems or applications. A GUI-based database client would also be installed to view the data in the database on native desktop environment.
+				In this section, the reader would install database server to be used for saving the data of systems or applications. A GUI-based database client would also be installed to view the data in the database on native desktop environment. It depends on developer's preference.
 			</SimpleText>
+			<StructuredList order="unordered">
+				<DescriptiveListItem>
+					If MySQL database server has been preferred, install the MySQL database server as a service. After that, install the MySQL Workbench separately to view the data.
+				</DescriptiveListItem>
+				<DescriptiveListItem>
+					If PostgreSQL database server has been preferred, install the PostgreSQL database server. PgAdmin, which is the client application, is already included in the installer.
+				</DescriptiveListItem>
+			</StructuredList>
 		</StructuredSection>
 		<StructuredSection id={experienceAndPartingWords.id}>
 			<SecondaryHeading headingInfo={experienceAndPartingWords}/>
