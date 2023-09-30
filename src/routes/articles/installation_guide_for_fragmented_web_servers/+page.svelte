@@ -147,7 +147,10 @@
 		<StructuredSection id={experienceAndPartingWords.id}>
 			<SecondaryHeading headingInfo={experienceAndPartingWords}/>
 			<SimpleText itemprop="description">
-
+				There are still far more advanced configuration that is left as an execised to the readers. To further increase readers' expertise, the author recommends reading the respective documentations of the tools they use. It is best bridge the readers' can find between the source code, which is the tells the exact process, and video tutorials, which usually provide an overview for the beginners.
+			</SimpleText>
+			<SimpleText>
+				Note that the instructions available in this article is a result of several years of experience I gained in setting up the servers. It is a difficult path especially for someone is learning these without any supervision or mentorship.
 			</SimpleText>
 		</StructuredSection>
 	</BodyGroup>
