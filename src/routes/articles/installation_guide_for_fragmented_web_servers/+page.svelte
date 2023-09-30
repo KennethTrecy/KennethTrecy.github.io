@@ -133,7 +133,7 @@
 		<StructuredSection id={steps[2].id}>
 			<SecondaryHeading headingInfo={steps[2]}/>
 			<SimpleText itemprop="description">
-
+				In this section, the reader would install MySQL database server to be used for saving the data of systems or applications. A GUI-based database client would also be installed to view the data in the database on native desktop environment.
 			</SimpleText>
 		</StructuredSection>
 		<StructuredSection id={experienceAndPartingWords.id}>
