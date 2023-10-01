@@ -120,6 +120,54 @@
 				"groupName": "The PHP Group",
 				"link": "https://www.php.net/credits.php"
 			}
+		},
+		{
+			"title": "MySQL :: Download MySQL Community Server",
+			"link": "https://dev.mysql.com/downloads/mysql/",
+			"itemtype": "https://schema.org/SoftwareApplication",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "Oracle and/or its affiliates",
+				"link": "https://www.oracle.com/"
+			}
+		},
+		{
+			"title": "MySQL :: Download MySQL Workbench",
+			"link": "https://dev.mysql.com/downloads/workbench/",
+			"itemtype": "https://schema.org/SoftwareApplication",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "Oracle and/or its affiliates",
+				"link": "https://www.oracle.com/"
+			}
+		},
+		{
+			"title": "PostgreSQL",
+			"link": "https://www.postgresql.org/download/windows/",
+			"itemtype": "https://schema.org/SoftwareApplication",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "The PostgreSQL Global Development Group",
+				"link": "https://www.postgresql.org/about/"
+			},
+			"license": {
+				"name": "PostgreSQL License",
+				"link": "https://www.postgresql.org/about/licence/"
+			}
+		},
+		{
+			"title": "pgAdmin",
+			"link": "https://www.pgadmin.org/download/",
+			"itemtype": "https://schema.org/SoftwareApplication",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "The pgAdmin Development Team",
+				"link": "https://www.pgadmin.org/development/"
+			},
+			"license": {
+				"name": "PostgreSQL License",
+				"link": "https://www.pgadmin.org/licence/"
+			}
 		}
 	]
 </script>
@@ -228,15 +276,18 @@
 		</StructuredSection>
 		<StructuredSection id={stepSections[2].id}>
 			<SecondaryHeading headingInfo={stepSections[2]}/>
+			<SimpleText>
+				After the installation of HTTP server and scripting langauge, database servers must be installed to store user data and other secured data such as passwords and access tokens. Depending on the chosen database server, the database may store either structured data, unstructured data, or both.
+			</SimpleText>
 			<SimpleText itemprop="description">
 				In this section, the reader would install database server to be used for saving the data of systems or applications. A GUI-based database client would also be installed to view the data in the database on native desktop environment. It depends on developer's preference.
 			</SimpleText>
 			<StructuredList order="unordered">
 				<DescriptiveListItem>
-					If MySQL database server has been preferred, install the MySQL database server as a service. After that, install the MySQL Workbench separately to view the data.
+					If MySQL database server has been preferred, install the <Citation info={references[7]}>MySQL community server</Citation> as a service. After that, install the <Citation info={references[8]}>MySQL Workbench</Citation> separately to view the data.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
-					If PostgreSQL database server has been preferred, install the PostgreSQL database server. PgAdmin, which is the client application, is already included in the installer.
+					If PostgreSQL database server has been preferred, install the <Citation info={references[9]}>PostgreSQL database server</Citation>. <Citation info={references[10]}>pgAdmin</Citation>, which is the client application, is already included in the installer.
 				</DescriptiveListItem>
 			</StructuredList>
 		</StructuredSection>
