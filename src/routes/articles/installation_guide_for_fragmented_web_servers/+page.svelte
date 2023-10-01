@@ -96,6 +96,30 @@
 				"name": "Apache License, Version 2.0",
 				"link": "https://httpd.apache.org/docs/2.4/license.html"
 			}
+		},
+		{
+			"title": "PHP: What can PHP do? - Manual",
+			"link": "https://www.php.net/manual/en/intro-whatcando.php",
+			"itemtype": "https://schema.org/Article",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "PHP Documentation Group",
+				"link": "https://www.php.net/manual/en/preface.php#contributors"
+			},
+			"license": {
+				"name": "CC BY 3.0",
+				"link": "https://www.php.net/manual/en/cc.license.php"
+			}
+		},
+		{
+			"title": "PHP For Windows: Binaries and sources Releases",
+			"link": "https://windows.php.net/download/",
+			"itemtype": "https://schema.org/SoftwareApplication",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "The PHP Group",
+				"link": "https://www.php.net/credits.php"
+			}
 		}
 	]
 </script>
@@ -170,14 +194,14 @@
 		<StructuredSection id={stepSections[1].id}>
 			<SecondaryHeading headingInfo={stepSections[1]}/>
 			<SimpleText>
-				A scripting language, such as PHP language, are usually used in web development to make dynamic web pages. In addition, scripts made in this langauge allow manipulation of data in the database.
+				A scripting language, such as <Citation info={references[5]}>PHP language</Citation>, are usually used in web development to make dynamic web pages. In addition, scripts made in this langauge allow manipulation of data in the database.
 			</SimpleText>
 			<SimpleText itemprop="description">
 				In this section, the reader would integrate a server-side script interpreter on Apache HTTP server. PHP interpreter would be used as it is a popular choice based from author's experience.
 			</SimpleText>
 			<StructuredList order="ascending">
 				<DescriptiveListItem>
-					Download the <ExternalLink address="https://windows.php.net/download/">portable package (in zipped format) of PHP interpreter</ExternalLink> from different binaries. It is recommended to install the latest version of a <em>thread-safe</em> binary.
+					Download the <Citation info={references[6]}>portable package (in zipped format) of PHP interpreter</Citation> from different binaries. It is recommended to install the latest version of a <em>thread-safe</em> binary.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
 					Unzip PHP interpreter to your chosen directory. Label the chosen directory as <var>PHP_ROOT</var>.
