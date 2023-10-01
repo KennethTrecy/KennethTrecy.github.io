@@ -19,6 +19,7 @@
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
 	import DescriptiveListItem from "@/components/general/containers/descriptive_list_item.svelte"
+	import { create_in_transition } from "svelte/internal";
 
 	const problem = defineHeadingInfo({ "text": "Problem" })
 	const prerequisites = defineHeadingInfo({ "text": "Prerequisites" })
@@ -30,7 +31,72 @@
 	const experienceAndPartingWords = defineHeadingInfo({ "text": "Experiences and Parting Word" })
 
 	const references: ReferenceInfo[] = [
-
+		{
+			"title": "XAMPP",
+			"link": "https://www.apachefriends.org/download.html",
+			"itemtype": "https://schema.org/SoftwareApplication",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "Apache Friends",
+				"link": "https://www.apachefriends.org/about.html"
+			},
+			"license": {
+				"name": "GPL 3.0",
+				"link": "https://www.gnu.org/licenses/gpl-3.0.html"
+			}
+		},
+		{
+			"title": "Apache Haus Downloads",
+			"link": "https://www.apachehaus.com/cgi-bin/download.plx",
+			"itemtype": "https://schema.org/SoftwareApplication",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "The Apache Haus",
+				"link": "https://www.apachehaus.com/"
+			}
+		},
+		{
+			"title": "mod_access_compat - Apache HTTP Server Version 2.4",
+			"link": "https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html",
+			"itemtype": "https://schema.org/TechArticle",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "The Apache Software Foundation",
+				"link": "https://www.apache.org/foundation/"
+			},
+			"license": {
+				"name": "Apache License, Version 2.0",
+				"link": "https://httpd.apache.org/docs/2.4/license.html"
+			}
+		},
+		{
+			"title": "mod_rewrite - Apache HTTP Server Version 2.4",
+			"link": "https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html",
+			"itemtype": "https://schema.org/TechArticle",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "The Apache Software Foundation",
+				"link": "https://www.apache.org/foundation/"
+			},
+			"license": {
+				"name": "Apache License, Version 2.0",
+				"link": "https://httpd.apache.org/docs/2.4/license.html"
+			}
+		},
+		{
+			"title": "mod_headers - Apache HTTP Server Version 2.4",
+			"link": "https://httpd.apache.org/docs/2.4/mod/mod_headers.html",
+			"itemtype": "https://schema.org/TechArticle",
+			"linkCategory": "outbound",
+			"author": {
+				"groupName": "The Apache Software Foundation",
+				"link": "https://www.apache.org/foundation/"
+			},
+			"license": {
+				"name": "Apache License, Version 2.0",
+				"link": "https://httpd.apache.org/docs/2.4/license.html"
+			}
+		}
 	]
 </script>
 
@@ -38,7 +104,7 @@
 	<StructuredSection itemprop="about" id={problem.id}>
 		<SecondaryHeading headingInfo={problem}/>
 		<SimpleText itemprop="description">
-			Some web developers may have used an <Keyword>all-in-one server</Keyword> during their first years in web development. One notable example of a all-in-one server is XAMPP. The all-in-one servers may have a database server and HTTP server with an integrated interpreter (usually to execute server-side PHP scripts).
+			Some web developers may have used an <Keyword>all-in-one server</Keyword> during their first years in web development. One notable example of a all-in-one server is <Citation info={references[0]}>XAMPP</Citation>. The all-in-one servers may have a database server and HTTP server with an integrated interpreter (usually to execute server-side PHP scripts).
 		</SimpleText>
 		<SimpleText itemprop="description">
 			However, bundled servers are not always good for scalability or customizability purposes. Thus, I created this <strong itemprop="mainEntity">guide for other developers to set up their "<Keyword>fragmented web servers</Keyword>".</strong>
@@ -47,7 +113,7 @@
 			If a server component of that bundled server has newer version, developers would need to wait for a new installer containing all of the updates. The developer would also need to download large amount of bytes to get installer which may only update one or more components.
 		</SimpleText>
 		<SimpleText>
-			There are no problems on using a bundled server especially if the developers are looking for a quick and easy solution when they are still at beginner level. Yet, the I.T. industry at this era is fast-paced. When the beginner developers are already done with their basic lessons, this guide would prove to be a useful for them to grow further.
+			There are no problems on using a bundled server especially if the developers are looking for a quick and easy solution or if they are still at beginner level. Yet, the I.T. industry at this era is fast-paced. When the beginner developers are already done with their basic lessons, this guide would prove to be a useful for them to grow further.
 		</SimpleText>
 		<StructuredList order="ascending">
 			<meta itemprop="numberOfItems" content={`${stepSections.length}`}>
@@ -81,11 +147,11 @@
 		<StructuredSection id={stepSections[0].id}>
 			<SecondaryHeading headingInfo={stepSections[0]}/>
 			<SimpleText itemprop="description">
-				HTTP servers are the most essential web server that a website administrator must have. In this section, the reader would install Apache HTTP server. It is on the reader's choice if they would install other available options such as Nginx. The installation stepSections are outlined below.
+				HTTP servers are the most essential web server that a website administrator must have. In this section, the reader would install <ExternalLink address="https://httpd.apache.org/">Apache HTTP server</ExternalLink>. It is on the reader's choice if they would install other available options such as <ExternalLink address="https://nginx.org/en/">nginx</ExternalLink>. The installation steps are outlined below.
 			</SimpleText>
 			<StructuredList order="ascending">
 				<DescriptiveListItem>
-					Download the <ExternalLink address="https://www.apachehaus.com/cgi-bin/download.plx">portable package (in zipped format) of Apache HTTP server</ExternalLink> from Apache Haus.
+					Download the <Citation info={references[1]}>portable package (in zipped format) of Apache HTTP server</Citation> from <ExternalLink address="https://www.apachehaus.com/cgi-bin/download.plx">Apache Haus</ExternalLink>.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
 					Unzip Apache HTTP server to your chosen directory. Label the chosen directory as <var>APACHE_ROOT</var>.
@@ -94,7 +160,7 @@
 					Find the HTTP server configuration file on <em><var>APACHE_ROOT</var>/conf/httpd.conf</em> and open it.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
-					Uncomment the following modules to enable them: <em>access_compat</em>, <em>rewrite</em>, and <em>headers</em>. Reader can find the modules in the format like this one:<code>LoadModule access_compat_module modules/mod_access_compat.so</code>. Note that filenames may differ depending on the operating system being used.
+					Uncomment the following modules to enable them: <Citation info={references[2]}>access_compat</Citation>, <Citation info={references[3]}>rewrite</Citation>, and <Citation info={references[4]}>headers</Citation>. Reader can find the modules in the format like this one:<code>LoadModule access_compat_module modules/mod_access_compat.so</code>. Note that filenames may differ depending on the operating system being used.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
 					Optionally, reader may want to change listening port of the HTTP server. Listening on <code>0.0.0.0:80</code> allows the machine to listen to all bounded IP address on the computer such as loopback address and local address.
