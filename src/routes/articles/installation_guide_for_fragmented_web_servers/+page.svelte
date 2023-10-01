@@ -103,12 +103,15 @@
 		</StructuredSection>
 		<StructuredSection id={stepSections[1].id}>
 			<SecondaryHeading headingInfo={stepSections[1]}/>
+			<SimpleText>
+				A scripting language, such as PHP language, are usually used in web development to make dynamic web pages. In addition, scripts made in this langauge allow manipulation of data in the database.
+			</SimpleText>
 			<SimpleText itemprop="description">
-				For this step, the reader would integrate a server-side script interpreter on Apache HTTP server. PHP interpreter would be used as it is a popular choice based from author's experience.
+				In this section, the reader would integrate a server-side script interpreter on Apache HTTP server. PHP interpreter would be used as it is a popular choice based from author's experience.
 			</SimpleText>
 			<StructuredList order="ascending">
 				<DescriptiveListItem>
-					Download the <ExternalLink address="https://windows.php.net/download/">portable package (in zipped format) of PHP interpreter</ExternalLink> from Apache Haus.
+					Download the <ExternalLink address="https://windows.php.net/download/">portable package (in zipped format) of PHP interpreter</ExternalLink> from different binaries. It is recommended to install the latest version of a <em>thread-safe</em> binary.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
 					Unzip PHP interpreter to your chosen directory. Label the chosen directory as <var>PHP_ROOT</var>.
@@ -117,10 +120,10 @@
 					Find the HTTP server configuration file on <em><var>APACHE_ROOT</var>/conf/httpd.conf</em> and open it.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
-					Add <code>LoadModule php_module "PHP_ROOT/php8apache2_4.dll"</code> below the list of modules inside the HTTP server configuration file. This step may vary depending on the major version of the chosen PHP interpreter. Change the <code>PHP_ROOT</code> according to the real path of directory done in step 2.
+					Add <code>LoadModule php_module "PHP_ROOT/php8apache2_4.dll"</code> below the list of modules inside the HTTP server configuration file. This step may vary depending on the major version of the chosen PHP interpreter. Change the <em>PHP_ROOT</em> according to the real path of directory done in step 2.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
-					Below the new line of HTTP server configuration file, add <code>PHPIniDir "PHP_ROOT/php.ini"</code> to configure the PHP interpreter. Change the <code>PHP_ROOT</code> according to the real path of directory done in step 2.
+					Below the new line of HTTP server configuration file, add <code>PHPIniDir "PHP_ROOT/php.ini"</code> to configure the PHP interpreter. Change the <em>PHP_ROOT</em> according to the real path of directory done in step 2.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
 					Last line to add is <code>AddHandler application/x-httpd-php .php</code> to instruct the HTTP server to treat files ending on <em>.php</em> as files that can be interpreted by the PHP interpreter.
