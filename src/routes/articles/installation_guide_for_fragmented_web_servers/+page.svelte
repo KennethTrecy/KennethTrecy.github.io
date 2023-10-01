@@ -71,17 +71,17 @@
 			The readers of this article are expected to be <span itemprop="proficiencyLevel">semi-intermediate or intermediate</span> web developers. The earlier they know about the topic of this article, the better.
 		</SimpleText>
 		<SimpleText itemprop="dependencies">
-			In addition, readers are encouraged (but not required) to have a sample website to follow the guide and get used to the set up. The website can be simple as having a single page only.
+			In addition, readers are encouraged (but not required) to have a sample website to follow the guide. The website can be simple as having a single page only regardless whether it is a dynamic or static one.
 		</SimpleText>
 		<SimpleText>
-			Website that are made for more than 500 users may be hard to integrate depending on its scalability and required dependencies. It is up to the reader to read complementary information to support their use case.
+			Websites that are made for more than 500 users may be hard to integrate depending on its scalability and required dependencies. It is up to the reader to read complementary information to support their use case.
 		</SimpleText>
 	</StructuredSection>
 	<BodyGroup>
 		<StructuredSection id={stepSections[0].id}>
 			<SecondaryHeading headingInfo={stepSections[0]}/>
 			<SimpleText itemprop="description">
-				For this step, the reader would use Apache HTTP server. There are other options available such as Nginx. The steps are outlined below.
+				HTTP servers are the most essential web server that a website administrator must have. In this section, the reader would install Apache HTTP server. It is on the reader's choice if they would install other available options such as Nginx. The installation stepSections are outlined below.
 			</SimpleText>
 			<StructuredList order="ascending">
 				<DescriptiveListItem>
@@ -94,10 +94,10 @@
 					Find the HTTP server configuration file on <em><var>APACHE_ROOT</var>/conf/httpd.conf</em> and open it.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
-					Uncomment the following modules to enable them: <em>access_compat</em>, <em>rewrite</em>, and <em>headers</em>.
+					Uncomment the following modules to enable them: <em>access_compat</em>, <em>rewrite</em>, and <em>headers</em>. Reader can find the modules in the format like this one:<code>LoadModule access_compat_module modules/mod_access_compat.so</code>. Note that filenames may differ depending on the operating system being used.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
-					Optionally, reader may want to change listening port of the HTTP server. Listening on <code>0.0.0.0:80</code> allows to machine to listen to all bounded IP address on the computer such as loopback address and local address.
+					Optionally, reader may want to change listening port of the HTTP server. Listening on <code>0.0.0.0:80</code> allows the machine to listen to all bounded IP address on the computer such as loopback address and local address.
 				</DescriptiveListItem>
 			</StructuredList>
 		</StructuredSection>
