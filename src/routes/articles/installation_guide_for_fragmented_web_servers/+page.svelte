@@ -22,9 +22,9 @@
 
 	const problem = defineHeadingInfo({ "text": "Problem" })
 	const prerequisites = defineHeadingInfo({ "text": "Prerequisites" })
-	const steps: HeadingInfo<"defined">[] = [
+	const stepSections: HeadingInfo<"defined">[] = [
 		{ "text": "HTTP Server Installation" },
-		{ "text": "Server Language Installation" },
+		{ "text": "Scripting Language Installation" },
 		{ "text": "Database Installation" }
 	].map(defineHeadingInfo)
 	const experienceAndPartingWords = defineHeadingInfo({ "text": "Experiences and Parting Word" })
@@ -47,14 +47,14 @@
 			There are no problems on using a bundled server especially if the developers are looking for a quick and easy solution when they are still at beginner level. Yet, the I.T. industry at this era is fast-paced. When the beginner developers are already done with their basic lessons, this article would prove to be a useful guide to them.
 		</SimpleText>
 		<StructuredList order="ascending">
-			<meta itemprop="numberOfItems" content={`${steps.length}`}>
-			{#each steps as step}
+			<meta itemprop="numberOfItems" content={`${stepSections.length}`}>
+			{#each stepSections as stepSection}
 				<StructuredListItem>
 					<SimpleThing itemprop="name">
 						<Bookmark
 							itemprop="mainEntityOfPage"
-							fragment={`#${step.id}`}>
-							{step.text}
+							fragment={`#${stepSection.id}`}>
+							{stepSection.text}
 						</Bookmark>
 					</SimpleThing>
 				</StructuredListItem>
@@ -75,8 +75,8 @@
 		</SimpleText>
 	</StructuredSection>
 	<BodyGroup>
-		<StructuredSection id={steps[0].id}>
-			<SecondaryHeading headingInfo={steps[0]}/>
+		<StructuredSection id={stepSections[0].id}>
+			<SecondaryHeading headingInfo={stepSections[0]}/>
 			<SimpleText itemprop="description">
 				For this step, the reader would use Apache HTTP server. There are other options available such as Nginx. The steps are outlined below.
 			</SimpleText>
@@ -98,8 +98,8 @@
 				</DescriptiveListItem>
 			</StructuredList>
 		</StructuredSection>
-		<StructuredSection id={steps[1].id}>
-			<SecondaryHeading headingInfo={steps[1]}/>
+		<StructuredSection id={stepSections[1].id}>
+			<SecondaryHeading headingInfo={stepSections[1]}/>
 			<SimpleText itemprop="description">
 				For this step, the reader would integrate a server-side script interpreter on Apache HTTP server. PHP interpreter would be used as it is a popular choice based from author's experience.
 			</SimpleText>
@@ -130,8 +130,8 @@
 				</DescriptiveListItem>
 			</StructuredList>
 		</StructuredSection>
-		<StructuredSection id={steps[2].id}>
-			<SecondaryHeading headingInfo={steps[2]}/>
+		<StructuredSection id={stepSections[2].id}>
+			<SecondaryHeading headingInfo={stepSections[2]}/>
 			<SimpleText itemprop="description">
 				In this section, the reader would install database server to be used for saving the data of systems or applications. A GUI-based database client would also be installed to view the data in the database on native desktop environment. It depends on developer's preference.
 			</SimpleText>
