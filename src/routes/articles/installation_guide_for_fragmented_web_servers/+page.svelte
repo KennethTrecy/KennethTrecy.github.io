@@ -19,7 +19,6 @@
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
 	import DescriptiveListItem from "@/components/general/containers/descriptive_list_item.svelte"
-	import { create_in_transition } from "svelte/internal";
 
 	const problem = defineHeadingInfo({ "text": "Problem" })
 	const prerequisites = defineHeadingInfo({ "text": "Prerequisites" })
@@ -28,7 +27,7 @@
 		{ "text": "Scripting Language Installation" },
 		{ "text": "Database Installation" }
 	].map(defineHeadingInfo)
-	const experienceAndPartingWords = defineHeadingInfo({ "text": "Experiences and Parting Word" })
+	const spaceForImprovements = defineHeadingInfo({ "text": "Space for Improvements" })
 
 	const references: ReferenceInfo[] = [
 		{
@@ -179,7 +178,7 @@
 			Some web developers may have used an <Keyword>all-in-one server</Keyword> during their first years in web development. One notable example of a all-in-one server is <Citation info={references[0]}>XAMPP</Citation>. The all-in-one servers may have a database server and HTTP server with an integrated interpreter (usually to execute server-side PHP scripts).
 		</SimpleText>
 		<SimpleText itemprop="description">
-			However, bundled servers are not always good for scalability or customizability purposes. Thus, I created this <strong itemprop="mainEntity">guide for other developers to set up their "<Keyword>fragmented web servers</Keyword>".</strong>
+			However, bundled servers are not always good for scalability or customizability purposes. Thus, the author created this <strong itemprop="mainEntity">guide for other developers to set up their "<Keyword>fragmented web servers</Keyword>".</strong>
 		</SimpleText>
 		<SimpleText>
 			If a server component of that bundled server has newer version, developers would need to wait for a new installer containing all of the updates. The developer would also need to download large amount of bytes to get installer which may only update one or more components.
@@ -291,13 +290,13 @@
 				</DescriptiveListItem>
 			</StructuredList>
 		</StructuredSection>
-		<StructuredSection id={experienceAndPartingWords.id}>
-			<SecondaryHeading headingInfo={experienceAndPartingWords}/>
+		<StructuredSection id={spaceForImprovements.id}>
+			<SecondaryHeading headingInfo={spaceForImprovements}/>
 			<SimpleText itemprop="description">
-				There are still far more advanced configuration that is left as an execised to the readers. To further increase readers' expertise, the author recommends reading the respective documentations of the tools they use. It is best bridge the readers' can find between the source code, which is the tells the exact process, and video tutorials, which usually provide an overview for the beginners.
+				There are more advanced configurations left as an exercise for the reader. The author recommends the readers to read the documentation for each tool the they use to further their expertise. This is the best bridge available between the source code that explains the exact process and video tutorials that usually provide an overview for beginners.
 			</SimpleText>
 			<SimpleText>
-				Note that the instructions available in this article is a result of several years of experience I gained in setting up the servers. It is a difficult path especially for someone is learning these without any supervision or mentorship.
+				Note that the instructions available in this article is a result of several years of experience that the author gained in setting up the servers. It is a difficult path especially for someone is learning these concepts without any supervision or mentorship.
 			</SimpleText>
 		</StructuredSection>
 	</BodyGroup>
