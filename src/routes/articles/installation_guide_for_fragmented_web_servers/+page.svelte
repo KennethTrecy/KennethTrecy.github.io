@@ -25,7 +25,8 @@
 	const stepSections: HeadingInfo<"defined">[] = [
 		{ "text": "HTTP Server Installation" },
 		{ "text": "Scripting Language Installation" },
-		{ "text": "Database Installation" }
+		{ "text": "Database Installation" },
+		{ "text": "Website Registration" }
 	].map(defineHeadingInfo)
 	const spaceForImprovements = defineHeadingInfo({ "text": "Space for Improvements" })
 
@@ -241,7 +242,7 @@
 		<StructuredSection id={stepSections[1].id}>
 			<SecondaryHeading headingInfo={stepSections[1]}/>
 			<SimpleText>
-				A scripting language, such as <Citation info={references[5]}>PHP language</Citation>, are usually used in web development to make dynamic web pages. In addition, scripts made in this langauge allow manipulation of data in the database.
+				A scripting language, such as <Citation info={references[5]}>PHP language</Citation>, are usually used in web development to make dynamic web pages. In addition, scripts made in this language allow manipulation of data in the database.
 			</SimpleText>
 			<SimpleText itemprop="description">
 				In this section, the reader would integrate a server-side script interpreter on Apache HTTP server. PHP interpreter would be used as it is a popular choice based from author's experience.
@@ -276,7 +277,7 @@
 		<StructuredSection id={stepSections[2].id}>
 			<SecondaryHeading headingInfo={stepSections[2]}/>
 			<SimpleText>
-				After the installation of HTTP server and scripting langauge, database servers must be installed to store user data and other secured data such as passwords and access tokens. Depending on the chosen database server, the database may store either structured data, unstructured data, or both.
+				After the installation of HTTP server and scripting language, database servers must be installed to store user data and other secured data such as passwords and access tokens. Depending on the chosen database server, the database may store either structured data, unstructured data, or both.
 			</SimpleText>
 			<SimpleText itemprop="description">
 				In this section, the reader would install database server to be used for saving the data of systems or applications. A GUI-based database client would also be installed to view the data in the database on native desktop environment. It depends on developer's preference.
@@ -287,6 +288,32 @@
 				</DescriptiveListItem>
 				<DescriptiveListItem>
 					If PostgreSQL database server has been preferred, install the <Citation info={references[9]}>PostgreSQL database server</Citation>. <Citation info={references[10]}>pgAdmin</Citation>, which is the client application, is already included in the installer.
+				</DescriptiveListItem>
+			</StructuredList>
+		</StructuredSection>
+		<StructuredSection id={stepSections[3].id}>
+			<SecondaryHeading headingInfo={stepSections[3]}/>
+			<SimpleText>
+				After the installation of different servers, it is time to make the website accessible to every one.
+			</SimpleText>
+			<SimpleText itemprop="description">
+				In this section, the reader would register the website in the Apache HTTP server configuration.
+			</SimpleText>
+			<StructuredList order="ascending">
+				<DescriptiveListItem>
+					After the step 6 in configuring the server language installation, add these tags: <code>&lt;VirtualHost *:80&gt;&lt;/VirtualHost&gt;</code>. These tags define a website to be hosted "virtually". The author thinks of virtual hosts as "renters" and the HTTP server as the "shared building" they live at. They allow multiple websites to be hosted in a single instance of Apache HTTP server.
+				</DescriptiveListItem>
+				<DescriptiveListItem>
+					Inside the <code>&lt;VirtualHost&gt;</code> tags, define a local variable. The syntax is as follows: <code>Define WEBSITE_ROOT "<path to website root>"</code>. Note that <code>WEBSITE_ROOT</code> can be renamed as much as the reader want.
+				</DescriptiveListItem>
+				<DescriptiveListItem>
+					Following the declaration of variable, document root must be declared on a next line and inserting this directive: <code>DocumentRoot "$&lbrace;WEBSITE_ROOT&rbrace;"</code>. This indicates which files to be accessed by the clients.
+				</DescriptiveListItem>
+				<DescriptiveListItem>
+					After the specifying the document root, path of the error log must be specified by inserting this directive: <code>ErrorLog "$&lbrace;WEBSITE_ROOT&rbrace;/error.log"</code>. This indicates where to write the errors from Apache HTTP server. The reader may customize the location of the error log.
+				</DescriptiveListItem>
+				<DescriptiveListItem>
+					Lastly, use this directive: <code>&lt;Directory "$&lbrace;WEBSITE_ROOT&rbrace;"&gt;Require all granted&lt;/Directory&gt;</code>
 				</DescriptiveListItem>
 			</StructuredList>
 		</StructuredSection>
