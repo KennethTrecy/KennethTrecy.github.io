@@ -313,7 +313,7 @@
 					After the specifying the document root, path of the error log must be specified by inserting this directive: <code>ErrorLog "$&lbrace;WEBSITE_ROOT&rbrace;/error.log"</code>. This indicates where to write the errors from Apache HTTP server. The reader may customize the location of the error log.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
-					Lastly, use this directive: <code>&lt;Directory "$&lbrace;WEBSITE_ROOT&rbrace;"&gt;Require all granted&lt;/Directory&gt;</code>
+					Lastly, use this directive: <code>&lt;Directory "$&lbrace;WEBSITE_ROOT&rbrace;"&gt;Require all granted&lt;/Directory&gt;</code>. This allows everyone to access the website.
 				</DescriptiveListItem>
 			</StructuredList>
 		</StructuredSection>
