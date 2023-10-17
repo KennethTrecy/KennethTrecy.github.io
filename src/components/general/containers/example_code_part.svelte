@@ -1,26 +1,13 @@
 <script lang="ts">
-	import { onMount } from "svelte"
-
-	import type { CompleteCodeFileInfo } from "@/types/container_info"
-
-	import ExternalLink from "@/components/general/links/external.svelte"
-
-	export let codeInfo: CompleteCodeFileInfo
+	export let filename: string
+	export let rawCodeLines: string[]
 	export let itemprop: string = "workExample"
 	export let beginLineIndex: number = 0
 	export let endLineIndex: number = Infinity
 
-	$: rawCodeLines = (() => {
-		try {
-			return atob(codeInfo.content).split("\n")
-		} catch (error) {
-			return []
-		}
-	})()
 	$: targetBeginLineIndex = Math.max(0, beginLineIndex)
 	$: targetEndLineIndex = Math.min(rawCodeLines.length, endLineIndex)
 	$: codeLines = rawCodeLines.slice(targetBeginLineIndex, targetEndLineIndex)
-	$: repoURL = `https://github.com/${codeInfo.owner}/${codeInfo.repo}`
 </script>
 
 <div class="code_container" {itemprop} itemscope itemtype="https://schema.org/SoftwareSourceCode">
@@ -30,18 +17,8 @@
 		{/each}
 	</div>
 	<p itemprop="text" class="text-center text-sm">
-		Content of
-		<ExternalLink
-			address={codeInfo.viewURL}
-			itemprop="mainEntityOfPage">{codeInfo.path}</ExternalLink> in
-		{codeInfo.branch}
-		at <ExternalLink address={repoURL} itemprop="codeRepository">{
-			codeInfo.owner
-		}<wbr/>/{
-			codeInfo.repo
-		}</ExternalLink>
+		Sample Content of <b>{filename}</b>
 	</p>
-	<slot {codeInfo}></slot>
 </div>
 
 <style lang="postcss">
