@@ -2,10 +2,12 @@
 	import type { ReferenceInfo } from "@/types/reference"
 	import type { HeadingInfo } from "@/types/container_info"
 
+	import { internalTypes, authorTypes } from "@/components/general/links/constants"
 	import pageMeta from "@/routes/articles/installation_guide_for_fragmented_web_servers/meta"
 
 	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 
+	import BaseLink from "@/components/general/links/base.svelte"
 	import Bookmark from "@/components/general/links/bookmark.svelte"
 	import Citation from "@/components/general/links/citation.svelte"
 	import Keyword from "@/components/general/containers/keyword.svelte"
@@ -366,7 +368,7 @@
 				After the installation of HTTP server and scripting language, database servers must be installed to store user data and other secured data such as passwords and access tokens. Depending on the chosen database server, the database may store either structured data, unstructured data, or both.
 			</SimpleText>
 			<SimpleText itemprop="description">
-				In this section, the reader would install database server to be used for saving the data of systems or applications. A GUI-based database client would also be installed to view the data in the database on native desktop environment. It depends on developer's preference.
+				In this section, the reader would install database server to be used for saving the data of a system or application. A GUI-based database client may also be installed to view the data in native desktop environment. It depends on the preference of the developer.
 			</SimpleText>
 			<StructuredList order="unordered">
 				<DescriptiveListItem>
@@ -387,23 +389,23 @@
 			</SimpleText>
 			<StructuredList order="ascending">
 				<DescriptiveListItem>
-					After the step 5 in configuring the server language installation, add these tags: <code>&lt;VirtualHost *:80&gt;&lt;/VirtualHost&gt;</code>. These tags define a website to be hosted "virtually". The author thinks of virtual hosts as "renters" and the HTTP server as the "shared building" they live at. They allow multiple websites to be hosted in a single instance of Apache HTTP server.
+					After the step 5 in configuring the server language installation, add these tags: <code>&lt;VirtualHost *:80&gt;&lt;/VirtualHost&gt;</code>. These tags define "virtually" hosted websites. The authors think of virtual hosts as "renters" and HTTP servers as the "shared building" in which they live. This allows multiple websites to be hosted on a single instance of Apache HTTP Server.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
 					Inside the <code>&lt;VirtualHost&gt;</code> tags, define a local variable. The syntax is as follows: <code>Define WEBSITE_ROOT "&lt;path to website root&gt;"</code>. Note that <code>WEBSITE_ROOT</code> can be renamed as much as the reader want.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
-					Following the declaration of variable, document root must be declared on a next line and inserting this directive: <code>DocumentRoot "$&lbrace;WEBSITE_ROOT&rbrace;"</code>. This indicates which files to be accessed by the clients.
+					Following the declaration of variable, document root must be declared on a next line and inserting this directive: <code>DocumentRoot "$&lbrace;WEBSITE_ROOT&rbrace;"</code>. This indicates which files the client (or browser) will access.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
-					After the specifying the document root, path of the error log must be specified by inserting this directive: <code>ErrorLog "$&lbrace;WEBSITE_ROOT&rbrace;/error.log"</code>. This indicates where to write the errors from Apache HTTP server. The reader may customize the location of the error log.
+					After the specifying the document root, path of the error log must be specified by inserting this directive: <code>ErrorLog "$&lbrace;WEBSITE_ROOT&rbrace;/error.log"</code>. This indicates where to write server errors from the Apache HTTP server. Readers can customize the error log location.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
 					Lastly, use this directive: <code>&lt;Directory "$&lbrace;WEBSITE_ROOT&rbrace;"&gt;Require all granted&lt;/Directory&gt;</code>. This allows everyone to access the website.
 				</DescriptiveListItem>
 			</StructuredList>
 			<SimpleText>
-				There are numerous number of directives that my influence how the server behaves. It is best to research for them. See the references for the modules that provide certain directives.
+				There are many directives that can affect server behavior. It is best to research about them. See the reference for the module that provides the specific directive.
 			</SimpleText>
 			<ExampleCodePart
 				filename="httpd.conf"
@@ -420,7 +422,12 @@
 				Note that the instructions available in this article is a result of several years of experience that the author gained in setting up the servers. It is a difficult path especially for someone is learning these concepts without any supervision or mentorship.
 			</SimpleText>
 			<SimpleText>
-				Should there be some corrections, updates, or improvements, please contact the author and send the details that needs to be corrected, updated, or improved upon.
+				Should there be some corrections, updates, or improvements, please contact the
+				<BaseLink
+					address="/about_myself"
+					relationship={[ ...internalTypes, ...authorTypes ]}
+					itemprop="mainEntityOfPage">author</BaseLink>
+				and send the details that needs to be corrected, updated, or improved upon.
 			</SimpleText>
 		</StructuredSection>
 	</BodyGroup>
