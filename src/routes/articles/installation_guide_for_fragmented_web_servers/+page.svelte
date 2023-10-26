@@ -16,6 +16,7 @@
 	import SecondaryHeading from "@/components/general/headings/secondary.svelte"
 	import SimpleThing from "@/components/general/containers/simple_thing.svelte"
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
+	import ExampleCodePart from "@/components/general/containers/example_code_part.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
 	import DescriptiveListItem from "@/components/general/containers/descriptive_list_item.svelte"
@@ -29,6 +30,78 @@
 		{ "text": "Website Registration" }
 	].map(defineHeadingInfo)
 	const spaceForImprovements = defineHeadingInfo({ "text": "Space for Improvements" })
+
+	const sampleServerConfiguration = [
+		"# A line starting with `#` is a comment and server would ignore",
+		"# it but useful for documentation to mark or note some things",
+		"",
+		"# Directive below allows listening to all IPv4 addresses bound ",
+		"# to reader's computer",
+		"Listen 0.0.0.0:80",
+		"",
+		"# Reader may see other directives that are configured by default.",
+		"",
+		"# Directives below are modules available. Some of them activated",
+		"# by default.",
+		"LoadModule access_compat_module modules/mod_access_compat.so",
+		"LoadModule rewrite_module modules/mod_rewrite.so",
+		"LoadModule headers_module modules/mod_headers.so",
+		"# ... other available modules may be seen",
+		"",
+		"# There are more directives to be added later.",
+		"# Replace `PHP_ROOT` with real directory according to the",
+		"# installation of the PHP in the machine being configured",
+		"LoadModule php_module \"PHP_ROOT/php8apache2_4.dll\"",
+		"PHPIniDir \"PHP_ROOT/php.ini\"",
+		"AddHandler application/x-httpd-php .php",
+		"# Replace value of `WEBSITE_ROOT` with real directory to serve.",
+		"<VirtualHost *:80>",
+		"	Define WEBSITE_ROOT \"<path to website root>\"",
+		"	DocumentRoot		\"${WEBSITE_ROOT}\"",
+		"	ErrorLog		\"${WEBSITE_ROOT}/error.log\"",
+		"",
+		"	<Directory \"${WEBSITE_ROOT}\">",
+		"		Require			all granted",
+		"		Options			Indexes Includes FollowSymlinks",
+		"		AllowOverride	All",
+		"	</Directory>",
+		"</VirtualHost>",
+	]
+	const beginLineIndexOfServerConfigurationPartA = 0;
+	const endLineIndexOfServerConfigurationPartA = 18;
+	const beginLineIndexOfServerConfigurationPartB = endLineIndexOfServerConfigurationPartA + 1;
+	const endLineIndexOfServerConfigurationPartB = beginLineIndexOfServerConfigurationPartB + 3;
+	const beginLineIndexOfServerConfigurationPartC = endLineIndexOfServerConfigurationPartB + 1;
+	const endLineIndexOfServerConfigurationPartC = beginLineIndexOfServerConfigurationPartC + 19;
+
+	const sampleLanguageConfiguration = [
+		"; For this file, a line starting with `;` is a comment and",
+		"; server would ignoreit but useful for documentation to mark",
+		"; or note some things.",
+		"",
+		"; Reader may see other configurations that exist by default.",
+		"",
+		"; Assuming that this configuration is around line 900+...",
+		"; Notice that some extensions are enabled by default. Some are",
+		"; disabled. It would be best to double check the extensions.",
+		"",
+		"; In this sample configuration, developers may use a MySQL",
+		"; database, PostgreSQL database, and/or SQLite database.",
+		"extension=mysqli",
+		";extension=oci8_12c",
+		";extension=oci8_19",
+		";extension=odbc",
+		";extension=openssl",
+		";extension=pdo_firebird",
+		"extension=pdo_mysql",
+		";extension=pdo_oci",
+		";extension=pdo_odbc",
+		"extension=pdo_pgsql",
+		"extension=pdo_sqlite",
+		"extension=pgsql",
+		";extension=shmop",
+		""
+	]
 
 	const references: ReferenceInfo[] = [
 		{
@@ -238,6 +311,11 @@
 					Optionally, reader may want to change listening port of the HTTP server. Listening on <code>0.0.0.0:80</code> allows the machine to listen to all bounded IP address on the computer such as loopback address and local address.
 				</DescriptiveListItem>
 			</StructuredList>
+			<ExampleCodePart
+				filename="httpd.conf"
+				rawCodeLines={sampleServerConfiguration}
+				beginLineIndex={beginLineIndexOfServerConfigurationPartA}
+				endLineIndex={endLineIndexOfServerConfigurationPartA}/>
 		</StructuredSection>
 		<StructuredSection id={stepSections[1].id}>
 			<SecondaryHeading headingInfo={stepSections[1]}/>
@@ -270,9 +348,17 @@
 					Find the PHP configuration file on <em><var>PHP_ROOT</var>/php.ini</em> and open it.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
-					Enable the extensions in <em><var>PHP_ROOT</var>/php.ini</em> that can found around line 900 by removing the <code>#</code> symbol before the target line. If the developer would like to communicate to MySQL database server, enable <code>extension=pdo_mysql</code> and <code>extension=mysqli</code>. If the developer would like to communicate to PostgreSQL database server, enable <code>extension=pdo_pgsql</code> and <code>extension=pgsql</code>.
+					Enable the extensions in <em><var>PHP_ROOT</var>/php.ini</em> that can found around line 900 by removing the <code>;</code> symbol before the target line. If the developer would like to communicate to MySQL database server, enable <code>extension=pdo_mysql</code> and <code>extension=mysqli</code>. If the developer would like to communicate to PostgreSQL database server, enable <code>extension=pdo_pgsql</code> and <code>extension=pgsql</code>.
 				</DescriptiveListItem>
 			</StructuredList>
+			<ExampleCodePart
+				filename="httpd.conf"
+				rawCodeLines={sampleServerConfiguration}
+				beginLineIndex={beginLineIndexOfServerConfigurationPartB}
+				endLineIndex={endLineIndexOfServerConfigurationPartB}/>
+			<ExampleCodePart
+				filename="php.ini"
+				rawCodeLines={sampleLanguageConfiguration}/>
 		</StructuredSection>
 		<StructuredSection id={stepSections[2].id}>
 			<SecondaryHeading headingInfo={stepSections[2]}/>
@@ -301,10 +387,10 @@
 			</SimpleText>
 			<StructuredList order="ascending">
 				<DescriptiveListItem>
-					After the step 6 in configuring the server language installation, add these tags: <code>&lt;VirtualHost *:80&gt;&lt;/VirtualHost&gt;</code>. These tags define a website to be hosted "virtually". The author thinks of virtual hosts as "renters" and the HTTP server as the "shared building" they live at. They allow multiple websites to be hosted in a single instance of Apache HTTP server.
+					After the step 5 in configuring the server language installation, add these tags: <code>&lt;VirtualHost *:80&gt;&lt;/VirtualHost&gt;</code>. These tags define a website to be hosted "virtually". The author thinks of virtual hosts as "renters" and the HTTP server as the "shared building" they live at. They allow multiple websites to be hosted in a single instance of Apache HTTP server.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
-					Inside the <code>&lt;VirtualHost&gt;</code> tags, define a local variable. The syntax is as follows: <code>Define WEBSITE_ROOT "<path to website root>"</code>. Note that <code>WEBSITE_ROOT</code> can be renamed as much as the reader want.
+					Inside the <code>&lt;VirtualHost&gt;</code> tags, define a local variable. The syntax is as follows: <code>Define WEBSITE_ROOT "&lt;path to website root&gt;"</code>. Note that <code>WEBSITE_ROOT</code> can be renamed as much as the reader want.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
 					Following the declaration of variable, document root must be declared on a next line and inserting this directive: <code>DocumentRoot "$&lbrace;WEBSITE_ROOT&rbrace;"</code>. This indicates which files to be accessed by the clients.
@@ -316,6 +402,14 @@
 					Lastly, use this directive: <code>&lt;Directory "$&lbrace;WEBSITE_ROOT&rbrace;"&gt;Require all granted&lt;/Directory&gt;</code>. This allows everyone to access the website.
 				</DescriptiveListItem>
 			</StructuredList>
+			<SimpleText>
+				There are numerous number of directives that my influence how the server behaves. It is best to research for them. See the references for the modules that provide certain directives.
+			</SimpleText>
+			<ExampleCodePart
+				filename="httpd.conf"
+				rawCodeLines={sampleServerConfiguration}
+				beginLineIndex={beginLineIndexOfServerConfigurationPartC}
+				endLineIndex={endLineIndexOfServerConfigurationPartC}/>
 		</StructuredSection>
 		<StructuredSection id={spaceForImprovements.id}>
 			<SecondaryHeading headingInfo={spaceForImprovements}/>
@@ -324,6 +418,9 @@
 			</SimpleText>
 			<SimpleText>
 				Note that the instructions available in this article is a result of several years of experience that the author gained in setting up the servers. It is a difficult path especially for someone is learning these concepts without any supervision or mentorship.
+			</SimpleText>
+			<SimpleText>
+				Should there be some corrections, updates, or improvements, please contact the author and send the details that needs to be corrected, updated, or improved upon.
 			</SimpleText>
 		</StructuredSection>
 	</BodyGroup>

@@ -17,7 +17,7 @@
 		{/each}
 	</div>
 	<p itemprop="text" class="text-center text-sm">
-		Sample Content of <b>{filename}</b>
+		Sample content of <b>{filename}</b>
 	</p>
 </div>
 
