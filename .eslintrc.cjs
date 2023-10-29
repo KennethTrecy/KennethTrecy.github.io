@@ -7,8 +7,7 @@ module.exports = {
 		],
 		"tsconfigRootDir": __dirname
 	},
-	"include": [ "src/**/*.svelte", "src/**/*.ts" ],
-	"ignorePatterns": [ ".eslintrc.cjs" ],
+	"ignorePatterns": [ ".eslintrc.cjs", "src/hooks.server.js" ],
 	"env": {
 		"browser": true,
 		"es6": true,
