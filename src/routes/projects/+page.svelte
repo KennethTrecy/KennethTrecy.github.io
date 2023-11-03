@@ -43,7 +43,7 @@
 				"prefix": "🌏",
 				"text": "Personal Public Projects"
 			}),
-			"description": "These projects were used at least once in other software (private or public). Some of them are independent. Some complement or require other software with their recent versions or old versions only. I cannot maintain all of my personal projects, yet I try to keep the code future-proof and welcome changes as much as possible.",
+			"description": "These projects have been used at least once in other software (private or public). Some of them are independent. Some software complements or requires other software using only the latest or older versions. Although I cannot maintain every personal project, I try to keep the code future-proof and welcome changes whenever possible.",
 			"projects": [
 				{
 					"name": "Virdafils",
@@ -82,7 +82,7 @@
 				"prefix": "🤝",
 				"text": "Joint Public Projects"
 			}),
-			"description": "These projects became public after making a project with the other people. Currently, there is only one project listed and other projects will become public soon.",
+			"description": "These projects were published after collaboration with other people. Currently, there is only one project listed, but others are expected to be released soon.",
 			"projects": [
 				{
 					"name": "Talakutnangan",
@@ -97,7 +97,7 @@
 				"prefix": "🏭",
 				"text": "Template Projects"
 			}),
-			"description": "Once a certain a workflow becomes repetitive for me in different personal projects, I generalize it into one public template. I would be happy if someone uses one of these.",
+			"description": "Once a particular workflow becomes used repeatedly in various personal projects, I generalize it into one public template. I would be happy if someone uses one of these.",
 			"projects": [
 				{
 					"name": "Origenne template",
@@ -120,7 +120,7 @@
 				"prefix": "🧪",
 				"text": "Chearmyp Language Project"
 			}),
-			"description": "I did an experimental language back then named \"Chearmyp\". For now, it only works as data format for my other projects. Originally, the repositories below came from one source and I split it according to concerns. They are also public projects.",
+			"description": "At some time, I developed an experimental language called \"Chearmyp\". For now, this only works as a data format for my other projects. Originally, the repositories below came from one source, and I split them up depending on their responsibilities. They are also public projects.",
 			"projects": [
 				{
 					"name": "Abstract Chearmyp Token",
