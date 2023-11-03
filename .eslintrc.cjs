@@ -5,7 +5,8 @@ module.exports = {
 		"project": [
 			"tsconfig.json"
 		],
-		"tsconfigRootDir": __dirname
+		"tsconfigRootDir": __dirname,
+		"extraFileExtensions": [ ".svelte" ]
 	},
 	"ignorePatterns": [ ".eslintrc.cjs", "src/hooks.server.js" ],
 	"env": {
