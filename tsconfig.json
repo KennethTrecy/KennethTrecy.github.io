@@ -12,6 +12,12 @@
 		"sourceMap": true,
 		"strict": true,
 	},
+	"include": [
+		"src/*.ts",
+		"src/**/*.ts",
+		"src/*.svelte",
+		"src/**/*.svelte"
+	],
 	"exclude": [
 		"src/hooks.server.js"
 	]
