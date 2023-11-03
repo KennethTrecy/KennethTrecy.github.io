@@ -79,6 +79,21 @@
 			"extraListItemClasses": [ "md:w-1/2" ]
 		}, {
 			...defineHeadingInfo({
+				"prefix": "🤝",
+				"text": "Joint Public Projects"
+			}),
+			"description": "These projects became public after making a project with the other people. Currently, there is only one project listed and other projects will become public soon.",
+			"projects": [
+				{
+					"name": "Talakutnangan",
+					"description": "Capstone project aimed to be a consultation chat platform between professors and students.",
+					"repositoryLink": "https://github.com/JAJAKUnit16/talakutnangan"
+				}
+			],
+			"extraListClasses": [],
+			"extraListItemClasses": []
+		}, {
+			...defineHeadingInfo({
 				"prefix": "🏭",
 				"text": "Template Projects"
 			}),
