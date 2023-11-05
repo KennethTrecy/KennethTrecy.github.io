@@ -251,13 +251,13 @@
 	<StructuredSection itemprop="about" id={problem.id}>
 		<SecondaryHeading headingInfo={problem}/>
 		<SimpleText itemprop="description">
-			Some web developers may have used an <Keyword>all-in-one server</Keyword> during their first years in web development. One notable example of a all-in-one server is <Citation info={references[0]}>XAMPP</Citation>. The all-in-one servers may have a database server and HTTP server with an integrated interpreter (usually to execute server-side PHP scripts).
+			Some web developers may have used an <Keyword>all-in-one server</Keyword> during their first years in web development. One notable example of an all-in-one server is <Citation info={references[0]}>XAMPP</Citation>. The all-in-one servers may have a database server and HTTP server with an integrated interpreter (usually to execute server-side PHP scripts).
 		</SimpleText>
 		<SimpleText itemprop="description">
 			However, bundled servers are not always good for scalability or customizability purposes. Thus, the author created this <strong itemprop="mainEntity">guide for other developers to set up their "<Keyword>fragmented web servers</Keyword>".</strong>
 		</SimpleText>
 		<SimpleText>
-			If a server component of that bundled server has newer version, developers would need to wait for a new installer containing all of the updates. The developer would also need to download large amount of bytes to get installer which may only update one or more components.
+			If a server component of that bundled server has newer version, developers would need to wait for a new installer containing all of updates. The developer would also need to download large amount of bytes to get installer which may only update one or more components.
 		</SimpleText>
 		<SimpleText>
 			There are no problems on using a bundled server especially if the developers are looking for a quick and easy solution or if they are still at beginner level. Yet, the I.T. industry at this era is fast-paced. When the beginner developers are already done with their basic lessons, this guide would prove to be a useful for them to grow further.
@@ -304,7 +304,7 @@
 					Unzip Apache HTTP server to your chosen directory. Label the chosen directory as <var>APACHE_ROOT</var>.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
-					Find the HTTP server configuration file on <em><var>APACHE_ROOT</var>/conf/httpd.conf</em> and open it.
+					Find the HTTP server configuration file on <em><var>APACHE_ROOT</var>/conf/httpd&period;conf</em> and open it.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
 					Uncomment the following modules to enable them: <Citation info={references[2]}>access_compat</Citation>, <Citation info={references[3]}>rewrite</Citation>, and <Citation info={references[4]}>headers</Citation>. Reader can find the modules in the format like this one:<code>LoadModule access_compat_module modules/mod_access_compat.so</code>. Note that filenames may differ depending on the operating system being used.
@@ -314,7 +314,7 @@
 				</DescriptiveListItem>
 			</StructuredList>
 			<ExampleCodePart
-				filename="httpd.conf"
+				filename="httpd&period;conf"
 				rawCodeLines={sampleServerConfiguration}
 				beginLineIndex={beginLineIndexOfServerConfigurationPartA}
 				endLineIndex={endLineIndexOfServerConfigurationPartA}/>
@@ -335,7 +335,7 @@
 					Unzip PHP interpreter to your chosen directory. Label the chosen directory as <var>PHP_ROOT</var>.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
-					Find the HTTP server configuration file on <em><var>APACHE_ROOT</var>/conf/httpd.conf</em> and open it.
+					Find the HTTP server configuration file on <em><var>APACHE_ROOT</var>/conf/httpd&period;conf</em> and open it.
 				</DescriptiveListItem>
 				<DescriptiveListItem>
 					Add <code>LoadModule php_module "PHP_ROOT/php8apache2_4.dll"</code> below the list of modules inside the HTTP server configuration file. This step may vary depending on the major version of the chosen PHP interpreter. Change the <em>PHP_ROOT</em> according to the real path of directory done in step 2.
@@ -354,7 +354,7 @@
 				</DescriptiveListItem>
 			</StructuredList>
 			<ExampleCodePart
-				filename="httpd.conf"
+				filename="httpd&period;conf"
 				rawCodeLines={sampleServerConfiguration}
 				beginLineIndex={beginLineIndexOfServerConfigurationPartB}
 				endLineIndex={endLineIndexOfServerConfigurationPartB}/>
@@ -408,7 +408,7 @@
 				There are many directives that can affect server behavior. It is best to research about them. See the reference for the module that provides the specific directive.
 			</SimpleText>
 			<ExampleCodePart
-				filename="httpd.conf"
+				filename="httpd&period;conf"
 				rawCodeLines={sampleServerConfiguration}
 				beginLineIndex={beginLineIndexOfServerConfigurationPartC}
 				endLineIndex={endLineIndexOfServerConfigurationPartC}/>
@@ -416,7 +416,7 @@
 		<StructuredSection id={spaceForImprovements.id}>
 			<SecondaryHeading headingInfo={spaceForImprovements}/>
 			<SimpleText itemprop="description">
-				There are more advanced configurations left as an exercise for the reader. The author recommends the readers to read the documentation for each tool the they use to further their expertise. This is the best bridge available between the source code that explains the exact process and video tutorials that usually provide an overview for beginners.
+				There are more advanced configurations left as an exercise for the reader. The author recommends the readers to read the documentation for each tool they use to further their expertise. This is the best bridge available between the source code that explains the exact process and video tutorials that usually provide an overview for beginners.
 			</SimpleText>
 			<SimpleText>
 				Note that the instructions available in this article is a result of several years of experience that the author gained in setting up the servers. It is a difficult path especially for someone is learning these concepts without any supervision or mentorship.
@@ -427,7 +427,7 @@
 					address="/about_myself"
 					relationship={[ ...internalTypes, ...authorTypes ]}
 					itemprop="mainEntityOfPage">author</BaseLink>
-				and send the details that needs to be corrected, updated, or improved upon.
+				and send the details that need to be corrected, updated, or improved upon.
 			</SimpleText>
 		</StructuredSection>
 	</BodyGroup>

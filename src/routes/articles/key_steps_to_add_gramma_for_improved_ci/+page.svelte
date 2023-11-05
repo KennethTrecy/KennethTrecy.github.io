@@ -170,7 +170,7 @@
 	<StructuredSection id={localSetup.id}>
 		<SecondaryHeading headingInfo={localSetup}/>
 		<SimpleText>
-			The steps below assumes that there is a website, real or hypothetical, that would be check for its grammar.
+			The steps below assumes that there is a website, real or hypothetical, that would be checked for its grammar.
 		</SimpleText>
 		<StructuredList order="ascending">
 			<meta itemprop="numberOfItems" content={`${setupSteps.length}`}>
@@ -199,26 +199,24 @@
 	<StructuredSection id={setupSteps[1].id}>
 		<TertiaryHeading headingInfo={setupSteps[1]}/>
 		<SimpleText>
-			The second step is to setup the E2E testing framework to be used. For this guide, <Citation info={references[4]}>Playwright package</Citation> would be used. The readers may choose their preferred framework to scrape the contents of the website as long as they could request through the package from the <Bookmark
+			The second step is to set up the E2E testing framework to be used. For this guide, <Citation info={references[4]}>Playwright package</Citation> would be used. The readers may choose their preferred framework to scrape the contents of the website as long as they could request through the package from the <Bookmark
 				itemprop="citation"
-				fragment={`#${setupSteps[0].id}`}>
-				first step
-			</Bookmark>.
+				fragment={`#${setupSteps[0].id}`}>first step</Bookmark>.
 		</SimpleText>
 		<ExampleCommand commandInfos={installOptionalPackageCommandInfo}/>
 		<SimpleText>
-			If the reader chose <Citation info={references[4]}>Playwright package</Citation>, use the following configuration below and save it as <em>playwright.config.ts</em> in the project root. Note that <code>npm run preview</code> would run HTTP server binded on a certain port. In the configuration below, it requires the server should be found on port 4173. The readers may customize the command and port according to their setup.
+			If the reader chose <Citation info={references[4]}>Playwright package</Citation>, use the following configuration below and save it as <em>playwright.config.ts</em> in the project root. Note that <code>npm run preview</code> would run HTTP server bound on a certain port. In the configuration below, it requires the server should be found on port 4173. The readers may customize the command and port according to their setup.
 		</SimpleText>
 		<ExampleCode codeInfo={$loadedFileInfos[0]}/>
 	</StructuredSection>
 	<StructuredSection id={workflowConfiguration.id}>
 		<SecondaryHeading headingInfo={workflowConfiguration}/>
 		<SimpleText>
-			Copy the code below and paste it a file under <em>.github/workflows</em> from the project root. The readers may name it whatever they like.
+			Copy the code below and paste it a file under <em>&period;github/workflows</em> from the project root. The readers may name it whatever they like.
 		</SimpleText>
 		<ExampleCode codeInfo={$loadedFileInfos[1]} endLineIndex={38}/>
 		<SimpleText>
-			On lines 30 - 31, it double checks if the <Citation info={references[3]}>LanguageTool server</Citation> is not yet running. After that, the lines 34 - 35, explicitly starts it. The line 36 - 37 just confirms if the server is running. The grammar-checking activity starts at line 38.
+			On lines 30 - 31, it double-checks if the <Citation info={references[3]}>LanguageTool server</Citation> is not yet running. After that, the lines 34 - 35, explicitly starts it. The line 36 - 37 just confirms if the server is running. The grammar-checking activity starts at line 38.
 		</SimpleText>
 	</StructuredSection>
 	<StructuredSection id={execution.id}>
@@ -250,7 +248,7 @@
 			</StructuredListItem>
 		</StructuredList>
 		<SimpleText>
-			After creating a test code, push the changes to a remote repository. The reader should check the "Actions" tab of the remote repository to see if the grammar checking tests works properly. If not, the mismatches would be shown by the chosen testing framework.
+			After creating a test code, push the changes to a remote repository. The reader should check the "Actions" tab of the remote repository to see if the grammar checking tests work properly. If not, the mismatches would be shown by the chosen testing framework.
 		</SimpleText>
 		<SimpleText>
 			Below is a snapshot of previous results of successful grammar check using the <Citation info={references[4]}>Playwright package</Citation>. Note that the presentation of results may vary per framework used for testing.
@@ -270,7 +268,7 @@
 			Good grammar is important both in formal and informal contexts, as it helps convey ideas correctly and is recommended by search engines. By utilizing continuous integration, grammatical errors can be caught early in the development before publishing document, article, or any group of texts.
 		</SimpleText>
 		<SimpleText>
-			The testing framework to be used is wholly dependent on the current progress in the system development, preferences, and other factors. It recommended to have unanimous decision for ease and fast progress of development.
+			The testing framework to be used is wholly dependent on the current progress in the system development, preferences, and other factors. It recommended having unanimous decision for ease and fast progress of development.
 		</SimpleText>
 		<SimpleText>
 			Regardless of the framework, this article has presented a pattern to conduct grammar checks. The reader may even request directly to the API of <Citation info={references[3]}>LanguageTool server</Citation> if they know how to translate the code according to their chosen technologies and programming language.
