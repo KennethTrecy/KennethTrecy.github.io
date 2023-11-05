@@ -23,7 +23,13 @@ export default [
 	"Elomocato",
 	"Virdafils",
 	"Gramma",
+	"gramma",
 	"Talakutnangan",
+	"XAMPP",
+	"httpd",
+	"conf",
+	"npm",
+	"github",
 
 	// Code identifiers
 	"img",
