@@ -257,7 +257,7 @@
 			However, bundled servers are not always good for scalability or customizability purposes. Thus, the author created this <strong itemprop="mainEntity">guide for other developers to set up their "<Keyword>fragmented web servers</Keyword>".</strong>
 		</SimpleText>
 		<SimpleText>
-			If a server component of that bundled server has newer version, developers would need to wait for a new installer containing all of updates. The developer would also need to download large amount of bytes to get installer which may only update one or more components.
+			If a server component of that bundled server has newer version, developers would need to wait for a new installer containing all updates. The developer would also need to download large amount of bytes to get installer which may only update one or more components.
 		</SimpleText>
 		<SimpleText>
 			There are no problems on using a bundled server especially if the developers are looking for a quick and easy solution or if they are still at beginner level. Yet, the I.T. industry at this era is fast-paced. When the beginner developers are already done with their basic lessons, this guide would prove to be a useful for them to grow further.

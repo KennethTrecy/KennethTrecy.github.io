@@ -29,7 +29,7 @@ export default [
 	"httpd",
 	"conf",
 	"npm",
-	"github",
+	".github",
 
 	// Code identifiers
 	"img",
