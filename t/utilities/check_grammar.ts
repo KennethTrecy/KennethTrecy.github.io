@@ -3,7 +3,10 @@ import { expect, Page } from "@playwright/test"
 
 import dictionary from "../data/dictionary.ts"
 
-export default async function(page: Page) {
+export default async function(
+	page: Page,
+	matchesModifier: (matchData: unknown[]) => unknown[] = matches => matches
+) {
 	const innerTextSelectors = [
 		"title",
 		".menu a span.flex-1",
@@ -82,5 +85,6 @@ export default async function(page: Page) {
 
 	const expectedMatches = uniqueTexts.map(() => [])
 	const matches = await Promise.all(pendingResults)
-	await expect(matches).toEqual(expectedMatches)
+	const filteredMatches = matches.map(matchesModifier)
+	expect(filteredMatches).toEqual(expectedMatches)
 }
