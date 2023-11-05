@@ -23,6 +23,7 @@ export default [
 	"Elomocato",
 	"Virdafils",
 	"Gramma",
+	"Talakutnangan",
 
 	// Code identifiers
 	"img",
