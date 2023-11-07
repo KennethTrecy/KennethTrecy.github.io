@@ -1,7 +1,7 @@
 import defineArticlePageMeta from "@/utilities/definers/define_article_page_meta"
 
 const meta = defineArticlePageMeta("/articles/installation_guide_for_fragmented_web_servers", {
-	"datePublished": new Date(Date.UTC(2023, 11, 5, 14, 0)),
+	"datePublished": new Date(Date.UTC(2023, 10, 5, 14, 0)),
 	"description": "Guide to install Apache HTTP server, PHP, MySQL, and others separately for your development environment.",
 	"keywords": [
 		"instruction",
