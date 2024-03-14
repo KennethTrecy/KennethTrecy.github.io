@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { HeadingInfo } from "@/types/container_info"
+	import { type HeadingInfo } from "@/types/container_info"
 
 	import pageMeta from "@/routes/projects/meta"
 

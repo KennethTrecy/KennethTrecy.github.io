@@ -4,7 +4,7 @@
 	import Heading from "@/components/general/headings/base.svelte"
 
 	let otherClasses: string[] = []
-	export let prefix: string = ""
+	export let prefix = ""
 	export { otherClasses as class }
 
 	$: joinedClasses = [

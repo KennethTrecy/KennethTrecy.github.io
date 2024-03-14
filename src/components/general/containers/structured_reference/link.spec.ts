@@ -1,7 +1,7 @@
 /* eslint-disable max-lines-per-function */
 // @vitest-environment jsdom
 
-import type { ReferenceInfo } from "@/types/reference"
+import { type ReferenceInfo } from "@/types/reference"
 
 import { cleanup, render } from "@testing-library/svelte"
 import { describe, expect, it } from "vitest"

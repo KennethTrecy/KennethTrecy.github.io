@@ -1,5 +1,5 @@
 import type * as Kit from "@sveltejs/kit"
-import type { CompleteCodeFileInfo } from "@/types/container_info"
+import { type CompleteCodeFileInfo } from "@/types/container_info"
 
 export interface PageData {
 	loadedFileInfos: CompleteCodeFileInfo[]

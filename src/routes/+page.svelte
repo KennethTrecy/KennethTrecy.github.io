@@ -1,6 +1,6 @@
 <script lang="ts">
 	import pageMeta from "@/routes/meta"
-	import { externalTypes, internalTypes, authorTypes } from "@/components/general/links/constants"
+	import { authorTypes, externalTypes, internalTypes } from "@/components/general/links/constants"
 
 	import { profile } from "@/constants/drive_images"
 

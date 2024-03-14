@@ -4,18 +4,20 @@
 	import Logo from "@/multimedia/logo.png"
 	import { LICENSE, LICENSE_URL } from "@/constants/miscellaneous_meta"
 
-	import Menu from "@/components/shell/menu.svelte"
-	import Icon from "@/components/general/icon.svelte"
-	import ProfileLink from "@/components/shell/profile_link.svelte"
-	import toggleBySpace from "@/utilities/toggle_by_space"
-	import ThemeToggler from "@/components/shell/theme_toggler.svelte"
 	import ExternalLink from "@/components/general/links/external.svelte"
+	import Icon from "@/components/general/icon.svelte"
+	import Menu from "@/components/shell/menu.svelte"
+	import ProfileLink from "@/components/shell/profile_link.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
+	import ThemeToggler from "@/components/shell/theme_toggler.svelte"
+	import toggleBySpace from "@/utilities/toggle_by_space"
 
 	let isMenuShown = false
 
 	function toggleMenu(event: KeyboardEvent): void {
-		toggleBySpace(event, () => isMenuShown = !isMenuShown)
+		toggleBySpace(event, () => {
+			isMenuShown = !isMenuShown
+		})
 	}
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { AnchorTarget, AnchorLinkType } from "@/types/container_info"
+	import { type AnchorLinkType, type AnchorTarget } from "@/types/container_info"
 
 	export let address: string
 	export let relationship: AnchorLinkType|AnchorLinkType[]

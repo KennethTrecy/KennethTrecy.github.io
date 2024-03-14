@@ -1,5 +1,5 @@
-import type { MultimediaInfo } from "@/types/content_metadata"
-import type { ViewableOwnerInfoTree } from "@/types/container_info"
+import { type MultimediaInfo } from "@/types/content_metadata"
+import { type ViewableOwnerInfoTree } from "@/types/container_info"
 
 import flattenOwnerTreeInfo from "@/utilities/resource/flatten_owner_tree_info"
 import makeSharedMultimediaLink from "@/utilities/resource/make_shared_multimedia_link"

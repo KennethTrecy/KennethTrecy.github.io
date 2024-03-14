@@ -1,4 +1,4 @@
-import type { MultimediaLink } from "@/types/content_metadata"
+import { type MultimediaLink } from "@/types/content_metadata"
 
 export default function(links: MultimediaLink[]): string {
 	if (links.length > 1) {

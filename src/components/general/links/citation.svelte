@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte"
 
-	import type { ReferenceInfo } from "@/types/reference"
+	import { type ReferenceInfo } from "@/types/reference"
 
 	import { internalTypes } from "@/components/general/links/constants"
 
@@ -13,7 +13,7 @@
 	export let info: ReferenceInfo
 	export let itemprop: string|undefined = undefined
 
-	onMount(async () => {
+	onMount(() => {
 		appendReference(info)
 	})
 

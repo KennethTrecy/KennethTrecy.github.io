@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 
-import type { HeadingInfo } from "@/types/container_info"
+import { type HeadingInfo } from "@/types/container_info"
 
 import defineHeadingInfo from "./define_heading_info"
 

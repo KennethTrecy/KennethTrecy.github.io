@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { AnchorLinkType } from "@/types/container_info"
+	import { type AnchorLinkType } from "@/types/container_info"
 
 	import { externalTypes } from "@/components/general/links/constants"
 

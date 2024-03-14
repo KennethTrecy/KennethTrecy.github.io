@@ -1,6 +1,6 @@
-import type { CodeFile } from "@/types/container_info"
-import type {
-	PageLoad
+import { type CodeFile } from "@/types/container_info"
+import {
+	type PageLoad
 } from "@/routes/articles/different_levels_of_abstraction_in_programming/$types"
 
 import {

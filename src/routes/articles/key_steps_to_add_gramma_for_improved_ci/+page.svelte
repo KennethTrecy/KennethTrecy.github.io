@@ -2,11 +2,14 @@
 	import { page } from "$app/stores"
 	import { derived } from "svelte/store"
 
-	import type { ReferenceInfo } from "@/types/reference"
-	import type { ExecutedCommandSetInfo, HeadingInfo } from "@/types/container_info"
+	import { type ReferenceInfo } from "@/types/reference"
+	import {
+		type CompleteCodeFileInfo,
+		type ExecutedCommandSetInfo,
+		type HeadingInfo
+	} from "@/types/container_info"
 
 	import indexPageMeta from "@/routes/meta"
-	import { internalTypes } from "@/components/general/links/constants"
 	import pageMeta from "@/routes/articles/key_steps_to_add_gramma_for_improved_ci/meta"
 	import {
 		successfulGrammarCheckSnapshot
@@ -15,11 +18,9 @@
 	import makeSet from "@/utilities/resource/make_set"
 	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
 
-	import BaseLink from "@/components/general/links/base.svelte"
 	import Bookmark from "@/components/general/links/bookmark.svelte"
 	import Citation from "@/components/general/links/citation.svelte"
 	import Keyword from "@/components/general/containers/keyword.svelte"
-	import ExternalLink from "@/components/general/links/external.svelte"
 	import SimpleText from "@/components/general/containers/simple_text.svelte"
 	import TertiaryHeading from "@/components/general/headings/tertiary.svelte"
 	import ArticlePost from "@/components/general/containers/article_post.svelte"
@@ -27,13 +28,15 @@
 	import ExampleCode from "@/components/general/containers/example_code.svelte"
 	import SimpleThing from "@/components/general/containers/simple_thing.svelte"
 	import LabeledThing from "@/components/general/containers/labeled_thing.svelte"
-	import ExampleOutput from "@/components/general/containers/example_output.svelte"
 	import ExampleCommand from "@/components/general/containers/example_command.svelte"
 	import StructuredList from "@/components/general/containers/structured_list.svelte"
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import StructuredListItem from "@/components/general/containers/structured_list_item.svelte"
 
-	const loadedFileInfos = derived(page, resolvedPage => resolvedPage.data.loadedFileInfos ?? [])
+	const loadedFileInfos = derived(
+		page,
+		resolvedPage => (resolvedPage.data.loadedFileInfos ?? []) as CompleteCodeFileInfo[]
+	)
 
 	const background = defineHeadingInfo({ "text": "Background" })
 	const prerequisites = defineHeadingInfo({ "text": "Prerequisites" })

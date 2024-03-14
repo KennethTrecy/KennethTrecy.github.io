@@ -1,12 +1,12 @@
 <script lang="ts">
-	import type { HeadingInfo, SubheadingVariant } from "@/types/container_info"
+	import { type HeadingInfo, type SubheadingVariant } from "@/types/container_info"
 
 	import Heading from "@/components/general/headings/base.svelte"
 
 	export let level: number
 	export let variant: SubheadingVariant
 	export let headingInfo: HeadingInfo<"defined">
-	export let mayUseBookmark: boolean = true
+	export let mayUseBookmark = true
 	let otherClasses: string[] = []
 
 	export { otherClasses as class }

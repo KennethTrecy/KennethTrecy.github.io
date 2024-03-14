@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 
-import type { AnchorLinkType } from "@/types/container_info"
+import { type AnchorLinkType } from "@/types/container_info"
 
 import { cleanup, render } from "@testing-library/svelte"
 import { describe, expect, it } from "vitest"

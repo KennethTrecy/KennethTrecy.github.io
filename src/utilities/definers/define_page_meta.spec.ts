@@ -1,7 +1,7 @@
 /* eslint-disable max-lines-per-function */
 import { describe, expect, it } from "vitest"
 
-import type { PageMeta } from "@/types/content_metadata"
+import { type PageMeta } from "@/types/content_metadata"
 
 import Logo from "@/multimedia/logo.png"
 import { PUBLIC_PRODUCTION_BASE_URL } from "$env/static/public"

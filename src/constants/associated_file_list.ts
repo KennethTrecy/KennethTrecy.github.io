@@ -1,4 +1,4 @@
-import type { CompleteViewableFileInfo } from "@/types/container_info"
+import { type CompleteViewableFileInfo } from "@/types/container_info"
 
 import {
 	associatedFileList as fileList20220218

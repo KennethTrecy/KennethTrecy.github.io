@@ -2,7 +2,7 @@
 	import { browser } from "$app/environment"
 	import { MAIN_CONTENT_ID } from "@/constants/miscellaneous_meta"
 
-	export let itemtype: string = "https://schema.org/WebContent"
+	export let itemtype = "https://schema.org/WebContent"
 
 	const currentLocation = browser ? location.href : ""
 </script>

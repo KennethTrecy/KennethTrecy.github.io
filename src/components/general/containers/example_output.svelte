@@ -1,7 +1,5 @@
 <script lang="ts">
-	import { onMount } from "svelte"
-
-	import type { CompleteCodeFileInfo, ExecutedCommandSetInfo } from "@/types/container_info"
+	import { type CompleteCodeFileInfo, type ExecutedCommandSetInfo } from "@/types/container_info"
 
 	import ExternalLink from "@/components/general/links/external.svelte"
 	import ExampleCommand from "@/components/general/containers/example_command.svelte"

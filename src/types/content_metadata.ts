@@ -1,4 +1,4 @@
-import type { LicenseInfo, PersonInfo } from "@/types/reference"
+import { type LicenseInfo, type PersonInfo } from "@/types/reference"
 
 export interface MultimediaLink {
 	link: string,

@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let id: string|undefined = undefined
-	export let itemprop: string = "hasPart"
-	export let itemtype: string = "https://schema.org/WebContent"
+	export let itemprop = "hasPart"
+	export let itemtype = "https://schema.org/WebContent"
 	export let itemid: string|undefined = undefined
 
 	let otherClasses: string[] = []

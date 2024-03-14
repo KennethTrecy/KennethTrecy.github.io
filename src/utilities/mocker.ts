@@ -1,4 +1,4 @@
-import type { MockInfo } from "@/types/test_interface"
+import { type MockInfo } from "@/types/test_interface"
 
 import { browser } from "$app/environment"
 

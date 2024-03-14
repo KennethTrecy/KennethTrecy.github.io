@@ -6,10 +6,12 @@
 	import Icon from "@/components/general/icon.svelte"
 	import toggleBySpace from "@/utilities/toggle_by_space"
 
-	$: if (typeof window !== "undefined") document.documentElement.setAttribute(
-		"data-theme",
-		$themeName
-	)
+	$: if (typeof window !== "undefined") {
+		document.documentElement.setAttribute(
+			"data-theme",
+			$themeName
+		)
+	}
 	$: modeIcon = $mustBeInDarkMode ? "dark_mode" : "light_mode"
 	$: otherTheme = $mustBeInDarkMode ? LIGHT_MODE : DARK_MODE
 

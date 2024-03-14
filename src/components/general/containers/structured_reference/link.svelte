@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ReferenceInfo, PersonInfo, LicenseInfo } from "@/types/reference"
+	import { type LicenseInfo, type PersonInfo, type ReferenceInfo } from "@/types/reference"
 
 	import { internalTypes } from "@/components/general/links/constants"
 

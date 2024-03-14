@@ -1,6 +1,6 @@
-import type { RequestEvent } from "@sveltejs/kit"
+import { type RequestEvent } from "@sveltejs/kit"
 
-import type { CodeFile, CompleteViewableFileInfo } from "@/types/container_info"
+import { type CodeFile, type CompleteViewableFileInfo } from "@/types/container_info"
 
 import { Octokit } from "@octokit/core"
 

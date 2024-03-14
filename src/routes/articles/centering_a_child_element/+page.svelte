@@ -1,8 +1,10 @@
+/** eslint-disable max-lines */
 <script lang="ts">
 	import { page } from "$app/stores"
 	import { derived } from "svelte/store"
 
-	import type { ReferenceInfo } from "@/types/reference"
+	import { type ReferenceInfo } from "@/types/reference"
+	import { type CompleteCodeFileInfo } from "@/types/container_info"
 
 	import pageMeta from "@/routes/articles/centering_a_child_element/meta"
 	import indexPageMeta from "@/routes/meta"
@@ -26,7 +28,10 @@
 	import StructuredSection from "@/components/general/containers/structured_section.svelte"
 	import DescriptiveListItem from "@/components/general/containers/descriptive_list_item.svelte"
 
-	const loadedFileInfos = derived(page, resolvedPage => resolvedPage.data.loadedFileInfos ?? [])
+	const loadedFileInfos = derived(
+		page,
+		resolvedPage => (resolvedPage.data.loadedFileInfos ?? []) as CompleteCodeFileInfo[]
+	)
 
 	const introduction = defineHeadingInfo({ "text": "Introduction" })
 	const classical = defineHeadingInfo({ "text": "The Classical Way" })
@@ -119,7 +124,7 @@
 	]
 
 	const styleTagLine = derived(loadedFileInfos, loadedFile => {
-		const selfSourceCode = loadedFile[0]
+		const [ selfSourceCode ] = loadedFile
 		if (typeof selfSourceCode === "object") {
 			const rawCodeLines = atob(selfSourceCode?.content ?? "\n").split("\n")
 			return rawCodeLines.indexOf(`${"<"}style lang="postcss">`) + 1

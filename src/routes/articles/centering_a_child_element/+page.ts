@@ -1,6 +1,6 @@
-import type { CodeFile } from "@/types/container_info"
-import type {
-	PageLoad
+import { type CodeFile } from "@/types/container_info"
+import {
+	type PageLoad
 } from "@/routes/articles/centering_a_child_element/$types"
 
 import {

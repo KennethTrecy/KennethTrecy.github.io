@@ -4,7 +4,7 @@
 
 	export let level: number
 	export let fragment: string
-	export let mayUseBookmark: boolean = true
+	export let mayUseBookmark = true
 	let otherClasses: string[] = []
 
 	export { otherClasses as class }

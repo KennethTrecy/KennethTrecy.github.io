@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { PageMeta } from "@/types/content_metadata"
+	import { type PageMeta } from "@/types/content_metadata"
 
 	import { dev } from "$app/environment"
 	import {
-		PUBLIC_PRODUCTION_BASE_URL,
 		PUBLIC_MINIMUM_TITLE_LENGTH,
+		PUBLIC_PRODUCTION_BASE_URL,
 		PUBLIC_RECOMMENDED_DESCRIPTION_LENGTH
 	} from "$env/static/public"
 

@@ -1,4 +1,4 @@
-import type { UserConfig } from "vite"
+import { type UserConfig } from "vite"
 
 import { sveltekit } from "@sveltejs/kit/vite"
 

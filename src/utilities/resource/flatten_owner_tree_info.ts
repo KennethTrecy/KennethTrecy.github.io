@@ -1,4 +1,4 @@
-import type { CompleteViewableFileInfo, ViewableOwnerInfoTree } from "@/types/container_info"
+import { type CompleteViewableFileInfo, type ViewableOwnerInfoTree } from "@/types/container_info"
 
 export default function(forest: ViewableOwnerInfoTree[]): CompleteViewableFileInfo[] {
 	return forest.reduce((previousFileInfo, currentOwner) => [

@@ -1,14 +1,12 @@
 <script lang="ts">
-	import { onMount } from "svelte"
-
-	import type { CompleteCodeFileInfo } from "@/types/container_info"
+	import { type CompleteCodeFileInfo } from "@/types/container_info"
 
 	import ExternalLink from "@/components/general/links/external.svelte"
 
 	export let codeInfo: CompleteCodeFileInfo
-	export let itemprop: string = "workExample"
-	export let beginLineIndex: number = 0
-	export let endLineIndex: number = Infinity
+	export let itemprop = "workExample"
+	export let beginLineIndex = 0
+	export let endLineIndex = Infinity
 
 	$: rawCodeLines = (() => {
 		try {

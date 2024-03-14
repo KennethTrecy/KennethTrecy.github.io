@@ -1,4 +1,4 @@
-import type { ReferenceInfo } from "@/types/reference"
+import { type ReferenceInfo } from "@/types/reference"
 
 import { writable } from "svelte/store"
 

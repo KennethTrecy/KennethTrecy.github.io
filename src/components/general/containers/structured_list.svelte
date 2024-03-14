@@ -1,11 +1,11 @@
 <script lang="ts">
-	import type { Order, ListVariant } from "@/types/container_info"
+	import { type ListVariant, type Order } from "@/types/container_info"
 
 	export let order: Order
 
 	export let hasOwnScope = true
-	export let itemprop: string = "mainEntity"
-	export const itemtype: string = "https://schema.org/ItemList"
+	export let itemprop = "mainEntity"
+	export const itemtype = "https://schema.org/ItemList"
 	export let variant: ListVariant = "normal"
 	let otherClasses: string[] = []
 	const cardVariantClasses = [ "flex", "flex-col", "list-outside", "list-none" ]
@@ -17,7 +17,7 @@
 			: []
 	export { otherClasses as class }
 
-	$: joinedClasses = [ ...initialClasses, ...otherClasses].join(" ")
+	$: joinedClasses = [ ...initialClasses, ...otherClasses ].join(" ")
 	$: listOrder = order === "unordered"
 		? "https://schema.org/ItemListUnordered"
 		: order === "ascending"

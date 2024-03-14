@@ -9,25 +9,25 @@
 
 	const title = derived(
 		page,
-		pageData => (
-			400 <= pageData.status && pageData.status < 500
-				? "Client Error"
-				: 500 <= pageData.status && pageData.status < 600
-					? "Server Error"
-					: "Unknown Error"
-		) as string
+		pageData => {
+			if (pageData.status >= 400 && pageData.status < 500) {
+				return "Client Error"
+			}
+
+			if (pageData.status >= 500 && pageData.status < 600) {
+				return "Server Error"
+			}
+
+			return "Unknown Error"
+		}
 	)
+
 	const message = derived(
 		page,
 		pageData => {
-			interface ErrorMessage {
-				status: number,
-				message: string
-			}
-
 			const DEFAULT_MESSAGE = "Please contact the Kenneth Trecy if this happens."
 
-			const errorInfos: ErrorMessage[] = [
+			const errorInfos = [
 				{
 					"status": 404,
 					"message": "The page for this URL does not exist or has been archived."

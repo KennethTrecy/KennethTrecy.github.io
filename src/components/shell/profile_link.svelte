@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { externalTypes, authorTypes } from "@/components/general/links/constants"
+	import { authorTypes, externalTypes } from "@/components/general/links/constants"
 
 	import Link from "@/components/general/links/base.svelte"
 	import BrandIcon from "@/components/general/brand_icon.svelte"

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { PageMeta } from "@/types/content_metadata"
+	import { type PageMeta } from "@/types/content_metadata"
 
 	import { principlesPath } from "@/constants/schema_collection"
-	import { internalTypes, authorTypes } from "@/components/general/links/constants"
+	import { authorTypes, internalTypes } from "@/components/general/links/constants"
 	import {
 		draftStatusURL,
 		publishedStatusURL

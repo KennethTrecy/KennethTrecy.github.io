@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { ListVariant } from "@/types/container_info"
+	import { type ListVariant } from "@/types/container_info"
 
-	export let itemprop: string = "itemListElement"
-	export let itemtype: string = "https://schema.org/ListItem"
+	export let itemprop = "itemListElement"
+	export let itemtype = "https://schema.org/ListItem"
 	export let variant: ListVariant = "normal"
 	let otherClasses: string[] = []
 
@@ -18,7 +18,7 @@
 	{itemprop}
 	itemscope
 	{itemtype}
-	class={[ ...initialClasses, ...otherClasses].join(" ")}>
+	class={[ ...initialClasses, ...otherClasses ].join(" ")}>
 	<slot></slot>
 </li>
 

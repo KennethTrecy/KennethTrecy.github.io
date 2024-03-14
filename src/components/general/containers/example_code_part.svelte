@@ -1,9 +1,9 @@
 <script lang="ts">
 	export let filename: string
 	export let rawCodeLines: string[]
-	export let itemprop: string = "workExample"
-	export let beginLineIndex: number = 0
-	export let endLineIndex: number = Infinity
+	export let itemprop = "workExample"
+	export let beginLineIndex = 0
+	export let endLineIndex = Infinity
 
 	$: targetBeginLineIndex = Math.max(0, beginLineIndex)
 	$: targetEndLineIndex = Math.min(rawCodeLines.length, endLineIndex)

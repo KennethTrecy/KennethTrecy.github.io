@@ -1,4 +1,4 @@
-import type { MultimediaInfo } from "@/types/content_metadata"
+import { type MultimediaInfo } from "@/types/content_metadata"
 
 import makeSharedMultimediaLink from "@/utilities/resource/make_shared_multimedia_link"
 

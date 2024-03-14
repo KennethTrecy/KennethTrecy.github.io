@@ -7,8 +7,8 @@
 	import ExternalLink from "@/components/general/links/external.svelte"
 
 	export let address: string
-	export let itemprop: string|undefined = undefined
-	export let itemtype: string|undefined = undefined
+	export let itemprop: string|undefined
+	export let itemtype: string|undefined
 
 	$: isInbound = address.includes(PUBLIC_PRODUCTION_BASE_URL)
 	$: linkComponent = isInbound ? BaseLink : ExternalLink

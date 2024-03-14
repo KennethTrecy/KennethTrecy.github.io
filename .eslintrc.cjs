@@ -35,5 +35,14 @@ module.exports = {
 		"plugin:@typescript-eslint/recommended-requiring-type-checking",
 		"plugin:svelte/recommended",
 		"whitelistyle"
-	]
+	],
+	"rules": {
+		"init-declarations": [ "off" ],
+		"sort-imports": [ "off" ],
+		"max-len": [ "off" ],
+		"max-lines": [ "warn" ],
+		"no-undefined": [ "off" ],
+		"no-undef-init": [ "off" ],
+		"@typescript-eslint/restrict-template-expressions": [ "off" ]
+	}
 }

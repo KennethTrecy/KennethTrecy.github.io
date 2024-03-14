@@ -1,4 +1,4 @@
-import type { ArticlePageMeta } from "@/types/content_metadata"
+import { type ArticlePageMeta } from "@/types/content_metadata"
 
 import definePageMeta from "@/utilities/definers/define_page_meta"
 

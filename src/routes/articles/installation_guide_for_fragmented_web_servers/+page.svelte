@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { ReferenceInfo } from "@/types/reference"
-	import type { HeadingInfo } from "@/types/container_info"
+	import { type ReferenceInfo } from "@/types/reference"
+	import { type HeadingInfo } from "@/types/container_info"
 
-	import { internalTypes, authorTypes } from "@/components/general/links/constants"
+	import { authorTypes, internalTypes } from "@/components/general/links/constants"
 	import pageMeta from "@/routes/articles/installation_guide_for_fragmented_web_servers/meta"
 
 	import defineHeadingInfo from "@/utilities/definers/define_heading_info"
@@ -58,23 +58,32 @@
 		"AddHandler application/x-httpd-php .php",
 		"# Replace value of `WEBSITE_ROOT` with real directory to serve.",
 		"<VirtualHost *:80>",
+		// eslint-disable-next-line no-tabs
 		"	Define WEBSITE_ROOT \"<path to website root>\"",
+		// eslint-disable-next-line no-tabs, no-template-curly-in-string
 		"	DocumentRoot		\"${WEBSITE_ROOT}\"",
+		// eslint-disable-next-line no-tabs, no-template-curly-in-string
 		"	ErrorLog		\"${WEBSITE_ROOT}/error.log\"",
+		// eslint-disable-next-line no-tabs
 		"",
+		// eslint-disable-next-line no-tabs, no-template-curly-in-string
 		"	<Directory \"${WEBSITE_ROOT}\">",
+		// eslint-disable-next-line no-tabs
 		"		Require			all granted",
+		// eslint-disable-next-line no-tabs
 		"		Options			Indexes Includes FollowSymlinks",
+		// eslint-disable-next-line no-tabs
 		"		AllowOverride	All",
+		// eslint-disable-next-line no-tabs
 		"	</Directory>",
 		"</VirtualHost>",
 	]
-	const beginLineIndexOfServerConfigurationPartA = 0;
-	const endLineIndexOfServerConfigurationPartA = 18;
-	const beginLineIndexOfServerConfigurationPartB = endLineIndexOfServerConfigurationPartA + 1;
-	const endLineIndexOfServerConfigurationPartB = beginLineIndexOfServerConfigurationPartB + 3;
-	const beginLineIndexOfServerConfigurationPartC = endLineIndexOfServerConfigurationPartB + 1;
-	const endLineIndexOfServerConfigurationPartC = beginLineIndexOfServerConfigurationPartC + 19;
+	const beginLineIndexOfServerConfigurationPartA = 0
+	const endLineIndexOfServerConfigurationPartA = 18
+	const beginLineIndexOfServerConfigurationPartB = endLineIndexOfServerConfigurationPartA + 1
+	const endLineIndexOfServerConfigurationPartB = beginLineIndexOfServerConfigurationPartB + 3
+	const beginLineIndexOfServerConfigurationPartC = endLineIndexOfServerConfigurationPartB + 1
+	const endLineIndexOfServerConfigurationPartC = beginLineIndexOfServerConfigurationPartC + 19
 
 	const sampleLanguageConfiguration = [
 		"; For this file, a line starting with `;` is a comment and",

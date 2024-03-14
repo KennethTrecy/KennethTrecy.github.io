@@ -1,4 +1,4 @@
-import type { HeadingInfo } from "@/types/container_info"
+import { type HeadingInfo } from "@/types/container_info"
 
 export default function({
 	prefix,

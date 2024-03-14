@@ -1,6 +1,6 @@
 <script lang="ts">
 	import pageMeta from "@/routes/website_info/meta"
-	import { internalTypes, authorTypes } from "@/components/general/links/constants"
+	import { authorTypes, internalTypes } from "@/components/general/links/constants"
 
 	import BaseLink from "@/components/general/links/base.svelte"
 	import CommonHead from "@/components/general/common_head.svelte"
