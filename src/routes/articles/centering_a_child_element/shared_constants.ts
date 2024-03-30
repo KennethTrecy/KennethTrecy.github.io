@@ -30,19 +30,19 @@ export const exactWidthDemo: MultimediaInfo = {
 	"responsiveLinks": [
 		{
 			"intrinsicWidth": 591,
-			"link": makeSharedMultimediaLink("1DWrIf-f4o3Rt8s2MbEfd3kSkgQeIRi99")
+			"link": makeSharedMultimediaLink("1DWrIf-f4o3Rt8s2MbEfd3kSkgQeIRi99", 591)
 		}, {
 			"intrinsicWidth": 591,
-			"link": makeSharedMultimediaLink("1yvFgU4SS8cnTMMe5Q4RUkuvXd-ayHVUg")
+			"link": makeSharedMultimediaLink("1yvFgU4SS8cnTMMe5Q4RUkuvXd-ayHVUg", 591)
 		}, {
 			"intrinsicWidth": 886,
-			"link": makeSharedMultimediaLink("1qZI43hUiVrODaVYTLNj5xkMPEl_vt8jn")
+			"link": makeSharedMultimediaLink("1qZI43hUiVrODaVYTLNj5xkMPEl_vt8jn", 886)
 		}, {
 			"intrinsicWidth": 1181,
-			"link": makeSharedMultimediaLink("1tIb097vdkOs4qWVTtd1MKk7KDgHqk_ql")
+			"link": makeSharedMultimediaLink("1tIb097vdkOs4qWVTtd1MKk7KDgHqk_ql", 1181)
 		}
 	],
-	"defaultLink": makeSharedMultimediaLink("1dHB5B0NlA_ANgTmmO65_PYqJNdJTliHq"),
+	"defaultLink": makeSharedMultimediaLink("1dHB5B0NlA_ANgTmmO65_PYqJNdJTliHq", 1181),
 	"defaultHeight": 878,
 	"defaultWidth": 1181
 }
@@ -52,19 +52,19 @@ export const largerWidthDemo: MultimediaInfo = {
 	"responsiveLinks": [
 		{
 			"intrinsicWidth": 394,
-			"link": makeSharedMultimediaLink("1s1i6YyBuhwMCeSttWwa5tydntjAqO-iW")
+			"link": makeSharedMultimediaLink("1s1i6YyBuhwMCeSttWwa5tydntjAqO-iW", 394)
 		}, {
 			"intrinsicWidth": 591,
-			"link": makeSharedMultimediaLink("1HQujFn_bLoEO5TOTJeNbmLNV5rn-xPDc")
+			"link": makeSharedMultimediaLink("1HQujFn_bLoEO5TOTJeNbmLNV5rn-xPDc", 591)
 		}, {
 			"intrinsicWidth": 886,
-			"link": makeSharedMultimediaLink("1NarukIAVkWH9YJssZZQljEUkuq30-iAh")
+			"link": makeSharedMultimediaLink("1NarukIAVkWH9YJssZZQljEUkuq30-iAh", 886)
 		}, {
 			"intrinsicWidth": 1181,
-			"link": makeSharedMultimediaLink("17cH2pGqM7fGWcydbNGI2pLzwcVuUPTo6")
+			"link": makeSharedMultimediaLink("17cH2pGqM7fGWcydbNGI2pLzwcVuUPTo6", 1181)
 		}
 	],
-	"defaultLink": makeSharedMultimediaLink("1-1-vIqlOfA4KZV-Lto2rHBF7GJyo9QSF"),
+	"defaultLink": makeSharedMultimediaLink("1-1-vIqlOfA4KZV-Lto2rHBF7GJyo9QSF", 1181),
 	"defaultHeight": 844,
 	"defaultWidth": 1181
 }

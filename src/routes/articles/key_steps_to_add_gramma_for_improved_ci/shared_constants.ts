@@ -32,19 +32,19 @@ export const successfulGrammarCheckSnapshot: MultimediaInfo = {
 	"responsiveLinks": [
 		{
 			"intrinsicWidth": 267,
-			"link": makeSharedMultimediaLink("1jdOIWHW9oQpjPywsybYq_iIBaBxN-lRM")
+			"link": makeSharedMultimediaLink("1jdOIWHW9oQpjPywsybYq_iIBaBxN-lRM", 267)
 		}, {
 			"intrinsicWidth": 400,
-			"link": makeSharedMultimediaLink("1q9X9SCNDX3F_Litb5XP60zj9WwpnQ529")
+			"link": makeSharedMultimediaLink("1q9X9SCNDX3F_Litb5XP60zj9WwpnQ529", 400)
 		}, {
 			"intrinsicWidth": 600,
-			"link": makeSharedMultimediaLink("1kdIUG9TucWQtBHb42A5QNVsFiYef9M1P")
+			"link": makeSharedMultimediaLink("1kdIUG9TucWQtBHb42A5QNVsFiYef9M1P", 600)
 		}, {
 			"intrinsicWidth": 1049,
-			"link": makeSharedMultimediaLink("1Gt_z-pPWkPVyhtiVW_l_fCArQfN1yxNW")
+			"link": makeSharedMultimediaLink("1Gt_z-pPWkPVyhtiVW_l_fCArQfN1yxNW", 1049)
 		}
 	],
-	"defaultLink": makeSharedMultimediaLink("1trQYApLFFz9estfvFHcedMcc9omKxDDk"),
+	"defaultLink": makeSharedMultimediaLink("1trQYApLFFz9estfvFHcedMcc9omKxDDk", 1049),
 	"defaultHeight": 800,
 	"defaultWidth": 1049
 }
