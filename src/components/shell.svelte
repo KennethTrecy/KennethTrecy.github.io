@@ -14,7 +14,11 @@
 
 	let isMenuShown = false
 
-	function toggleMenu(event: KeyboardEvent): void {
+	function toggleMenuThroughMouse(_event: MouseEvent): void {
+		isMenuShown = !isMenuShown
+	}
+
+	function toggleMenuThroughKeyboard(event: KeyboardEvent): void {
 		toggleBySpace(event, () => {
 			isMenuShown = !isMenuShown
 		})
@@ -52,7 +56,8 @@
 				role="switch"
 				aria-checked={isMenuShown}
 				aria-label="Toggle menu drawer"
-				on:keyup|stopPropagation|preventDefault={toggleMenu}
+				on:keyup|stopPropagation|preventDefault={toggleMenuThroughKeyboard}
+				on:click={toggleMenuThroughMouse}
 				class="drawer-button btn bg-transparent border-transparent lg:hidden text-secondary hover:text-primary hover:bg-secondary">
 				<Icon name="menu"/>
 			</button>
@@ -125,7 +130,8 @@
 			role="switch"
 			aria-checked={isMenuShown}
 			aria-label="Toggle menu drawer"
-			on:keyup|stopPropagation|preventDefault={toggleMenu}></button>
+			on:keyup|stopPropagation|preventDefault={toggleMenuThroughKeyboard}
+			on:click={toggleMenuThroughMouse}></button>
 		<aside class="w-80 bg-primary">
 			<a
 				itemprop="creator" itemscope itemtype="https://schema.org/Person"

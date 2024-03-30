@@ -20,7 +20,11 @@
 		$mustBeInDarkMode = document.documentElement.dataset.theme === DARK_MODE
 	})
 
-	function toggleTheme(event: KeyboardEvent): void {
+	function toggleThemeThoughMouse(_event: MouseEvent): void {
+		$mustBeInDarkMode = !$mustBeInDarkMode
+	}
+
+	function toggleThemeThroughKeyboard(event: KeyboardEvent): void {
 		toggleBySpace(event, () => {
 			$mustBeInDarkMode = !$mustBeInDarkMode
 		})
@@ -34,11 +38,8 @@
 	data-set-theme={otherTheme}
 	data-act-class={LIGHT_MODE}
 	aria-label="Toggle theme"
-	on:keyup|stopPropagation|preventDefault={toggleTheme}
+	on:keyup|stopPropagation|preventDefault={toggleThemeThroughKeyboard}
+	on:click={toggleThemeThoughMouse}
 	class="btn bg-transparent border-transparent cursor-pointer text-secondary hover:text-primary hover:bg-secondary">
 	<Icon name={modeIcon}/>
-	<input
-		type="checkbox"
-		class="hidden"
-		bind:checked={$mustBeInDarkMode}/>
 </button>
