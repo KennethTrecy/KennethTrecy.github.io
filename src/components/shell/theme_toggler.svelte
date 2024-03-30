@@ -21,11 +21,13 @@
 	})
 
 	function toggleTheme(event: KeyboardEvent): void {
-		toggleBySpace(event, () => $mustBeInDarkMode = !$mustBeInDarkMode)
+		toggleBySpace(event, () => {
+			$mustBeInDarkMode = !$mustBeInDarkMode
+		})
 	}
 </script>
 
-<label
+<button
 	tabindex="0"
 	role="switch"
 	aria-checked={$mustBeInDarkMode}
@@ -39,4 +41,4 @@
 		type="checkbox"
 		class="hidden"
 		bind:checked={$mustBeInDarkMode}/>
-</label>
+</button>

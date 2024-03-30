@@ -49,7 +49,6 @@
 			<button
 				tabindex="0"
 				id="menu_toggler"
-				for="menu_drawer_checkbox"
 				role="switch"
 				aria-checked={isMenuShown}
 				aria-label="Toggle menu drawer"
@@ -121,7 +120,6 @@
 	</div>
 	<div class="drawer-side">
 		<button
-			for="menu_drawer_checkbox"
 			class="drawer-overlay"
 			tabindex="0"
 			role="switch"
