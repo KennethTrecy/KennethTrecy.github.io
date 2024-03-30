@@ -18,8 +18,6 @@
 	$: if (dev && pageMeta.title.length < Number(PUBLIC_MINIMUM_TITLE_LENGTH)) {
 		console.warn(`Title for page entitled "${pageMeta.title}" is too short.`)
 	}
-	$: pageURL = `https://kennethtrecy.pages.dev${pageMeta.path}`
-	$: imageURL = `https://kennethtrecy.pages.dev${Logo}`
 	$: designers = pageMeta.designers
 		.map(person => `${person.givenName} ${person.familyName}`)
 		.join(" ")
