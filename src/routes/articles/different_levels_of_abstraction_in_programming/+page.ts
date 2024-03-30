@@ -1,7 +1,7 @@
 import { type CodeFile } from "@/types/container_info"
 import {
 	type PageLoad
-} from "@/routes/articles/different_levels_of_abstraction_in_programming/$types"
+} from "@/routes/articles/different_levels_of_abstraction_in_programming/$types.d"
 
 import {
 	associatedFileList
