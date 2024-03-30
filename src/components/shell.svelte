@@ -46,7 +46,7 @@
 		bind:checked={isMenuShown}/>
 	<div class="drawer-content">
 		<header class="navbar border-b-[0.05rem] mb-8">
-			<label
+			<button
 				tabindex="0"
 				id="menu_toggler"
 				for="menu_drawer_checkbox"
@@ -56,7 +56,7 @@
 				on:keyup|stopPropagation|preventDefault={toggleMenu}
 				class="drawer-button btn bg-transparent border-transparent lg:hidden text-secondary hover:text-primary hover:bg-secondary">
 				<Icon name="menu"/>
-			</label>
+			</button>
 			<nav class="navbar-center">
 				<a href="/" class="text-color-inherit flex flex-row items-start">
 					<img src={Logo} alt="logo" width="64" height="64" class="flex-none w-16 h-auto"/>
@@ -120,14 +120,14 @@
 		</footer>
 	</div>
 	<div class="drawer-side">
-		<label
+		<button
 			for="menu_drawer_checkbox"
 			class="drawer-overlay"
 			tabindex="0"
 			role="switch"
 			aria-checked={isMenuShown}
 			aria-label="Toggle menu drawer"
-			on:keyup|stopPropagation|preventDefault={toggleMenu}></label>
+			on:keyup|stopPropagation|preventDefault={toggleMenu}></button>
 		<aside class="w-80 bg-primary">
 			<a
 				itemprop="creator" itemscope itemtype="https://schema.org/Person"
