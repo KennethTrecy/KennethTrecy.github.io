@@ -13,7 +13,7 @@
 		)
 	}
 	$: modeIcon = $mustBeInDarkMode ? "dark_mode" : "light_mode"
-	$: otherTheme = $mustBeInDarkMode ? LIGHT_MODE : DARK_MODE
+	$: currentTheme = $mustBeInDarkMode ? DARK_MODE : LIGHT_MODE
 
 	onMount(() => {
 		themeChange(false)
@@ -35,7 +35,7 @@
 	tabindex="0"
 	role="switch"
 	aria-checked={$mustBeInDarkMode}
-	data-set-theme={otherTheme}
+	data-set-theme={currentTheme}
 	data-act-class={LIGHT_MODE}
 	aria-label="Toggle theme"
 	on:keyup|stopPropagation|preventDefault={toggleThemeThroughKeyboard}
