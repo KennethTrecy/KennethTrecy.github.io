@@ -65,7 +65,7 @@ export default async function(
 
 	await page.waitForTimeout(2000)
 
-	const BASE_DELAY = 2500
+	const BASE_DELAY = 3500
 	const pendingResults: Promise<any>[] = uniqueTexts.map(async text => {
 		// Subtract it by half to allow reducing the final delay
 		const delayMultiplier = Math.random() - 0.5
