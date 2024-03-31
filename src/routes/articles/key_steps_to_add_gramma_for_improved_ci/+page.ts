@@ -1,7 +1,7 @@
 import { type CodeFile } from "@/types/container_info"
 import {
 	type PageLoad
-} from "@/routes/articles/key_steps_to_add_gramma_for_improved_ci/$types"
+} from "@/routes/articles/key_steps_to_add_gramma_for_improved_ci/$types.d"
 
 import {
 	associatedFileList
