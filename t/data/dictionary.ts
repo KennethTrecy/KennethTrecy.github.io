@@ -29,9 +29,8 @@ export default [
 	"httpd",
 	"conf",
 	"npm",
-	// In tests, these would be have space after the period. The cause is unknown.
-	". github",
-	". env",
+	".github",
+	".env",
 
 	// Code identifiers
 	"img",

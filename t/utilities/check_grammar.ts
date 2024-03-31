@@ -75,7 +75,9 @@ export default async function(
 		await new Promise(resolve => {
 			setTimeout(resolve, finalDelay)
 		})
-		const result = await check(text, {
+		const cleanedText = text.replace(/\. (env|github)/g, ".$1")
+
+		const result = await check(cleanedText, {
 			"api_url": "http://0.0.0.0:8081/v2/check",
 			dictionary
 		})
