@@ -91,7 +91,7 @@
 			<section class="grid-flow-col items-center">
 				<img alt="logo" src={Logo} width="64" height="64" class="flex-none w-16 h-auto"/>
 				<SimpleText itemprop="copyrightNotice">
-					Copyright © <span itemprop="copyrightYear">2023</span>
+					Copyright © <span itemprop="copyrightYear">2024</span>
 					<span itemprop="copyrightHolder">Kenneth Trecy Tobias</span>.
 				</SimpleText>
 			</section>
