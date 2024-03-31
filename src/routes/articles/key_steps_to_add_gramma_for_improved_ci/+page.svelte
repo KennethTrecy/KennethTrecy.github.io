@@ -215,11 +215,11 @@
 	<StructuredSection id={workflowConfiguration.id}>
 		<SecondaryHeading headingInfo={workflowConfiguration}/>
 		<SimpleText>
-			Copy the code below and paste it a file under <em>&period;github/workflows</em> from the project root. The readers may name it whatever they like.
+			Copy the code below and paste it a file under <em>.github/workflows</em> from the project root. The readers may name it whatever they like.
 		</SimpleText>
 		<ExampleCode codeInfo={$loadedFileInfos[1]} endLineIndex={38}/>
 		<SimpleText>
-			On lines 30 - 31, it double-checks if the <Citation info={references[3]}>LanguageTool server</Citation> is not yet running. After that, the lines 34 - 35, explicitly starts it. The line 36 - 37 just confirms if the server is running. The grammar-checking activity starts at line 38.
+			On lines 30 – 31, it double-checks if the <Citation info={references[3]}>LanguageTool server</Citation> is not yet running. After that, the lines 34 – 35, explicitly starts it. The line 36 – 37 just confirms if the server is running. The grammar-checking activity starts at line 38.
 		</SimpleText>
 	</StructuredSection>
 	<StructuredSection id={execution.id}>
