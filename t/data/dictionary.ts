@@ -30,6 +30,7 @@ export default [
 	"conf",
 	"npm",
 	".github",
+	".env",
 
 	// Code identifiers
 	"img",
