@@ -71,6 +71,9 @@
 			"name": "Back-end",
 			"technologies": [
 				{
+					"name": "CodeIgniter",
+					"homepage": "https://codeigniter.com/"
+				}, {
 					"name": "Laravel",
 					"homepage": "https://laravel.com/"
 				}, {
@@ -108,6 +111,15 @@
 				}, {
 					"name": "Jest",
 					"homepage": "https://jestjs.io/"
+				}, {
+					"name": "PHPUnit",
+					"homepage": "https://phpunit.de/index.html"
+				}, {
+					"name": "Playwright",
+					"homepage": "https://playwright.dev/"
+				}, {
+					"name": "Postman",
+					"homepage": "https://www.postman.com/"
 				}, {
 					"name": "Docker",
 					"homepage": "https://www.docker.com/"
