@@ -1,4 +1,3 @@
-/** eslint-disable max-lines */
 <script lang="ts">
 	import { page } from "$app/stores"
 	import { derived } from "svelte/store"
