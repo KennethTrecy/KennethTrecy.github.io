@@ -58,7 +58,9 @@ export default async function(
 	const allTexts = (await Promise.all([
 		...allMetaTexts,
 		...allAlternateTexts,
-		page.locator(`css=${allInnerTextSelectors}`).allInnerTexts()
+		page.locator(`css=${allInnerTextSelectors}`).allInnerTexts().then(
+			texts => texts.map(text => text.replace(/\. (env|github)/g, ".$1"))
+		)
 	])).flat()
 
 	const uniqueTexts = [ ...new Set(allTexts) ]
@@ -75,9 +77,8 @@ export default async function(
 		await new Promise(resolve => {
 			setTimeout(resolve, finalDelay)
 		})
-		const cleanedText = text.replace(/\. (env|github)/g, ".$1")
 
-		const result = await check(cleanedText, {
+		const result = await check(text, {
 			"api_url": "http://0.0.0.0:8081/v2/check",
 			dictionary
 		})
